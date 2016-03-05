@@ -1,4 +1,4 @@
-package sample;
+package welcomescreen;
 
 public class Controller {
 }
