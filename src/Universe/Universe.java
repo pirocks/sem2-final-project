@@ -21,7 +21,9 @@ public class Universe
             final double centerY = 0;
             double x = ThreadLocalRandom.current().nextDouble(-size/2, size/2);
             double y = ThreadLocalRandom.current().nextDouble(-size/2, size/2);
-            solarSystems.add(new SolarSystem());
+            double XdistanceSquared = (centerX - x)*(centerX - x);
+            double YdistanceSquared = (centerY - y)*(centerY - y);
+            solarSystems.add(new SolarSystem(Math.sqrt(XdistanceSquared + YdistanceSquared)));
         }
     }
 }
