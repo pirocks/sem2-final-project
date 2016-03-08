@@ -3,5 +3,29 @@ package universe;
 /**
  * Created by bob on 3/5/2016.
  */
-public class Continent {
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+public class Continent
+{
+    private ArrayList<Grid> grids;
+    
+    public ArrayList<Country> containedCountries()
+    {
+        ArrayList<Country> out = new ArrayList<Country>();
+        for(Grid grid:grids)
+        {
+            if(out.cont)
+            out.add(grid.getParentCountry());
+        }
+        return out;
+    }
 }

@@ -87,9 +87,6 @@ config.status:746: creating Makefile
 config.status:746: creating src/Makefile
 config.status:746: creating src/Universe/Makefile
 config.status:746: creating src/welcomescreen/Makefile
-configure:3583: === configuring in .c9/metadata/workspace/src (/home/ubuntu/workspace/.c9/metadata/workspace/src)
-configure:3646: running /bin/bash ./configure --disable-option-checking '--prefix=/usr/local'  --cache-file=/dev/null --srcdir=.
-configure:3651: error: ./configure failed for .c9/metadata/workspace/src
 
 ## ---------------- ##
 ## Cache variables. ##
@@ -180,4 +177,18 @@ subdirs=' .c9/metadata/workspace/src'
 sysconfdir='${prefix}/etc'
 target_alias=''
 
-configure: exit 127
+## ----------- ##
+## confdefs.h. ##
+## ----------- ##
+
+/* confdefs.h */
+#define PACKAGE_NAME "Semester2-final-project"
+#define PACKAGE_TARNAME "semester2-final-project"
+#define PACKAGE_VERSION "0.0"
+#define PACKAGE_STRING "Semester2-final-project 0.0"
+#define PACKAGE_BUGREPORT "13nixonf@gmail.com"
+#define PACKAGE_URL ""
+#define PACKAGE "Semester2-final-project"
+#define VERSION "2.6"
+
+configure: exit 0
