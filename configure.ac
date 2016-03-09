@@ -6,8 +6,18 @@ AC_INIT([Semester2-final-project], [0.0], [13nixonf@gmail.com])
 
 AM_INIT_AUTOMAKE(Semester2-final-project, 2.6)
 
-# Checks for programs.
 
+# java macro stuff that wheren't being found for some reason
+m4_include([m4/ax_java.m4])
+
+
+
+
+# Checks for programs.
+JAVAC=javac
+#AC_CHECK_CLASSPATH
+AX_PROG_JAVAC
+AX_PROG_JAVA
 # Checks for libraries.
 
 # Checks for header files.

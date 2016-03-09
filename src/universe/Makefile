@@ -78,7 +78,8 @@ POST_UNINSTALL = :
 subdir = src/universe
 DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/configure.ac
+am__aclocal_m4_deps = $(top_srcdir)/m4/ax_java.m4 \
+	$(top_srcdir)/m4/ac_java.m4 $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(install_sh) -d
@@ -103,7 +104,6 @@ am__can_run_installinfo = \
     n|no|NO) false;; \
     *) (install-info --version) >/dev/null 2>&1;; \
   esac
-JAVAC = javac
 CLASSPATH_ENV = CLASSPATH=$(JAVAROOT):$(srcdir)/$(JAVAROOT)$${CLASSPATH:+":$$CLASSPATH"}
 JAVAROOT = $(top_builddir)
 am__installdirs = "$(DESTDIR)$(dir)"
@@ -127,6 +127,8 @@ INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
+JAVA = java
+JAVAC = javac
 LIBOBJS = 
 LIBS = 
 LTLIBOBJS = 
@@ -185,7 +187,7 @@ top_builddir = ../..
 top_srcdir = ../..
 dir = .
 AM_JAVACFLAGS = -g
-_JAVA = Planet.java SolarSystem.java Star.java Universe.java utils.java
+_JAVA = SolarSystem.java Star.java Universe.java utils.java
 all: all-am
 
 .SUFFIXES:

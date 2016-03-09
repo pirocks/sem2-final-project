@@ -590,6 +590,8 @@ echo 'BEGIN {' >"$ac_tmp/subs1.awk" &&
 cat >>"$ac_tmp/subs1.awk" <<\_ACAWK &&
 S["LTLIBOBJS"]=""
 S["LIBOBJS"]=""
+S["JAVA"]="java"
+S["JAVAC"]="javac"
 S["AM_BACKSLASH"]="\\"
 S["AM_DEFAULT_VERBOSITY"]="1"
 S["AM_DEFAULT_V"]="$(AM_DEFAULT_VERBOSITY)"

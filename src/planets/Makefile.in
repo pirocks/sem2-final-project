@@ -78,7 +78,8 @@ POST_UNINSTALL = :
 subdir = src/planets
 DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/configure.ac
+am__aclocal_m4_deps = $(top_srcdir)/m4/ax_java.m4 \
+	$(top_srcdir)/m4/ac_java.m4 $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(install_sh) -d
@@ -103,7 +104,6 @@ am__can_run_installinfo = \
     n|no|NO) false;; \
     *) (install-info --version) >/dev/null 2>&1;; \
   esac
-JAVAC = javac
 CLASSPATH_ENV = CLASSPATH=$(JAVAROOT):$(srcdir)/$(JAVAROOT)$${CLASSPATH:+":$$CLASSPATH"}
 JAVAROOT = $(top_builddir)
 am__installdirs = "$(DESTDIR)$(dir)"
@@ -127,6 +127,8 @@ INSTALL_DATA = @INSTALL_DATA@
 INSTALL_PROGRAM = @INSTALL_PROGRAM@
 INSTALL_SCRIPT = @INSTALL_SCRIPT@
 INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+JAVA = @JAVA@
+JAVAC = @JAVAC@
 LIBOBJS = @LIBOBJS@
 LIBS = @LIBS@
 LTLIBOBJS = @LTLIBOBJS@
@@ -185,7 +187,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 dir = .
 AM_JAVACFLAGS = -g
-_JAVA = AbstractPerson.java Building.java City.java Continent.java Country.java Grid.java InhabitedPlanet.java NaturalResource.java Person.java TerrainType.java
+_JAVA = AbstractPerson.java Building.java City.java Continent.java Country.java Grid.java InhabitedPlanet.java NaturalResource.java Person.java TerrainType.java Planet.java
 all: all-am
 
 .SUFFIXES:
