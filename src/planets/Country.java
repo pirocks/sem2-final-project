@@ -16,8 +16,9 @@ package universe;
  
 public class Country
 {
-    public static String[] CountryNames = {};
-    
+    public static String[] CountryNames = 
+    {};
+    public static countryNameCount;
     private ArrayList<Grid> grids;
     private String name;
     private ArrayList<Country> allies;
