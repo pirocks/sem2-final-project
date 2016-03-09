@@ -75,7 +75,7 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-subdir = src/Universe
+subdir = src/universe
 DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
@@ -178,7 +178,6 @@ psdir = @psdir@
 sbindir = @sbindir@
 sharedstatedir = @sharedstatedir@
 srcdir = @srcdir@
-subdirs = @subdirs@
 sysconfdir = @sysconfdir@
 target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
@@ -186,7 +185,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 dir = .
 AM_JAVACFLAGS = -g
-_JAVA = Building.java City.java Continent.java Country.java Grid.java InhabitedPlanet.java Person.java Planet.java SolarSystem.java Star.java Universe.java
+_JAVA = Planet.java SolarSystem.java Star.java Universe.java utils.java
 all: all-am
 
 .SUFFIXES:
@@ -199,9 +198,9 @@ $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu src/Universe/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu src/universe/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --gnu src/Universe/Makefile
+	  $(AUTOMAKE) --gnu src/universe/Makefile
 .PRECIOUS: Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \

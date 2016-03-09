@@ -51,22 +51,22 @@ PATH: /usr/local/rvm/bin
 ## Core tests. ##
 ## ----------- ##
 
-configure:1756: checking for a BSD-compatible install
-configure:1824: result: /usr/bin/install -c
-configure:1835: checking whether build environment is sane
-configure:1890: result: yes
-configure:2041: checking for a thread-safe mkdir -p
-configure:2080: result: /bin/mkdir -p
-configure:2087: checking for gawk
-configure:2103: found /usr/bin/gawk
-configure:2114: result: gawk
-configure:2125: checking whether make sets $(MAKE)
-configure:2147: result: yes
-configure:2176: checking whether make supports nested variables
-configure:2193: result: yes
-configure:2481: checking that generated files are newer than configure
-configure:2487: result: done
-configure:2495: creating ./config.status
+configure:1754: checking for a BSD-compatible install
+configure:1822: result: /usr/bin/install -c
+configure:1833: checking whether build environment is sane
+configure:1888: result: yes
+configure:2039: checking for a thread-safe mkdir -p
+configure:2078: result: /bin/mkdir -p
+configure:2085: checking for gawk
+configure:2101: found /usr/bin/gawk
+configure:2112: result: gawk
+configure:2123: checking whether make sets $(MAKE)
+configure:2145: result: yes
+configure:2174: checking whether make supports nested variables
+configure:2191: result: yes
+configure:2475: checking that generated files are newer than configure
+configure:2481: result: done
+configure:2489: creating ./config.status
 
 ## ---------------------- ##
 ## Running config.status. ##
@@ -85,8 +85,9 @@ on pirocks-sem2-final-project-2695355
 
 config.status:746: creating Makefile
 config.status:746: creating src/Makefile
-config.status:746: creating src/Universe/Makefile
+config.status:746: creating src/universe/Makefile
 config.status:746: creating src/welcomescreen/Makefile
+config.status:746: creating src/planets/Makefile
 
 ## ---------------- ##
 ## Cache variables. ##
@@ -173,7 +174,6 @@ program_transform_name='s,x,x,'
 psdir='${docdir}'
 sbindir='${exec_prefix}/sbin'
 sharedstatedir='${prefix}/com'
-subdirs=' .c9/metadata/workspace/src'
 sysconfdir='${prefix}/etc'
 target_alias=''
 

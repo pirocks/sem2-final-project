@@ -254,7 +254,6 @@ psdir = ${docdir}
 sbindir = ${exec_prefix}/sbin
 sharedstatedir = ${prefix}/com
 srcdir = .
-subdirs =  .c9/metadata/workspace/src
 sysconfdir = ${prefix}/etc
 target_alias = 
 top_build_prefix = 

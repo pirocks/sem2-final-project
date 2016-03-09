@@ -1,2 +1,2 @@
 AUTOMAKE_OPTIONS = foreign
-SUBDIRS = Universe welcomescreen
+SUBDIRS = universe welcomescreen planets

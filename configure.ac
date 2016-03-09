@@ -16,5 +16,4 @@ AM_INIT_AUTOMAKE(Semester2-final-project, 2.6)
 
 # Checks for library functions.
 
-AC_CONFIG_SUBDIRS([.c9/metadata/workspace/src])
-AC_OUTPUT(Makefile src/Makefile src/Universe/Makefile src/welcomescreen/Makefile)
+AC_OUTPUT(Makefile src/Makefile src/universe/Makefile src/welcomescreen/Makefile src/planets/Makefile)
