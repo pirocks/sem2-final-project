@@ -1,12 +1,13 @@
 package cities;
+import universe.UniqueId;
 
 abstract class AbstractPerson extends UniqueId
 {
-    private abstract int population;
-    private final abstract double foodUsePerPerson;
-    private final abstract double crimeRisk;
-    private final abstract double productivity;
-    private abstract double wealth;
+    private  int population;
+    private final  double foodUsePerPerson;
+    private final  double crimeRisk;
+    private final  double productivity;
+    private  double wealth;
     private City currentCity;
     private Building home;
     public enum Skill
