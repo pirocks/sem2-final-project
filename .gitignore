@@ -3,4 +3,4 @@
 *.2
 Makefile.in
 Makefile
-autom4te.cache
+autom4te.cache/*
