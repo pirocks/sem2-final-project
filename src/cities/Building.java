@@ -3,7 +3,7 @@ package planets;
 /**
  * Created by bob on 3/5/2016.
  */
-public abstract class Building extends  implements LocatablePlanet
+public abstract class Building extends UniqueId implements LocatablePlanet
 {
     private abstract double resistance;//resistance to damage
     private abstract double costToBuild;

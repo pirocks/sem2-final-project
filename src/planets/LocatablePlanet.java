@@ -1,3 +1,5 @@
+package planets;
+
 public interface LocatablePlanet
 {
     public double getXInPlanet();

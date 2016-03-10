@@ -6,7 +6,7 @@ package planets;
 
  
  
-public class Continent
+public class Continent extends UniqueId
 {
     private ArrayList<Grid> grids;
     private String name;

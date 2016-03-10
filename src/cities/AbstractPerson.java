@@ -1,6 +1,6 @@
 package cities;
 
-abstract class AbstractPerson extends 
+abstract class AbstractPerson extends UniqueId
 {
     private abstract int population;
     private final abstract double foodUsePerPerson;
@@ -14,6 +14,6 @@ abstract class AbstractPerson extends
         
     }
     private Skill skill;
-    abstract public doSkill();//may need some args
+    abstract public void doSkill();//may need some args
     abstract public AbstractPerson();
 }

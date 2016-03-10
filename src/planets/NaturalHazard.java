@@ -1,7 +1,7 @@
-package planets
+package planets;
 
 
-public abstract class NaturalHazard
+public abstract class NaturalHazard extends UniqueId
 {
     private ArrayList<Grid> parentGrids;
     

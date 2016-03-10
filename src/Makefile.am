@@ -1,2 +1,4 @@
 AUTOMAKE_OPTIONS = foreign
-SUBDIRS = universe welcomescreen planets cities
+dir = .
+#SUBDIRS = universe welcomescreen planets cities
+_JAVA = $(wildcard */*.java)

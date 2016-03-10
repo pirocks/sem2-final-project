@@ -7,7 +7,7 @@ import java.util.concurrent.ThreadLocalRandom;
  * Created by bob on 3/5/2016.
  * Created by bob on 3/5/2016.
  */
-public class Universe
+public class Universe extends UniqueId
 {
     private ArrayList<SolarSystem> solarSystems;
 

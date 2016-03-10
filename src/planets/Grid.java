@@ -1,4 +1,4 @@
-package universe;
+package planets;
 
 import java.util.ArrayList;
 
@@ -27,11 +27,11 @@ public class Grid extends UniqueId implements LocatablePlanet, LocatableUniverse
     {
         //random generation
     }
-    public getParentCountry()
+    public Country getParentCountry()
     {
         return parentCountry;
     }
-    public registerHazard()
+    public void registerHazard(NaturalHazard hazrad)//natural hzard v regular hazzrad
     {
         
     }

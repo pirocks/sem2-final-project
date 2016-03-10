@@ -1,4 +1,4 @@
-package universe;
+package planets;
 
 public enum TerrainType
 {

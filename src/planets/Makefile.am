@@ -1,3 +1,3 @@
 dir = .
-AM_JAVACFLAGS = -g
 _JAVA = *.java
+include ../MakefileJavaFlags.am

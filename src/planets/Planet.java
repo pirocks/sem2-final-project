@@ -1,4 +1,4 @@
-package universe;
+package planets;
 
 /**
  * Created by bob on 3/5/2016.
@@ -11,7 +11,7 @@ package universe;
 
 
 */
-public class Planet
+public class Planet extends UniqueId
 {
     Grid[][] grids;
     public Planet(int size)

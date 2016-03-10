@@ -1,7 +1,7 @@
-import java.lang.math.BigDecimal;
+import java.math.BigDecimal;
 
-public interface Locatable
+public interface LocatableUniverse
 {
-    public BigDecimal getXInUniverse()
+    public BigDecimal getXInUniverse();
     public BigDecimal getYInUniverse();
 }
