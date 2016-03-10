@@ -6,15 +6,7 @@ import java.util.ArrayList;
  * Created by bob on 3/5/2016.
  */
 
-
-
-
-
-
-
-
-
-public class Grid
+public class Grid extends UniqueId implements LocatablePlanet, LocatableUniverse
 {
     private int x,y;
     private Planet parentPlanet;
@@ -22,6 +14,7 @@ public class Grid
     private ArrayList<City> citys;
     private ArrayList<NaturalResource> resources;
     private TerrainType terrainType;
+    private ArrayList<NaturalHazard> hazards;
     public Grid(int x, int y,Country parentCountry,Planet parentPlanet)
     {
         this.x = x;
@@ -37,6 +30,10 @@ public class Grid
     public getParentCountry()
     {
         return parentCountry;
+    }
+    public registerHazard()
+    {
+        
     }
     
 }

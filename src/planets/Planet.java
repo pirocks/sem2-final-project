@@ -11,5 +11,11 @@ package universe;
 
 
 */
-public class Planet {
+public class Planet
+{
+    Grid[][] grids;
+    public Planet(int size)
+    {
+        
+    }
 }
