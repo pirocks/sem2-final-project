@@ -1,3 +1,4 @@
+package universe;
 import java.math.BigDecimal;
 
 public interface LocatableUniverse

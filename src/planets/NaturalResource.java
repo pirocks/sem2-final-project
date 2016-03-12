@@ -1,6 +1,7 @@
 package planets;
 
 
+import universe.UniqueId;
 
 
 
@@ -15,6 +16,6 @@ public abstract class NaturalResource extends UniqueId
     public final Type type;
     private double quantity;//don't forget to check for overflow with sun
     private double restoreRate;//0 if not applicable to type
-    public abstract NaturalResource(NaturalResource.Type in,double quantity, double restoreRate);
+    // public NaturalResource(NaturalResource.Type in,double quantity, double restoreRate);
     
 }

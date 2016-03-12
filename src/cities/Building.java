@@ -1,13 +1,16 @@
-package planets;
+package cities;
+import universe.UniqueId;
+import java.util.ArrayList;
+import planets.LocatablePlanet;
 
 /**
  * Created by bob on 3/5/2016.
  */
 public abstract class Building extends UniqueId implements LocatablePlanet
 {
-    private abstract double resistance;//resistance to damage
-    private abstract double costToBuild;
-    private abstract double costToMaintain;
+    private double resistance;//resistance to damage
+    private double costToBuild;
+    private double costToMaintain;
     private int maximumOccupancy;
     public enum Type
     {

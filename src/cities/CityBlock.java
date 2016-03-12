@@ -1,5 +1,8 @@
 package cities;
 
+import universe.UniqueId;
+import planets.LocatablePlanet;
+
 public class CityBlock extends UniqueId implements LocatablePlanet
 {
     private Building building;

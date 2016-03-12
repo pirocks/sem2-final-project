@@ -3,6 +3,8 @@ package universe;
 import java.util.ArrayList;
 import planets.Planet;
 import planets.InhabitedPlanet;
+import universe.UniqueId;
+
 /**
  * Created by bob on 3/5/2016.
  */

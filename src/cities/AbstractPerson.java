@@ -1,7 +1,8 @@
 package cities;
 import universe.UniqueId;
+import cities.Building;
 
-abstract class AbstractPerson extends UniqueId
+public abstract class AbstractPerson extends UniqueId
 {
     private  int population;
     private final  double foodUsePerPerson;
@@ -16,5 +17,4 @@ abstract class AbstractPerson extends UniqueId
     }
     private Skill skill;
     abstract public void doSkill();//may need some args
-    abstract public AbstractPerson();
 }
