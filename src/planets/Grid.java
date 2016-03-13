@@ -15,7 +15,7 @@ public class Grid extends UniqueId implements LocatablePlanet, LocatableUniverse
     private Planet parentPlanet;
     private Country parentCountry;
     private ArrayList<City> citys;
-    private ArrayList<NaturalResource> resources;
+    private ArrayList<NaturalResource> naturalResources;
     private TerrainType terrainType;
     private ArrayList<NaturalHazard> hazards;
     private Grid()
@@ -37,6 +37,14 @@ public class Grid extends UniqueId implements LocatablePlanet, LocatableUniverse
     public void registerHazard(NaturalHazard hazrad)//natural hzard v regular hazzrad
     {
         
+    }
+    public ArrayList<NaturalHazard> getHazards()
+    {
+        return hazards;
+    }
+    public ArrayList<NaturalResources> getNaturalResources()
+    {
+        return naturalResources;
     }
     
 }
