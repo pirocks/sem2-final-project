@@ -28,7 +28,7 @@ public class Country extends UniqueId
     private ArrayList<Country> atWarWith;
     private ArrayList<AbstractPerson> people;
     private City capitalCity;
-    private //capital city whitehhouse
+    // private //capital city whitehhouse
     public static enum GovernmentType
     {
         Democracy,Communist,Fascist,Totalitarian
@@ -48,21 +48,21 @@ public class Country extends UniqueId
                 out.add(hazard);
         }
     }
-    public ArrayList<NaturalResources> getNaturalResourcess()
+    public ArrayList<NaturalResource> getNaturalResourcess()
     {
-        ArrayList<NaturalResources> out = new ArrayList<NaturalResources>();
+        ArrayList<NaturalResource> out = new ArrayList<NaturalResource>();
         for(Grid grid:grids)
         {
-            ArrayList<NaturalResources> naturalResources = grid.getNaturalResources();
-            for(NaturalResources hazard:hazards)
-                out.add(hazard);
+            ArrayList<NaturalResource> naturalResources = grid.getNaturalResources();
+            for(NaturalResource resource:naturalResources)
+                out.add(resource);
         }
     }
-    public getGovermentType()
+    public GovernmentType getGovermentType()
     {
         return governmentType;
     }
-    public getCapitalCity()
+    public City getCapitalCity()
     {
         return capitalCity;
     }

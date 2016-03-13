@@ -4,18 +4,18 @@ import cities.Building;
 
 public abstract class AbstractPerson extends UniqueId
 {
-    private int population;
-    private final double foodUsePerPerson;
-    private final double crimeRisk;
-    private final double crimeImpact
-    private final double productivity;//unsure wether this is needed
-    private double wealth;
-    private City currentCity;
-    private Building home;
-    public enum Type
+    protected int population;
+    protected final double foodUsePerPerson;
+    protected final double crimeRisk;
+    protected final double crimeImpact;
+    protected final double productivity;//unsure wether this is needed
+    protected double wealth;
+    protected City currentCity;
+    protected Building home;
+    public static enum Type
     {
         Ruler,
     }
-    private Type type;
+    protected Type type;
     abstract public void doSkill();//may need some args
 }
