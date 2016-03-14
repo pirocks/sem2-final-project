@@ -2,6 +2,8 @@ package people;
 import cities.AbstractPerson;
 import universe.UniversalConstants;
 import planets.Country;
+import cities.Building;
+import cities.City;
 public class Worker extends AbstractPerson
 {
     public Worker(Country parentCountry,City parentCity,Building home)

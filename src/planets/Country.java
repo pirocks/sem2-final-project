@@ -1,22 +1,13 @@
 package planets;
-
 /**
  * Created by bob on 3/5/2016.
  */
- 
- 
- 
 import universe.UniqueId;
 import planets.Grid;
 import java.util.ArrayList;
 import cities.AbstractPerson;
 import cities.City;
- 
- 
- 
- 
- 
- 
+
 public class Country extends UniqueId
 {
     public static String[] CountryNames = 
@@ -34,10 +25,12 @@ public class Country extends UniqueId
         Democracy,Communist,Fascist,Totalitarian
     }
     private GovernmentType governmentType;
-    public Country()
-    {
+    // public Country(ArrayList<Grid> grids,String names)
+    // {
+    //     allies = new ArrayList<>();
+    //     atWarWith = new ArrayList<>();
         
-    }
+    // }
     public ArrayList<NaturalHazard> getNaturalHazards()
     {
         ArrayList<NaturalHazard> out = new ArrayList<NaturalHazard>();

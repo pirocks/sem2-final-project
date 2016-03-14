@@ -1,6 +1,7 @@
 package universe;
 
 import java.util.ArrayList;
+import java.math.BigDecimal;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -21,11 +22,11 @@ public class Universe extends UniqueId
             //location of solar systems
             final double centerX = 0;
             final double centerY = 0;
+            final double centerZ = 0;
             double x = ThreadLocalRandom.current().nextDouble(-size/2, size/2);
             double y = ThreadLocalRandom.current().nextDouble(-size/2, size/2);
-            double XdistanceSquared = (centerX - x)*(centerX - x);
-            double YdistanceSquared = (centerY - y)*(centerY - y);
-            solarSystems.add(new SolarSystem(Math.sqrt(XdistanceSquared + YdistanceSquared)));
+            double z = ThreadLocalRandom.current().nextDouble(-size/2, size/2);
+            solarSystems.add(new SolarSystem(new BigDecimal(x),new BigDecimal(y),new BigDecimal(z)));
         }
     }
 }

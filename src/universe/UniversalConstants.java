@@ -1,28 +1,28 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 package universe;
+
+
+
+
+
+
+
+
+
+
+
+import planets.Country;
+
+
+
+
+
+
+
+
+
+
+
+
 
 public class UniversalConstants
 {
@@ -37,6 +37,7 @@ public class UniversalConstants
     public static final double corruptionFactorInTotalitarian = 10.0;
     public static double getCorruptionFactor(Country parentCountry)
     {
+        double corruptionFactor;
         switch(parentCountry.getGovermentType())
         {
             case Democracy:

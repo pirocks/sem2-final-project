@@ -6,6 +6,7 @@ package planets;
 
 
 import universe.UniqueId;
+import universe.SolarSystem;
 import java.util.ArrayList;
 
 /*planet contains the following:

@@ -2,7 +2,7 @@ package universe;
 
 import java.util.ArrayList;
 
-public class UniqueId
+public abstract class UniqueId
 {
     private ArrayList<UniqueId> items = new ArrayList<>();
     private static int idCounter = 0;
@@ -17,4 +17,6 @@ public class UniqueId
         items.add(this);
         idCounter++;
     }
+    public abstract String toSaveString();
+    public abstract void loadFromSaveString(String in);
 }
