@@ -5,6 +5,7 @@ import universe.UniqueId;
 import planets.LocatablePlanet;
 import universe.LocatableUniverse;
 import cities.City;
+import planets.NaturalResource;
 /**
  * Created by bob on 3/5/2016.
  */
@@ -42,7 +43,7 @@ public class Grid extends UniqueId implements LocatablePlanet, LocatableUniverse
     {
         return hazards;
     }
-    public ArrayList<NaturalResources> getNaturalResources()
+    public ArrayList<NaturalResource> getNaturalResources()
     {
         return naturalResources;
     }

@@ -26,4 +26,5 @@ AX_PROG_JAVA
 
 # Checks for library functions.
 
-AC_OUTPUT(Makefile src/Makefile src/universe/Makefile src/welcomescreen/Makefile src/planets/Makefile src/cities/Makefile)
+# src/universe/Makefile src/welcomescreen/Makefile src/planets/Makefile src/cities/Makefile
+AC_OUTPUT(Makefile src/Makefile)

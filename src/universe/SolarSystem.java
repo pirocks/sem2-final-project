@@ -10,11 +10,15 @@ import universe.UniqueId;
  */
 public class SolarSystem extends UniqueId
 {
+    BigDecimal x,y,z;
     private ArrayList<Planet> planets = new ArrayList<Planet>();
+    private ArrayList<double> radii = new ArrayList<>();
     private ArrayList<InhabitedPlanet> inhabitedPlanets = new ArrayList<InhabitedPlanet>();//also contained in planets array
-    public SolarSystem(double distanceFromCenter)
+    public SolarSystem(BigDecimal x,BigDecimal y, BigDecimal z)
     {
-        
+        this.x = x;
+        this.y = y;
+        this.z = z;
     }
 
 

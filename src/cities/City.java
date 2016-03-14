@@ -11,10 +11,21 @@ import planets.Grid;
  
 public class City extends UniqueId implements LocatablePlanet
 {
-    private Grid parentGrid;
+    private boolean isCapital;
+    private double x,y;//center of city in grid
+    private Grid parentGrid;//can be used to find location
     private ArrayList<CityBlock> cityBlocks;
     public City()
     {
         
+    }
+    public Building getCapitalBuilding()
+    {
+        assert(isCapital);
+        for(CityBlock cityBlock:cityBlocks)
+            if(cityBlock.getBuilding().getType() == Building.Type.RulersHouse)
+                return cityBlock.getBuilding();
+        assert(false);
+        return null;
     }
 }

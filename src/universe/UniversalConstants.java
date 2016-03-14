@@ -35,6 +35,28 @@ public class UniversalConstants
     public static final double corruptionFactorInDemocracy  = .5;
     public static final double corruptionFactorInFascist = 2.0;
     public static final double corruptionFactorInTotalitarian = 10.0;
+    public static double getCorruptionFactor(Country parentCountry)
+    {
+        switch(parentCountry.getGovermentType())
+        {
+            case Democracy:
+               corruptionFactor = UniversalConstants.corruptionFactorInDemocracy;
+               break;
+            case Communist:
+                corruptionFactor = UniversalConstants.corruptionFactorInCommunist;
+                break;
+            case Fascist:
+                corruptionFactor = UniversalConstants.corruptionFactorInFascist;
+            case Totalitarian:
+                corruptionFactor = UniversalConstants.corruptionFactorInTotalitarian;
+                break;
+            default:
+                assert(false);
+                corruptionFactor = Double.NaN;
+        }
+        return corruptionFactor;
+    }
+    
 }
 
 

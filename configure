@@ -2533,7 +2533,8 @@ rm -f $JAVA_TEST $CLASS_TEST
 
 # Checks for library functions.
 
-ac_config_files="$ac_config_files Makefile src/Makefile src/universe/Makefile src/welcomescreen/Makefile src/planets/Makefile src/cities/Makefile"
+# src/universe/Makefile src/welcomescreen/Makefile src/planets/Makefile src/cities/Makefile
+ac_config_files="$ac_config_files Makefile src/Makefile"
 
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
@@ -3254,10 +3255,6 @@ do
   case $ac_config_target in
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
     "src/Makefile") CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
-    "src/universe/Makefile") CONFIG_FILES="$CONFIG_FILES src/universe/Makefile" ;;
-    "src/welcomescreen/Makefile") CONFIG_FILES="$CONFIG_FILES src/welcomescreen/Makefile" ;;
-    "src/planets/Makefile") CONFIG_FILES="$CONFIG_FILES src/planets/Makefile" ;;
-    "src/cities/Makefile") CONFIG_FILES="$CONFIG_FILES src/cities/Makefile" ;;
 
   *) as_fn_error $? "invalid argument: \`$ac_config_target'" "$LINENO" 5;;
   esac

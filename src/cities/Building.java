@@ -8,15 +8,21 @@ import planets.LocatablePlanet;
  */
 public abstract class Building extends UniqueId implements LocatablePlanet
 {
-    private double resistance;//resistance to damage
-    private double costToBuild;
-    private double costToMaintain;
-    private int maximumOccupancy;
-    public enum Type
+    private double x;//0,0 is top of grid
+    private double y;
+    protected double resistance;//resistance to damage
+    protected double costToBuild;
+    protected double costToMaintain;
+    protected int maximumOccupancy;
+    public static enum Type
     {
-        
+        RulersHouse,
     }
-    private CityBlock parentBlock;
-    private Type type;
-    private ArrayList<AbstractPerson> residents;
+    protected CityBlock parentBlock;
+    protected Type type;
+    protected ArrayList<AbstractPerson> residents;
+    public Type getType()
+    {
+        return type;
+    }
 }

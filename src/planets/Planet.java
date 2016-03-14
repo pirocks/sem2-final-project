@@ -17,6 +17,8 @@ import java.util.ArrayList;
 */
 public class Planet extends UniqueId
 {
+    private SolarSystem parentSolarSystem;
+    private double radius;//distance in universe units
     Grid[][] grids;
     public Planet(int size)
     {

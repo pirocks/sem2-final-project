@@ -1,7 +1,10 @@
 package universe;
 
+import java.util.ArrayList;
+
 public class UniqueId
 {
+    private ArrayList<UniqueId> items = new ArrayList<>();
     private static int idCounter = 0;
     private final int id;
     public int getId()
@@ -11,6 +14,7 @@ public class UniqueId
     public UniqueId()
     {
         id = idCounter;
+        items.add(this);
         idCounter++;
     }
 }
