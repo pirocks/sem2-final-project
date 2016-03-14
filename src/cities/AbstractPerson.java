@@ -14,7 +14,7 @@ public abstract class AbstractPerson extends UniqueId
     protected Building home;
     public static enum Type
     {
-        Ruler,Worker
+        Ruler,Worker,Researcher
     }
     protected Type type;
     abstract public void doSkill();//may need some args

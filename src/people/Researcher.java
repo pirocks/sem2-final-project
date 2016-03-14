@@ -4,7 +4,7 @@ import universe.UniversalConstants;
 import planets.Country;
 public class Researcher extends AbstractPerson
 {
-    public Researcher(Country parentCountry, City parentCity)
+    public Researcher(Country parentCountry, City parentCity, Building home)
     {
         double corruptionFactor = Universalcontants.getCorruptionFactor();
         population = 100;
@@ -13,7 +13,8 @@ public class Researcher extends AbstractPerson
         crimeImpact = 0.5*UniversalConstants.importantPersonCrimeImpact
         wealth = 1.5* UniversalConstants.
         currentCity = parentCity;
-        
+        this.home = home;
+        type = AbstractPerson.Type.Researcher;
     }
     
 }
