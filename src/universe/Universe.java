@@ -3,17 +3,17 @@ package universe;
 import java.util.ArrayList;
 import java.math.BigDecimal;
 import java.util.concurrent.ThreadLocalRandom;
-
+import java.io.Serializable;
 /**
  * Created by bob on 3/5/2016.
  * Created by bob on 3/5/2016.
  */
  
 
-public class Universe extends UniqueId
+public class Universe extends UniqueId implements Serializable
 {
     private ArrayList<SolarSystem> solarSystems;
-
+    private ArrayList<Country> countries;
     public Universe(int numSolarSystems,double size)
     {
         solarSystems = new ArrayList<SolarSystem>();

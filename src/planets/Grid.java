@@ -47,5 +47,33 @@ public class Grid extends UniqueId implements LocatablePlanet, LocatableUniverse
     {
         return naturalResources;
     }
-    
+    public int getX()
+    {
+        return x;
+    }
+    public int getY()
+    {
+        return y;
+    }
+    public double getXInPlanet()
+    {
+        return (double)x;
+    }
+    public double getYInPlanet()
+    {
+        return (double)y;
+    }
+    public BigDecimal getZInUniverse()//top left corner of grid not actual center
+    {
+        BigDecimal planetZ = parentPlanet.getZInUniverse();
+        
+    }
+    public BigDecimal getXInUniverse()
+    {
+        
+    }
+    public BigDecimal getYInUniverse()
+    {
+        
+    }
 }

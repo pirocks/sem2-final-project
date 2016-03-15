@@ -6,7 +6,7 @@ package planets;
  
 import universe.UniqueId;
 import java.util.ArrayList;
-public class InhabitedPlanet extends Planet
+public class InhabitedPlanet extends Planet// not sure if this class is useful, how Am I going to turn an inhabited planet into an not so inhabetd planet or vice versa
 {
     private ArrayList<Country> countrys;
     private ArrayList<Continent> continents;

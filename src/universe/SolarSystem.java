@@ -5,11 +5,11 @@ import java.math.BigDecimal;
 import planets.Planet;
 import planets.InhabitedPlanet;
 import universe.UniqueId;
-
+import universe.LocatableUniverse;
 /**
  * Created by bob on 3/5/2016.
  */
-public class SolarSystem extends UniqueId
+public class SolarSystem extends UniqueId implements LocatableUniverse
 {
     BigDecimal x,y,z;
     private ArrayList<Planet> planets = new ArrayList<Planet>();
@@ -21,7 +21,18 @@ public class SolarSystem extends UniqueId
         this.y = y;
         this.z = z;
     }
-
+    public BigDecimal getXInUniverse()
+    {
+        return x;
+    }
+    public BigDecimal getYInUniverse()
+    {
+        return y;
+    }
+    public BigDecimal getZInUniverse()
+    {
+        return z;
+    }
 
 
 }

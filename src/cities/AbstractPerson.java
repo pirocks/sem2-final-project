@@ -17,5 +17,9 @@ public abstract class AbstractPerson extends UniqueId
         Ruler,Worker,Researcher
     }
     protected Type type;
-    abstract public void doSkill();//may need some args
+    // abstract public void doSkill();//may need some args
+    public int getPopulation()
+    {
+        return population;
+    }
 }

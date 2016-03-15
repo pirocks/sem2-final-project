@@ -1,0 +1,3 @@
+-- how is random generation going to work
+    -- how does that ty into constructors. should they just take args and set or should they do some of the genneration
+    -- everything should be good to go after consstruction, but not possible with parennt cases

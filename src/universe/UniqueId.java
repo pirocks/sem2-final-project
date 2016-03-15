@@ -2,9 +2,9 @@ package universe;
 
 import java.util.ArrayList;
 
-public abstract class UniqueId
+public abstract class UniqueId//this entire class is probably uneeded thanks to serializable
 {
-    private ArrayList<UniqueId> items = new ArrayList<>();
+    private static ArrayList<UniqueId> items = new ArrayList<>();
     private static int idCounter = 0;
     private final int id;
     public int getId()
@@ -17,6 +17,4 @@ public abstract class UniqueId
         items.add(this);
         idCounter++;
     }
-    public abstract String toSaveString();
-    public abstract void loadFromSaveString(String in);
 }

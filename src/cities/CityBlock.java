@@ -19,4 +19,14 @@ public class CityBlock extends UniqueId implements LocatablePlanet
     {
         return building;
     }
+    public double getXInPlanet()
+    {
+        double cityX = parentCity.getXInPlanet();
+        return cityX + x/1000.0;//magic ixed. Will do with proper texeditor
+    }
+    public double getYInPlanet()
+    {
+        double cityY = parentCity.getXInPlanet();
+        return cityY + y/1000.0;
+    }
 }
