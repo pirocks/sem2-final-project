@@ -6,6 +6,7 @@ import planets.LocatablePlanet;
 import universe.LocatableUniverse;
 import cities.City;
 import planets.NaturalResource;
+import java.math.BigDecimal;
 /**
  * Created by bob on 3/5/2016.
  */
@@ -66,14 +67,17 @@ public class Grid extends UniqueId implements LocatablePlanet, LocatableUniverse
     public BigDecimal getZInUniverse()//top left corner of grid not actual center
     {
         BigDecimal planetZ = parentPlanet.getZInUniverse();
-        
+        double planetHeight = parentPlanet.getplanetRadius();
+        BigDecimal startHeight = planetZ.add(new BigDecimal(planetHeight));
+        BigDecimal gridHeight = new BigDecimal(planetHeight*2/parentPlanet.getGridCountHeight());///should be built in as a constant and final. Planets should not be created that don't have the appropriate height
+        return startHeight.subtract((new BigDecimal(y)).multiply(gridHeight));
     }
     public BigDecimal getXInUniverse()
     {
-        
+        return null;//unimplmented
     }
     public BigDecimal getYInUniverse()
     {
-        
+        return null;//uniimplemented
     }
 }

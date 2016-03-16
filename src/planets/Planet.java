@@ -24,9 +24,13 @@ public class Planet extends UniqueId implements LocatableUniverse
         super();
         grids = new Grid[size][size * 2];
     }
-    public double getplanetRadius
+    public double getplanetRadius()
     {
         return planetRadius;
+    }
+    public int getGridCountHeight()
+    {
+        return grids.length;
     }
     //plaanets always orbit solar system along x y plane.
     public BigDecimal getZInUniverse()

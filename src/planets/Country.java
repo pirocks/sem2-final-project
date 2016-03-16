@@ -40,6 +40,7 @@ public class Country extends UniqueId
             for(NaturalHazard hazard:hazards)
                 out.add(hazard);
         }
+        return out;
     }
     public ArrayList<NaturalResource> getNaturalResourcess()
     {
@@ -50,6 +51,7 @@ public class Country extends UniqueId
             for(NaturalResource resource:naturalResources)
                 out.add(resource);
         }
+        return out;
     }
     public GovernmentType getGovermentType()
     {
