@@ -13,12 +13,14 @@ import java.math.BigDecimal;
     possible hazards volcano,temperature changes,weather. hazards are local to grid array*/
 public class Planet extends UniqueId implements LocatableUniverse
 {
-    boolean inhabitedq = false;///?????????
+    private ArrayList<Country> countries = new ArrayList<>();
+    private ArrayList<Continent> continents = new ArrayList<>();
+    boolean inhabitedq = false;
     private SolarSystem parentSolarSystem;
     private BigDecimal radius;//distance in universe units from cemter of solar sstem
     private double planetRadius;//radius of spher planet
     private double orientationAtCurrentTime;//0 to 360 degrees//need something to be done every second
-    Grid[][] grids;//make sure that # of grids is based on size of plannet, to maintain coherent sizing of everything
+    private Grid[][] grids;//make sure that # of grids is based on size of plannet, to maintain coherent sizing of everything
     public Planet(int size)
     {
         super();
@@ -31,6 +33,10 @@ public class Planet extends UniqueId implements LocatableUniverse
     public int getGridCountHeight()
     {
         return grids.length;
+    }
+    public int getGridCountLength()
+    {
+        return grids[0].length;
     }
     //plaanets always orbit solar system along x y plane.
     public BigDecimal getZInUniverse()

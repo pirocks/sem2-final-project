@@ -2,12 +2,12 @@ package planets;
 
 
 import universe.UniqueId;
+import universe.MoneySource;
 
 
 
 
-
-public class NaturalResource extends UniqueId
+public class NaturalResource extends MoneySource//maybe???
 {
     public enum Type
     {

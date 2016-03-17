@@ -3,12 +3,13 @@ package planets;
  * Created by bob on 3/5/2016.
  */
 import universe.UniqueId;
+import universe.MoneySource;
 import planets.Grid;
 import java.util.ArrayList;
 import cities.AbstractPerson;
 import cities.City;
 
-public class Country extends UniqueId
+public class Country extends MoneySource
 {
     public static String[] CountryNames = 
     {};

@@ -74,10 +74,14 @@ public class Grid extends UniqueId implements LocatablePlanet, LocatableUniverse
     }
     public BigDecimal getXInUniverse()
     {
-        return null;//unimplmented
+        double xAngle = ((double)x/(double)parentPlanet.getGridCountLength())*360.0;
+        BigDecimal planetX = parentPlanet.getXInUniverse();
+        return planetX.add(new BigDecimal(parentPlanet.getplanetRadius()*Math.cos(xAngle)));
     }
     public BigDecimal getYInUniverse()
     {
-        return null;//uniimplemented
+        double yAngle = ((double)y/(double)parentPlanet.getGridCountLength())*360.0;
+        BigDecimal planetY = parentPlanet.getYInUniverse();
+        return planetY.add(new BigDecimal(parentPlanet.getplanetRadius()*Math.sin(yAngle)));
     }
 }

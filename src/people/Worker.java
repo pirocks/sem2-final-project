@@ -12,7 +12,7 @@ public class Worker extends AbstractPerson
         population = 1000;//magic number move to universal constants later
         foodUsePerPerson = UniversalConstants.normalFoodUsePerPerson;
         crimeRisk = 0.00000001*corruptionFactor;//small number times corruption factor move to Universalcontants
-        wealth = UniversalConstants.defualtPersonStartWealth;
+        wealth = UniversalConstants.defualtPersonStartWealth;//errors, needs moneySource
         currentCity = parentCity;
         this.home = home;
         type = Type.Worker;
