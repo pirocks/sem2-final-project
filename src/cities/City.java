@@ -21,8 +21,9 @@ public class City extends MoneySource implements LocatablePlanet
     private double x,y;//center of city in grid
     private Grid parentGrid;//can be used to find location
     private ArrayList<CityBlock> cityBlocks;
-    public City(boolean isCapital,Grid parentGrid, double x, double y)
+    public City(boolean isCapital,Grid parentGrid,double wealth, double x, double y)
     {
+        super(wealth);
         if(x > 100.0 || x < 0.0)
             throw new IllegalArgumentException();
         if(y > 100.0 || y < 0.0)

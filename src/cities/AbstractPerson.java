@@ -25,9 +25,11 @@ public abstract class AbstractPerson extends MoneySource
         double crimeImpact,
         double productivity,
         double salary,
+        double wealth,
         City currentCity,
         Building home)
     {
+        super(wealth);
         this.type = type;
         this.population = population;
         this.health = health;
@@ -50,7 +52,7 @@ public abstract class AbstractPerson extends MoneySource
     }
     public static enum Type
     {
-        Ruler,Worker,Researcher
+        Ruler,Worker,Researcher,Doctor
     }
     abstract public void doSkillToPerson(AbstractPerson target,long time,MoneySource salaryGiver);//secondary target is for supplies
     abstract public void doSkillToBuilding(Building target,long time,MoneySource salaryGiver);

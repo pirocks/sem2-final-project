@@ -26,12 +26,13 @@ public class Country extends MoneySource
         Democracy,Communist,Fascist,Totalitarian
     }
     private GovernmentType governmentType;
-    // public Country(ArrayList<Grid> grids,String names)
-    // {
-    //     allies = new ArrayList<>();
-    //     atWarWith = new ArrayList<>();
+    public Country(double wealth,ArrayList<Grid> grids,String name)
+    {
+        super(wealth);
+        allies = new ArrayList<>();
+        atWarWith = new ArrayList<>();
         
-    // }
+    }
     public ArrayList<NaturalHazard> getNaturalHazards()
     {
         ArrayList<NaturalHazard> out = new ArrayList<NaturalHazard>();
