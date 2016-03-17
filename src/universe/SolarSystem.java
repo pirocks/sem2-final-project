@@ -3,7 +3,6 @@ package universe;
 import java.util.ArrayList;
 import java.math.BigDecimal;
 import planets.Planet;
-import planets.InhabitedPlanet;
 import universe.UniqueId;
 import universe.LocatableUniverse;
 /**
@@ -14,7 +13,6 @@ public class SolarSystem extends UniqueId implements LocatableUniverse
     BigDecimal x,y,z;
     private ArrayList<Planet> planets = new ArrayList<Planet>();
     private ArrayList<Double> radii = new ArrayList<>();
-    private ArrayList<InhabitedPlanet> inhabitedPlanets = new ArrayList<InhabitedPlanet>();//also contained in planets array
     public SolarSystem(BigDecimal x,BigDecimal y, BigDecimal z)
     {
         this.x = x;
