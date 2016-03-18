@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 lets have the following:
 engine
 ui
@@ -56,4 +47,4 @@ engine/misc
     
 more random ideas:
 abstract person would have a defualt task that do defualt task would be. use abstract mthod
-non abstract method for reasigning tasks
+non abstract method for reasigning tasks -- forces me to still provide some kind of type getter
