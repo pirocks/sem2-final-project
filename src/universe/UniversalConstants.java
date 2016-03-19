@@ -28,10 +28,11 @@ public class UniversalConstants
 {
     //most of these should be moved to absract person
     public static final double normalCrimeRisk = 1.0;//these nubers ared much to high. need to do math to fid what size they should be
-    public static final double doctorSalary = 100;
+    public static final double normalPersonSalary = 100;
     public static final double normalFoodUsePerPerson = 1.0;
     public static final double foodUsePerRuler = 3*normalFoodUsePerPerson;
     public static final double importantPersonCrimeImpact = 100.0; 
+    public static final double normalPersonCrimeImpact = 1.0;
     
     public static final double defualtPersonStartWealth = 100.0;
     public static final double corruptionFactorInCommunist  = 1.0;

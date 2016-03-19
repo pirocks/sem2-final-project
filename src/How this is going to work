@@ -48,3 +48,10 @@ engine/misc
 more random ideas:
 abstract person would have a defualt task that do defualt task would be. use abstract mthod
 non abstract method for reasigning tasks -- forces me to still provide some kind of type getter
+
+
+
+
+magic number fix list:
+    Abstract person population needss to be fixed
+universal constants productivity 

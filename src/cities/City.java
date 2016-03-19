@@ -21,7 +21,8 @@ public class City extends MoneySource implements LocatablePlanet
     private double x,y;//center of city in grid
     private Grid parentGrid;//can be used to find location
     private ArrayList<CityBlock> cityBlocks;
-    public City(boolean isCapital,Grid parentGrid,double wealth, double x, double y)
+    private Country parentCountry;//make sutre to change when cuity is captured.
+    public City(boolean isCapital,Grid parentGrid,Country parentCountry,double wealth, double x, double y)
     {
         super(wealth);
         if(x > 100.0 || x < 0.0)
@@ -32,6 +33,7 @@ public class City extends MoneySource implements LocatablePlanet
         this.x = x;
         this.y = y;
         this.parentGrid = parentGrid;
+        this.parentCountry = parentCountry;
     }
     public Building getCapitalBuilding()
     {
@@ -51,5 +53,9 @@ public class City extends MoneySource implements LocatablePlanet
     {
         double GridY = (double)parentGrid.getY();
         return GridY + y/100.0;
+    }
+    public Country getParentCountry()
+    {
+        return parentCountry;
     }
 }
