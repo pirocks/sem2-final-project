@@ -3,6 +3,10 @@ package universe;
 public class MoneySource
 {
     private double wealth;
+    protected void setWealth(double in)
+    {
+        wealth = in;
+    }
     public MoneySource(double wealth)
     {
         this.wealth = wealth;
@@ -26,6 +30,10 @@ public class MoneySource
         if(amount > wealth)
             return false;
         return true;
+    }
+    public void outOfMoneyHandler(double amount)//possibly abstract
+    {
+        
     }
 
 }

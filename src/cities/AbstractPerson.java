@@ -1,50 +1,42 @@
 package cities;
+import universe.UniversalConstants;
 import universe.UniqueId;
 import cities.Building;
 import universe.MoneySource;
 
-public abstract class AbstractPerson extends MoneySource
+public abstract class AbstractPerson extends MoneySource implements LocatablePlanet, LocatableUniverse
 {
     //might need to add checls for health or population below 0;
     public static enum Type
     {
         Doctor,Researcher,Ruler,Soldier,Teacher,WealthyWorker,Worker
     }
-    protected Type type;
-    protected int population;
-    protected double health;//100% is fully healthy, 0% is dead from 0 to 1.0
-    protected double foodUsePerPerson;//should be final
-    protected double crimeRisk;//should be final
-    protected double crimeImpact;//should be final
+    private double x;
+    private double y;//okay if inacurate as long as in city//mostly for use of soldiers
+    private Type type;
+    private int population;
+    private double health;//100% is fully healthy, 0% is dead from 0 to 1.0
+    private double foodUsePerPerson;//should be final
+    private double crimeRisk;//should be final
+    private double crimeImpact;//should be final
     protected double productivity;//should be final//unsure wether this is needed
     protected double salary;
-    protected City currentCity;
-    protected Building home;
-    private AbstractPerson(Type type,int population,double health,double foodUsePerPerson,double crimeRisk,double crimeImpact,double productivity,double salary,double wealth,City currentCity,Building home)
-    {
-        super(wealth);
-        this.type = type;
-        this.population = population;
-        this.health = health;
-        this.foodUsePerPerson = foodUsePerPerson;
-        this.crimeRisk = crimeRisk;
-        this.crimeImpact = crimeImpact;
-        this.productivity = productivity;
-        this.salary = salary;
-        this.currentCity = currentCity;
-        this.home = home;
-    }
+    private City currentCity;//should be renamed to parent city
+    private Building home;
+    protected boolean employedq;
+    private MoneySource salaryGiver;//needs to be set when assigned
     public AbstractPerson(Type type,City currentCity,Building home)
     {
-        double corruptionFactor = UniversalConstants.getCorruptionFactor(currentCity.getParentCountry().getGovermentType());
+        super(Double.NaN);
+        double corruptionFactor = UniversalConstants.getCorruptionFactor(currentCity.getParentCountry());
         int population;
         double health = 1.0;//a percent//inited
         double foodUsePerPerson = UniversalConstants.normalFoodUsePerPerson;//inited
         double crimeRisk = UniversalConstants.normalCrimeRisk;//inited//a percent
         double crimeImpact;//inited//a money amount
         double productivity = 1.0;//inited//a percent//productivity can be changed by constants editor
-        double salary;//a money amount
-        double wealth = UniversalConstants.defualtPersonStartWealth;
+        double salary;//inited//a money amount
+        double wealth = UniversalConstants.defualtPersonStartWealth;//inited
         switch(type)
         {
             case Doctor:
@@ -66,7 +58,7 @@ public abstract class AbstractPerson extends MoneySource
                 break;
             case Soldier:
                 salary = UniversalConstants.normalPersonSalary;
-                population = 500;
+                population = 5000;// a unit of soldiers
                 crimeImpact = 0.5*UniversalConstants.importantPersonCrimeImpact;
                 break;
             case Teacher:
@@ -88,6 +80,20 @@ public abstract class AbstractPerson extends MoneySource
                 assert(false);
                 throw new IllegalStateException();
         }
+        // this(type,population,health,foodUsePerPerson,crimeRisk,crimeImpact,productivity,salary,wealth,currentCity,home);
+        super.setWealth(wealth);
+        this.type = type;
+        this.salaryGiver = salaryGiver; 
+        this.population = population;
+        this.health = health;
+        this.foodUsePerPerson = foodUsePerPerson;
+        this.crimeRisk = crimeRisk;
+        this.crimeImpact = crimeImpact;
+        this.productivity = productivity;
+        this.salary = salary;
+        this.currentCity = currentCity;
+        this.home = home;
+
     }
     public double getHealth()
     {
@@ -95,13 +101,10 @@ public abstract class AbstractPerson extends MoneySource
     }
     public void increaseHealth(double amount)
     {
-        assert(amount <= 100.0 - health);
+        assert(amount <= 1.0 - health);
         health += amount;
     }
-    abstract public void doSkillToPerson(AbstractPerson target,long time,MoneySource salaryGiver);//secondary target is for supplies
-    abstract public void doSkillToBuilding(Building target,long time,MoneySource salaryGiver);
-    abstract public boolean buildingAplicable();
-    abstract public boolean personAplicable();
+    public abstract void doCurrentTask(long time);//I don't thinksalary is required
     public int getPopulation()
     {
         return population;

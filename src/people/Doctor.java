@@ -1,3 +1,19 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 package people;
 import cities.City;
 import cities.Building;
@@ -10,51 +26,38 @@ import universe.MoneySource;
 public class Doctor extends AbstractPerson
 {
     private static final long timeToHealOnePerson = 3600*24;
-    public Doctor(Country parentCountry, City parentCity, Building home,MoneySource moneySource)
+    private MoneySource salaryGiver;
+    private AbstractPerson sickPerson;
+    public Doctor(City parentCity, Building home)
     {
-        /*int population = 10;
-        double health = 100.0;
-        double foodUsePerPerson = UniversalConstants.normalFoodUsePerPerson;
-        double crimeRisk = 0.5*UniversalConstants.normalCrimeRisk;
-        double crimeImpact = 0.5*UniversalConstants.importantPersonCrimeImpact;
-        double productivity = 1.0;//productivity from 0 to 1%
-        double salary = UniversalConstants.doctorSalary;
-        double wealth = UniversalConstants.defualtPersonStartWealth;
-        City currentCity = parentCity;*/
-        // Building home
-        super(/*type*/AbstractPerson.Type.Doctor,
-            /*population*/10,
-            /*health*/100.0,
-            /*foodUsePerPerson*/UniversalConstants.normalFoodUsePerPerson,
-            /*crimeRisk*/0.5*UniversalConstants.normalCrimeRisk,
-            /*crimeImpact*/0.5*UniversalConstants.importantPersonCrimeImpact,
-            /*productivity*/1.0,
-            /*salary*/UniversalConstants.doctorSalary,
-            /*wealth*/UniversalConstants.defualtPersonStartWealth,
-            /*currentCity*/parentCity,
-            /*home*/home);//working on it
+        super(AbstractPerson.Type.Doctor,parentCity,home);
     }
-    public void doSkillToPerson(AbstractPerson target,long time,MoneySource salaryGiver)//time is in seconds
+    public void setPerson(AbstractPerson person)
+    {
+        sickPerson = person;
+    }
+    public void doSkill(long time)//time is in seconds
     {
         //use productivity;
+        //not sure if this is good yet
+        AbstractPerson target = sickPerson;//mybe make this an array or city
         double workDone = productivity*time/timeToHealOnePerson;
         int pop = target.getPopulation();
         double healthIncrease = workDone/((double)pop);
         if(100.0 - target.getHealth() > healthIncrease)
             healthIncrease = 100.0 - target.getHealth();
-        target.increaseHealth(healthIncrease);
-        salaryGiver.pay(this,salary*healthIncrease);
+        if(salaryGiver.canPay(salary*healthIncrease))
+        {    
+            target.increaseHealth(healthIncrease);
+            salaryGiver.pay(this,salary*healthIncrease);
+        }
+        else
+        {
+            salaryGiver.outOfMoneyHandler(salary*healthIncrease);
+        }
     }
-    public void doSkillToBuilding(Building target,long time,MoneySource salaryGiver)
+    public void doCurrentTask(long time)
     {
-        throw new IllegalArgumentException();
-    }
-    public boolean buildingAplicable()
-    {
-        return false;
-    }
-    public boolean personAplicable()
-    {
-        return true;
+        doSkill(time);
     }
 }
