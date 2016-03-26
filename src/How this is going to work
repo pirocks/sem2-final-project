@@ -52,6 +52,13 @@ non abstract method for reasigning tasks -- forces me to still provide some kind
 
 
 
+
+make a location class insteead of the mess that currently exsists
+
+
+
+
 magic number fix list:
     Abstract person population needss to be fixed
 universal constants productivity 
+

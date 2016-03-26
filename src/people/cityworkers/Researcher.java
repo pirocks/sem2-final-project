@@ -16,7 +16,7 @@
 
 
 
-package people;
+package people.cityworkers;
 import cities.AbstractPerson;
 import universe.UniversalConstants;
 import planets.Country;

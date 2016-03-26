@@ -14,7 +14,7 @@
 
 
 
-package people;
+package people.cityworkers;
 import cities.City;
 import cities.Building;
 import cities.AbstractPerson;
@@ -26,16 +26,15 @@ import universe.MoneySource;
 public class Doctor extends AbstractPerson
 {
     private static final long timeToHealOnePerson = 3600*24;
-    private MoneySource salaryGiver;
-    private AbstractPerson sickPerson;
+    // private AbstractPerson sickPerson;
     public Doctor(City parentCity, Building home)
     {
         super(AbstractPerson.Type.Doctor,parentCity,home);
     }
-    public void setPerson(AbstractPerson person)
+    /*public void setPerson(AbstractPerson person)
     {
         sickPerson = person;
-    }
+    }*/
     public void doSkill(long time)//time is in seconds
     {
         //use productivity;

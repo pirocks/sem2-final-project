@@ -14,7 +14,7 @@
 
 
 
-
+package people.cityworkers;
 import cities.AbstractPerson;
 import cities.City;
 import cities.Building;

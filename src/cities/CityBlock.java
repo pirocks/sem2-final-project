@@ -1,10 +1,12 @@
 package cities;
 
 import universe.UniqueId;
+import planets.Grid;
 import planets.LocatablePlanet;
 
 public class CityBlock extends UniqueId implements LocatablePlanet
 {
+    private Grid grid;
     private Building building;
     private City parentCity;
     private double x, y;
@@ -28,5 +30,17 @@ public class CityBlock extends UniqueId implements LocatablePlanet
     {
         double cityY = parentCity.getXInPlanet();
         return cityY + y/1000.0;
+    }
+    public Grid getGrid()
+    {
+        return grid;
+    }
+    public double getXInGrid()
+    {
+        return x;
+    }
+    public double getYInGrid()
+    {
+        return y;
     }
 }

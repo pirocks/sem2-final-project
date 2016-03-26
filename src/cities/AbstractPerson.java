@@ -1,18 +1,19 @@
 package cities;
-import universe.UniversalConstants;
-import universe.UniqueId;
-import cities.Building;
-import universe.MoneySource;
 
-public abstract class AbstractPerson extends MoneySource implements LocatablePlanet, LocatableUniverse
+import planets.*;
+import universe.*;
+import cities.*;
+
+public abstract class AbstractPerson extends MoneySource implements LocatablePlanet/*, LocatableUniverse*/
 {
     //might need to add checls for health or population below 0;
     public static enum Type
     {
         Doctor,Researcher,Ruler,Soldier,Teacher,WealthyWorker,Worker
     }
-    private double x;
-    private double y;//okay if inacurate as long as in city//mostly for use of soldiers
+    private Grid currentGrid;
+    protected Country country;
+    protected double x,y;//okay if inacurate as long as in city//mostly for use of soldiers//in grid
     private Type type;
     private int population;
     private double health;//100% is fully healthy, 0% is dead from 0 to 1.0
@@ -21,14 +22,12 @@ public abstract class AbstractPerson extends MoneySource implements LocatablePla
     private double crimeImpact;//should be final
     protected double productivity;//should be final//unsure wether this is needed
     protected double salary;
-    private City currentCity;//should be renamed to parent city
-    private Building home;
     protected boolean employedq;
-    private MoneySource salaryGiver;//needs to be set when assigned
-    public AbstractPerson(Type type,City currentCity,Building home)
+    protected MoneySource salaryGiver;//needs to be set when assigned
+    public AbstractPerson(Type type,Country country)
     {
         super(Double.NaN);
-        double corruptionFactor = UniversalConstants.getCorruptionFactor(currentCity.getParentCountry());
+        double corruptionFactor = UniversalConstants.getCorruptionFactor(country);
         int population;
         double health = 1.0;//a percent//inited
         double foodUsePerPerson = UniversalConstants.normalFoodUsePerPerson;//inited
@@ -91,8 +90,8 @@ public abstract class AbstractPerson extends MoneySource implements LocatablePla
         this.crimeImpact = crimeImpact;
         this.productivity = productivity;
         this.salary = salary;
-        this.currentCity = currentCity;
-        this.home = home;
+        // this.currentCity = currentCity;
+        // this.home = home;
 
     }
     public double getHealth()
@@ -108,5 +107,25 @@ public abstract class AbstractPerson extends MoneySource implements LocatablePla
     public int getPopulation()
     {
         return population;
+    }
+    public Grid getGrid()
+    {
+        return currentGrid;
+    }
+    public double getXInGrid()
+    {
+        return x;
+    }
+    public double getYInGrid()
+    {
+        return y;
+    }
+    public double getXInPlanet()
+    {
+        return currentGrid.getXInPlanet() + x;
+    }
+    public double getYInPlanet()
+    {
+        return currentGrid.getYInPlanet() + y;
     }
 }

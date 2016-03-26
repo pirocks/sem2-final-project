@@ -1,6 +1,7 @@
 package cities;
 import universe.UniqueId;
 import java.util.ArrayList;
+import planets.Grid;
 import planets.LocatablePlanet;
 
 /**
@@ -14,6 +15,7 @@ public abstract class Building extends UniqueId implements LocatablePlanet
     protected double costToBuild;
     protected double costToMaintain;
     protected int maximumOccupancy;
+    private Grid parentGird;
     public static enum Type
     {
         ApartmentBlock,Factory,Hospital,IndustrialDock,ResearchArea,RulersHouse,School,TownHall,UniversitySection,Warehouse,WealthWorkersHouseBlock,WorkersHouseBlock
@@ -41,5 +43,25 @@ public abstract class Building extends UniqueId implements LocatablePlanet
         if(sum > maximumOccupancy)
             return false;
         return true;
+    }
+    // public double getXInPlanet()
+    // {
+    //     return parentGird.getXInPlanet() + x;
+    // }//0,0 is top left of grid
+    // public double getYInPlanet()
+    // {
+    //     return parentGird.getYInPlanet() + y;
+    // }
+    public Grid getGrid()
+    {
+        return parentGird;
+    }
+    public double getXInGrid()
+    {
+        return x;
+    }
+    public double getYInGrid()
+    {
+        return y;
     }
 }
