@@ -50,7 +50,7 @@ public class Doctor extends CityWorker
 {
     private static long timeToHealOnePerson = 3600*24;
     private Hospital workplace;
-    public Workplace getWorkBuilding()
+    public Ho getWorkBuilding()
     {
         return workplace;
     }

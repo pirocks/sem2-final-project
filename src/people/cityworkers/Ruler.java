@@ -23,7 +23,7 @@ import cities.Building;
 */
 public class Ruler extends AbstractPerson
 {
-    
+    //possible deprecation of this object
     public Ruler(City parentCity, Building home)
     {
         super(AbstractPerson.Type.Ruler,parentCity,home);
