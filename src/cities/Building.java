@@ -9,24 +9,88 @@ import people.*;
  */
 public abstract class Building implements LocatablePlanet
 {
-    protected double resistance;//resistance to damage
-    protected double costToBuild;
-    protected double costToMaintain;
-    protected int maximumOccupancy;
+    private double resistance;//actually the structural uintegrity of the buiding. Change name and refactor with intelij
+    // protected double costToBuild;//irrelevant
+    private double costToMaintain;
     public static enum Type
     {
         ApartmentBlock,Factory,Hospital,IndustrialDock,ResearchArea,RulersHouse,School,TownHall,UniversitySection,Warehouse,WealthWorkersHouseBlock,WorkersHouseBlock
     }
     protected CityBlock parentBlock;
-    protected Type type;
+    // protected Type type;
     protected ArrayList<CityWorker> residents;
+    public Building(Type type,CityBlock parentBlock,ArrayList<CityWorker> residents)
+    {
+        this.residents = residents;
+        this.parentBlock = parentBlock;
+        switch(type)
+        {
+            case ApartmentBlock:
+                resistance = ;
+                costToMaintain = ;
+                maximumOccupancy = ;
+                break;
+            case Factory:
+                resistance = ;
+                costToMaintain = ;
+                maximumOccupancy = ;
+                break;
+            case Hospital:
+                resistance = ;
+                costToMaintain = ;
+                maximumOccupancy = ;
+                break;
+            case IndustrialDock:
+                resistance = ;
+                costToMaintain = ;
+                maximumOccupancy = ;
+                break;
+            case ResearchArea:
+                resistance = ;
+                costToMaintain = ;
+                maximumOccupancy = ;
+                break;
+            case RulersHouse:
+                resistance = ;
+                costToMaintain = ;
+                maximumOccupancy = ;
+                break;
+            case School:
+                resistance = ;
+                costToMaintain = ;
+                maximumOccupancy = ;
+                break;
+            case TownHall:
+                resistance = ;
+                costToMaintain = ;
+                maximumOccupancy = ;
+                break;
+            case UniversitySection:
+                resistance = ;
+                costToMaintain = ;
+                maximumOccupancy = ;
+                break;
+            case Warehouse:
+                resistance = ;
+                costToMaintain = ;
+                maximumOccupancy = ;
+                break;
+            case WealthWorkersHouseBlock:
+                resistance = ;
+                costToMaintain = ;
+                maximumOccupancy = ;
+                break;
+            case WorkersHouseBlock:
+                resistance = ;
+                costToMaintain = ;
+                maximumOccupancy = ;
+                break;
+            
+        }
+    }
     public City getParentCity()
     {
         return parentBlock.getParentCity();
-    }
-    public Type getType()
-    {
-        return type;
     }
     public double getXInPlanet()
     {

@@ -3,13 +3,13 @@ package planets;
 import planets.*;
 import cities.*;
 
-public class LocationPlanet
+public final class LocationPlanet
 {
 	Planet planet;
-	private int Gridx;
-	private int Gridy;
-	private int Blockx;
-	private int Blocky;
+	public int Gridx;
+	public int Gridy;
+	public int Blockx;
+	public int Blocky;
 	public LocationPlanet(CityBlock b)
 	{
 		Blockx = b.getXInGrid();

@@ -16,15 +16,14 @@
 package people;
 
 
-import cities.AbstractPerson;
-import cities.Building;
-import cities.City;
+import cities.*;
 import buildings.*;
-
+import planets.*;
 
 
 public abstract class CityWorker extends AbstractPerson
 {
+	public LocationPlanet location;//needs to figue out location evetry time.
 	public static long travelTimeConstant;
 	public static long TimeAtWork;
 	public static long TimeAtHome;
