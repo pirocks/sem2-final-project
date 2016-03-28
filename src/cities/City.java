@@ -4,6 +4,7 @@ import universe.UniqueId;
 import planets.LocatablePlanet;
 import planets.Grid;
 import universe.MoneySource;
+import buildings.*;
 import planets.Country;
 // import org.w3c.dom.*;
 // import javax.xml.parsers.*;
@@ -23,6 +24,7 @@ public class City extends MoneySource implements LocatablePlanet
     private Grid parentGrid;//can be used to find location
     private ArrayList<Grid> containingrids;//all grids that contain it
     private ArrayList<CityBlock> cityBlocks;
+    private ArrayList<Hospital> hospitals;
     private Country parentCountry;//make sutre to change when cuity is captured.
     public City(boolean isCapital,Grid parentGrid,Country parentCountry,double wealth, double x, double y)
     {
@@ -71,6 +73,14 @@ public class City extends MoneySource implements LocatablePlanet
     public double getYInGrid()
     {
         return y;
+    }
+    public Hospital getLeastLoadedHosital()
+    {
+        Hospital leastLoadedHospital = hospitals.get(0);
+        for(Hospital hospital:hospitals)
+            if(leastLoadedHospital.getWorkLoad() > hospital.getWorkLoad())
+                leastLoadedHospital = hospital;
+        return leastLoadedHospital;
     }
 
 }

@@ -17,6 +17,10 @@ public class CityBlock extends UniqueId implements LocatablePlanet
         this.x = x;
         this.y = y;
     }
+    public City getParentCity()
+    {
+        return parentCity;
+    }
     public Building getBuilding()
     {
         return building;

@@ -23,6 +23,10 @@ public abstract class Building extends UniqueId implements LocatablePlanet
     protected CityBlock parentBlock;
     protected Type type;
     protected ArrayList<AbstractPerson> residents;
+    public City getParentCity()
+    {
+        return parentBlock.getParentCity();
+    }
     public Type getType()
     {
         return type;
@@ -58,7 +62,7 @@ public abstract class Building extends UniqueId implements LocatablePlanet
     }
     public double getXInGrid()
     {
-        return x;
+        return x;//do no change this without first fixing cityworker.distancebetweenbuildins
     }
     public double getYInGrid()
     {

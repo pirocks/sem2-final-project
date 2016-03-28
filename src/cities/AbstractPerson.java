@@ -16,7 +16,7 @@ public abstract class AbstractPerson extends MoneySource implements LocatablePla
     protected double x,y;//okay if inacurate as long as in city//mostly for use of soldiers//in grid
     private Type type;
     private int population;
-    private double health;//100% is fully healthy, 0% is dead from 0 to 1.0
+    protected double health;//100% is fully healthy, 0% is dead from 0 to 1.0
     private double foodUsePerPerson;//should be final
     private double crimeRisk;//should be final
     private double crimeImpact;//should be final
@@ -103,7 +103,7 @@ public abstract class AbstractPerson extends MoneySource implements LocatablePla
         assert(amount <= 1.0 - health);
         health += amount;
     }
-    public abstract void doCurrentTask(long time);//I don't thinksalary is required
+    public abstract void doSkill(long time);//I don't thinksalary is required
     public int getPopulation()
     {
         return population;
