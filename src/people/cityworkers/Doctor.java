@@ -42,14 +42,15 @@ import cities.*;
 import people.*;
 import universe.*;
 import planets.*;
-import buildings.*;
+import buildings.housing.*;
+import buildings.workplace.*;
 
 
 public class Doctor extends CityWorker
 {
     private static long timeToHealOnePerson = 3600*24;
     private Hospital workplace;
-    public Building getWorkBuilding()
+    public Workplace getWorkBuilding()
     {
         return workplace;
     }

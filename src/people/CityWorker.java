@@ -33,8 +33,8 @@ public abstract class CityWorker extends AbstractPerson
 	}
 	protected WhereAmI whereAmI;
 	private Building currentBuilding;
-	private Building home;
-	public abstract Building getWorkBuilding();
+	private Housing home;
+	public abstract Workplace getWorkBuilding();
 	public abstract void doSkill(long time);
     private City currentCity;//should be renamed to parent city
 	protected long timeRemainingAtLocation;

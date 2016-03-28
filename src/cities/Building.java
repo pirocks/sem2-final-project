@@ -7,83 +7,68 @@ import people.*;
 /**
  * Created by bob on 3/5/2016.
  */
-public abstract class Building implements LocatablePlanet
+public abstract class Building implements LocatablePlanet//extends moneysource for workplace maybe??
 {
-    private double resistance;//actually the structural uintegrity of the buiding. Change name and refactor with intelij
+    private double structuralIntegrity = 1.0;//form 0 to 1.0
+    private double resistance;//the resistance as a 0 to 1.0 percentage
+    
     // protected double costToBuild;//irrelevant
-    private double costToMaintain;
+    // private double costToMaintain;//maybe get rid off or leave for later//leaving for later
     public static enum Type
     {
         ApartmentBlock,Factory,Hospital,IndustrialDock,ResearchArea,RulersHouse,School,TownHall,UniversitySection,Warehouse,WealthWorkersHouseBlock,WorkersHouseBlock
     }
+    private boolean workplaceQ;
+    private boolean housingQ;
     protected CityBlock parentBlock;
-    // protected Type type;
-    protected ArrayList<CityWorker> residents;
-    public Building(Type type,CityBlock parentBlock,ArrayList<CityWorker> residents)
+    protected Type type;//not necesary but whatever
+    public Building(Type type,CityBlock parentBlock,boolean housingQ)
     {
-        this.residents = residents;
+        this.type = type;
+        this.workplaceQ = false;
+        this.housingQ = false;
+        if(housingQ)
+            this.housingQ = true;
+        else
+            this.workplaceQ = true;
         this.parentBlock = parentBlock;
         switch(type)
         {
             case ApartmentBlock:
-                resistance = ;
-                costToMaintain = ;
-                maximumOccupancy = ;
+                resistance = ApartmentBlock.resistanceInitial;
                 break;
             case Factory:
-                resistance = ;
-                costToMaintain = ;
-                maximumOccupancy = ;
+                resistance = Factory.resistanceInitial;
                 break;
             case Hospital:
-                resistance = ;
-                costToMaintain = ;
-                maximumOccupancy = ;
+                resistance = Hospital.resistanceInitial;
                 break;
             case IndustrialDock:
-                resistance = ;
-                costToMaintain = ;
-                maximumOccupancy = ;
+                resistance = IndustrialDock.resistanceInitial;
                 break;
             case ResearchArea:
-                resistance = ;
-                costToMaintain = ;
-                maximumOccupancy = ;
+                resistance = ResearchArea.resistanceInitial;
                 break;
             case RulersHouse:
-                resistance = ;
-                costToMaintain = ;
-                maximumOccupancy = ;
+                resistance = RulersHouse.resistanceInitial;
                 break;
             case School:
-                resistance = ;
-                costToMaintain = ;
-                maximumOccupancy = ;
+                resistance = School.resistanceInitial;
                 break;
             case TownHall:
-                resistance = ;
-                costToMaintain = ;
-                maximumOccupancy = ;
+                resistance = TownHall.resistanceInitial;
                 break;
             case UniversitySection:
-                resistance = ;
-                costToMaintain = ;
-                maximumOccupancy = ;
+                resistance = UniversitySection.resistanceInitial;
                 break;
             case Warehouse:
-                resistance = ;
-                costToMaintain = ;
-                maximumOccupancy = ;
+                resistance = Warehouse.resistanceInitial;
                 break;
             case WealthWorkersHouseBlock:
-                resistance = ;
-                costToMaintain = ;
-                maximumOccupancy = ;
+                resistance = WealthWorkersHouseBlock.resistanceInitial;
                 break;
             case WorkersHouseBlock:
-                resistance = ;
-                costToMaintain = ;
-                maximumOccupancy = ;
+                resistance = WorkersHouseBlock.resistanceInitial;
                 break;
             
         }
@@ -99,20 +84,6 @@ public abstract class Building implements LocatablePlanet
     public double getYInPlanet()
     {
         return parentBlock.getYInPlanet();
-    }
-    public boolean overcrowdedQ()
-    {
-        int sum = getPopulation();
-        if(sum > maximumOccupancy)
-            return false;
-        return true;
-    }
-    public int getPopulation()
-    {
-        int sum = 0;
-        for(CityWorker person:residents)
-            sum += person.getPopulation();
-        return sum;
     }
     public Grid getGrid()
     {

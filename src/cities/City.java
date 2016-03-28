@@ -25,6 +25,8 @@ public class City extends MoneySource implements LocatablePlanet
     private ArrayList<Grid> containingrids;//all grids that contain it
     private ArrayList<CityBlock> cityBlocks;
     private ArrayList<Hospital> hospitals;
+    public ArrayList<CityWorker> residents;
+    public ArrayList<CityWorker> unemployedResidents;
     private Country parentCountry;//make sutre to change when cuity is captured.
     public City(boolean isCapital,Grid parentGrid,Country parentCountry,double wealth, int x, int y)
     {
