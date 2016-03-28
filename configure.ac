@@ -1,8 +1,23 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #                                               -*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.69])
-AC_INIT([Semester2-final-project], [0.0], [13nixonf@gmail.com])
+AC_INIT([Semester2-final-project], [0.1], [13nixonf@gmail.com])
 
 AM_INIT_AUTOMAKE(Semester2-final-project, 2.6)
 

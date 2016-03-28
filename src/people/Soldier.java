@@ -20,6 +20,8 @@ import tools.vehicles.Vehicle;
 
 //this is not one soldier unit. It isd a unit of soldiers
 //remeber that
+//how to do attacks???
+
 
 public class Soldier extends AbstractPerson implements LocatablePlanet/*, LocatableUniverse*/
 {
@@ -45,21 +47,23 @@ public class Soldier extends AbstractPerson implements LocatablePlanet/*, Locata
         switch(currentTask)
         {
             case March:
-                
+                //how are estinations represented??
+                //location objects??
                 break;
             case Drive:
                 assert(vehicle != null);
-                
+                //??vehicle.drive(time);/////?????
                 break;
             case Guard:
-                
+                //moneysources could move very fast??
+                //how does this work
                 break;
             case Heal:
                 health += healRate*time;
                 if(health > 1.0)
                     health = 1.0;
-                salaryGiver.pay(this,time*salary);
                 break;
         }
     }
+    salaryGiver.pay(this,time*salary);
 }
