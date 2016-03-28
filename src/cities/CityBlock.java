@@ -1,19 +1,38 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 package cities;
 
-import universe.UniqueId;
 import planets.Grid;
 import planets.LocatablePlanet;
 
-public class CityBlock extends UniqueId implements LocatablePlanet
+public class CityBlock implements LocatablePlanet
 {
     private Grid grid;
+    private int x, y;//from 0 to 100. possibly use byte indidicate location within grid
     private Building building;
     private City parentCity;
-    private double x, y;
-    public CityBlock(Building building,City parentCity,double x,double y)
+    public CityBlock(Grid parentGrid,Building building,City parentCity,int x,int y)
     {
         this.building = building;
         this.parentCity = parentCity;
+        if(parentGrid.cityBlockLocationExists(x,y))
+            throw new IllegalArgumentException();
         this.x = x;
         this.y = y;
     }
@@ -39,11 +58,11 @@ public class CityBlock extends UniqueId implements LocatablePlanet
     {
         return grid;
     }
-    public double getXInGrid()
+    public int getXInGrid()
     {
         return x;
     }
-    public double getYInGrid()
+    public int getYInGrid()
     {
         return y;
     }

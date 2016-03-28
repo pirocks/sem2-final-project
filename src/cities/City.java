@@ -20,24 +20,28 @@ public class City extends MoneySource implements LocatablePlanet
     //remeber to add stuff to thhe unique id if I add more member vars
     //read the above comment
     private boolean isCapital;
-    private double x,y;//center of city in grid
+    private int x,y;//center of city in grid//will be townhall locatiuon
     private Grid parentGrid;//can be used to find location
     private ArrayList<Grid> containingrids;//all grids that contain it
     private ArrayList<CityBlock> cityBlocks;
     private ArrayList<Hospital> hospitals;
     private Country parentCountry;//make sutre to change when cuity is captured.
-    public City(boolean isCapital,Grid parentGrid,Country parentCountry,double wealth, double x, double y)
+    public City(boolean isCapital,Grid parentGrid,Country parentCountry,double wealth, int x, int y)
     {
         super(wealth);
-        if(x > 100.0 || x < 0.0)
+        if(x > 100 || x < 0)
             throw new IllegalArgumentException();
-        if(y > 100.0 || y < 0.0)
+        if(y > 100 || y < 0)
             throw new IllegalArgumentException();
         this.isCapital = isCapital;
         this.x = x;
         this.y = y;
         this.parentGrid = parentGrid;
         this.parentCountry = parentCountry;
+    }
+    public ArrayList<CityBlock> getCityBlocks()
+    {
+        return cityBlocks;
     }
     public Building getCapitalBuilding()
     {

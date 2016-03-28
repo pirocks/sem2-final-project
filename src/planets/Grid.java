@@ -1,17 +1,17 @@
 package planets;
 
 import java.util.ArrayList;
-import universe.UniqueId;
-import planets.LocatablePlanet;
-import universe.LocatableUniverse;
-import cities.City;
-import planets.NaturalResource;
+import universe.*;
+import planets.*;
+import cities.*;
 import java.math.BigDecimal;
 /**
  * Created by bob on 3/5/2016.
+ * 
+ * grids contain 100 cityblocks. Not in an array though
  */
 
-public class Grid extends UniqueId implements LocatablePlanet, LocatableUniverse
+public class Grid implements LocatablePlanet, LocatableUniverse
 {
     private int x,y;
     private Planet parentPlanet;
@@ -48,6 +48,17 @@ public class Grid extends UniqueId implements LocatablePlanet, LocatableUniverse
     {
         return naturalResources;
     }
+    public boolean cityBlockLocationExists(int x, int y)
+    {
+        ArrayList<CityBlock> blocks = new ArrayList<>();
+        for(City city:citys)
+            blocks.addAll(city.getCityBlocks());
+        for(CityBlock cityBlock:blocks)
+            if(cityBlock.getXInGrid() == x && cityBlock.getYInGrid() == y)
+                return true;
+        return false;
+    }
+    //location stuff
     public int getX()
     {
         return x;

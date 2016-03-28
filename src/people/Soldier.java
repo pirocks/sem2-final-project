@@ -64,6 +64,6 @@ public class Soldier extends AbstractPerson implements LocatablePlanet/*, Locata
                     health = 1.0;
                 break;
         }
+        salaryGiver.pay(this,time*salary);
     }
-    salaryGiver.pay(this,time*salary);
 }
