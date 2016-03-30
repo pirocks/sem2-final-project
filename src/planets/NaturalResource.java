@@ -1,27 +1,43 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 package planets;
 
 
-import universe.UniqueId;
-import universe.MoneySource;
+import universe.*;
 
 
 
 
-public class NaturalResource extends MoneySource//maybe???
+public class NaturalResource
 {
-    public static enum Type
-    {
-        Iron,Oil,Uranium,Helium,Food,Water,Sunlight,
-    }
-    public final Type type;
-    private double quantity;//don't forget to check for overflow with sun
+    Ressource resource;
     private double restoreRate;//0 if not applicable to type
-    public NaturalResource(NaturalResource.Type in,double quantity, double restoreRate,double value)
+    private double max;
+    public NaturalResource(Resource.Type in,double quantity, double restoreRate,double max)
     {
         super(value);
         type = in;
-        this.quantity = quantity;
         this.restoreRate = restoreRate;
+        this.max = max;
+        resource = new Resource(in,quantity);
     };
     
 }

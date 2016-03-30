@@ -23,7 +23,7 @@ import cities.Building;
 */
 public class Ruler extends AbstractPerson
 {
-    //possible deprecation of this object
+    //possible deprecation of this object//cannot be deprecated b/c ai
     public Ruler(City parentCity, Building home)
     {
         super(AbstractPerson.Type.Ruler,parentCity,home);

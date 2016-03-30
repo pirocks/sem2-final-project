@@ -22,7 +22,7 @@ import cities.Building;
 import cities.City;
 public class Worker extends AbstractPerson
 {
-    
+    //this class is too vague
     public Worker(City parentCity,Building home)
     {
         super(AbstractPerson.Type.Worker,parentCity,home);

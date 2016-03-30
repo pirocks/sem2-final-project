@@ -30,6 +30,10 @@ public class MoneySource
     {
         wealth += amount;
     }
+    public void recieve(Resource r)
+    {
+        
+    }
     public void pay(MoneySource target,double amount)
     {
         assert(canPay(amount));

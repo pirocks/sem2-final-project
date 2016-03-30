@@ -107,4 +107,8 @@ public class Grid implements LocatablePlanet, LocatableUniverse
         BigDecimal planetY = parentPlanet.getYInUniverse();
         return planetY.add(new BigDecimal(parentPlanet.getplanetRadius()*Math.sin(yAngle)));
     }
+    public Planet getParentPlanet()
+    {
+        return 
+    }
 }

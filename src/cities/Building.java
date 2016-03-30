@@ -97,4 +97,8 @@ public abstract class Building implements LocatablePlanet//extends moneysource f
     {
         return parentBlock.getYInGrid();
     }
+    public CityBlock getParentBlock()
+    {
+        return parentBlock;
+    }
 }

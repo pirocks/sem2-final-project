@@ -1,3 +1,18 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 package cities;
 
 import planets.*;
@@ -6,6 +21,7 @@ import cities.*;
 
 public abstract class AbstractPerson extends MoneySource implements LocatablePlanet/*, LocatableUniverse*/
 {
+    LocationPlanet location;
     //might need to add checls for health or population below 0;
     public static enum Type
     {
@@ -14,7 +30,7 @@ public abstract class AbstractPerson extends MoneySource implements LocatablePla
     private Grid currentGrid;
     protected Country country;
     protected double x,y;//okay if inacurate as long as in city//mostly for use of soldiers//in grid
-    private Type type;
+    private final Type type;
     private int population;
     protected double health;//100% is fully healthy, 0% is dead from 0 to 1.0
     private double foodUsePerPerson;//should be final

@@ -21,8 +21,7 @@ public class City extends MoneySource implements LocatablePlanet
     //read the above comment
     private boolean isCapital;
     private int x,y;//center of city in grid//will be townhall locatiuon
-    private Grid parentGrid;//can be used to find location
-    private ArrayList<Grid> containingrids;//all grids that contain it
+    private Grid parentGrid;//can be used to find location//cities limited to one grid
     private ArrayList<CityBlock> cityBlocks;
     private ArrayList<Hospital> hospitals;
     public ArrayList<CityWorker> residents;
