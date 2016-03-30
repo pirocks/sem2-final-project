@@ -27,9 +27,9 @@ public abstract class AbstractPerson extends MoneySource implements LocatablePla
     {
         Doctor,Researcher,Ruler,Soldier,Teacher,WealthyWorker,Worker
     }
-    private Grid currentGrid;
+    // deprecated b/c location private Grid currentGrid;
     protected Country country;
-    protected double x,y;//okay if inacurate as long as in city//mostly for use of soldiers//in grid
+    // deprecated b/c location protected double x,y;//okay if inacurate as long as in city//mostly for use of soldiers//in grid
     private final Type type;
     private int population;
     protected double health;//100% is fully healthy, 0% is dead from 0 to 1.0
@@ -124,24 +124,8 @@ public abstract class AbstractPerson extends MoneySource implements LocatablePla
     {
         return population;
     }
-    public Grid getGrid()
+    public LocationPlanet getLOcation()
     {
-        return currentGrid;
-    }
-    public double getXInGrid()
-    {
-        return x;
-    }
-    public double getYInGrid()
-    {
-        return y;
-    }
-    public double getXInPlanet()
-    {
-        return currentGrid.getXInPlanet() + x;
-    }
-    public double getYInPlanet()
-    {
-        return currentGrid.getYInPlanet() + y;
+        return location;
     }
 }

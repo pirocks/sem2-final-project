@@ -1,3 +1,30 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 package cities;
 import universe.*;
 import java.util.ArrayList;
@@ -7,7 +34,7 @@ import people.*;
 /**
  * Created by bob on 3/5/2016.
  */
-public abstract class Building implements LocatablePlanet//extends moneysource for workplace maybe??
+public abstract class Building //extends moneysource for workplace maybe??
 {
     private double structuralIntegrity = 1.0;//form 0 to 1.0
     private double resistance;//the resistance as a 0 to 1.0 percentage
@@ -18,10 +45,10 @@ public abstract class Building implements LocatablePlanet//extends moneysource f
     {
         ApartmentBlock,Factory,Hospital,IndustrialDock,ResearchArea,RulersHouse,School,TownHall,UniversitySection,Warehouse,WealthWorkersHouseBlock,WorkersHouseBlock
     }
-    private boolean workplaceQ;
-    private boolean housingQ;
+    private final boolean workplaceQ;
+    private final boolean housingQ;
     protected CityBlock parentBlock;
-    protected Type type;//not necesary but whatever
+    protected final Type type;//not necesary but whatever
     public Building(Type type,CityBlock parentBlock,boolean housingQ)
     {
         this.type = type;
@@ -76,26 +103,6 @@ public abstract class Building implements LocatablePlanet//extends moneysource f
     public City getParentCity()
     {
         return parentBlock.getParentCity();
-    }
-    public double getXInPlanet()
-    {
-        return parentBlock.getXInPlanet();
-    }
-    public double getYInPlanet()
-    {
-        return parentBlock.getYInPlanet();
-    }
-    public Grid getGrid()
-    {
-        return parentBlock.getGrid();
-    }
-    public int getXInGrid()
-    {
-        return parentBlock.getXInGrid();//do no change this without first fixing cityworker.distancebetweenbuildins
-    }
-    public int getYInGrid()
-    {
-        return parentBlock.getYInGrid();
     }
     public CityBlock getParentBlock()
     {

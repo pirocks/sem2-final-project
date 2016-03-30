@@ -15,13 +15,14 @@ import planets.Country;
  */
 
  
-public class City extends MoneySource implements LocatablePlanet
+public class City extends MoneySource
 {
     //remeber to add stuff to thhe unique id if I add more member vars
     //read the above comment
     private boolean isCapital;
     private int x,y;//center of city in grid//will be townhall locatiuon
     private Grid parentGrid;//can be used to find location//cities limited to one grid
+    // private ArrayList<Grid> grids;//not yet
     private ArrayList<CityBlock> cityBlocks;
     private ArrayList<Hospital> hospitals;
     public ArrayList<CityWorker> residents;
