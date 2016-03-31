@@ -94,5 +94,11 @@ public class Resource
 		quantity -= amount;
 		return new Resource(type,amount);
 	}
+	public void pay(ResourceDemand r)
+	{
+		assert(this.type == r.type);
+		quantity -= r.quantity;
+		r.quantity = 0;
+	}
 	
 }

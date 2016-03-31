@@ -37,5 +37,5 @@ public class RulersHouse extends Housing
 	public static int maximumOccupancyInitial = 10;
 	public static double costInitial;
 	public static double resistanceInitial;
-
+	//doesn't do much, but don't deprecate
 }

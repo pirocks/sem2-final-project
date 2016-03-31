@@ -1,5 +1,5 @@
 package tools;
-
+import universe.*;
 
 public class Tool
 {
@@ -10,6 +10,6 @@ public class Tool
 	public final Type type;
 	public abstract boolean vehicleQ();
 	public abstract boolean weaponQ();
-	public abstract boolean ResourceDemand requiredResources();
-	public abstract boolean double constructionCost();
+	public abstract ResourceDemand requiredResourcesForConstruction();
+	public abstract long constructionManHours();//doesn't need o be abstract
 }

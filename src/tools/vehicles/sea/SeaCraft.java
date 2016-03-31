@@ -19,28 +19,12 @@ public class SeaCraft extends Vehicle
 	{
 		
 	}
-	public abstract boolean spaceQ()
-	{
-		return false;
-	}
-	public abstract boolean seaQ()
-	{
-		return true;
-	}
-	public abstract boolean landQ()
-	{
-		return false;
-	}
-	public abstract boolean roadgoingQ()
-	{
-		return false;
-	}
-	public abstract boolean inSpaceQ()
+	public boolean inSpaceQ()
 	{
 		
 	}
-	public abstract boolean inWaterQ()
+	public boolean inWaterQ()
 	{
-		
+		return inWaterQ;
 	}
 }

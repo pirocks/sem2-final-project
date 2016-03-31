@@ -38,5 +38,5 @@ public class WorkersHouseBlock extends Housing
 	public static int maximumOccupancyInitial = 1000;
 	public static double costInitial;
 	public static double resistanceInitial;
-
+//these classes don't really do anything
 }
