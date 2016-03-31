@@ -28,7 +28,7 @@
 
 //this class may be eprected
 package buildings.workplaces;
-import buildings.
+import buildings.*;
 import universe.UniqueId;
 import cities.Building;
 

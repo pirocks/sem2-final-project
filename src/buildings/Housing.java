@@ -1,3 +1,11 @@
+package buildings;
+import cities.*;
+import people.*;
+import buildings.housing.*;
+import java.util.ArrayList;
+
+
+
 public class Housing extends Building
 {
     private int maximumOccupancy;
@@ -14,9 +22,9 @@ public class Housing extends Building
     		case RulersHouse:
     			maximumOccupancy = RulersHouse.maximumOccupancyInitial;
     			break;
-    		case WealthWorkersHouseBlock:
-    			maximumOccupancy = WealthWorkersHouseBlock.maximumOccupancyInitial;
-    			break;
+    // 		case WealthWorkersHouseBlock:
+    // 			maximumOccupancy = WealthWorkersHouseBlock.maximumOccupancyInitial;
+    // 			break;
     		case WorkersHouseBlock:
     			maximumOccupancy = WorkersHouseBlock.maximumOccupancyInitial;
     			break;

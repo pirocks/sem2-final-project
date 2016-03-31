@@ -19,11 +19,13 @@
 
 
 package tools.vehicles;
-
+import universe.*;
+import java.util.ArrayList;
+import cities.AbstractPerson;
 
 public class Vehicle
 {
-	public Location location;
+	// public Location location;
 	private ArrayList<AbstractPerson> passengers;
 	private ArrayList<Resource> cargo;
 	private ArrayList<MoneySource> money;//could just use a bureucrat as passenger

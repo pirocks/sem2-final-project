@@ -19,16 +19,16 @@ import planets.*;
 import universe.*;
 import cities.*;
 
-public abstract class AbstractPerson extends MoneySource implements LocatablePlanet/*, LocatableUniverse*/
+public abstract class AbstractPerson extends MoneySource
 {
-    LocationPlanet location;
+    protected LocationPlanet location;
     //might need to add checls for health or population below 0;
     public static enum Type
     {
         Doctor,Researcher,Ruler,Soldier,Teacher,WealthyWorker,Worker
     }
     // deprecated b/c location private Grid currentGrid;
-    protected Country country;
+    protected final Country country;//final??
     // deprecated b/c location protected double x,y;//okay if inacurate as long as in city//mostly for use of soldiers//in grid
     private final Type type;
     private int population;
@@ -106,6 +106,7 @@ public abstract class AbstractPerson extends MoneySource implements LocatablePla
         this.crimeImpact = crimeImpact;
         this.productivity = productivity;
         this.salary = salary;
+        this.country = country;
         // this.currentCity = currentCity;
         // this.home = home;
 
@@ -124,7 +125,7 @@ public abstract class AbstractPerson extends MoneySource implements LocatablePla
     {
         return population;
     }
-    public LocationPlanet getLOcation()
+    public LocationPlanet getLocation()
     {
         return location;
     }

@@ -6,4 +6,4 @@ public interface LocatableUniverse
     public BigDecimal getXInUniverse();
     public BigDecimal getYInUniverse();
     public BigDecimal getZInUniverse();
-}w
+}

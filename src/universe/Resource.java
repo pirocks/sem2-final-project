@@ -75,7 +75,7 @@ public class Resource
 	{
 		this(type,0.0);
 	}
-	public add(Resource r)
+	public void add(Resource r)
 	{
 		assert(r.type == this.type);
 		quantity += r.getQuantity();

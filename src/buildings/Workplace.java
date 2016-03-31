@@ -1,10 +1,14 @@
 package buildings;
 import cities.*;
+import java.util.ArrayList;
+import people.*;
+import universe.*;
 public class Workplace extends Building
 {
 	// MoneySource owner;//for salaries//actually not needed
 	public ArrayList<CityWorker> workers;
 	public int maxWorkers;
+	MoneySource owner;
 	public Workplace(Type type,ArrayList<CityWorker> workers,CityBlock parentBlock,MoneySource owner)
 	{
 		super(type,parentBlock,false);
@@ -32,13 +36,13 @@ public class Workplace extends Building
 		if(canAddWorker(worker))
 			workers.add(worker);
 		else
-			throw new IllegalStateException()
+			throw new IllegalStateException();
 	}
 	public int workerCount()
 	{
 		int sum = 0;
 		for(CityWorker worker:workers)
 			sum += worker.getPopulation();
-		retur sum;
+		return sum;
 	}
 }

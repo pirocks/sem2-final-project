@@ -23,7 +23,7 @@ import tools.vehicles.Vehicle;
 //how to do attacks???
 
 
-public class Soldier extends AbstractPerson implements LocatablePlanet/*, LocatableUniverse*/
+public class Soldier extends AbstractPerson/*, LocatableUniverse*/
 {
 
     public static enum TypeOfTask

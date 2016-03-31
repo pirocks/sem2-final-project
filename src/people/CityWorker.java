@@ -17,13 +17,15 @@ package people;
 
 
 import cities.*;
+import buildings.workplaces.*;
 import buildings.*;
+import buildings.housing.*;
 import planets.*;
+import java.util.ArrayList;
 
 
 public abstract class CityWorker extends AbstractPerson
 {
-	public LocationPlanet location;//needs to figue out location evetry time.
 	public static long travelTimeConstant;
 	public static long TimeAtWork;
 	public static long TimeAtHome;
@@ -39,29 +41,30 @@ public abstract class CityWorker extends AbstractPerson
     private City currentCity;//should be renamed to parent city
 	protected long timeRemainingAtLocation;
 	Hospital hospital; //is null if not going to hospital
-	public CityWorker(AbstractPerson.Type type,City city,Building home)
+	public CityWorker(AbstractPerson.Type type,City city,Housing home)
 	{
 		super(type,city.getParentCountry());
 		this.home = home;
 		currentCity = city;
 	}
-	public static double distanceBetweenBuildings(Building a, Building b)
-	{
-		assert(a.getParentCity() == b.getParentCity());
-		double xDiff = a.getXInGrid() - b.getXInGrid();
-		double yDiff = a.getYInGrid() - b.getYInGrid();
-		return Math.sqrt(yDiff*yDiff + xDiff*xDiff);
-	}
+	//deprecated
+	// public static double distanceBetweenBuildings(Building a, Building b)
+	// {
+	// 	assert(a.getParentCity() == b.getParentCity());
+	// 	double xDiff = a.getXInGrid() - b.getXInGrid();
+	// 	double yDiff = a.getYInGrid() - b.getYInGrid();
+	// 	return Math.sqrt(yDiff*yDiff + xDiff*xDiff);
+	// }
 	private void goHome()
 	{
-		double distance = distanceBetweenBuildings(home,currentBuilding);
+		double distance = home.getLocation().distanceBetween(currentBuilding.getLocation());
 		whereAmI = WhereAmI.GoingToHome;
 		currentBuilding = null;
 		timeRemainingAtLocation = (long)(distance*travelTimeConstant);
 	}
 	private void goToWork()
 	{
-		double distance = distanceBetweenBuildings(getWorkBuilding(),currentBuilding);
+		double distance = getWorkBuilding().getLocation().distanceBetween(currentBuilding.getLocation());
 		whereAmI = WhereAmI.GoingToWork;
 		currentBuilding = null;
 		timeRemainingAtLocation = (long)(distance*travelTimeConstant);
@@ -69,7 +72,7 @@ public abstract class CityWorker extends AbstractPerson
 	private void goToHospital()
 	{
 		Hospital h = currentCity.getLeastLoadedHosital();
-		double distance = distanceBetweenBuildings(h,currentBuilding);
+		double distance = h.getLocation().distanceBetween(currentBuilding.getLocation());
 		whereAmI = WhereAmI.GoingToHospital;
 		currentBuilding = null;
 		timeRemainingAtLocation = (long)(distance*travelTimeConstant);

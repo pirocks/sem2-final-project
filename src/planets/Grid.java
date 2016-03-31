@@ -11,7 +11,7 @@ import java.math.BigDecimal;
  * grids contain 100 cityblocks. Not in an array though
  */
 
-public class Grid implements LocatablePlanet, LocatableUniverse
+public class Grid implements LocatableUniverse
 {
     private int x,y;
     private Planet parentPlanet;
@@ -109,6 +109,6 @@ public class Grid implements LocatablePlanet, LocatableUniverse
     }
     public Planet getParentPlanet()
     {
-        return 
+        return parentPlanet;
     }
 }

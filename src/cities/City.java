@@ -1,14 +1,11 @@
 package cities;
 import java.util.ArrayList;
-import universe.UniqueId;
-import planets.LocatablePlanet;
-import planets.Grid;
-import universe.MoneySource;
+import universe.*;
+import planets.*;
+import buildings.workplaces.*;
 import buildings.*;
-import planets.Country;
-// import org.w3c.dom.*;
-// import javax.xml.parsers.*;
-// import java.io.*;
+import buildings.housing.*;
+import people.*;
 
 /**
  * Created by bob on 3/5/2016.

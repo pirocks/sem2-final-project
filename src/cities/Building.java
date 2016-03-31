@@ -30,6 +30,8 @@ import universe.*;
 import java.util.ArrayList;
 import planets.*;
 import people.*;
+import buildings.workplaces.*;
+import buildings.housing.*;
 
 /**
  * Created by bob on 3/5/2016.
@@ -43,7 +45,7 @@ public abstract class Building //extends moneysource for workplace maybe??
     // private double costToMaintain;//maybe get rid off or leave for later//leaving for later
     public static enum Type
     {
-        ApartmentBlock,Factory,Hospital,IndustrialDock,ResearchArea,RulersHouse,School,TownHall,UniversitySection,Warehouse,WealthWorkersHouseBlock,WorkersHouseBlock
+        ApartmentBlock,Factory,Hospital,IndustrialDock,ResearchArea,RulersHouse,School,TownHall,Warehouse,WorkersHouseBlock
     }
     private final boolean workplaceQ;
     private final boolean housingQ;
@@ -52,12 +54,16 @@ public abstract class Building //extends moneysource for workplace maybe??
     public Building(Type type,CityBlock parentBlock,boolean housingQ)
     {
         this.type = type;
-        this.workplaceQ = false;
-        this.housingQ = false;
         if(housingQ)
+        {
+            this.workplaceQ = false;
             this.housingQ = true;
+        }
         else
+        {
             this.workplaceQ = true;
+            this.housingQ = false;
+        }
         this.parentBlock = parentBlock;
         switch(type)
         {
@@ -85,15 +91,15 @@ public abstract class Building //extends moneysource for workplace maybe??
             case TownHall:
                 resistance = TownHall.resistanceInitial;
                 break;
-            case UniversitySection:
-                resistance = UniversitySection.resistanceInitial;
-                break;
+            // case UniversitySection:
+            //     resistance = UniversitySection.resistanceInitial;
+            //     break;
             case Warehouse:
                 resistance = Warehouse.resistanceInitial;
                 break;
-            case WealthWorkersHouseBlock:
-                resistance = WealthWorkersHouseBlock.resistanceInitial;
-                break;
+            // case WealthWorkersHouseBlock:
+            //     resistance = WealthWorkersHouseBlock.resistanceInitial;
+            //     break;
             case WorkersHouseBlock:
                 resistance = WorkersHouseBlock.resistanceInitial;
                 break;
@@ -107,5 +113,13 @@ public abstract class Building //extends moneysource for workplace maybe??
     public CityBlock getParentBlock()
     {
         return parentBlock;
+    }
+    public LocationPlanet getLocation()
+    {
+        return parentBlock.getLocation();
+    }
+    public Type getType()
+    {
+        return type;
     }
 }
