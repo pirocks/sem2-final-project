@@ -67,11 +67,14 @@ public class Country extends MoneySource
     {
         roads.add(road);
     }
-    public Road accsisbleRoads(City c)//I can't spell
+    public ArrayList<Road> accsisbleRoads(City c)//I can't spell
     {
+        ArrayList<Road> out = new ArrayList<>();
         for(Road road: roads)
         {
-            if()
+            if(road.passesThrough(c))
+                out.add(road);
         }
+        return out;
     }
 }
