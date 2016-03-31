@@ -19,6 +19,7 @@ public class Country extends MoneySource
     private ArrayList<Country> allies;
     private ArrayList<Country> atWarWith;
     private ArrayList<AbstractPerson> people;
+    public ArrayList<Road> roads;
     private City capitalCity;
     // private //capital city whitehhouse
     public static enum GovernmentType
@@ -31,7 +32,6 @@ public class Country extends MoneySource
         super(wealth);
         allies = new ArrayList<>();
         atWarWith = new ArrayList<>();
-        
     }
     public ArrayList<NaturalHazard> getNaturalHazards()
     {
@@ -62,5 +62,16 @@ public class Country extends MoneySource
     public City getCapitalCity()
     {
         return capitalCity;
+    }
+    public void addRoad(Road road)
+    {
+        roads.add(road);
+    }
+    public Road accsisbleRoads(City c)//I can't spell
+    {
+        for(Road road: roads)
+        {
+            if()
+        }
     }
 }
