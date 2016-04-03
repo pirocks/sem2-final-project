@@ -1,0 +1,24 @@
+weapons that could be used:
+    what about shots that miss??//add hit probability var
+    guns/haandheld by soldier
+        various types, place in package
+    mounted on vehiccles
+        those that are mounted on vehicles could be mounted on many different/aka tank gun could go onto battleship
+    mounted on land vehicles
+
+    mounted on seacraft
+        phalanx
+        machine gun -small
+        machine gun medium
+        machine gun large
+    mounted on aircaft:
+        machine gun-small
+        machine gun medium
+    mounted on spaceships
+        machine gun small
+        machine gun medium
+    attackable interface for when objects are damaged by weapons??
+        --seems like a good idea, allows eaccch object to take damage
+
+    what about weapons that counteractt weapons???
+    new package different issuemaking stuff too complex for now
