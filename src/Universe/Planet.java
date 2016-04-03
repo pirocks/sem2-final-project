@@ -1,5 +1,7 @@
 package universe;
 
+import java.util.ArrayList;
+
 /**
  * Created by bob on 3/5/2016.
  */
@@ -12,4 +14,10 @@ package universe;
 
 */
 public class Planet {
+    private Grid[][] grids;
+    public Planet(int size)
+    {
+        grids = new Grid[size][size];
+    }
+
 }
