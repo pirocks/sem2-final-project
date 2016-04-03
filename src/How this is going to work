@@ -62,3 +62,50 @@ magic number fix list:
     Abstract person population needss to be fixed
 universal constants productivity 
 
+
+
+spacecraft:
+    shuttle
+    orbittig station small
+    orbitting sation medium
+    orbitting station large
+    space craft factory
+    interstellar craft small
+    interstellar-craft medium
+    intersteller-craft large
+    orbitting city//contains many crafts put together
+    asteroid miner
+seacraft:
+    aircraft carrier
+    destroyer
+    battleship
+    submarine
+    transporter-small
+    transporter-medium
+    transporter-large
+    nuclear aircraft carrier
+    nuclear submarine
+
+land vehicles:
+    tank
+    howitzer/artillery
+    amoured vehicle
+    automated tank
+    automated artilery
+    autmatedarmored vehicle
+roadgoing:
+    train
+    large truck
+    medium truck
+    small truck
+    bus
+    automated all-purpoe vehicle
+
+
+weapons:
+    phalanx defense system
+    nuclear missile
+    guns:
+        --
+    artillery:
+        --

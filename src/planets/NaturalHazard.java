@@ -12,8 +12,9 @@
 
 package planets;
 
+import trash.UniqueId;
+
 import java.util.ArrayList;
-import universe.UniqueId;
 
 public abstract class NaturalHazard extends UniqueId
 {

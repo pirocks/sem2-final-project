@@ -1,28 +1,5 @@
 package universe;
-
-
-
-
-
-
-
-
-
-
-
 import planets.Country;
-
-
-
-
-
-
-
-
-
-
-
-
 
 public class UniversalConstants
 {
@@ -63,19 +40,3 @@ public class UniversalConstants
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

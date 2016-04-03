@@ -1,9 +1,10 @@
 package buildings.workplaces;
-import buildings.*;
-import universe.*;
-import cities.*;
-import people.*;
-import people.cityworkers.*;
+
+import buildings.Workplace;
+import cities.CityBlock;
+import people.CityWorker;
+import universe.MoneySource;
+
 import java.util.ArrayList;
 
 public class Hospital extends Workplace
@@ -13,7 +14,12 @@ public class Hospital extends Workplace
 	public static double resistanceInitial;
     // private ArrayList<Doctor> doctors;//this shouldn't be necesary
     private ArrayList<CityWorker> sickpeople;
-    public CityWorker getNextPatient()
+
+	public Hospital(Type type, ArrayList<CityWorker> workers, CityBlock parentBlock, MoneySource owner) {
+		super(type, workers, parentBlock, owner);
+	}
+
+	public CityWorker getNextPatient()
     {
     	int i = sickpeople.size() - 1;
     	if(i < 0)

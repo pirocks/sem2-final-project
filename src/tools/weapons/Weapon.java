@@ -1,5 +1,7 @@
 package tools.weapons;
 
+import tools.Tool;
+
 public class Weapon
 {
 	//one weapon per soldier, regarrdless of soldier population
@@ -7,11 +9,11 @@ public class Weapon
 	{
 		
 	}
-	public weaponQ()
+	public boolean weaponQ()
 	{
 		return true;
 	}
-	public vehicleQ()
+	public boolean vehicleQ()
 	{
 		return false;
 	}

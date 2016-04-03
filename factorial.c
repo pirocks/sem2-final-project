@@ -11,8 +11,8 @@ int main()
 	for(int i = 0; i < 1000000;i++)
 	{
 		var = factorial(25);
-		printf("factorial:%d\n",var);
 	}
+    printf("factorial:%d%s\n",var,"this uis a string");
 	return 0;
 }
 

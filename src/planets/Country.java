@@ -2,12 +2,12 @@ package planets;
 /**
  * Created by bob on 3/5/2016.
  */
-import universe.UniqueId;
-import universe.MoneySource;
-import planets.Grid;
-import java.util.ArrayList;
+
 import cities.AbstractPerson;
 import cities.City;
+import universe.MoneySource;
+
+import java.util.ArrayList;
 
 public class Country extends MoneySource
 {

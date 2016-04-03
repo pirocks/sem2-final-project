@@ -4,8 +4,8 @@ package planets;
  * Created by bob on 3/5/2016.
  */
 
-import universe.UniqueId;
-import planets.Grid;
+import trash.UniqueId;
+
 import java.util.ArrayList;
 
  

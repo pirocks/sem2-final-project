@@ -1,11 +1,17 @@
 package tools;
-import universe.*;
 
-public class Tool
+import universe.ResourceDemand;
+
+public abstract class Tool
 {
-	static enum Type
+
+	protected Tool(Type type) {
+		this.type = type;
+	}
+
+	public static enum Type
 	{
-		
+		Vehicle,weapon
 	}
 	public final Type type;
 	public abstract boolean vehicleQ();

@@ -13,11 +13,10 @@
 
 
 package people.cityworkers;
+
 import cities.AbstractPerson;
-import universe.UniversalConstants;
-import planets.Country;
-import cities.City;
 import cities.Building;
+import cities.City;
 /*
     one ruler per country
 */
@@ -27,5 +26,10 @@ public class Ruler extends AbstractPerson
     public Ruler(City parentCity, Building home)
     {
         super(AbstractPerson.Type.Ruler,parentCity,home);
+    }
+
+    @Override
+    public void doSkill(long time) {
+
     }
 }

@@ -25,14 +25,10 @@
 
 
 package universe;
-import universe.*;
-
-
-
 
 public class Resource
 {
-	//Location //when location is figured out add this.
+	//trash.Location //when location is figured out add this.
     public static enum Type
     {
         Iron,Oil,Uranium,Helium,Food,Water

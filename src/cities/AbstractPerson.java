@@ -15,17 +15,23 @@
 
 package cities;
 
-import planets.*;
-import universe.*;
-import cities.*;
+import planets.Country;
+import planets.LocationPlanet;
+import universe.MoneySource;
+import universe.UniversalConstants;
 
 public abstract class AbstractPerson extends MoneySource
 {
     protected LocationPlanet location;
+
+    public AbstractPerson(Type type, City parentCity, Building home) {
+        this(type,parentCity.getParentCountry());
+    }
+
     //might need to add checls for health or population below 0;
     public static enum Type
     {
-        Doctor,Researcher,Ruler,Soldier,Teacher,WealthyWorker,Worker
+        Doctor,Researcher,Ruler,Soldier,Teacher,WealthyWorker, Bureaucrat, Worker
     }
     // deprecated b/c location private Grid currentGrid;
     protected final Country country;//final??

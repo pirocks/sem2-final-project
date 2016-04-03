@@ -1,9 +1,14 @@
 package tools.vehicles.roadgoing;
 
-import tools.vehicles.*;
+import tools.vehicles.Vehicle;
+
 //possible deprecation b/c roads ot clear;y defined
-public class RoadGoing extends Vehicle//maaube extend land
+public abstract class RoadGoing extends Vehicle//maaube extend land
 {
+	public RoadGoing(Type type) {
+		super(type);
+	}
+
 	public boolean inWaterQ()
 	{
 		return false;

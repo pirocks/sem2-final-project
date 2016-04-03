@@ -17,11 +17,11 @@
 
 
 package people.cityworkers;
+
+import buildings.workplaces.ResearchArea;
 import cities.AbstractPerson;
-import universe.UniversalConstants;
-import planets.Country;
-import cities.City;
 import cities.Building;
+import cities.City;
 public class Researcher extends AbstractPerson
 {
     private ResearchArea workplace;
@@ -29,12 +29,12 @@ public class Researcher extends AbstractPerson
     {
 		super(AbstractPerson.Type.Researcher,parentCity,home);
     }
-    public ResearchArea getWorkBuilding()
-    {
+    public ResearchArea getWorkBuilding() {
         return workplace;
     }
-    public doSkill(long time)
-    {
-        //unimplmented
+
+    @Override
+    public void doSkill(long time) {
+
     }
 }

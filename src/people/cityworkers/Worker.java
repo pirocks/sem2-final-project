@@ -15,12 +15,11 @@
 
 
 package people.cityworkers;
+
 import cities.AbstractPerson;
-import universe.UniversalConstants;
-import planets.Country;
 import cities.Building;
 import cities.City;
-public class Worker extends AbstractPerson
+public abstract class Worker extends AbstractPerson
 {
     //this class is too vague
     public Worker(City parentCity,Building home)

@@ -13,11 +13,11 @@
 
 
 package people.cityworkers;
+
+import buildings.workplaces.School;
 import cities.AbstractPerson;
-import universe.UniversalConstants;
-import planets.Country;
-import cities.City;
 import cities.Building;
+import cities.City;
 public class Teacher extends AbstractPerson
 {
     public double progress = 0.0;//from 0 to 1
@@ -31,7 +31,7 @@ public class Teacher extends AbstractPerson
     {
         return workplace;
     }
-    public doSkill(long time)
+    public void doSkill(long time)
     {
         //unimplmented
     }

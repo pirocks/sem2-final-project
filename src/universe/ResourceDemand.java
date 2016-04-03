@@ -1,5 +1,4 @@
 package universe;
-import unibverse.*;
 
 public class ResourceDemand
 {

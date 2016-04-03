@@ -1,14 +1,15 @@
 package universe;
 
-import java.util.ArrayList;
-import java.math.BigDecimal;
 import planets.Planet;
-import universe.UniqueId;
-import universe.LocatableUniverse;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+
+
 /**
  * Created by bob on 3/5/2016.
  */
-public class SolarSystem extends UniqueId implements LocatableUniverse
+public class SolarSystem
 {
     BigDecimal x,y,z;
     private ArrayList<Planet> planets = new ArrayList<Planet>();

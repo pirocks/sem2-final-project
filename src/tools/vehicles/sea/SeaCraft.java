@@ -1,6 +1,6 @@
 package tools.vehicles.sea;
 
-import tools.vehicles.*;
+import tools.vehicles.Vehicle;
 
 
 
@@ -12,16 +12,17 @@ import tools.vehicles.*;
 
 
 
-public class SeaCraft extends Vehicle
+public abstract class SeaCraft extends Vehicle
 {
 	public boolean inWaterQ;
-	public SeaCraft()
+	public SeaCraft(Type t)
 	{
-		
+		super(t);
+
 	}
 	public boolean inSpaceQ()
 	{
-		
+		return false;
 	}
 	public boolean inWaterQ()
 	{

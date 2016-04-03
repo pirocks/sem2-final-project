@@ -38,23 +38,25 @@
 
 
 package people.cityworkers;
-import cities.*;
-import people.*;
-import universe.*;
-import planets.*;
-import buildings.housing.*;
-import buildings.workplace.*;
+
+import buildings.Housing;
+import buildings.workplaces.Hospital;
+import cities.AbstractPerson;
+import cities.City;
+import people.CityWorker;
+
+//import buildings.workplace.*;
 
 
 public class Doctor extends CityWorker
 {
     private static long timeToHealOnePerson = 3600*24;
     private Hospital workplace;
-    public Ho getWorkBuilding()
+    public Hospital getWorkBuilding()
     {
         return workplace;
     }
-    public Doctor(City parentCity, Building home)
+    public Doctor(City parentCity, Housing home)
     {
         super(AbstractPerson.Type.Doctor,parentCity,home);
     }

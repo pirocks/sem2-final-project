@@ -1,17 +1,17 @@
 package planets;
 
-import java.util.ArrayList;
-import universe.*;
-import planets.*;
-import cities.*;
+import cities.City;
+import cities.CityBlock;
+
 import java.math.BigDecimal;
+import java.util.ArrayList;
 /**
  * Created by bob on 3/5/2016.
  * 
  * grids contain 100 cityblocks. Not in an array though
  */
 
-public class Grid implements LocatableUniverse
+public class Grid
 {
     private int x,y;
     private Planet parentPlanet;
