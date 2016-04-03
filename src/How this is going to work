@@ -63,6 +63,14 @@ magic number fix list:
 universal constants productivity 
 
 
+aircraft:
+    cargo-plane-small
+    cargo-plane-medium
+    cargo-plane-large
+    fighter-jet-small
+    fighter-medium
+    helicopter
+    bomber
 
 spacecraft:
     shuttle
