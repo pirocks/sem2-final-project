@@ -1,0 +1,8 @@
+ideas for possible discoveries:
+    --banking-strategies
+    --military tactics
+    --food growth tactics
+    --propulsion systems
+        --for all space/land
+    --government systems should come discovered by default
+    --
