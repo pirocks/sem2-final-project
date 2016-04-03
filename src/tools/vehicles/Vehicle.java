@@ -32,7 +32,6 @@ public abstract class Vehicle extends Tool
 {
 	private double fuelPercent = 0.0;//from 0 t  1
 	private double fuelCapacity = 0.0;//from 0 to 1
-	// public trash.Location location;
 	private ArrayList<AbstractPerson> passengers;
 	private ArrayList<Resource> cargo;
 	private ArrayList<MoneySource> money;//could just use a bureucrat as passenger

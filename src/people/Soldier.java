@@ -13,17 +13,17 @@
 
 package people;
 
-import planets.*;
-import universe.*;
-import cities.*;
+import cities.AbstractPerson;
+import planets.Country;
 import tools.vehicles.Vehicle;
+import universe.MoneySource;
 
 //this is not one soldier unit. It isd a unit of soldiers
 //remeber that
 //how to do attacks???
 
 
-public class Soldier extends AbstractPerson/*, LocatableUniverse*/
+public class Soldier extends AbstractPerson
 {
 
     public static enum TypeOfTask

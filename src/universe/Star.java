@@ -3,9 +3,8 @@ package universe;
 /**
  * Created by bob on 3/5/2016.
  */
-import trash.UniqueId;
 
-public class Star extends UniqueId
+public class Star
 {
     
     

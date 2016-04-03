@@ -28,7 +28,6 @@ package universe;
 
 public class Resource
 {
-	//trash.Location //when location is figured out add this.
     public static enum Type
     {
         Iron,Oil,Uranium,Helium,Food,Water

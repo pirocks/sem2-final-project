@@ -4,12 +4,10 @@ package planets;
  * Created by bob on 3/5/2016.
  */
 
-import trash.UniqueId;
-
 import java.util.ArrayList;
 
  
-public class Continent extends UniqueId
+public class Continent
 {
     private ArrayList<Grid> grids;
     private String name;

@@ -1,7 +1,6 @@
 package universe;
 
 import planets.Country;
-import trash.UniqueId;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -14,7 +13,7 @@ import java.util.concurrent.ThreadLocalRandom;
  */
  
 
-public class Universe extends UniqueId implements Serializable
+public class Universe implements Serializable
 {
     private ArrayList<SolarSystem> solarSystems;
     private ArrayList<Country> countries;
