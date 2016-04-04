@@ -1,20 +1,4 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-package trash;
-
+package people.cityworkers;
 
 import buildings.Building;
 import buildings.housing.Housing;
@@ -22,7 +6,6 @@ import buildings.workplaces.Hospital;
 import buildings.workplaces.Workplace;
 import cities.City;
 import people.AbstractPerson;
-
 
 public abstract class CityWorker extends AbstractPerson
 {
@@ -40,7 +23,7 @@ public abstract class CityWorker extends AbstractPerson
 	public abstract void doSkill(long time);
     private City currentCity;//should be renamed to parent city
 	protected long timeRemainingAtLocation;
-	Hospital hospital; //is null if not going to hospital
+	private Hospital hospital; //is null if not going to hospital
 	public CityWorker(AbstractPerson.Type type,City city,Housing home)
 	{
 		super(type,city.getParentCountry());
@@ -148,5 +131,21 @@ public abstract class CityWorker extends AbstractPerson
                 break;
         }
 
+	}
+	@Override
+	public void dieSpecific()
+	{
+		home.leavePerson(this);
+		getWorkBuilding().leavePerson(this);
+		try
+		{
+			hospital.leavePerson(this);
+		}
+		catch(NullPointerException e)
+		{
+			//who cares
+		}
+		currentCity.leavePerson(this);
+		currentBuilding.leavePerson(this);
 	}
 }

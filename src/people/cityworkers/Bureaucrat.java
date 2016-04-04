@@ -4,7 +4,6 @@ import buildings.housing.Housing;
 import buildings.workplaces.Workplace;
 import cities.City;
 import people.AbstractPerson;
-import trash.CityWorker;
 
 public class Bureaucrat extends CityWorker
 {

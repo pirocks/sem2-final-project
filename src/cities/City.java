@@ -2,9 +2,10 @@ package cities;
 
 import buildings.Building;
 import buildings.workplaces.Hospital;
+import people.AbstractPerson;
+import people.cityworkers.CityWorker;
 import planets.Country;
 import planets.Grid;
-import trash.CityWorker;
 import universe.MoneySource;
 
 import java.util.ArrayList;
@@ -87,5 +88,13 @@ public class City extends MoneySource
                 leastLoadedHospital = hospital;
         return leastLoadedHospital;
     }
+    public void leavePerson(AbstractPerson person)
+    {
+	    for(Hospital hospital:hospitals)
+	    {
+		    hospital.leavePerson(person);
+	    }
+	    residents.remove(person);
 
+    }
 }

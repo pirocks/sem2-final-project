@@ -31,8 +31,8 @@
 package buildings.workplaces;
 
 import cities.CityBlock;
+import people.cityworkers.CityWorker;
 import science.Discovery;
-import trash.CityWorker;
 import universe.MoneySource;
 
 import java.util.ArrayList;

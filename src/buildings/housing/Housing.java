@@ -2,7 +2,8 @@ package buildings.housing;
 
 import buildings.Building;
 import cities.CityBlock;
-import trash.CityWorker;
+import people.AbstractPerson;
+import people.cityworkers.CityWorker;
 
 import java.util.ArrayList;
 
@@ -49,5 +50,9 @@ public class Housing extends Building
             sum += person.getPopulation();
         return sum;
     }
-
+	public void leavePerson(AbstractPerson person)
+	{
+		assert(residents.contains(person));
+		residents.remove(person);
+	}
 }

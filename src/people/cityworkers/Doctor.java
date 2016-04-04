@@ -43,7 +43,6 @@ import buildings.housing.Housing;
 import buildings.workplaces.Hospital;
 import cities.City;
 import people.AbstractPerson;
-import trash.CityWorker;
 
 //import buildings.workplace.*;
 

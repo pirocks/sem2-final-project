@@ -77,4 +77,8 @@ public class Country extends MoneySource
         }
         return out;
     }
+    public void loosePerson(AbstractPerson person)
+    {
+        people.remove(person);
+    }
 }

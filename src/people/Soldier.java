@@ -1,16 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
 package people;
 
 import planets.Country;
@@ -21,10 +8,8 @@ import universe.MoneySource;
 //remeber that
 //how to do attacks???
 
-
 public class Soldier extends AbstractPerson
 {
-
     public static enum TypeOfTask
     {
         March,Drive,Guard,Heal//what about attack??
@@ -35,7 +20,6 @@ public class Soldier extends AbstractPerson
     private Vehicle vehicle;
     private MoneySource toGuard;
     private double xDestination,yDestination;
-    
     public Soldier(Country parentCountry)
     {
         //what about location here
@@ -64,5 +48,10 @@ public class Soldier extends AbstractPerson
                 break;
         }
         salaryGiver.pay(this,time*salary);
+    }
+    @Override
+    protected void dieSpecific()
+    {
+		return;
     }
 }

@@ -29,8 +29,8 @@
 package buildings.workplaces;
 
 import cities.CityBlock;
+import people.cityworkers.CityWorker;
 import tools.Tool;
-import trash.CityWorker;
 import universe.MoneySource;
 
 import java.util.ArrayList;

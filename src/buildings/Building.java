@@ -33,12 +33,15 @@ import buildings.housing.WorkersHouseBlock;
 import buildings.workplaces.*;
 import cities.City;
 import cities.CityBlock;
+import people.AbstractPerson;
 import planets.LocationPlanet;
+import tools.weapons.Attackable;
 
 /**
  * Created by bob on 3/5/2016.
+ * does stuuff
  */
-public abstract class Building //extends moneysource for workplace maybe??
+public abstract class Building implements Attackable //extends moneysource for workplace maybe??
 {
     private double structuralIntegrity = 1.0;//form 0 to 1.0
     private double resistance;//the resistance as a 0 to 1.0 percentage
@@ -120,8 +123,8 @@ public abstract class Building //extends moneysource for workplace maybe??
     {
         return parentBlock.getLocation();
     }
-    public Type getType()
-    {
+    public Type getType() {
         return type;
     }
+    public abstract void leavePerson(AbstractPerson person);
 }

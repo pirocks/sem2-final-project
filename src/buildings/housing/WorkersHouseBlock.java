@@ -2,7 +2,7 @@
 package buildings.housing;
 
 import cities.CityBlock;
-import trash.CityWorker;
+import people.cityworkers.CityWorker;
 
 import java.util.ArrayList;
 

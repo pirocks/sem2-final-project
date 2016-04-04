@@ -1,7 +1,8 @@
 package buildings.workplaces;
 
 import cities.CityBlock;
-import trash.CityWorker;
+import people.AbstractPerson;
+import people.cityworkers.CityWorker;
 import universe.MoneySource;
 
 import java.util.ArrayList;
@@ -40,5 +41,9 @@ public class Hospital extends Workplace
     {
         return sickpeople.remove(p);
     }
-    
+    public void leavePerson(AbstractPerson person)
+    {
+	    assert(sickpeople.contains(person));
+	    sickpeople.remove(person);
+    }
 }

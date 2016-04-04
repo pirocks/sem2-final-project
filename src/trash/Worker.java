@@ -1,4 +1,4 @@
-package people.cityworkers;
+package trash;
 
 import buildings.Building;
 import cities.City;

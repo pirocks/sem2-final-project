@@ -1,36 +1,22 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 package people;
 
 import buildings.Building;
 import cities.City;
 import planets.Country;
 import planets.LocationPlanet;
+import tools.weapons.Attackable;
 import universe.MoneySource;
 import universe.UniversalConstants;
 
-public abstract class AbstractPerson extends MoneySource
+public abstract class AbstractPerson extends MoneySource implements Attackable
 {
-    protected LocationPlanet location;
-
+	public static double personDamageResistance;
+	protected LocationPlanet location;
     public AbstractPerson(Type type, City parentCity, Building home) {
         this(type,parentCity.getParentCountry());
     }
 
-    //might need to add checls for health or population below 0;
+    //might need to add checks for health or population below 0;
     public static enum Type
     {
         Doctor,Researcher,Ruler,Soldier,Teacher,WealthyWorker, Bureaucrat, Worker
@@ -137,4 +123,32 @@ public abstract class AbstractPerson extends MoneySource
     {
         return location;
     }
+    @Override
+	public void recieveDamage(double damage)
+    {
+	    health = (health*personDamageResistance - damage)/personDamageResistance;
+	    amIDead();
+    }
+	private boolean alliveQ;
+	public boolean amIDead()
+	{
+		if(population <= 0)
+			die();
+		if(health <= 0)
+			die();
+		return alliveQ;
+	}
+	public void die()
+	{
+		alliveQ = false;
+		dieSpecific();
+		leaveCountryForDeath();
+
+		//need to delete all refernces to this object
+	}
+	protected abstract void dieSpecific();
+	public void leaveCountryForDeath()
+	{
+		country.loosePerson(this);
+	}
 }

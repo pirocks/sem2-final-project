@@ -2,7 +2,8 @@ package buildings.workplaces;
 
 import buildings.Building;
 import cities.CityBlock;
-import trash.CityWorker;
+import people.AbstractPerson;
+import people.cityworkers.CityWorker;
 import universe.MoneySource;
 
 import java.util.ArrayList;
@@ -42,5 +43,10 @@ public class Workplace extends Building
 		for(CityWorker worker:workers)
 			sum += worker.getPopulation();
 		return sum;
+	}
+	public void leavePerson(AbstractPerson person)
+	{
+		assert(workers.contains(person));
+		workers.remove(person);
 	}
 }
