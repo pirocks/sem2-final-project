@@ -1,24 +1,35 @@
 weapons that could be used:
     what about shots that miss??//add hit probability var
-    guns/haandheld by soldier
+    guns/handheld by soldier
+        machine gun small
+        sniper  rifle
+        handgun
         various types, place in package
-    mounted on vehiccles
+    mounted on vehicles
         those that are mounted on vehicles could be mounted on many different/aka tank gun could go onto battleship
     mounted on land vehicles
-
+        machinegun -small
+        machine gun medum
+        antiaircraft  gun
     mounted on seacraft
-        phalanx
-        machine gun -small
+        phalanx -small
+        phalanx -medium
+        machine gun small
         machine gun medium
         machine gun large
+
+        missile luancher-- doesn't actually count as a weapon will be a psuedo weappon
+
     mounted on aircaft:
         machine gun-small
         machine gun medium
+        bomb-- aircraft
+        missile launcher not actual weapon
     mounted on spaceships
         machine gun small
         machine gun medium
     attackable interface for when objects are damaged by weapons??
-        --seems like a good idea, allows eaccch object to take damage
+        --seems like a good idea, allows each object to take damage
 
     what about weapons that counteractt weapons???
     new package different issuemaking stuff too complex for now
