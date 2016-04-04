@@ -13,8 +13,10 @@
 
 
 
-package cities;
+package people;
 
+import buildings.Building;
+import cities.City;
 import planets.Country;
 import planets.LocationPlanet;
 import universe.MoneySource;

@@ -1,10 +1,10 @@
 package people.cityworkers;
 
-import buildings.Housing;
-import buildings.Workplace;
-import cities.AbstractPerson;
+import buildings.housing.Housing;
+import buildings.workplaces.Workplace;
 import cities.City;
-import people.CityWorker;
+import people.AbstractPerson;
+import trash.CityWorker;
 
 public class Bureaucrat extends CityWorker
 {

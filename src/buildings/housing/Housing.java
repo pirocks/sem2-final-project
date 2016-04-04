@@ -1,7 +1,9 @@
-package buildings;
-import cities.*;
-import people.*;
-import buildings.housing.*;
+package buildings.housing;
+
+import buildings.Building;
+import cities.CityBlock;
+import trash.CityWorker;
+
 import java.util.ArrayList;
 
 

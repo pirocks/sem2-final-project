@@ -1,8 +1,11 @@
-package buildings;
-import cities.*;
+package buildings.workplaces;
+
+import buildings.Building;
+import cities.CityBlock;
+import trash.CityWorker;
+import universe.MoneySource;
+
 import java.util.ArrayList;
-import people.*;
-import universe.*;
 public class Workplace extends Building
 {
 	// MoneySource owner;//for salaries//actually not needed
@@ -15,11 +18,6 @@ public class Workplace extends Building
 		this.workers = workers;
 		this.owner = owner;
 	}
-	// public void payWorker(CityWorker cityWorker,double amount)
-	// {
-	// 	assert(isEmployee(cityWorker));
-	// 	owner.pay(cityWorker,amount);
-	// }//not needed each worker iis payed by the city or government
 	public boolean isEmployee(CityWorker worker)
 	{
 		for(CityWorker c:workers)

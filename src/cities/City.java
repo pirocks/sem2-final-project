@@ -1,11 +1,13 @@
 package cities;
+
+import buildings.Building;
+import buildings.workplaces.Hospital;
+import planets.Country;
+import planets.Grid;
+import trash.CityWorker;
+import universe.MoneySource;
+
 import java.util.ArrayList;
-import universe.*;
-import planets.*;
-import buildings.workplaces.*;
-import buildings.*;
-import buildings.housing.*;
-import people.*;
 
 /**
  * Created by bob on 3/5/2016.

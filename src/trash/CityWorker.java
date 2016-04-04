@@ -13,15 +13,15 @@
 
 
 
-package people;
+package trash;
 
 
-import cities.*;
-import buildings.workplaces.*;
-import buildings.*;
-import buildings.housing.*;
-import planets.*;
-import java.util.ArrayList;
+import buildings.Building;
+import buildings.housing.Housing;
+import buildings.workplaces.Hospital;
+import buildings.workplaces.Workplace;
+import cities.City;
+import people.AbstractPerson;
 
 
 public abstract class CityWorker extends AbstractPerson
@@ -47,15 +47,7 @@ public abstract class CityWorker extends AbstractPerson
 		this.home = home;
 		currentCity = city;
 	}
-	//deprecated
-	// public static double distanceBetweenBuildings(Building a, Building b)
-	// {
-	// 	assert(a.getParentCity() == b.getParentCity());
-	// 	double xDiff = a.getXInGrid() - b.getXInGrid();
-	// 	double yDiff = a.getYInGrid() - b.getYInGrid();
-	// 	return Math.sqrt(yDiff*yDiff + xDiff*xDiff);
-	// }
-	private void goHome()
+	public void goHome()
 	{
 		double distance = home.getLocation().distanceBetween(currentBuilding.getLocation());
 		whereAmI = WhereAmI.GoingToHome;

@@ -18,7 +18,9 @@
 
 package cities;
 
-import planets.*;
+import buildings.Building;
+import planets.Grid;
+import planets.LocationPlanet;
 
 public class CityBlock
 {

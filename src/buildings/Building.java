@@ -25,13 +25,15 @@
 
 
 
-package cities;
-import universe.*;
-import java.util.ArrayList;
-import planets.*;
-import people.*;
+package buildings;
+
+import buildings.housing.ApartmentBlock;
+import buildings.housing.RulersHouse;
+import buildings.housing.WorkersHouseBlock;
 import buildings.workplaces.*;
-import buildings.housing.*;
+import cities.City;
+import cities.CityBlock;
+import planets.LocationPlanet;
 
 /**
  * Created by bob on 3/5/2016.

@@ -39,11 +39,11 @@
 
 package people.cityworkers;
 
-import buildings.Housing;
+import buildings.housing.Housing;
 import buildings.workplaces.Hospital;
-import cities.AbstractPerson;
 import cities.City;
-import people.CityWorker;
+import people.AbstractPerson;
+import trash.CityWorker;
 
 //import buildings.workplace.*;
 

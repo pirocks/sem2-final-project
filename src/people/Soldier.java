@@ -13,7 +13,6 @@
 
 package people;
 
-import cities.AbstractPerson;
 import planets.Country;
 import tools.vehicles.Vehicle;
 import universe.MoneySource;

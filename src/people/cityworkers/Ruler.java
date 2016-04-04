@@ -14,9 +14,9 @@
 
 package people.cityworkers;
 
-import cities.AbstractPerson;
-import cities.Building;
+import buildings.Building;
 import cities.City;
+import people.AbstractPerson;
 /*
     one ruler per country
 */

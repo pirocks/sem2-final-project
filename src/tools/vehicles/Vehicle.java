@@ -20,7 +20,7 @@
 
 package tools.vehicles;
 
-import cities.AbstractPerson;
+import people.AbstractPerson;
 import tools.Tool;
 import tools.weapons.Weapon;
 import universe.MoneySource;

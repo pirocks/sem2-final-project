@@ -3,8 +3,8 @@ package planets;
  * Created by bob on 3/5/2016.
  */
 
-import cities.AbstractPerson;
 import cities.City;
+import people.AbstractPerson;
 import universe.MoneySource;
 
 import java.util.ArrayList;

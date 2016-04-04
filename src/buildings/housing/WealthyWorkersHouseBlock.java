@@ -29,9 +29,8 @@
 
 package buildings.housing;
 
-import buildings.Housing;
 import cities.CityBlock;
-import people.CityWorker;
+import trash.CityWorker;
 
 import java.util.ArrayList;
 

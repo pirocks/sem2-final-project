@@ -1,27 +1,9 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 package people.cityworkers;
 
+import buildings.Building;
 import buildings.workplaces.ResearchArea;
-import cities.AbstractPerson;
-import cities.Building;
 import cities.City;
+import people.AbstractPerson;
 public class Researcher extends AbstractPerson
 {
     private ResearchArea workplace;
@@ -29,7 +11,8 @@ public class Researcher extends AbstractPerson
     {
 		super(AbstractPerson.Type.Researcher,parentCity,home);
     }
-    public ResearchArea getWorkBuilding() {
+    public ResearchArea getWorkBuilding()
+    {
         return workplace;
     }
 

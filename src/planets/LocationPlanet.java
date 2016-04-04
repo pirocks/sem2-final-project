@@ -19,8 +19,9 @@
 
 package planets;
 // import java.math.BigDecimal;
-import planets.*;
-import cities.*;
+
+import buildings.Building;
+import cities.CityBlock;
 
 public class LocationPlanet
 {

@@ -14,10 +14,10 @@
 
 package people.cityworkers;
 
+import buildings.Building;
 import buildings.workplaces.School;
-import cities.AbstractPerson;
-import cities.Building;
 import cities.City;
+import people.AbstractPerson;
 public class Teacher extends AbstractPerson
 {
     public double progress = 0.0;//from 0 to 1
