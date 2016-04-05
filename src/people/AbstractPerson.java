@@ -2,13 +2,15 @@ package people;
 
 import buildings.Building;
 import cities.City;
+import cities.CityContainer;
 import planets.Country;
+import planets.CountryContainer;
 import planets.LocationPlanet;
 import tools.weapons.Attackable;
 import universe.MoneySource;
 import universe.UniversalConstants;
 
-public abstract class AbstractPerson extends MoneySource implements Attackable
+public abstract class AbstractPerson extends MoneySource implements Attackable, CityContainer, CountryContainer
 {
 	public static double personDamageResistance;
 	protected LocationPlanet location;

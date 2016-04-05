@@ -1,11 +1,12 @@
 package planets;
 
 import cities.City;
+import cities.CityContainer;
 import tools.weapons.Attackable;
 
 import java.util.ArrayList;
 
-public class Road implements Attackable
+public class Road implements Attackable, CityContainer
 {
 	public static double resistance;
 	private double health = 1.0;
