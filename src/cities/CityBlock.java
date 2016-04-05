@@ -21,8 +21,9 @@ package cities;
 import buildings.Building;
 import planets.Grid;
 import planets.LocationPlanet;
+import tools.weapons.Attackable;
 
-public class CityBlock
+public class CityBlock implements Attackable
 {
     public int x,y;//between 0-100 inclusive??
     public LocationPlanet location;
@@ -62,5 +63,11 @@ public class CityBlock
     public int getYInGrid()
     {
         return y;
+    }
+
+    @Override
+    public void recieveDamage(double damage) {
+        if(building !=  null)
+            building.recieveDamage(damage);
     }
 }

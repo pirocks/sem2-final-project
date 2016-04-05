@@ -6,16 +6,18 @@ import people.AbstractPerson;
 import people.cityworkers.CityWorker;
 import planets.Country;
 import planets.Grid;
+import tools.weapons.Attackable;
 import universe.MoneySource;
 
 import java.util.ArrayList;
 
 /**
  * Created by bob on 3/5/2016.
+ *
  */
 
  
-public class City extends MoneySource
+public class City extends MoneySource implements Attackable
 {
     //remeber to add stuff to thhe unique id if I add more member vars
     //read the above comment
@@ -94,7 +96,13 @@ public class City extends MoneySource
 	    {
 		    hospital.leavePerson(person);
 	    }
+	    assert(residents.contains(person));
 	    residents.remove(person);
+
+    }
+
+    @Override
+    public void recieveDamage(double damage) {
 
     }
 }
