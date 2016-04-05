@@ -1,29 +1,10 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 package planets;
 // import java.math.BigDecimal;
 
 import buildings.Building;
 import cities.CityBlock;
 
-public class LocationPlanet
+public class LocationPlanet implements PlanetContainer
 {
 	public Planet planet;
 	private int Gridx;

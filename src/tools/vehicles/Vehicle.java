@@ -21,6 +21,7 @@
 package tools.vehicles;
 
 import people.AbstractPerson;
+import people.PersonContainer;
 import tools.Tool;
 import tools.weapons.Attackable;
 import tools.weapons.Weapon;
@@ -29,7 +30,7 @@ import universe.Resource;
 
 import java.util.ArrayList;
 
-public abstract class Vehicle extends Tool implements Attackable
+public abstract class Vehicle extends Tool implements Attackable, PersonContainer, VehicleContainer, Weapon
 {
 	private double fuelPercent = 0.0;//from 0 t  1
 	private double fuelCapacity = 0.0;//from 0 to 1
