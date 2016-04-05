@@ -1,10 +1,13 @@
 package cities;
 
 import buildings.Building;
+import buildings.BuildingContainer;
 import buildings.workplaces.Hospital;
 import people.AbstractPerson;
+import people.PersonContainer;
 import people.cityworkers.CityWorker;
 import planets.Country;
+import planets.CountryContainer;
 import planets.Grid;
 import tools.weapons.Attackable;
 import universe.MoneySource;
@@ -17,7 +20,7 @@ import java.util.ArrayList;
  */
 
  
-public class City extends MoneySource implements Attackable
+public class City extends MoneySource implements Attackable, BuildingContainer, CountryContainer, PersonContainer
 {
     //remeber to add stuff to thhe unique id if I add more member vars
     //read the above comment
@@ -101,7 +104,7 @@ public class City extends MoneySource implements Attackable
 
     }
 
-    @Override
+    @Override//TODO: do this
     public void recieveDamage(double damage) {
 
     }

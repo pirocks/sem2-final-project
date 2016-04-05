@@ -1,6 +1,7 @@
 package universe;
 
 import planets.Planet;
+import planets.PlanetContainer;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 /**
  * Created by bob on 3/5/2016.
  */
-public class SolarSystem
+public class SolarSystem implements PlanetContainer
 {
     BigDecimal x,y,z;
     private ArrayList<Planet> planets = new ArrayList<Planet>();

@@ -4,12 +4,14 @@ package planets;
  */
 
 import cities.City;
+import cities.CityContainer;
 import people.AbstractPerson;
+import people.PersonContainer;
 import universe.MoneySource;
 
 import java.util.ArrayList;
 
-public class Country extends MoneySource
+public class Country extends MoneySource  implements PersonContainer,CountryContainer, CityContainer
 {
     public static String[] CountryNames = 
     {};

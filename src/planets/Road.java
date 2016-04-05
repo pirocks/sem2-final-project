@@ -23,6 +23,7 @@ public class Road implements Attackable, CityContainer
 	}
 
 	@Override
+	//TODO:implement this
 	public void recieveDamage(double damage) {
 		health = (health*resistance - damage)/resistance;
 		if()

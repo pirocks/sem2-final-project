@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 
 
-public class Housing extends Building
+public abstract class Housing extends Building
 {
     private int maximumOccupancy;
     protected ArrayList<CityWorker> residents;

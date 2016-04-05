@@ -7,12 +7,12 @@ import people.cityworkers.CityWorker;
 import universe.MoneySource;
 
 import java.util.ArrayList;
-public class Workplace extends Building
+public abstract class Workplace extends Building
 {
 	// MoneySource owner;//for salaries//actually not needed
-	public ArrayList<CityWorker> workers;
-	public int maxWorkers;
-	MoneySource owner;
+	private ArrayList<CityWorker> workers;
+	private int maxWorkers;
+	private MoneySource owner;
 	public Workplace(Type type,ArrayList<CityWorker> workers,CityBlock parentBlock,MoneySource owner)
 	{
 		super(type,parentBlock,false);

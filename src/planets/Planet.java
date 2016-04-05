@@ -11,7 +11,7 @@ import java.util.ArrayList;
     grid array that serves as building block of planet
     resources on each grid array
     possible hazards volcano,temperature changes,weather. hazards are local to grid array*/
-public class Planet
+public class Planet implements CountryContainer
 {
     private ArrayList<Country> countries = new ArrayList<>();
     private ArrayList<Continent> continents = new ArrayList<>();
