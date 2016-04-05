@@ -139,11 +139,10 @@ public abstract class AbstractPerson extends MoneySource implements Attackable
 		return alliveQ;
 	}
 	public void die()
-	{
+    {
 		alliveQ = false;
 		dieSpecific();
 		leaveCountryForDeath();
-
 		//need to delete all refernces to this object
 	}
 	protected abstract void dieSpecific();

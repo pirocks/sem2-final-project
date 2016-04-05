@@ -1,11 +1,14 @@
 package planets;
 
 import cities.City;
+import tools.weapons.Attackable;
 
 import java.util.ArrayList;
 
-public class Road
+public class Road implements Attackable
 {
+	public static double resistance;
+	private double health = 1.0;
 	private ArrayList<City> cities;
 	private ArrayList<LocationPlanet> locations;
 	public boolean passesThrough(City a)
@@ -16,5 +19,11 @@ public class Road
 				return true;
 		}
 		return false;
+	}
+
+	@Override
+	public void recieveDamage(double damage) {
+		health = (health*resistance - damage)/resistance;
+		if()
 	}
 }
