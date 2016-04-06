@@ -2,6 +2,7 @@ package planets;
 
 import cities.City;
 import cities.CityBlock;
+import cities.CityContainer;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ import java.util.ArrayList;
  * grids contain 100 cityblocks. Not in an array though
  */
 
-public class Grid
+public class Grid implements  PlanetContainer,CountryContainer, CityContainer
 {
     private int x,y;
     private Planet parentPlanet;
@@ -38,7 +39,7 @@ public class Grid
     }
     public void registerHazard(NaturalHazard hazrad)//natural hzard v regular hazzrad
     {
-        
+        //TODO:figure this one out
     }
     public ArrayList<NaturalHazard> getHazards()
     {

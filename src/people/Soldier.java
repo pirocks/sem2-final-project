@@ -2,13 +2,15 @@ package people;
 
 import planets.Country;
 import tools.vehicles.Vehicle;
+import tools.vehicles.VehicleContainer;
 import universe.MoneySource;
+import universe.MoneySourceContainer;
 
 //this is not one soldier unit. It isd a unit of soldiers
 //remeber that
 //how to do attacks???
 
-public class Soldier extends AbstractPerson
+public class Soldier extends AbstractPerson implements VehicleContainer, MoneySourceContainer
 {
     public static enum TypeOfTask
     {
@@ -53,5 +55,5 @@ public class Soldier extends AbstractPerson
     protected void dieSpecific()
     {
 		return;
-    }
+    }//TODO:implement this
 }

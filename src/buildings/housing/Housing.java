@@ -3,13 +3,14 @@ package buildings.housing;
 import buildings.Building;
 import cities.CityBlock;
 import people.AbstractPerson;
+import people.PersonContainer;
 import people.cityworkers.CityWorker;
 
 import java.util.ArrayList;
 
 
 
-public abstract class Housing extends Building
+public abstract class Housing extends Building implements PersonContainer
 {
     private int maximumOccupancy;
     protected ArrayList<CityWorker> residents;

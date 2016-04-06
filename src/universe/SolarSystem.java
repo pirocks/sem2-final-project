@@ -35,4 +35,8 @@ public class SolarSystem implements PlanetContainer
     }
 
 
+    @Override
+    public void remove(Planet planet) {
+        planets.remove(planet);
+    }
 }

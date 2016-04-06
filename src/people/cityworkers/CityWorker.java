@@ -1,13 +1,14 @@
 package people.cityworkers;
 
 import buildings.Building;
+import buildings.BuildingContainer;
 import buildings.housing.Housing;
 import buildings.workplaces.Hospital;
 import buildings.workplaces.Workplace;
 import cities.City;
 import people.AbstractPerson;
 
-public abstract class CityWorker extends AbstractPerson
+public abstract class CityWorker extends AbstractPerson implements BuildingContainer//don't foret to get the workplace
 {
 	public static long travelTimeConstant;
 	public static long TimeAtWork;

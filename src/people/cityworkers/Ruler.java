@@ -20,7 +20,7 @@ import people.AbstractPerson;
 /*
     one ruler per country
 */
-public class Ruler extends AbstractPerson
+public class Ruler extends CityWorker//TODO:clean this up
 {
     //possible deprecation of this object//cannot be deprecated b/c ai
     public Ruler(City parentCity, Building home)

@@ -19,11 +19,12 @@
 package cities;
 
 import buildings.Building;
+import buildings.BuildingContainer;
 import planets.Grid;
 import planets.LocationPlanet;
 import tools.weapons.Attackable;
 
-public class CityBlock implements Attackable,CityContainer
+public class CityBlock implements Attackable,CityContainer, BuildingContainer
 {
     public int x,y;//between 0-100 inclusive??
     public LocationPlanet location;

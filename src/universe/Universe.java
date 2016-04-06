@@ -31,4 +31,9 @@ public class Universe implements Serializable, CountryContainer
             solarSystems.add(new SolarSystem(new BigDecimal(x).multiply(largeNumber),new BigDecimal(y).multiply(largeNumber),new BigDecimal(z).multiply(largeNumber)));
         }
     }
+
+    @Override
+    public void remove(Country country) {
+        countries.remove(country);
+    }
 }

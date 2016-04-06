@@ -1,18 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 package universe;
 
 public class MoneySource
@@ -32,7 +17,7 @@ public class MoneySource
     }
     public void recieve(Resource r)
     {
-        
+        //TODO:implement me//figure ut wahat this is
     }
     public void pay(MoneySource target,double amount)
     {

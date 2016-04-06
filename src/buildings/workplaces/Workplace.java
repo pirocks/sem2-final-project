@@ -3,11 +3,13 @@ package buildings.workplaces;
 import buildings.Building;
 import cities.CityBlock;
 import people.AbstractPerson;
+import people.PersonContainer;
 import people.cityworkers.CityWorker;
 import universe.MoneySource;
+import universe.MoneySourceContainer;
 
 import java.util.ArrayList;
-public abstract class Workplace extends Building
+public abstract class Workplace extends Building  implements PersonContainer, MoneySourceContainer
 {
 	// MoneySource owner;//for salaries//actually not needed
 	private ArrayList<CityWorker> workers;

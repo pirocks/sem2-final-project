@@ -7,6 +7,7 @@ package universe;
 
 public class Star
 {
+    private SolarSystem parentSolarSystem;
     private double radius;
     private double energyEmitted;
     private double mass;

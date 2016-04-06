@@ -11,7 +11,7 @@ import universe.MoneySource;
 
 import java.util.ArrayList;
 
-public class Country extends MoneySource  implements PersonContainer,CountryContainer, CityContainer
+public class Country extends MoneySource  implements PersonContainer,CountryContainer, CityContainer,RoadContainer
 {
     public static String[] CountryNames = 
     {};
