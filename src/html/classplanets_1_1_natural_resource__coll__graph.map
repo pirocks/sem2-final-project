@@ -1,0 +1,4 @@
+<map id="planets.NaturalResource" name="planets.NaturalResource">
+<area shape="rect" id="node2" href="$classuniverse_1_1_money_source.html" title="universe.MoneySource" alt="" coords="5,95,160,121"/>
+<area shape="rect" id="node3" href="$classuniverse_1_1_resource.html" title="universe.Resource" alt="" coords="184,95,315,121"/>
+</map>

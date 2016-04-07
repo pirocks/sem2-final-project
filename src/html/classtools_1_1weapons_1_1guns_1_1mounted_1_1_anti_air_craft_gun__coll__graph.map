@@ -1,0 +1,4 @@
+<map id="tools.weapons.guns.mounted.AntiAirCraftGun" name="tools.weapons.guns.mounted.AntiAirCraftGun">
+<area shape="rect" id="node2" href="$classtools_1_1weapons_1_1_weapon.html" title="tools.weapons.Weapon" alt="" coords="24,80,183,107"/>
+<area shape="rect" id="node3" href="$interfacetools_1_1weapons_1_1_attackable.html" title="tools.weapons.Attackable" alt="" coords="17,5,189,32"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="people.Soldier" name="people.Soldier">
+<area shape="rect" id="node2" href="$classpeople_1_1_abstract_person.html" title="people.AbstractPerson" alt="" coords="821,227,976,253"/>
+<area shape="rect" id="node3" href="$classuniverse_1_1_money_source.html" title="universe.MoneySource" alt="" coords="235,140,390,167"/>
+<area shape="rect" id="node7" href="$classplanets_1_1_country.html" title="planets.Country" alt="" coords="536,313,651,340"/>
+<area shape="rect" id="node4" href="$interfacetools_1_1weapons_1_1_attackable.html" title="tools.weapons.Attackable" alt="" coords="507,201,679,228"/>
+<area shape="rect" id="node5" href="$interfaceplanets_1_1_country_container.html" title="planets.CountryContainer" alt="" coords="5,225,176,252"/>
+<area shape="rect" id="node14" href="$classplanets_1_1_planet.html" title="planets.Planet" alt="" coords="260,5,365,32"/>
+<area shape="rect" id="node6" href="$interfaceuniverse_1_1_money_source_container.html" title="universe.MoneySourceContainer" alt="" coords="488,364,699,391"/>
+<area shape="rect" id="node8" href="$interfacepeople_1_1_person_container.html" title="people.PersonContainer" alt="" coords="232,479,393,505"/>
+<area shape="rect" id="node9" href="$interfacecities_1_1_city_container.html" title="cities.CityContainer" alt="" coords="244,276,381,303"/>
+<area shape="rect" id="node10" href="$interfaceplanets_1_1_road_container.html" title="planets.RoadContainer" alt="" coords="235,327,390,353"/>
+<area shape="rect" id="node12" href="$classplanets_1_1_location_planet.html" title="planets.LocationPlanet" alt="" coords="516,37,671,64"/>
+<area shape="rect" id="node13" href="$interfaceplanets_1_1_planet_container.html" title="planets.PlanetContainer" alt="" coords="232,56,393,83"/>
+<area shape="rect" id="node15" href="$interfacetools_1_1vehicles_1_1_vehicle_container.html" title="tools.vehicles.VehicleContainer" alt="" coords="796,415,1001,441"/>
+</map>

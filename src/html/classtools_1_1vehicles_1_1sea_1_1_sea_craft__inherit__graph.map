@@ -1,0 +1,18 @@
+<map id="tools.vehicles.sea.SeaCraft" name="tools.vehicles.sea.SeaCraft">
+<area shape="rect" id="node9" href="$classtools_1_1vehicles_1_1sea_1_1_aircraft_carrier.html" title="tools.vehicles.sea.Aircraft\lCarrier" alt="" coords="708,5,881,47"/>
+<area shape="rect" id="node10" href="$classtools_1_1vehicles_1_1sea_1_1_battle_ship.html" title="tools.vehicles.sea.BattleShip" alt="" coords="699,71,890,98"/>
+<area shape="rect" id="node11" href="$classtools_1_1vehicles_1_1sea_1_1_destroyer.html" title="tools.vehicles.sea.Destroyer" alt="" coords="701,122,889,149"/>
+<area shape="rect" id="node12" href="$classtools_1_1vehicles_1_1sea_1_1_nuclear_submarine.html" title="tools.vehicles.sea.Nuclear\lSubmarine" alt="" coords="707,173,883,215"/>
+<area shape="rect" id="node13" href="$classtools_1_1vehicles_1_1sea_1_1_submarine.html" title="tools.vehicles.sea.Submarine" alt="" coords="698,239,891,266"/>
+<area shape="rect" id="node14" href="$classtools_1_1vehicles_1_1sea_1_1_transporter.html" title="tools.vehicles.sea.Transporter" alt="" coords="696,290,893,317"/>
+<area shape="rect" id="node2" href="$classtools_1_1vehicles_1_1_vehicle.html" title="tools.vehicles.Vehicle" alt="" coords="268,151,417,178"/>
+<area shape="rect" id="node3" href="$classtools_1_1_tool.html" title="tools.Tool" alt="" coords="73,25,152,51"/>
+<area shape="rect" id="node4" href="$interfacetools_1_1weapons_1_1_attackable.html" title="tools.weapons.Attackable" alt="" coords="27,75,199,102"/>
+<area shape="rect" id="node5" href="$interfacepeople_1_1_person_container.html" title="people.PersonContainer" alt="" coords="32,126,193,153"/>
+<area shape="rect" id="node6" href="$interfacetools_1_1vehicles_1_1_vehicle_container.html" title="tools.vehicles.VehicleContainer" alt="" coords="10,177,215,203"/>
+<area shape="rect" id="node7" href="$interfacetools_1_1weapons_1_1_weapon_container.html" title="tools.weapons.WeaponContainer" alt="" coords="5,227,220,254"/>
+<area shape="rect" id="node8" href="$interfaceuniverse_1_1_money_source_container.html" title="universe.MoneySourceContainer" alt="" coords="7,278,218,305"/>
+<area shape="rect" id="node15" href="$classtools_1_1vehicles_1_1sea_1_1_transporter_large.html" title="tools.vehicles.sea.Transporter\lLarge" alt="" coords="941,217,1139,259"/>
+<area shape="rect" id="node16" href="$classtools_1_1vehicles_1_1sea_1_1_transporter_medium.html" title="tools.vehicles.sea.Transporter\lMedium" alt="" coords="941,283,1139,324"/>
+<area shape="rect" id="node17" href="$classtools_1_1vehicles_1_1sea_1_1_transporter_small.html" title="tools.vehicles.sea.Transporter\lSmall" alt="" coords="941,348,1139,389"/>
+</map>

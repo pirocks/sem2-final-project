@@ -1,0 +1,14 @@
+<map id="tools.weapons.Weapon" name="tools.weapons.Weapon">
+<area shape="rect" id="node3" href="$classtools_1_1weapons_1_1guns_1_1_gun.html" title="tools.weapons.guns.Gun" alt="" coords="447,111,613,138"/>
+<area shape="rect" id="node7" href="$classtools_1_1weapons_1_1guns_1_1mounted_1_1_anti_air_craft_gun.html" title="tools.weapons.guns.mounted.\lAntiAirCraftGun" alt="" coords="432,201,628,243"/>
+<area shape="rect" id="node8" href="$classtools_1_1weapons_1_1guns_1_1mounted_1_1_machine_gun.html" title="tools.weapons.guns.mounted.\lMachineGun" alt="" coords="432,267,628,308"/>
+<area shape="rect" id="node12" href="$classtools_1_1weapons_1_1space_1_1_space_weapon.html" title="tools.weapons.space.Space\lWeapon" alt="" coords="437,361,623,403"/>
+<area shape="rect" id="node2" href="$interfacetools_1_1weapons_1_1_attackable.html" title="tools.weapons.Attackable" alt="" coords="5,242,177,269"/>
+<area shape="rect" id="node4" href="$classtools_1_1weapons_1_1guns_1_1artillery_1_1_artillery.html" title="tools.weapons.guns.artillery.\lArtillery" alt="" coords="680,5,868,47"/>
+<area shape="rect" id="node5" href="$classtools_1_1weapons_1_1guns_1_1carried_1_1_carried.html" title="tools.weapons.guns.carried.\lCarried" alt="" coords="681,71,867,112"/>
+<area shape="rect" id="node6" href="$classtools_1_1weapons_1_1guns_1_1mounted_1_1_mounted.html" title="tools.weapons.guns.mounted.\lMounted" alt="" coords="676,136,872,177"/>
+<area shape="rect" id="node9" href="$classtools_1_1weapons_1_1guns_1_1_machine_gun_small.html" title="tools.weapons.guns.Machine\lGunSmall" alt="" coords="679,201,869,243"/>
+<area shape="rect" id="node10" href="$classtools_1_1weapons_1_1guns_1_1mounted_1_1_machine_gun_large.html" title="tools.weapons.guns.mounted.\lMachineGunLarge" alt="" coords="676,267,872,308"/>
+<area shape="rect" id="node11" href="$classtools_1_1weapons_1_1guns_1_1mounted_1_1_machine_gun_medium.html" title="tools.weapons.guns.mounted.\lMachineGunMedium" alt="" coords="676,332,872,373"/>
+<area shape="rect" id="node13" href="$classtools_1_1weapons_1_1space_1_1_laser.html" title="tools.weapons.space.Laser" alt="" coords="683,398,865,425"/>
+</map>

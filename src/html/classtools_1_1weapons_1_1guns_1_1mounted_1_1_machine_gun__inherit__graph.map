@@ -1,0 +1,7 @@
+<map id="tools.weapons.guns.mounted.MachineGun" name="tools.weapons.guns.mounted.MachineGun">
+<area shape="rect" id="node4" href="$classtools_1_1weapons_1_1guns_1_1_machine_gun_small.html" title="tools.weapons.guns.Machine\lGunSmall" alt="" coords="679,5,869,47"/>
+<area shape="rect" id="node5" href="$classtools_1_1weapons_1_1guns_1_1mounted_1_1_machine_gun_large.html" title="tools.weapons.guns.mounted.\lMachineGunLarge" alt="" coords="676,71,872,112"/>
+<area shape="rect" id="node6" href="$classtools_1_1weapons_1_1guns_1_1mounted_1_1_machine_gun_medium.html" title="tools.weapons.guns.mounted.\lMachineGunMedium" alt="" coords="676,136,872,177"/>
+<area shape="rect" id="node2" href="$classtools_1_1weapons_1_1_weapon.html" title="tools.weapons.Weapon" alt="" coords="225,78,384,105"/>
+<area shape="rect" id="node3" href="$interfacetools_1_1weapons_1_1_attackable.html" title="tools.weapons.Attackable" alt="" coords="5,78,177,105"/>
+</map>

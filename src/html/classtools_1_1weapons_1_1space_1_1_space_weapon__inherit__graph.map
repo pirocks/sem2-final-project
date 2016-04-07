@@ -1,0 +1,5 @@
+<map id="tools.weapons.space.SpaceWeapon" name="tools.weapons.space.SpaceWeapon">
+<area shape="rect" id="node4" href="$classtools_1_1weapons_1_1space_1_1_laser.html" title="tools.weapons.space.Laser" alt="" coords="8,244,189,271"/>
+<area shape="rect" id="node2" href="$classtools_1_1weapons_1_1_weapon.html" title="tools.weapons.Weapon" alt="" coords="19,80,178,107"/>
+<area shape="rect" id="node3" href="$interfacetools_1_1weapons_1_1_attackable.html" title="tools.weapons.Attackable" alt="" coords="13,5,185,32"/>
+</map>

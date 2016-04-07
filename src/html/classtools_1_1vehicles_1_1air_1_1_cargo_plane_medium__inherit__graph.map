@@ -1,0 +1,11 @@
+<map id="tools.vehicles.air.CargoPlaneMedium" name="tools.vehicles.air.CargoPlaneMedium">
+<area shape="rect" id="node2" href="$classtools_1_1vehicles_1_1air_1_1_cargo_plane.html" title="tools.vehicles.air.Cargo\lPlane" alt="" coords="680,125,839,166"/>
+<area shape="rect" id="node3" href="$classtools_1_1vehicles_1_1air_1_1_aircraft.html" title="tools.vehicles.air.Aircraft" alt="" coords="465,132,632,159"/>
+<area shape="rect" id="node4" href="$classtools_1_1vehicles_1_1_vehicle.html" title="tools.vehicles.Vehicle" alt="" coords="268,132,417,159"/>
+<area shape="rect" id="node5" href="$classtools_1_1_tool.html" title="tools.Tool" alt="" coords="73,5,152,32"/>
+<area shape="rect" id="node6" href="$interfacetools_1_1weapons_1_1_attackable.html" title="tools.weapons.Attackable" alt="" coords="27,56,199,83"/>
+<area shape="rect" id="node7" href="$interfacepeople_1_1_person_container.html" title="people.PersonContainer" alt="" coords="32,107,193,133"/>
+<area shape="rect" id="node8" href="$interfacetools_1_1vehicles_1_1_vehicle_container.html" title="tools.vehicles.VehicleContainer" alt="" coords="10,157,215,184"/>
+<area shape="rect" id="node9" href="$interfacetools_1_1weapons_1_1_weapon_container.html" title="tools.weapons.WeaponContainer" alt="" coords="5,208,220,235"/>
+<area shape="rect" id="node10" href="$interfaceuniverse_1_1_money_source_container.html" title="universe.MoneySourceContainer" alt="" coords="7,259,218,285"/>
+</map>

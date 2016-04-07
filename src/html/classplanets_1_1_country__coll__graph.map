@@ -1,0 +1,7 @@
+<map id="planets.Country" name="planets.Country">
+<area shape="rect" id="node2" href="$classuniverse_1_1_money_source.html" title="universe.MoneySource" alt="" coords="15,5,170,32"/>
+<area shape="rect" id="node3" href="$interfacepeople_1_1_person_container.html" title="people.PersonContainer" alt="" coords="12,56,173,83"/>
+<area shape="rect" id="node4" href="$interfaceplanets_1_1_country_container.html" title="planets.CountryContainer" alt="" coords="7,107,178,133"/>
+<area shape="rect" id="node5" href="$interfacecities_1_1_city_container.html" title="cities.CityContainer" alt="" coords="24,157,161,184"/>
+<area shape="rect" id="node6" href="$interfaceplanets_1_1_road_container.html" title="planets.RoadContainer" alt="" coords="15,208,170,235"/>
+</map>

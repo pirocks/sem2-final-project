@@ -1,0 +1,4 @@
+<map id="tools.weapons.guns.Gun" name="tools.weapons.guns.Gun">
+<area shape="rect" id="node2" href="$classtools_1_1weapons_1_1_weapon.html" title="tools.weapons.Weapon" alt="" coords="12,80,171,107"/>
+<area shape="rect" id="node3" href="$interfacetools_1_1weapons_1_1_attackable.html" title="tools.weapons.Attackable" alt="" coords="5,5,177,32"/>
+</map>

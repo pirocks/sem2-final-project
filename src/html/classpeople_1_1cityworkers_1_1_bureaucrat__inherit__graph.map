@@ -1,0 +1,10 @@
+<map id="people.cityworkers.Bureaucrat" name="people.cityworkers.Bureaucrat">
+<area shape="rect" id="node2" href="$classpeople_1_1cityworkers_1_1_city_worker.html" title="people.cityworkers.CityWorker" alt="" coords="491,132,692,159"/>
+<area shape="rect" id="node3" href="$classpeople_1_1_abstract_person.html" title="people.AbstractPerson" alt="" coords="276,81,431,108"/>
+<area shape="rect" id="node4" href="$classuniverse_1_1_money_source.html" title="universe.MoneySource" alt="" coords="33,5,188,32"/>
+<area shape="rect" id="node5" href="$interfacetools_1_1weapons_1_1_attackable.html" title="tools.weapons.Attackable" alt="" coords="25,56,197,83"/>
+<area shape="rect" id="node6" href="$interfaceplanets_1_1_country_container.html" title="planets.CountryContainer" alt="" coords="25,107,196,133"/>
+<area shape="rect" id="node7" href="$interfaceuniverse_1_1_money_source_container.html" title="universe.MoneySourceContainer" alt="" coords="5,157,216,184"/>
+<area shape="rect" id="node8" href="$interfacebuildings_1_1_building_container.html" title="buildings.BuildingContainer" alt="" coords="264,132,443,159"/>
+<area shape="rect" id="node9" href="$interfacecities_1_1_city_container.html" title="cities.CityContainer" alt="" coords="285,183,422,209"/>
+</map>

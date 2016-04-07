@@ -1,0 +1,10 @@
+<map id="buildings.housing.Housing" name="buildings.housing.Housing">
+<area shape="rect" id="node6" href="$classbuildings_1_1housing_1_1_apartment_block.html" title="buildings.housing.Apartment\lBlock" alt="" coords="619,5,805,47"/>
+<area shape="rect" id="node7" href="$classbuildings_1_1housing_1_1_rulers_house.html" title="buildings.housing.Rulers\lHouse" alt="" coords="630,71,794,112"/>
+<area shape="rect" id="node8" href="$classbuildings_1_1housing_1_1_wealthy_workers_house_block.html" title="buildings.housing.Wealthy\lWorkersHouseBlock" alt="" coords="625,136,799,177"/>
+<area shape="rect" id="node9" href="$classbuildings_1_1housing_1_1_workers_house_block.html" title="buildings.housing.Workers\lHouseBlock" alt="" coords="625,201,799,243"/>
+<area shape="rect" id="node2" href="$classbuildings_1_1_building.html" title="buildings.Building" alt="" coords="225,86,348,113"/>
+<area shape="rect" id="node3" href="$interfacetools_1_1weapons_1_1_attackable.html" title="tools.weapons.Attackable" alt="" coords="5,35,177,62"/>
+<area shape="rect" id="node4" href="$interfacecities_1_1_city_container.html" title="cities.CityContainer" alt="" coords="23,86,160,113"/>
+<area shape="rect" id="node5" href="$interfacepeople_1_1_person_container.html" title="people.PersonContainer" alt="" coords="11,137,172,163"/>
+</map>

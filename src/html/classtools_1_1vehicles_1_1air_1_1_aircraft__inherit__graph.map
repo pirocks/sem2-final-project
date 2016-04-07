@@ -1,0 +1,18 @@
+<map id="tools.vehicles.air.Aircraft" name="tools.vehicles.air.Aircraft">
+<area shape="rect" id="node9" href="$classtools_1_1vehicles_1_1air_1_1_cargo_plane.html" title="tools.vehicles.air.Cargo\lPlane" alt="" coords="692,104,851,145"/>
+<area shape="rect" id="node13" href="$classtools_1_1vehicles_1_1air_1_1_fighter_plane.html" title="tools.vehicles.air.Fighter\lPlane" alt="" coords="689,201,853,243"/>
+<area shape="rect" id="node16" href="$classtools_1_1vehicles_1_1air_1_1_helicopter.html" title="tools.vehicles.air.Helicopter" alt="" coords="680,267,863,294"/>
+<area shape="rect" id="node17" href="$classtools_1_1vehicles_1_1air_1_1_missile.html" title="tools.vehicles.air.Missile" alt="" coords="689,318,854,345"/>
+<area shape="rect" id="node2" href="$classtools_1_1vehicles_1_1_vehicle.html" title="tools.vehicles.Vehicle" alt="" coords="268,238,417,265"/>
+<area shape="rect" id="node3" href="$classtools_1_1_tool.html" title="tools.Tool" alt="" coords="73,111,152,138"/>
+<area shape="rect" id="node4" href="$interfacetools_1_1weapons_1_1_attackable.html" title="tools.weapons.Attackable" alt="" coords="27,162,199,189"/>
+<area shape="rect" id="node5" href="$interfacepeople_1_1_person_container.html" title="people.PersonContainer" alt="" coords="32,213,193,239"/>
+<area shape="rect" id="node6" href="$interfacetools_1_1vehicles_1_1_vehicle_container.html" title="tools.vehicles.VehicleContainer" alt="" coords="10,263,215,290"/>
+<area shape="rect" id="node7" href="$interfacetools_1_1weapons_1_1_weapon_container.html" title="tools.weapons.WeaponContainer" alt="" coords="5,314,220,341"/>
+<area shape="rect" id="node8" href="$interfaceuniverse_1_1_money_source_container.html" title="universe.MoneySourceContainer" alt="" coords="7,365,218,391"/>
+<area shape="rect" id="node10" href="$classtools_1_1vehicles_1_1air_1_1_cargo_plane_large.html" title="tools.vehicles.air.Cargo\lPlaneLarge" alt="" coords="913,5,1072,47"/>
+<area shape="rect" id="node11" href="$classtools_1_1vehicles_1_1air_1_1_cargo_plane_medium.html" title="tools.vehicles.air.Cargo\lPlaneMedium" alt="" coords="913,71,1072,112"/>
+<area shape="rect" id="node12" href="$classtools_1_1vehicles_1_1air_1_1_cargo_plane_small.html" title="tools.vehicles.air.Cargo\lPlaneSmall" alt="" coords="913,136,1072,177"/>
+<area shape="rect" id="node14" href="$classtools_1_1vehicles_1_1air_1_1_fighter_plane_medium.html" title="tools.vehicles.air.Fighter\lPlaneMedium" alt="" coords="911,201,1075,243"/>
+<area shape="rect" id="node15" href="$classtools_1_1vehicles_1_1air_1_1_fighter_plane_small.html" title="tools.vehicles.air.Fighter\lPlaneSmall" alt="" coords="911,267,1075,308"/>
+</map>

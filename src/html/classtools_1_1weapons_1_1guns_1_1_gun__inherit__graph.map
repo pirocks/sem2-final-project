@@ -1,0 +1,7 @@
+<map id="tools.weapons.guns.Gun" name="tools.weapons.guns.Gun">
+<area shape="rect" id="node4" href="$classtools_1_1weapons_1_1guns_1_1artillery_1_1_artillery.html" title="tools.weapons.guns.artillery.\lArtillery" alt="" coords="651,5,839,47"/>
+<area shape="rect" id="node5" href="$classtools_1_1weapons_1_1guns_1_1carried_1_1_carried.html" title="tools.weapons.guns.carried.\lCarried" alt="" coords="652,71,837,112"/>
+<area shape="rect" id="node6" href="$classtools_1_1weapons_1_1guns_1_1mounted_1_1_mounted.html" title="tools.weapons.guns.mounted.\lMounted" alt="" coords="647,136,843,177"/>
+<area shape="rect" id="node2" href="$classtools_1_1weapons_1_1_weapon.html" title="tools.weapons.Weapon" alt="" coords="225,78,384,105"/>
+<area shape="rect" id="node3" href="$interfacetools_1_1weapons_1_1_attackable.html" title="tools.weapons.Attackable" alt="" coords="5,78,177,105"/>
+</map>
