@@ -9,7 +9,7 @@ public class TruckLarge extends Truck {
 	public static int maxPassengersInitial;
 	public static double maxWeightInitial;
 
-	protected TransporterSmall(double resistance, double startHealth) {
+	protected TruckLarge(double resistance, double startHealth) {
 		super(resistance, startHealth, maxPassengersInitial, maxWeightInitial);
 	}
 
