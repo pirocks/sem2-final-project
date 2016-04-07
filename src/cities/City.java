@@ -20,7 +20,6 @@ import java.util.ArrayList;
  *
  */
 
- 
 public class City extends MoneySource implements Attackable, BuildingContainer, CountryContainer, PersonContainer
 {
     //remeber to add stuff to thhe unique id if I add more member vars
@@ -34,8 +33,7 @@ public class City extends MoneySource implements Attackable, BuildingContainer, 
     public ArrayList<CityWorker> residents;
     public ArrayList<CityWorker> unemployedResidents;
     private Country parentCountry;//make sutre to change when cuity is captured.
-    public City(boolean isCapital,Grid parentGrid,Country parentCountry,double wealth, int x, int y)
-    {
+    public City(boolean isCapital,Grid parentGrid,Country parentCountry,double wealth, int x, int y) {
         super(wealth);
         if(x > 100 || x < 0)
             throw new IllegalArgumentException();
@@ -51,8 +49,7 @@ public class City extends MoneySource implements Attackable, BuildingContainer, 
     {
         return cityBlocks;
     }
-    public Building getCapitalBuilding()
-    {
+    public Building getCapitalBuilding() {
         assert(isCapital);
         for(CityBlock cityBlock:cityBlocks)
             if(cityBlock.getBuilding().getType() == Building.Type.RulersHouse)
@@ -60,13 +57,11 @@ public class City extends MoneySource implements Attackable, BuildingContainer, 
         assert(false);
         return null;
     }
-    public double getXInPlanet()
-    {
+    public double getXInPlanet() {
         double GridX = (double)parentGrid.getX();
         return GridX + x/100.0;
     }
-    public double getYInPlanet()
-    {
+    public double getYInPlanet() {
         double GridY = (double)parentGrid.getY();
         return GridY + y/100.0;
     }
@@ -86,16 +81,14 @@ public class City extends MoneySource implements Attackable, BuildingContainer, 
     {
         return y;
     }
-    public Hospital getLeastLoadedHosital()
-    {
+    public Hospital getLeastLoadedHosital() {
         Hospital leastLoadedHospital = hospitals.get(0);
         for(Hospital hospital:hospitals)
             if(leastLoadedHospital.getWorkLoad() > hospital.getWorkLoad())
                 leastLoadedHospital = hospital;
         return leastLoadedHospital;
     }
-    public void leavePerson(AbstractPerson person)
-    {
+    public void leavePerson(AbstractPerson person) {
 	    for(Hospital hospital:hospitals)
 	    {
 		    hospital.leavePerson(person);
@@ -108,6 +101,7 @@ public class City extends MoneySource implements Attackable, BuildingContainer, 
     public void remove(Building building) {
         for(CityBlock cityBlock:cityBlocks)
             cityBlock.remove(building);
+        hospitals.remove(building);
     }
     @Override
     public void remove(AbstractPerson person) {

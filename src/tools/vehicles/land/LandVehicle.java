@@ -5,8 +5,10 @@ import universe.ResourceDemand;
 
 public abstract class LandVehicle extends Vehicle
 {
-	public LandVehicle(Type type) {
-		super(type);
+
+
+	protected LandVehicle(double resistance, double startHealth, int maxPassengers, double maxWeight) {
+		super(resistance, startHealth, maxPassengers, maxWeight);
 	}
 
 	public boolean inSpaceQ()

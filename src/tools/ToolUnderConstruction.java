@@ -9,9 +9,13 @@ import universe.ResourceDemand;
  */
 public class ToolUnderConstruction <Type extends Tool>
 {
-	private Type type;
-	private ResourceDemand resourceDemand = type.requiredResourcesForConstruction();
-	private long timeRequired = type.constructionManHours();
+	private Type object;
+	private ResourceDemand resourceDemand = object.requiredResourcesForConstruction();
+	private long timeRequired = object.constructionManHours();
+	public ToolUnderConstruction(Type object)
+	{
+		this.object = object;
+	}
 	public boolean pay(Resource resource)
 	{
 		resource.pay(resourceDemand);
@@ -21,12 +25,17 @@ public class ToolUnderConstruction <Type extends Tool>
 	{
 		timeRequired -= time;
 		return areWeDoneYet();
-		//todo what to do when consytruction complete//return a boolean?
 	}
 	private boolean areWeDoneYet()
 	{
 		if(timeRequired < 0 || resourceDemand.quantity == 0)
 			return true;
 		return false;
+	}
+	public Type getFinishedTool()
+	{
+		if(areWeDoneYet())
+			return object;
+		return null;
 	}
 }

@@ -118,6 +118,7 @@ public class LocationPlanet implements PlanetContainer
 	{
 		return Blocky;
 	}
+	public Planet getPlanet() {return planet;}
 
 	@Override
 	public void remove(Planet planet) {

@@ -1,16 +1,16 @@
 package tools.weapons;
 
-public class Weapon implements Attackable
+import tools.Tool;
+
+public abstract class Weapon extends Tool
 {
 	//one weapon per soldier, regarrdless of soldier population
-	private double health;
-	private double resistance;
+
 	private final double damage;
 	public Weapon(double damage,double resistance,double startHealth)
 	{
+		super(resistance,startHealth);
 		this.damage = damage;
-		health = startHealth;
-		this.resistance = resistance;
 //		if(this instanceof )//maybe use this
 		//todo do nothing
 	}
@@ -25,10 +25,5 @@ public class Weapon implements Attackable
 	public void attack(Attackable target)
 	{
 		target.receiveDamage(damage,this);
-	}
-
-	@Override
-	public void receiveDamage(double damage, Weapon attacker) {
-		health -= damage/resistance;
 	}
 }

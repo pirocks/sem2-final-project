@@ -5,10 +5,11 @@ import tools.vehicles.Vehicle;
 public abstract class SeaCraft extends Vehicle
 {
 	public boolean inWaterQ;
-	public SeaCraft()
-	{
 
+	protected SeaCraft(double resistance, double startHealth, int maxPassengers, double maxWeight) {
+		super(resistance, startHealth, maxPassengers, maxWeight);
 	}
+
 	public boolean inSpaceQ()
 	{
 		return false;

@@ -5,8 +5,10 @@ import tools.vehicles.Vehicle;
 
 public abstract class Aircraft extends Vehicle
 {
-    public Aircraft(Type type) {
-        super(type);
+
+
+    protected Aircraft(double resistance, double startHealth, int maxPassengers, double maxWeight) {
+        super(resistance, startHealth, maxPassengers, maxWeight);
     }
 
     @Override

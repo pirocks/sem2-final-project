@@ -5,8 +5,8 @@ import tools.vehicles.Vehicle;
 //possible deprecation b/c roads ot clear;y defined
 public abstract class RoadGoing extends Vehicle//maaube extend land
 {
-	public RoadGoing(Type type) {
-		super(type);
+	protected RoadGoing(double resistance, double startHealth, int maxPassengers, double maxWeight) {
+		super(resistance, startHealth, maxPassengers, maxWeight);
 	}
 
 	public boolean inWaterQ()

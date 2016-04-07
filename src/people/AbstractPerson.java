@@ -5,13 +5,14 @@ import cities.City;
 import planets.Country;
 import planets.CountryContainer;
 import planets.LocationPlanet;
+import tools.vehicles.Weighable;
 import tools.weapons.Attackable;
 import tools.weapons.Weapon;
 import universe.MoneySource;
 import universe.MoneySourceContainer;
 import universe.UniversalConstants;
 
-public abstract class AbstractPerson extends MoneySource implements Attackable, CountryContainer, MoneySourceContainer
+public abstract class AbstractPerson extends MoneySource implements Attackable, CountryContainer, MoneySourceContainer,Weighable
 {
 	public static double personDamageResistance;
 	protected LocationPlanet location;
