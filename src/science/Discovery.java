@@ -2,8 +2,6 @@ package science;
 
 import java.util.ArrayList;
 
-
-
 public abstract class Discovery//maybe make interface??
 {
 	private double percentComplete = 0.0; //0 to 1

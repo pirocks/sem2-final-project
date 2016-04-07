@@ -2,16 +2,6 @@ package tools.vehicles.sea;
 
 import tools.vehicles.Vehicle;
 
-
-
-
-
-
-
-
-
-
-
 public abstract class SeaCraft extends Vehicle
 {
 	public boolean inWaterQ;

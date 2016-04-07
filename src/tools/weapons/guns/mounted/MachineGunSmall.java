@@ -1,4 +1,4 @@
-package tools.weapons.guns;
+package tools.weapons.guns.mounted;
 
 import tools.weapons.guns.mounted.MachineGun;
 
