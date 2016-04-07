@@ -7,7 +7,7 @@ package buildings;
 public interface BuildingContainer
 {
 	public void remove(Building building);
-	default public void register()
+	default public void registerBuildingContainer()
 	{
 		BuildingContainers.registerContainer(this);
 	}

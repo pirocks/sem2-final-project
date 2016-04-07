@@ -1,30 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 package buildings;
 
 import buildings.housing.ApartmentBlock;
@@ -60,8 +33,8 @@ public abstract class Building implements Attackable, CityContainer, PersonConta
 	protected final Type type;//not necesary but whatever
 	public Building(Type type,CityBlock parentBlock,boolean housingQ)
     {
-	    CityContainer.register();
-	    PersonContainer.register();
+	    registerCityContainer();
+	    registerPersonContainer();//TODO:go through and make sure every constructor has these
         this.type = type;
         if(housingQ)
         {
@@ -137,11 +110,9 @@ public abstract class Building implements Attackable, CityContainer, PersonConta
 	}
 	@Override
 	public abstract void remove(AbstractPerson person);
-
 	@Override
 	public void remove(City city) {
 		parentBlock.remove(city);
 	}
-	
 
 }

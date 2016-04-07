@@ -5,15 +5,11 @@ import universe.ResourceDemand;
 public abstract class Tool
 {
 
-	protected Tool(Type type) {
-		this.type = type;
-	}
-
-	public static enum Type
+	protected Tool()
 	{
-		Vehicle,weapon
+		//TODO think of sme code to put here
 	}
-	public final Type type;
+//	public final Type type;
 	public abstract boolean vehicleQ();
 	public abstract boolean weaponQ();
 	public abstract ResourceDemand requiredResourcesForConstruction();

@@ -1,5 +1,7 @@
 package buildings.workplaces;
 
+//TODO figure out what  the worplace classes actually do.
+
 import buildings.Building;
 import cities.CityBlock;
 import people.AbstractPerson;
@@ -50,5 +52,16 @@ public abstract class Workplace extends Building  implements PersonContainer, Mo
 	{
 		assert(workers.contains(person));
 		workers.remove(person);
+	}
+	public void remove(AbstractPerson abstractPerson)
+	{
+		workers.remove(abstractPerson);
+	}
+	public void remove(MoneySource moneySource)
+	{
+		if(owner == moneySource)
+		{
+			owner = null;
+		}
 	}
 }

@@ -15,9 +15,8 @@ import tools.vehicles.Vehicle;
 public abstract class SeaCraft extends Vehicle
 {
 	public boolean inWaterQ;
-	public SeaCraft(Type t)
+	public SeaCraft()
 	{
-		super(t);
 
 	}
 	public boolean inSpaceQ()

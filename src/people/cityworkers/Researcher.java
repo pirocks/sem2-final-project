@@ -23,6 +23,6 @@ public class Researcher extends CityWorker
 
     @Override
     public void doSkill(long time) {
-        //TODO:implement
+        //TODO:implemented
     }
 }

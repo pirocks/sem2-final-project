@@ -67,24 +67,26 @@ public class CityBlock implements Attackable,CityContainer, BuildingContainer
         return y;
     }
 
+
     @Override
-    public void recieveDamage(double damage, Weapon weapon) {
+    public void receiveDamage(double damage, Weapon attacker) {
         if(building !=  null)
-            building.receiveDamage(damage,weapon);
+            building.receiveDamage(damage,attacker);
     }
 
     @Override
     public void remove(Building building) {
-
+		if(this.building == building)
+		{
+			this.building = null;
+		}
     }
 
     @Override
     public void remove(City city) {
-
-    }
-
-    @Override
-    public void receiveDamage(double damage, Weapon attacker) {
-
+		if(parentCity == city) {
+			parentCity = null;
+			assert (false);//TODO, if a city is destroyed so is everything below it right. yep, because it eliminates the citiless problem, so if a city is destryed so is everytthing eslse, will start implementing that
+		}
     }
 }

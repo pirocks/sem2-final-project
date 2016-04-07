@@ -21,15 +21,11 @@ public abstract class Vehicle extends Tool implements Attackable, PersonContaine
 	private ArrayList<MoneySource> money;//could just use a bureucrat as passenger
 	private ArrayList<Weapon> weapons;
 	private ArrayList<Vehicle> vehicles;
-	public Vehicle(Type type)
+	public Vehicle()
 	{
-		super(type);
+
 	}
 
-	//	public abstract boolean spaceQ();
-//	public abstract boolean seaQ();
-//	public abstract boolean landQ();
-//	public abstract boolean roadgoingQ();
 	public abstract boolean inSpaceQ();
 	public abstract boolean inWaterQ();
 	//deprecate roadgoing
