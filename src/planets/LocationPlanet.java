@@ -13,6 +13,7 @@ public class LocationPlanet implements PlanetContainer
 	private int Blocky;
 	public LocationPlanet(CityBlock b)
 	{
+		registerPlanetContainer();
 		Blockx = b.getXInGrid();
 		Blocky = b.getYInGrid();
 		Gridx = b.getGrid().getX();
@@ -116,5 +117,14 @@ public class LocationPlanet implements PlanetContainer
 	public int getBlocky()
 	{
 		return Blocky;
+	}
+
+	@Override
+	public void remove(Planet planet) {
+		if(this.planet == planet)
+		{
+			this.planet = null;
+			assert(false);
+		}
 	}
 }

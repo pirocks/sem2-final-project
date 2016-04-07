@@ -8,9 +8,9 @@ import java.util.ArrayList;
  */
 public class MoneySourceContainers
 {
-	private ArrayList<MoneySourceContainer> containers = new ArrayList<>();
-	public void registerContainer(MoneySourceContainer c){containers.add(c);}
-	public void remove(MoneySource moneySource)
+	private static ArrayList<MoneySourceContainer> containers = new ArrayList<>();
+	public static void registerContainer(MoneySourceContainer c){containers.add(c);}
+	public static void remove(MoneySource moneySource)
 	{
 		for(MoneySourceContainer container :containers)
 			container.remove(moneySource);

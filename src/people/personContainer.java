@@ -7,7 +7,7 @@ package people;
 public interface PersonContainer
 {
 	public void remove(AbstractPerson person);
-	default public void register()
+	default public void registerPersnContainer()
 	{
 		PersonContainers.registerContainer(this);
 	}

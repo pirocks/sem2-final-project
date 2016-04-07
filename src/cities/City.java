@@ -10,6 +10,7 @@ import planets.Country;
 import planets.CountryContainer;
 import planets.Grid;
 import tools.weapons.Attackable;
+import tools.weapons.Weapon;
 import universe.MoneySource;
 
 import java.util.ArrayList;
@@ -103,9 +104,25 @@ public class City extends MoneySource implements Attackable, BuildingContainer, 
 	    residents.remove(person);
 
     }
-
-    @Override//TODO: do this
-    public void recieveDamage(double damage) {
+    @Override
+    public void remove(Building building) {
+        for(CityBlock cityBlock:cityBlocks)
+            cityBlock.remove(building);
+    }
+    @Override
+    public void remove(AbstractPerson person) {
+		residents.remove(person);
+	    unemployedResidents.remove(person);
+    }
+    @Override
+    public void remove(Country country) {
+		if(parentCountry == country) {
+			parentCountry = null;
+			assert (false);
+		}
+    }
+    @Override //TODO: do this
+    public void receiveDamage(double damage, Weapon attacker) {
 
     }
 }

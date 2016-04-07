@@ -6,9 +6,11 @@ import buildings.housing.Housing;
 import buildings.workplaces.Hospital;
 import buildings.workplaces.Workplace;
 import cities.City;
+import cities.CityContainer;
 import people.AbstractPerson;
+import people.PersonContainers;
 
-public abstract class CityWorker extends AbstractPerson implements BuildingContainer//don't foret to get the workplace
+public abstract class CityWorker extends AbstractPerson implements BuildingContainer, CityContainer//don't foret to get the workplace
 {
 	public static long travelTimeConstant;
 	public static long TimeAtWork;
@@ -21,6 +23,7 @@ public abstract class CityWorker extends AbstractPerson implements BuildingConta
 	private Building currentBuilding;
 	private Housing home;
 	public abstract Workplace getWorkBuilding();
+	public abstract void setWorkPlaceToNull();
 	public abstract void doSkill(long time);
     private City currentCity;//should be renamed to parent city
 	protected long timeRemainingAtLocation;
@@ -136,17 +139,34 @@ public abstract class CityWorker extends AbstractPerson implements BuildingConta
 	@Override
 	public void dieSpecific()
 	{
-		home.leavePerson(this);
-		getWorkBuilding().leavePerson(this);
-		try
-		{
-			hospital.leavePerson(this);
+		PersonContainers.remove(this);
+	}
+	//TODO: figure out how cityless workers work
+	@Override
+	public void remove(City city)
+	{
+
+	}
+	@Override
+	public void remove(Building building)
+	{
+		if(currentBuilding == building) {
+			die();//not sure about this
+			currentBuilding = null;
 		}
-		catch(NullPointerException e)
+		if(home == building)
 		{
-			//who cares
+			//TODO:homeless
 		}
-		currentCity.leavePerson(this);
-		currentBuilding.leavePerson(this);
+		if(hospital == building)
+		{
+			//should be dead right//however above has handled it
+			assert(super.amIDead());
+			hospital = null;
+		}
+		if(getWorkBuilding() == building)
+		{
+			setWorkPlaceToNull();
+		}
 	}
 }

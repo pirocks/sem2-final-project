@@ -3,6 +3,7 @@ package people;
 import planets.Country;
 import tools.vehicles.Vehicle;
 import tools.vehicles.VehicleContainer;
+import tools.weapons.Weapon;
 import universe.MoneySource;
 import universe.MoneySourceContainer;
 
@@ -12,10 +13,43 @@ import universe.MoneySourceContainer;
 
 public class Soldier extends AbstractPerson implements VehicleContainer, MoneySourceContainer
 {
+
+    @Override
+    public void remove(Country country) {
+        if(parentCountry == country)
+        {
+	        parentCountry = null;
+	        assert (false);
+        }
+    }
+
+    @Override
+    public void remove(Vehicle vehicle) {
+		if(this.vehicle == vehicle)
+		{
+			die();
+			vehicle = null;
+		}
+    }
+
+    @Override//TODO: implement this
+    public void receiveDamage(double damage, Weapon attacker) {
+
+    }
+
+    @Override
+    public void remove(MoneySource in) {
+		if(in == toGuard)
+	        toGuard = null;
+	    if(parentCountry == in)
+		    remove(parentCountry);
+    }
+
     public static enum TypeOfTask
     {
         March,Drive,Guard,Heal//what about attack??
     };
+    private Country parentCountry;
     private TypeOfTask currentTask;
     /*public???*/public static double healRate;//figure out the constants
     /*public?? constants figure out*/ public static double walkingSpeed;

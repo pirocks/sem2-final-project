@@ -1,13 +1,13 @@
 package people.cityworkers;
 
-import buildings.Building;
+import buildings.housing.Housing;
 import buildings.workplaces.ResearchArea;
 import cities.City;
 import people.AbstractPerson;
-public class Researcher extends AbstractPerson
+public class Researcher extends CityWorker
 {
     private ResearchArea workplace;
-    public Researcher(City parentCity, Building home)
+    public Researcher(City parentCity, Housing home)
     {
 		super(AbstractPerson.Type.Researcher,parentCity,home);
     }
@@ -17,7 +17,12 @@ public class Researcher extends AbstractPerson
     }
 
     @Override
-    public void doSkill(long time) {
+    public void setWorkPlaceToNull() {
+        workplace = null;
+    }
 
+    @Override
+    public void doSkill(long time) {
+        //TODO:implement
     }
 }

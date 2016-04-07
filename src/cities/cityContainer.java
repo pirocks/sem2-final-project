@@ -7,7 +7,7 @@ package cities;
 public interface CityContainer
 {
 	public void remove(City city);
-	default public void register()
+	default public void registerCityContainer()
 	{
 		CityContainers.registerContainer(this);
 	}

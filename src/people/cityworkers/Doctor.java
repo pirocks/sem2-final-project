@@ -55,6 +55,12 @@ public class Doctor extends CityWorker
     {
         return workplace;
     }
+
+    @Override
+    public void setWorkPlaceToNull() {
+        workplace = null;
+    }
+
     public Doctor(City parentCity, Housing home)
     {
         super(AbstractPerson.Type.Doctor,parentCity,home);

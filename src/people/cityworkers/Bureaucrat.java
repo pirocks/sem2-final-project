@@ -1,12 +1,14 @@
 package people.cityworkers;
 
 import buildings.housing.Housing;
+import buildings.workplaces.TownHall;
 import buildings.workplaces.Workplace;
 import cities.City;
 import people.AbstractPerson;
 
 public class Bureaucrat extends CityWorker
 {
+    TownHall workplace;
     public Bureaucrat(City parentCity, Housing home)
     {
         super(AbstractPerson.Type.Bureaucrat,parentCity,home);
@@ -14,7 +16,12 @@ public class Bureaucrat extends CityWorker
 
     @Override
     public Workplace getWorkBuilding() {
-        return null;
+        return workplace;
+    }
+
+    @Override
+    public void setWorkPlaceToNull() {
+        workplace = null;
     }
 
     @Override

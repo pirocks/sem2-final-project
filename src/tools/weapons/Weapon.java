@@ -21,6 +21,6 @@ public class Weapon
 	}
 	public void attack(Attackable target)
 	{
-		target.recieveDamage(damage);
+		target.receiveDamage(damage);
 	}
 }

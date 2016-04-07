@@ -7,7 +7,7 @@ package planets;
 public interface PlanetContainer
 {
 	public void remove(Planet planet);
-	default public void register()
+	default public void registerPlanetContainer()
 	{
 		PlanetContainers.registerContainer(this);
 	}

@@ -2,15 +2,16 @@ package people;
 
 import buildings.Building;
 import cities.City;
-import cities.CityContainer;
 import planets.Country;
 import planets.CountryContainer;
 import planets.LocationPlanet;
 import tools.weapons.Attackable;
+import tools.weapons.Weapon;
 import universe.MoneySource;
+import universe.MoneySourceContainer;
 import universe.UniversalConstants;
 
-public abstract class AbstractPerson extends MoneySource implements Attackable, CityContainer, CountryContainer
+public abstract class AbstractPerson extends MoneySource implements Attackable, CountryContainer, MoneySourceContainer
 {
 	public static double personDamageResistance;
 	protected LocationPlanet location;
@@ -24,7 +25,7 @@ public abstract class AbstractPerson extends MoneySource implements Attackable, 
         Doctor,Researcher,Ruler,Soldier,Teacher,WealthyWorker, Bureaucrat, Worker
     }
     // deprecated b/c location private Grid currentGrid;
-    protected final Country country;//final??
+    protected Country country;//final??
     // deprecated b/c location protected double x,y;//okay if inacurate as long as in city//mostly for use of soldiers//in grid
     private final Type type;
     private int population;
@@ -125,8 +126,7 @@ public abstract class AbstractPerson extends MoneySource implements Attackable, 
     {
         return location;
     }
-    @Override
-	public void recieveDamage(double damage)
+	public void recieveDamage(double damage, Weapon weapon)
     {
 	    health = (health*personDamageResistance - damage)/personDamageResistance;
 	    amIDead();
@@ -148,8 +148,27 @@ public abstract class AbstractPerson extends MoneySource implements Attackable, 
 		//need to delete all refernces to this object
 	}
 	protected abstract void dieSpecific();
+	@Deprecated
 	public void leaveCountryForDeath()
 	{
 		country.loosePerson(this);
+	}
+	@Override
+	//TODO://how do the countryless work
+	public void remove(Country country)
+	{
+		if(country == this.country)
+			this.country = null;
+	}
+	@Override
+	public void remove(MoneySource moneySource)
+	{
+		if(salaryGiver == moneySource)
+			salaryGiver = null;
+	}
+
+	@Override
+	public void receiveDamage(double damage, Weapon attacker) {
+		//TODO: implement me
 	}
 }

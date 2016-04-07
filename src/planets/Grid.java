@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * grids contain 100 cityblocks. Not in an array though
  */
 
-public class Grid implements  PlanetContainer,CountryContainer, CityContainer
+public class Grid implements PlanetContainer,CountryContainer, CityContainer
 {
     private int x,y;
     private Planet parentPlanet;
@@ -21,8 +21,12 @@ public class Grid implements  PlanetContainer,CountryContainer, CityContainer
     private ArrayList<NaturalResource> naturalResources;
     private TerrainType terrainType;
     private ArrayList<NaturalHazard> hazards;
+    //TODO: what the fuck is with these constructors
     private Grid()
     {
+        registerCountryContainer();
+	    registerPlanetContainer();
+	    registerCityContainer();
         //random generation
     }
     public Grid(int x, int y,Country parentCountry,Planet parentPlanet)
@@ -112,4 +116,26 @@ public class Grid implements  PlanetContainer,CountryContainer, CityContainer
     {
         return parentPlanet;
     }
+
+	@Override
+	public void remove(City city) {
+		citys.remove(city);
+	}
+
+	@Override
+	public void remove(Country country) {
+		if(parentCountry == country) {
+			parentCountry = null;
+			assert(false);
+		}
+	}
+
+	@Override
+	public void remove(Planet planet) {
+		if(parentPlanet == planet)
+		{
+			parentPlanet = null;
+			assert(false);
+		}
+	}
 }

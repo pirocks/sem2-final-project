@@ -1,6 +1,8 @@
 package planets;
 /**
  * Created by bob on 3/5/2016.
+ *
+ *
  */
 
 import cities.City;
@@ -11,7 +13,7 @@ import universe.MoneySource;
 
 import java.util.ArrayList;
 
-public class Country extends MoneySource  implements PersonContainer,CountryContainer, CityContainer,RoadContainer
+public class Country extends MoneySource implements PersonContainer,CountryContainer, CityContainer,RoadContainer
 {
     public static String[] CountryNames = 
     {};
@@ -23,6 +25,33 @@ public class Country extends MoneySource  implements PersonContainer,CountryCont
     private ArrayList<AbstractPerson> people;
     public ArrayList<Road> roads;
     private City capitalCity;
+
+    @Override
+    public void remove(City city) {
+        if(city == capitalCity)
+        {
+	        capitalCity = null;
+	        assert(false);
+	        //TODO: new capital city
+	        //TODO: if ruler dies
+        }
+    }
+
+    @Override
+    public void remove(AbstractPerson person) {
+
+    }
+
+    @Override
+    public void remove(Country country) {
+
+    }
+
+    @Override
+    public void remove(Road road) {
+
+    }
+
     // private //capital city whitehhouse
     public static enum GovernmentType
     {

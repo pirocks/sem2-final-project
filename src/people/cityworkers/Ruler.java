@@ -14,7 +14,9 @@
 
 package people.cityworkers;
 
-import buildings.Building;
+import buildings.housing.Housing;
+import buildings.workplaces.TownHall;
+import buildings.workplaces.Workplace;
 import cities.City;
 import people.AbstractPerson;
 /*
@@ -23,13 +25,24 @@ import people.AbstractPerson;
 public class Ruler extends CityWorker//TODO:clean this up
 {
     //possible deprecation of this object//cannot be deprecated b/c ai
-    public Ruler(City parentCity, Building home)
+    private TownHall workplace;
+    public Ruler(City parentCity, Housing home)
     {
         super(AbstractPerson.Type.Ruler,parentCity,home);
     }
 
     @Override
-    public void doSkill(long time) {
+    public Workplace getWorkBuilding() {
+        return workplace;
+    }
 
+    @Override
+    public void setWorkPlaceToNull() {
+		workplace = null;
+    }
+
+    @Override
+    public void doSkill(long time) {
+		//TODO unimplemented
     }
 }

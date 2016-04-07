@@ -1,6 +1,7 @@
 package planets;
 /**
  * Created by bob on 3/5/2016.
+ *
  */
 
 import universe.SolarSystem;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
     possible hazards volcano,temperature changes,weather. hazards are local to grid array*/
 public class Planet implements CountryContainer
 {
+	//TODO make a better constructor
     private ArrayList<Country> countries = new ArrayList<>();
     private ArrayList<Continent> continents = new ArrayList<>();
     boolean inhabitedq = false;
@@ -23,7 +25,7 @@ public class Planet implements CountryContainer
     private Grid[][] grids;//make sure that # of grids is based on size of plannet, to maintain coherent sizing of everything
     public Planet(int size)
     {
-        super();
+        registerCountryContainer();
         grids = new Grid[size][size * 2];
     }
     public double getplanetRadius()
@@ -52,5 +54,10 @@ public class Planet implements CountryContainer
     {
         BigDecimal parentY = parentSolarSystem.getYInUniverse();
         return parentY.add(radius.multiply(new BigDecimal(Math.sin(orientationAtCurrentTime))));
+    }
+
+    @Override
+    public void remove(Country country) {
+        countries.remove(country);
     }
 }

@@ -23,6 +23,7 @@ import buildings.BuildingContainer;
 import planets.Grid;
 import planets.LocationPlanet;
 import tools.weapons.Attackable;
+import tools.weapons.Weapon;
 
 public class CityBlock implements Attackable,CityContainer, BuildingContainer
 {
@@ -67,8 +68,23 @@ public class CityBlock implements Attackable,CityContainer, BuildingContainer
     }
 
     @Override
-    public void recieveDamage(double damage) {
+    public void recieveDamage(double damage, Weapon weapon) {
         if(building !=  null)
-            building.recieveDamage(damage);
+            building.receiveDamage(damage,weapon);
+    }
+
+    @Override
+    public void remove(Building building) {
+
+    }
+
+    @Override
+    public void remove(City city) {
+
+    }
+
+    @Override
+    public void receiveDamage(double damage, Weapon attacker) {
+
     }
 }

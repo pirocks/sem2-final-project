@@ -6,7 +6,7 @@ package planets;
  */
 public interface CountryContainer {
 	public void remove(Country country);
-	default public void register()
+	default public void registerCountryContainer()
 	{
 		CountryContainers.registerContainer(this);
 	}
