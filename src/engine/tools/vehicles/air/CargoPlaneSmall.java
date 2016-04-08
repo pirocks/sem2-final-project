@@ -4,15 +4,18 @@ import engine.universe.ResourceDemand;
 
 /**
  * Created by bob on 4/3/2016.
+ *
  */
 public class CargoPlaneSmall extends CargoPlane
 {
+	public static double startHealthInitial;
+	public static double resistanceInitial;
 	public static int maxPassengersInitial;
 	public static double maxWeightInitial;
-
-	protected CargoPlaneSmall(double resistance, double startHealth) {
-		super(resistance, startHealth, maxPassengersInitial, maxWeightInitial);
+	public CargoPlaneSmall() {
+		super(resistanceInitial, startHealthInitial, maxPassengersInitial, maxWeightInitial);
 	}
+
 
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {

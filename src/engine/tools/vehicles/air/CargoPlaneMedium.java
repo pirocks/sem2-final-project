@@ -7,11 +7,12 @@ import engine.universe.ResourceDemand;
  *
  */
 public class CargoPlaneMedium extends CargoPlane {
+	public static double startHealthInitial;
+	public static double resistanceInitial;
 	public static int maxPassengersInitial;
 	public static double maxWeightInitial;
-
-	protected CargoPlaneMedium(double resistance, double startHealth) {
-		super(resistance, startHealth, maxPassengersInitial, maxWeightInitial);
+	public CargoPlaneMedium() {
+		super(resistanceInitial, startHealthInitial, maxPassengersInitial, maxWeightInitial);
 	}
 
 	@Override

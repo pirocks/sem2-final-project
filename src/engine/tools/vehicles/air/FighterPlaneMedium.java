@@ -7,11 +7,12 @@ import engine.universe.ResourceDemand;
  *
  */
 public class FighterPlaneMedium extends FighterPlane{
+	public static double startHealthInitial;
+	public static double resistanceInitial;
 	public static int maxPassengersInitial;
 	public static double maxWeightInitial;
-
-	protected FighterPlaneMedium(double resistance, double startHealth) {
-		super(resistance, startHealth, maxPassengersInitial, maxWeightInitial);
+	public FighterPlaneMedium() {
+		super(resistanceInitial, startHealthInitial, maxPassengersInitial, maxWeightInitial);
 	}
 
 	@Override

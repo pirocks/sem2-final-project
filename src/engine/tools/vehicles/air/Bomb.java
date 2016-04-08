@@ -8,11 +8,12 @@ import engine.universe.ResourceDemand;
  */
 public class Bomb extends Aircraft
 {
-	public static int maxPassengersInitial;
+	public static double startHealthInitial;
+	public static double resistanceInitial;
+	public static int maxPassengersInitial = 0;
 	public static double maxWeightInitial;
-
-	protected Bomb(double resistance, double startHealth) {
-		super(resistance, startHealth, maxPassengersInitial, maxWeightInitial);
+	public Bomb() {
+		super(resistanceInitial, startHealthInitial, maxPassengersInitial, maxWeightInitial);
 	}
 
 	@Override

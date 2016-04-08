@@ -6,11 +6,12 @@ import engine.universe.ResourceDemand;
  * Created by bob on 4/3/2016.
  */
 public class CargoPlaneLarge extends CargoPlane {
+	public static double startHealthInitial;
+	public static double resistanceInitial;
 	public static int maxPassengersInitial;
 	public static double maxWeightInitial;
-
-	protected CargoPlaneLarge(double resistance, double startHealth) {
-		super(resistance, startHealth, maxPassengersInitial, maxWeightInitial);
+	public CargoPlaneLarge() {
+		super(resistanceInitial, startHealthInitial, maxPassengersInitial, maxWeightInitial);
 	}
 
 	@Override

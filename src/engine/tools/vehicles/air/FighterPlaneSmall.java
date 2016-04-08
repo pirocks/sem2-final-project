@@ -7,6 +7,14 @@ import engine.universe.ResourceDemand;
  *
  */
 public class FighterPlaneSmall extends FighterPlane {
+	public static double startHealthInitial;
+	public static double resistanceInitial;
+	public static int maxPassengersInitial;
+	public static double maxWeightInitial;
+	public FighterPlaneSmall() {
+		super(resistanceInitial, startHealthInitial, maxPassengersInitial, maxWeightInitial);
+	}
+
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
 		return null;//todo
