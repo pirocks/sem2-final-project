@@ -4,10 +4,10 @@ import tools.vehicles.Vehicle;
 
 public abstract class SpaceCraft extends Vehicle
 {
-	public SpaceCraft(Type t)
-	{
-		super(t);
 
+
+	protected SpaceCraft(double resistance, double startHealth, int maxPassengers, double maxWeight) {
+		super(resistance, startHealth, maxPassengers, maxWeight);
 	}
 
 	@Override

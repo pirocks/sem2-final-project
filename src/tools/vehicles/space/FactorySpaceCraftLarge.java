@@ -1,17 +1,17 @@
-package tools.vehicles.air;
+package tools.vehicles.space;
 
 import universe.ResourceDemand;
 
 /**
- * Created by bob on 4/3/2016.
+ * Created by bob on 4/7/2016.
  *
  */
-public class CargoPlaneMedium extends CargoPlane {
-	public static int maxPassengersInitial;
+public class FactorySpaceCraftLarge extends FactorySpaceCraft
+{
+	public static int MaxPassengersInitial;
 	public static double maxWeightInitial;
-
-	protected CargoPlaneMedium(double resistance, double startHealth) {
-		super(resistance, startHealth, maxPassengersInitial, maxWeightInitial);
+	protected FactorySpaceCraftLarge(double resistance, double startHealth) {
+		super(resistance, startHealth, MaxPassengersInitial, maxWeightInitial);
 	}
 
 	@Override

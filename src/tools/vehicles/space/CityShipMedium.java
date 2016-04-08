@@ -1,19 +1,18 @@
-package tools.vehicles.air;
+package tools.vehicles.space;
 
+import cities.City;
 import universe.ResourceDemand;
 
 /**
- * Created by bob on 4/3/2016.
- *
+ * Created by bob on 4/7/2016.
  */
-public class CargoPlaneMedium extends CargoPlane {
-	public static int maxPassengersInitial;
+public class CityShipMedium extends CityShip
+{
+	public static int MaxPassengersInitial;
 	public static double maxWeightInitial;
-
-	protected CargoPlaneMedium(double resistance, double startHealth) {
-		super(resistance, startHealth, maxPassengersInitial, maxWeightInitial);
+	protected CityShipMedium(double resistance, double startHealth) {
+		super(resistance, startHealth, MaxPassengersInitial, maxWeightInitial);
 	}
-
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
 		return null;// TODO: 4/7/2016

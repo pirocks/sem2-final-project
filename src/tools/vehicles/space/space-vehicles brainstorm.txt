@@ -1,0 +1,28 @@
+planetDestroyer
+    medium
+    large
+interstellar-craft
+    small
+    medium
+    large
+factory ship
+    small
+    medium
+    large
+cityShip
+    small
+    medium
+    large
+asteroid-miner
+    small
+    medium
+    large
+freighter
+    small
+    medium
+    large
+fighter
+shuttle
+    small
+    medium
+    large
