@@ -11,8 +11,11 @@ public class Artillery extends LandVehicle
 	public static int maxPassengersInitial;
 	public static double maxWeightInitial;
 
-	protected Artillery(double resistance, double startHealth) {
-		super(resistance, startHealth, maxPassengersInitial, maxWeightInitial);
+	public static double startHealthInitial;
+	public static double resistanceInitial;
+
+	protected Artillery() {
+		super(resistanceInitial, startHealthInitial, maxPassengersInitial, maxWeightInitial);
 	}
 
 	@Override

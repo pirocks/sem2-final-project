@@ -8,9 +8,11 @@ import engine.universe.ResourceDemand;
 public class ArmouredVehicle extends LandVehicle {
 	public static int maxPassengersInitial;
 	public static double maxWeightInitial;
+	public static double startHealthInitial;
+	public static double resistanceInitial;
 
-	protected ArmouredVehicle(double resistance, double startHealth) {
-		super(resistance, startHealth, maxPassengersInitial, maxWeightInitial);
+	protected ArmouredVehicle() {
+		super(resistanceInitial, startHealthInitial, maxPassengersInitial, maxWeightInitial);
 	}
 
 	@Override

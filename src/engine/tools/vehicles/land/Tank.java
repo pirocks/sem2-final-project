@@ -9,9 +9,11 @@ import engine.universe.ResourceDemand;
 public class Tank extends LandVehicle {
 	public static int maxPassengersInitial;
 	public static double maxWeightInitial;
+	public static double startHealthInitial;
+	public static double resistanceInitial;
 
-	protected Tank(double resistance, double startHealth) {
-		super(resistance, startHealth, maxPassengersInitial, maxWeightInitial);
+	protected Tank() {
+		super(resistanceInitial, startHealthInitial, maxPassengersInitial, maxWeightInitial);
 	}
 
 	@Override
