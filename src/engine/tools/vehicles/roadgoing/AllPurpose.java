@@ -8,9 +8,11 @@ import engine.universe.ResourceDemand;
 public class AllPurpose extends RoadGoing {
 	public static int maxPassengersInitial;
 	public static double maxWeightInitial;
+	public static double startHealthInitial;
+	public static double resistanceInitial;
 
-	protected AllPurpose(double resistance, double startHealth) {
-		super(resistance, startHealth, maxPassengersInitial, maxWeightInitial);
+	protected AllPurpose() {
+		super(resistanceInitial, startHealthInitial, maxPassengersInitial, maxWeightInitial);
 	}
 
 	@Override

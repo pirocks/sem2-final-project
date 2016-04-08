@@ -8,9 +8,10 @@ import engine.universe.ResourceDemand;
 public class TruckMedium extends Truck {
 	public static int maxPassengersInitial;
 	public static double maxWeightInitial;
-
-	protected TruckMedium(double resistance, double startHealth) {
-		super(resistance, startHealth, maxPassengersInitial, maxWeightInitial);
+	public static double startHealthInitial;
+	public static double resistanceInitial;
+	protected TruckMedium() {
+		super(resistanceInitial, startHealthInitial, maxPassengersInitial, maxWeightInitial);
 	}
 
 	@Override
