@@ -2,6 +2,12 @@ package engine.tools.vehicles.sea;
 
 import engine.universe.ResourceDemand;
 
+//import static engine.planets.Road.resistance;
+
+//import static engine.planets.Road.resistance;
+
+//import static engine.planets.Road.resistance;
+
 /**
  * Created by bob on 4/3/2016.
  *
@@ -9,9 +15,11 @@ import engine.universe.ResourceDemand;
 public class NuclearSubmarine extends SeaCraft {
 	public static int maxPassengersInitial;
 	public static double maxWeightInitial;
+	public static double startHealthInitial;
+	public static double resistanceInitial;
 
-	protected NuclearSubmarine(double resistance, double startHealth) {
-		super(resistance, startHealth, maxPassengersInitial, maxWeightInitial);
+	protected NuclearSubmarine() {
+		super(resistanceInitial, startHealthInitial, maxPassengersInitial, maxWeightInitial);
 	}
 
 	@Override

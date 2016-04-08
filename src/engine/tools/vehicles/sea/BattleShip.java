@@ -4,13 +4,16 @@ import engine.universe.ResourceDemand;
 
 /**
  * Created by bob on 4/3/2016.
+ *
  */
 public class BattleShip extends SeaCraft {
 	public static int maxPassengersInitial;
 	public static double maxWeightInitial;
+	public static double startHealthInitial;
+	public static double resistanceInitial;
 
-	protected BattleShip(double resistance, double startHealth) {
-		super(resistance, startHealth, maxPassengersInitial, maxWeightInitial);
+	protected BattleShip() {
+		super(resistanceInitial, startHealthInitial, maxPassengersInitial, maxWeightInitial);
 	}
 
 	@Override

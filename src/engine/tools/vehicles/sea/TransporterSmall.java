@@ -9,9 +9,10 @@ import engine.universe.ResourceDemand;
 public class TransporterSmall extends Transporter {
 	public static int maxPassengersInitial;
 	public static double maxWeightInitial;
-
-	protected TransporterSmall(double resistance, double startHealth) {
-		super(resistance, startHealth, maxPassengersInitial, maxWeightInitial);
+	public static double startHealthInitial;
+	public static double resistanceInitial;
+	protected TransporterSmall() {
+		super(resistanceInitial, startHealthInitial, maxPassengersInitial, maxWeightInitial);
 	}
 
 	@Override

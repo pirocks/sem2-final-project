@@ -9,8 +9,11 @@ import engine.universe.ResourceDemand;
 public class AircraftCarrier extends SeaCraft {
 	public static int MaxPassengersInitial;
 	public static double maxWeightInitial;
-	protected AircraftCarrier(double resistance, double startHealth) {
-		super(resistance, startHealth, MaxPassengersInitial, maxWeightInitial);
+	public static double startHealthInitial;
+	public static double resistanceInitial;
+
+	protected AircraftCarrier() {
+		super(resistanceInitial, startHealthInitial, MaxPassengersInitial, maxWeightInitial);
 	}
 
 	@Override
