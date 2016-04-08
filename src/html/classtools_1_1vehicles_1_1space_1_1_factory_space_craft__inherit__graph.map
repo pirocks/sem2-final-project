@@ -1,0 +1,14 @@
+<map id="tools.vehicles.space.FactorySpaceCraft" name="tools.vehicles.space.FactorySpaceCraft">
+<area shape="rect" id="node11" href="$classtools_1_1vehicles_1_1space_1_1_factory_space_craft_large.html" title="tools.vehicles.space.Factory\lSpaceCraftLarge" alt="" coords="1153,59,1343,101"/>
+<area shape="rect" id="node12" href="$classtools_1_1vehicles_1_1space_1_1_factory_space_craft_medium.html" title="tools.vehicles.space.Factory\lSpaceCraftMedium" alt="" coords="1153,125,1343,166"/>
+<area shape="rect" id="node13" href="$classtools_1_1vehicles_1_1space_1_1_factory_space_craft_small.html" title="tools.vehicles.space.Factory\lSpaceCraftSmall" alt="" coords="1153,190,1343,231"/>
+<area shape="rect" id="node2" href="$classtools_1_1vehicles_1_1space_1_1_space_craft.html" title="tools.vehicles.space.Space\lCraft" alt="" coords="685,125,868,166"/>
+<area shape="rect" id="node3" href="$classtools_1_1vehicles_1_1_vehicle.html" title="tools.vehicles.Vehicle" alt="" coords="488,132,637,159"/>
+<area shape="rect" id="node4" href="$classtools_1_1_tool.html" title="tools.Tool" alt="" coords="293,56,372,83"/>
+<area shape="rect" id="node5" href="$interfacetools_1_1weapons_1_1_attackable.html" title="tools.weapons.Attackable" alt="" coords="5,5,177,32"/>
+<area shape="rect" id="node6" href="$interfacetools_1_1vehicles_1_1_weighable.html" title="tools.vehicles.Weighable" alt="" coords="8,56,175,83"/>
+<area shape="rect" id="node7" href="$interfacepeople_1_1_person_container.html" title="people.PersonContainer" alt="" coords="252,107,413,133"/>
+<area shape="rect" id="node8" href="$interfacetools_1_1vehicles_1_1_vehicle_container.html" title="tools.vehicles.VehicleContainer" alt="" coords="230,157,435,184"/>
+<area shape="rect" id="node9" href="$interfacetools_1_1weapons_1_1_weapon_container.html" title="tools.weapons.WeaponContainer" alt="" coords="225,208,440,235"/>
+<area shape="rect" id="node10" href="$interfaceuniverse_1_1_money_source_container.html" title="universe.MoneySourceContainer" alt="" coords="227,259,438,285"/>
+</map>

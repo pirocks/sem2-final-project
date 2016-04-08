@@ -1,5 +1,12 @@
 <map id="tools.weapons.guns.mounted.Mounted" name="tools.weapons.guns.mounted.Mounted">
-<area shape="rect" id="node2" href="$classtools_1_1weapons_1_1guns_1_1_gun.html" title="tools.weapons.guns.Gun" alt="" coords="20,155,187,181"/>
-<area shape="rect" id="node3" href="$classtools_1_1weapons_1_1_weapon.html" title="tools.weapons.Weapon" alt="" coords="24,80,183,107"/>
-<area shape="rect" id="node4" href="$interfacetools_1_1weapons_1_1_attackable.html" title="tools.weapons.Attackable" alt="" coords="17,5,189,32"/>
+<area shape="rect" id="node7" href="$classtools_1_1weapons_1_1guns_1_1mounted_1_1_anti_air_craft_gun.html" title="tools.weapons.guns.mounted.\lAntiAirCraftGun" alt="" coords="1017,5,1213,47"/>
+<area shape="rect" id="node8" href="$classtools_1_1weapons_1_1guns_1_1mounted_1_1_machine_gun.html" title="tools.weapons.guns.mounted.\lMachineGun" alt="" coords="1017,71,1213,112"/>
+<area shape="rect" id="node2" href="$classtools_1_1weapons_1_1guns_1_1_gun.html" title="tools.weapons.guns.Gun" alt="" coords="559,46,725,73"/>
+<area shape="rect" id="node3" href="$classtools_1_1weapons_1_1_weapon.html" title="tools.weapons.Weapon" alt="" coords="352,46,511,73"/>
+<area shape="rect" id="node4" href="$classtools_1_1_tool.html" title="tools.Tool" alt="" coords="225,46,304,73"/>
+<area shape="rect" id="node5" href="$interfacetools_1_1weapons_1_1_attackable.html" title="tools.weapons.Attackable" alt="" coords="5,21,177,47"/>
+<area shape="rect" id="node6" href="$interfacetools_1_1vehicles_1_1_weighable.html" title="tools.vehicles.Weighable" alt="" coords="8,71,175,98"/>
+<area shape="rect" id="node9" href="$classtools_1_1weapons_1_1guns_1_1mounted_1_1_machine_gun_large.html" title="tools.weapons.guns.mounted.\lMachineGunLarge" alt="" coords="1261,5,1457,47"/>
+<area shape="rect" id="node10" href="$classtools_1_1weapons_1_1guns_1_1mounted_1_1_machine_gun_medium.html" title="tools.weapons.guns.mounted.\lMachineGunMedium" alt="" coords="1261,71,1457,112"/>
+<area shape="rect" id="node11" href="$classtools_1_1weapons_1_1guns_1_1mounted_1_1_machine_gun_small.html" title="tools.weapons.guns.mounted.\lMachineGunSmall" alt="" coords="1261,136,1457,177"/>
 </map>

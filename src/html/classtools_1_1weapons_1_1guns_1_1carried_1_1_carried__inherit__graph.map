@@ -1,5 +1,9 @@
 <map id="tools.weapons.guns.carried.Carried" name="tools.weapons.guns.carried.Carried">
-<area shape="rect" id="node2" href="$classtools_1_1weapons_1_1guns_1_1_gun.html" title="tools.weapons.guns.Gun" alt="" coords="15,155,181,181"/>
-<area shape="rect" id="node3" href="$classtools_1_1weapons_1_1_weapon.html" title="tools.weapons.Weapon" alt="" coords="19,80,177,107"/>
-<area shape="rect" id="node4" href="$interfacetools_1_1weapons_1_1_attackable.html" title="tools.weapons.Attackable" alt="" coords="12,5,184,32"/>
+<area shape="rect" id="node7" href="$classtools_1_1weapons_1_1guns_1_1carried_1_1_hand_gun.html" title="tools.weapons.guns.carried.\lHandGun" alt="" coords="5,393,191,435"/>
+<area shape="rect" id="node8" href="$classtools_1_1weapons_1_1guns_1_1carried_1_1_sniper_rifle.html" title="tools.weapons.guns.carried.\lSniperRifle" alt="" coords="215,393,400,435"/>
+<area shape="rect" id="node2" href="$classtools_1_1weapons_1_1guns_1_1_gun.html" title="tools.weapons.guns.Gun" alt="" coords="119,229,285,256"/>
+<area shape="rect" id="node3" href="$classtools_1_1weapons_1_1_weapon.html" title="tools.weapons.Weapon" alt="" coords="123,155,281,181"/>
+<area shape="rect" id="node4" href="$classtools_1_1_tool.html" title="tools.Tool" alt="" coords="163,80,241,107"/>
+<area shape="rect" id="node5" href="$interfacetools_1_1weapons_1_1_attackable.html" title="tools.weapons.Attackable" alt="" coords="20,5,192,32"/>
+<area shape="rect" id="node6" href="$interfacetools_1_1vehicles_1_1_weighable.html" title="tools.vehicles.Weighable" alt="" coords="216,5,383,32"/>
 </map>

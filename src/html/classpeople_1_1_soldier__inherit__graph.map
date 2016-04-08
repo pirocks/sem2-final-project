@@ -1,8 +1,9 @@
 <map id="people.Soldier" name="people.Soldier">
-<area shape="rect" id="node2" href="$classpeople_1_1_abstract_person.html" title="people.AbstractPerson" alt="" coords="289,107,444,133"/>
+<area shape="rect" id="node2" href="$classpeople_1_1_abstract_person.html" title="people.AbstractPerson" alt="" coords="289,119,444,145"/>
 <area shape="rect" id="node3" href="$classuniverse_1_1_money_source.html" title="universe.MoneySource" alt="" coords="33,5,188,32"/>
 <area shape="rect" id="node4" href="$interfacetools_1_1weapons_1_1_attackable.html" title="tools.weapons.Attackable" alt="" coords="25,56,197,83"/>
 <area shape="rect" id="node5" href="$interfaceplanets_1_1_country_container.html" title="planets.CountryContainer" alt="" coords="25,107,196,133"/>
-<area shape="rect" id="node6" href="$interfaceuniverse_1_1_money_source_container.html" title="universe.MoneySourceContainer" alt="" coords="5,157,216,184"/>
-<area shape="rect" id="node7" href="$interfacetools_1_1vehicles_1_1_vehicle_container.html" title="tools.vehicles.VehicleContainer" alt="" coords="264,208,469,235"/>
+<area shape="rect" id="node6" href="$interfaceuniverse_1_1_money_source_container.html" title="universe.MoneySourceContainer" alt="" coords="5,208,216,235"/>
+<area shape="rect" id="node7" href="$interfacetools_1_1vehicles_1_1_weighable.html" title="tools.vehicles.Weighable" alt="" coords="27,157,194,184"/>
+<area shape="rect" id="node8" href="$interfacetools_1_1vehicles_1_1_vehicle_container.html" title="tools.vehicles.VehicleContainer" alt="" coords="264,245,469,272"/>
 </map>

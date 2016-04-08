@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['landvehicle',['LandVehicle',['../classtools_1_1vehicles_1_1land_1_1_land_vehicle.html',1,'tools::vehicles::land']]],
-  ['laser',['Laser',['../classtools_1_1weapons_1_1space_1_1_laser.html',1,'tools::weapons::space']]],
-  ['locationplanet',['LocationPlanet',['../classplanets_1_1_location_planet.html',1,'planets']]]
+  ['industrialdock',['IndustrialDock',['../classbuildings_1_1workplaces_1_1_industrial_dock.html',1,'buildings::workplaces']]],
+  ['interstellarcraft',['InterStellarCraft',['../classtools_1_1vehicles_1_1space_1_1_inter_stellar_craft.html',1,'tools::vehicles::space']]],
+  ['interstellarcraftlarge',['InterStellarCraftLarge',['../classtools_1_1vehicles_1_1space_1_1_inter_stellar_craft_large.html',1,'tools::vehicles::space']]],
+  ['interstellarcraftmedium',['InterStellarCraftMedium',['../classtools_1_1vehicles_1_1space_1_1_inter_stellar_craft_medium.html',1,'tools::vehicles::space']]],
+  ['interstellarcraftsmall',['InterStellarCraftSmall',['../classtools_1_1vehicles_1_1space_1_1_inter_stellar_craft_small.html',1,'tools::vehicles::space']]]
 ];

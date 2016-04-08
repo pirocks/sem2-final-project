@@ -1,5 +1,12 @@
 <map id="tools.weapons.guns.artillery.Artillery" name="tools.weapons.guns.artillery.Artillery">
-<area shape="rect" id="node2" href="$classtools_1_1weapons_1_1guns_1_1_gun.html" title="tools.weapons.guns.Gun" alt="" coords="16,155,183,181"/>
-<area shape="rect" id="node3" href="$classtools_1_1weapons_1_1_weapon.html" title="tools.weapons.Weapon" alt="" coords="20,80,179,107"/>
-<area shape="rect" id="node4" href="$interfacetools_1_1weapons_1_1_attackable.html" title="tools.weapons.Attackable" alt="" coords="13,5,185,32"/>
+<area shape="rect" id="node7" href="$classtools_1_1weapons_1_1guns_1_1artillery_1_1_artillery_large.html" title="tools.weapons.guns.artillery.\lArtilleryLarge" alt="" coords="1009,5,1197,47"/>
+<area shape="rect" id="node8" href="$classtools_1_1weapons_1_1guns_1_1artillery_1_1_artillery_medium.html" title="tools.weapons.guns.artillery.\lArtilleryMedium" alt="" coords="1009,71,1197,112"/>
+<area shape="rect" id="node9" href="$classtools_1_1weapons_1_1guns_1_1artillery_1_1_artillery_small.html" title="tools.weapons.guns.artillery.\lArtillerySmall" alt="" coords="1009,136,1197,177"/>
+<area shape="rect" id="node10" href="$classtools_1_1weapons_1_1guns_1_1artillery_1_1_howitzer.html" title="tools.weapons.guns.artillery.\lHowitzer" alt="" coords="1009,201,1197,243"/>
+<area shape="rect" id="node11" href="$classtools_1_1weapons_1_1guns_1_1artillery_1_1_tank_artillery.html" title="tools.weapons.guns.artillery.\lTankArtillery" alt="" coords="1009,267,1197,308"/>
+<area shape="rect" id="node2" href="$classtools_1_1weapons_1_1guns_1_1_gun.html" title="tools.weapons.guns.Gun" alt="" coords="559,143,725,170"/>
+<area shape="rect" id="node3" href="$classtools_1_1weapons_1_1_weapon.html" title="tools.weapons.Weapon" alt="" coords="352,143,511,170"/>
+<area shape="rect" id="node4" href="$classtools_1_1_tool.html" title="tools.Tool" alt="" coords="225,143,304,170"/>
+<area shape="rect" id="node5" href="$interfacetools_1_1weapons_1_1_attackable.html" title="tools.weapons.Attackable" alt="" coords="5,118,177,145"/>
+<area shape="rect" id="node6" href="$interfacetools_1_1vehicles_1_1_weighable.html" title="tools.vehicles.Weighable" alt="" coords="8,169,175,195"/>
 </map>

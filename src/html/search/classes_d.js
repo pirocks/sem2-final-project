@@ -1,12 +1,13 @@
 var searchData=
 [
-  ['school',['School',['../classbuildings_1_1workplaces_1_1_school.html',1,'buildings::workplaces']]],
-  ['seacraft',['SeaCraft',['../classtools_1_1vehicles_1_1sea_1_1_sea_craft.html',1,'tools::vehicles::sea']]],
-  ['sniperrifle',['SniperRifle',['../classtools_1_1weapons_1_1guns_1_1carried_1_1_sniper_rifle.html',1,'tools::weapons::guns::carried']]],
-  ['solarsystem',['SolarSystem',['../classuniverse_1_1_solar_system.html',1,'universe']]],
-  ['soldier',['Soldier',['../classpeople_1_1_soldier.html',1,'people']]],
-  ['spacecraft',['SpaceCraft',['../classtools_1_1vehicles_1_1space_1_1_space_craft.html',1,'tools::vehicles::space']]],
-  ['spaceweapon',['SpaceWeapon',['../classtools_1_1weapons_1_1space_1_1_space_weapon.html',1,'tools::weapons::space']]],
-  ['star',['Star',['../classuniverse_1_1_star.html',1,'universe']]],
-  ['submarine',['Submarine',['../classtools_1_1vehicles_1_1sea_1_1_submarine.html',1,'tools::vehicles::sea']]]
+  ['researcharea',['ResearchArea',['../classbuildings_1_1workplaces_1_1_research_area.html',1,'buildings::workplaces']]],
+  ['researcher',['Researcher',['../classpeople_1_1cityworkers_1_1_researcher.html',1,'people::cityworkers']]],
+  ['resource',['Resource',['../classuniverse_1_1_resource.html',1,'universe']]],
+  ['resourcedemand',['ResourceDemand',['../classuniverse_1_1_resource_demand.html',1,'universe']]],
+  ['road',['Road',['../classplanets_1_1_road.html',1,'planets']]],
+  ['roadcontainer',['RoadContainer',['../interfaceplanets_1_1_road_container.html',1,'planets']]],
+  ['roadcontainers',['RoadContainers',['../classplanets_1_1_road_containers.html',1,'planets']]],
+  ['roadgoing',['RoadGoing',['../classtools_1_1vehicles_1_1roadgoing_1_1_road_going.html',1,'tools::vehicles::roadgoing']]],
+  ['ruler',['Ruler',['../classpeople_1_1cityworkers_1_1_ruler.html',1,'people::cityworkers']]],
+  ['rulershouse',['RulersHouse',['../classbuildings_1_1housing_1_1_rulers_house.html',1,'buildings::housing']]]
 ];
