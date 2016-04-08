@@ -10,8 +10,11 @@ public class ShuttleLarge extends Shuttle
 {
 	public static int MaxPassengersInitial;
 	public static double maxWeightInitial;
-	protected ShuttleLarge(double resistance, double startHealth) {
-		super(resistance, startHealth, MaxPassengersInitial, maxWeightInitial);
+	public static double startHealthInitial;
+	public static double resistanceInitial;
+
+	protected ShuttleLarge() {
+		super(resistanceInitial, startHealthInitial, MaxPassengersInitial, maxWeightInitial);
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {

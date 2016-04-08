@@ -9,8 +9,11 @@ public class CityShipMedium extends CityShip
 {
 	public static int MaxPassengersInitial;
 	public static double maxWeightInitial;
-	protected CityShipMedium(double resistance, double startHealth) {
-		super(resistance, startHealth, MaxPassengersInitial, maxWeightInitial);
+	public static double startHealthInitial;
+	public static double resistanceInitial;
+
+	protected CityShipMedium() {
+		super(resistanceInitial, startHealthInitial, MaxPassengersInitial, maxWeightInitial);
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {

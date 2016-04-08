@@ -10,8 +10,11 @@ public class FactorySpaceCraftLarge extends FactorySpaceCraft
 {
 	public static int MaxPassengersInitial;
 	public static double maxWeightInitial;
-	protected FactorySpaceCraftLarge(double resistance, double startHealth) {
-		super(resistance, startHealth, MaxPassengersInitial, maxWeightInitial);
+	public static double startHealthInitial;
+	public static double resistanceInitial;
+
+	protected FactorySpaceCraftLarge() {
+		super(resistanceInitial, startHealthInitial, MaxPassengersInitial, maxWeightInitial);
 	}
 
 	@Override

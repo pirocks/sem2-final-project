@@ -17,6 +17,7 @@ public class SolarSystem implements PlanetContainer
     private ArrayList<Double> radii = new ArrayList<>();
     public SolarSystem(BigDecimal x,BigDecimal y, BigDecimal z)
     {
+        registerPlanetContainer();
         this.x = x;
         this.y = y;
         this.z = z;

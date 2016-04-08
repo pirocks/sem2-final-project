@@ -2,14 +2,19 @@ package engine.tools.vehicles.space;
 
 import engine.universe.ResourceDemand;
 
+//import static engine.planets.Road.resistance;
+
 /**
  * Created by bob on 4/7/2016.
  */
 public class PlanetDestroyerLarge extends PlanetDestroyer {
 	public static int MaxPassengersInitial;
 	public static double maxWeightInitial;
-	protected PlanetDestroyerLarge(double resistance, double startHealth) {
-		super(resistance, startHealth, MaxPassengersInitial, maxWeightInitial);
+	public static double startHealthInitial;
+	public static double resistanceInitial;
+
+	protected PlanetDestroyerLarge() {
+		super(resistanceInitial, startHealthInitial, MaxPassengersInitial, maxWeightInitial);
 	}
 
 	@Override

@@ -8,8 +8,11 @@ import engine.universe.ResourceDemand;
 public class FactorySpaceCraftSmall extends FactorySpaceCraft {
 	public static int MaxPassengersInitial;
 	public static double maxWeightInitial;
-	protected FactorySpaceCraftSmall(double resistance, double startHealth) {
-		super(resistance, startHealth, MaxPassengersInitial, maxWeightInitial);
+	public static double startHealthInitial;
+	public static double resistanceInitial;
+
+	protected FactorySpaceCraftSmall() {
+		super(resistanceInitial, startHealthInitial, MaxPassengersInitial, maxWeightInitial);
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {

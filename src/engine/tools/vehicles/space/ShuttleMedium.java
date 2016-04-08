@@ -9,8 +9,11 @@ public class ShuttleMedium extends Shuttle
 {
 	public static int MaxPassengersInitial;
 	public static double maxWeightInitial;
-	protected ShuttleMedium(double resistance, double startHealth) {
-		super(resistance, startHealth, MaxPassengersInitial, maxWeightInitial);
+	public static double startHealthInitial;
+	public static double resistanceInitial;
+
+	protected ShuttleMedium() {
+		super(resistanceInitial, startHealthInitial, MaxPassengersInitial, maxWeightInitial);
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {

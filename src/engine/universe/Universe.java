@@ -20,6 +20,7 @@ public class Universe implements Serializable, CountryContainer
     private ArrayList<Country> countries;
     public Universe(int numSolarSystems,double size)//size is not related to engine.universe units
     {
+        registerCountryContainer();
         solarSystems = new ArrayList<SolarSystem>();
         for(int i = 0; i < numSolarSystems;i++)
         {

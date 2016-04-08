@@ -9,8 +9,11 @@ public class FreighterLarge extends Freighter
 {
 	public static int MaxPassengersInitial;
 	public static double maxWeightInitial;
-	protected FreighterLarge(double resistance, double startHealth) {
-		super(resistance, startHealth, MaxPassengersInitial, maxWeightInitial);
+	public static double startHealthInitial;
+	public static double resistanceInitial;
+
+	protected FreighterLarge() {
+		super(resistanceInitial, startHealthInitial, MaxPassengersInitial, maxWeightInitial);
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {

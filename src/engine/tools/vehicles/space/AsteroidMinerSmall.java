@@ -9,8 +9,10 @@ public class AsteroidMinerSmall extends AsteroidMiner
 {
 	public static int MaxPassengersInitial;
 	public static double maxWeightInitial;
-	protected AsteroidMinerSmall(double resistance, double startHealth) {
-		super(resistance, startHealth, MaxPassengersInitial, maxWeightInitial);
+	public static double startHealthInitial;
+	public static double resistanceInitial;
+	protected AsteroidMinerSmall() {
+		super(resistanceInitial, startHealthInitial, MaxPassengersInitial, maxWeightInitial);
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {

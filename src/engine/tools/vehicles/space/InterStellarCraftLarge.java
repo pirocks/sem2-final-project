@@ -8,8 +8,11 @@ import engine.universe.ResourceDemand;
 public class InterStellarCraftLarge extends InterStellarCraft {
 	public static int MaxPassengersInitial;
 	public static double maxWeightInitial;
-	protected InterStellarCraftLarge(double resistance, double startHealth) {
-		super(resistance, startHealth, MaxPassengersInitial, maxWeightInitial);
+	public static double startHealthInitial;
+	public static double resistanceInitial;
+
+	protected InterStellarCraftLarge() {
+		super(resistanceInitial, startHealthInitial, MaxPassengersInitial, maxWeightInitial);
 	}
 
 	@Override

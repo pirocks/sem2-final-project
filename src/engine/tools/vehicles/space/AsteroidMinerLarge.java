@@ -4,13 +4,16 @@ import engine.universe.ResourceDemand;
 
 /**
  * Created by bob on 4/7/2016.
+ *
  */
 public class AsteroidMinerLarge extends AsteroidMiner
 {
+	public static double startHealthInitial;
+	public static double resistanceInitial;
 	public static int MaxPassengersInitial;
 	public static double maxWeightInitial;
-	protected AsteroidMinerLarge(double resistance, double startHealth) {
-		super(resistance, startHealth, MaxPassengersInitial, maxWeightInitial);
+	protected AsteroidMinerLarge() {
+		super(resistanceInitial, startHealthInitial, MaxPassengersInitial, maxWeightInitial);
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {

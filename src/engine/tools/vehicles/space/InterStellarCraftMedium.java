@@ -10,8 +10,11 @@ public class InterStellarCraftMedium extends InterStellarCraft
 {
 	public static int MaxPassengersInitial;
 	public static double maxWeightInitial;
-	protected InterStellarCraftMedium(double resistance, double startHealth) {
-		super(resistance, startHealth, MaxPassengersInitial, maxWeightInitial);
+	public static double startHealthInitial;
+	public static double resistanceInitial;
+
+	protected InterStellarCraftMedium() {
+		super(resistanceInitial, startHealthInitial, MaxPassengersInitial, maxWeightInitial);
 	}
 
 	@Override

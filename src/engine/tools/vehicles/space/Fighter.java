@@ -9,8 +9,12 @@ public class Fighter extends SpaceCraft
 {
 	public static int MaxPassengersInitial;
 	public static double maxWeightInitial;
-	protected Fighter(double resistance, double startHealth) {
-		super(resistance, startHealth, MaxPassengersInitial, maxWeightInitial);
+
+	public static double startHealthInitial;
+	public static double resistanceInitial;
+
+	protected Fighter() {
+		super(resistanceInitial, startHealthInitial, MaxPassengersInitial, maxWeightInitial);
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
