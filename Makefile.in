@@ -640,7 +640,7 @@ distclean-generic:
 
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
-	@echo "it deletes files that may require special tools to rebuild."
+	@echo "it deletes files that may require special engine.tools to rebuild."
 clean: clean-recursive
 
 clean-am: clean-generic clean-local mostlyclean-am

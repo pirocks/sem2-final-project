@@ -1,6 +1,6 @@
 AUTOMAKE_OPTIONS = foreign
 dir = .
-#SUBDIRS = universe welcomescreen planets cities
+#SUBDIRS = engine.universe ui.welcomescreen engine.planets engine.cities
 _JAVA = $(wildcard */*.java) $(wildcard *.java)
 JAVAROOT = ../bin/
-AM_JAVACFLAGS = -d ${top_srcdir}/bin/ -g -sourcepath ${top_srcdir}/src/universe:${top_srcdir}/src/cities:${top_srcdir}/src/planets:../src/
+AM_JAVACFLAGS = -d ${top_srcdir}/bin/ -g -sourcepath ${top_srcdir}/src/engine.universe:${top_srcdir}/src/engine.cities:${top_srcdir}/src/engine.planets:../src/

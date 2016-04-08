@@ -1,37 +1,37 @@
 lets have the following:
 engine
 ui
-welcomescreen
+ui.welcomescreen
 --each of the above will be in different subdirectories
 
 1. engine subderectories
-engine/people
+engine/engine.people
     --will contain abstract person// refactor to just person
-engine/buildings
+engine/engine.buildings
     --will contain abstract bulding
 engine/planet
     -- will have grid, planet, country, hazard/resouce/continent
 engine/human constructs//needs better name
     -- will have mony source
-engine/tools/spacecraft
+engine/engine.tools/spacecraft
     --will contain sspacecraft class and offshoots
-engine/tools/vehicles/roadgoing
+engine/engine.tools/vehicles/roadgoing
     --will contain vehecles for normal operations in city
-engine/tools/vehicles/air
+engine/engine.tools/vehicles/air
     --aircraft but not spacecraft
-engine/tools/vehicles/sea
+engine/engine.tools/vehicles/sea
     --seacraft
-engine/tools/vechiles/land
+engine/engine.tools/vechiles/land
     --tanks etc
-engine/tools/weapons/space
+engine/engine.tools/weapons/space
     --weapons for space use
-engine/science/
+engine/engine.science/
     --clasees for differnt discoveries
 engine/constants management//need better name
     //how is this going too work??
     //each class could be registerd and updated based on technology
-    //a science would list what types and how it would affect them
-    //could also contain a lot of interfaces so that science can affecct everuythin of the apropriate type
+    //a engine.science would list what types and how it would affect them
+    //could also contain a lot of interfaces so that engine.science can affecct everuythin of the apropriate type
     //every construcctor would have to register here
 engine/random generation
     // not actually a package but would be a random generation class in every subdirectory for this

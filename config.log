@@ -25,7 +25,7 @@ uname -v = #1 SMP Debian 3.16.7-ckt25-1 (2016-03-06)
 /usr/bin/hostinfo      = unknown
 /bin/machine           = unknown
 /usr/bin/oslevel       = unknown
-/bin/universe          = unknown
+/bin/engine.universe          = unknown
 
 PATH: /usr/local/bin
 PATH: /usr/bin
