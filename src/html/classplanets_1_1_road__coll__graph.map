@@ -1,5 +1,0 @@
-<map id="planets.Road" name="planets.Road">
-<area shape="rect" id="node2" href="$interfacetools_1_1weapons_1_1_attackable.html" title="tools.weapons.Attackable" alt="" coords="5,5,177,32"/>
-<area shape="rect" id="node3" href="$interfacecities_1_1_city_container.html" title="cities.CityContainer" alt="" coords="201,5,339,32"/>
-<area shape="rect" id="node4" href="$interfacetools_1_1vehicles_1_1_vehicle_container.html" title="tools.vehicles.VehicleContainer" alt="" coords="363,5,569,32"/>
-</map>

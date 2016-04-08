@@ -1,9 +1,0 @@
-<map id="cities.CityBlock" name="cities.CityBlock">
-<area shape="rect" id="node2" href="$interfacetools_1_1weapons_1_1_attackable.html" title="tools.weapons.Attackable" alt="" coords="478,5,650,32"/>
-<area shape="rect" id="node3" href="$interfacecities_1_1_city_container.html" title="cities.CityContainer" alt="" coords="495,56,633,83"/>
-<area shape="rect" id="node4" href="$interfacebuildings_1_1_building_container.html" title="buildings.BuildingContainer" alt="" coords="475,107,653,133"/>
-<area shape="rect" id="node5" href="$classplanets_1_1_location_planet.html" title="planets.LocationPlanet" alt="" coords="487,157,641,184"/>
-<area shape="rect" id="node6" href="$interfaceplanets_1_1_planet_container.html" title="planets.PlanetContainer" alt="" coords="225,136,387,163"/>
-<area shape="rect" id="node7" href="$classplanets_1_1_planet.html" title="planets.Planet" alt="" coords="253,187,359,213"/>
-<area shape="rect" id="node8" href="$interfaceplanets_1_1_country_container.html" title="planets.CountryContainer" alt="" coords="5,187,176,213"/>
-</map>

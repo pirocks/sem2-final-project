@@ -1,5 +1,0 @@
-<map id="planets.Grid" name="planets.Grid">
-<area shape="rect" id="node2" href="$interfaceplanets_1_1_planet_container.html" title="planets.PlanetContainer" alt="" coords="5,5,167,32"/>
-<area shape="rect" id="node3" href="$interfaceplanets_1_1_country_container.html" title="planets.CountryContainer" alt="" coords="191,5,362,32"/>
-<area shape="rect" id="node4" href="$interfacecities_1_1_city_container.html" title="cities.CityContainer" alt="" coords="387,5,524,32"/>
-</map>

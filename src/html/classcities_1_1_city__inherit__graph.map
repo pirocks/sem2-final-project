@@ -1,7 +1,0 @@
-<map id="cities.City" name="cities.City">
-<area shape="rect" id="node2" href="$classuniverse_1_1_money_source.html" title="universe.MoneySource" alt="" coords="17,5,172,32"/>
-<area shape="rect" id="node3" href="$interfacetools_1_1weapons_1_1_attackable.html" title="tools.weapons.Attackable" alt="" coords="9,56,181,83"/>
-<area shape="rect" id="node4" href="$interfacebuildings_1_1_building_container.html" title="buildings.BuildingContainer" alt="" coords="5,107,184,133"/>
-<area shape="rect" id="node5" href="$interfaceplanets_1_1_country_container.html" title="planets.CountryContainer" alt="" coords="9,157,180,184"/>
-<area shape="rect" id="node6" href="$interfacepeople_1_1_person_container.html" title="people.PersonContainer" alt="" coords="14,208,175,235"/>
-</map>

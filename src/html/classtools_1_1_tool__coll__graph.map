@@ -1,4 +1,0 @@
-<map id="tools.Tool" name="tools.Tool">
-<area shape="rect" id="node2" href="$interfacetools_1_1weapons_1_1_attackable.html" title="tools.weapons.Attackable" alt="" coords="5,5,177,32"/>
-<area shape="rect" id="node3" href="$interfacetools_1_1vehicles_1_1_weighable.html" title="tools.vehicles.Weighable" alt="" coords="201,5,368,32"/>
-</map>
