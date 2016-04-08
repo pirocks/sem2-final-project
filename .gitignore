@@ -3,3 +3,5 @@
 *.2
 Makefile
 autom4te.cache/*
+src/html/*
+src/latex/*
