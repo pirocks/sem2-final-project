@@ -1,5 +1,6 @@
 package engine.tools.vehicles.land;
 
+import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
 /**
@@ -12,8 +13,12 @@ public class AutomatedArmouredVehicle extends LandVehicle {
 	public static double startHealthInitial;
 	public static double resistanceInitial;
 
-	protected AutomatedArmouredVehicle() {
-		super(resistanceInitial, startHealthInitial, maxPassengersInitial, maxWeightInitial);
+	public AutomatedArmouredVehicle() {
+		super(new VehicleInitialConstants(
+				startHealthInitial,
+				resistanceInitial,
+				maxPassengersInitial,
+				maxWeightInitial));
 	}
 
 	@Override

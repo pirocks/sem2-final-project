@@ -45,7 +45,12 @@ public class Soldier extends AbstractPerson implements VehicleContainer, MoneySo
 		    remove(parentCountry);
     }
 
-    public static enum TypeOfTask
+	@Override
+	public double getWeight() {
+		return 0;// TODO: 4/9/2016
+	}
+
+	public static enum TypeOfTask
     {
         March,Drive,Guard,Heal//what about attack??
     };

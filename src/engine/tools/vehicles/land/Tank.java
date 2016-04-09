@@ -1,5 +1,6 @@
 package engine.tools.vehicles.land;
 
+import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
 /**
@@ -12,10 +13,13 @@ public class Tank extends LandVehicle {
 	public static double startHealthInitial;
 	public static double resistanceInitial;
 
-	protected Tank() {
-		super(resistanceInitial, startHealthInitial, maxPassengersInitial, maxWeightInitial);
+	public Tank() {
+		super(new VehicleInitialConstants(
+				startHealthInitial,
+				resistanceInitial,
+				maxPassengersInitial,
+				maxWeightInitial));
 	}
-
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
 		return null;//todo

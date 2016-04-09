@@ -25,4 +25,9 @@ public class Researcher extends CityWorker
     public void doSkill(long time) {
         //TODO:implemented
     }
+
+    @Override
+    public double getWeight() {
+        return 0;// TODO: 4/9/2016
+    }
 }

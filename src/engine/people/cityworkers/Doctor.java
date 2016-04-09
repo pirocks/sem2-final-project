@@ -91,4 +91,9 @@ public class Doctor extends CityWorker
             salaryGiver.outOfMoneyHandler(salary*healthIncrease);
         }
     }
+
+    @Override
+    public double getWeight() {
+        return 0;// TODO: 4/9/2016
+    }
 }

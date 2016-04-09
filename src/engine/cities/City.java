@@ -2,6 +2,7 @@ package engine.cities;
 
 import engine.buildings.Building;
 import engine.buildings.BuildingContainer;
+import engine.buildings.housing.RulersHouse;
 import engine.buildings.workplaces.Hospital;
 import engine.people.AbstractPerson;
 import engine.people.PersonContainer;
@@ -53,7 +54,7 @@ public class City extends MoneySource implements Attackable, BuildingContainer, 
     public Building getCapitalBuilding() {
         assert(isCapital);
         for(CityBlock cityBlock:cityBlocks)
-            if(cityBlock.getBuilding().getType() == Building.Type.RulersHouse)
+            if(cityBlock.getBuilding() instanceof RulersHouse)
                 return cityBlock.getBuilding();
         assert(false);
         return null;

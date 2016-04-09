@@ -1,5 +1,6 @@
 package engine.tools.vehicles.land;
 
+import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
 /**
@@ -14,10 +15,13 @@ public class Artillery extends LandVehicle
 	public static double startHealthInitial;
 	public static double resistanceInitial;
 
-	protected Artillery() {
-		super(resistanceInitial, startHealthInitial, maxPassengersInitial, maxWeightInitial);
+	public Artillery() {
+		super(new VehicleInitialConstants(
+				startHealthInitial,
+				resistanceInitial,
+				maxPassengersInitial,
+				maxWeightInitial));
 	}
-
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
 		return null;//todo

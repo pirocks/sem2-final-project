@@ -1,17 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 package engine.people.cityworkers;
 
 import engine.buildings.housing.Housing;
@@ -44,5 +30,11 @@ public class Ruler extends CityWorker//TODO:clean this up
     @Override
     public void doSkill(long time) {
 		//TODO unimplemented
+        //needs to tie into ai and ui
     }
+
+	@Override
+	public double getWeight() {
+		return 0;// TODO: 4/9/2016
+	}
 }

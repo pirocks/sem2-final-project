@@ -1,11 +1,13 @@
 package engine.tools.vehicles.land;
 
 import engine.tools.vehicles.Vehicle;
+import engine.tools.vehicles.VehicleInitialConstants;
 
 public abstract class LandVehicle extends Vehicle
 {
-	protected LandVehicle(double resistance, double startHealth, int maxPassengers, double maxWeight) {
-		super(resistance, startHealth, maxPassengers, maxWeight);
+
+	protected LandVehicle(VehicleInitialConstants vehicleInitialConstants) {
+		super(vehicleInitialConstants);
 	}
 
 	public boolean inSpaceQ()

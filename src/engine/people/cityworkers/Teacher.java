@@ -18,6 +18,7 @@ import engine.buildings.housing.Housing;
 import engine.buildings.workplaces.School;
 import engine.cities.City;
 import engine.people.AbstractPerson;
+import engine.planets.LocationPlanet;
 
 public class Teacher extends CityWorker
 {
@@ -43,4 +44,13 @@ public class Teacher extends CityWorker
         //TODO:unimplmented
     }
 
+    @Override
+    public double getWeight() {
+        return 0;// TODO: 4/9/2016  people jave weight for vehicles
+    }
+
+    @Override
+    public LocationPlanet getLocationPlanet() {
+        return null;// TODO: 4/9/2016
+    }
 }

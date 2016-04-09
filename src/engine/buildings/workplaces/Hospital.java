@@ -4,6 +4,7 @@ import engine.cities.CityBlock;
 import engine.people.AbstractPerson;
 import engine.people.cityworkers.CityWorker;
 import engine.universe.MoneySource;
+import engine.universe.ResourceDemand;
 
 import java.util.ArrayList;
 
@@ -46,4 +47,14 @@ public class Hospital extends Workplace
 	    assert(sickpeople.contains(person));
 	    sickpeople.remove(person);
     }
+
+	@Override
+	public ResourceDemand getResourceCost() {
+		return null;// TODO: 4/9/2016
+	}
+
+	@Override
+	public double getCost() {
+		return 0;// TODO: 4/9/2016
+	}
 }

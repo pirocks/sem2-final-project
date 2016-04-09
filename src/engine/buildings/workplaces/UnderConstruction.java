@@ -3,10 +3,11 @@ package engine.buildings.workplaces;
 import engine.cities.CityBlock;
 import engine.people.cityworkers.CityWorker;
 import engine.universe.MoneySource;
+import engine.universe.ResourceDemand;
 
 import java.util.ArrayList;
 
-public class UnderConstruction extends Workplace
+@Deprecated class UnderConstruction extends Workplace
 {
 	private Type type;
 	private double progress = 0.0;
@@ -15,5 +16,15 @@ public class UnderConstruction extends Workplace
 	{
 		super(builders,block,owner);
 		//make call to super but then change resistance etc.
+	}
+
+	@Override
+	public ResourceDemand getResourceCost() {
+		return null;// TODO: 4/9/2016
+	}
+
+	@Override
+	public double getCost() {
+		return 0;// TODO: 4/9/2016
 	}
 }

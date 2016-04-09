@@ -38,8 +38,7 @@ public abstract class AbstractPerson extends MoneySource implements Attackable, 
     protected double salary;
     protected boolean employedq;
     protected MoneySource salaryGiver;//needs to be set when assigned
-    public AbstractPerson(Type type,Country country)
-    {
+    public AbstractPerson(Type type,Country country) {
         super(Double.NaN);
         double corruptionFactor = UniversalConstants.getCorruptionFactor(country);
         int population;
@@ -113,8 +112,7 @@ public abstract class AbstractPerson extends MoneySource implements Attackable, 
     {
         return health;
     }
-    public void increaseHealth(double amount)
-    {
+    public void increaseHealth(double amount) {
         assert(amount <= 1.0 - health);
         health += amount;
     }
@@ -127,14 +125,12 @@ public abstract class AbstractPerson extends MoneySource implements Attackable, 
     {
         return location;
     }
-	public void recieveDamage(double damage, Weapon weapon)
-    {
+	public void recieveDamage(double damage, Weapon weapon) {
 	    health = (health*personDamageResistance - damage)/personDamageResistance;
 	    amIDead();
     }
 	private boolean alliveQ;
-	public boolean amIDead()
-	{
+	public boolean amIDead() {
 		if(population <= 0)
 			die();
 		if(health <= 0)
@@ -167,9 +163,12 @@ public abstract class AbstractPerson extends MoneySource implements Attackable, 
 		if(salaryGiver == moneySource)
 			salaryGiver = null;
 	}
-
 	@Override
 	public void receiveDamage(double damage, Weapon attacker) {
 		//TODO: implement me
+	}
+	@Override
+	public LocationPlanet getLocationPlanet() {
+		return location;
 	}
 }

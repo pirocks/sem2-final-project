@@ -12,7 +12,7 @@ public class Bus extends RoadGoing {
 	public static double startHealthInitial;
 	public static double resistanceInitial;
 
-	protected Bus() {
+	public Bus() {
 		super(new VehicleInitialConstants(
 				startHealthInitial,
 				resistanceInitial,
