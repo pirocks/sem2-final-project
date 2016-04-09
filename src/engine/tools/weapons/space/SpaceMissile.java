@@ -2,6 +2,8 @@ package engine.tools.weapons.space;
 
 import engine.universe.ResourceDemand;
 
+import java.math.BigDecimal;
+
 /**
  * Created by bob on 4/6/2016.
  *
@@ -9,9 +11,15 @@ import engine.universe.ResourceDemand;
 public class SpaceMissile extends SpaceWeapon {
 
 
-	public SpaceMissile(double damage, double resistance, double startHealth) {
-		super(damage, resistance, startHealth);
+	public static double startHealthInitial;
+	public static double resistanceInitial;
+	public static double damageInitial;
+	public static BigDecimal rangeInitial;
+
+	public SpaceMissile() {
+		super(damageInitial, rangeInitial, resistanceInitial, startHealthInitial);
 	}
+
 
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {

@@ -8,7 +8,7 @@ import engine.universe.ResourceDemand;
 public abstract class Tool implements Attackable, Weighable
 {
 	protected double health;
-//	protected double resistance;
+	protected double resistance;
 	protected Tool(double resistance,double startHealth)
 	{
 

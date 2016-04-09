@@ -36,6 +36,6 @@ public class ToolUnderConstruction <Type extends Tool>
 	{
 		if(areWeDoneYet())
 			return object;
-		return null;
+		return null;//// TODO: 4/8/2016 actually this should work
 	}
 }
