@@ -15,8 +15,8 @@ public class Hospital extends Workplace
     // private ArrayList<Doctor> doctors;//this shouldn't be necesary
     private ArrayList<CityWorker> sickpeople;
 
-	public Hospital(Type type, ArrayList<CityWorker> workers, CityBlock parentBlock, MoneySource owner) {
-		super(type, workers, parentBlock, owner);
+	public Hospital(ArrayList<CityWorker> workers, CityBlock parentBlock, MoneySource owner) {
+		super(workers, parentBlock, owner);
 	}
 
 	public CityWorker getNextPatient()

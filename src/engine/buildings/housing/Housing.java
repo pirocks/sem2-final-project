@@ -14,28 +14,22 @@ public abstract class Housing extends Building implements PersonContainer
 {
     private int maximumOccupancy;
     protected ArrayList<CityWorker> residents;
-    public Housing(Type type,ArrayList<CityWorker> residents,CityBlock parentBlock)
+    public Housing(ArrayList<CityWorker> residents,CityBlock parentBlock)
     {
-    	super(type,parentBlock,true);
+    	super(parentBlock,true);
     	this.residents = residents;
-    	switch(type)
-    	{
-    		case ApartmentBlock:
-    			maximumOccupancy = ApartmentBlock.maximumOccupancyInitial;
-    			break;
-    		case RulersHouse:
-    			maximumOccupancy = RulersHouse.maximumOccupancyInitial;
-    			break;
-    // 		case WealthWorkersHouseBlock:
-    // 			maximumOccupancy = WealthWorkersHouseBlock.maximumOccupancyInitial;
-    // 			break;
-    		case WorkersHouseBlock:
-    			maximumOccupancy = WorkersHouseBlock.maximumOccupancyInitial;
-    			break;
-    		default:
-    			assert(false);
-    			break;
-    	}
+        if(this instanceof ApartmentBlock) {
+	        maximumOccupancy = ApartmentBlock.maximumOccupancyInitial;
+        }
+        if(this instanceof RulersHouse) {
+	        maximumOccupancy = RulersHouse.maximumOccupancyInitial;
+        }
+// 		if(this instanceof WealthWorkersHouseBlock){
+// 			maximumOccupancy = WealthWorkersHouseBlock.maximumOccupancyInitial;
+//	    }
+        if(this instanceof WorkersHouseBlock) {
+	        maximumOccupancy = WorkersHouseBlock.maximumOccupancyInitial;
+        }
     }
     public boolean overcrowdedQ()
     {

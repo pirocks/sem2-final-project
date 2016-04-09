@@ -1,5 +1,6 @@
 package engine.tools.weapons.guns.carried;
 
+import engine.tools.weapons.guns.GunInitialConstants;
 import engine.universe.ResourceDemand;
 
 /**
@@ -14,7 +15,13 @@ public class SniperRifle extends Carried{
 	public static double rangeInitial;
 
 	public SniperRifle() {
-		super(accuracyInitial, damageInitial, rangeInitial, resistanceInitial, startHealthInitial);
+		super(new GunInitialConstants(
+			startHealthInitial,
+			resistanceInitial,
+			accuracyInitial,
+			rangeInitial,
+			damageInitial
+		));
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {

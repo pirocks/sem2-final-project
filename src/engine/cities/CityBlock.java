@@ -1,25 +1,8 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 package engine.cities;
 
 import engine.buildings.Building;
 import engine.buildings.BuildingContainer;
+import engine.buildings.BuildingContainers;
 import engine.planets.Grid;
 import engine.planets.LocationPlanet;
 import engine.tools.weapons.Attackable;
@@ -74,10 +57,21 @@ public class CityBlock implements Attackable,CityContainer, BuildingContainer
             building.receiveDamage(damage,attacker);
     }
 
-    @Override
+	@Override
+	public void die() {
+		building.die();
+	}
+
+	@Override
+	public LocationPlanet getLocationPlanet() {
+		return building.getLocationPlanet();
+	}
+
+	@Override
     public void remove(Building building) {
 		if(this.building == building)
 		{
+			BuildingContainers.remove(building);
 			this.building = null;
 		}
     }
@@ -86,7 +80,8 @@ public class CityBlock implements Attackable,CityContainer, BuildingContainer
     public void remove(City city) {
 		if(parentCity == city) {
 			parentCity = null;
-			assert (false);//TODO, if a city is destroyed so is everything below it right. yep, because it eliminates the citiless problem, so if a city is destryed so is everytthing eslse, will start implementing that
+            die();
+//			assert (false);//TODO, if a city is destroyed so is everything below it right. yep, because it eliminates the citiless problem, so if a city is destryed so is everytthing eslse, will start implementing that
 		}
     }
 }

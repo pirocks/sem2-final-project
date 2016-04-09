@@ -1,5 +1,6 @@
 package engine.tools.weapons.guns.artillery;
 
+import engine.tools.weapons.guns.GunInitialConstants;
 import engine.universe.ResourceDemand;
 
 /**
@@ -13,7 +14,13 @@ public class Howitzer extends Artillery{
 	public static double rangeInitial;
 
 	public Howitzer() {
-		super(accuracyInitial, damageInitial, rangeInitial, resistanceInitial, startHealthInitial);
+		super(new GunInitialConstants(
+			startHealthInitial,
+			resistanceInitial,
+			accuracyInitial,
+			rangeInitial,
+			damageInitial
+		));
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {

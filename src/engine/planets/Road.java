@@ -47,4 +47,14 @@ public class Road implements Attackable, CityContainer, VehicleContainer
 
 		}
 	}
+
+	@Override
+	public void die() {
+		// TODO: 4/9/2016
+	}
+
+	@Override
+	public LocationPlanet getLocationPlanet() {
+		return null;// TODO: 4/9/2016
+	}
 }

@@ -145,7 +145,10 @@ public abstract class CityWorker extends AbstractPerson implements BuildingConta
 	@Override
 	public void remove(City city)
 	{
-
+		if(currentCity == city)
+		{
+			die();
+		}
 	}
 	@Override
 	public void remove(Building building)

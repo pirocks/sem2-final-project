@@ -44,7 +44,7 @@ public class IndustrialDock extends Workplace
 	public static double costInitial;
 	public static double resistanceInitial;
 
-	public IndustrialDock(Type type, ArrayList<CityWorker> workers, CityBlock parentBlock, MoneySource owner) {
-		super(type, workers, parentBlock, owner);
+	public IndustrialDock(ArrayList<CityWorker> workers, CityBlock parentBlock, MoneySource owner) {
+		super(workers, parentBlock, owner);
 	}
 }

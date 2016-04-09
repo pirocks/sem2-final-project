@@ -1,5 +1,6 @@
 package engine.tools.weapons.space;
 
+import engine.tools.ToolInitialConstants;
 import engine.universe.ResourceDemand;
 
 import java.math.BigDecimal;
@@ -17,7 +18,7 @@ public class SpaceMissile extends SpaceWeapon {
 	public static BigDecimal rangeInitial;
 
 	public SpaceMissile() {
-		super(damageInitial, rangeInitial, resistanceInitial, startHealthInitial);
+		super(new ToolInitialConstants(startHealthInitial,resistanceInitial),damageInitial,rangeInitial);
 	}
 
 

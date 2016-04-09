@@ -1,5 +1,6 @@
 package engine.tools.weapons.space;
 
+import engine.tools.ToolInitialConstants;
 import engine.universe.ResourceDemand;
 
 import java.math.BigDecimal;
@@ -15,7 +16,7 @@ public class Laser extends SpaceWeapon {
 	public static BigDecimal rangeInitial;
 
 	public Laser() {
-		super(damageInitial, rangeInitial, resistanceInitial, startHealthInitial);
+		super(new ToolInitialConstants(startHealthInitial, resistanceInitial),damageInitial, rangeInitial);
 	}
 
 	@Override

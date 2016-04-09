@@ -11,8 +11,8 @@ public class RulersHouse extends Housing
 	public static double costInitial;
 	public static double resistanceInitial;
 
-	public RulersHouse(Type type, ArrayList<CityWorker> residents, CityBlock parentBlock) {
-		super(type, residents, parentBlock);
+	public RulersHouse(ArrayList<CityWorker> residents, CityBlock parentBlock) {
+		super(residents, parentBlock);
 	}
 	//doesn't do much, but don't deprecate
 }

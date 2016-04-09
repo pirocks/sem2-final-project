@@ -44,7 +44,7 @@ public class ResearchArea extends Workplace
 	public static double resistanceInitial;
 	private Discovery discovery;
 
-	public ResearchArea(Type type, ArrayList<CityWorker> workers, CityBlock parentBlock, MoneySource owner) {
-		super(type, workers, parentBlock, owner);
+	public ResearchArea(ArrayList<CityWorker> workers, CityBlock parentBlock, MoneySource owner) {
+		super(workers, parentBlock, owner);
 	}
 }

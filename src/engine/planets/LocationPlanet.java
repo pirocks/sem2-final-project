@@ -2,6 +2,7 @@ package engine.planets;
 // import java.math.BigDecimal;
 
 import engine.buildings.Building;
+import engine.cities.City;
 import engine.cities.CityBlock;
 
 public class LocationPlanet implements PlanetContainer
@@ -19,6 +20,14 @@ public class LocationPlanet implements PlanetContainer
 		Gridx = b.getGrid().getX();
 		Gridy = b.getGrid().getY();
 		Planet planet = b.getGrid().getParentPlanet();
+	}
+	public LocationPlanet(City c)
+	{
+		Gridx = c.getGrid().getX();
+		Gridy = c.getGrid().getY();
+		planet = c.getGrid().getParentPlanet();
+		Blockx = c.getCapitalBuilding().getParentBlock().getXInGrid();// TODO: 4/9/2016 see below
+		Blocky = c.getCapitalBuilding().getParentBlock().getYInGrid();// TODO: 4/9/2016 make sure that this gets the town hal not capital city and tht get y in grid gets cityblock
 	}
 	public LocationPlanet(Building b)
 	{

@@ -1,6 +1,7 @@
 package engine.tools.weapons.guns.artillery;
 
 import engine.tools.weapons.guns.Gun;
+import engine.tools.weapons.guns.GunInitialConstants;
 
 /**
  * Created by bob on 4/3/2016.
@@ -8,7 +9,7 @@ import engine.tools.weapons.guns.Gun;
  */
 public abstract class Artillery extends Gun {
 
-	public Artillery(double accuracy, double damage, double range, double resistance, double startHealth) {
-		super(accuracy, damage, range, resistance, startHealth);
+	public Artillery(GunInitialConstants gunInitialConstants) {
+		super(gunInitialConstants);
 	}
 }

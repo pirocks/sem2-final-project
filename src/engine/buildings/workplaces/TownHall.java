@@ -39,7 +39,7 @@ public class TownHall extends Workplace
 	public static double costInitial;
 	public static double resistanceInitial;
 
-	public TownHall(Type type, ArrayList<CityWorker> workers, CityBlock parentBlock, MoneySource owner) {
-		super(type, workers, parentBlock, owner);
+	public TownHall(ArrayList<CityWorker> workers, CityBlock parentBlock, MoneySource owner) {
+		super(workers, parentBlock, owner);
 	}
 }

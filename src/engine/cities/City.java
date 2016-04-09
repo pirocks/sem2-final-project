@@ -9,6 +9,7 @@ import engine.people.cityworkers.CityWorker;
 import engine.planets.Country;
 import engine.planets.CountryContainer;
 import engine.planets.Grid;
+import engine.planets.LocationPlanet;
 import engine.tools.weapons.Attackable;
 import engine.tools.weapons.Weapon;
 import engine.universe.MoneySource;
@@ -113,10 +114,22 @@ public class City extends MoneySource implements Attackable, BuildingContainer, 
 		if(parentCountry == country) {
 			parentCountry = null;
 			assert (false);
+			//die();//??
 		}
     }
-    @Override //TODO: do this
+    @Override //TODO: if damage s creater than a certain number pass to city otherwise go to random cityblock
     public void receiveDamage(double damage, Weapon attacker) {
 
+    }
+
+    @Override
+    public void die() {
+        CityContainers.remove(this);// TODO: 4/9/2016 make sure that this kills everything
+
+    }
+
+    @Override
+    public LocationPlanet getLocationPlanet() {
+        return new LocationPlanet(this);
     }
 }

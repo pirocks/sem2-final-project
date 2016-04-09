@@ -35,8 +35,8 @@ public class School extends Workplace
 	public static double costInitial;
 	public static double resistanceInitial;
 
-	public School(Type type, ArrayList<CityWorker> workers, CityBlock parentBlock, MoneySource owner) {
-		super(type, workers, parentBlock, owner);
+	public School(ArrayList<CityWorker> workers, CityBlock parentBlock, MoneySource owner) {
+		super(workers, parentBlock, owner);
 	}
 	//no member vars needed, teachers have all vars required
 	

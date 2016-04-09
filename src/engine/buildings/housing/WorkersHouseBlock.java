@@ -12,8 +12,8 @@ public class WorkersHouseBlock extends Housing
 	public static double costInitial;
 	public static double resistanceInitial;
 
-	public WorkersHouseBlock(Type type, ArrayList<CityWorker> residents, CityBlock parentBlock)
+	public WorkersHouseBlock(ArrayList<CityWorker> residents, CityBlock parentBlock)
 	{
-		super(type, residents, parentBlock);
+		super(residents, parentBlock);
 	}
 }

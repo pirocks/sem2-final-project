@@ -1,5 +1,6 @@
 package engine.tools.weapons.guns.carried;
 
+import engine.tools.weapons.guns.GunInitialConstants;
 import engine.universe.ResourceDemand;
 
 /**
@@ -11,8 +12,15 @@ public class HandGun extends Carried{
 	public static double resistanceInitial;
 	public static double accuracyInitial;
 	public static double damageInitial;
+	public static double rangeInitial;
 	public HandGun() {
-		super(accuracyInitial, damageInitial, resistanceInitial, startHealthInitial);
+		super(new GunInitialConstants(
+			startHealthInitial,
+			resistanceInitial,
+			accuracyInitial,
+			rangeInitial,
+			damageInitial
+		));
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
