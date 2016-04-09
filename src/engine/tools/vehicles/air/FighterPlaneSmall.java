@@ -1,5 +1,6 @@
 package engine.tools.vehicles.air;
 
+import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
 /**
@@ -12,9 +13,12 @@ public class FighterPlaneSmall extends FighterPlane {
 	public static int maxPassengersInitial;
 	public static double maxWeightInitial;
 	public FighterPlaneSmall() {
-		super(resistanceInitial, startHealthInitial, maxPassengersInitial, maxWeightInitial);
+		super(new VehicleInitialConstants(
+				startHealthInitial,
+				resistanceInitial,
+				maxPassengersInitial,
+				maxWeightInitial));
 	}
-
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
 		return null;//todo

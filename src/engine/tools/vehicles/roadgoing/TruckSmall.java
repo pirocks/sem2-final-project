@@ -1,5 +1,6 @@
 package engine.tools.vehicles.roadgoing;
 
+import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
 /**
@@ -12,7 +13,11 @@ public class TruckSmall extends Truck {
 	public static double resistanceInitial;
 
 	protected TruckSmall() {
-		super(resistanceInitial, startHealthInitial, maxPassengersInitial, maxWeightInitial);
+		super(new VehicleInitialConstants(
+				startHealthInitial,
+				resistanceInitial,
+				maxPassengersInitial,
+				maxWeightInitial));
 	}
 
 	@Override

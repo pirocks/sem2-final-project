@@ -1,5 +1,6 @@
 package engine.tools.vehicles.sea;
 
+import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
 /**
@@ -7,13 +8,17 @@ import engine.universe.ResourceDemand;
  *
  */
 public class AircraftCarrier extends SeaCraft {
-	public static int MaxPassengersInitial;
+	public static int maxPassengersInitial;
 	public static double maxWeightInitial;
 	public static double startHealthInitial;
 	public static double resistanceInitial;
 
 	protected AircraftCarrier() {
-		super(resistanceInitial, startHealthInitial, MaxPassengersInitial, maxWeightInitial);
+		super(new VehicleInitialConstants(
+				startHealthInitial,
+				resistanceInitial,
+				maxPassengersInitial,
+				maxWeightInitial));
 	}
 
 	@Override

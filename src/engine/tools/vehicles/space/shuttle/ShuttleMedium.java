@@ -1,5 +1,6 @@
 package engine.tools.vehicles.space.shuttle;
 
+import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
 /**
@@ -13,7 +14,11 @@ public class ShuttleMedium extends Shuttle
 	public static double resistanceInitial;
 
 	protected ShuttleMedium() {
-		super(resistanceInitial, startHealthInitial, MaxPassengersInitial, maxWeightInitial);
+		super(new VehicleInitialConstants(
+				startHealthInitial,
+				resistanceInitial,
+				MaxPassengersInitial,
+				maxWeightInitial));
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {

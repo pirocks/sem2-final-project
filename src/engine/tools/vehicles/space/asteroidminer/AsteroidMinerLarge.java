@@ -1,5 +1,6 @@
 package engine.tools.vehicles.space.asteroidminer;
 
+import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
 /**
@@ -13,7 +14,11 @@ public class AsteroidMinerLarge extends AsteroidMiner
 	public static int MaxPassengersInitial;
 	public static double maxWeightInitial;
 	protected AsteroidMinerLarge() {
-		super(resistanceInitial, startHealthInitial, MaxPassengersInitial, maxWeightInitial);
+		super(new VehicleInitialConstants(
+				startHealthInitial,
+				resistanceInitial,
+				MaxPassengersInitial,
+				maxWeightInitial));
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {

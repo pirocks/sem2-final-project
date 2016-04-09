@@ -1,5 +1,6 @@
 package engine.tools.vehicles.air;
 
+import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
 /**
@@ -12,10 +13,13 @@ public class Helicopter extends Aircraft {
 	public static double startHealthInitial;
 	public static double resistanceInitial;
 
-	protected Helicopter() {
-		super(resistanceInitial, startHealthInitial, maxPassengersInitial, maxWeightInitial);
+	public Helicopter() {
+		super(new VehicleInitialConstants(
+				startHealthInitial,
+				resistanceInitial,
+				maxPassengersInitial,
+				maxWeightInitial));
 	}
-
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
 		return null;//todo

@@ -1,5 +1,6 @@
 package engine.tools.vehicles.space.planetdestroyer;
 
+import engine.tools.vehicles.VehicleInitialConstants;
 import engine.tools.vehicles.space.SpaceCraft;
 
 /**
@@ -8,7 +9,8 @@ import engine.tools.vehicles.space.SpaceCraft;
  */
 public abstract class PlanetDestroyer extends SpaceCraft
 {
-	protected PlanetDestroyer(double resistance, double startHealth, int maxPassengers, double maxWeight) {
-		super(resistance, startHealth, maxPassengers, maxWeight);
+
+	protected PlanetDestroyer(VehicleInitialConstants vehicleInitialConstants) {
+		super(vehicleInitialConstants);
 	}
 }

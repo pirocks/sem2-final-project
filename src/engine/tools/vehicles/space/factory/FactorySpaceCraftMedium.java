@@ -1,5 +1,6 @@
 package engine.tools.vehicles.space.factory;
 
+import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
 /**
@@ -12,7 +13,11 @@ public class FactorySpaceCraftMedium extends FactorySpaceCraft {
 	public static double resistanceInitial;
 
 	protected FactorySpaceCraftMedium() {
-		super(resistanceInitial, startHealthInitial, MaxPassengersInitial, maxWeightInitial);
+		super(new VehicleInitialConstants(
+				startHealthInitial,
+				resistanceInitial,
+				MaxPassengersInitial,
+				maxWeightInitial));
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {

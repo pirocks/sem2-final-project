@@ -1,5 +1,6 @@
 package engine.tools.vehicles.space.shuttle;
 
+import engine.tools.vehicles.VehicleInitialConstants;
 import engine.tools.vehicles.space.SpaceCraft;
 
 /**
@@ -7,7 +8,8 @@ import engine.tools.vehicles.space.SpaceCraft;
  */
 public abstract class Shuttle extends SpaceCraft
 {
-	protected Shuttle(double resistance, double startHealth, int maxPassengers, double maxWeight) {
-		super(resistance, startHealth, maxPassengers, maxWeight);
+
+	protected Shuttle(VehicleInitialConstants vehicleInitialConstants) {
+		super(vehicleInitialConstants);
 	}
 }

@@ -1,5 +1,6 @@
 package engine.tools.vehicles.space.interstellarcraft;
 
+import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
 /**
@@ -12,7 +13,11 @@ public class InterStellarCraftLarge extends InterStellarCraft {
 	public static double resistanceInitial;
 
 	protected InterStellarCraftLarge() {
-		super(resistanceInitial, startHealthInitial, MaxPassengersInitial, maxWeightInitial);
+		super(new VehicleInitialConstants(
+				startHealthInitial,
+				resistanceInitial,
+				MaxPassengersInitial,
+				maxWeightInitial));
 	}
 
 	@Override

@@ -1,5 +1,6 @@
 package engine.tools.vehicles.space.cityship;
 
+import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
 /**
@@ -13,7 +14,11 @@ public class CityShipMedium extends CityShip
 	public static double resistanceInitial;
 
 	protected CityShipMedium() {
-		super(resistanceInitial, startHealthInitial, MaxPassengersInitial, maxWeightInitial);
+		super(new VehicleInitialConstants(
+				startHealthInitial,
+				resistanceInitial,
+				MaxPassengersInitial,
+				maxWeightInitial));
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {

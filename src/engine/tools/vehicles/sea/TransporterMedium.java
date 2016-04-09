@@ -1,5 +1,6 @@
 package engine.tools.vehicles.sea;
 
+import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
 //import static engine.planets.Road.resistance;
@@ -15,7 +16,11 @@ public class TransporterMedium extends Transporter {
 	public static double resistanceInitial;
 
 	protected TransporterMedium() {
-		super(resistanceInitial, startHealthInitial, maxPassengersInitial, maxWeightInitial);
+		super(new VehicleInitialConstants(
+				startHealthInitial,
+				resistanceInitial,
+				maxPassengersInitial,
+				maxWeightInitial));
 	}
 
 	@Override

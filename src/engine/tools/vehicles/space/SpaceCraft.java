@@ -1,13 +1,13 @@
 package engine.tools.vehicles.space;
 
 import engine.tools.vehicles.Vehicle;
+import engine.tools.vehicles.VehicleInitialConstants;
 
 public abstract class SpaceCraft extends Vehicle
 {
 
-
-	protected SpaceCraft(double resistance, double startHealth, int maxPassengers, double maxWeight) {
-		super(resistance, startHealth, maxPassengers, maxWeight);
+	protected SpaceCraft(VehicleInitialConstants vehicleInitialConstants) {
+		super(vehicleInitialConstants);
 	}
 
 	@Override

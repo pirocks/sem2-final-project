@@ -1,12 +1,13 @@
 package engine.tools.vehicles.air;
 
 import engine.tools.vehicles.Vehicle;
+import engine.tools.vehicles.VehicleInitialConstants;
 
 
 public abstract class Aircraft extends Vehicle
 {
-    protected Aircraft(double resistance, double startHealth, int maxPassengers, double maxWeight) {
-        super(resistance, startHealth, maxPassengers, maxWeight);
+    protected Aircraft(VehicleInitialConstants vehicleInitialConstants) {
+        super(vehicleInitialConstants);
     }
 
     @Override

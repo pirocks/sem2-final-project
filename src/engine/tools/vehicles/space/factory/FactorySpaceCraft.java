@@ -1,5 +1,6 @@
 package engine.tools.vehicles.space.factory;
 
+import engine.tools.vehicles.VehicleInitialConstants;
 import engine.tools.vehicles.space.SpaceCraft;
 
 /**
@@ -7,7 +8,7 @@ import engine.tools.vehicles.space.SpaceCraft;
  */
 public abstract class FactorySpaceCraft extends SpaceCraft
 {
-	protected FactorySpaceCraft(double resistance, double startHealth, int maxPassengers, double maxWeight) {
-		super(resistance, startHealth, maxPassengers, maxWeight);
+	protected FactorySpaceCraft(VehicleInitialConstants vehicleInitialConstants) {
+		super(vehicleInitialConstants);
 	}
 }

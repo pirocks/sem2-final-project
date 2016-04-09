@@ -1,5 +1,6 @@
 package engine.tools.vehicles.air;
 
+import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
 /**
@@ -13,7 +14,11 @@ public class CargoPlaneSmall extends CargoPlane
 	public static int maxPassengersInitial;
 	public static double maxWeightInitial;
 	public CargoPlaneSmall() {
-		super(resistanceInitial, startHealthInitial, maxPassengersInitial, maxWeightInitial);
+		super(new VehicleInitialConstants(
+				startHealthInitial,
+				resistanceInitial,
+				maxPassengersInitial,
+				maxWeightInitial));
 	}
 
 

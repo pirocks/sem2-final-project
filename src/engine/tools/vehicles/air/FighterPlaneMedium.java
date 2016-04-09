@@ -1,5 +1,6 @@
 package engine.tools.vehicles.air;
 
+import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
 /**
@@ -12,9 +13,12 @@ public class FighterPlaneMedium extends FighterPlane{
 	public static int maxPassengersInitial;
 	public static double maxWeightInitial;
 	public FighterPlaneMedium() {
-		super(resistanceInitial, startHealthInitial, maxPassengersInitial, maxWeightInitial);
+		super(new VehicleInitialConstants(
+				startHealthInitial,
+				resistanceInitial,
+				maxPassengersInitial,
+				maxWeightInitial));
 	}
-
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
 		return null;//// TODO: 4/7/2016

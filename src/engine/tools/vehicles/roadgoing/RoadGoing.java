@@ -1,12 +1,13 @@
 package engine.tools.vehicles.roadgoing;
 
 import engine.tools.vehicles.Vehicle;
+import engine.tools.vehicles.VehicleInitialConstants;
 
 //possible deprecation b/c roads ot clear;y defined
 public abstract class RoadGoing extends Vehicle//maaube extend land
 {
-	protected RoadGoing(double resistance, double startHealth, int maxPassengers, double maxWeight) {
-		super(resistance, startHealth, maxPassengers, maxWeight);
+	protected RoadGoing(VehicleInitialConstants vehicleInitialConstants) {
+		super(vehicleInitialConstants);
 	}
 
 	public boolean inWaterQ()

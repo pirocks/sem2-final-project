@@ -1,9 +1,11 @@
 package engine.tools.vehicles.space;
 
+import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
 /**
  * Created by bob on 4/7/2016.
+ *
  */
 public class Fighter extends SpaceCraft
 {
@@ -14,7 +16,11 @@ public class Fighter extends SpaceCraft
 	public static double resistanceInitial;
 
 	protected Fighter() {
-		super(resistanceInitial, startHealthInitial, MaxPassengersInitial, maxWeightInitial);
+		super(new VehicleInitialConstants(
+				startHealthInitial,
+				resistanceInitial,
+				MaxPassengersInitial,
+				maxWeightInitial));
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {

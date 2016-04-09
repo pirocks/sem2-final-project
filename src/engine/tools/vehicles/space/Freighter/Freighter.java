@@ -1,5 +1,6 @@
 package engine.tools.vehicles.space.Freighter;
 
+import engine.tools.vehicles.VehicleInitialConstants;
 import engine.tools.vehicles.space.SpaceCraft;
 
 /**
@@ -8,8 +9,7 @@ import engine.tools.vehicles.space.SpaceCraft;
  */
 public abstract class Freighter extends SpaceCraft
 {
-
-	protected Freighter(double resistance, double startHealth, int maxPassengers, double maxWeight) {
-		super(resistance, startHealth, maxPassengers, maxWeight);
+	protected Freighter(VehicleInitialConstants vehicleInitialConstants) {
+		super(vehicleInitialConstants);
 	}
 }

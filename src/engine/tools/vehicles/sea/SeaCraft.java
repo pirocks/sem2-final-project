@@ -1,14 +1,16 @@
 package engine.tools.vehicles.sea;
 
 import engine.tools.vehicles.Vehicle;
+import engine.tools.vehicles.VehicleInitialConstants;
 
 public abstract class SeaCraft extends Vehicle
 {
-	public boolean inWaterQ;
+	protected boolean inWaterQ = false;
 
-	protected SeaCraft(double resistance, double startHealth, int maxPassengers, double maxWeight) {
-		super(resistance, startHealth, maxPassengers, maxWeight);
+	protected SeaCraft(VehicleInitialConstants vehicleInitialConstants) {
+		super(vehicleInitialConstants);
 	}
+
 
 	public boolean inSpaceQ()
 	{

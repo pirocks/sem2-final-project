@@ -1,11 +1,14 @@
 package engine.tools.vehicles.sea;
 
+import engine.tools.vehicles.VehicleInitialConstants;
+
 /**
  * Created by bob on 4/3/2016.
  *
  */
 public abstract class Transporter extends SeaCraft {
-	protected Transporter(double resistance, double startHealth, int maxPassengers, double maxWeight) {
-		super(resistance, startHealth, maxPassengers, maxWeight);
+
+	protected Transporter(VehicleInitialConstants vehicleInitialConstants) {
+		super(vehicleInitialConstants);
 	}
 }

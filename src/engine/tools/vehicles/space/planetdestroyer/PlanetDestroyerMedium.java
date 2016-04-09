@@ -1,5 +1,6 @@
 package engine.tools.vehicles.space.planetdestroyer;
 
+import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
 /**
@@ -12,7 +13,11 @@ public class PlanetDestroyerMedium extends PlanetDestroyer {
 	public static double resistanceInitial;
 
 	protected PlanetDestroyerMedium() {
-		super(resistanceInitial, startHealthInitial, MaxPassengersInitial, maxWeightInitial);
+		super(new VehicleInitialConstants(
+				startHealthInitial,
+				resistanceInitial,
+				MaxPassengersInitial,
+				maxWeightInitial));
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
