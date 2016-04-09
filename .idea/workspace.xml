@@ -2,82 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/DockYard.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/engine/tools/ToolInitialConstants.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/VehicleInitialConstants.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/GunInitialConstants.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/AsteroidMiner.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/asteroidminer/AsteroidMiner.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/AsteroidMinerLarge.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/asteroidminer/AsteroidMinerLarge.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/AsteroidMinerMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/asteroidminer/AsteroidMinerMedium.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/AsteroidMinerSmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/asteroidminer/AsteroidMinerSmall.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/CityShip.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/cityship/CityShip.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/CityShipLarge.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/cityship/CityShipLarge.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/CityShipMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/cityship/CityShipMedium.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/CityShipSmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/cityship/CityShipSmall.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/FactorySpaceCraft.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/factory/FactorySpaceCraft.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/FactorySpaceCraftLarge.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/factory/FactorySpaceCraftLarge.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/FactorySpaceCraftMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/factory/FactorySpaceCraftMedium.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/FactorySpaceCraftSmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/factory/FactorySpaceCraftSmall.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/Freighter.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/Freighter/Freighter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/FreighterLarge.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/Freighter/FreighterLarge.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/FreighterMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/Freighter/FreighterMedium.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/FreighterSmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/Freighter/FreighterSmall.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/InterStellarCraft.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/interstellarcraft/InterStellarCraft.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/InterStellarCraftLarge.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/interstellarcraft/InterStellarCraftLarge.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/InterStellarCraftMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/interstellarcraft/InterStellarCraftMedium.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/InterStellarCraftSmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/interstellarcraft/InterStellarCraftSmall.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/PlanetDestroyer.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/planetdestroyer/PlanetDestroyer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/PlanetDestroyerLarge.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/planetdestroyer/PlanetDestroyerLarge.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/PlanetDestroyerMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/planetdestroyer/PlanetDestroyerMedium.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/Shuttle.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/shuttle/Shuttle.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/ShuttleLarge.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/shuttle/ShuttleLarge.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/ShuttleMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/shuttle/ShuttleMedium.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/ShuttleSmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/shuttle/ShuttleSmall.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/Building.java" afterPath="$PROJECT_DIR$/src/engine/buildings/Building.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/housing/ApartmentBlock.java" afterPath="$PROJECT_DIR$/src/engine/buildings/housing/ApartmentBlock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/housing/Housing.java" afterPath="$PROJECT_DIR$/src/engine/buildings/housing/Housing.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/housing/RulersHouse.java" afterPath="$PROJECT_DIR$/src/engine/buildings/housing/RulersHouse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/housing/WealthyWorkersHouseBlock.java" afterPath="$PROJECT_DIR$/src/engine/buildings/housing/WealthyWorkersHouseBlock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/housing/WorkersHouseBlock.java" afterPath="$PROJECT_DIR$/src/engine/buildings/housing/WorkersHouseBlock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/Factory.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/Factory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/Hospital.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/Hospital.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/IndustrialDock.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/IndustrialDock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/ResearchArea.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/ResearchArea.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/School.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/School.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/TownHall.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/TownHall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/UnderConstruction.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/UnderConstruction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/Warehouse.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/Warehouse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/Workplace.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/Workplace.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/cities/City.java" afterPath="$PROJECT_DIR$/src/engine/cities/City.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/cities/CityBlock.java" afterPath="$PROJECT_DIR$/src/engine/cities/CityBlock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/people/cityworkers/CityWorker.java" afterPath="$PROJECT_DIR$/src/engine/people/cityworkers/CityWorker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/planets/LocationPlanet.java" afterPath="$PROJECT_DIR$/src/engine/planets/LocationPlanet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/planets/Road.java" afterPath="$PROJECT_DIR$/src/engine/planets/Road.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/Tool.java" afterPath="$PROJECT_DIR$/src/engine/tools/Tool.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/Vehicle.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/Vehicle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/Attackable.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/Attackable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/Weapon.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/Weapon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/Gun.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/Gun.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/Artillery.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/Artillery.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/ArtilleryLarge.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/ArtilleryLarge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/ArtilleryMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/ArtilleryMedium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/ArtillerySmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/ArtillerySmall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/Howitzer.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/Howitzer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/TankArtillery.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/TankArtillery.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/carried/Carried.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/carried/Carried.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/carried/HandGun.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/carried/HandGun.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/carried/SniperRifle.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/carried/SniperRifle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/AntiAirCraftGun.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/AntiAirCraftGun.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/MachineGun.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/MachineGun.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/MachineGunLarge.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/MachineGunLarge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/MachineGunMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/MachineGunMedium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/MachineGunSmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/MachineGunSmall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/Mounted.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/Mounted.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/space/EmpWeapon.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/space/EmpWeapon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/space/Laser.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/space/Laser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/space/SpaceMissile.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/space/SpaceMissile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/space/SpaceWeapon.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/space/SpaceWeapon.java" />
     </list>
     <ignored path="testing.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -864,7 +789,14 @@
       <option name="project" value="LOCAL" />
       <updated>1460165577132</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="created arg classes for wepons/tools and cleaned up vehicles/space">
+      <created>1460233648882</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1460233648882</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -931,7 +863,8 @@
     <MESSAGE value="land refactored" />
     <MESSAGE value="air refactored" />
     <MESSAGE value="space weapons refactored" />
-    <option name="LAST_COMMIT_MESSAGE" value="space weapons refactored" />
+    <MESSAGE value="created arg classes for wepons/tools and cleaned up vehicles/space" />
+    <option name="LAST_COMMIT_MESSAGE" value="created arg classes for wepons/tools and cleaned up vehicles/space" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
