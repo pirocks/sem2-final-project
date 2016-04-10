@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/engine/people/cityworkers/PeopleInitialConstants.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/people/AbstractPerson.java" afterPath="$PROJECT_DIR$/src/engine/people/AbstractPerson.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/people/cityworkers/Bureaucrat.java" afterPath="$PROJECT_DIR$/src/engine/people/cityworkers/Bureaucrat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/people/cityworkers/CityWorker.java" afterPath="$PROJECT_DIR$/src/engine/people/cityworkers/CityWorker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/people/cityworkers/Doctor.java" afterPath="$PROJECT_DIR$/src/engine/people/cityworkers/Doctor.java" />
     </list>
     <ignored path="testing.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -758,7 +753,14 @@
       <option name="project" value="LOCAL" />
       <updated>1460321704421</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="intermediate commit fixing person classes">
+      <created>1460329166046</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1460329166046</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -838,7 +840,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="we good now" />
     <MESSAGE value="reworked some extends added space weapons" />
     <MESSAGE value="sync" />
     <MESSAGE value="crapton of edits" />
@@ -863,7 +864,8 @@
     <MESSAGE value="intermediate commit" />
     <MESSAGE value="now compiles buunch of edits" />
     <MESSAGE value="fxml updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="fxml updates" />
+    <MESSAGE value="intermediate commit fixing person classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="intermediate commit fixing person classes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
