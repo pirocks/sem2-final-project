@@ -25,6 +25,10 @@ public abstract class Vehicle extends Tool implements Attackable, PersonContaine
 	private double maxWeight;
 	protected Vehicle(VehicleInitialConstants vehicleInitialConstants) {
 		super(vehicleInitialConstants.toolInitialConstants);
+		registerPersonContainer();
+		registerMoneySourceContainer();
+		registerVehicleContainer();
+		registerWeaponContainer();
 		maxPassengers = vehicleInitialConstants.maxPassengers;
 		maxWeight = vehicleInitialConstants.maxWeight;
 		passengers = new ArrayList<>();
@@ -53,7 +57,8 @@ public abstract class Vehicle extends Tool implements Attackable, PersonContaine
 				cargo.add((Resource) weighable);
 			}
 			else if(weighable instanceof AbstractPerson) {
-				passengers.add((AbstractPerson) weighable);
+				if(passengers.size() < maxPassengers)
+					passengers.add((AbstractPerson) weighable);
 			}
 			else
 				throw new IllegalStateException();

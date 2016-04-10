@@ -12,8 +12,14 @@ public class LocationPlanet implements PlanetContainer
 	private int Gridy;
 	private int Blockx;
 	private int Blocky;
-	public LocationPlanet(CityBlock b)
-	{
+	public LocationPlanet(Planet planet,int Gridx,int Gridy,int Blockx,int Blocky){
+		this.planet = planet;
+		this.Blockx = Blockx;
+		this.Blocky = Blocky;
+		this.Gridx = Gridx;
+		this.Gridy = Gridy;
+	}
+	public LocationPlanet(CityBlock b) {
 		registerPlanetContainer();
 		Blockx = b.getXInGrid();
 		Blocky = b.getYInGrid();
@@ -21,8 +27,7 @@ public class LocationPlanet implements PlanetContainer
 		Gridy = b.getGrid().getY();
 		Planet planet = b.getGrid().getParentPlanet();
 	}
-	public LocationPlanet(City c)
-	{
+	public LocationPlanet(City c) {
 		Gridx = c.getGrid().getX();
 		Gridy = c.getGrid().getY();
 		planet = c.getGrid().getParentPlanet();
@@ -33,27 +38,23 @@ public class LocationPlanet implements PlanetContainer
 	{
 		this(b.getParentBlock());
 	}
-	public void moveBlock(int x,int y)
-	{
+	public void moveBlock(int x,int y) {
 		Blockx = x;
 		Blocky = y;
 	}
-	public void moveGrid(int x, int y)
-	{
+	public void moveGrid(int x, int y) {
 		assert(Math.abs(Gridx - x) < 2 && Math.abs(Gridy - y) < 2 );
 		Gridx = x;
 		Gridy = y;
 	}
-	public void leavePlanet()
-	{
+	public void leavePlanet() {
 		planet = null;
 		Gridx = -1;
 		Gridy = -1;
 		Blockx = -1;
 		Blocky = -1;
 	}
-	public void arrivePlanet(CityBlock b)
-	{
+	public void arrivePlanet(CityBlock b) {
 		assert(planet == null);
 		Blockx = b.getXInGrid();
 		Blocky = b.getYInGrid();
@@ -66,8 +67,7 @@ public class LocationPlanet implements PlanetContainer
 	{
 		arrivePlanet(b.getParentBlock());
 	}
-	public double distanceBetween(LocationPlanet loc)
-	{
+	public double distanceBetween(LocationPlanet loc) {
 		double x1 = (double)(Gridx*100 + Blockx);
 		double x2 = (double)(loc.getGridx()*100 + loc.getBlockx());
 		double y1 = (double)(Gridy*100 + Blocky);
@@ -76,8 +76,7 @@ public class LocationPlanet implements PlanetContainer
 		double dy = y1 - y2;
 		return Math.sqrt(dx*dx+dy*dy);
 	}
-	private LocationPlanet go(LocationPlanet loc)
-	{
+	private LocationPlanet go(LocationPlanet loc) {
 		Gridx = loc.getGridx();
 		Gridy = loc.getGridy();
 		Blockx = loc.getBlockx();
@@ -128,7 +127,6 @@ public class LocationPlanet implements PlanetContainer
 		return Blocky;
 	}
 	public Planet getPlanet() {return planet;}
-
 	@Override
 	public void remove(Planet planet) {
 		if(this.planet == planet)
@@ -136,5 +134,22 @@ public class LocationPlanet implements PlanetContainer
 			this.planet = null;
 			assert(false);
 		}
+	}
+	public static LocationPlanet mediumLocation(LocationPlanet a,LocationPlanet b) {
+		assert (a.getPlanet() ==  b.getPlanet());
+		int Gridxa = a.getGridx();
+		int Gridya = a.getGridy();
+		int Blockxa = a.getBlockx();
+		int Blockya = a.getBlocky();
+		int Gridxb = b.getGridx();
+		int Gridyb = b.getGridy();
+		int Blockxb = b.getBlockx();
+		int Blockyb = b.getBlocky();
+		int Gridxmid = (Gridxa + Gridxb)/2;
+		int Gridymid = (Gridya + Gridyb)/2;
+		int Blockxmid = (Blockxa + Blockxb)/2;
+		int Blockymid = (Blockya + Blockyb)/2;
+		LocationPlanet out = new LocationPlanet(a.getPlanet(),Gridxmid,Gridymid,Blockxmid,Blockymid);
+		return out;
 	}
 }

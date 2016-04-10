@@ -1,3 +1,5 @@
+package engine.universe;
+
 import java.util.concurrent.ThreadLocalRandom;
 public class utils
 {

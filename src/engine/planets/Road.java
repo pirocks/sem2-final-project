@@ -18,7 +18,32 @@ public class Road implements Attackable, CityContainer, VehicleContainer
 	//if the road is destroyed completely then vehicles that sare onthe road are also destroyed
 	private ArrayList<Vehicle> vehiclesOnRoad;
 	private ArrayList<LocationPlanet> locations;
-	//TODO make a constructor  and make sure it registers containers
+	public Road(ArrayList<City> cities)
+	{
+		registerCityContainer();
+		registerVehicleContainer();
+		if(cities.size() < 2)
+			throw new IllegalArgumentException();
+		this.cities = new ArrayList<>(cities);
+		ArrayList<LocationPlanet> initialLocations = new ArrayList<>();
+		for(City city:cities)
+			initialLocations.add(city.getLocationPlanet());
+		ArrayList<LocationPlanet> finalout = new ArrayList<>(initialLocations.size()*4);//// TODO: 4/9/2016 figure out if this is the correct initial size
+		for(int i = 0; i < initialLocations.size()- 1;i++)
+		{
+			LocationPlanet a = initialLocations.get(i);
+			LocationPlanet b = initialLocations.get(i + 1);
+			LocationPlanet mid = LocationPlanet.mediumLocation(a,b);
+			LocationPlanet lowermid = LocationPlanet.mediumLocation(a,mid);
+			LocationPlanet uppermid = LocationPlanet.mediumLocation(mid,b);
+			finalout.add(a);
+			finalout.add(lowermid);
+			finalout.add(mid);
+			finalout.add(uppermid);
+			finalout.add(b);
+		}
+		locations = finalout;
+	}
 	public boolean passesThrough(City a)
 	{
 		for(City c:cities)
