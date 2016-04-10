@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/UnderConstruction.java" afterPath="$PROJECT_DIR$/src/engine/buildings/UnderConstruction.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/engine/tools/ToolInitialConstants.java" afterPath="$PROJECT_DIR$/src/engine/tools/AttackableInitialConstants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/bob.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/bob.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/Building.java" afterPath="$PROJECT_DIR$/src/engine/buildings/Building.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/housing/ApartmentBlock.java" afterPath="$PROJECT_DIR$/src/engine/buildings/housing/ApartmentBlock.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/housing/Housing.java" afterPath="$PROJECT_DIR$/src/engine/buildings/housing/Housing.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/housing/RulersHouse.java" afterPath="$PROJECT_DIR$/src/engine/buildings/housing/RulersHouse.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/housing/WealthyWorkersHouseBlock.java" afterPath="$PROJECT_DIR$/src/engine/buildings/housing/WealthyWorkersHouseBlock.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/housing/WorkersHouseBlock.java" afterPath="$PROJECT_DIR$/src/engine/buildings/housing/WorkersHouseBlock.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/DockYard.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/DockYard.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/Factory.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/Factory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/Hospital.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/Hospital.java" />
@@ -15,18 +17,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/School.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/School.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/TownHall.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/TownHall.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/Warehouse.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/Warehouse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/Workplace.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/Workplace.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/Tool.java" afterPath="$PROJECT_DIR$/src/engine/tools/Tool.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/Vehicle.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/Vehicle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/VehicleInitialConstants.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/VehicleInitialConstants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/Attackable.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/Attackable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/Weapon.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/Weapon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/Gun.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/Gun.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/GunInitialConstants.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/GunInitialConstants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/space/EmpWeapon.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/space/EmpWeapon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/space/Laser.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/space/Laser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/space/SpaceMissile.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/space/SpaceMissile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/space/SpaceWeapon.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/space/SpaceWeapon.java" />
     </list>
     <ignored path="testing.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,7 +59,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/engine/buildings/housing/WealthyWorkersHouseBlock.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/vehicles/land/LandVehicle.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/Bus.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/vehicles/land/ArmouredVehicle.java" />
@@ -78,10 +67,7 @@
         <option value="$PROJECT_DIR$/src/engine/tools/vehicles/land/AutomatedArtillery.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/vehicles/land/AutomatedTank.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/vehicles/land/Tank.java" />
-        <option value="$PROJECT_DIR$/src/engine/buildings/housing/WorkersHouseBlock.java" />
-        <option value="$PROJECT_DIR$/src/engine/buildings/housing/ApartmentBlock.java" />
         <option value="$PROJECT_DIR$/src/engine/people/cityworkers/Doctor.java" />
-        <option value="$PROJECT_DIR$/src/engine/buildings/housing/RulersHouse.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/vehicles/VehicleContainer.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/weapons/WeaponContainer.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/vehicles/Vehicle.java" />
@@ -101,17 +87,21 @@
         <option value="$PROJECT_DIR$/src/engine/cities/CityContainers.java" />
         <option value="$PROJECT_DIR$/src/engine/cities/CityBlock.java" />
         <option value="$PROJECT_DIR$/src/engine/cities/City.java" />
-        <option value="$PROJECT_DIR$/src/engine/buildings/housing/Housing.java" />
         <option value="$PROJECT_DIR$/src/ui/view/universe/universeview.fxml" />
         <option value="$PROJECT_DIR$/src/ui/view/planet/planetview.fxml" />
         <option value="$PROJECT_DIR$/src/engine/buildings/workplaces/UnderConstruction.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/ToolInitialConstants.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/AttackableInitialConstants.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/weapons/Attackable.java" />
-        <option value="$PROJECT_DIR$/src/engine/buildings/Building.java" />
         <option value="$PROJECT_DIR$/src/engine/buildings/workplaces/Workplace.java" />
         <option value="$PROJECT_DIR$/src/engine/buildings/UnderConstruction.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/Tool.java" />
+        <option value="$PROJECT_DIR$/src/engine/buildings/housing/Housing.java" />
+        <option value="$PROJECT_DIR$/src/engine/buildings/housing/ApartmentBlock.java" />
+        <option value="$PROJECT_DIR$/src/engine/buildings/Building.java" />
+        <option value="$PROJECT_DIR$/src/engine/buildings/housing/RulersHouse.java" />
+        <option value="$PROJECT_DIR$/src/engine/buildings/housing/WorkersHouseBlock.java" />
+        <option value="$PROJECT_DIR$/src/engine/buildings/housing/WealthyWorkersHouseBlock.java" />
         <option value="$PROJECT_DIR$/src/engine/buildings/workplaces/Warehouse.java" />
         <option value="$PROJECT_DIR$/src/engine/buildings/workplaces/TownHall.java" />
         <option value="$PROJECT_DIR$/src/engine/buildings/workplaces/School.java" />
@@ -785,7 +775,14 @@
       <option name="project" value="LOCAL" />
       <updated>1460258466586</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="workplaces updates">
+      <created>1460310441525</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1460310441525</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -859,11 +856,12 @@
     <MESSAGE value="went through and checked register" />
     <MESSAGE value="fxml" />
     <MESSAGE value="fxml planetview and universe view" />
-    <option name="LAST_COMMIT_MESSAGE" value="fxml planetview and universe view" />
+    <MESSAGE value="workplaces updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="workplaces updates" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="41" />
+      <option name="time" value="42" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1012,41 +1010,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/buildings/housing/WorkersHouseBlock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/buildings/housing/WealthyWorkersHouseBlock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/buildings/housing/RulersHouse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/buildings/housing/Housing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/buildings/housing/ApartmentBlock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/out/production/testing/engine/buildings/Building.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-973">
@@ -1157,18 +1120,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/buildings/Building.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <element signature="method#remove#1;class#Building#0" expanded="false" />
-            <element signature="method#HousingQ#0;class#Building#0" expanded="false" />
-            <element signature="method#WorkplaceQ#0;class#Building#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/tools/AttackableInitialConstants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1197,10 +1148,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/buildings/housing/ApartmentBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/buildings/housing/Housing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+          <folding>
+            <element signature="method#overcrowdedQ#0;class#Housing#0" expanded="false" />
+            <element signature="method#getPopulation#0;class#Housing#0" expanded="false" />
+            <element signature="method#remove#0;class#Housing#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/buildings/Building.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding>
+            <element signature="method#remove#1;class#Building#0" expanded="false" />
+            <element signature="method#HousingQ#0;class#Building#0" expanded="false" />
+            <element signature="method#WorkplaceQ#0;class#Building#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/buildings/housing/RulersHouse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/buildings/housing/WorkersHouseBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/buildings/housing/WealthyWorkersHouseBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/Workplace.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        <state relative-caret-position="374">
+          <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
           <folding>
             <element signature="method#isEmployee#0;class#Workplace#0" expanded="false" />
             <element signature="method#addWorker#0;class#Workplace#0" expanded="false" />
@@ -1213,64 +1220,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/Warehouse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
+        <state relative-caret-position="221">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/TownHall.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+        <state relative-caret-position="306">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/School.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+        <state relative-caret-position="136">
+          <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/ResearchArea.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+        <state relative-caret-position="153">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/IndustrialDock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+        <state relative-caret-position="136">
+          <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/Hospital.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="59" column="27" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
+        <state relative-caret-position="72">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/Factory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+        <state relative-caret-position="272">
+          <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/DockYard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+        <state relative-caret-position="272">
+          <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

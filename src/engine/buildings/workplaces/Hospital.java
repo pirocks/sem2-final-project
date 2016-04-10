@@ -14,40 +14,40 @@ public class Hospital extends Workplace
 	public static double healthInitial;
 	public static double resistanceInitial;
 	public static int maximumOccupancyInitial = -1;
-	public static double costInitial;
-    // private ArrayList<Doctor> doctors;//this shouldn't be necesary
-    private ArrayList<CityWorker> sickpeople;
+	// private ArrayList<Doctor> doctors;//this shouldn't be necesary
+    private ArrayList<CityWorker> sickPeople;
 
 	public Hospital(CityBlock parentBlock, MoneySource owner) {
 		super(new AttackableInitialConstants(healthInitial,resistanceInitial), parentBlock, owner);
+		sickPeople = new ArrayList<>();
 	}
 
 	public CityWorker getNextPatient()
     {
-    	int i = sickpeople.size() - 1;
+    	int i = sickPeople.size() - 1;
     	if(i < 0)
     		return null;
-    	return sickpeople.get(i);
+    	return sickPeople.get(i);
     }
     public void admit(CityWorker cityworker)
 	{
-		sickpeople.add(cityworker);
+		sickPeople.add(cityworker);
     }
     public double getWorkLoad()
     {
     	double load = 0;
-    	for(CityWorker sickperson: sickpeople)
+    	for(CityWorker sickperson: sickPeople)
     		load += (1.0 - sickperson.getHealth())*sickperson.getPopulation();
     	return load;
     }
     public boolean releasePatient(CityWorker p)
     {
-        return sickpeople.remove(p);
+        return sickPeople.remove(p);
     }
     public void leavePerson(AbstractPerson person)
     {
-	    assert(sickpeople.contains(person));
-	    sickpeople.remove(person);
+	    assert(sickPeople.contains(person));
+	    sickPeople.remove(person);
     }
 
 	@Override
@@ -55,8 +55,4 @@ public class Hospital extends Workplace
 		return null;// TODO: 4/9/2016
 	}
 
-	@Override
-	public double getCost() {
-		return costInitial;
-	}
 }

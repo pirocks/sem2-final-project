@@ -18,14 +18,13 @@ import engine.universe.ResourceDemand;
 
 /**
  * Created by bob on 3/5/2016.
- * does stuuff
+ * does stuff
  */
 public abstract class Building extends Attackable implements CityContainer, PersonContainer//extends moneysource for workplace maybe??
 {
 	protected CityBlock parentBlock;
 	public Building(AttackableInitialConstants attackableInitialConstants,
-	                CityBlock parentBlock)
-    {
+	                CityBlock parentBlock) {
 	    super(attackableInitialConstants);
 	    registerCityContainer();
 	    registerPersonContainer();//TODO:go through and make sure every constructor has these
@@ -75,6 +74,5 @@ public abstract class Building extends Attackable implements CityContainer, Pers
 		return false;
 	}
 	public abstract ResourceDemand getResourceCost();
-	public abstract double getCost();
-
+//	public abstract double getCost();
 }

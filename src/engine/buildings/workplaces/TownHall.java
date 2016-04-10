@@ -26,8 +26,4 @@ public class TownHall extends Workplace
 		return null;// TODO: 4/9/2016
 	}
 
-	@Override
-	public double getCost() {
-		return costInitial;
-	}
 }

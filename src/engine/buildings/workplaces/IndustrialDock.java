@@ -13,7 +13,6 @@ public class IndustrialDock extends Workplace
 	public static double resistanceInitial;
 	public static double healthInitial;
 	public static int maximumOccupancyInitial = 5000;
-	public static double costInitial;
 
 	public IndustrialDock(AttackableInitialConstants attackableInitialConstants,CityBlock parentBlock, MoneySource owner) {
 		super(attackableInitialConstants, parentBlock, owner);
@@ -24,8 +23,4 @@ public class IndustrialDock extends Workplace
 		return null;// TODO: 4/9/2016
 	}
 
-	@Override
-	public double getCost() {
-		return costInitial;
-	}
 }
