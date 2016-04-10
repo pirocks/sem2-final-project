@@ -1,11 +1,14 @@
 package engine.people;
 
+import engine.people.cityworkers.PeopleInitialConstants;
+import engine.planets.LocationPlanet;
 import engine.universe.Country;
 import engine.tools.vehicles.Vehicle;
 import engine.tools.vehicles.VehicleContainer;
 import engine.tools.weapons.Weapon;
 import engine.universe.MoneySource;
 import engine.universe.MoneySourceContainer;
+import engine.universe.UniversalConstants;
 
 //this is not one soldier unit. It isd a unit of soldiers
 //remember that
@@ -13,36 +16,17 @@ import engine.universe.MoneySourceContainer;
 
 public class Soldier extends AbstractPerson implements VehicleContainer, MoneySourceContainer
 {
-    @Override
-    public void remove(Country country,Country conqueror) {
-        if(parentCountry == country)
-        {
-	        parentCountry = conqueror;//// TODO: 4/10/2016 register as citizen etc in country
-	        assert (false);
-        }
-    }
-    @Override
-    public void remove(Vehicle vehicle) {
-		if(this.vehicle == vehicle)
-		{
-			die();
-			vehicle = null;
-		}
-    }
-    @Override
-    public void remove(MoneySource in) {
-		if(in == toGuard)
-	        toGuard = null;
-	    if(parentCountry == in)
-		    remove(parentCountry);
-    }
-	@Override
-	public double getWeight() {
-		return 0;// TODO: 4/9/2016
-	}
-
-	public static enum TypeOfTask
-    {
+	public static int populationInitial = 5000;
+	public static double foodUsePerPersonInitial =
+			UniversalConstants.normalFoodUsePerPerson;
+	public static double crimeRiskInitial =
+			UniversalConstants.normalCrimeRisk;
+	public static double crimeImpactInitial =
+			0.5*UniversalConstants.importantPersonCrimeImpact;
+	public static double salaryInitial =
+			UniversalConstants.normalPersonSalary;
+	private static long timeToHealOnePerson = 3600*24;
+	public static enum TypeOfTask {
         March,Drive,Guard,Heal//what about attack??
     };
     private Country parentCountry;
@@ -52,15 +36,19 @@ public class Soldier extends AbstractPerson implements VehicleContainer, MoneySo
     private Vehicle vehicle;
     private MoneySource toGuard;
     private double xDestination,yDestination;
-    public Soldier(Country parentCountry)
-    {
+    public Soldier(Country parentCountry) {
 	    //todo what about location here
-	    super(parentCountry);
+	    super(new PeopleInitialConstants(populationInitial,
+			    foodUsePerPersonInitial,
+			    crimeRiskInitial,
+			    crimeImpactInitial,
+			    salaryInitial,
+			    parentCountry));
+
 	    registerVehicleContainer();
 	    registerMoneySourceContainer();
     }
-    public void doSkill(long time)
-    {
+    public void doSkill(long time) {
         switch(currentTask)
         {
             case March:
@@ -81,11 +69,39 @@ public class Soldier extends AbstractPerson implements VehicleContainer, MoneySo
                     attackableConstants.health = 1.0;
                 break;
         }
-        salaryGiver.pay(this,time*salary);
+        salaryGiver.pay(this,time*getSalary());
     }
     @Override
     protected void dieSpecific()
     {
 		return;
     }//TODO:implement this
+	@Override
+	public void remove(Country country,Country conqueror) {
+		if(parentCountry == country)
+		{
+			parentCountry = conqueror;//// TODO: 4/10/2016 register as citizen etc in country
+			assert (false);
+		}
+	}
+	@Override
+	public void remove(Vehicle vehicle) {
+		if(this.vehicle == vehicle)
+		{
+			die();
+			vehicle = null;
+		}
+	}
+	@Override
+	public void remove(MoneySource in) {
+		if(in == toGuard)
+			toGuard = null;
+		if(parentCountry == in)
+			remove(parentCountry);
+	}
+	@Override
+	public double getWeight() {
+		return 0;// TODO: 4/9/2016
+	}
+
 }

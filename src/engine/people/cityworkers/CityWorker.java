@@ -24,12 +24,11 @@ public abstract class CityWorker extends AbstractPerson implements BuildingConta
     private City currentCity;//should be renamed to parent city
 	protected long timeRemainingAtLocation;
 	private Hospital hospital; //is null if not going to hospital
-	public CityWorker(PeopleInitialConstants peopleInitialConstants,
-	                  City city,Housing home) {
+	public CityWorker(PeopleInitialConstants peopleInitialConstants,City city) {
 		super(peopleInitialConstants);
 		registerCityContainer();
 		registerBuildingContainer();
-		this.home = home;
+//		this.home = home;
 		currentCity = city;
 	}
 	public void goHome() {

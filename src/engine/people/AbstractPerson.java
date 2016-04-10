@@ -6,43 +6,37 @@ import engine.people.cityworkers.*;
 //import engine.people.cityworkers.Researcher;
 //import engine.people.cityworkers.Ruler;
 //import engine.people.cityworkers.Teacher;
-import engine.universe.Country;
-import engine.universe.CountryContainer;
+import engine.universe.*;
 import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.tools.vehicles.Weighable;
 import engine.tools.weapons.Attackable;
-import engine.universe.MoneySource;
-import engine.universe.MoneySourceContainer;
-import engine.universe.UniversalConstants;
 
 public abstract class AbstractPerson extends MoneySource implements Attackable, CountryContainer, MoneySourceContainer,Weighable
 {
 	public static double healthInitial;
 	public static double resistanceInitial;
+	private boolean alliveQ;
 	public AttackableConstants attackableConstants = new AttackableConstants(healthInitial,resistanceInitial);
-	protected LocationPlanet location;
-	protected Country country;//final??
+	private LocationPlanet location;
+	private Country country;//final??
 	private int population;
 	private double foodUsePerPerson;
 	private double crimeRisk;
 	private double crimeImpact;
 	private double salary;
 	protected boolean employedq = false;
-	protected MoneySource salaryGiver = null;// TODO: 4/10/2016 need to initialize this
 
-    protected AbstractPerson(PeopleInitialConstants peopleInitialConstants
-		    ,City parentCity, Building home) {
+	protected MoneySource salaryGiver = null;// TODO: 4/10/2016 need to initialize this
+	protected AbstractPerson(PeopleInitialConstants peopleInitialConstants) {
 	    super(0);
 	    population = peopleInitialConstants.population;
 	    foodUsePerPerson = peopleInitialConstants.foodUsePerPerson;
 	    crimeRisk = peopleInitialConstants.crimeRisk;
 	    crimeImpact = peopleInitialConstants.crimeImpact;
 	    salary = peopleInitialConstants.salary;
-//        this(parentCity.getParentCountry());
-
     }
-    private AbstractPerson(Country country) {
+	/*private AbstractPerson(Country country) {
 	    super(Double.NaN);
 	    registerCountryContainer();
 	    registerMoneySourceContainer();
@@ -110,25 +104,26 @@ public abstract class AbstractPerson extends MoneySource implements Attackable, 
         this.crimeImpact = crimeImpact;
         this.salary = salary;
         this.country = country;
-    }
-    public double getHealth()
-    {
+    }*/
+	public double getSalary(){
+		return salary;
+	}
+    public double getHealth() {
         return attackableConstants.health;
     }
-    public void increaseHealth(double amount) {
+	public void increaseHealth(double amount) {
         assert(amount <= 1.0 - attackableConstants.health);
         attackableConstants.health += amount;
     }
-    public abstract void doSkill(long time);//I don't thinksalary is required
-    public int getPopulation()
-    {
+//	@Override public LocationPlanet getLocationPlanet() {
+//		return location;
+//	}
+	public int getPopulation() {
         return population;
     }
-    public LocationPlanet getLocation()
-    {
+	public LocationPlanet getLocation() {
         return location;
     }
-	private boolean alliveQ;
 	public boolean amIDead() {
 		if(population <= 0)
 			die();
@@ -136,17 +131,21 @@ public abstract class AbstractPerson extends MoneySource implements Attackable, 
 			die();
 		return alliveQ;
 	}
+	public abstract void doSkill(long time);//I don't thinksalary is required
 	public void die() {
 		alliveQ = false;
 		dieSpecific();
-		leaveCountryForDeath();
+		PersonContainers.remove(this);
 		//need to delete all refernces to this object
 	}
+	protected void paySalary(long time) {
+		salaryGiver.pay(this,salary*time);
+	}
 	protected abstract void dieSpecific();
-	@Deprecated
-	public void leaveCountryForDeath()
-	{
-		country.loosePerson(this);
+	@Override
+	public void remove(MoneySource moneySource) {
+		if(salaryGiver == moneySource)
+			salaryGiver = null;
 	}
 	@Override
 	//TODO://how do the countryless work//they don't work/exsist
@@ -156,11 +155,6 @@ public abstract class AbstractPerson extends MoneySource implements Attackable, 
 			this.country = conqueror;// TODO: 4/10/2016 register a citizen and go through and fix that everywhere
 	}
 	@Override
-	public void remove(MoneySource moneySource) {
-		if(salaryGiver == moneySource)
-			salaryGiver = null;
-	}
-	@Override
 	public boolean receiveDamage(double damage) {
 		return attackableConstants.receiveDamage(damage,this);
 	}
@@ -168,8 +162,5 @@ public abstract class AbstractPerson extends MoneySource implements Attackable, 
 	public LocationPlanet getLocationPlanet() {
 		return location;
 	}
-	protected void paySalary(long time)
-	{
-		salaryGiver.pay(this,salary*time);
-	}
+
 }

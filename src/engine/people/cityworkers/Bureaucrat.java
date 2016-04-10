@@ -6,14 +6,30 @@ import engine.buildings.workplaces.Workplace;
 import engine.cities.City;
 import engine.people.AbstractPerson;
 import engine.planets.LocationPlanet;
+import engine.universe.UniversalConstants;
 
 public class Bureaucrat extends CityWorker
 {
-    private TownHall workplace;
+	public static int populationInitial = 100;
+	public static double foodUsePerPersonInitial =
+			UniversalConstants.normalFoodUsePerPerson;
+	public static double crimeRiskInitial =
+			UniversalConstants.normalCrimeRisk;
+	public static double crimeImpactInitial =
+			UniversalConstants.importantPersonCrimeImpact;
+	public static double salaryInitial =
+			2.0*UniversalConstants.normalPersonSalary;
+	private TownHall workplace;
     public static double bureaucratSalary;//secondly value
-	public Bureaucrat(City parentCity, Housing home)
+	public Bureaucrat(City parentCity)
     {
-        super(parentCity,home);
+	    super(new PeopleInitialConstants(populationInitial,
+			    foodUsePerPersonInitial,
+			    crimeRiskInitial,
+			    crimeImpactInitial,
+			    salaryInitial,
+			    parentCity.getParentCountry()),parentCity);
+
 //	    salaryGiver = workplace.
     }
 

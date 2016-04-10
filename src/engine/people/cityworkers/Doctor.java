@@ -16,7 +16,7 @@ public class Doctor extends CityWorker
 	public static double crimeRiskInitial = UniversalConstants.normalCrimeRisk;
 	public static double crimeImpactInitial = UniversalConstants.importantPersonCrimeImpact;
 	public static double salaryInitial = 2.0*UniversalConstants.normalPersonSalary;
-	private static long timeToHealOnePerson = 3600*24;
+	public static long timeToHealOnePerson = 3600*24;
     private Hospital workplace;
     public Hospital getWorkBuilding()
     {
@@ -28,10 +28,14 @@ public class Doctor extends CityWorker
         workplace = null;
     }
 
-    public Doctor(City parentCity, Housing home)
+    public Doctor(City parentCity)
     {
         super(new PeopleInitialConstants(populationInitial,
-		        ),parentCity,home);
+		        foodUsePerPersonInitial,
+		        crimeRiskInitial,
+		        crimeImpactInitial,
+		        salaryInitial,
+		        parentCity.getParentCountry()),parentCity);
     }
     public void doSkill(long time)//time is in seconds
     {
@@ -44,10 +48,10 @@ public class Doctor extends CityWorker
         double healthIncrease = workDone/((double)pop);
         if(1.0 - target.getHealth() < healthIncrease)
             healthIncrease = 1.0 - target.getHealth();
-        if(salaryGiver.canPay(salary*healthIncrease))
+        if(salaryGiver.canPay(getSalary()*healthIncrease))
         {    
             target.increaseHealth(healthIncrease);
-            salaryGiver.pay(this,salary*healthIncrease);
+            salaryGiver.pay(this,getSalary()*healthIncrease);
             if(target.getHealth() > 0.99)
             {
                 target.leaveHospital();
@@ -57,7 +61,7 @@ public class Doctor extends CityWorker
         }
         else
         {
-            salaryGiver.outOfMoneyHandler(salary*healthIncrease);
+            salaryGiver.outOfMoneyHandler(getSalary()*healthIncrease);
         }
     }
 
