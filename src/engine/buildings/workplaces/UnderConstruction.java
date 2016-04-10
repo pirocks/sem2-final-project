@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 @Deprecated class UnderConstruction extends Workplace
 {
-	private Type type;
+
 	private double progress = 0.0;
 	//how are rresources being managed???
 	public UnderConstruction(CityBlock block, ArrayList<CityWorker> builders, boolean housingQ, MoneySource owner)

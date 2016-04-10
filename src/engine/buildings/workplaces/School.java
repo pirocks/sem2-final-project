@@ -1,26 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 package engine.buildings.workplaces;
 
 import engine.cities.CityBlock;

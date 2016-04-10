@@ -17,6 +17,7 @@ public abstract class Housing extends Building implements PersonContainer
     public Housing(ArrayList<CityWorker> residents,CityBlock parentBlock)
     {
     	super(parentBlock,true);
+	    registerPersonContainer();
     	this.residents = residents;
         if(this instanceof ApartmentBlock) {
 	        maximumOccupancy = ApartmentBlock.maximumOccupancyInitial;

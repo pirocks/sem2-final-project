@@ -41,7 +41,10 @@ public class City extends MoneySource implements Attackable, BuildingContainer, 
             throw new IllegalArgumentException();
         if(y > 100 || y < 0)
             throw new IllegalArgumentException();
-        this.isCapital = isCapital;
+        registerBuildingContainer();
+	    registerCountryContainer();
+	    registerPersonContainer();
+	    this.isCapital = isCapital;
         this.x = x;
         this.y = y;
         this.parentGrid = parentGrid;

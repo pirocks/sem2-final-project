@@ -18,6 +18,8 @@ public abstract class Workplace extends Building implements PersonContainer, Mon
 	private MoneySource owner;
 	public Workplace(ArrayList<CityWorker> workers,CityBlock parentBlock,MoneySource owner) {
 		super(parentBlock,false);
+		registerPersonContainer();
+		registerMoneySourceContainer();
 		this.workers = workers;
 		this.owner = owner;
 	}

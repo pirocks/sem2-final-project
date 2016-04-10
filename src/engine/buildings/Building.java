@@ -24,10 +24,6 @@ public abstract class Building implements Attackable, CityContainer, PersonConta
     private double resistance;//the resistance as a 0 to 1.0 percentage
 	// protected double costToBuild;//irrelevant
     // private double costToMaintain;//maybe get rid off or leave for later//leaving for later
-    @Deprecated public static enum Type
-    {
-        ApartmentBlock,Factory,Hospital,IndustrialDock,ResearchArea,RulersHouse,School,TownHall,Warehouse,WorkersHouseBlock;
-    }
 	private final boolean workplaceQ;
 	private final boolean housingQ;
 	protected CityBlock parentBlock;

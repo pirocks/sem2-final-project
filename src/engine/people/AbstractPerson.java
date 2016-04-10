@@ -40,6 +40,8 @@ public abstract class AbstractPerson extends MoneySource implements Attackable, 
     protected MoneySource salaryGiver;//needs to be set when assigned
     public AbstractPerson(Type type,Country country) {
         super(Double.NaN);
+	    registerCountryContainer();
+	    registerMoneySourceContainer();
         double corruptionFactor = UniversalConstants.getCorruptionFactor(country);
         int population;
         double health = 1.0;//a percent//inited

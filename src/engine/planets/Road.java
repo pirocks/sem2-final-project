@@ -18,8 +18,7 @@ public class Road implements Attackable, CityContainer, VehicleContainer
 	//if the road is destroyed completely then vehicles that sare onthe road are also destroyed
 	private ArrayList<Vehicle> vehiclesOnRoad;
 	private ArrayList<LocationPlanet> locations;
-	public Road(ArrayList<City> cities)
-	{
+	public Road(ArrayList<City> cities) {
 		registerCityContainer();
 		registerVehicleContainer();
 		if(cities.size() < 2)
@@ -44,8 +43,7 @@ public class Road implements Attackable, CityContainer, VehicleContainer
 		}
 		locations = finalout;
 	}
-	public boolean passesThrough(City a)
-	{
+	public boolean passesThrough(City a) {
 		for(City c:cities)
 		{
 			if(c == a)
@@ -57,14 +55,12 @@ public class Road implements Attackable, CityContainer, VehicleContainer
 	public void remove(City city) {
 		cities.remove(city);
 	}
-
 	@Override
 	public void remove(Vehicle vehicle) {
 		vehiclesOnRoad.remove(vehicle);
 	}
-
 	@Override
-	//TODO:implement this//also make sure that death is handled correctly and thatthe wapon is notified of succsessful attac
+	//TODO:implement this//also make sure that death is handled correctly and that the weapon is notified of successful attack
 	public void receiveDamage(double damage, Weapon attacker) {
 		health = (health*resistance - damage)/resistance;
 		if(health < 0)
@@ -72,12 +68,10 @@ public class Road implements Attackable, CityContainer, VehicleContainer
 
 		}
 	}
-
 	@Override
 	public void die() {
 		// TODO: 4/9/2016
 	}
-
 	@Override
 	public LocationPlanet getLocationPlanet() {
 		return null;// TODO: 4/9/2016

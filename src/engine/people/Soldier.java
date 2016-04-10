@@ -8,12 +8,11 @@ import engine.universe.MoneySource;
 import engine.universe.MoneySourceContainer;
 
 //this is not one soldier unit. It isd a unit of soldiers
-//remeber that
+//remember that
 //how to do attacks???
 
 public class Soldier extends AbstractPerson implements VehicleContainer, MoneySourceContainer
 {
-
     @Override
     public void remove(Country country) {
         if(parentCountry == country)
@@ -22,7 +21,6 @@ public class Soldier extends AbstractPerson implements VehicleContainer, MoneySo
 	        assert (false);
         }
     }
-
     @Override
     public void remove(Vehicle vehicle) {
 		if(this.vehicle == vehicle)
@@ -31,12 +29,10 @@ public class Soldier extends AbstractPerson implements VehicleContainer, MoneySo
 			vehicle = null;
 		}
     }
-
     @Override//TODO: implement this
     public void receiveDamage(double damage, Weapon attacker) {
 
     }
-
     @Override
     public void remove(MoneySource in) {
 		if(in == toGuard)
@@ -44,7 +40,6 @@ public class Soldier extends AbstractPerson implements VehicleContainer, MoneySo
 	    if(parentCountry == in)
 		    remove(parentCountry);
     }
-
 	@Override
 	public double getWeight() {
 		return 0;// TODO: 4/9/2016
@@ -63,8 +58,10 @@ public class Soldier extends AbstractPerson implements VehicleContainer, MoneySo
     private double xDestination,yDestination;
     public Soldier(Country parentCountry)
     {
-        //what about location here
-		super(AbstractPerson.Type.WealthyWorker,parentCountry);
+	    //todo what about location here
+	    super(AbstractPerson.Type.WealthyWorker,parentCountry);
+	    registerVehicleContainer();
+	    registerMoneySourceContainer();
     }
     public void doSkill(long time)
     {

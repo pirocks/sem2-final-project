@@ -24,14 +24,15 @@ public class Grid implements PlanetContainer,CountryContainer, CityContainer
     //TODO: what the fuck is with these constructors
     private Grid()
     {
-        registerCountryContainer();
-	    registerPlanetContainer();
-	    registerCityContainer();
+	    //make sure that registers if other constructor isn't use
         //random generation
     }
     public Grid(int x, int y,Country parentCountry,Planet parentPlanet)
     {
         this();//random generation
+	    registerCountryContainer();
+	    registerPlanetContainer();
+	    registerCityContainer();
         this.x = x;
         this.y = y;
         this.parentCountry = parentCountry;

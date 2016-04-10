@@ -31,6 +31,8 @@ public abstract class CityWorker extends AbstractPerson implements BuildingConta
 	public CityWorker(AbstractPerson.Type type,City city,Housing home)
 	{
 		super(type,city.getParentCountry());
+		registerCityContainer();
+		registerBuildingContainer();
 		this.home = home;
 		currentCity = city;
 	}

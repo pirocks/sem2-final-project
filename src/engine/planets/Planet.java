@@ -45,17 +45,14 @@ public class Planet implements CountryContainer
     {
         return parentSolarSystem.getZInUniverse();
     }
-    public BigDecimal getXInUniverse()
-    {
+    public BigDecimal getXInUniverse() {
         BigDecimal parentX = parentSolarSystem.getXInUniverse();
         return parentX.add(radius.multiply(new BigDecimal(Math.cos(orientationAtCurrentTime))));
     }
-    public BigDecimal getYInUniverse()
-    {
+    public BigDecimal getYInUniverse() {
         BigDecimal parentY = parentSolarSystem.getYInUniverse();
         return parentY.add(radius.multiply(new BigDecimal(Math.sin(orientationAtCurrentTime))));
     }
-
     @Override
     public void remove(Country country) {
         countries.remove(country);

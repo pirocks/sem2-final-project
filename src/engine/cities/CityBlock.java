@@ -17,6 +17,8 @@ public class CityBlock implements Attackable,CityContainer, BuildingContainer
     private Grid parentGrid;
     public CityBlock(Grid parentGrid,Building building,City parentCity,int x,int y)
     {
+	    registerCityContainer();
+	    registerBuildingContainer();
         this.parentGrid = parentGrid;
         this.building = building;
         this.parentCity = parentCity;
@@ -49,24 +51,19 @@ public class CityBlock implements Attackable,CityContainer, BuildingContainer
     {
         return y;
     }
-
-
     @Override
     public void receiveDamage(double damage, Weapon attacker) {
         if(building !=  null)
             building.receiveDamage(damage,attacker);
     }
-
 	@Override
 	public void die() {
 		building.die();
 	}
-
 	@Override
 	public LocationPlanet getLocationPlanet() {
 		return building.getLocationPlanet();
 	}
-
 	@Override
     public void remove(Building building) {
 		if(this.building == building)
@@ -75,7 +72,6 @@ public class CityBlock implements Attackable,CityContainer, BuildingContainer
 			this.building = null;
 		}
     }
-
     @Override
     public void remove(City city) {
 		if(parentCity == city) {
