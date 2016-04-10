@@ -3,7 +3,6 @@ package engine.tools.vehicles;
 import engine.people.AbstractPerson;
 import engine.people.PersonContainer;
 import engine.tools.Tool;
-import engine.tools.ToolInitialConstants;
 import engine.tools.weapons.Attackable;
 import engine.tools.weapons.Weapon;
 import engine.tools.weapons.WeaponContainer;
@@ -24,7 +23,7 @@ public abstract class Vehicle extends Tool implements Attackable, PersonContaine
 	private int maxPassengers;
 	private double maxWeight;
 	protected Vehicle(VehicleInitialConstants vehicleInitialConstants) {
-		super(vehicleInitialConstants.toolInitialConstants);
+		super(vehicleInitialConstants.attackableInitialConstants);
 		registerPersonContainer();
 		registerMoneySourceContainer();
 		registerVehicleContainer();

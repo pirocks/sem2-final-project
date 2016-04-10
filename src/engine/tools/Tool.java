@@ -6,20 +6,15 @@ import engine.tools.weapons.Attackable;
 import engine.tools.weapons.Weapon;
 import engine.universe.ResourceDemand;
 
-public abstract class Tool implements Attackable, Weighable
+public abstract class Tool extends Attackable implements Weighable
 {
-	private double health;
-	private double resistance;
-	protected Tool(ToolInitialConstants toolInitialConstants)
+	protected Tool(AttackableInitialConstants attackableInitialConstants)
 	{
-
-		health = toolInitialConstants.healthInitial;
-		resistance = toolInitialConstants.resistanceInitial;
+		super(attackableInitialConstants);
 		//TODO think of sme code to put here
 		//what about construction costs
 		//constructor from a another class
 	}
-//	public final Type type;
 	public abstract boolean vehicleQ();
 	public abstract boolean weaponQ();
 	public abstract ResourceDemand requiredResourcesForConstruction();
@@ -28,12 +23,10 @@ public abstract class Tool implements Attackable, Weighable
 	public void receiveDamage(double damage, Weapon attacker) {
 		health -= damage/resistance;
 	}
-
 	@Override
 	public void die() {
 		// TODO: 4/8/2016 not sure if should be herer
 	}
-
 	@Override
 	public LocationPlanet getLocationPlanet() {
 		return null;// TODO: 4/8/2016

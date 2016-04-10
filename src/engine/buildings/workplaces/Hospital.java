@@ -3,6 +3,7 @@ package engine.buildings.workplaces;
 import engine.cities.CityBlock;
 import engine.people.AbstractPerson;
 import engine.people.cityworkers.CityWorker;
+import engine.tools.AttackableInitialConstants;
 import engine.universe.MoneySource;
 import engine.universe.ResourceDemand;
 
@@ -10,14 +11,15 @@ import java.util.ArrayList;
 
 public class Hospital extends Workplace
 {
+	public static double healthInitial;
+	public static double resistanceInitial;
 	public static int maximumOccupancyInitial = -1;
 	public static double costInitial;
-	public static double resistanceInitial;
     // private ArrayList<Doctor> doctors;//this shouldn't be necesary
     private ArrayList<CityWorker> sickpeople;
 
-	public Hospital(ArrayList<CityWorker> workers, CityBlock parentBlock, MoneySource owner) {
-		super(workers, parentBlock, owner);
+	public Hospital(CityBlock parentBlock, MoneySource owner) {
+		super(new AttackableInitialConstants(healthInitial,resistanceInitial), parentBlock, owner);
 	}
 
 	public CityWorker getNextPatient()
@@ -55,6 +57,6 @@ public class Hospital extends Workplace
 
 	@Override
 	public double getCost() {
-		return 0;// TODO: 4/9/2016
+		return costInitial;
 	}
 }

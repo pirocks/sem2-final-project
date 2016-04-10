@@ -1,6 +1,5 @@
 package engine.tools.weapons.guns;
 
-import engine.tools.ToolInitialConstants;
 import engine.tools.weapons.Weapon;
 
 /**
@@ -12,7 +11,7 @@ public abstract class Gun extends Weapon
 	protected double accuracy;//double from 0 to 1 indicating percent chance of hitting
 	protected double range;
 	public Gun(GunInitialConstants gunInitialConstants) {
-		super(gunInitialConstants.toolInitialConstants,gunInitialConstants.damage);
+		super(gunInitialConstants.attackableInitialConstants,gunInitialConstants.damage);
 		accuracy = gunInitialConstants.accuracy;
 		range = gunInitialConstants.range;
 	}
