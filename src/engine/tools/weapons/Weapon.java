@@ -25,6 +25,6 @@ public abstract class Weapon extends Tool
 	}
 	public void attack(Attackable target)
 	{
-		target.receiveDamage(damage,this);
+		target.receiveDamage(damage);
 	}
 }

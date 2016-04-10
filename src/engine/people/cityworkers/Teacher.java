@@ -19,18 +19,18 @@ import engine.buildings.workplaces.School;
 import engine.cities.City;
 import engine.people.AbstractPerson;
 import engine.planets.LocationPlanet;
+import engine.universe.Country;
 
-public class Teacher extends CityWorker
-{
+public class Teacher<Type extends AbstractPerson> extends CityWorker {
     public double progress = 0.0;//from 0 to 1
-    public AbstractPerson.Type studentType;
+    private Type student;
     public School workplace;
-    public Teacher(City parentCity,Housing home)
-    {
-		super(AbstractPerson.Type.Teacher,parentCity,home);
+
+    public Teacher(City parentCity, Housing home) {
+        super(parentCity, home);
     }
-    public School getWorkBuilding()
-    {
+
+    public School getWorkBuilding() {
         return workplace;
     }
 
@@ -39,18 +39,18 @@ public class Teacher extends CityWorker
         workplace = null;
     }
 
-    public void doSkill(long time)
-    {
+    public void doSkill(long time) {
         //TODO:unimplmented
     }
 
     @Override
     public double getWeight() {
-        return 0;// TODO: 4/9/2016  people jave weight for vehicles
+        return 0;// TODO: 4/9/2016  people have weight for vehicles
     }
 
     @Override
     public LocationPlanet getLocationPlanet() {
         return null;// TODO: 4/9/2016
     }
+
 }

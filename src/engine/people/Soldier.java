@@ -1,6 +1,6 @@
 package engine.people;
 
-import engine.planets.Country;
+import engine.universe.Country;
 import engine.tools.vehicles.Vehicle;
 import engine.tools.vehicles.VehicleContainer;
 import engine.tools.weapons.Weapon;
@@ -14,10 +14,10 @@ import engine.universe.MoneySourceContainer;
 public class Soldier extends AbstractPerson implements VehicleContainer, MoneySourceContainer
 {
     @Override
-    public void remove(Country country) {
+    public void remove(Country country,Country conqueror) {
         if(parentCountry == country)
         {
-	        parentCountry = null;
+	        parentCountry = conqueror;//// TODO: 4/10/2016 register as citizen etc in country
 	        assert (false);
         }
     }
@@ -28,10 +28,6 @@ public class Soldier extends AbstractPerson implements VehicleContainer, MoneySo
 			die();
 			vehicle = null;
 		}
-    }
-    @Override//TODO: implement this
-    public boolean receiveDamage(double damage, Weapon attacker) {
-
     }
     @Override
     public void remove(MoneySource in) {
@@ -59,7 +55,7 @@ public class Soldier extends AbstractPerson implements VehicleContainer, MoneySo
     public Soldier(Country parentCountry)
     {
 	    //todo what about location here
-	    super(AbstractPerson.Type.WealthyWorker,parentCountry);
+	    super(parentCountry);
 	    registerVehicleContainer();
 	    registerMoneySourceContainer();
     }
@@ -80,9 +76,9 @@ public class Soldier extends AbstractPerson implements VehicleContainer, MoneySo
                 //how does this work
                 break;
             case Heal:
-                health += healRate*time;
-                if(health > 1.0)
-                    health = 1.0;
+                attackableConstants.health += healRate*time;
+                if(attackableConstants.health > 1.0)
+                    attackableConstants.health = 1.0;
                 break;
         }
         salaryGiver.pay(this,time*salary);

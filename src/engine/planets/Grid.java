@@ -3,6 +3,8 @@ package engine.planets;
 import engine.cities.City;
 import engine.cities.CityBlock;
 import engine.cities.CityContainer;
+import engine.universe.Country;
+import engine.universe.CountryContainer;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -42,7 +44,7 @@ public class Grid implements PlanetContainer,CountryContainer, CityContainer
     {
         return parentCountry;
     }
-    public void registerHazard(NaturalHazard hazrad)//natural hzard v regular hazzrad
+    public void registerHazard(NaturalHazard hazard)//natural hzard v regular hazzrad
     {
         //TODO:figure this one out
     }
@@ -124,11 +126,11 @@ public class Grid implements PlanetContainer,CountryContainer, CityContainer
 	}
 
 	@Override
-	public void remove(Country country) {
+	public void remove(Country country,Country conqueror) {
 		if(parentCountry == country) {
-			parentCountry = null;
-			assert(false);
-		}
+			parentCountry = conqueror;
+			assert(false);// TODO: 4/10/2016 get rid of this
+        }
 	}
 
 	@Override

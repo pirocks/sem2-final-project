@@ -1,4 +1,4 @@
-package engine.planets;
+package engine.universe;
 
 
 import java.util.ArrayList;
@@ -14,11 +14,11 @@ public class CountryContainers
 	{
 		containers.add(in);
 	}
-	public static void remove(Country in)
+	public static void remove(Country toRemove,Country conqueror)
 	{
 		for(CountryContainer container :containers)
 		{
-			container.remove(in);
+			container.remove(toRemove,conqueror);
 		}
 	}
 }

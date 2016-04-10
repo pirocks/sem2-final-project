@@ -5,6 +5,8 @@ package engine.planets;
  *
  */
 
+import engine.universe.Country;
+
 import java.util.ArrayList;
 
  

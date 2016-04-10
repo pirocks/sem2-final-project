@@ -1,8 +1,5 @@
 package engine.universe;
 
-import engine.planets.Country;
-import engine.planets.CountryContainer;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -34,7 +31,7 @@ public class Universe implements Serializable, CountryContainer
     }
 
     @Override
-    public void remove(Country country) {
+    public void remove(Country country,Country conqueror) {
         countries.remove(country);
     }
 }

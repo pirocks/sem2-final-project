@@ -15,8 +15,7 @@ public abstract class CityWorker extends AbstractPerson implements BuildingConta
 	public static long travelTimeConstant;
 	public static long TimeAtWork;
 	public static long TimeAtHome;
-	public static enum WhereAmI
-	{
+	public static enum WhereAmI {
 		AtWork,AtHospital,AtHome,GoingToWork,GoingToHospital,GoingToHome
 	}
 	protected WhereAmI whereAmI;
@@ -28,30 +27,26 @@ public abstract class CityWorker extends AbstractPerson implements BuildingConta
     private City currentCity;//should be renamed to parent city
 	protected long timeRemainingAtLocation;
 	private Hospital hospital; //is null if not going to hospital
-	public CityWorker(AbstractPerson.Type type,City city,Housing home)
-	{
-		super(type,city.getParentCountry());
+	public CityWorker(City city,Housing home) {
+		super(city.getParentCountry());
 		registerCityContainer();
 		registerBuildingContainer();
 		this.home = home;
 		currentCity = city;
 	}
-	public void goHome()
-	{
+	public void goHome() {
 		double distance = home.getLocation().distanceBetween(currentBuilding.getLocation());
 		whereAmI = WhereAmI.GoingToHome;
 		currentBuilding = null;
 		timeRemainingAtLocation = (long)(distance*travelTimeConstant);
 	}
-	private void goToWork()
-	{
+	private void goToWork() {
 		double distance = getWorkBuilding().getLocation().distanceBetween(currentBuilding.getLocation());
 		whereAmI = WhereAmI.GoingToWork;
 		currentBuilding = null;
 		timeRemainingAtLocation = (long)(distance*travelTimeConstant);
 	}
-	private void goToHospital()
-	{
+	private void goToHospital() {
 		Hospital h = currentCity.getLeastLoadedHosital();
 		double distance = h.getLocation().distanceBetween(currentBuilding.getLocation());
 		whereAmI = WhereAmI.GoingToHospital;
@@ -59,37 +54,31 @@ public abstract class CityWorker extends AbstractPerson implements BuildingConta
 		timeRemainingAtLocation = (long)(distance*travelTimeConstant);
 		hospital = h;
 	}
-	private void arriveAtHome()
-	{
+	private void arriveAtHome() {
 		whereAmI = WhereAmI.AtHome;
 		currentBuilding = home;
 		timeRemainingAtLocation = TimeAtHome;
 	}
-	private void arriveAtWork()
-	{
+	private void arriveAtWork() {
 		whereAmI = WhereAmI.AtWork;
 		currentBuilding = getWorkBuilding();
 		timeRemainingAtLocation = TimeAtWork;
 	}
-	private void arriveAtHospital()
-	{
+	private void arriveAtHospital() {
 		whereAmI = WhereAmI.AtHospital;
 		currentBuilding = hospital;
 		timeRemainingAtLocation = Long.MAX_VALUE;
 		hospital.admit(this);
 	}
-	public void leaveHospital()
-	{
+	public void leaveHospital() {
 		hospital = null;
 		goHome();
 	}
-	public void checkHealth()
-	{
+	public void checkHealth() {
 		if(super.getHealth() < 0.3)
 			goToHospital();
 	}
-	public void doLife(long time)
-	{
+	public void doLife(long time) {
 		if(time < 1)
             return;
         checkHealth();
@@ -143,18 +132,15 @@ public abstract class CityWorker extends AbstractPerson implements BuildingConta
 	{
 		PersonContainers.remove(this);
 	}
-	//TODO: figure out how cityless workers work
+	//TODO: figure out how cityless workers work//they don't//whats more intersiting is workers that ar on roads when city is destroyed
 	@Override
-	public void remove(City city)
-	{
+	public void remove(City city) {
+		//todo what about workers on roads.
 		if(currentCity == city)
-		{
 			die();
-		}
 	}
 	@Override
-	public void remove(Building building)
-	{
+	public void remove(Building building) {
 		if(currentBuilding == building) {
 			die();//not sure about this
 			currentBuilding = null;

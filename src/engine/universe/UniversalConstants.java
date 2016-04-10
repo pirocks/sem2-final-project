@@ -1,5 +1,4 @@
 package engine.universe;
-import engine.planets.Country;
 
 public class UniversalConstants
 {

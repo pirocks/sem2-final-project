@@ -9,10 +9,10 @@ import engine.planets.LocationPlanet;
 
 public class Bureaucrat extends CityWorker
 {
-    TownHall workplace;
+    private TownHall workplace;
     public Bureaucrat(City parentCity, Housing home)
     {
-        super(AbstractPerson.Type.Bureaucrat,parentCity,home);
+        super(parentCity,home);
     }
 
     @Override

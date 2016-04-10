@@ -14,7 +14,7 @@ public class Ruler extends CityWorker//TODO:clean this up
     private TownHall workplace;
     public Ruler(City parentCity, Housing home)
     {
-        super(AbstractPerson.Type.Ruler,parentCity,home);
+        super(parentCity,home);
     }
 
     @Override

@@ -9,7 +9,7 @@ public class Researcher extends CityWorker
     private ResearchArea workplace;
     public Researcher(City parentCity, Housing home)
     {
-		super(AbstractPerson.Type.Researcher,parentCity,home);
+		super(parentCity,home);
     }
     public ResearchArea getWorkBuilding()
     {

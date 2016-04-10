@@ -1,4 +1,4 @@
-package engine.planets;
+package engine.universe;
 /**
  * Created by bob on 3/5/2016.
  *
@@ -9,7 +9,7 @@ import engine.cities.City;
 import engine.cities.CityContainer;
 import engine.people.AbstractPerson;
 import engine.people.PersonContainer;
-import engine.universe.MoneySource;
+import engine.planets.*;
 
 import java.util.ArrayList;
 
@@ -39,17 +39,17 @@ public class Country extends MoneySource implements PersonContainer,CountryConta
 
     @Override
     public void remove(AbstractPerson person) {
-
+        // TODO: 4/10/2016
     }
 
     @Override
-    public void remove(Country country) {
-
+    public void remove(Country country, Country conqueror) {
+        // TODO: 4/10/2016
     }
 
     @Override
     public void remove(Road road) {
-
+        // TODO: 4/10/2016
     }
 
     // private //capital city whitehhouse
@@ -75,7 +75,7 @@ public class Country extends MoneySource implements PersonContainer,CountryConta
         }
         return out;
     }
-    public ArrayList<NaturalResource> getNaturalResourcess()
+    public ArrayList<NaturalResource> getNaturalResources()
     {
         ArrayList<NaturalResource> out = new ArrayList<NaturalResource>();
         for(Grid grid:grids)
@@ -98,7 +98,7 @@ public class Country extends MoneySource implements PersonContainer,CountryConta
     {
         roads.add(road);
     }
-    public ArrayList<Road> accsisbleRoads(City c)//I can't spell
+    public ArrayList<Road> accessibleRoads(City c)
     {
         ArrayList<Road> out = new ArrayList<>();
         for(Road road: roads)

@@ -7,13 +7,12 @@ import engine.buildings.workplaces.Hospital;
 import engine.people.AbstractPerson;
 import engine.people.PersonContainer;
 import engine.people.cityworkers.CityWorker;
-import engine.planets.Country;
-import engine.planets.CountryContainer;
+import engine.universe.Country;
+import engine.universe.CountryContainer;
 import engine.planets.Grid;
 import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.tools.weapons.Attackable;
-import engine.tools.weapons.Weapon;
 import engine.universe.MoneySource;
 
 import java.util.ArrayList;
@@ -120,10 +119,10 @@ public class City  extends MoneySource implements Attackable ,BuildingContainer,
 	    unemployedResidents.remove(person);
     }
     @Override
-    public void remove(Country country) {
+    public void remove(Country country,Country conqueror) {
 		if(parentCountry == country) {
-			parentCountry = null;
-			assert (false);
+			parentCountry = conqueror;
+			assert (false);// TODO: 4/10/2016 get rid of this
 			//die();//??
 		}
     }

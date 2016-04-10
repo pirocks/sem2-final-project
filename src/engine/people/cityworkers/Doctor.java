@@ -63,14 +63,14 @@ public class Doctor extends CityWorker
 
     public Doctor(City parentCity, Housing home)
     {
-        super(AbstractPerson.Type.Doctor,parentCity,home);
+        super(parentCity,home);
     }
     public void doSkill(long time)//time is in seconds
     {
         //use productivity;
         //not sure if this is good yet
         CityWorker target = workplace.getNextPatient();//mybe make this an array or city
-        double workDone = productivity*time/timeToHealOnePerson;
+        double workDone = time/timeToHealOnePerson;
         int pop = target.getPopulation();
         double healthIncrease = workDone/((double)pop);
         if(1.0 - target.getHealth() < healthIncrease)

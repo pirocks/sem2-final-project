@@ -4,6 +4,8 @@ package engine.planets;
  *
  */
 
+import engine.universe.Country;
+import engine.universe.CountryContainer;
 import engine.universe.SolarSystem;
 
 import java.math.BigDecimal;
@@ -54,7 +56,9 @@ public class Planet implements CountryContainer
         return parentY.add(radius.multiply(new BigDecimal(Math.sin(orientationAtCurrentTime))));
     }
     @Override
-    public void remove(Country country) {
+    public void remove(Country country,Country conqueror) {
         countries.remove(country);
+        if(!countries.contains(conqueror))
+	        countries.add(conqueror);
     }
 }
