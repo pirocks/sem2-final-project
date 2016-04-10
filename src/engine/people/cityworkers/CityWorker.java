@@ -21,14 +21,12 @@ public abstract class CityWorker extends AbstractPerson implements BuildingConta
 	protected WhereAmI whereAmI;
 	private Building currentBuilding;
 	private Housing home;
-	public abstract Workplace getWorkBuilding();
-	public abstract void setWorkPlaceToNull();
-	public abstract void doSkill(long time);
     private City currentCity;//should be renamed to parent city
 	protected long timeRemainingAtLocation;
 	private Hospital hospital; //is null if not going to hospital
-	public CityWorker(City city,Housing home) {
-		super(city.getParentCountry());
+	public CityWorker(PeopleInitialConstants peopleInitialConstants,
+	                  City city,Housing home) {
+		super(peopleInitialConstants);
 		registerCityContainer();
 		registerBuildingContainer();
 		this.home = home;
@@ -160,4 +158,7 @@ public abstract class CityWorker extends AbstractPerson implements BuildingConta
 			setWorkPlaceToNull();
 		}
 	}
+	public abstract Workplace getWorkBuilding();
+	public abstract void setWorkPlaceToNull();
+	public abstract void doSkill(long time);
 }

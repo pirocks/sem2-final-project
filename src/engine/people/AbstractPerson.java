@@ -18,31 +18,35 @@ import engine.universe.UniversalConstants;
 
 public abstract class AbstractPerson extends MoneySource implements Attackable, CountryContainer, MoneySourceContainer,Weighable
 {
-	public static double resistanceInitial;
 	public static double healthInitial;
-	public AttackableConstants attackableConstants;
+	public static double resistanceInitial;
+	public AttackableConstants attackableConstants = new AttackableConstants(healthInitial,resistanceInitial);
 	protected LocationPlanet location;
-	//might need to add checks for health or population below 0;
-	// deprecated b/c location private Grid currentGrid;
 	protected Country country;//final??
 	private int population;
-	private double foodUsePerPerson;//should be final
-	private double crimeRisk;//should be final
-	private double crimeImpact;//should be final
-	protected double salary;
-	protected boolean employedq;
-	protected MoneySource salaryGiver;//needs to be set when assigned
+	private double foodUsePerPerson;
+	private double crimeRisk;
+	private double crimeImpact;
+	private double salary;
+	protected boolean employedq = false;
+	protected MoneySource salaryGiver = null;// TODO: 4/10/2016 need to initialize this
 
-    public AbstractPerson(City parentCity, Building home) {
-        this(parentCity.getParentCountry());
+    protected AbstractPerson(PeopleInitialConstants peopleInitialConstants
+		    ,City parentCity, Building home) {
+	    super(0);
+	    population = peopleInitialConstants.population;
+	    foodUsePerPerson = peopleInitialConstants.foodUsePerPerson;
+	    crimeRisk = peopleInitialConstants.crimeRisk;
+	    crimeImpact = peopleInitialConstants.crimeImpact;
+	    salary = peopleInitialConstants.salary;
+//        this(parentCity.getParentCountry());
+
     }
-    public AbstractPerson(Country country) {
+    private AbstractPerson(Country country) {
 	    super(Double.NaN);
 	    registerCountryContainer();
 	    registerMoneySourceContainer();
 	    double corruptionFactor = UniversalConstants.getCorruptionFactor(country);
-	    int population = 0;
-	    double health = 1.0;//a percent//inited
 	    double foodUsePerPerson = UniversalConstants.normalFoodUsePerPerson;//inited
 	    double crimeRisk = UniversalConstants.normalCrimeRisk;//inited//a percent
 	    double crimeImpact = 0;//inited//a money amount
@@ -163,5 +167,9 @@ public abstract class AbstractPerson extends MoneySource implements Attackable, 
 	@Override
 	public LocationPlanet getLocationPlanet() {
 		return location;
+	}
+	protected void paySalary(long time)
+	{
+		salaryGiver.pay(this,salary*time);
 	}
 }

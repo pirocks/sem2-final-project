@@ -10,13 +10,15 @@ import engine.planets.LocationPlanet;
 public class Bureaucrat extends CityWorker
 {
     private TownHall workplace;
-    public Bureaucrat(City parentCity, Housing home)
+    public static double bureaucratSalary;//secondly value
+	public Bureaucrat(City parentCity, Housing home)
     {
         super(parentCity,home);
+//	    salaryGiver = workplace.
     }
 
     @Override
-    public Workplace getWorkBuilding() {
+    public TownHall getWorkBuilding() {
         return workplace;
     }
 
@@ -28,6 +30,9 @@ public class Bureaucrat extends CityWorker
     @Override
     public void doSkill(long time) {
         // TODO: 4/9/2016  make sure this ties into ui/ai
+        //really this has nothing to do , in fact the args don't allow for any sort of management.
+		//so just charge the salarygiver for time
+	    salaryGiver.pay(this,bureaucratSalary*time);
     }
 
     @Override

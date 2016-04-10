@@ -1,55 +1,22 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 package engine.people.cityworkers;
 
 import engine.buildings.housing.Housing;
 import engine.buildings.workplaces.Hospital;
 import engine.cities.City;
 import engine.people.AbstractPerson;
+import engine.universe.UniversalConstants;
 
 //import engine.buildings.workplace.*;
 
 
 public class Doctor extends CityWorker
 {
-    private static long timeToHealOnePerson = 3600*24;
+	public static int populationInitial = 100;
+	public static double foodUsePerPersonInitial = UniversalConstants.normalFoodUsePerPerson;
+	public static double crimeRiskInitial = UniversalConstants.normalCrimeRisk;
+	public static double crimeImpactInitial = UniversalConstants.importantPersonCrimeImpact;
+	public static double salaryInitial = 2.0*UniversalConstants.normalPersonSalary;
+	private static long timeToHealOnePerson = 3600*24;
     private Hospital workplace;
     public Hospital getWorkBuilding()
     {
@@ -63,13 +30,15 @@ public class Doctor extends CityWorker
 
     public Doctor(City parentCity, Housing home)
     {
-        super(parentCity,home);
+        super(new PeopleInitialConstants(populationInitial,
+		        ),parentCity,home);
     }
     public void doSkill(long time)//time is in seconds
     {
         //use productivity;
         //not sure if this is good yet
-        CityWorker target = workplace.getNextPatient();//mybe make this an array or city
+	    // TODO: 4/10/2016 need to reread this at some point
+	    CityWorker target = workplace.getNextPatient();//mybe make this an array or city
         double workDone = time/timeToHealOnePerson;
         int pop = target.getPopulation();
         double healthIncrease = workDone/((double)pop);
