@@ -3,7 +3,6 @@ package engine.tools.vehicles;
 import engine.people.AbstractPerson;
 import engine.people.PersonContainer;
 import engine.tools.Tool;
-import engine.tools.weapons.Attackable;
 import engine.tools.weapons.Weapon;
 import engine.tools.weapons.WeaponContainer;
 import engine.universe.MoneySource;
@@ -12,7 +11,7 @@ import engine.universe.Resource;
 
 import java.util.ArrayList;
 
-public abstract class Vehicle extends Tool implements Attackable, PersonContainer, VehicleContainer, WeaponContainer, MoneySourceContainer
+public abstract class Vehicle extends Tool implements PersonContainer, VehicleContainer, WeaponContainer, MoneySourceContainer
 {
 	private double fuelPercent = 0.0;//from 0 t  1
 	private double fuelCapacity = 0.0;//from 0 to 1
@@ -23,7 +22,7 @@ public abstract class Vehicle extends Tool implements Attackable, PersonContaine
 	private int maxPassengers;
 	private double maxWeight;
 	protected Vehicle(VehicleInitialConstants vehicleInitialConstants) {
-		super(vehicleInitialConstants.attackableInitialConstants);
+		super(vehicleInitialConstants.attackableConstants);
 		registerPersonContainer();
 		registerMoneySourceContainer();
 		registerVehicleContainer();

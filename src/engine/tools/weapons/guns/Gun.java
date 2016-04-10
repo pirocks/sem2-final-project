@@ -11,7 +11,7 @@ public abstract class Gun extends Weapon
 	protected double accuracy;//double from 0 to 1 indicating percent chance of hitting
 	protected double range;
 	public Gun(GunInitialConstants gunInitialConstants) {
-		super(gunInitialConstants.attackableInitialConstants,gunInitialConstants.damage);
+		super(gunInitialConstants.attackableConstants,gunInitialConstants.damage);
 		accuracy = gunInitialConstants.accuracy;
 		range = gunInitialConstants.range;
 	}

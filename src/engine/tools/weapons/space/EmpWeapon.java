@@ -1,6 +1,6 @@
 package engine.tools.weapons.space;
 
-import engine.tools.AttackableInitialConstants;
+import engine.tools.AttackableConstants;
 import engine.universe.ResourceDemand;
 
 import java.math.BigDecimal;
@@ -16,7 +16,7 @@ public class EmpWeapon extends SpaceWeapon {
 	public static BigDecimal rangeInitial;
 
 	public EmpWeapon() {
-		super(new AttackableInitialConstants(startHealthInitial,resistanceInitial), damageInitial,rangeInitial);
+		super(new AttackableConstants(startHealthInitial,resistanceInitial), damageInitial,rangeInitial);
 	}
 
 	@Override

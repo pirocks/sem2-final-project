@@ -3,7 +3,7 @@ package engine.buildings.workplaces;
 import engine.cities.CityBlock;
 import engine.people.AbstractPerson;
 import engine.people.cityworkers.CityWorker;
-import engine.tools.AttackableInitialConstants;
+import engine.tools.AttackableConstants;
 import engine.universe.MoneySource;
 import engine.universe.ResourceDemand;
 
@@ -18,7 +18,7 @@ public class Hospital extends Workplace
     private ArrayList<CityWorker> sickPeople;
 
 	public Hospital(CityBlock parentBlock, MoneySource owner) {
-		super(new AttackableInitialConstants(healthInitial,resistanceInitial), parentBlock, owner);
+		super(new AttackableConstants(healthInitial,resistanceInitial), parentBlock, owner);
 		sickPeople = new ArrayList<>();
 	}
 

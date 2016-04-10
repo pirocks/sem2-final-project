@@ -1,22 +1,22 @@
 package engine.tools.vehicles;
 
-import engine.tools.AttackableInitialConstants;
+import engine.tools.AttackableConstants;
 
 /**
  * Created by bob on 4/9/2016.
  *
  */
 public class VehicleInitialConstants {
-	public AttackableInitialConstants attackableInitialConstants;
+	public AttackableConstants attackableConstants;
 	public int maxPassengers;
 	public double maxWeight;
-	public VehicleInitialConstants(AttackableInitialConstants attackableInitialConstants, int maxPassengers, double maxWeight){
-		this.attackableInitialConstants = attackableInitialConstants;
+	public VehicleInitialConstants(AttackableConstants attackableConstants, int maxPassengers, double maxWeight){
+		this.attackableConstants = attackableConstants;
 		this.maxPassengers = maxPassengers;
 		this.maxWeight = maxWeight;
 	}
 	public VehicleInitialConstants(double health,double resistance,int maxPassengers,double maxWeight){
-		this(new AttackableInitialConstants(health,resistance),
+		this(new AttackableConstants(health,resistance),
 				maxPassengers,
 				maxWeight);
 	}

@@ -2,6 +2,7 @@ package engine.planets;
 
 import engine.cities.City;
 import engine.cities.CityContainer;
+import engine.tools.AttackableConstants;
 import engine.tools.vehicles.Vehicle;
 import engine.tools.vehicles.VehicleContainer;
 import engine.tools.weapons.Attackable;
@@ -9,16 +10,18 @@ import engine.tools.weapons.Weapon;
 
 import java.util.ArrayList;
 
-public class Road implements Attackable, CityContainer, VehicleContainer
+public class Road implements Attackable ,CityContainer, VehicleContainer
 {
-	public static double resistance;
-	private double health = 1.0;
+	public static double resistanceInitial;
+	public static double healthInitial;
+	private AttackableConstants attackableConstants;
 	private ArrayList<City> cities;//citie that road passes through, not to be used for rendering or distance calculation
 	//vehicles that are on the road cannot be attacked, however the road can be
 	//if the road is destroyed completely then vehicles that sare onthe road are also destroyed
 	private ArrayList<Vehicle> vehiclesOnRoad;
 	private ArrayList<LocationPlanet> locations;
 	public Road(ArrayList<City> cities) {
+		attackableConstants = new AttackableConstants(healthInitial,resistanceInitial);
 		registerCityContainer();
 		registerVehicleContainer();
 		if(cities.size() < 2)
@@ -61,12 +64,8 @@ public class Road implements Attackable, CityContainer, VehicleContainer
 	}
 	@Override
 	//TODO:implement this//also make sure that death is handled correctly and that the weapon is notified of successful attack
-	public void receiveDamage(double damage, Weapon attacker) {
-		health = (health*resistance - damage)/resistance;
-		if(health < 0)
-		{
-
-		}
+	public boolean receiveDamage(double damage) {
+		return attackableConstants.receiveDamage(damage,this);
 	}
 	@Override
 	public void die() {

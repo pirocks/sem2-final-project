@@ -3,7 +3,7 @@ package engine.buildings.workplaces;
 import engine.cities.CityBlock;
 import engine.people.cityworkers.CityWorker;
 import engine.science.Discovery;
-import engine.tools.AttackableInitialConstants;
+import engine.tools.AttackableConstants;
 import engine.universe.MoneySource;
 import engine.universe.ResourceDemand;
 
@@ -17,7 +17,7 @@ public class ResearchArea extends Workplace
 	private Discovery discovery;
 
 	public ResearchArea(ArrayList<CityWorker> workers, CityBlock parentBlock, MoneySource owner) {
-		super(new AttackableInitialConstants(healthInitial,resistanceInitial), parentBlock, owner);
+		super(new AttackableConstants(healthInitial,resistanceInitial), parentBlock, owner);
 	}
 
 	@Override

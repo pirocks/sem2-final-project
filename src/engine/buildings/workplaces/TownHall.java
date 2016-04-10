@@ -3,7 +3,7 @@ package engine.buildings.workplaces;
 import engine.cities.City;
 import engine.cities.CityBlock;
 import engine.people.cityworkers.CityWorker;
-import engine.tools.AttackableInitialConstants;
+import engine.tools.AttackableConstants;
 import engine.universe.MoneySource;
 import engine.universe.ResourceDemand;
 
@@ -18,7 +18,7 @@ public class TownHall extends Workplace
 	public static double costInitial;
 
 	public TownHall(ArrayList<CityWorker> workers, CityBlock parentBlock, MoneySource owner) {
-		super(new AttackableInitialConstants(healthInitial,resistanceInitial), parentBlock, owner);
+		super(new AttackableConstants(healthInitial,resistanceInitial), parentBlock, owner);
 	}
 
 	@Override

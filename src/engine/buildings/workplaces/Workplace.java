@@ -7,8 +7,7 @@ import engine.cities.CityBlock;
 import engine.people.AbstractPerson;
 import engine.people.PersonContainer;
 import engine.people.cityworkers.CityWorker;
-import engine.tools.AttackableInitialConstants;
-import engine.tools.weapons.Attackable;
+import engine.tools.AttackableConstants;
 import engine.universe.MoneySource;
 import engine.universe.MoneySourceContainer;
 
@@ -18,9 +17,9 @@ public abstract class Workplace extends Building implements PersonContainer, Mon
 	private ArrayList<CityWorker> workers;
 	private int maxWorkers;
 	private MoneySource owner;
-	public Workplace(AttackableInitialConstants attackableInitialConstants,
+	public Workplace(AttackableConstants attackableConstants,
 	                 CityBlock parentBlock, MoneySource owner) {
-		super(attackableInitialConstants,parentBlock);
+		super(attackableConstants,parentBlock);
 		registerPersonContainer();
 		registerMoneySourceContainer();
 		workers = new ArrayList<>();

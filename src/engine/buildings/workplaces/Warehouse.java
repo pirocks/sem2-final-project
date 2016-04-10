@@ -2,7 +2,7 @@ package engine.buildings.workplaces;
 
 import engine.cities.CityBlock;
 import engine.people.cityworkers.CityWorker;
-import engine.tools.AttackableInitialConstants;
+import engine.tools.AttackableConstants;
 import engine.universe.MoneySource;
 import engine.universe.Resource;
 import engine.universe.ResourceDemand;
@@ -20,7 +20,7 @@ public class Warehouse extends Workplace
 	public Resource resources;
 
 	public Warehouse(ArrayList<CityWorker> workers, CityBlock parentBlock, MoneySource owner) {
-		super(new AttackableInitialConstants(healthInitial,resistanceInitial),parentBlock, owner);
+		super(new AttackableConstants(healthInitial,resistanceInitial),parentBlock, owner);
 	}
 	@Override
 	public ResourceDemand getResourceCost() {

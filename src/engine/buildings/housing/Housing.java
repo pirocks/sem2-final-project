@@ -5,7 +5,7 @@ import engine.cities.CityBlock;
 import engine.people.AbstractPerson;
 import engine.people.PersonContainer;
 import engine.people.cityworkers.CityWorker;
-import engine.tools.AttackableInitialConstants;
+import engine.tools.AttackableConstants;
 
 import java.util.ArrayList;
 
@@ -15,8 +15,8 @@ public abstract class Housing extends Building implements PersonContainer
 {
     private int maximumOccupancy;
     private ArrayList<CityWorker> residents;
-    public Housing(AttackableInitialConstants attackableInitialConstants,CityBlock parentBlock) {
-    	super(attackableInitialConstants,parentBlock);
+    public Housing(AttackableConstants attackableConstants, CityBlock parentBlock) {
+    	super(attackableConstants,parentBlock);
 	    registerPersonContainer();
     	residents = new ArrayList<>();
         if(this instanceof ApartmentBlock) {

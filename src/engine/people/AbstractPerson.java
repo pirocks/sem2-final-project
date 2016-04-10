@@ -5,6 +5,7 @@ import engine.cities.City;
 import engine.planets.Country;
 import engine.planets.CountryContainer;
 import engine.planets.LocationPlanet;
+import engine.tools.AttackableConstants;
 import engine.tools.vehicles.Weighable;
 import engine.tools.weapons.Attackable;
 import engine.tools.weapons.Weapon;
@@ -14,30 +15,33 @@ import engine.universe.UniversalConstants;
 
 public abstract class AbstractPerson extends MoneySource implements Attackable, CountryContainer, MoneySourceContainer,Weighable
 {
-	public static double personDamageResistance;
+	public static double resistanceInitial;
+	public static double healthInitial;
+	public AttackableConstants attackableConstants;
 	protected LocationPlanet location;
+	//might need to add checks for health or population below 0;
+	@Deprecated public static enum Type
+	{
+		Doctor,Researcher,Ruler,Soldier,Teacher,WealthyWorker, Bureaucrat, Worker
+	}
+	// deprecated b/c location private Grid currentGrid;
+	protected Country country;//final??
+	// deprecated b/c location protected double x,y;//okay if inacurate as long as in city//mostly for use of soldiers//in grid
+	private final Type type;
+	private int population;
+	@Deprecated protected double health;//100% is fully healthy, 0% is dead from 0 to 1.0
+	//maake a weapon called disease???
+	private double foodUsePerPerson;//should be final
+	private double crimeRisk;//should be final
+	private double crimeImpact;//should be final
+	protected double productivity;//should be final//unsure wether this is needed
+	protected double salary;
+	protected boolean employedq;
+	protected MoneySource salaryGiver;//needs to be set when assigned
+
     public AbstractPerson(Type type, City parentCity, Building home) {
         this(type,parentCity.getParentCountry());
     }
-
-    //might need to add checks for health or population below 0;
-    public static enum Type
-    {
-        Doctor,Researcher,Ruler,Soldier,Teacher,WealthyWorker, Bureaucrat, Worker
-    }
-    // deprecated b/c location private Grid currentGrid;
-    protected Country country;//final??
-    // deprecated b/c location protected double x,y;//okay if inacurate as long as in city//mostly for use of soldiers//in grid
-    private final Type type;
-    private int population;
-    protected double health;//100% is fully healthy, 0% is dead from 0 to 1.0
-    private double foodUsePerPerson;//should be final
-    private double crimeRisk;//should be final
-    private double crimeImpact;//should be final
-    protected double productivity;//should be final//unsure wether this is needed
-    protected double salary;
-    protected boolean employedq;
-    protected MoneySource salaryGiver;//needs to be set when assigned
     public AbstractPerson(Type type,Country country) {
         super(Double.NaN);
 	    registerCountryContainer();
@@ -127,10 +131,6 @@ public abstract class AbstractPerson extends MoneySource implements Attackable, 
     {
         return location;
     }
-	public void recieveDamage(double damage, Weapon weapon) {
-	    health = (health*personDamageResistance - damage)/personDamageResistance;
-	    amIDead();
-    }
 	private boolean alliveQ;
 	public boolean amIDead() {
 		if(population <= 0)
@@ -166,7 +166,7 @@ public abstract class AbstractPerson extends MoneySource implements Attackable, 
 			salaryGiver = null;
 	}
 	@Override
-	public void receiveDamage(double damage, Weapon attacker) {
+	public boolean receiveDamage(double damage) {
 		//TODO: implement me
 	}
 	@Override

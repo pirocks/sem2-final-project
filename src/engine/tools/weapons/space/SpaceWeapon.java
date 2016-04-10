@@ -1,6 +1,6 @@
 package engine.tools.weapons.space;
 
-import engine.tools.AttackableInitialConstants;
+import engine.tools.AttackableConstants;
 import engine.tools.weapons.Weapon;
 
 import java.math.BigDecimal;
@@ -11,8 +11,8 @@ import java.math.BigDecimal;
  */
 public abstract class SpaceWeapon extends Weapon {
 	public BigDecimal range;
-	public SpaceWeapon(AttackableInitialConstants attackableInitialConstants, double damage, BigDecimal range) {
-		super(attackableInitialConstants,damage);
+	public SpaceWeapon(AttackableConstants attackableConstants, double damage, BigDecimal range) {
+		super(attackableConstants,damage);
 		this.range = range;
 	}
 }

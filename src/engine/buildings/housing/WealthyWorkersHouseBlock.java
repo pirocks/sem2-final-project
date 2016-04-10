@@ -1,11 +1,8 @@
 package engine.buildings.housing;
 
 import engine.cities.CityBlock;
-import engine.people.cityworkers.CityWorker;
-import engine.tools.AttackableInitialConstants;
+import engine.tools.AttackableConstants;
 import engine.universe.ResourceDemand;
-
-import java.util.ArrayList;
 
 
 @Deprecated class WealthyWorkersHouseBlock extends Housing
@@ -13,8 +10,8 @@ import java.util.ArrayList;
 	public static int maximumOccupancyInitial = 500;
 	public static double resistanceInitial;
 
-	public WealthyWorkersHouseBlock(AttackableInitialConstants attackableInitialConstants, CityBlock parentBlock) {
-		super(attackableInitialConstants,parentBlock);
+	public WealthyWorkersHouseBlock(AttackableConstants attackableConstants, CityBlock parentBlock) {
+		super(attackableConstants,parentBlock);
 	}
 
 	@Override

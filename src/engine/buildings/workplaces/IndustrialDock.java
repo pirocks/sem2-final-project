@@ -1,12 +1,9 @@
 package engine.buildings.workplaces;
 
 import engine.cities.CityBlock;
-import engine.people.cityworkers.CityWorker;
-import engine.tools.AttackableInitialConstants;
+import engine.tools.AttackableConstants;
 import engine.universe.MoneySource;
 import engine.universe.ResourceDemand;
-
-import java.util.ArrayList;
 
 public class IndustrialDock extends Workplace
 {
@@ -14,8 +11,8 @@ public class IndustrialDock extends Workplace
 	public static double healthInitial;
 	public static int maximumOccupancyInitial = 5000;
 
-	public IndustrialDock(AttackableInitialConstants attackableInitialConstants,CityBlock parentBlock, MoneySource owner) {
-		super(attackableInitialConstants, parentBlock, owner);
+	public IndustrialDock(AttackableConstants attackableConstants, CityBlock parentBlock, MoneySource owner) {
+		super(attackableConstants, parentBlock, owner);
 	}
 
 	@Override

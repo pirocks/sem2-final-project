@@ -1,7 +1,7 @@
 package engine.buildings.workplaces;
 
 import engine.cities.CityBlock;
-import engine.tools.AttackableInitialConstants;
+import engine.tools.AttackableConstants;
 import engine.universe.MoneySource;
 import engine.universe.ResourceDemand;
 
@@ -17,7 +17,7 @@ public class DockYard extends Workplace
 	public static int maximumOccupancyInitial = -1;
 
 	public DockYard(CityBlock parentBlock, MoneySource owner) {
-		super(new AttackableInitialConstants(healthInitial,resistanceInitial), parentBlock, owner);
+		super(new AttackableConstants(healthInitial,resistanceInitial), parentBlock, owner);
 	}
 
 	@Override

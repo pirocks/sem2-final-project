@@ -1,18 +1,18 @@
 package engine.tools.weapons.guns;
 
-import engine.tools.AttackableInitialConstants;
+import engine.tools.AttackableConstants;
 
 /**
  * Created by bob on 4/9/2016.
  *
  */
 public class GunInitialConstants {
-	public AttackableInitialConstants attackableInitialConstants;
+	public AttackableConstants attackableConstants;
 	public double accuracy;
 	public double range;
 	public double damage;
-	public GunInitialConstants(AttackableInitialConstants attackableInitialConstants, double accuracy, double range, double damage){
-		attackableInitialConstants = attackableInitialConstants;
+	public GunInitialConstants(AttackableConstants attackableConstants, double accuracy, double range, double damage){
+		attackableConstants = attackableConstants;
 		this.accuracy = accuracy;
 		this.range = range;
 		this.damage = damage;
@@ -22,6 +22,6 @@ public class GunInitialConstants {
 	                           double accuracy,
 	                           double range,
 	                           double damage) {
-		this(new AttackableInitialConstants(healthInitial,resitanceIntial),accuracy,range,damage);
+		this(new AttackableConstants(healthInitial,resitanceIntial),accuracy,range,damage);
 	}
 }

@@ -30,7 +30,7 @@ public class Soldier extends AbstractPerson implements VehicleContainer, MoneySo
 		}
     }
     @Override//TODO: implement this
-    public void receiveDamage(double damage, Weapon attacker) {
+    public boolean receiveDamage(double damage, Weapon attacker) {
 
     }
     @Override

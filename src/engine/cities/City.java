@@ -11,6 +11,7 @@ import engine.planets.Country;
 import engine.planets.CountryContainer;
 import engine.planets.Grid;
 import engine.planets.LocationPlanet;
+import engine.tools.AttackableConstants;
 import engine.tools.weapons.Attackable;
 import engine.tools.weapons.Weapon;
 import engine.universe.MoneySource;
@@ -22,10 +23,13 @@ import java.util.ArrayList;
  *
  */
 
-public class City extends MoneySource implements Attackable, BuildingContainer, CountryContainer, PersonContainer
+public class City  extends MoneySource implements Attackable ,BuildingContainer, CountryContainer, PersonContainer
 {
-    //remeber to add stuff to thhe unique id if I add more member vars
+	public static double resistanceInitial;
+	public static double healthInitial;
+	//remeber to add stuff to thhe unique id if I add more member vars
     //read the above comment
+//    private MoneySource moneySource;
     private boolean isCapital;
     private int x,y;//center of city in grid//will be townhall locatiuon
     private Grid parentGrid;//can be used to find location//engine.cities limited to one grid
@@ -35,12 +39,14 @@ public class City extends MoneySource implements Attackable, BuildingContainer, 
     public ArrayList<CityWorker> residents;
     public ArrayList<CityWorker> unemployedResidents;
     private Country parentCountry;//make sutre to change when cuity is captured.
+	private AttackableConstants attackableConstants;
     public City(boolean isCapital,Grid parentGrid,Country parentCountry,double wealth, int x, int y) {
         super(wealth);
         if(x > 100 || x < 0)
             throw new IllegalArgumentException();
         if(y > 100 || y < 0)
             throw new IllegalArgumentException();
+		attackableConstants = new AttackableConstants(healthInitial,resistanceInitial);
         registerBuildingContainer();
 	    registerCountryContainer();
 	    registerPersonContainer();
@@ -121,12 +127,13 @@ public class City extends MoneySource implements Attackable, BuildingContainer, 
 			//die();//??
 		}
     }
-    @Override //TODO: if damage s creater than a certain number pass to city otherwise go to random cityblock
-    public void receiveDamage(double damage, Weapon attacker) {
+	//TODO: if damage is greater than a certain number pass to city otherwise go to random cityblock
+	@Override
+	public boolean receiveDamage(double damage) {
+		return attackableConstants.receiveDamage(damage,this);
+	}
 
-    }
-
-    @Override
+	@Override
     public void die() {
         CityContainers.remove(this);// TODO: 4/9/2016 make sure that this kills everything
 

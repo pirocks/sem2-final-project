@@ -2,11 +2,8 @@
 package engine.buildings.housing;
 
 import engine.cities.CityBlock;
-import engine.people.cityworkers.CityWorker;
-import engine.tools.AttackableInitialConstants;
+import engine.tools.AttackableConstants;
 import engine.universe.ResourceDemand;
-
-import java.util.ArrayList;
 
 public class WorkersHouseBlock extends Housing
 {
@@ -16,7 +13,7 @@ public class WorkersHouseBlock extends Housing
 
 	public WorkersHouseBlock(CityBlock parentBlock)
 	{
-		super(new AttackableInitialConstants(healthInitial,resistanceInitial),parentBlock);
+		super(new AttackableConstants(healthInitial,resistanceInitial),parentBlock);
 	}
 
 	@Override

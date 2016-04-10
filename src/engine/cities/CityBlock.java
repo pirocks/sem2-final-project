@@ -8,7 +8,7 @@ import engine.planets.LocationPlanet;
 import engine.tools.weapons.Attackable;
 import engine.tools.weapons.Weapon;
 
-public class CityBlock implements Attackable,CityContainer, BuildingContainer
+public class CityBlock implements Attackable, CityContainer, BuildingContainer
 {
     public int x,y;//between 0-100 inclusive??
     public LocationPlanet location;
@@ -51,11 +51,13 @@ public class CityBlock implements Attackable,CityContainer, BuildingContainer
     {
         return y;
     }
-    @Override
-    public void receiveDamage(double damage, Weapon attacker) {
-        if(building !=  null)
-            building.receiveDamage(damage,attacker);
-    }
+	@Override
+	public boolean receiveDamage(double damage) {
+		if(building !=  null)
+			return building.receiveDamage(damage);
+		return false;
+	}
+
 	@Override
 	public void die() {
 		building.die();

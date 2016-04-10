@@ -3,14 +3,14 @@ package engine.tools;
 import engine.planets.LocationPlanet;
 import engine.tools.vehicles.Weighable;
 import engine.tools.weapons.Attackable;
-import engine.tools.weapons.Weapon;
 import engine.universe.ResourceDemand;
 
-public abstract class Tool extends Attackable implements Weighable
+public abstract class Tool implements Weighable, Attackable
 {
-	protected Tool(AttackableInitialConstants attackableInitialConstants)
+	private AttackableConstants attackableConstants;
+	protected Tool(AttackableConstants attackableConstants)
 	{
-		super(attackableInitialConstants);
+		this.attackableConstants = attackableConstants;
 		//TODO think of sme code to put here
 		//what about construction costs
 		//constructor from a another class
@@ -20,8 +20,8 @@ public abstract class Tool extends Attackable implements Weighable
 	public abstract ResourceDemand requiredResourcesForConstruction();
 	public abstract long constructionManHours();//doesn't need o be abstract
 	@Override
-	public void receiveDamage(double damage, Weapon attacker) {
-		health -= damage/resistance;
+	public boolean receiveDamage(double damage) {
+		return attackableConstants.receiveDamage(damage, this);
 	}
 	@Override
 	public void die() {

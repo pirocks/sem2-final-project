@@ -1,23 +1,22 @@
 package engine.tools.weapons;
 
 import engine.planets.LocationPlanet;
-import engine.tools.AttackableInitialConstants;
 
 /**
  * Created by bob on 4/4/2016.
  * 
  */
-public abstract class Attackable
+public interface Attackable
 {
-	protected double health;
-	protected double resistance;
-	public Attackable(AttackableInitialConstants attackableInitialConstants)
-	{
-		this.health = attackableInitialConstants.healthInitial;
-		this.resistance = attackableInitialConstants.resistanceInitial;
-	}
+//	protected double health;
+//	protected double resistance;
+//	public Attackable(AttackableConstants attackableConstants)
+//	{
+//		this.health = attackableConstants.healthInitial;
+//		this.resistance = attackableConstants.resistanceInitial;
+//	}
 
-	public abstract void receiveDamage(double damage, Weapon attacker);//posibly more types later
+	public abstract boolean receiveDamage(double damage);//posibly more types later
 	public abstract void die();
 	public abstract LocationPlanet getLocationPlanet();
 }

@@ -1,9 +1,6 @@
 package engine.buildings;
 
-import engine.buildings.housing.ApartmentBlock;
 import engine.buildings.housing.Housing;
-import engine.buildings.housing.RulersHouse;
-import engine.buildings.housing.WorkersHouseBlock;
 import engine.buildings.workplaces.*;
 import engine.cities.City;
 import engine.cities.CityBlock;
@@ -11,21 +8,21 @@ import engine.cities.CityContainer;
 import engine.people.AbstractPerson;
 import engine.people.PersonContainer;
 import engine.planets.LocationPlanet;
-import engine.tools.AttackableInitialConstants;
+import engine.tools.AttackableConstants;
 import engine.tools.weapons.Attackable;
-import engine.tools.weapons.Weapon;
 import engine.universe.ResourceDemand;
 
 /**
  * Created by bob on 3/5/2016.
  * does stuff
  */
-public abstract class Building extends Attackable implements CityContainer, PersonContainer//extends moneysource for workplace maybe??
+public abstract class Building implements Attackable,CityContainer, PersonContainer//extends moneysource for workplace maybe??
 {
 	protected CityBlock parentBlock;
-	public Building(AttackableInitialConstants attackableInitialConstants,
+	private AttackableConstants attackableConstants;
+	public Building(AttackableConstants attackableConstants,
 	                CityBlock parentBlock) {
-	    super(attackableInitialConstants);
+	    this.attackableConstants = attackableConstants;
 	    registerCityContainer();
 	    registerPersonContainer();//TODO:go through and make sure every constructor has these
         this.parentBlock = parentBlock;
@@ -44,9 +41,8 @@ public abstract class Building extends Attackable implements CityContainer, Pers
         return parentBlock.getLocation();
     }
 	@Override
-	public void receiveDamage(double damage, Weapon attacker)
-	{
-		health -= (1.0 - resistance)*damage;
+	public boolean receiveDamage(double damage) {
+		return attackableConstants.receiveDamage(damage, this);// TODO: 4/10/2016 this can be done better, the this can be avoided, can return a boolean for attack succsess.
 	}
 	@Override
 	public void die() {
