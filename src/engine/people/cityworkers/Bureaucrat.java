@@ -25,7 +25,9 @@ public class Bureaucrat extends CityWorker
     {
 	    super(new PeopleInitialConstants(populationInitial,
 			    foodUsePerPersonInitial,
-			    crimeRiskInitial,
+			    UniversalConstants.
+					    getCorruptionFactor(parentCity.getParentCountry())
+					    *crimeRiskInitial,
 			    crimeImpactInitial,
 			    salaryInitial,
 			    parentCity.getParentCountry()),parentCity);

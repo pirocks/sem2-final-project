@@ -28,8 +28,7 @@ public class Doctor extends CityWorker
         workplace = null;
     }
 
-    public Doctor(City parentCity)
-    {
+    public Doctor(City parentCity) {
         super(new PeopleInitialConstants(populationInitial,
 		        foodUsePerPersonInitial,
 		        crimeRiskInitial,

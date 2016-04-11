@@ -1,17 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 package engine.people.cityworkers;
 
 import engine.buildings.housing.Housing;
@@ -20,14 +6,26 @@ import engine.cities.City;
 import engine.people.AbstractPerson;
 import engine.planets.LocationPlanet;
 import engine.universe.Country;
+import engine.universe.UniversalConstants;
 
 public class Teacher<Type extends AbstractPerson> extends CityWorker {
     public double progress = 0.0;//from 0 to 1
     private Type student;
     public School workplace;
 
-    public Teacher(City parentCity, Housing home) {
-        super(parentCity, home);
+    public static int populationInitial = 250;
+    public static double foodUsePerPersonInitial = UniversalConstants.normalFoodUsePerPerson;
+    public static double crimeRiskInitial = UniversalConstants.normalCrimeRisk;
+    public static double crimeImpactInitial = UniversalConstants.normalPersonCrimeImpact;
+    public static double salaryInitial = UniversalConstants.normalPersonSalary;
+
+    public Teacher(City parentCity) {
+        super(new PeopleInitialConstants(populationInitial,
+                foodUsePerPersonInitial,
+                crimeRiskInitial,
+                crimeImpactInitial,
+                salaryInitial,
+                parentCity.getParentCountry()),parentCity);
     }
 
     public School getWorkBuilding() {
