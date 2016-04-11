@@ -30,6 +30,11 @@ public class Universe implements Serializable, CountryContainer
         }
     }
 
+	public Universe(UniverseRandomConstructionContext universeRandomConstructionContext)
+	{
+
+	}
+
     @Override
     public void remove(Country country,Country conqueror) {
         countries.remove(country);

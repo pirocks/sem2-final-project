@@ -36,8 +36,7 @@ public abstract class Building implements Attackable,CityContainer, PersonContai
     {
         return parentBlock;
     }
-	public LocationPlanet getLocation()
-    {
+	public LocationPlanet getLocation() {
         return parentBlock.getLocation();
     }
 	@Override

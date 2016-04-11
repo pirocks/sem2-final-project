@@ -49,7 +49,9 @@ public class Soldier extends AbstractPerson implements VehicleContainer, MoneySo
 	    registerVehicleContainer();
 	    registerMoneySourceContainer();
     }
-    public void doSkill(long time) {
+
+	// TODO: 4/10/2016 implment do skill and figure out hjow the soldsier do skill worrks/asking for new orders?
+	public void doSkill(long time) {
         switch(currentTask)
         {
             case March:
