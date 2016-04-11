@@ -3,6 +3,7 @@ package engine.planets;
 import engine.cities.City;
 import engine.cities.CityBlock;
 import engine.cities.CityContainer;
+import engine.planets.hazards.NaturalHazard;
 import engine.universe.Country;
 import engine.universe.CountryContainer;
 

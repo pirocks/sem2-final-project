@@ -1,5 +1,6 @@
 package engine.universe;
 
+import java.math.BigDecimal;
 import java.util.concurrent.ThreadLocalRandom;
 public class utils
 {
@@ -11,4 +12,9 @@ public class utils
     {
         return ThreadLocalRandom.current().nextDouble(a,b);
     }
+	public static BigDecimal getRandomBigDecimal(BigDecimal a,BigDecimal b){
+		double randomNum = Math.random();
+		return a.add((b.subtract(a)).multiply(new BigDecimal(randomNum)));
+	}
+
 }

@@ -11,10 +11,20 @@ public class UniverseRandomConstructionContext
 	public int numSolarSystems;
 	public double universeRadius;
 	public int numCountries;
+	public int numMaxPlanets;
+	public int numMinPlanets;
 
-	public UniverseRandomConstructionContext()
+	public UniverseRandomConstructionContext(int numSolarSystems,
+	                                         double universeRadius,
+	                                         int numCountries,
+	                                         int numMinPlanets,
+	                                         int numMaxPlanets)
 	{
-
+		this.numSolarSystems = numSolarSystems;
+		this.universeRadius = universeRadius;
+		this.numCountries = numCountries;
+		this.numMaxPlanets = numMaxPlanets;
+		this.numMinPlanets = numMinPlanets;
 	}
 
 

@@ -10,6 +10,7 @@ import engine.cities.CityContainer;
 import engine.people.AbstractPerson;
 import engine.people.PersonContainer;
 import engine.planets.*;
+import engine.planets.hazards.NaturalHazard;
 
 import java.util.ArrayList;
 

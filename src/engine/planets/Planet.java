@@ -30,6 +30,11 @@ public class Planet implements CountryContainer
         registerCountryContainer();
         grids = new Grid[size][size * 2];
     }
+
+    public Planet(PlanetRandomConstructionContext c) {
+
+    }
+
     public double getplanetRadius()
     {
         return planetRadius;

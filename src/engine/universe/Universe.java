@@ -36,6 +36,8 @@ public class Universe implements Serializable, CountryContainer
 		final int numCountries = universeRandomConstructionContext.numCountries;
 		final int numSolarSystems = universeRandomConstructionContext.numSolarSystems;
 		final double universeRadius = universeRandomConstructionContext.universeRadius;
+		final int numMinPlanets = universeRandomConstructionContext.numMinPlanets;
+		final int numMaxPlanrts = universeRandomConstructionContext.numMaxPlanets;
 		registerCountryContainer();
 		ArrayList<UnConstructedSolarSystem> UnConstructedSolarSystems = new ArrayList<>();
 		for(int i = 0; i < numSolarSystems;i++)
@@ -49,8 +51,20 @@ public class Universe implements Serializable, CountryContainer
 					new BigDecimal(y).multiply(largeNumber),
 					new BigDecimal(z).multiply(largeNumber)));
 		}
-		ArrayList<SolarSystemRandomConstructionContext>
-		for(int i = 0; )
+		ArrayList<SolarSystemRandomConstructionContext> constructionContexts = new ArrayList<>();
+		ArrayList<ArrayList<Country>> countries  = new ArrayList<>();
+		for(int  i = 0; i < universeRandomConstructionContext.numCountries;i++)
+		{
+			countries.set(i,new ArrayList<>());// TODO: 4/11/2016 figure out how o get apprpriate num of countries//add them safter the fact  or make a condition that there must be more solars than countries
+		}
+
+		int i = 0;
+		for(UnConstructedSolarSystem unConstructed:UnConstructedSolarSystems){
+			constructionContexts.add(new SolarSystemRandomConstructionContext(
+					unConstructed,universeRandomConstructionContext.numMaxPlanets,
+					universeRandomConstructionContext.numMinPlanets,countries.get(i)));
+			i++;
+		}
 	}
 
     @Override
