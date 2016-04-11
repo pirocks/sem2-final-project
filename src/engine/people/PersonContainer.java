@@ -6,8 +6,8 @@ package engine.people;
  */
 public interface PersonContainer
 {
-	public void remove(AbstractPerson person);
-	default public void registerPersonContainer()
+	void remove(AbstractPerson person);
+	default void registerPersonContainer()
 	{
 		PersonContainers.registerContainer(this);
 	}

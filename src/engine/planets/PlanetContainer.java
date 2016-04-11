@@ -6,8 +6,8 @@ package engine.planets;
  */
 public interface PlanetContainer
 {
-	public void remove(Planet planet);
-	default public void registerPlanetContainer()
+	void remove(Planet planet);
+	default void registerPlanetContainer()
 	{
 		PlanetContainers.registerContainer(this);
 	}

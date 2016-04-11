@@ -53,7 +53,7 @@ public class Country extends MoneySource implements PersonContainer,CountryConta
     }
 
     // private //capital city whitehhouse
-    public static enum GovernmentType
+    public enum GovernmentType
     {
         Democracy,Communist,Fascist,Totalitarian
     }

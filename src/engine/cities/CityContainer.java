@@ -6,8 +6,8 @@ package engine.cities;
  */
 public interface CityContainer
 {
-	public void remove(City city);
-	default public void registerCityContainer()
+	void remove(City city);
+	default void registerCityContainer()
 	{
 		CityContainers.registerContainer(this);
 	}

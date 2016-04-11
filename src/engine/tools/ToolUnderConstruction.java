@@ -28,9 +28,7 @@ public class ToolUnderConstruction <Type extends Tool>
 	}
 	private boolean areWeDoneYet()
 	{
-		if(timeRequired < 0 || resourceDemand.quantity == 0)
-			return true;
-		return false;
+		return timeRequired < 0 || resourceDemand.quantity == 0;
 	}
 	public Type getFinishedTool()
 	{

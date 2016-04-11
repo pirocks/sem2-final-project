@@ -6,8 +6,8 @@ package engine.planets;
  */
 public interface RoadContainer
 {
-	public void remove(Road road);
-	default public void register()
+	void remove(Road road);
+	default void register()
 	{
 		RoadContainers.registerContainer(this);
 	}

@@ -69,9 +69,7 @@ public abstract class Vehicle extends Tool implements PersonContainer, VehicleCo
 		return canAddWeight(weighable.getWeight());
 	}
 	private boolean canAddWeight(double weight) {
-		if(getTotalWeightLoad() + weight < maxWeight)
-			return true;
-		return  false;
+		return getTotalWeightLoad() + weight < maxWeight;
 	}
 	private double getTotalWeightLoad() {
 		double out = 0;

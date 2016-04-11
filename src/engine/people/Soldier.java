@@ -26,10 +26,11 @@ public class Soldier extends AbstractPerson implements VehicleContainer, MoneySo
 	public static double salaryInitial =
 			UniversalConstants.normalPersonSalary;
 	private static long timeToHealOnePerson = 3600*24;
-	public static enum TypeOfTask {
+	public enum TypeOfTask {
         March,Drive,Guard,Heal//what about attack??
-    };
-    private Country parentCountry;
+    }
+
+	private Country parentCountry;
     private TypeOfTask currentTask;
     /*public???*/public static double healRate;//figure out the constants
     /*public?? constants figure out*/ public static double walkingSpeed;

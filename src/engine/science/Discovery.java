@@ -24,8 +24,6 @@ public abstract class Discovery//maybe make interface??
 	}
 	public boolean discoveredQ()
 	{
-		if(percentComplete > 1.0)
-			return true;
-		return false;
+		return percentComplete > 1.0;
 	}
 }

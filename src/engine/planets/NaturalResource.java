@@ -18,6 +18,6 @@ public class NaturalResource extends MoneySource
         this.restoreRate = restoreRate;
         this.max = max;
         resource = new Resource(in,quantity);
-    };
-    
+    }
+
 }

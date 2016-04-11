@@ -16,7 +16,7 @@ public interface Attackable
 //		this.resistance = attackableConstants.resistanceInitial;
 //	}
 
-	public abstract boolean receiveDamage(double damage);//posibly more types later
-	public abstract void die();
-	public abstract LocationPlanet getLocationPlanet();
+	boolean receiveDamage(double damage);//posibly more types later
+	void die();
+	LocationPlanet getLocationPlanet();
 }

@@ -6,8 +6,8 @@ package engine.universe;
  */
 public interface MoneySourceContainer
 {
-	public void remove(MoneySource in);
-	default public void registerMoneySourceContainer()
+	void remove(MoneySource in);
+	default void registerMoneySourceContainer()
 	{
 		MoneySourceContainers.registerContainer(this);
 	}

@@ -15,7 +15,7 @@ public abstract class CityWorker extends AbstractPerson implements BuildingConta
 	public static long travelTimeConstant;
 	public static long TimeAtWork;
 	public static long TimeAtHome;
-	public static enum WhereAmI {
+	public enum WhereAmI {
 		AtWork,AtHospital,AtHome,GoingToWork,GoingToHospital,GoingToHome
 	}
 	protected WhereAmI whereAmI;

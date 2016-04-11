@@ -6,8 +6,8 @@ package engine.tools.weapons;
  */
 public interface WeaponContainer
 {
-	public abstract void remove(Weapon weapon);
-	default public void registerWeaponContainer()
+	void remove(Weapon weapon);
+	default void registerWeaponContainer()
 	{
 		WeaponContainers.registerContainer(this);
 	}

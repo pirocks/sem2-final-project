@@ -4,9 +4,9 @@ import engine.tools.vehicles.Weighable;
 
 public class Resource implements Weighable
 {
-	public static enum Type
+	public enum Type
     {
-        Iron,Oil,Uranium,Helium,Food,Water;
+        Iron,Oil,Uranium,Helium,Food,Water
     }
 	public final Type type;
 	private double quantity;//don't forget to check for overflow with sun

@@ -6,8 +6,8 @@ package engine.buildings;
  */
 public interface BuildingContainer
 {
-	public void remove(Building building);
-	default public void registerBuildingContainer()
+	void remove(Building building);
+	default void registerBuildingContainer()
 	{
 		BuildingContainers.registerContainer(this);
 	}

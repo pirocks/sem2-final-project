@@ -6,8 +6,8 @@ package engine.tools.vehicles;
  */
 public interface VehicleContainer
 {
-	public void remove(Vehicle vehicle);
-	default public void registerVehicleContainer()
+	void remove(Vehicle vehicle);
+	default void registerVehicleContainer()
 	{
 		VehicleContainers.registerContainer(this);
 	}

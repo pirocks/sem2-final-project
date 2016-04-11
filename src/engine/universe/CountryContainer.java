@@ -5,8 +5,8 @@ package engine.universe;
  *
  */
 public interface CountryContainer {
-	public void remove(Country country,Country conqueror);
-	default public void registerCountryContainer()
+	void remove(Country country, Country conqueror);
+	default void registerCountryContainer()
 	{
 		CountryContainers.registerContainer(this);
 	}

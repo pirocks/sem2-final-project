@@ -31,9 +31,7 @@ public class MoneySource
     }
     public boolean canPay(double amount)
     {
-        if(amount > wealth)
-            return false;
-        return true;
+        return amount <= wealth;
     }
     public void outOfMoneyHandler(double amount)//possibly abstract
     {

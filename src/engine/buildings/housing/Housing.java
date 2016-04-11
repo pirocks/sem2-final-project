@@ -34,9 +34,7 @@ public abstract class Housing extends Building implements PersonContainer
     }
     public boolean overcrowdedQ() {
         int sum = getPopulation();
-        if(sum > maximumOccupancy)
-            return false;
-        return true;
+	    return sum <= maximumOccupancy;
     }
     public int getPopulation() {
         int sum = 0;

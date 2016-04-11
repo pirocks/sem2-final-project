@@ -60,14 +60,10 @@ public abstract class Building implements Attackable,CityContainer, PersonContai
 		parentBlock.remove(city);// TODO: 4/9/2016 check that this desn't cause infinte recursion
 	}
 	public boolean HousingQ() {
-		if (this instanceof Housing)
-			return true;
-		return false;
+		return this instanceof Housing;
 	}
 	public boolean WorkplaceQ(){
-		if(this instanceof Workplace)
-			return true;
-		return false;
+		return this instanceof Workplace;
 	}
 	public abstract ResourceDemand getResourceCost();
 //	public abstract double getCost();
