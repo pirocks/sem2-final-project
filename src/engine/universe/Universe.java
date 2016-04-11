@@ -18,7 +18,8 @@ public class Universe implements Serializable, CountryContainer
     public Universe(int numSolarSystems,double size)//size is not related to engine.universe units
     {
         registerCountryContainer();
-        solarSystems = new ArrayList<SolarSystem>();
+        solarSystems = new ArrayList<>();
+	    countries = new ArrayList<>();
         for(int i = 0; i < numSolarSystems;i++)
         {
             //location of solar systems
@@ -32,7 +33,24 @@ public class Universe implements Serializable, CountryContainer
 
 	public Universe(UniverseRandomConstructionContext universeRandomConstructionContext)
 	{
-
+		final int numCountries = universeRandomConstructionContext.numCountries;
+		final int numSolarSystems = universeRandomConstructionContext.numSolarSystems;
+		final double universeRadius = universeRandomConstructionContext.universeRadius;
+		registerCountryContainer();
+		ArrayList<UnConstructedSolarSystem> UnConstructedSolarSystems = new ArrayList<>();
+		for(int i = 0; i < numSolarSystems;i++)
+		{
+			//location of solar systems
+			BigDecimal largeNumber = new BigDecimal(1000000000);
+			double x = utils.getRandomDouble(-universeRadius, universeRadius);
+			double y = utils.getRandomDouble(-universeRadius, universeRadius);
+			double z = utils.getRandomDouble(-universeRadius, universeRadius);
+			UnConstructedSolarSystems.add(new UnConstructedSolarSystem(new BigDecimal(x).multiply(largeNumber),
+					new BigDecimal(y).multiply(largeNumber),
+					new BigDecimal(z).multiply(largeNumber)));
+		}
+		ArrayList<SolarSystemRandomConstructionContext>
+		for(int i = 0; )
 	}
 
     @Override
