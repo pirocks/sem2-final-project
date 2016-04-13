@@ -1,0 +1,10 @@
+1.if there is any free housing add people to it
+2.if there are free jobs add people to it if they have housing
+3.todo how is food going to work
+
+if ai is turned on:
+    ai should decide what to buyild next based on city needs aka housing or workplace
+    ai should decide what type of workers the schools should train
+if ui is turned on:
+    should ask what to build.
+    should ask what type of workers to train next

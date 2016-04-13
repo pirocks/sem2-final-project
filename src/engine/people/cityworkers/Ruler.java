@@ -5,6 +5,7 @@ import engine.buildings.workplaces.TownHall;
 import engine.buildings.workplaces.Workplace;
 import engine.cities.City;
 import engine.people.AbstractPerson;
+import engine.universe.Country;
 import engine.universe.UniversalConstants;
 
 /*
@@ -19,15 +20,15 @@ public class Ruler extends CityWorker //TODO:clean this up
 	public static double salaryInitial = 2.0*UniversalConstants.normalPersonSalary;
     //possible deprecation of this object//cannot be deprecated b/c ai
     private TownHall workplace;
-	public Ruler(City parentCity) {
+	public Ruler(Country parentCountry) {
 		super(new PeopleInitialConstants(populationInitial,
 				foodUsePerPersonInitial,
 				crimeRiskInitial,
 				crimeImpactInitial,
 				UniversalConstants.
-						getCorruptionFactor(parentCity.getParentCountry())*
+						getCorruptionFactor(parentCountry)*
 						salaryInitial,
-				parentCity.getParentCountry()),parentCity);
+				parentCountry),parentCountry.getCapitalCity());
 	}
 
     @Override

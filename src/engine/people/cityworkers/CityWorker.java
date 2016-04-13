@@ -20,7 +20,7 @@ public abstract class CityWorker extends AbstractPerson implements BuildingConta
 	}
 	protected WhereAmI whereAmI;
 	private Building currentBuilding;
-	private Housing home;
+	private Housing home = null;
     private City currentCity;//should be renamed to parent city
 	protected long timeRemainingAtLocation;
 	private Hospital hospital; //is null if not going to hospital
@@ -28,7 +28,6 @@ public abstract class CityWorker extends AbstractPerson implements BuildingConta
 		super(peopleInitialConstants);
 		registerCityContainer();
 		registerBuildingContainer();
-//		this.home = home;
 		currentCity = city;
 	}
 	public void goHome() {
@@ -76,10 +75,13 @@ public abstract class CityWorker extends AbstractPerson implements BuildingConta
 			goToHospital();
 	}
 	public void doLife(long time) {
+		checkHealth();
+		if(home == null)
+			setWorkPlaceToNull();
+		//todo how does this class respond when workplace is null
 		if(time < 1)
             return;
-        checkHealth();
-        if(timeRemainingAtLocation >= time)
+		if(timeRemainingAtLocation >= time)
         {
         	if(whereAmI == WhereAmI.AtWork)
         	{
@@ -123,6 +125,9 @@ public abstract class CityWorker extends AbstractPerson implements BuildingConta
                 break;
         }
 
+	}
+	public Housing getHome(){
+		return home;
 	}
 	@Override
 	public void dieSpecific()

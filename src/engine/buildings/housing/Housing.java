@@ -42,6 +42,9 @@ public abstract class Housing extends Building implements PersonContainer
             sum += person.getPopulation();
         return sum;
     }
+	public int getFreeSpace() {
+		return maximumOccupancy - getPopulation();
+	}
 	@Override
 	public void remove(AbstractPerson person) {
 //		assert(residents.contains(person));

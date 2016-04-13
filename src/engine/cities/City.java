@@ -2,10 +2,13 @@ package engine.cities;
 
 import engine.buildings.Building;
 import engine.buildings.BuildingContainer;
+import engine.buildings.housing.Housing;
 import engine.buildings.housing.RulersHouse;
 import engine.buildings.workplaces.Hospital;
+import engine.buildings.workplaces.Workplace;
 import engine.people.AbstractPerson;
 import engine.people.PersonContainer;
+import engine.people.cityworkers.Bureaucrat;
 import engine.people.cityworkers.CityWorker;
 import engine.universe.Country;
 import engine.universe.CountryContainer;
@@ -38,7 +41,7 @@ public class City  extends MoneySource implements Serializable,Attackable ,Build
     private ArrayList<CityBlock> cityBlocks;
     private ArrayList<Hospital> hospitals;
     public ArrayList<CityWorker> residents;
-    public ArrayList<CityWorker> unemployedResidents;
+//    public ArrayList<CityWorker> unemployedResidents;
     private Country parentCountry;//make sutre to change when cuity is captured.
 	private AttackableConstants attackableConstants;
     public City(boolean isCapital,Grid parentGrid,Country parentCountry,double wealth, int x, int y) {
@@ -109,7 +112,42 @@ public class City  extends MoneySource implements Serializable,Attackable ,Build
 	    residents.remove(person);
 
     }
-    @Override
+    //all people that are homeless are also jobless
+	public ArrayList<CityWorker> getHomeless(){
+	    ArrayList<CityWorker> out = new ArrayList<>();
+	    for(CityWorker worker:residents)
+	    {
+		    if(worker.getHome() == null)
+			    out.add(worker);
+	    }
+	    return out;
+    }
+	public ArrayList<CityWorker> getJobLess(){
+		ArrayList<CityWorker> out = new ArrayList<>();
+		for(CityWorker worker:residents) {
+			worker.doLife(0);//garuntees that everything in the class is in order
+			if (worker.getWorkBuilding() == null)
+				out.add(worker);
+		}
+		return out;
+	}
+	public Housing findEmptyHousing(int minimumFree){
+		for(CityBlock block:cityBlocks){
+			if(block.getBuilding() instanceof Housing)
+				if(((Housing) block.getBuilding()).getFreeSpace() >= minimumFree)
+					return (Housing) block.getBuilding();
+		}
+		return null;
+	}
+
+	public void doLife(long time){
+		for(CityWorker worker: residents)
+		{
+			worker.doLife(time);//// TODO: 4/13/2016 bureucrats and rulers should run the city
+		}
+	}
+
+	@Override
     public void remove(Building building) {
         for(CityBlock cityBlock:cityBlocks)
             cityBlock.remove(building);
@@ -118,7 +156,6 @@ public class City  extends MoneySource implements Serializable,Attackable ,Build
     @Override
     public void remove(AbstractPerson person) {
 		residents.remove(person);
-	    unemployedResidents.remove(person);
     }
     @Override
     public void remove(Country country,Country conqueror) {

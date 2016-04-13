@@ -12,7 +12,7 @@ import java.math.BigDecimal;
  */
 public class LocationUniverse implements Serializable{
 	private BigDecimal x, y, z;
-	private LocationPlanet localLocation;
+	@Deprecated private LocationPlanet localLocation;//not necesary
 	private Planet planet;
 	private SolarSystem solarSystem;
 
