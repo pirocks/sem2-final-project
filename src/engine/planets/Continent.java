@@ -7,10 +7,11 @@ package engine.planets;
 
 import engine.universe.Country;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
  
-public class Continent
+public class Continent implements Serializable
 {
 	// TODO: 4/9/2016 constructor
 	private ArrayList<Grid> grids;

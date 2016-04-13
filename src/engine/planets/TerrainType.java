@@ -1,6 +1,8 @@
 package engine.planets;
 
-public enum TerrainType
+import java.io.Serializable;
+
+public enum TerrainType implements Serializable
 {
     Land,
     Sea,

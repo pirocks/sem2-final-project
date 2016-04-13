@@ -14,9 +14,10 @@ package engine.planets.hazards;
 
 import engine.planets.Grid;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public abstract class NaturalHazard
+public abstract class NaturalHazard implements Serializable
 {
 	protected NaturalHazard(Type type,Grid parentGrid) {
 		this.type = type;

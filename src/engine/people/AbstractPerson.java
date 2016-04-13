@@ -12,7 +12,9 @@ import engine.tools.AttackableConstants;
 import engine.tools.vehicles.Weighable;
 import engine.tools.weapons.Attackable;
 
-public abstract class AbstractPerson extends MoneySource implements Attackable, CountryContainer, MoneySourceContainer,Weighable
+import java.io.Serializable;
+
+public abstract class AbstractPerson extends MoneySource implements Serializable,Attackable, CountryContainer, MoneySourceContainer,Weighable
 {
 	public static double healthInitial;
 	public static double resistanceInitial;

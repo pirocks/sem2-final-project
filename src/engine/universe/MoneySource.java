@@ -1,6 +1,8 @@
 package engine.universe;
 
-public class MoneySource
+import java.io.Serializable;
+
+public class MoneySource implements Serializable
 {
     private double wealth;
     protected void setWealth(double in)

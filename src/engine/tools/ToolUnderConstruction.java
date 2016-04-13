@@ -3,11 +3,13 @@ package engine.tools;
 import engine.universe.Resource;
 import engine.universe.ResourceDemand;
 
+import java.io.Serializable;
+
 /**
  * Created by bob on 4/6/2016.
  *
  */
-public class ToolUnderConstruction <Type extends Tool>
+public class ToolUnderConstruction <Type extends Tool> implements Serializable
 {
 	private Type object;
 	private ResourceDemand resourceDemand = object.requiredResourcesForConstruction();

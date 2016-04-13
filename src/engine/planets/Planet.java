@@ -8,13 +8,14 @@ import engine.universe.Country;
 import engine.universe.CountryContainer;
 import engine.universe.SolarSystem;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 /*planet contains the following:
     grid array that serves as building block of planet
     resources on each grid array
     possible hazards volcano,temperature changes,weather. hazards are local to grid array*/
-public class Planet implements CountryContainer
+public class Planet implements Serializable,CountryContainer
 {
 	//TODO make a better constructor
     private ArrayList<Country> countries = new ArrayList<>();

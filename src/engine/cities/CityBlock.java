@@ -8,7 +8,9 @@ import engine.planets.LocationPlanet;
 import engine.tools.weapons.Attackable;
 import engine.tools.weapons.Weapon;
 
-public class CityBlock implements Attackable, CityContainer, BuildingContainer
+import java.io.Serializable;
+
+public class CityBlock implements Serializable, Attackable, CityContainer, BuildingContainer
 {
     public int x,y;//between 0-100 inclusive??
     public LocationPlanet location;

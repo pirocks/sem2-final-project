@@ -1,6 +1,8 @@
 package engine.universe;
 
-public class ResourceDemand
+import java.io.Serializable;
+
+public class ResourceDemand implements Serializable
 {
 	public Resource.Type type;
 	public double quantity;

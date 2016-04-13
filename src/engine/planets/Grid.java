@@ -7,6 +7,7 @@ import engine.planets.hazards.NaturalHazard;
 import engine.universe.Country;
 import engine.universe.CountryContainer;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 /**
@@ -15,7 +16,7 @@ import java.util.ArrayList;
  * grids contain 100 cityblocks. Not in an array though
  */
 
-public class Grid implements PlanetContainer,CountryContainer, CityContainer
+public class Grid implements Serializable,PlanetContainer,CountryContainer, CityContainer
 {
     private int x,y;
     private Planet parentPlanet;

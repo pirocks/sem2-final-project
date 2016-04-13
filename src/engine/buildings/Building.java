@@ -12,11 +12,13 @@ import engine.tools.AttackableConstants;
 import engine.tools.weapons.Attackable;
 import engine.universe.ResourceDemand;
 
+import java.io.Serializable;
+
 /**
  * Created by bob on 3/5/2016.
  * does stuff
  */
-public abstract class Building implements Attackable,CityContainer, PersonContainer//extends moneysource for workplace maybe??
+public abstract class Building implements Serializable,Attackable,CityContainer, PersonContainer//extends moneysource for workplace maybe??
 {
 	protected CityBlock parentBlock;
 	private AttackableConstants attackableConstants;

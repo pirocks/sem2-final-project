@@ -2,7 +2,9 @@ package engine.universe;
 
 import engine.tools.vehicles.Weighable;
 
-public class Resource implements Weighable
+import java.io.Serializable;
+
+public class Resource implements Serializable,Weighable
 {
 	public enum Type
     {

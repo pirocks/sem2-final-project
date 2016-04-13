@@ -7,9 +7,10 @@ import engine.people.cityworkers.CityWorker;
 import engine.universe.MoneySource;
 import engine.universe.ResourceDemand;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-class UnderConstruction<Type extends Building>
+class UnderConstruction<Type extends Building> implements Serializable
 {
 	private Type type;
 	private double progress = 0.0;

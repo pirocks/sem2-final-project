@@ -12,9 +12,10 @@ import engine.people.PersonContainer;
 import engine.planets.*;
 import engine.planets.hazards.NaturalHazard;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Country extends MoneySource implements PersonContainer,CountryContainer, CityContainer,RoadContainer
+public class Country extends MoneySource implements Serializable,PersonContainer,CountryContainer, CityContainer,RoadContainer
 {
     public static String[] CountryNames = 
     {};

@@ -5,7 +5,9 @@ import engine.buildings.Building;
 import engine.cities.City;
 import engine.cities.CityBlock;
 
-public class LocationPlanet implements PlanetContainer
+import java.io.Serializable;
+
+public class LocationPlanet implements Serializable,PlanetContainer
 {
 	public Planet planet;
 	private int Gridx;

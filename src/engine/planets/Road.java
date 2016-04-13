@@ -8,9 +8,10 @@ import engine.tools.vehicles.VehicleContainer;
 import engine.tools.weapons.Attackable;
 import engine.tools.weapons.Weapon;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Road implements Attackable ,CityContainer, VehicleContainer
+public class Road implements Serializable,Attackable ,CityContainer, VehicleContainer
 {
 	public static double resistanceInitial;
 	public static double healthInitial;

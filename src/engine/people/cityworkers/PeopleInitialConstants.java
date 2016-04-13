@@ -4,11 +4,13 @@ import engine.buildings.Building;
 import engine.cities.City;
 import engine.universe.Country;
 
+import java.io.Serializable;
+
 /**
  * Created by bob on 4/10/2016.
  *
  */
-public class PeopleInitialConstants
+public class PeopleInitialConstants implements Serializable
 {
 	public int population;
 	public double foodUsePerPerson;

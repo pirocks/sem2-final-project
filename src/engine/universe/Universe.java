@@ -8,6 +8,7 @@ import java.util.concurrent.ThreadLocalRandom;
 /**
  * Created by bob on 3/5/2016.
  * Created by bob on 3/5/2016.
+ * todo serialazable won't work on container classes need to fix
  */
  
 

@@ -4,6 +4,7 @@ import engine.planets.Planet;
 import engine.planets.PlanetContainer;
 import engine.planets.PlanetRandomConstructionContext;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
@@ -12,7 +13,7 @@ import java.util.ArrayList;
  * Created by bob on 3/5/2016.
  *
  */
-public class SolarSystem implements PlanetContainer
+public class SolarSystem implements PlanetContainer, Serializable
 {
     BigDecimal x,y,z;
     private ArrayList<Planet> planets = new ArrayList<Planet>();

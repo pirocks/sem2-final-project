@@ -15,6 +15,7 @@ import engine.tools.AttackableConstants;
 import engine.tools.weapons.Attackable;
 import engine.universe.MoneySource;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -22,8 +23,9 @@ import java.util.ArrayList;
  *
  */
 
-public class City  extends MoneySource implements Attackable ,BuildingContainer, CountryContainer, PersonContainer
+public class City  extends MoneySource implements Serializable,Attackable ,BuildingContainer, CountryContainer, PersonContainer
 {
+	//extejnds moneysource so serializable not necesary
 	public static double resistanceInitial;
 	public static double healthInitial;
 	//remeber to add stuff to thhe unique id if I add more member vars

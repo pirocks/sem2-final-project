@@ -5,7 +5,9 @@ import engine.tools.vehicles.Weighable;
 import engine.tools.weapons.Attackable;
 import engine.universe.ResourceDemand;
 
-public abstract class Tool implements Weighable, Attackable
+import java.io.Serializable;
+
+public abstract class Tool implements Serializable,Weighable, Attackable
 {
 	private AttackableConstants attackableConstants;
 	protected Tool(AttackableConstants attackableConstants)
