@@ -47,7 +47,7 @@ public abstract class Building implements Serializable,Attackable,CityContainer,
 	}
 	@Override
 	public void die() {
-		BuildingContainers.remove(this);
+		BuildingContainer.remove(this);
 	}
 	@Override
 	public LocationPlanet getLocationPlanet() {

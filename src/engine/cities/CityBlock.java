@@ -2,7 +2,7 @@ package engine.cities;
 
 import engine.buildings.Building;
 import engine.buildings.BuildingContainer;
-import engine.buildings.BuildingContainers;
+//import engine.buildings.BuildingContainers;
 import engine.planets.Grid;
 import engine.planets.LocationPlanet;
 import engine.tools.weapons.Attackable;
@@ -72,7 +72,7 @@ public class CityBlock implements Serializable, Attackable, CityContainer, Build
     public void remove(Building building) {
 		if(this.building == building)
 		{
-			BuildingContainers.remove(building);
+			BuildingContainer.killBuilding(building);
 			this.building = null;
 		}
     }

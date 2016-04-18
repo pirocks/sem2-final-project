@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Created by bob on 4/5/2016.
  *
  */
-public class PlanetContainers
+@Deprecated public class PlanetContainers
 {
 	private static ArrayList<PlanetContainer> containers = new ArrayList<PlanetContainer>();
 	public static void registerContainer(PlanetContainer in)

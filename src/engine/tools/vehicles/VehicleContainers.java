@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Created by bob on 4/5/2016.
  *
  */
-public class VehicleContainers
+@Deprecated public class VehicleContainers
 {
 	private static ArrayList<VehicleContainer> containers= new ArrayList<>();
 	public static void registerContainer(VehicleContainer vehicleContainer)
