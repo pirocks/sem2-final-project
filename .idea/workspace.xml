@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/engine/cities/FarmLand.java" />
+    <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="started working on farmland class">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/cities/FarmLand.java" afterPath="$PROJECT_DIR$/src/engine/cities/FarmLand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/planets/Grid.java" afterPath="$PROJECT_DIR$/src/engine/planets/Grid.java" />
     </list>
     <ignored path="testing.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,8 +52,8 @@
           <file leaf-file-name="Housing.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/engine/buildings/housing/Housing.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="595">
-                  <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+                <state relative-caret-position="697">
+                  <caret line="50" column="33" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
                   <folding />
                 </state>
               </provider>
@@ -97,11 +98,26 @@
           <file leaf-file-name="FarmLand.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/engine/cities/FarmLand.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="800">
-                  <caret line="51" column="28" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
+                <state relative-caret-position="511">
+                  <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
                   <folding>
                     <element signature="imports" expanded="true" />
+                    <element signature="method#getRegionsOnRow#0;class#FarmLand#0" expanded="false" />
+                    <element signature="method#getRegionsOnColumn#0;class#FarmLand#0" expanded="false" />
+                    <element signature="method#contains#0;class#FarmLand#0" expanded="false" />
+                    <element signature="method#containsRow#0;class#FarmLand#0" expanded="false" />
+                    <element signature="method#containsColumn#0;class#FarmLand#0" expanded="false" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Grid.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/engine/planets/Grid.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="238">
+                  <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -188,7 +204,6 @@
         <option value="$PROJECT_DIR$/src/engine/planets/PreliminaryGrid.java" />
         <option value="$PROJECT_DIR$/src/engine/universe/SolarSystem.java" />
         <option value="$PROJECT_DIR$/src/engine/planets/hazards/NaturalHazard.java" />
-        <option value="$PROJECT_DIR$/src/engine/planets/Grid.java" />
         <option value="$PROJECT_DIR$/src/engine/planets/Planet.java" />
         <option value="$PROJECT_DIR$/src/engine/universe/Universe.java" />
         <option value="$PROJECT_DIR$/src/engine/universe/Star.java" />
@@ -222,6 +237,7 @@
         <option value="$PROJECT_DIR$/src/ui/requests/WorkerTypeRequest.java" />
         <option value="$PROJECT_DIR$/src/ui/requests/Request.java" />
         <option value="$PROJECT_DIR$/src/engine/cities/Farm.java" />
+        <option value="$PROJECT_DIR$/src/engine/planets/Grid.java" />
         <option value="$PROJECT_DIR$/src/engine/cities/FarmLand.java" />
       </list>
     </option>
@@ -264,6 +280,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -394,6 +413,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="planets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sem2-final-project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sem2-final-project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="people" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -448,9 +489,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1085,7 +1123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1460577889731</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="started working on farmland class">
+      <created>1460587741719</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1460587741719</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1165,7 +1210,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="sea refactored" />
     <MESSAGE value="roadgoing refactored" />
     <MESSAGE value="land refactored" />
     <MESSAGE value="air refactored" />
@@ -1190,7 +1234,8 @@
     <MESSAGE value="starting random context generation -universe" />
     <MESSAGE value="serializable additions;todo containers" />
     <MESSAGE value="request additions" />
-    <option name="LAST_COMMIT_MESSAGE" value="request additions" />
+    <MESSAGE value="started working on farmland class" />
+    <option name="LAST_COMMIT_MESSAGE" value="started working on farmland class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1272,13 +1317,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/planets/Grid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -1462,7 +1500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1574,14 +1611,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/buildings/housing/Housing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/people/cityworkers/things that vureacrats should do city.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1590,12 +1619,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/planets/Grid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/buildings/housing/Housing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="50" column="33" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/cities/FarmLand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="51" column="28" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
+        <state relative-caret-position="511">
+          <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#getRegionsOnRow#0;class#FarmLand#0" expanded="false" />
+            <element signature="method#getRegionsOnColumn#0;class#FarmLand#0" expanded="false" />
+            <element signature="method#contains#0;class#FarmLand#0" expanded="false" />
+            <element signature="method#containsRow#0;class#FarmLand#0" expanded="false" />
+            <element signature="method#containsColumn#0;class#FarmLand#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -3,6 +3,7 @@ package engine.planets;
 import engine.cities.City;
 import engine.cities.CityBlock;
 import engine.cities.CityContainer;
+import engine.cities.FarmLand;
 import engine.planets.hazards.NaturalHazard;
 import engine.universe.Country;
 import engine.universe.CountryContainer;
@@ -25,6 +26,7 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
     private ArrayList<NaturalResource> naturalResources;
     private TerrainType terrainType;
     private ArrayList<NaturalHazard> hazards;
+    private FarmLand farmLand;
     //TODO: what the fuck is with these constructors
     private Grid()
     {
