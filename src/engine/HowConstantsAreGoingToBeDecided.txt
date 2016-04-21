@@ -1,0 +1,47 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+places where constants are needed:
+	cost of objects
+	weight of objects
+	max people on vehicle
+	damage done by weapon
+	resistance
+	start health
+
+variable names:
+	cost of objects - c
+	weight of objects - w
+	max people on vehicle - p
+	damage done by weapon - d
+	resistance - r
+	start health - h
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
