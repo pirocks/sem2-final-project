@@ -72,7 +72,7 @@ public class CityBlock implements Serializable, Attackable, CityContainer, Build
     public void remove(Building building) {
 		if(this.building == building)
 		{
-			BuildingContainer.killBuilding(building);
+// 			BuildingContainer.killBuilding(building);//todo this is bullshit
 			this.building = null;
 		}
     }

@@ -47,7 +47,7 @@ public abstract class Building implements Serializable,Attackable,CityContainer,
 	}
 	@Override
 	public void die() {
-		BuildingContainer.remove(this);
+		BuildingContainer.killBuilding(this);
 	}
 	@Override
 	public LocationPlanet getLocationPlanet() {
@@ -58,7 +58,7 @@ public abstract class Building implements Serializable,Attackable,CityContainer,
 	@Override
 	public void remove(City city) {
 		die();
-		parentBlock.remove(city);// TODO: 4/9/2016 check that this desn't cause infinte recursion
+		parentBlock.remove(city);// TODO: 4/9/2016 check that this desn't cause infinte recursion//it doesn't
 	}
 	public boolean HousingQ() {
 		return this instanceof Housing;
