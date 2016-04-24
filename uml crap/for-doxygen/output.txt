@@ -1,0 +1,919 @@
+@startuml
+abstract class engine.buildings.Building
+abstract class engine.buildings.housing.Housing
+abstract class engine.buildings.workplaces.Workplace
+abstract class engine.people.AbstractPerson
+abstract class engine.people.cityworkers.CityWorker
+abstract class engine.planets.hazards.NaturalHazard
+abstract class engine.science.Discovery
+abstract class engine.tools.Tool
+abstract class engine.tools.vehicles.Vehicle
+abstract class engine.tools.vehicles.air.Aircraft
+abstract class engine.tools.vehicles.air.CargoPlane
+abstract class engine.tools.vehicles.air.FighterPlane
+abstract class engine.tools.vehicles.land.LandVehicle
+abstract class engine.tools.vehicles.roadgoing.RoadGoing
+abstract class engine.tools.vehicles.roadgoing.Truck
+abstract class engine.tools.vehicles.sea.SeaCraft
+abstract class engine.tools.vehicles.sea.Transporter
+abstract class engine.tools.vehicles.space.Freighter.Freighter
+abstract class engine.tools.vehicles.space.SpaceCraft
+abstract class engine.tools.vehicles.space.asteroidminer.AsteroidMiner
+abstract class engine.tools.vehicles.space.cityship.CityShip
+abstract class engine.tools.vehicles.space.factory.FactorySpaceCraft
+abstract class engine.tools.vehicles.space.interstellarcraft.InterStellarCraft
+abstract class engine.tools.vehicles.space.planetdestroyer.PlanetDestroyer
+abstract class engine.tools.vehicles.space.shuttle.Shuttle
+abstract class engine.tools.weapons.Weapon
+abstract class engine.tools.weapons.guns.Gun
+abstract class engine.tools.weapons.guns.artillery.Artillery
+abstract class engine.tools.weapons.guns.carried.Carried
+abstract class engine.tools.weapons.guns.mounted.MachineGun
+abstract class engine.tools.weapons.guns.mounted.Mounted
+abstract class engine.tools.weapons.space.SpaceWeapon
+abstract class ui.requests.Request
+annotation java.lang.Deprecated
+annotation java.lang.Override
+class ai.mayor.AiMayor
+class ai.ruler.AiRuler
+class com.sun.org.apache.regexp.internal.RE
+class engine.buildings.BuildingRandomConstructionContext
+class engine.buildings.UnderConstruction
+class engine.buildings.housing.ApartmentBlock
+class engine.buildings.housing.RulersHouse
+class engine.buildings.housing.WealthyWorkersHouseBlock
+class engine.buildings.housing.WorkersHouseBlock
+class engine.buildings.workplaces.DockYard
+class engine.buildings.workplaces.Factory
+class engine.buildings.workplaces.Hospital
+class engine.buildings.workplaces.IndustrialDock
+class engine.buildings.workplaces.ResearchArea
+class engine.buildings.workplaces.School
+class engine.buildings.workplaces.TownHall
+class engine.buildings.workplaces.Warehouse
+class engine.cities.City
+class engine.cities.CityBlock
+class engine.cities.CityContainers
+class engine.cities.CityRandomConstructionContext
+class engine.cities.FarmLand
+class engine.people.MoneySource
+class engine.people.PeopleRandomConstructionContext
+class engine.people.PersonContainers
+class engine.people.Soldier
+class engine.people.cityworkers.Bureaucrat
+class engine.people.cityworkers.Doctor
+class engine.people.cityworkers.PeopleInitialConstants
+class engine.people.cityworkers.Researcher
+class engine.people.cityworkers.Ruler
+class engine.people.cityworkers.Teacher
+class engine.people.cityworkers.Worker
+class engine.planets.Continent
+class engine.planets.Grid
+class engine.planets.GridRandomConstructionContext
+class engine.planets.LocationPlanet
+class engine.planets.NaturalResource
+class engine.planets.Planet
+class engine.planets.PlanetContainers
+class engine.planets.PlanetRandomConstructionContext
+class engine.planets.PreliminaryGrid
+class engine.planets.Road
+class engine.planets.RoadContainers
+class engine.planets.hazards.Disease
+class engine.planets.hazards.Drought
+class engine.planets.hazards.Volcano
+class engine.planets.hazards.Weather
+class engine.tools.AttackableConstants
+class engine.tools.ToolUnderConstruction
+class engine.tools.vehicles.VehicleContainers
+class engine.tools.vehicles.VehicleInitialConstants
+class engine.tools.vehicles.air.Bomb
+class engine.tools.vehicles.air.CargoPlaneLarge
+class engine.tools.vehicles.air.CargoPlaneMedium
+class engine.tools.vehicles.air.CargoPlaneSmall
+class engine.tools.vehicles.air.FighterPlaneMedium
+class engine.tools.vehicles.air.FighterPlaneSmall
+class engine.tools.vehicles.air.Helicopter
+class engine.tools.vehicles.air.Missile
+class engine.tools.vehicles.land.ArmouredVehicle
+class engine.tools.vehicles.land.AutomatedArmouredVehicle
+class engine.tools.vehicles.land.AutomatedArtillery
+class engine.tools.vehicles.land.AutomatedTank
+class engine.tools.vehicles.land.Tank
+class engine.tools.vehicles.roadgoing.AllPurpose
+class engine.tools.vehicles.roadgoing.Bus
+class engine.tools.vehicles.roadgoing.Train
+class engine.tools.vehicles.roadgoing.TruckLarge
+class engine.tools.vehicles.roadgoing.TruckMedium
+class engine.tools.vehicles.roadgoing.TruckSmall
+class engine.tools.vehicles.sea.AircraftCarrier
+class engine.tools.vehicles.sea.BattleShip
+class engine.tools.vehicles.sea.Destroyer
+class engine.tools.vehicles.sea.NuclearAircraftCarrier
+class engine.tools.vehicles.sea.NuclearSubmarine
+class engine.tools.vehicles.sea.Submarine
+class engine.tools.vehicles.sea.TransporterLarge
+class engine.tools.vehicles.sea.TransporterMedium
+class engine.tools.vehicles.sea.TransporterSmall
+class engine.tools.vehicles.space.Fighter
+class engine.tools.vehicles.space.Freighter.FreighterLarge
+class engine.tools.vehicles.space.Freighter.FreighterMedium
+class engine.tools.vehicles.space.Freighter.FreighterSmall
+class engine.tools.vehicles.space.asteroidminer.AsteroidMinerLarge
+class engine.tools.vehicles.space.asteroidminer.AsteroidMinerMedium
+class engine.tools.vehicles.space.asteroidminer.AsteroidMinerSmall
+class engine.tools.vehicles.space.cityship.CityShipLarge
+class engine.tools.vehicles.space.cityship.CityShipMedium
+class engine.tools.vehicles.space.cityship.CityShipSmall
+class engine.tools.vehicles.space.factory.FactorySpaceCraftLarge
+class engine.tools.vehicles.space.factory.FactorySpaceCraftMedium
+class engine.tools.vehicles.space.factory.FactorySpaceCraftSmall
+class engine.tools.vehicles.space.interstellarcraft.InterStellarCraftLarge
+class engine.tools.vehicles.space.interstellarcraft.InterStellarCraftMedium
+class engine.tools.vehicles.space.interstellarcraft.InterStellarCraftSmall
+class engine.tools.vehicles.space.planetdestroyer.PlanetDestroyerLarge
+class engine.tools.vehicles.space.planetdestroyer.PlanetDestroyerMedium
+class engine.tools.vehicles.space.shuttle.ShuttleLarge
+class engine.tools.vehicles.space.shuttle.ShuttleMedium
+class engine.tools.vehicles.space.shuttle.ShuttleSmall
+class engine.tools.weapons.WeaponContainers
+class engine.tools.weapons.guns.GunInitialConstants
+class engine.tools.weapons.guns.artillery.ArtilleryLarge
+class engine.tools.weapons.guns.artillery.ArtilleryMedium
+class engine.tools.weapons.guns.artillery.ArtillerySmall
+class engine.tools.weapons.guns.artillery.Howitzer
+class engine.tools.weapons.guns.artillery.TankArtillery
+class engine.tools.weapons.guns.carried.HandGun
+class engine.tools.weapons.guns.carried.SniperRifle
+class engine.tools.weapons.guns.mounted.AntiAirCraftGun
+class engine.tools.weapons.guns.mounted.MachineGunLarge
+class engine.tools.weapons.guns.mounted.MachineGunMedium
+class engine.tools.weapons.guns.mounted.MachineGunSmall
+class engine.tools.weapons.space.EmpWeapon
+class engine.tools.weapons.space.Laser
+class engine.tools.weapons.space.SpaceMissile
+class engine.universe.Country
+class engine.universe.CountryContainers
+class engine.universe.LocationUniverse
+class engine.universe.MoneySource
+class engine.universe.MoneySourceContainers
+class engine.universe.Resource
+class engine.universe.ResourceDemand
+class engine.universe.SolarSystem
+class engine.universe.SolarSystemRandomConstructionContext
+class engine.universe.Star
+class engine.universe.UnConstructedSolarSystem
+class engine.universe.UniversalConstants
+class engine.universe.Universe
+class engine.universe.UniverseRandomConstructionContext
+class engine.universe.utils
+class java.math.BigDecimal
+class java.util.ArrayList
+class java.util.Collections
+class java.util.concurrent.ThreadLocalRandom
+class javafx.application.Application
+class javafx.fxml.FXMLLoader
+class javafx.scene.Parent
+class javafx.scene.Scene
+class javafx.stage.Stage
+class ui.requests.BuildingTypeRequest
+class ui.requests.WorkerTypeRequest
+class ui.welcomescreen.Controller
+class ui.welcomescreen.Main
+enum engine.planets.TerrainType
+interface engine.buildings.BuildingContainer
+interface engine.cities.CityContainer
+interface engine.people.CountryContainer
+interface engine.people.MoneySourceContainer
+interface engine.people.PersonContainer
+interface engine.planets.PlanetContainer
+interface engine.planets.RoadContainer
+interface engine.tools.vehicles.VehicleContainer
+interface engine.tools.vehicles.Weighable
+interface engine.tools.weapons.Attackable
+interface engine.tools.weapons.WeaponContainer
+interface engine.universe.CountryContainer
+interface engine.universe.MoneySourceContainer
+interface engine.universe.RoadContainer
+interface java.io.Serializable
+engine.buildings.Building ..> engine.buildings.housing.Housing
+engine.buildings.Building ..> engine.people.AbstractPerson
+engine.buildings.Building ..> java.lang.Override
+engine.buildings.Building ..> engine.cities.City
+engine.buildings.Building ..> engine.cities.CityBlock
+engine.buildings.Building ..> engine.planets.LocationPlanet
+engine.buildings.Building ..> engine.tools.AttackableConstants
+engine.buildings.Building ..> engine.universe.ResourceDemand
+engine.buildings.Building --|> engine.cities.CityContainer
+engine.buildings.Building --|> engine.people.PersonContainer
+engine.buildings.Building --|> engine.tools.weapons.Attackable
+engine.buildings.Building --|> java.io.Serializable
+engine.buildings.housing.Housing --|> engine.buildings.Building
+engine.buildings.housing.Housing ..> engine.people.AbstractPerson
+engine.buildings.housing.Housing ..> engine.people.cityworkers.CityWorker
+engine.buildings.housing.Housing ..> java.lang.Override
+engine.buildings.housing.Housing ..> engine.cities.CityBlock
+engine.buildings.housing.Housing ..> engine.tools.AttackableConstants
+engine.buildings.housing.Housing ..> java.util.ArrayList
+engine.buildings.housing.Housing --|> engine.people.PersonContainer
+engine.buildings.workplaces.Workplace --|> engine.buildings.Building
+engine.buildings.workplaces.Workplace ..> engine.people.AbstractPerson
+engine.buildings.workplaces.Workplace ..> engine.people.cityworkers.CityWorker
+engine.buildings.workplaces.Workplace ..> engine.cities.CityBlock
+engine.buildings.workplaces.Workplace ..> engine.tools.AttackableConstants
+engine.buildings.workplaces.Workplace ..> engine.universe.MoneySource
+engine.buildings.workplaces.Workplace ..> java.util.ArrayList
+engine.buildings.workplaces.Workplace --|> engine.people.PersonContainer
+engine.buildings.workplaces.Workplace --|> engine.universe.MoneySourceContainer
+engine.people.AbstractPerson ..> engine.buildings.Building
+engine.people.AbstractPerson ..> java.lang.Override
+engine.people.AbstractPerson ..> engine.cities.City
+engine.people.AbstractPerson --|> engine.people.MoneySource
+engine.people.AbstractPerson ..> engine.planets.LocationPlanet
+engine.people.AbstractPerson ..> engine.tools.AttackableConstants
+engine.people.AbstractPerson --|> engine.people.CountryContainer
+engine.people.AbstractPerson --|> engine.people.MoneySourceContainer
+engine.people.AbstractPerson --|> engine.tools.vehicles.Weighable
+engine.people.AbstractPerson --|> engine.tools.weapons.Attackable
+engine.people.AbstractPerson --|> java.io.Serializable
+engine.people.cityworkers.CityWorker ..> engine.buildings.Building
+engine.people.cityworkers.CityWorker ..> engine.buildings.housing.Housing
+engine.people.cityworkers.CityWorker ..> engine.buildings.workplaces.Workplace
+engine.people.cityworkers.CityWorker --|> engine.people.AbstractPerson
+engine.people.cityworkers.CityWorker ..> java.lang.Override
+engine.people.cityworkers.CityWorker ..> engine.buildings.workplaces.Hospital
+engine.people.cityworkers.CityWorker ..> engine.cities.City
+engine.people.cityworkers.CityWorker ..> engine.people.PersonContainers
+engine.people.cityworkers.CityWorker --|> engine.buildings.BuildingContainer
+engine.people.cityworkers.CityWorker --|> engine.cities.CityContainer
+engine.planets.hazards.NaturalHazard ..> engine.planets.Grid
+engine.planets.hazards.NaturalHazard ..> java.util.ArrayList
+engine.planets.hazards.NaturalHazard --|> java.io.Serializable
+engine.science.Discovery ..> java.util.ArrayList
+engine.science.Discovery --|> java.io.Serializable
+engine.tools.Tool ..> java.lang.Override
+engine.tools.Tool ..> engine.planets.LocationPlanet
+engine.tools.Tool ..> engine.universe.ResourceDemand
+engine.tools.Tool --|> engine.tools.vehicles.Weighable
+engine.tools.Tool --|> engine.tools.weapons.Attackable
+engine.tools.Tool --|> java.io.Serializable
+engine.tools.vehicles.Vehicle ..> engine.people.AbstractPerson
+engine.tools.vehicles.Vehicle --|> engine.tools.Tool
+engine.tools.vehicles.Vehicle ..> engine.tools.weapons.Weapon
+engine.tools.vehicles.Vehicle ..> java.lang.Override
+engine.tools.vehicles.Vehicle ..> engine.universe.MoneySource
+engine.tools.vehicles.Vehicle ..> engine.universe.Resource
+engine.tools.vehicles.Vehicle ..> java.util.ArrayList
+engine.tools.vehicles.Vehicle --|> engine.people.PersonContainer
+engine.tools.vehicles.Vehicle --|> engine.tools.vehicles.VehicleContainer
+engine.tools.vehicles.Vehicle --|> engine.tools.weapons.WeaponContainer
+engine.tools.vehicles.Vehicle --|> engine.universe.MoneySourceContainer
+engine.tools.vehicles.air.Aircraft --|> engine.tools.vehicles.Vehicle
+engine.tools.vehicles.air.Aircraft ..> java.lang.Override
+engine.tools.vehicles.air.Aircraft ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.air.CargoPlane --|> engine.tools.vehicles.air.Aircraft
+engine.tools.vehicles.air.CargoPlane ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.air.FighterPlane --|> engine.tools.vehicles.air.Aircraft
+engine.tools.vehicles.air.FighterPlane ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.land.LandVehicle --|> engine.tools.vehicles.Vehicle
+engine.tools.vehicles.land.LandVehicle ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.roadgoing.RoadGoing --|> engine.tools.vehicles.Vehicle
+engine.tools.vehicles.roadgoing.RoadGoing ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.roadgoing.Truck --|> engine.tools.vehicles.roadgoing.RoadGoing
+engine.tools.vehicles.roadgoing.Truck ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.sea.SeaCraft --|> engine.tools.vehicles.Vehicle
+engine.tools.vehicles.sea.SeaCraft ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.sea.Transporter --|> engine.tools.vehicles.sea.SeaCraft
+engine.tools.vehicles.sea.Transporter ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.Freighter.Freighter --|> engine.tools.vehicles.space.SpaceCraft
+engine.tools.vehicles.space.Freighter.Freighter ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.SpaceCraft --|> engine.tools.vehicles.Vehicle
+engine.tools.vehicles.space.SpaceCraft ..> java.lang.Override
+engine.tools.vehicles.space.SpaceCraft ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.asteroidminer.AsteroidMiner --|> engine.tools.vehicles.space.SpaceCraft
+engine.tools.vehicles.space.asteroidminer.AsteroidMiner ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.cityship.CityShip --|> engine.tools.vehicles.space.SpaceCraft
+engine.tools.vehicles.space.cityship.CityShip ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.factory.FactorySpaceCraft --|> engine.tools.vehicles.space.SpaceCraft
+engine.tools.vehicles.space.factory.FactorySpaceCraft ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.interstellarcraft.InterStellarCraft --|> engine.tools.vehicles.space.SpaceCraft
+engine.tools.vehicles.space.interstellarcraft.InterStellarCraft ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.planetdestroyer.PlanetDestroyer --|> engine.tools.vehicles.space.SpaceCraft
+engine.tools.vehicles.space.planetdestroyer.PlanetDestroyer ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.shuttle.Shuttle --|> engine.tools.vehicles.space.SpaceCraft
+engine.tools.vehicles.space.shuttle.Shuttle ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.weapons.Weapon --|> engine.tools.Tool
+engine.tools.weapons.Weapon ..> engine.tools.AttackableConstants
+engine.tools.weapons.guns.Gun --|> engine.tools.weapons.Weapon
+engine.tools.weapons.guns.artillery.Artillery --|> engine.tools.weapons.guns.Gun
+engine.tools.weapons.guns.artillery.Artillery ..> engine.tools.weapons.guns.GunInitialConstants
+engine.tools.weapons.guns.carried.Carried --|> engine.tools.weapons.guns.Gun
+engine.tools.weapons.guns.carried.Carried ..> engine.tools.weapons.guns.GunInitialConstants
+engine.tools.weapons.guns.mounted.MachineGun --|> engine.tools.weapons.guns.mounted.Mounted
+engine.tools.weapons.guns.mounted.MachineGun ..> engine.tools.weapons.guns.GunInitialConstants
+engine.tools.weapons.guns.mounted.Mounted --|> engine.tools.weapons.guns.Gun
+engine.tools.weapons.guns.mounted.Mounted ..> engine.tools.weapons.guns.GunInitialConstants
+engine.tools.weapons.space.SpaceWeapon --|> engine.tools.weapons.Weapon
+engine.tools.weapons.space.SpaceWeapon ..> engine.tools.AttackableConstants
+engine.tools.weapons.space.SpaceWeapon ..> java.math.BigDecimal
+ui.requests.Request ..> java.util.ArrayList
+ui.requests.Request --|> java.io.Serializable
+ai.mayor.AiMayor ..> engine.cities.City
+ai.mayor.AiMayor --|> engine.people.cityworkers.Bureaucrat
+ai.mayor.AiMayor --|> java.io.Serializable
+ai.ruler.AiRuler ..> engine.cities.City
+ai.ruler.AiRuler --|> engine.people.cityworkers.Ruler
+ai.ruler.AiRuler ..> engine.universe.Country
+ai.ruler.AiRuler --|> java.io.Serializable
+engine.buildings.UnderConstruction ..> engine.buildings.Building
+engine.buildings.UnderConstruction ..> engine.buildings.workplaces.Workplace
+engine.buildings.UnderConstruction ..> engine.people.cityworkers.CityWorker
+engine.buildings.UnderConstruction ..> engine.cities.CityBlock
+engine.buildings.UnderConstruction ..> engine.universe.MoneySource
+engine.buildings.UnderConstruction ..> engine.universe.ResourceDemand
+engine.buildings.UnderConstruction ..> java.util.ArrayList
+engine.buildings.UnderConstruction --|> java.io.Serializable
+engine.buildings.housing.ApartmentBlock --|> engine.buildings.housing.Housing
+engine.buildings.housing.ApartmentBlock ..> java.lang.Override
+engine.buildings.housing.ApartmentBlock ..> engine.cities.CityBlock
+engine.buildings.housing.ApartmentBlock ..> engine.tools.AttackableConstants
+engine.buildings.housing.ApartmentBlock ..> engine.universe.ResourceDemand
+engine.buildings.housing.RulersHouse --|> engine.buildings.housing.Housing
+engine.buildings.housing.RulersHouse ..> engine.people.cityworkers.CityWorker
+engine.buildings.housing.RulersHouse ..> java.lang.Override
+engine.buildings.housing.RulersHouse ..> engine.cities.CityBlock
+engine.buildings.housing.RulersHouse ..> engine.tools.AttackableConstants
+engine.buildings.housing.RulersHouse ..> engine.universe.ResourceDemand
+engine.buildings.housing.RulersHouse ..> java.util.ArrayList
+engine.buildings.housing.WealthyWorkersHouseBlock --|> engine.buildings.housing.Housing
+engine.buildings.housing.WealthyWorkersHouseBlock ..> java.lang.Deprecated
+engine.buildings.housing.WealthyWorkersHouseBlock ..> java.lang.Override
+engine.buildings.housing.WealthyWorkersHouseBlock ..> engine.cities.CityBlock
+engine.buildings.housing.WealthyWorkersHouseBlock ..> engine.tools.AttackableConstants
+engine.buildings.housing.WealthyWorkersHouseBlock ..> engine.universe.ResourceDemand
+engine.buildings.housing.WorkersHouseBlock --|> engine.buildings.housing.Housing
+engine.buildings.housing.WorkersHouseBlock ..> java.lang.Override
+engine.buildings.housing.WorkersHouseBlock ..> engine.cities.CityBlock
+engine.buildings.housing.WorkersHouseBlock ..> engine.tools.AttackableConstants
+engine.buildings.housing.WorkersHouseBlock ..> engine.universe.ResourceDemand
+engine.buildings.workplaces.DockYard --|> engine.buildings.workplaces.Workplace
+engine.buildings.workplaces.DockYard ..> java.lang.Override
+engine.buildings.workplaces.DockYard ..> engine.cities.CityBlock
+engine.buildings.workplaces.DockYard ..> engine.tools.AttackableConstants
+engine.buildings.workplaces.DockYard ..> engine.universe.MoneySource
+engine.buildings.workplaces.DockYard ..> engine.universe.ResourceDemand
+engine.buildings.workplaces.Factory --|> engine.buildings.workplaces.Workplace
+engine.buildings.workplaces.Factory ..> engine.tools.Tool
+engine.buildings.workplaces.Factory ..> java.lang.Override
+engine.buildings.workplaces.Factory ..> engine.cities.CityBlock
+engine.buildings.workplaces.Factory ..> engine.tools.AttackableConstants
+engine.buildings.workplaces.Factory ..> engine.tools.ToolUnderConstruction
+engine.buildings.workplaces.Factory ..> engine.universe.MoneySource
+engine.buildings.workplaces.Factory ..> engine.universe.ResourceDemand
+engine.buildings.workplaces.Factory ..> java.util.ArrayList
+engine.buildings.workplaces.Hospital --|> engine.buildings.workplaces.Workplace
+engine.buildings.workplaces.Hospital ..> engine.people.AbstractPerson
+engine.buildings.workplaces.Hospital ..> engine.people.cityworkers.CityWorker
+engine.buildings.workplaces.Hospital ..> java.lang.Override
+engine.buildings.workplaces.Hospital ..> engine.cities.CityBlock
+engine.buildings.workplaces.Hospital ..> engine.tools.AttackableConstants
+engine.buildings.workplaces.Hospital ..> engine.universe.MoneySource
+engine.buildings.workplaces.Hospital ..> engine.universe.ResourceDemand
+engine.buildings.workplaces.Hospital ..> java.util.ArrayList
+engine.buildings.workplaces.IndustrialDock --|> engine.buildings.workplaces.Workplace
+engine.buildings.workplaces.IndustrialDock ..> java.lang.Override
+engine.buildings.workplaces.IndustrialDock ..> engine.cities.CityBlock
+engine.buildings.workplaces.IndustrialDock ..> engine.tools.AttackableConstants
+engine.buildings.workplaces.IndustrialDock ..> engine.universe.MoneySource
+engine.buildings.workplaces.IndustrialDock ..> engine.universe.ResourceDemand
+engine.buildings.workplaces.ResearchArea --|> engine.buildings.workplaces.Workplace
+engine.buildings.workplaces.ResearchArea ..> engine.people.cityworkers.CityWorker
+engine.buildings.workplaces.ResearchArea ..> engine.science.Discovery
+engine.buildings.workplaces.ResearchArea ..> java.lang.Override
+engine.buildings.workplaces.ResearchArea ..> engine.cities.CityBlock
+engine.buildings.workplaces.ResearchArea ..> engine.tools.AttackableConstants
+engine.buildings.workplaces.ResearchArea ..> engine.universe.MoneySource
+engine.buildings.workplaces.ResearchArea ..> engine.universe.ResourceDemand
+engine.buildings.workplaces.ResearchArea ..> java.util.ArrayList
+engine.buildings.workplaces.School --|> engine.buildings.workplaces.Workplace
+engine.buildings.workplaces.School ..> engine.people.cityworkers.CityWorker
+engine.buildings.workplaces.School ..> java.lang.Override
+engine.buildings.workplaces.School ..> engine.cities.CityBlock
+engine.buildings.workplaces.School ..> engine.tools.AttackableConstants
+engine.buildings.workplaces.School ..> engine.universe.MoneySource
+engine.buildings.workplaces.School ..> engine.universe.ResourceDemand
+engine.buildings.workplaces.School ..> java.util.ArrayList
+engine.buildings.workplaces.TownHall --|> engine.buildings.workplaces.Workplace
+engine.buildings.workplaces.TownHall ..> engine.people.cityworkers.CityWorker
+engine.buildings.workplaces.TownHall ..> java.lang.Override
+engine.buildings.workplaces.TownHall ..> engine.cities.City
+engine.buildings.workplaces.TownHall ..> engine.cities.CityBlock
+engine.buildings.workplaces.TownHall ..> engine.tools.AttackableConstants
+engine.buildings.workplaces.TownHall ..> engine.universe.MoneySource
+engine.buildings.workplaces.TownHall ..> engine.universe.ResourceDemand
+engine.buildings.workplaces.TownHall ..> java.util.ArrayList
+engine.buildings.workplaces.Warehouse --|> engine.buildings.workplaces.Workplace
+engine.buildings.workplaces.Warehouse ..> engine.people.cityworkers.CityWorker
+engine.buildings.workplaces.Warehouse ..> java.lang.Override
+engine.buildings.workplaces.Warehouse ..> engine.cities.CityBlock
+engine.buildings.workplaces.Warehouse ..> engine.tools.AttackableConstants
+engine.buildings.workplaces.Warehouse ..> engine.universe.MoneySource
+engine.buildings.workplaces.Warehouse ..> engine.universe.Resource
+engine.buildings.workplaces.Warehouse ..> engine.universe.ResourceDemand
+engine.buildings.workplaces.Warehouse ..> java.util.ArrayList
+engine.cities.City ..> engine.buildings.Building
+engine.cities.City ..> engine.buildings.housing.Housing
+engine.cities.City ..> engine.buildings.workplaces.Workplace
+engine.cities.City ..> engine.people.AbstractPerson
+engine.cities.City ..> engine.people.cityworkers.CityWorker
+engine.cities.City ..> java.lang.Override
+engine.cities.City ..> engine.buildings.housing.RulersHouse
+engine.cities.City ..> engine.buildings.workplaces.Hospital
+engine.cities.City ..> engine.people.cityworkers.Bureaucrat
+engine.cities.City ..> engine.planets.Grid
+engine.cities.City ..> engine.planets.LocationPlanet
+engine.cities.City ..> engine.tools.AttackableConstants
+engine.cities.City ..> engine.universe.Country
+engine.cities.City --|> engine.universe.MoneySource
+engine.cities.City ..> java.util.ArrayList
+engine.cities.City --|> engine.buildings.BuildingContainer
+engine.cities.City --|> engine.people.PersonContainer
+engine.cities.City --|> engine.tools.weapons.Attackable
+engine.cities.City --|> engine.universe.CountryContainer
+engine.cities.City --|> java.io.Serializable
+engine.cities.CityBlock ..> engine.buildings.Building
+engine.cities.CityBlock ..> engine.tools.weapons.Weapon
+engine.cities.CityBlock ..> java.lang.Override
+engine.cities.CityBlock ..> engine.planets.Grid
+engine.cities.CityBlock ..> engine.planets.LocationPlanet
+engine.cities.CityBlock --|> engine.buildings.BuildingContainer
+engine.cities.CityBlock --|> engine.cities.CityContainer
+engine.cities.CityBlock --|> engine.tools.weapons.Attackable
+engine.cities.CityBlock --|> java.io.Serializable
+engine.cities.CityContainers ..> java.lang.Deprecated
+engine.cities.CityContainers ..> java.util.ArrayList
+engine.cities.FarmLand ..> java.lang.Override
+engine.cities.FarmLand ..> com.sun.org.apache.regexp.internal.RE
+engine.cities.FarmLand ..> engine.planets.Grid
+engine.cities.FarmLand ..> java.util.ArrayList
+engine.cities.FarmLand ..> java.util.Collections
+engine.cities.FarmLand --|> java.io.Serializable
+engine.people.PersonContainers ..> java.lang.Deprecated
+engine.people.PersonContainers ..> java.util.ArrayList
+engine.people.Soldier --|> engine.people.AbstractPerson
+engine.people.Soldier ..> engine.tools.vehicles.Vehicle
+engine.people.Soldier ..> engine.tools.weapons.Weapon
+engine.people.Soldier ..> java.lang.Override
+engine.people.Soldier ..> engine.people.cityworkers.PeopleInitialConstants
+engine.people.Soldier ..> engine.planets.LocationPlanet
+engine.people.Soldier ..> engine.universe.Country
+engine.people.Soldier ..> engine.universe.MoneySource
+engine.people.Soldier ..> engine.universe.UniversalConstants
+engine.people.Soldier --|> engine.tools.vehicles.VehicleContainer
+engine.people.Soldier --|> engine.universe.MoneySourceContainer
+engine.people.cityworkers.Bureaucrat ..> engine.buildings.housing.Housing
+engine.people.cityworkers.Bureaucrat ..> engine.buildings.workplaces.Workplace
+engine.people.cityworkers.Bureaucrat ..> engine.people.AbstractPerson
+engine.people.cityworkers.Bureaucrat --|> engine.people.cityworkers.CityWorker
+engine.people.cityworkers.Bureaucrat ..> java.lang.Override
+engine.people.cityworkers.Bureaucrat ..> engine.buildings.workplaces.TownHall
+engine.people.cityworkers.Bureaucrat ..> engine.cities.City
+engine.people.cityworkers.Bureaucrat ..> engine.planets.LocationPlanet
+engine.people.cityworkers.Bureaucrat ..> engine.universe.UniversalConstants
+engine.people.cityworkers.Doctor ..> engine.buildings.housing.Housing
+engine.people.cityworkers.Doctor ..> engine.people.AbstractPerson
+engine.people.cityworkers.Doctor --|> engine.people.cityworkers.CityWorker
+engine.people.cityworkers.Doctor ..> java.lang.Override
+engine.people.cityworkers.Doctor ..> engine.buildings.workplaces.Hospital
+engine.people.cityworkers.Doctor ..> engine.cities.City
+engine.people.cityworkers.Doctor ..> engine.universe.UniversalConstants
+engine.people.cityworkers.PeopleInitialConstants ..> engine.buildings.Building
+engine.people.cityworkers.PeopleInitialConstants ..> engine.cities.City
+engine.people.cityworkers.PeopleInitialConstants ..> engine.universe.Country
+engine.people.cityworkers.PeopleInitialConstants --|> java.io.Serializable
+engine.people.cityworkers.Researcher ..> engine.buildings.housing.Housing
+engine.people.cityworkers.Researcher ..> engine.people.AbstractPerson
+engine.people.cityworkers.Researcher --|> engine.people.cityworkers.CityWorker
+engine.people.cityworkers.Researcher ..> java.lang.Override
+engine.people.cityworkers.Researcher ..> engine.buildings.workplaces.ResearchArea
+engine.people.cityworkers.Researcher ..> engine.cities.City
+engine.people.cityworkers.Researcher ..> engine.universe.UniversalConstants
+engine.people.cityworkers.Ruler ..> engine.buildings.housing.Housing
+engine.people.cityworkers.Ruler ..> engine.buildings.workplaces.Workplace
+engine.people.cityworkers.Ruler ..> engine.people.AbstractPerson
+engine.people.cityworkers.Ruler --|> engine.people.cityworkers.CityWorker
+engine.people.cityworkers.Ruler ..> java.lang.Override
+engine.people.cityworkers.Ruler ..> engine.buildings.workplaces.TownHall
+engine.people.cityworkers.Ruler ..> engine.cities.City
+engine.people.cityworkers.Ruler ..> engine.universe.Country
+engine.people.cityworkers.Ruler ..> engine.universe.UniversalConstants
+engine.people.cityworkers.Teacher ..> engine.buildings.housing.Housing
+engine.people.cityworkers.Teacher ..> engine.people.AbstractPerson
+engine.people.cityworkers.Teacher --|> engine.people.cityworkers.CityWorker
+engine.people.cityworkers.Teacher ..> java.lang.Override
+engine.people.cityworkers.Teacher ..> engine.buildings.workplaces.School
+engine.people.cityworkers.Teacher ..> engine.cities.City
+engine.people.cityworkers.Teacher ..> engine.planets.LocationPlanet
+engine.people.cityworkers.Teacher ..> engine.universe.Country
+engine.people.cityworkers.Teacher ..> engine.universe.UniversalConstants
+engine.people.cityworkers.Worker ..> engine.buildings.housing.Housing
+engine.people.cityworkers.Worker ..> engine.buildings.workplaces.Workplace
+engine.people.cityworkers.Worker --|> engine.people.cityworkers.CityWorker
+engine.people.cityworkers.Worker ..> java.lang.Override
+engine.people.cityworkers.Worker ..> engine.cities.City
+engine.people.cityworkers.Worker ..> engine.universe.UniversalConstants
+engine.planets.Continent ..> engine.universe.Country
+engine.planets.Continent ..> java.util.ArrayList
+engine.planets.Continent --|> java.io.Serializable
+engine.planets.Grid ..> engine.planets.hazards.NaturalHazard
+engine.planets.Grid ..> java.lang.Override
+engine.planets.Grid ..> engine.cities.City
+engine.planets.Grid ..> engine.cities.CityBlock
+engine.planets.Grid ..> engine.cities.FarmLand
+engine.planets.Grid ..> engine.universe.Country
+engine.planets.Grid ..> java.math.BigDecimal
+engine.planets.Grid ..> java.util.ArrayList
+engine.planets.Grid --|> engine.cities.CityContainer
+engine.planets.Grid --|> engine.planets.PlanetContainer
+engine.planets.Grid --|> engine.universe.CountryContainer
+engine.planets.Grid --|> java.io.Serializable
+engine.planets.GridRandomConstructionContext ..> engine.planets.hazards.NaturalHazard
+engine.planets.GridRandomConstructionContext ..> java.util.ArrayList
+engine.planets.LocationPlanet ..> engine.buildings.Building
+engine.planets.LocationPlanet ..> java.lang.Override
+engine.planets.LocationPlanet ..> engine.cities.City
+engine.planets.LocationPlanet ..> engine.cities.CityBlock
+engine.planets.LocationPlanet --|> engine.planets.PlanetContainer
+engine.planets.LocationPlanet --|> java.io.Serializable
+engine.planets.NaturalResource --|> engine.universe.MoneySource
+engine.planets.NaturalResource ..> engine.universe.Resource
+engine.planets.Planet ..> java.lang.Override
+engine.planets.Planet ..> engine.universe.Country
+engine.planets.Planet ..> engine.universe.SolarSystem
+engine.planets.Planet ..> java.math.BigDecimal
+engine.planets.Planet ..> java.util.ArrayList
+engine.planets.Planet --|> engine.universe.CountryContainer
+engine.planets.Planet --|> java.io.Serializable
+engine.planets.PlanetContainers ..> java.lang.Deprecated
+engine.planets.PlanetContainers ..> java.util.ArrayList
+engine.planets.PlanetRandomConstructionContext ..> engine.universe.Country
+engine.planets.PlanetRandomConstructionContext ..> engine.universe.SolarSystemRandomConstructionContext
+engine.planets.PlanetRandomConstructionContext ..> engine.universe.Star
+engine.planets.PlanetRandomConstructionContext ..> java.math.BigDecimal
+engine.planets.PlanetRandomConstructionContext ..> java.util.ArrayList
+engine.planets.PreliminaryGrid ..> engine.planets.hazards.NaturalHazard
+engine.planets.PreliminaryGrid ..> engine.universe.Resource
+engine.planets.PreliminaryGrid ..> java.util.ArrayList
+engine.planets.Road ..> engine.tools.vehicles.Vehicle
+engine.planets.Road ..> engine.tools.weapons.Weapon
+engine.planets.Road ..> java.lang.Override
+engine.planets.Road ..> engine.cities.City
+engine.planets.Road ..> engine.tools.AttackableConstants
+engine.planets.Road ..> java.util.ArrayList
+engine.planets.Road --|> engine.cities.CityContainer
+engine.planets.Road --|> engine.tools.vehicles.VehicleContainer
+engine.planets.Road --|> engine.tools.weapons.Attackable
+engine.planets.Road --|> java.io.Serializable
+engine.planets.RoadContainers ..> java.lang.Deprecated
+engine.planets.RoadContainers ..> java.util.ArrayList
+engine.planets.hazards.Disease --|> engine.planets.hazards.NaturalHazard
+engine.planets.hazards.Disease ..> java.lang.Override
+engine.planets.hazards.Disease ..> engine.planets.Grid
+engine.planets.hazards.Drought --|> engine.planets.hazards.NaturalHazard
+engine.planets.hazards.Drought ..> java.lang.Override
+engine.planets.hazards.Drought ..> engine.planets.Grid
+engine.planets.hazards.Volcano --|> engine.planets.hazards.NaturalHazard
+engine.planets.hazards.Volcano ..> java.lang.Override
+engine.planets.hazards.Volcano ..> engine.planets.Grid
+engine.planets.hazards.Weather --|> engine.planets.hazards.NaturalHazard
+engine.planets.hazards.Weather ..> java.lang.Override
+engine.planets.hazards.Weather ..> engine.planets.Grid
+engine.tools.AttackableConstants ..> engine.tools.weapons.Weapon
+engine.tools.AttackableConstants ..> engine.tools.weapons.Attackable
+engine.tools.ToolUnderConstruction ..> engine.universe.Resource
+engine.tools.ToolUnderConstruction ..> engine.universe.ResourceDemand
+engine.tools.ToolUnderConstruction --|> java.io.Serializable
+engine.tools.vehicles.VehicleContainers ..> java.lang.Deprecated
+engine.tools.vehicles.VehicleContainers ..> java.util.ArrayList
+engine.tools.vehicles.VehicleInitialConstants ..> engine.tools.AttackableConstants
+engine.tools.vehicles.air.Bomb --|> engine.tools.vehicles.air.Aircraft
+engine.tools.vehicles.air.Bomb ..> java.lang.Override
+engine.tools.vehicles.air.Bomb ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.air.Bomb ..> engine.universe.ResourceDemand
+engine.tools.vehicles.air.CargoPlaneLarge --|> engine.tools.vehicles.air.CargoPlane
+engine.tools.vehicles.air.CargoPlaneLarge ..> java.lang.Override
+engine.tools.vehicles.air.CargoPlaneLarge ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.air.CargoPlaneLarge ..> engine.universe.ResourceDemand
+engine.tools.vehicles.air.CargoPlaneMedium --|> engine.tools.vehicles.air.CargoPlane
+engine.tools.vehicles.air.CargoPlaneMedium ..> java.lang.Override
+engine.tools.vehicles.air.CargoPlaneMedium ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.air.CargoPlaneMedium ..> engine.universe.ResourceDemand
+engine.tools.vehicles.air.CargoPlaneSmall --|> engine.tools.vehicles.air.CargoPlane
+engine.tools.vehicles.air.CargoPlaneSmall ..> java.lang.Override
+engine.tools.vehicles.air.CargoPlaneSmall ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.air.CargoPlaneSmall ..> engine.universe.ResourceDemand
+engine.tools.vehicles.air.FighterPlaneMedium --|> engine.tools.vehicles.air.FighterPlane
+engine.tools.vehicles.air.FighterPlaneMedium ..> java.lang.Override
+engine.tools.vehicles.air.FighterPlaneMedium ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.air.FighterPlaneMedium ..> engine.universe.ResourceDemand
+engine.tools.vehicles.air.FighterPlaneSmall --|> engine.tools.vehicles.air.FighterPlane
+engine.tools.vehicles.air.FighterPlaneSmall ..> java.lang.Override
+engine.tools.vehicles.air.FighterPlaneSmall ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.air.FighterPlaneSmall ..> engine.universe.ResourceDemand
+engine.tools.vehicles.air.Helicopter --|> engine.tools.vehicles.air.Aircraft
+engine.tools.vehicles.air.Helicopter ..> java.lang.Override
+engine.tools.vehicles.air.Helicopter ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.air.Helicopter ..> engine.universe.ResourceDemand
+engine.tools.vehicles.air.Missile --|> engine.tools.vehicles.air.Aircraft
+engine.tools.vehicles.air.Missile ..> java.lang.Override
+engine.tools.vehicles.air.Missile ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.air.Missile ..> engine.universe.ResourceDemand
+engine.tools.vehicles.land.ArmouredVehicle --|> engine.tools.vehicles.land.LandVehicle
+engine.tools.vehicles.land.ArmouredVehicle ..> java.lang.Override
+engine.tools.vehicles.land.ArmouredVehicle ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.land.ArmouredVehicle ..> engine.universe.ResourceDemand
+engine.tools.vehicles.land.AutomatedArmouredVehicle --|> engine.tools.vehicles.land.LandVehicle
+engine.tools.vehicles.land.AutomatedArmouredVehicle ..> java.lang.Override
+engine.tools.vehicles.land.AutomatedArmouredVehicle ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.land.AutomatedArmouredVehicle ..> engine.universe.ResourceDemand
+engine.tools.vehicles.land.AutomatedArtillery --|> engine.tools.vehicles.land.LandVehicle
+engine.tools.vehicles.land.AutomatedArtillery ..> java.lang.Override
+engine.tools.vehicles.land.AutomatedArtillery ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.land.AutomatedArtillery ..> engine.universe.ResourceDemand
+engine.tools.vehicles.land.AutomatedTank --|> engine.tools.vehicles.land.LandVehicle
+engine.tools.vehicles.land.AutomatedTank ..> java.lang.Override
+engine.tools.vehicles.land.AutomatedTank ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.land.AutomatedTank ..> engine.universe.ResourceDemand
+engine.tools.vehicles.land.Tank --|> engine.tools.vehicles.land.LandVehicle
+engine.tools.vehicles.land.Tank ..> java.lang.Override
+engine.tools.vehicles.land.Tank ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.land.Tank ..> engine.universe.ResourceDemand
+engine.tools.vehicles.roadgoing.AllPurpose --|> engine.tools.vehicles.roadgoing.RoadGoing
+engine.tools.vehicles.roadgoing.AllPurpose ..> java.lang.Override
+engine.tools.vehicles.roadgoing.AllPurpose ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.roadgoing.AllPurpose ..> engine.universe.ResourceDemand
+engine.tools.vehicles.roadgoing.Bus --|> engine.tools.vehicles.roadgoing.RoadGoing
+engine.tools.vehicles.roadgoing.Bus ..> java.lang.Override
+engine.tools.vehicles.roadgoing.Bus ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.roadgoing.Bus ..> engine.universe.ResourceDemand
+engine.tools.vehicles.roadgoing.Train --|> engine.tools.vehicles.roadgoing.RoadGoing
+engine.tools.vehicles.roadgoing.Train ..> java.lang.Override
+engine.tools.vehicles.roadgoing.Train ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.roadgoing.Train ..> engine.universe.ResourceDemand
+engine.tools.vehicles.roadgoing.TruckLarge --|> engine.tools.vehicles.roadgoing.Truck
+engine.tools.vehicles.roadgoing.TruckLarge ..> java.lang.Override
+engine.tools.vehicles.roadgoing.TruckLarge ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.roadgoing.TruckLarge ..> engine.universe.ResourceDemand
+engine.tools.vehicles.roadgoing.TruckMedium --|> engine.tools.vehicles.roadgoing.Truck
+engine.tools.vehicles.roadgoing.TruckMedium ..> java.lang.Override
+engine.tools.vehicles.roadgoing.TruckMedium ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.roadgoing.TruckMedium ..> engine.universe.ResourceDemand
+engine.tools.vehicles.roadgoing.TruckSmall --|> engine.tools.vehicles.roadgoing.Truck
+engine.tools.vehicles.roadgoing.TruckSmall ..> java.lang.Override
+engine.tools.vehicles.roadgoing.TruckSmall ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.roadgoing.TruckSmall ..> engine.universe.ResourceDemand
+engine.tools.vehicles.sea.AircraftCarrier --|> engine.tools.vehicles.sea.SeaCraft
+engine.tools.vehicles.sea.AircraftCarrier ..> java.lang.Override
+engine.tools.vehicles.sea.AircraftCarrier ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.sea.AircraftCarrier ..> engine.universe.ResourceDemand
+engine.tools.vehicles.sea.BattleShip --|> engine.tools.vehicles.sea.SeaCraft
+engine.tools.vehicles.sea.BattleShip ..> java.lang.Override
+engine.tools.vehicles.sea.BattleShip ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.sea.BattleShip ..> engine.universe.ResourceDemand
+engine.tools.vehicles.sea.Destroyer --|> engine.tools.vehicles.sea.SeaCraft
+engine.tools.vehicles.sea.Destroyer ..> java.lang.Override
+engine.tools.vehicles.sea.Destroyer ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.sea.Destroyer ..> engine.universe.ResourceDemand
+engine.tools.vehicles.sea.NuclearAircraftCarrier --|> engine.tools.vehicles.sea.SeaCraft
+engine.tools.vehicles.sea.NuclearAircraftCarrier ..> java.lang.Override
+engine.tools.vehicles.sea.NuclearAircraftCarrier ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.sea.NuclearAircraftCarrier ..> engine.universe.ResourceDemand
+engine.tools.vehicles.sea.NuclearSubmarine --|> engine.tools.vehicles.sea.SeaCraft
+engine.tools.vehicles.sea.NuclearSubmarine ..> java.lang.Override
+engine.tools.vehicles.sea.NuclearSubmarine ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.sea.NuclearSubmarine ..> engine.universe.ResourceDemand
+engine.tools.vehicles.sea.Submarine --|> engine.tools.vehicles.sea.SeaCraft
+engine.tools.vehicles.sea.Submarine ..> java.lang.Override
+engine.tools.vehicles.sea.Submarine ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.sea.Submarine ..> engine.universe.ResourceDemand
+engine.tools.vehicles.sea.TransporterLarge --|> engine.tools.vehicles.sea.Transporter
+engine.tools.vehicles.sea.TransporterLarge ..> java.lang.Override
+engine.tools.vehicles.sea.TransporterLarge ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.sea.TransporterLarge ..> engine.universe.ResourceDemand
+engine.tools.vehicles.sea.TransporterMedium --|> engine.tools.vehicles.sea.Transporter
+engine.tools.vehicles.sea.TransporterMedium ..> java.lang.Override
+engine.tools.vehicles.sea.TransporterMedium ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.sea.TransporterMedium ..> engine.universe.ResourceDemand
+engine.tools.vehicles.sea.TransporterSmall --|> engine.tools.vehicles.sea.Transporter
+engine.tools.vehicles.sea.TransporterSmall ..> java.lang.Override
+engine.tools.vehicles.sea.TransporterSmall ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.sea.TransporterSmall ..> engine.universe.ResourceDemand
+engine.tools.vehicles.space.Fighter --|> engine.tools.vehicles.space.SpaceCraft
+engine.tools.vehicles.space.Fighter ..> java.lang.Override
+engine.tools.vehicles.space.Fighter ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.Fighter ..> engine.universe.ResourceDemand
+engine.tools.vehicles.space.Freighter.FreighterLarge --|> engine.tools.vehicles.space.Freighter.Freighter
+engine.tools.vehicles.space.Freighter.FreighterLarge ..> java.lang.Override
+engine.tools.vehicles.space.Freighter.FreighterLarge ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.Freighter.FreighterLarge ..> engine.universe.ResourceDemand
+engine.tools.vehicles.space.Freighter.FreighterMedium --|> engine.tools.vehicles.space.Freighter.Freighter
+engine.tools.vehicles.space.Freighter.FreighterMedium ..> java.lang.Override
+engine.tools.vehicles.space.Freighter.FreighterMedium ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.Freighter.FreighterMedium ..> engine.universe.ResourceDemand
+engine.tools.vehicles.space.Freighter.FreighterSmall --|> engine.tools.vehicles.space.Freighter.Freighter
+engine.tools.vehicles.space.Freighter.FreighterSmall ..> java.lang.Override
+engine.tools.vehicles.space.Freighter.FreighterSmall ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.Freighter.FreighterSmall ..> engine.universe.ResourceDemand
+engine.tools.vehicles.space.asteroidminer.AsteroidMinerLarge --|> engine.tools.vehicles.space.asteroidminer.AsteroidMiner
+engine.tools.vehicles.space.asteroidminer.AsteroidMinerLarge ..> java.lang.Override
+engine.tools.vehicles.space.asteroidminer.AsteroidMinerLarge ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.asteroidminer.AsteroidMinerLarge ..> engine.universe.ResourceDemand
+engine.tools.vehicles.space.asteroidminer.AsteroidMinerMedium --|> engine.tools.vehicles.space.asteroidminer.AsteroidMiner
+engine.tools.vehicles.space.asteroidminer.AsteroidMinerMedium ..> java.lang.Override
+engine.tools.vehicles.space.asteroidminer.AsteroidMinerMedium ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.asteroidminer.AsteroidMinerMedium ..> engine.universe.ResourceDemand
+engine.tools.vehicles.space.asteroidminer.AsteroidMinerSmall --|> engine.tools.vehicles.space.asteroidminer.AsteroidMiner
+engine.tools.vehicles.space.asteroidminer.AsteroidMinerSmall ..> java.lang.Override
+engine.tools.vehicles.space.asteroidminer.AsteroidMinerSmall ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.asteroidminer.AsteroidMinerSmall ..> engine.universe.ResourceDemand
+engine.tools.vehicles.space.cityship.CityShipLarge --|> engine.tools.vehicles.space.cityship.CityShip
+engine.tools.vehicles.space.cityship.CityShipLarge ..> java.lang.Override
+engine.tools.vehicles.space.cityship.CityShipLarge ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.cityship.CityShipLarge ..> engine.universe.ResourceDemand
+engine.tools.vehicles.space.cityship.CityShipMedium --|> engine.tools.vehicles.space.cityship.CityShip
+engine.tools.vehicles.space.cityship.CityShipMedium ..> java.lang.Override
+engine.tools.vehicles.space.cityship.CityShipMedium ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.cityship.CityShipMedium ..> engine.universe.ResourceDemand
+engine.tools.vehicles.space.cityship.CityShipSmall --|> engine.tools.vehicles.space.cityship.CityShip
+engine.tools.vehicles.space.cityship.CityShipSmall ..> java.lang.Override
+engine.tools.vehicles.space.cityship.CityShipSmall ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.cityship.CityShipSmall ..> engine.universe.ResourceDemand
+engine.tools.vehicles.space.factory.FactorySpaceCraftLarge --|> engine.tools.vehicles.space.factory.FactorySpaceCraft
+engine.tools.vehicles.space.factory.FactorySpaceCraftLarge ..> java.lang.Override
+engine.tools.vehicles.space.factory.FactorySpaceCraftLarge ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.factory.FactorySpaceCraftLarge ..> engine.universe.ResourceDemand
+engine.tools.vehicles.space.factory.FactorySpaceCraftMedium --|> engine.tools.vehicles.space.factory.FactorySpaceCraft
+engine.tools.vehicles.space.factory.FactorySpaceCraftMedium ..> java.lang.Override
+engine.tools.vehicles.space.factory.FactorySpaceCraftMedium ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.factory.FactorySpaceCraftMedium ..> engine.universe.ResourceDemand
+engine.tools.vehicles.space.factory.FactorySpaceCraftSmall --|> engine.tools.vehicles.space.factory.FactorySpaceCraft
+engine.tools.vehicles.space.factory.FactorySpaceCraftSmall ..> java.lang.Override
+engine.tools.vehicles.space.factory.FactorySpaceCraftSmall ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.factory.FactorySpaceCraftSmall ..> engine.universe.ResourceDemand
+engine.tools.vehicles.space.interstellarcraft.InterStellarCraftLarge --|> engine.tools.vehicles.space.interstellarcraft.InterStellarCraft
+engine.tools.vehicles.space.interstellarcraft.InterStellarCraftLarge ..> java.lang.Override
+engine.tools.vehicles.space.interstellarcraft.InterStellarCraftLarge ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.interstellarcraft.InterStellarCraftLarge ..> engine.universe.ResourceDemand
+engine.tools.vehicles.space.interstellarcraft.InterStellarCraftMedium --|> engine.tools.vehicles.space.interstellarcraft.InterStellarCraft
+engine.tools.vehicles.space.interstellarcraft.InterStellarCraftMedium ..> java.lang.Override
+engine.tools.vehicles.space.interstellarcraft.InterStellarCraftMedium ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.interstellarcraft.InterStellarCraftMedium ..> engine.universe.ResourceDemand
+engine.tools.vehicles.space.interstellarcraft.InterStellarCraftSmall --|> engine.tools.vehicles.space.interstellarcraft.InterStellarCraft
+engine.tools.vehicles.space.interstellarcraft.InterStellarCraftSmall ..> java.lang.Override
+engine.tools.vehicles.space.interstellarcraft.InterStellarCraftSmall ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.interstellarcraft.InterStellarCraftSmall ..> engine.universe.ResourceDemand
+engine.tools.vehicles.space.planetdestroyer.PlanetDestroyerLarge --|> engine.tools.vehicles.space.planetdestroyer.PlanetDestroyer
+engine.tools.vehicles.space.planetdestroyer.PlanetDestroyerLarge ..> java.lang.Override
+engine.tools.vehicles.space.planetdestroyer.PlanetDestroyerLarge ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.planetdestroyer.PlanetDestroyerLarge ..> engine.universe.ResourceDemand
+engine.tools.vehicles.space.planetdestroyer.PlanetDestroyerMedium --|> engine.tools.vehicles.space.planetdestroyer.PlanetDestroyer
+engine.tools.vehicles.space.planetdestroyer.PlanetDestroyerMedium ..> java.lang.Override
+engine.tools.vehicles.space.planetdestroyer.PlanetDestroyerMedium ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.planetdestroyer.PlanetDestroyerMedium ..> engine.universe.ResourceDemand
+engine.tools.vehicles.space.shuttle.ShuttleLarge --|> engine.tools.vehicles.space.shuttle.Shuttle
+engine.tools.vehicles.space.shuttle.ShuttleLarge ..> java.lang.Override
+engine.tools.vehicles.space.shuttle.ShuttleLarge ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.shuttle.ShuttleLarge ..> engine.universe.ResourceDemand
+engine.tools.vehicles.space.shuttle.ShuttleMedium --|> engine.tools.vehicles.space.shuttle.Shuttle
+engine.tools.vehicles.space.shuttle.ShuttleMedium ..> java.lang.Override
+engine.tools.vehicles.space.shuttle.ShuttleMedium ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.shuttle.ShuttleMedium ..> engine.universe.ResourceDemand
+engine.tools.vehicles.space.shuttle.ShuttleSmall --|> engine.tools.vehicles.space.shuttle.Shuttle
+engine.tools.vehicles.space.shuttle.ShuttleSmall ..> java.lang.Override
+engine.tools.vehicles.space.shuttle.ShuttleSmall ..> engine.tools.vehicles.VehicleInitialConstants
+engine.tools.vehicles.space.shuttle.ShuttleSmall ..> engine.universe.ResourceDemand
+engine.tools.weapons.WeaponContainers ..> java.lang.Deprecated
+engine.tools.weapons.WeaponContainers ..> java.util.ArrayList
+engine.tools.weapons.guns.GunInitialConstants ..> engine.tools.AttackableConstants
+engine.tools.weapons.guns.artillery.ArtilleryLarge --|> engine.tools.weapons.guns.artillery.Artillery
+engine.tools.weapons.guns.artillery.ArtilleryLarge ..> java.lang.Override
+engine.tools.weapons.guns.artillery.ArtilleryLarge ..> engine.tools.weapons.guns.GunInitialConstants
+engine.tools.weapons.guns.artillery.ArtilleryLarge ..> engine.universe.ResourceDemand
+engine.tools.weapons.guns.artillery.ArtilleryMedium --|> engine.tools.weapons.guns.artillery.Artillery
+engine.tools.weapons.guns.artillery.ArtilleryMedium ..> java.lang.Override
+engine.tools.weapons.guns.artillery.ArtilleryMedium ..> engine.tools.weapons.guns.GunInitialConstants
+engine.tools.weapons.guns.artillery.ArtilleryMedium ..> engine.universe.ResourceDemand
+engine.tools.weapons.guns.artillery.ArtillerySmall --|> engine.tools.weapons.guns.artillery.Artillery
+engine.tools.weapons.guns.artillery.ArtillerySmall ..> java.lang.Override
+engine.tools.weapons.guns.artillery.ArtillerySmall ..> engine.tools.weapons.guns.GunInitialConstants
+engine.tools.weapons.guns.artillery.ArtillerySmall ..> engine.universe.ResourceDemand
+engine.tools.weapons.guns.artillery.Howitzer --|> engine.tools.weapons.guns.artillery.Artillery
+engine.tools.weapons.guns.artillery.Howitzer ..> java.lang.Override
+engine.tools.weapons.guns.artillery.Howitzer ..> engine.tools.weapons.guns.GunInitialConstants
+engine.tools.weapons.guns.artillery.Howitzer ..> engine.universe.ResourceDemand
+engine.tools.weapons.guns.artillery.TankArtillery --|> engine.tools.weapons.guns.artillery.Artillery
+engine.tools.weapons.guns.artillery.TankArtillery ..> java.lang.Override
+engine.tools.weapons.guns.artillery.TankArtillery ..> engine.tools.weapons.guns.GunInitialConstants
+engine.tools.weapons.guns.artillery.TankArtillery ..> engine.universe.ResourceDemand
+engine.tools.weapons.guns.carried.HandGun --|> engine.tools.weapons.guns.carried.Carried
+engine.tools.weapons.guns.carried.HandGun ..> java.lang.Override
+engine.tools.weapons.guns.carried.HandGun ..> engine.tools.weapons.guns.GunInitialConstants
+engine.tools.weapons.guns.carried.HandGun ..> engine.universe.ResourceDemand
+engine.tools.weapons.guns.carried.SniperRifle --|> engine.tools.weapons.guns.carried.Carried
+engine.tools.weapons.guns.carried.SniperRifle ..> java.lang.Override
+engine.tools.weapons.guns.carried.SniperRifle ..> engine.tools.weapons.guns.GunInitialConstants
+engine.tools.weapons.guns.carried.SniperRifle ..> engine.universe.ResourceDemand
+engine.tools.weapons.guns.mounted.AntiAirCraftGun --|> engine.tools.weapons.guns.mounted.Mounted
+engine.tools.weapons.guns.mounted.AntiAirCraftGun ..> java.lang.Override
+engine.tools.weapons.guns.mounted.AntiAirCraftGun ..> engine.tools.weapons.guns.GunInitialConstants
+engine.tools.weapons.guns.mounted.AntiAirCraftGun ..> engine.universe.ResourceDemand
+engine.tools.weapons.guns.mounted.MachineGunLarge --|> engine.tools.weapons.guns.mounted.MachineGun
+engine.tools.weapons.guns.mounted.MachineGunLarge ..> java.lang.Override
+engine.tools.weapons.guns.mounted.MachineGunLarge ..> engine.tools.weapons.guns.GunInitialConstants
+engine.tools.weapons.guns.mounted.MachineGunLarge ..> engine.universe.ResourceDemand
+engine.tools.weapons.guns.mounted.MachineGunMedium --|> engine.tools.weapons.guns.mounted.MachineGun
+engine.tools.weapons.guns.mounted.MachineGunMedium ..> java.lang.Override
+engine.tools.weapons.guns.mounted.MachineGunMedium ..> engine.tools.weapons.guns.GunInitialConstants
+engine.tools.weapons.guns.mounted.MachineGunMedium ..> engine.universe.ResourceDemand
+engine.tools.weapons.guns.mounted.MachineGunSmall --|> engine.tools.weapons.guns.mounted.MachineGun
+engine.tools.weapons.guns.mounted.MachineGunSmall ..> java.lang.Override
+engine.tools.weapons.guns.mounted.MachineGunSmall ..> engine.tools.weapons.guns.GunInitialConstants
+engine.tools.weapons.guns.mounted.MachineGunSmall ..> engine.universe.ResourceDemand
+engine.tools.weapons.space.EmpWeapon --|> engine.tools.weapons.space.SpaceWeapon
+engine.tools.weapons.space.EmpWeapon ..> java.lang.Override
+engine.tools.weapons.space.EmpWeapon ..> engine.tools.AttackableConstants
+engine.tools.weapons.space.EmpWeapon ..> engine.universe.ResourceDemand
+engine.tools.weapons.space.EmpWeapon ..> java.math.BigDecimal
+engine.tools.weapons.space.Laser --|> engine.tools.weapons.space.SpaceWeapon
+engine.tools.weapons.space.Laser ..> java.lang.Override
+engine.tools.weapons.space.Laser ..> engine.tools.AttackableConstants
+engine.tools.weapons.space.Laser ..> engine.universe.ResourceDemand
+engine.tools.weapons.space.Laser ..> java.math.BigDecimal
+engine.tools.weapons.space.SpaceMissile --|> engine.tools.weapons.space.SpaceWeapon
+engine.tools.weapons.space.SpaceMissile ..> java.lang.Override
+engine.tools.weapons.space.SpaceMissile ..> engine.tools.AttackableConstants
+engine.tools.weapons.space.SpaceMissile ..> engine.universe.ResourceDemand
+engine.tools.weapons.space.SpaceMissile ..> java.math.BigDecimal
+engine.universe.Country ..> engine.people.AbstractPerson
+engine.universe.Country ..> engine.planets.hazards.NaturalHazard
+engine.universe.Country ..> java.lang.Override
+engine.universe.Country ..> engine.cities.City
+engine.universe.Country --|> engine.universe.MoneySource
+engine.universe.Country ..> java.util.ArrayList
+engine.universe.Country --|> engine.cities.CityContainer
+engine.universe.Country --|> engine.people.PersonContainer
+engine.universe.Country --|> engine.universe.CountryContainer
+engine.universe.Country --|> engine.universe.RoadContainer
+engine.universe.Country --|> java.io.Serializable
+engine.universe.CountryContainers ..> java.lang.Deprecated
+engine.universe.CountryContainers ..> java.util.ArrayList
+engine.universe.LocationUniverse ..> java.lang.Deprecated
+engine.universe.LocationUniverse ..> engine.planets.LocationPlanet
+engine.universe.LocationUniverse ..> engine.planets.Planet
+engine.universe.LocationUniverse ..> java.math.BigDecimal
+engine.universe.LocationUniverse --|> java.io.Serializable
+engine.universe.MoneySource --|> java.io.Serializable
+engine.universe.MoneySourceContainers ..> java.lang.Deprecated
+engine.universe.MoneySourceContainers ..> java.util.ArrayList
+engine.universe.Resource ..> java.lang.Override
+engine.universe.Resource --|> engine.tools.vehicles.Weighable
+engine.universe.Resource --|> java.io.Serializable
+engine.universe.ResourceDemand --|> java.io.Serializable
+engine.universe.SolarSystem ..> java.lang.Override
+engine.universe.SolarSystem ..> engine.planets.Planet
+engine.universe.SolarSystem ..> engine.planets.PlanetRandomConstructionContext
+engine.universe.SolarSystem ..> java.math.BigDecimal
+engine.universe.SolarSystem ..> java.util.ArrayList
+engine.universe.SolarSystem --|> engine.planets.PlanetContainer
+engine.universe.SolarSystem --|> java.io.Serializable
+engine.universe.SolarSystemRandomConstructionContext ..> java.math.BigDecimal
+engine.universe.SolarSystemRandomConstructionContext ..> java.util.ArrayList
+engine.universe.Star --|> java.io.Serializable
+engine.universe.UnConstructedSolarSystem ..> java.math.BigDecimal
+engine.universe.Universe ..> java.lang.Override
+engine.universe.Universe ..> java.math.BigDecimal
+engine.universe.Universe ..> java.util.ArrayList
+engine.universe.Universe ..> java.util.concurrent.ThreadLocalRandom
+engine.universe.Universe --|> engine.universe.CountryContainer
+engine.universe.Universe --|> java.io.Serializable
+engine.universe.UniverseRandomConstructionContext ..> java.math.BigDecimal
+engine.universe.utils ..> java.math.BigDecimal
+engine.universe.utils ..> java.util.concurrent.ThreadLocalRandom
+ui.requests.BuildingTypeRequest ..> engine.buildings.Building
+ui.requests.BuildingTypeRequest --|> ui.requests.Request
+ui.requests.BuildingTypeRequest ..> java.lang.Override
+ui.requests.BuildingTypeRequest ..> engine.cities.City
+ui.requests.WorkerTypeRequest --|> ui.requests.Request
+ui.requests.WorkerTypeRequest ..> java.lang.Override
+ui.requests.WorkerTypeRequest ..> engine.buildings.workplaces.School
+ui.welcomescreen.Main ..> java.lang.Override
+ui.welcomescreen.Main --|> javafx.application.Application
+ui.welcomescreen.Main ..> javafx.fxml.FXMLLoader
+ui.welcomescreen.Main ..> javafx.scene.Parent
+ui.welcomescreen.Main ..> javafx.scene.Scene
+ui.welcomescreen.Main ..> javafx.stage.Stage
+engine.planets.TerrainType --|> java.io.Serializable
+engine.buildings.BuildingContainer ..> engine.universe.Country
+engine.buildings.BuildingContainer ..> java.util.ArrayList
+engine.buildings.BuildingContainer ..> engine.universe.CountryContainer
+engine.tools.weapons.Attackable ..> engine.planets.LocationPlanet
+@enduml
