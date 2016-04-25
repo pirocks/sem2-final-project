@@ -83,6 +83,10 @@ public abstract class Vehicle extends Tool implements PersonContainer, VehicleCo
 			out += vehicle.getWeight();
 		return out;
 	}
+	public void die()
+	{
+		VehicleContainer.killVehicle(this);
+	}
 	@Override
 	public void remove(AbstractPerson person) {
 		passengers.remove(person);

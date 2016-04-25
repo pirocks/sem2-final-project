@@ -30,9 +30,9 @@ public class SolarSystemRandomConstructionContext {
 	public PlanetRandomConstructionContext context2;
    public PlanetRandomConstructionContext context3;
   
-	private SolarSystemRandomConstructionContext(
+	public SolarSystemRandomConstructionContext(
 			UnConstructedSolarSystem unConstructedSolarSystem,
-			int numMaxPlanets,int numMinPlanets,
+			int numMaxPlanets, int numMinPlanets,
 			ArrayList<Country> countries)
 	{
 		this.unConstructedSolarSystem = unConstructedSolarSystem;

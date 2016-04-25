@@ -26,102 +26,102 @@ import java.util.ArrayList;
  *
  */
 
-public class City  extends MoneySource implements Serializable,Attackable ,BuildingContainer, CountryContainer, PersonContainer
+public class City extends Attackable implements Serializable ,BuildingContainer, CountryContainer, PersonContainer
 {
-	//extejnds moneysource so serializable not necesary
+	public MoneySource moneySource;
 	public static double resistanceInitial;
 	public static double healthInitial;
 	//remeber to add stuff to thhe unique id if I add more member vars
-    //read the above comment
+	//read the above comment
 //    private MoneySource moneySource;
-    private boolean isCapital;
-    private int x,y;//center of city in grid//will be townhall locatiuon
-    private Grid parentGrid;//can be used to find location//engine.cities limited to one grid
-    // private ArrayList<Grid> grids;//not yet
-    private ArrayList<CityBlock> cityBlocks;
-    private ArrayList<Hospital> hospitals;
-    public ArrayList<CityWorker> residents;
+	private boolean isCapital;
+	private int x,y;//center of city in grid//will be townhall locatiuon
+	private Grid parentGrid;//can be used to find location//engine.cities limited to one grid
+	// private ArrayList<Grid> grids;//not yet
+	private ArrayList<CityBlock> cityBlocks;
+	private ArrayList<Hospital> hospitals;
+	public ArrayList<CityWorker> residents;
 //    public ArrayList<CityWorker> unemployedResidents;
-    private Country parentCountry;//make sutre to change when cuity is captured.
+	private Country parentCountry;//make sutre to change when cuity is captured.
 	private AttackableConstants attackableConstants;
-    public City(boolean isCapital,Grid parentGrid,Country parentCountry,double wealth, int x, int y) {
-        super(wealth);
-        if(x > 100 || x < 0)
-            throw new IllegalArgumentException();
-        if(y > 100 || y < 0)
-            throw new IllegalArgumentException();
-		attackableConstants = new AttackableConstants(healthInitial,resistanceInitial);
-        registerBuildingContainer();
-	    registerCountryContainer();
-	    registerPersonContainer();
-	    this.isCapital = isCapital;
-        this.x = x;
-        this.y = y;
-        this.parentGrid = parentGrid;
-        this.parentCountry = parentCountry;
-    }
-    public ArrayList<CityBlock> getCityBlocks()
-    {
-        return cityBlocks;
-    }
-    public Building getCapitalBuilding() {
-        assert(isCapital);
-        for(CityBlock cityBlock:cityBlocks)
-            if(cityBlock.getBuilding() instanceof RulersHouse)
-                return cityBlock.getBuilding();
-        assert(false);
-        return null;
-    }
-    public double getXInPlanet() {
-        double GridX = (double)parentGrid.getX();
-        return GridX + x/100.0;
-    }
-    public double getYInPlanet() {
-        double GridY = (double)parentGrid.getY();
-        return GridY + y/100.0;
-    }
-    public Country getParentCountry()
-    {
-        return parentCountry;
-    }
-    public Grid getGrid()
-    {
-        return parentGrid;
-    }
-    public double getXInGrid()
-    {
-        return x;
-    }
-    public double getYInGrid()
-    {
-        return y;
-    }
-    public Hospital getLeastLoadedHosital() {
-        Hospital leastLoadedHospital = hospitals.get(0);
-        for(Hospital hospital:hospitals)
-            if(leastLoadedHospital.getWorkLoad() > hospital.getWorkLoad())
-                leastLoadedHospital = hospital;
-        return leastLoadedHospital;
-    }
-    public void leavePerson(AbstractPerson person) {
-	    for(Hospital hospital:hospitals)
-	    {
-		    hospital.leavePerson(person);
-	    }
-	    assert(residents.contains(person));
-	    residents.remove(person);
+	public City(LocationPlanet location,boolean isCapital,Grid parentGrid,Country parentCountry,double wealth, int x, int y) {
+		super(new AttackableConstants(healthInitial,resistanceInitial,location));
+		moneySource = new MoneySource(wealth);
+		if(x > 100 || x < 0)
+			throw new IllegalArgumentException();
+		if(y > 100 || y < 0)
+			throw new IllegalArgumentException();
+		registerBuildingContainer();
+		registerCountryContainer();
+		registerPersonContainer();
+		this.isCapital = isCapital;
+		this.x = x;
+		this.y = y;
+		this.parentGrid = parentGrid;
+		this.parentCountry = parentCountry;
+	}
+	public ArrayList<CityBlock> getCityBlocks()
+	{
+		return cityBlocks;
+	}
+	public Building getCapitalBuilding() {
+		assert(isCapital);
+		for(CityBlock cityBlock:cityBlocks)
+			if(cityBlock.getBuilding() instanceof RulersHouse)
+				return cityBlock.getBuilding();
+		assert(false);
+		return null;
+	}
+	public double getXInPlanet() {
+		double GridX = (double)parentGrid.getX();
+		return GridX + x/100.0;
+	}
+	public double getYInPlanet() {
+		double GridY = (double)parentGrid.getY();
+		return GridY + y/100.0;
+	}
+	public Country getParentCountry()
+	{
+		return parentCountry;
+	}
+	public Grid getGrid()
+	{
+		return parentGrid;
+	}
+	public double getXInGrid()
+	{
+		return x;
+	}
+	public double getYInGrid()
+	{
+		return y;
+	}
+	public Hospital getLeastLoadedHosital() {
+		Hospital leastLoadedHospital = hospitals.get(0);
+		for(Hospital hospital:hospitals)
+			if(leastLoadedHospital.getWorkLoad() > hospital.getWorkLoad())
+				leastLoadedHospital = hospital;
+		return leastLoadedHospital;
+	}
+	public void leavePerson(AbstractPerson person) {
+		for(Hospital hospital:hospitals)
+		{
+			hospital.leavePerson(person);
+		}
+		assert(residents.contains(person));
+		residents.remove(person);
 
-    }
-    //all people that are homeless are also jobless
+	}
+	//all people that are homeless are also jobless
 	public ArrayList<CityWorker> getHomeless(){
-	    ArrayList<CityWorker> out = new ArrayList<>();
-	    for(CityWorker worker:residents)
-	    {
-		    if(worker.getHome() == null)
-			    out.add(worker);
-	    }
-	    return out;
-    }
+		ArrayList<CityWorker> out = new ArrayList<>();
+		for(CityWorker worker:residents)
+		{
+			if(worker.getHome() == null)
+				out.add(worker);
+		}
+		return out;
+	}
 	public ArrayList<CityWorker> getJobLess(){
 		ArrayList<CityWorker> out = new ArrayList<>();
 		for(CityWorker worker:residents) {
@@ -148,37 +148,32 @@ public class City  extends MoneySource implements Serializable,Attackable ,Build
 	}
 
 	@Override
-    public void remove(Building building) {
-        for(CityBlock cityBlock:cityBlocks)
-            cityBlock.remove(building);
-        hospitals.remove(building);
-    }
-    @Override
-    public void remove(AbstractPerson person) {
+	public void remove(Building building) {
+		for(CityBlock cityBlock:cityBlocks)
+			cityBlock.remove(building);
+		hospitals.remove(building);
+	}
+	@Override
+	public void remove(AbstractPerson person) {
 		residents.remove(person);
-    }
-    @Override
-    public void remove(Country country,Country conqueror) {
+	}
+	@Override
+	public void remove(Country country,Country conqueror) {
 		if(parentCountry == country) {
 			parentCountry = conqueror;
 			assert (false);// TODO: 4/10/2016 get rid of this
 			//die();//??
 		}
-    }
-	//TODO: if damage is greater than a certain number pass to city otherwise go to random cityblock
-	@Override
-	public boolean receiveDamage(double damage) {
-		return attackableConstants.receiveDamage(damage,this);
 	}
+	//TODO: if damage is greater than a certain number pass to city otherwise go to random cityblock
+//	@Override
+//	public boolean receiveDamage(double damage) {
+//		return attackableConstants.receiveDamage(damage,this);
+//	}
 
 	@Override
-    public void die() {
-        CityContainers.remove(this);// TODO: 4/9/2016 make sure that this kills everything
+	public void die() {
+		CityContainers.remove(this);// TODO: 4/9/2016 make sure that this kills everything
 
-    }
-
-    @Override
-    public LocationPlanet getLocationPlanet() {
-        return new LocationPlanet(this);
-    }
+	}
 }

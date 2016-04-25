@@ -32,7 +32,7 @@ public class SolarSystem implements PlanetContainer, Serializable
 	    for(int i = 0; i < numPlanets;i++)
 	    {
 			radii.add(i,utils.getRandomBigDecimal(s.minRadius,s.maxRadius));
-		    PlanetRandomConstructionContext c = new PlanetRandomConstructionContext();
+		    PlanetRandomConstructionContext c = new PlanetRandomConstructionContext(s);
 		    planets.add(new Planet(c));// TODO: 4/11/2016 planet construction cntext
 	    }
     }

@@ -10,7 +10,7 @@ import engine.tools.weapons.Weapon;
 
 import java.io.Serializable;
 
-public class CityBlock implements Serializable, Attackable, CityContainer, BuildingContainer
+public class CityBlock extends Attackable implements Serializable, CityContainer, BuildingContainer
 {
     public int x,y;//between 0-100 inclusive??
     public LocationPlanet location;
@@ -19,6 +19,7 @@ public class CityBlock implements Serializable, Attackable, CityContainer, Build
     private Grid parentGrid;
     public CityBlock(Grid parentGrid,Building building,City parentCity,int x,int y)
     {
+	    super();
 	    registerCityContainer();
 	    registerBuildingContainer();
         this.parentGrid = parentGrid;
@@ -53,21 +54,14 @@ public class CityBlock implements Serializable, Attackable, CityContainer, Build
     {
         return y;
     }
-	@Override
-	public boolean receiveDamage(double damage) {
-		if(building !=  null)
-			return building.receiveDamage(damage);
-		return false;
-	}
-
-	@Override
-	public void die() {
-		building.die();
-	}
-	@Override
-	public LocationPlanet getLocationPlanet() {
-		return building.getLocationPlanet();
-	}
+//	@Override
+//	public void die() {
+//		building.die();
+//	}
+//	@Override
+//	public LocationPlanet getLocationPlanet() {
+//		return building.getLocationPlanet();
+//	}
 	@Override
     public void remove(Building building) {
 		if(this.building == building)

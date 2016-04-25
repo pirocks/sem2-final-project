@@ -14,12 +14,13 @@ import engine.tools.weapons.Attackable;
 
 import java.io.Serializable;
 
-public abstract class AbstractPerson extends MoneySource implements Serializable,Attackable, CountryContainer, MoneySourceContainer,Weighable
+public abstract class AbstractPerson extends Attackable implements Serializable, CountryContainer, MoneySourceContainer,Weighable
 {
+	public MoneySource moneySource;
 	public static double healthInitial;
 	public static double resistanceInitial;
 	private boolean alliveQ;
-	public AttackableConstants attackableConstants = new AttackableConstants(healthInitial,resistanceInitial);
+//	public AttackableConstants attackableConstants = new AttackableConstants(healthInitial,resistanceInitial);
 	private LocationPlanet location;
 	private Country country;//final??
 	private int population;
@@ -31,7 +32,8 @@ public abstract class AbstractPerson extends MoneySource implements Serializable
 
 	protected MoneySource salaryGiver = null;// TODO: 4/10/2016 need to initialize this
 	protected AbstractPerson(PeopleInitialConstants peopleInitialConstants) {
-	    super(0);
+	    super();
+		moneySource = new MoneySource(0);
 	    population = peopleInitialConstants.population;
 	    foodUsePerPerson = peopleInitialConstants.foodUsePerPerson;
 	    crimeRisk = peopleInitialConstants.crimeRisk;

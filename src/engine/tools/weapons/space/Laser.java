@@ -1,5 +1,6 @@
 package engine.tools.weapons.space;
 
+import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.universe.ResourceDemand;
 
@@ -13,10 +14,10 @@ public class Laser extends SpaceWeapon {
 	public static double startHealthInitial;
 	public static double resistanceInitial;
 	public static double damageInitial;
-	public static BigDecimal rangeInitial;
+	public static double rangeInitial;
 
-	public Laser() {
-		super(new AttackableConstants(startHealthInitial, resistanceInitial),damageInitial, rangeInitial);
+	public Laser(LocationPlanet location) {
+		super(new AttackableConstants(startHealthInitial, resistanceInitial,location),damageInitial, rangeInitial);
 	}
 
 	@Override

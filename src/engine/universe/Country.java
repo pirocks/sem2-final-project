@@ -32,6 +32,7 @@ public class Country extends MoneySource implements Serializable,PersonContainer
 
     public Country(UniverseRandomConstructionContext u)
     {
+        super(Double.NaN);
         name = CountryNames[countryNameCount];
         countryNameCount++;
     }

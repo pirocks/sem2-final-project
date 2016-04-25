@@ -1,5 +1,6 @@
 package engine.tools.vehicles;
 
+import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 
 /**
@@ -15,8 +16,8 @@ public class VehicleInitialConstants {
 		this.maxPassengers = maxPassengers;
 		this.maxWeight = maxWeight;
 	}
-	public VehicleInitialConstants(double health,double resistance,int maxPassengers,double maxWeight){
-		this(new AttackableConstants(health,resistance),
+	public VehicleInitialConstants(LocationPlanet location, double health,double resistance,int maxPassengers,double maxWeight){
+		this(new AttackableConstants(health,resistance,location),
 				maxPassengers,
 				maxWeight);
 	}

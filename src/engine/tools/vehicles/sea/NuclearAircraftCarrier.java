@@ -1,5 +1,6 @@
 package engine.tools.vehicles.sea;
 
+import engine.planets.LocationPlanet;
 import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
@@ -13,8 +14,8 @@ public class NuclearAircraftCarrier extends SeaCraft{
 	public static double startHealthInitial;
 	public static double resistanceInitial;
 
-	protected NuclearAircraftCarrier() {
-		super(new VehicleInitialConstants(
+	protected NuclearAircraftCarrier(LocationPlanet locationPlanet) {
+		super(new VehicleInitialConstants(locationPlanet,
 				startHealthInitial,
 				resistanceInitial,
 				maxPassengersInitial,

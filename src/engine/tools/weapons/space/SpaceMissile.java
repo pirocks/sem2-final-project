@@ -1,5 +1,6 @@
 package engine.tools.weapons.space;
 
+import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.universe.ResourceDemand;
 
@@ -15,10 +16,10 @@ public class SpaceMissile extends SpaceWeapon {
 	public static double startHealthInitial;
 	public static double resistanceInitial;
 	public static double damageInitial;
-	public static BigDecimal rangeInitial;
+	public static double rangeInitial;
 
-	public SpaceMissile() {
-		super(new AttackableConstants(startHealthInitial,resistanceInitial),damageInitial,rangeInitial);
+	public SpaceMissile(LocationPlanet location) {
+		super(new AttackableConstants(startHealthInitial,resistanceInitial,location),damageInitial,rangeInitial);
 	}
 
 

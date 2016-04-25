@@ -1,5 +1,6 @@
 package engine.tools;
 
+import engine.planets.LocationPlanet;
 import engine.tools.weapons.Attackable;
 import engine.tools.weapons.Weapon;
 
@@ -10,10 +11,13 @@ import engine.tools.weapons.Weapon;
 public class AttackableConstants {
 	public double health;
 	public double resistance;
+	public LocationPlanet locationPlanet;
 
-	public AttackableConstants(double healthInitial, double resistanceInitial) {
+
+	public AttackableConstants(double healthInitial, double resistanceInitial,LocationPlanet locationPlanet) {
 		this.health= healthInitial;
 		this.resistance = resistanceInitial;
+		this.locationPlanet = locationPlanet;
 	}
 
 	public boolean receiveDamage(double damage, Attackable attacked)

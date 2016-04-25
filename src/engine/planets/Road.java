@@ -11,7 +11,7 @@ import engine.tools.weapons.Weapon;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Road implements Serializable,Attackable ,CityContainer, VehicleContainer
+public class Road extends Attackable implements Serializable ,CityContainer, VehicleContainer
 {
 	public static double resistanceInitial;
 	public static double healthInitial;
@@ -22,6 +22,7 @@ public class Road implements Serializable,Attackable ,CityContainer, VehicleCont
 	private ArrayList<Vehicle> vehiclesOnRoad;
 	private ArrayList<LocationPlanet> locations;
 	public Road(ArrayList<City> cities) {
+		super();
 		attackableConstants = new AttackableConstants(healthInitial,resistanceInitial);
 		registerCityContainer();
 		registerVehicleContainer();

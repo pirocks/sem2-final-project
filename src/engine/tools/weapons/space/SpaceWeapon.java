@@ -10,9 +10,9 @@ import java.math.BigDecimal;
  *
  */
 public abstract class SpaceWeapon extends Weapon {
-	public BigDecimal range;
-	public SpaceWeapon(AttackableConstants attackableConstants, double damage, BigDecimal range) {
-		super(attackableConstants,damage);
+	public double range;
+	public SpaceWeapon(AttackableConstants attackableConstants, double damage, double range) {
+		super(attackableConstants,damage, range);
 		this.range = range;
 	}
 }

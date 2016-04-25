@@ -18,13 +18,13 @@ import java.io.Serializable;
  * Created by bob on 3/5/2016.
  * does stuff
  */
-public abstract class Building implements Serializable,Attackable,CityContainer, PersonContainer//extends moneysource for workplace maybe??
+public abstract class Building extends Attackable implements Serializable,CityContainer, PersonContainer//extends moneysource for workplace maybe??
 {
 	protected CityBlock parentBlock;
 	private AttackableConstants attackableConstants;
 	public Building(AttackableConstants attackableConstants,
 	                CityBlock parentBlock) {
-	    this.attackableConstants = attackableConstants;
+	    super(attackableConstants);
 	    registerCityContainer();
 	    registerPersonContainer();//TODO:go through and make sure every constructor has these
         this.parentBlock = parentBlock;
@@ -38,13 +38,6 @@ public abstract class Building implements Serializable,Attackable,CityContainer,
     {
         return parentBlock;
     }
-	public LocationPlanet getLocation() {
-        return parentBlock.getLocation();
-    }
-	@Override
-	public boolean receiveDamage(double damage) {
-		return attackableConstants.receiveDamage(damage, this);// TODO: 4/10/2016 this can be done better, the this can be avoided, can return a boolean for attack succsess.
-	}
 	@Override
 	public void die() {
 		BuildingContainer.killBuilding(this);
@@ -67,5 +60,4 @@ public abstract class Building implements Serializable,Attackable,CityContainer,
 		return this instanceof Workplace;
 	}
 	public abstract ResourceDemand getResourceCost();
-//	public abstract double getCost();
 }
