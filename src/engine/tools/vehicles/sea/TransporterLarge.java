@@ -1,5 +1,7 @@
 package engine.tools.vehicles.sea;
 
+import engine.planets.LocationPlanet;
+import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
@@ -13,12 +15,9 @@ public class TransporterLarge extends Transporter {
 	public static double startHealthInitial;
 	public static double resistanceInitial;
 
-	protected TransporterLarge() {
-		super(new VehicleInitialConstants(
-				startHealthInitial,
-				resistanceInitial,
-				maxPassengersInitial,
-				maxWeightInitial));
+
+	protected TransporterLarge(LocationPlanet locationPlanet) {
+		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial));
 	}
 
 	@Override

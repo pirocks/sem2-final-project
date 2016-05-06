@@ -13,7 +13,7 @@ public class WorkersHouseBlock extends Housing
 
 	public WorkersHouseBlock(CityBlock parentBlock)
 	{
-		super(new AttackableConstants(healthInitial,resistanceInitial),parentBlock);
+		super(new AttackableConstants(parentBlock.getLocation(),healthInitial,resistanceInitial),parentBlock);
 	}
 
 	@Override

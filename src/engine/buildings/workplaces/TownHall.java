@@ -18,7 +18,7 @@ public class TownHall extends Workplace
 	public static double costInitial;
 
 	public TownHall(ArrayList<CityWorker> workers, CityBlock parentBlock, MoneySource owner) {
-		super(new AttackableConstants(healthInitial,resistanceInitial), parentBlock, owner);
+		super(new AttackableConstants(parentBlock.getLocation(),healthInitial,resistanceInitial), parentBlock, owner);
 	}
 
 	@Override

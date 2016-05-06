@@ -17,7 +17,7 @@ public class ResearchArea extends Workplace
 	private Discovery discovery;
 
 	public ResearchArea(ArrayList<CityWorker> workers, CityBlock parentBlock, MoneySource owner) {
-		super(new AttackableConstants(healthInitial,resistanceInitial), parentBlock, owner);
+		super(new AttackableConstants(healthInitial,resistanceInitial,parentBlock.getLocation()), parentBlock, owner);
 	}
 
 	@Override

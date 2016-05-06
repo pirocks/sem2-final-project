@@ -19,13 +19,13 @@ public class Teacher<Type extends AbstractPerson> extends CityWorker {
     public static double crimeImpactInitial = UniversalConstants.normalPersonCrimeImpact;
     public static double salaryInitial = UniversalConstants.normalPersonSalary;
 
-    public Teacher(City parentCity) {
+    public Teacher(City parentCity,LocationPlanet location) {
         super(new PeopleInitialConstants(populationInitial,
                 foodUsePerPersonInitial,
                 crimeRiskInitial,
                 crimeImpactInitial,
                 salaryInitial,
-                parentCity.getParentCountry()),parentCity);
+                parentCity.getParentCountry(),location),parentCity);
     }
 
     public School getWorkBuilding() {

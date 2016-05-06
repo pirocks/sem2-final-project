@@ -13,7 +13,7 @@ public class ApartmentBlock extends Housing
 	public static int maximumOccupancyInitial = 5000;
 
 	public ApartmentBlock(CityBlock parentBlock) {
-		super(new AttackableConstants(healthInitial,resistanceInitial), parentBlock);
+		super(new AttackableConstants(parentBlock.getLocation(),healthInitial,resistanceInitial), parentBlock);
 	}
 
 	@Override

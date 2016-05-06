@@ -12,6 +12,6 @@ import java.io.Serializable;
  */
 public class AiRuler extends Ruler implements Serializable {
 	public AiRuler(Country parentCountry) {
-		super(parentCountry);
+		super(parentCountry,null);
 	}
 }

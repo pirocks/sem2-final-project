@@ -15,7 +15,7 @@ public class RulersHouse extends Housing
 	public static double costInitial;
 
 	public RulersHouse(ArrayList<CityWorker> residents, CityBlock parentBlock) {
-		super(new AttackableConstants(healthInitial,resistanceInitial), parentBlock);
+		super(new AttackableConstants(parentBlock.getLocation(),healthInitial,resistanceInitial), parentBlock);
 	}
 
 	@Override

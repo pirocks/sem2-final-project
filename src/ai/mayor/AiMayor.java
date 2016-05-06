@@ -11,6 +11,6 @@ import java.io.Serializable;
  */
 public class AiMayor extends Bureaucrat implements Serializable {
 	public AiMayor(City parentCity) {
-		super(parentCity);
+		super(parentCity,null);
 	}
 }

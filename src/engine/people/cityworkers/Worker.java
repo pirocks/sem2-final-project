@@ -3,6 +3,7 @@ package engine.people.cityworkers;
 import engine.buildings.housing.Housing;
 import engine.buildings.workplaces.Workplace;
 import engine.cities.City;
+import engine.planets.LocationPlanet;
 import engine.universe.UniversalConstants;
 
 /**
@@ -17,13 +18,13 @@ public class Worker extends CityWorker
 	public static double crimeImpactInitial = 0.01*UniversalConstants.normalPersonCrimeImpact;
 	public static double salaryInitial = UniversalConstants.normalPersonSalary;
 
-	public Worker(City parentCity) {
+	public Worker(City parentCity, LocationPlanet locationPlanet) {
 		super(new PeopleInitialConstants(populationInitial,
 				foodUsePerPersonInitial,
 				crimeRiskInitial,
 				crimeImpactInitial,
 				salaryInitial,
-				parentCity.getParentCountry()),parentCity);
+				parentCity.getParentCountry(),locationPlanet),parentCity);
 	}
 
 	@Override

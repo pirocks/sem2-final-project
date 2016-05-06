@@ -1,5 +1,7 @@
 package engine.tools.vehicles.roadgoing;
 
+import engine.planets.LocationPlanet;
+import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
@@ -12,12 +14,9 @@ public class TruckLarge extends Truck {
 	public static double startHealthInitial;
 	public static double resistanceInitial;
 
-	protected TruckLarge() {
-		super(new VehicleInitialConstants(
-				startHealthInitial,
-				resistanceInitial,
-				maxPassengersInitial,
-				maxWeightInitial));
+
+	protected TruckLarge(LocationPlanet locationPlanet) {
+		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial));
 	}
 
 	@Override

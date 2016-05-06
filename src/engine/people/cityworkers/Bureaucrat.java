@@ -21,7 +21,7 @@ public class Bureaucrat extends CityWorker
 			2.0*UniversalConstants.normalPersonSalary;
 	private TownHall workplace;
     public static double bureaucratSalary;//secondly value
-	public Bureaucrat(City parentCity)
+	public Bureaucrat(City parentCity,LocationPlanet location)
     {
 	    super(new PeopleInitialConstants(populationInitial,
 			    foodUsePerPersonInitial,
@@ -30,7 +30,7 @@ public class Bureaucrat extends CityWorker
 					    *crimeRiskInitial,
 			    crimeImpactInitial,
 			    salaryInitial,
-			    parentCity.getParentCountry()),parentCity);
+			    parentCity.getParentCountry(),location),parentCity);
 
 //	    salaryGiver = workplace.
     }
@@ -50,7 +50,7 @@ public class Bureaucrat extends CityWorker
         // TODO: 4/9/2016  make sure this ties into ui/ai
         //really this has nothing to do , in fact the args don't allow for any sort of management.
 		//so just charge the salarygiver for time
-	    salaryGiver.pay(this,bureaucratSalary*time);
+	    salaryGiver.pay(moneySource,bureaucratSalary*time);
     }
 
     @Override

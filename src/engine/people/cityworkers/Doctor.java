@@ -4,6 +4,7 @@ import engine.buildings.housing.Housing;
 import engine.buildings.workplaces.Hospital;
 import engine.cities.City;
 import engine.people.AbstractPerson;
+import engine.planets.LocationPlanet;
 import engine.universe.UniversalConstants;
 
 //import engine.buildings.workplace.*;
@@ -28,13 +29,13 @@ public class Doctor extends CityWorker
         workplace = null;
     }
 
-    public Doctor(City parentCity) {
+    public Doctor(City parentCity, LocationPlanet location) {
         super(new PeopleInitialConstants(populationInitial,
 		        foodUsePerPersonInitial,
 		        crimeRiskInitial,
 		        crimeImpactInitial,
 		        salaryInitial,
-		        parentCity.getParentCountry()),parentCity);
+		        parentCity.getParentCountry(),location),parentCity);
     }
     public void doSkill(long time)//time is in seconds
     {
@@ -50,7 +51,7 @@ public class Doctor extends CityWorker
         if(salaryGiver.canPay(getSalary()*healthIncrease))
         {    
             target.increaseHealth(healthIncrease);
-            salaryGiver.pay(this,getSalary()*healthIncrease);
+            salaryGiver.pay(moneySource,getSalary()*healthIncrease);
             if(target.getHealth() > 0.99)
             {
                 target.leaveHospital();

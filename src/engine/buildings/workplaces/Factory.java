@@ -20,7 +20,7 @@ public class Factory extends Workplace
 	public ArrayList<ToolUnderConstruction<Tool>> inProduction;
 
 	public Factory(CityBlock parentBlock, MoneySource owner) {
-		super(new AttackableConstants(healthInitial,resistanceInitial), parentBlock, owner);
+		super(new AttackableConstants(parentBlock.getLocation(),healthInitial,resistanceInitial), parentBlock, owner);
 		inProduction = new ArrayList<>();
 	}
 

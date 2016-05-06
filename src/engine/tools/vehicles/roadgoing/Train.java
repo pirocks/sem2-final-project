@@ -1,5 +1,7 @@
 package engine.tools.vehicles.roadgoing;
 
+import engine.planets.LocationPlanet;
+import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
@@ -13,12 +15,9 @@ public class Train extends RoadGoing{
 	public static double startHealthInitial;
 	public static double resistanceInitial;
 
-	protected Train() {
-		super(new VehicleInitialConstants(
-				startHealthInitial,
-				resistanceInitial,
-				maxPassengersInitial,
-				maxWeightInitial));
+
+	protected Train(LocationPlanet locationPlanet) {
+		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial));
 	}
 
 	@Override
