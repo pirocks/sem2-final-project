@@ -1,11 +1,6 @@
 package engine.people;
 
-import engine.buildings.Building;
-import engine.cities.City;
 import engine.people.cityworkers.*;
-//import engine.people.cityworkers.Researcher;
-//import engine.people.cityworkers.Ruler;
-//import engine.people.cityworkers.Teacher;
 import engine.universe.*;
 import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
@@ -13,6 +8,7 @@ import engine.tools.vehicles.Weighable;
 import engine.tools.weapons.Attackable;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public abstract class AbstractPerson extends Attackable implements Serializable, CountryContainer, MoneySourceContainer,Weighable
 {
@@ -21,7 +17,7 @@ public abstract class AbstractPerson extends Attackable implements Serializable,
 	public static double resistanceInitial;
 	private boolean alliveQ;
 //	public AttackableConstants attackableConstants = new AttackableConstants(healthInitial,resistanceInitial);
-	private LocationPlanet location;
+//	private LocationPlanet location;
 	private Country country;//final??
 	private int population;
 	private double foodUsePerPerson;
@@ -32,7 +28,7 @@ public abstract class AbstractPerson extends Attackable implements Serializable,
 
 	protected MoneySource salaryGiver = null;// TODO: 4/10/2016 need to initialize this
 	protected AbstractPerson(PeopleInitialConstants peopleInitialConstants) {
-	    super();
+	    super(new AttackableConstants(healthInitial,resistanceInitial,peopleInitialConstants.location));
 		moneySource = new MoneySource(0);
 	    population = peopleInitialConstants.population;
 	    foodUsePerPerson = peopleInitialConstants.foodUsePerPerson;
@@ -112,26 +108,23 @@ public abstract class AbstractPerson extends Attackable implements Serializable,
 	public double getSalary(){
 		return salary;
 	}
-    public double getHealth() {
-        return attackableConstants.health;
-    }
-	public void increaseHealth(double amount) {
-        assert(amount <= 1.0 - attackableConstants.health);
-        attackableConstants.health += amount;
-    }
+	public double increaseHealth(double amount) {
+        assert(amount <= 1.0 - getHealth());
+        return super.increaseHealth(amount);
+	}
 //	@Override public LocationPlanet getLocationPlanet() {
 //		return location;
 //	}
 	public int getPopulation() {
         return population;
     }
-	public LocationPlanet getLocation() {
-        return location;
-    }
+//	public ArrayList<LocationPlanet> getLocation() {
+//        return location;
+//    }
 	public boolean amIDead() {
 		if(population <= 0)
 			die();
-		if(attackableConstants.health <= 0)
+		if(getHealth() <= 0)
 			die();
 		return alliveQ;
 	}
@@ -143,7 +136,7 @@ public abstract class AbstractPerson extends Attackable implements Serializable,
 		//need to delete all refernces to this object
 	}
 	protected void paySalary(long time) {
-		salaryGiver.pay(this,salary*time);
+		salaryGiver.pay(moneySource,salary*time);
 	}
 	protected abstract void dieSpecific();
 	@Override
@@ -158,13 +151,9 @@ public abstract class AbstractPerson extends Attackable implements Serializable,
 		if(country == this.country)
 			this.country = conqueror;// TODO: 4/10/2016 register a citizen and go through and fix that everywhere
 	}
-	@Override
-	public boolean receiveDamage(double damage) {
-		return attackableConstants.receiveDamage(damage,this);
-	}
-	@Override
-	public LocationPlanet getLocationPlanet() {
-		return location;
-	}
+//	@Override
+//	public ArrayList<LocationPlanet> getLocationPlanet() {
+//		return location;
+//	}
 
 }

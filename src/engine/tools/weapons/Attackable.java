@@ -4,56 +4,69 @@ package engine.tools.weapons;
 import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 
+import java.util.ArrayList;
+
 public abstract class Attackable
 {
-	private double startHealth;
+	private double health;
 	private double resistance;
-	public LocationPlanet location;
-	public Attackable(double startHealth,double resistance,LocationPlanet location)
+	public ArrayList<LocationPlanet> location;
+	public Attackable(double health, double resistance, ArrayList<LocationPlanet> location)
 	{
-		this.startHealth = startHealth;
+		this.health = health;
 		this.resistance = resistance;
 		this.location = location;
 	}
 	public Attackable(AttackableConstants a)
 	{
-		this.startHealth = a.health;
+		this.health = a.health;
 		this.resistance = a.resistance;
 		this.location = a.locationPlanet;
 	}
 	public boolean receiveDamage(double damage, Weapon attacker)
 	{
-		assert(inRange(attacker.getRange(),attacker.getLocationPlanet()));
-		startHealth -= damage/resistance;
+		assert(inRange(attacker.getRange(),attacker.getLocationPlanet().get(0)));
+		health -= damage/resistance;
 		if(amIDead())
 			return true;
 		return false;
 	}
 	public boolean inRange(double range,LocationPlanet loc)
 	{
-		if(loc.distanceBetween(location) > range)
-			return false;
-		return true;
+		for(LocationPlanet loc2:location)
+			if(loc.distanceBetween(loc2) < range)
+				return true;
+		return false;
 	}
 	public boolean amIDead()
 	{
-		if(startHealth <= 0)
+		if(health <= 0)
 			return true;
 		return false;
 	}
 	public boolean amIAlive()
 	{
-		if(startHealth > 0)
+		if(health > 0)
 			return true;
 		return false;
 	}
-	public LocationPlanet getLocationPlanet()
+	public double increaseHealth(double amount)
+	{
+		health += amount;
+		return health;
+	}
+	public ArrayList<LocationPlanet> getLocationPlanet()
 	{
 		return location;
 	}
-	public LocationPlanet getLocation()
+	public ArrayList<LocationPlanet> getLocation()
 	{
+		assert (location.size() == 1);
 		return location;
+	}
+	public double getHealth()
+	{
+		return health;
 	}
 	public abstract void die();
 }

@@ -18,7 +18,7 @@ public class Hospital extends Workplace
     private ArrayList<CityWorker> sickPeople;
 
 	public Hospital(CityBlock parentBlock, MoneySource owner) {
-		super(new AttackableConstants(healthInitial,resistanceInitial), parentBlock, owner);
+		super(new AttackableConstants(healthInitial,resistanceInitial,parentBlock.getLocation()), parentBlock, owner);
 		sickPeople = new ArrayList<>();
 	}
 

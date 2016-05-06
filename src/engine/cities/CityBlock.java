@@ -5,21 +5,21 @@ import engine.buildings.BuildingContainer;
 //import engine.buildings.BuildingContainers;
 import engine.planets.Grid;
 import engine.planets.LocationPlanet;
+import engine.tools.AttackableConstants;
 import engine.tools.weapons.Attackable;
-import engine.tools.weapons.Weapon;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class CityBlock extends Attackable implements Serializable, CityContainer, BuildingContainer
 {
     public int x,y;//between 0-100 inclusive??
-    public LocationPlanet location;
     private Building building;
     private City parentCity;
     private Grid parentGrid;
-    public CityBlock(Grid parentGrid,Building building,City parentCity,int x,int y)
+    public CityBlock(AttackableConstants attackableConstants,Grid parentGrid, Building building, City parentCity, int x, int y)
     {
-	    super();
+	    super(attackableConstants);
 	    registerCityContainer();
 	    registerBuildingContainer();
         this.parentGrid = parentGrid;
@@ -38,11 +38,19 @@ public class CityBlock extends Attackable implements Serializable, CityContainer
     {
         return building;
     }
-    public LocationPlanet getLocation()
+    public ArrayList<LocationPlanet> getLocation()
     {
-        return new LocationPlanet(this);
+        ArrayList<LocationPlanet> out = new ArrayList<LocationPlanet>();
+	    out.add(new LocationPlanet(this));
+	    return out;
     }
-    public Grid getGrid()
+
+	@Override
+	public void die() {
+		BuildingContainer.killBuilding(building);
+	}
+
+	public Grid getGrid()
     {
         return parentGrid;
     }
@@ -66,7 +74,7 @@ public class CityBlock extends Attackable implements Serializable, CityContainer
     public void remove(Building building) {
 		if(this.building == building)
 		{
-// 			BuildingContainer.killBuilding(building);//todo this is bullshit
+ 			BuildingContainer.killBuilding(building);//todo this is bullshit
 			this.building = null;
 		}
     }
@@ -75,7 +83,6 @@ public class CityBlock extends Attackable implements Serializable, CityContainer
 		if(parentCity == city) {
 			parentCity = null;
             die();
-//			assert (false);//TODO, if a city is destroyed so is everything below it right. yep, because it eliminates the citiless problem, so if a city is destryed so is everytthing eslse, will start implementing that
 		}
     }
 }

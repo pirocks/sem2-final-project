@@ -13,6 +13,7 @@ import engine.tools.weapons.Attackable;
 import engine.universe.ResourceDemand;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * Created by bob on 3/5/2016.
@@ -21,7 +22,7 @@ import java.io.Serializable;
 public abstract class Building extends Attackable implements Serializable,CityContainer, PersonContainer//extends moneysource for workplace maybe??
 {
 	protected CityBlock parentBlock;
-	private AttackableConstants attackableConstants;
+//	private AttackableConstants attackableConstants;
 	public Building(AttackableConstants attackableConstants,
 	                CityBlock parentBlock) {
 	    super(attackableConstants);
@@ -42,16 +43,16 @@ public abstract class Building extends Attackable implements Serializable,CityCo
 	public void die() {
 		BuildingContainer.killBuilding(this);
 	}
-	@Override
-	public LocationPlanet getLocationPlanet() {
-		return new LocationPlanet(this);
-	}
+//	@Override
+//	public ArrayList<LocationPlanet> getLocationPlanet() {
+//		return new LocationPlanet(this);
+//	}
 	@Override
 	public abstract void remove(AbstractPerson person);
 	@Override
 	public void remove(City city) {
 		die();
-		parentBlock.remove(city);// TODO: 4/9/2016 check that this desn't cause infinte recursion//it doesn't
+		parentBlock.remove(city);// oldTODO: 4/9/2016 check that this desn't cause infinte recursion//it doesn't
 	}
 	public boolean HousingQ() {
 		return this instanceof Housing;

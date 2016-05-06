@@ -1,12 +1,12 @@
 package engine.people.cityworkers;
 
-import engine.buildings.housing.Housing;
 import engine.buildings.workplaces.School;
 import engine.cities.City;
 import engine.people.AbstractPerson;
 import engine.planets.LocationPlanet;
-import engine.universe.Country;
 import engine.universe.UniversalConstants;
+
+import java.util.ArrayList;
 
 public class Teacher<Type extends AbstractPerson> extends CityWorker {
     public double progress = 0.0;//from 0 to 1
@@ -47,7 +47,7 @@ public class Teacher<Type extends AbstractPerson> extends CityWorker {
     }
 
     @Override
-    public LocationPlanet getLocationPlanet() {
+    public ArrayList<LocationPlanet> getLocationPlanet() {
         return null;// TODO: 4/9/2016
     }
 

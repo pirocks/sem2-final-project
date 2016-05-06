@@ -144,6 +144,12 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 		for(CityWorker worker: residents)
 		{
 			worker.doLife(time);//// TODO: 4/13/2016 bureucrats and rulers should run the city
+
+			//// TODO: 4/27/2016
+			//more stuff:
+			/*
+		things that the should do list
+			 */
 		}
 	}
 
@@ -161,8 +167,6 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 	public void remove(Country country,Country conqueror) {
 		if(parentCountry == country) {
 			parentCountry = conqueror;
-			assert (false);// TODO: 4/10/2016 get rid of this
-			//die();//??
 		}
 	}
 	//TODO: if damage is greater than a certain number pass to city otherwise go to random cityblock

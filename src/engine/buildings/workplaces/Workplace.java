@@ -10,6 +10,7 @@ import engine.people.cityworkers.CityWorker;
 import engine.tools.AttackableConstants;
 import engine.universe.MoneySource;
 import engine.universe.MoneySourceContainer;
+import engine.universe.Resource;
 
 import java.util.ArrayList;
 public abstract class Workplace extends Building implements PersonContainer, MoneySourceContainer
@@ -17,6 +18,7 @@ public abstract class Workplace extends Building implements PersonContainer, Mon
 	private ArrayList<CityWorker> workers;
 	private int maxWorkers;
 	private MoneySource owner;
+	private Resource inStock;
 	public Workplace(AttackableConstants attackableConstants,
 	                 CityBlock parentBlock, MoneySource owner) {
 		super(attackableConstants,parentBlock);

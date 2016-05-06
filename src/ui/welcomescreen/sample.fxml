@@ -9,19 +9,20 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.GridPane?>
 
-<GridPane alignment="CENTER" cache="false" gridLinesVisible="false" hgap="10.0" prefHeight="456.0" prefWidth="415.0" vgap="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="ui.welcomescreen.Main">
+<GridPane alignment="CENTER" cache="false" gridLinesVisible="false" hgap="10.0" prefHeight="456.0" prefWidth="415.0" vgap="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.welcomescreen.Controller">
   <children>
     <ImageView fitHeight="458.625" fitWidth="611.5" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0" />
     <GridPane GridPane.columnIndex="0" GridPane.rowIndex="0">
       <children>
         <StackPane id="StackPane" prefHeight="90.0" prefWidth="415.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
           <children>
-            <Button mnemonicParsing="false" text="Learn to Play" />
+            <Button id="LearnToPlay" mnemonicParsing="false" text="Learn to Play" />
           </children>
         </StackPane>
         <StackPane id="StackPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="415.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
           <children>
             <Button mnemonicParsing="false" text="Credits" />
+                  <TextField id="textField" text="textField" />
           </children>
         </StackPane>
         <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnIndex="0" GridPane.rowIndex="1">
@@ -77,9 +78,9 @@
                 <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                   <children>
                     <BorderPane layoutX="0.0" layoutY="7.0" prefHeight="114.0" prefWidth="415.0">
-                      <center>
-                        <CheckBox mnemonicParsing="false" text="Click Me to Choose File" />
-                      </center>
+                                 <center>
+                                    <Button id="ClickToOpenFile" mnemonicParsing="false" text="Click To Open File" BorderPane.alignment="CENTER" />
+                                 </center>
                     </BorderPane>
                   </children>
                 </AnchorPane>

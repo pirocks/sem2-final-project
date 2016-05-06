@@ -37,14 +37,16 @@ public class Soldier extends AbstractPerson implements VehicleContainer, MoneySo
     private Vehicle vehicle;
     private MoneySource toGuard;
     private double xDestination,yDestination;
-    public Soldier(Country parentCountry) {
+
+	public Soldier(Country parentCountry,LocationPlanet location) {
 	    //todo what about location here
 	    super(new PeopleInitialConstants(populationInitial,
 			    foodUsePerPersonInitial,
 			    crimeRiskInitial,
 			    crimeImpactInitial,
 			    salaryInitial,
-			    parentCountry));
+			    parentCountry,
+			    location));
 
 	    registerVehicleContainer();
 	    registerMoneySourceContainer();
@@ -67,12 +69,13 @@ public class Soldier extends AbstractPerson implements VehicleContainer, MoneySo
                 //how does this work
                 break;
             case Heal:
-                attackableConstants.health += healRate*time;
-                if(attackableConstants.health > 1.0)
-                    attackableConstants.health = 1.0;
+	            // TODO: 5/5/2016 update to use attackable constants
+//                attackableConstants.health += healRate*time;
+//                if(attackableConstants.health > 1.0)
+//                    attackableConstants.health = 1.0;
                 break;
         }
-        salaryGiver.pay(this,time*getSalary());
+        salaryGiver.pay(moneySource,time*getSalary());
     }
     @Override
     protected void dieSpecific()

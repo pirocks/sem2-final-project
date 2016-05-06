@@ -1,5 +1,7 @@
 package engine.tools.vehicles.space.cityship;
 
+import engine.planets.LocationPlanet;
+import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
@@ -7,17 +9,14 @@ import engine.universe.ResourceDemand;
  * Created by bob on 4/7/2016.
  */
 public class CityShipLarge extends CityShip {
-	public static int MaxPassengersInitial;
+	public static int maxPassengersInitial;
 	public static double maxWeightInitial;
 	public static double startHealthInitial;
 	public static double resistanceInitial;
 
-	protected CityShipLarge() {
-		super(new VehicleInitialConstants(
-				startHealthInitial,
-				resistanceInitial,
-				MaxPassengersInitial,
-				maxWeightInitial));
+
+	protected CityShipLarge(LocationPlanet locationPlanet) {
+		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial));
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {

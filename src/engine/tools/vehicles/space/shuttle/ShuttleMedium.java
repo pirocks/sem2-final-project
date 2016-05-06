@@ -1,5 +1,7 @@
 package engine.tools.vehicles.space.shuttle;
 
+import engine.planets.LocationPlanet;
+import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
@@ -13,13 +15,10 @@ public class ShuttleMedium extends Shuttle
 	public static double startHealthInitial;
 	public static double resistanceInitial;
 
-	protected ShuttleMedium() {
-		super(new VehicleInitialConstants(
-				startHealthInitial,
-				resistanceInitial,
-				MaxPassengersInitial,
-				maxWeightInitial));
+	protected ShuttleMedium(LocationPlanet locationPlanet) {
+		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),MaxPassengersInitial,maxWeightInitial));
 	}
+
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
 		return null;// TODO: 4/7/2016

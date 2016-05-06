@@ -8,3 +8,7 @@ if ai is turned on:
 if ui is turned on:
     should ask what to build.
     should ask what type of workers to train next
+
+task list:
+    manage what vehiles go where
+    based on who needs resurces. If resources are within the same city auto-select.

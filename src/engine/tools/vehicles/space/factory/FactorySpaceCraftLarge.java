@@ -1,5 +1,7 @@
 package engine.tools.vehicles.space.factory;
 
+import engine.planets.LocationPlanet;
+import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
@@ -9,17 +11,14 @@ import engine.universe.ResourceDemand;
  */
 public class FactorySpaceCraftLarge extends FactorySpaceCraft
 {
-	public static int MaxPassengersInitial;
+	public static int maxPassengersInitial;
 	public static double maxWeightInitial;
 	public static double startHealthInitial;
 	public static double resistanceInitial;
 
-	protected FactorySpaceCraftLarge() {
-		super(new VehicleInitialConstants(
-				startHealthInitial,
-				resistanceInitial,
-				MaxPassengersInitial,
-				maxWeightInitial));
+
+	protected FactorySpaceCraftLarge(LocationPlanet locationPlanet) {
+		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial));
 	}
 
 	@Override

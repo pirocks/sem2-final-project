@@ -17,7 +17,7 @@ public class DockYard extends Workplace
 	public static int maximumOccupancyInitial = -1;
 
 	public DockYard(CityBlock parentBlock, MoneySource owner) {
-		super(new AttackableConstants(healthInitial,resistanceInitial), parentBlock, owner);
+		super(new AttackableConstants(parentBlock.getLocation(),healthInitial,resistanceInitial), parentBlock, owner);
 	}
 
 	@Override

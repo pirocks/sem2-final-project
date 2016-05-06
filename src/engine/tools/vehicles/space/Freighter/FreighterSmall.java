@@ -1,5 +1,7 @@
 package engine.tools.vehicles.space.Freighter;
 
+import engine.planets.LocationPlanet;
+import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
@@ -13,13 +15,11 @@ public class FreighterSmall extends Freighter
 	public static double startHealthInitial;
 	public static double resistanceInitial;
 
-	protected FreighterSmall() {
-		super(new VehicleInitialConstants(
-				startHealthInitial,
-				resistanceInitial,
-				MaxPassengersInitial,
-				maxWeightInitial));
+	protected FreighterSmall(LocationPlanet location) {
+		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,location),MaxPassengersInitial,maxWeightInitial));
 	}
+
+
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
 		return null;// TODO: 4/7/2016

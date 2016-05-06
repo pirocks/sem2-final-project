@@ -22,6 +22,6 @@ public class GunInitialConstants {
 	                           double accuracy,
 	                           double range,
 	                           double damage) {
-		this(new AttackableConstants(healthInitial,resitanceIntial),accuracy,range,damage);
+		this(new AttackableConstants(null,healthInitial,resitanceIntial),accuracy,range,damage);
 	}
 }

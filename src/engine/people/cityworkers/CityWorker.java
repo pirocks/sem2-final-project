@@ -31,20 +31,20 @@ public abstract class CityWorker extends AbstractPerson implements BuildingConta
 		currentCity = city;
 	}
 	public void goHome() {
-		double distance = home.getLocation().distanceBetween(currentBuilding.getLocation());
+		double distance = home.getLocation().get(0).distanceBetween(currentBuilding.getLocation().get(0));
 		whereAmI = WhereAmI.GoingToHome;
 		currentBuilding = null;
 		timeRemainingAtLocation = (long)(distance*travelTimeConstant);
 	}
 	private void goToWork() {
-		double distance = getWorkBuilding().getLocation().distanceBetween(currentBuilding.getLocation());
+		double distance = getWorkBuilding().getLocation().get(0).distanceBetween(currentBuilding.getLocation().get(0));
 		whereAmI = WhereAmI.GoingToWork;
 		currentBuilding = null;
 		timeRemainingAtLocation = (long)(distance*travelTimeConstant);
 	}
 	private void goToHospital() {
 		Hospital h = currentCity.getLeastLoadedHosital();
-		double distance = h.getLocation().distanceBetween(currentBuilding.getLocation());
+		double distance = h.getLocation().get(0).distanceBetween(currentBuilding.getLocation().get(0));
 		whereAmI = WhereAmI.GoingToHospital;
 		currentBuilding = null;
 		timeRemainingAtLocation = (long)(distance*travelTimeConstant);

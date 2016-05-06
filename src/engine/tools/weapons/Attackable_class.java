@@ -15,7 +15,7 @@ public abstract class Attackable_class
 	}
 	public boolean recieveDamage(double damage,Weapon attacker)
 	{
-		assert(inRange(attacker.getRange(),attacker.getLocationPlanet()));
+//		assert(inRange(attacker.getRange(),attacker.getLocationPlanet()));// TODO: 5/5/2016 update this for arraylist locationd
 		startHealth -= damage/resistance;
 		if(amIDead())
 			return true;

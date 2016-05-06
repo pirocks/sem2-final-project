@@ -15,7 +15,7 @@ public class School extends Workplace
 	public static int maximumOccupancyInitial = -1;
 
 	public School(ArrayList<CityWorker> workers, CityBlock parentBlock, MoneySource owner) {
-		super(new AttackableConstants(healthInitial,resistanceInitial), parentBlock, owner);
+		super(new AttackableConstants(healthInitial,resistanceInitial,parentBlock.getLocation()), parentBlock, owner);
 	}
 
 	@Override
