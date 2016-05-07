@@ -21,6 +21,7 @@ public class utils
 		try {
 			Thread.sleep((long) (1000*secs));                 //1000 milliseconds is one second.
 		} catch(InterruptedException ex) {
+			System.out.print("something is wrong exception 1");
 			Thread.currentThread().interrupt();
 		}
 	}

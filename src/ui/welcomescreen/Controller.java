@@ -1,18 +1,36 @@
 package ui.welcomescreen;
 
-import engine.universe.utils;
+import engine.universe.UniverseGenerator;
+import engine.universe.UniverseRandomConstructionContext;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
+
 import java.net.URL;
 import java.util.*;
 
 
 
-public class Controller implements Initializable{
+public class Controller implements Initializable {
+
 	@FXML
-	TextField textField;
+	TextField enemyGovernmentStartWealth;
+	@FXML
+	MenuButton enemyGovernmentType;
+	@FXML
+	TextField startWealth;
+	@FXML
+	MenuButton governmentType;
+	@FXML
+	TextField numSolarSystem;
+	@FXML
+	TextField numPlanetsPerSolarSystem;
+	@FXML
+	TextField numEnemyCountries;
+	@FXML
+	TextField universeSize;
+
 	/**
 	 * Called to initialize a controller after its root element has been
 	 * completely processed.
@@ -24,12 +42,11 @@ public class Controller implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		System.out.println("working");
-//		textField.setText("jvh");
 	}
-	public void gjhv(String s)
+	@FXML public void generateClicked()
 	{
-		utils.sleep(100);
-		textField.setText(s);
-//		textField.setText(s);
+//		UniverseGenerator generator = new UniverseGenerator(new UniverseRandomConstructionContext());
+//		Thread universeGenerationThread = new Thread(generator);
 	}
+
 }
