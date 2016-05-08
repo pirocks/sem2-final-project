@@ -16,5 +16,13 @@ public class utils
 		double randomNum = Math.random();
 		return a.add((b.subtract(a)).multiply(new BigDecimal(randomNum)));
 	}
+	public static void sleep(double secs)
+	{
+		try {
+			Thread.sleep((long) (1000*secs));                 //1000 milliseconds is one second.
+		} catch(InterruptedException ex) {
+			Thread.currentThread().interrupt();
+		}
+	}
 
 }

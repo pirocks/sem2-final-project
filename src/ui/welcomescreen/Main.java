@@ -10,15 +10,15 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-	    FXMLLoader loader = new FXMLLoader(getClass().getResource("ui/welcomescreen/simple.fxml"));
+//	    System.out.print(getClass().getResource("simple.fxml").toString());
+	    FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
 	    Parent root = loader.load();
 	    Controller controller = (Controller)loader.getController();
 		loader.setController(controller);
-	    controller.gjhv("jbkij");
-
 	    primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
-        primaryStage.show();
+	    primaryStage.setScene(new Scene(root, 300, 275));
+	    primaryStage.show();
+//	    controller.gjhv("jbkij");
     }
 
 

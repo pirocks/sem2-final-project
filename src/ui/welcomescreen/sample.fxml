@@ -16,13 +16,13 @@
       <children>
         <StackPane id="StackPane" prefHeight="90.0" prefWidth="415.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
           <children>
-            <Button id="LearnToPlay" mnemonicParsing="false" text="Learn to Play" />
+            <Button fx:id="LearnToPlay" mnemonicParsing="false" text="Learn to Play" />
           </children>
         </StackPane>
         <StackPane id="StackPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="415.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
           <children>
             <Button mnemonicParsing="false" text="Credits" />
-                  <TextField id="textField" text="textField" />
+                  <TextField fx:id="textField" text="textField" />
           </children>
         </StackPane>
         <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnIndex="0" GridPane.rowIndex="1">
@@ -79,7 +79,7 @@
                   <children>
                     <BorderPane layoutX="0.0" layoutY="7.0" prefHeight="114.0" prefWidth="415.0">
                                  <center>
-                                    <Button id="ClickToOpenFile" mnemonicParsing="false" text="Click To Open File" BorderPane.alignment="CENTER" />
+                                    <Button fx:id="ClickToOpenFile" mnemonicParsing="false" text="Click To Open File" BorderPane.alignment="CENTER" />
                                  </center>
                     </BorderPane>
                   </children>

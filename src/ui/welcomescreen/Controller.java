@@ -1,5 +1,6 @@
 package ui.welcomescreen;
 
+import engine.universe.utils;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -11,7 +12,7 @@ import java.util.*;
 
 public class Controller implements Initializable{
 	@FXML
-	Button button;
+	TextField textField;
 	/**
 	 * Called to initialize a controller after its root element has been
 	 * completely processed.
@@ -27,7 +28,8 @@ public class Controller implements Initializable{
 	}
 	public void gjhv(String s)
 	{
-		button.setText(s);
+		utils.sleep(100);
+		textField.setText(s);
 //		textField.setText(s);
 	}
 }
