@@ -33,13 +33,14 @@ public class Universe implements Serializable, CountryContainer
         }
 	    universe = this;
     }
-	public Universe(UniverseRandomConstructionContext universeRandomConstructionContext)
+	public Universe(UniverseConstructionContext universeConstructionContext)
 	{
-		final int numCountries = universeRandomConstructionContext.numCountries;
-		final int numSolarSystems = universeRandomConstructionContext.numSolarSystems;
-		final double universeRadius = universeRandomConstructionContext.universeRadius;
-		final int numMinPlanets = universeRandomConstructionContext.numMinPlanets;
-		final int numMaxPlanrts = universeRandomConstructionContext.numMaxPlanets;
+		this(universeConstructionContext.numSolarSystems,universeConstructionContext.universeRadius);
+		/*final int numCountries = universeConstructionContext.numCountries;
+		final int numSolarSystems = universeConstructionContext.numSolarSystems;
+		final double universeRadius = universeConstructionContext.universeRadius;
+		final int numMinPlanets = universeConstructionContext.numMinPlanets;
+		final int numMaxPlanrts = universeConstructionContext.numMaxPlanets;
 		registerCountryContainer();
 		ArrayList<UnConstructedSolarSystem> UnConstructedSolarSystems = new ArrayList<>();
 		for(int i = 0; i < numSolarSystems;i++)
@@ -53,21 +54,22 @@ public class Universe implements Serializable, CountryContainer
 					new BigDecimal(y).multiply(largeNumber),
 					new BigDecimal(z).multiply(largeNumber)));
 		}
+		//the bellow needs to be completed b/c null pointer exceptions
 		ArrayList<SolarSystemRandomConstructionContext> constructionContexts = new ArrayList<>();
 		ArrayList<ArrayList<Country>> countries  = new ArrayList<>();
-		for(int  i = 0; i < universeRandomConstructionContext.numCountries;i++)
+		for(int  i = 0; i < universeConstructionContext.numCountries;i++)
 		{
-			countries.set(i,new ArrayList<>());// TODO: 4/11/2016 figure out how o get apprpriate num of countries//add them safter the fact  or make a condition that there must be more solars than countries
+			countries.add(new ArrayList<>());// TODO: 4/11/2016 figure out how o get apprpriate num of countries//add them safter the fact  or make a condition that there must be more solars than countries
 		}
 
 		int i = 0;
 		for(UnConstructedSolarSystem unConstructed:UnConstructedSolarSystems){
 			constructionContexts.add(new SolarSystemRandomConstructionContext(
-					unConstructed,universeRandomConstructionContext.numMaxPlanets,
-					universeRandomConstructionContext.numMinPlanets,countries.get(i)));
+					unConstructed,universeConstructionContext.numMaxPlanets,
+					universeConstructionContext.numMinPlanets,countries.get(i)));
 			i++;
 		}
-		universe = this;
+		universe = this;*/
 	}
     @Override
     public void remove(Country country,Country conqueror) {

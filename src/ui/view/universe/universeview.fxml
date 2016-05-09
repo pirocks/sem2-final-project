@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.embed.swing.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.*?>
@@ -13,7 +14,7 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem fx:id="closeButton" mnemonicParsing="false" onAction="#initialize" text="Close" />
+              <MenuItem fx:id="closeButton" mnemonicParsing="false" onAction="#onClose" text="Close" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
@@ -30,23 +31,19 @@
       </MenuBar>
    </top>
    <left>
-      <Accordion fx:id="accordion" BorderPane.alignment="CENTER">
-        <panes>
-          <TitledPane animated="false" text="untitled 1">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
-          </TitledPane>
-        </panes>
-      </Accordion>
+      <ScrollPane prefViewportHeight="375.0">
+         <content>
+            <Accordion fx:id="accordion" BorderPane.alignment="CENTER" />
+         </content>
+      </ScrollPane>
    </left>
    <bottom>
       <Group BorderPane.alignment="CENTER" />
    </bottom>
    <center>
-      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <ScrollPane>
          <content>
-            <Pane prefHeight="501.0" prefWidth="471.0" />
+            <SwingNode fx:id="swingNode" BorderPane.alignment="CENTER" />
          </content>
       </ScrollPane>
    </center>

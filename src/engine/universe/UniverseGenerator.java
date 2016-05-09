@@ -1,5 +1,7 @@
 package engine.universe;
 
+import ui.view.universe.MainGameUniverse;
+
 /**
  * Created by bob on 5/7/2016.
  *
@@ -7,10 +9,10 @@ package engine.universe;
 public class UniverseGenerator implements Runnable
 {
 	public static Universe universe;
-	private UniverseRandomConstructionContext universeRandomConstructionContext;
-	public UniverseGenerator(UniverseRandomConstructionContext universeRandomConstructionContext)
+	private UniverseConstructionContext universeConstructionContext;
+	public UniverseGenerator(UniverseConstructionContext universeConstructionContext)
 	{
-		this.universeRandomConstructionContext = universeRandomConstructionContext;
+		this.universeConstructionContext = universeConstructionContext;
 	}
 	/**
 	 * When an object implementing interface <code>Runnable</code> is used
@@ -25,8 +27,8 @@ public class UniverseGenerator implements Runnable
 	 */
 	@Override
 	public void run() {
-		universe = new Universe(universeRandomConstructionContext);
+		universe = new Universe(universeConstructionContext);
 		Universe.universe = universe;
-		Thread mainGame = new Thread(new MainGame());
+		new MainGameUniverse().run();
 	}
 }

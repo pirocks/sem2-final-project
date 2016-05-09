@@ -16,7 +16,7 @@ public class Main extends Application {
 //	    Controller controller = (Controller)loader.getController();
 //		loader.setController(controller);
 	    primaryStage.setTitle("Hello World");
-	    primaryStage.setScene(new Scene(root, 300, 275));
+	    primaryStage.setScene(new Scene(root));
 	    primaryStage.show();
     }
 
@@ -24,8 +24,8 @@ public class Main extends Application {
         launch(args);
     }
 
-    public void play()
-    {
-        return;
-    }
+//    public void play()
+//    {
+//        return;
+//    }
 }

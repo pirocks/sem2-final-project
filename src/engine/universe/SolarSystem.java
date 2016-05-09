@@ -75,4 +75,12 @@ public class SolarSystem implements PlanetContainer, Serializable
     public void remove(Planet planet) {
         planets.remove(planet);
     }
+
+	@Override
+	public String toString() {
+		String out = "";
+		out += "Name:" + name;
+		out += "\nPlanets" + planets.toString();
+		return out;
+	}
 }

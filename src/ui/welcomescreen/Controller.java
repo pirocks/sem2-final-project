@@ -1,13 +1,12 @@
 package ui.welcomescreen;
 
 import engine.universe.UniverseGenerator;
-import engine.universe.UniverseRandomConstructionContext;
+import engine.universe.UniverseConstructionContext;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
 
-import java.math.BigDecimal;
 import java.net.URL;
 import java.util.*;
 
@@ -54,7 +53,7 @@ public class Controller implements Initializable {
 		catch (NumberFormatException e)
 		{
 			// TODO: 5/7/2016 handle invalid values
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 		Double universeRadius = Double.MAX_VALUE;
 		try
@@ -64,7 +63,7 @@ public class Controller implements Initializable {
 		catch (Exception e)
 		{
 			// TODO: 5/7/2016 handle invalid
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 		int numCountries = 10;
 		try
@@ -73,7 +72,7 @@ public class Controller implements Initializable {
 		}
 		catch (Exception e)
 		{
-			e.printStackTrace();// TODO: 5/7/2016
+//			e.printStackTrace();// TODO: 5/7/2016
 		}
 		int numPlanets = 500;
 		try
@@ -82,17 +81,17 @@ public class Controller implements Initializable {
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();// TODO: 5/7/2016
+//			e.printStackTrace();// TODO: 5/7/2016
 		}
 
 		UniverseGenerator generator = new UniverseGenerator(
-				new UniverseRandomConstructionContext(
+				new UniverseConstructionContext(
 						solaySystemCount,universeRadius,
 						numCountries,numPlanets,numPlanets
 				));
-		Thread universeGenerationThread = new Thread(generator);
-		universeGenerationThread.run();
-
+//		Thread universeGenerationThread = new Thread(generator);
+//		universeGenerationThread.run();
+		generator.run();
 	}
 
 }

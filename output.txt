@@ -164,7 +164,7 @@ class engine.universe.Star
 class engine.universe.UnConstructedSolarSystem
 class engine.universe.UniversalConstants
 class engine.universe.Universe
-class engine.universe.UniverseRandomConstructionContext
+class engine.universe.UniverseConstructionContext
 class engine.universe.utils
 class java.math.BigDecimal
 class java.util.ArrayList
@@ -895,7 +895,7 @@ engine.universe.Universe ..> java.util.ArrayList
 engine.universe.Universe ..> java.util.concurrent.ThreadLocalRandom
 engine.universe.Universe --|> engine.universe.CountryContainer
 engine.universe.Universe --|> java.io.Serializable
-engine.universe.UniverseRandomConstructionContext ..> java.math.BigDecimal
+engine.universe.UniverseConstructionContext ..> java.math.BigDecimal
 engine.universe.utils ..> java.math.BigDecimal
 engine.universe.utils ..> java.util.concurrent.ThreadLocalRandom
 ui.requests.BuildingTypeRequest ..> engine.buildings.Building

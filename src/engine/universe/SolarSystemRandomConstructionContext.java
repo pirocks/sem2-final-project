@@ -40,7 +40,7 @@ public class SolarSystemRandomConstructionContext {
 		this.numMinPlanets = numMinPlanets;
 		this.countries = countries;
 	}
-	public SolarSystemRandomConstructionContext(UniverseRandomConstructionContext u){
+	public SolarSystemRandomConstructionContext(UniverseConstructionContext u){
 
 	}
 }

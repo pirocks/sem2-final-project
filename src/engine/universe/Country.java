@@ -30,7 +30,7 @@ public class Country extends MoneySource implements Serializable,PersonContainer
     public ArrayList<Road> roads;
     private City capitalCity;
 
-    public Country(UniverseRandomConstructionContext u)
+    public Country(UniverseConstructionContext u)
     {
         super(Double.NaN);
         try {
