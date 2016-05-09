@@ -26,9 +26,9 @@ public class SolarSystemRandomConstructionContext {
 	public int numMaxPlanets;
 	public BigDecimal maxRadius;
 	public BigDecimal minRadius;
-	public PlanetRandomConstructionContext context1;
-	public PlanetRandomConstructionContext context2;
-   public PlanetRandomConstructionContext context3;
+	public PlanetConstructionContext context1;
+	public PlanetConstructionContext context2;
+   public PlanetConstructionContext context3;
   
 	public SolarSystemRandomConstructionContext(
 			UnConstructedSolarSystem unConstructedSolarSystem,

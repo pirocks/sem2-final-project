@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * Created by bob on 4/10/2016.
  *
  */
-public class PlanetRandomConstructionContext {
+public class PlanetConstructionContext {
     BigDecimal         radius;
     Star               star;
     ArrayList<Country> countries;
@@ -30,7 +30,7 @@ public class PlanetRandomConstructionContext {
     double             FoodAbundance;
     double             WaterAbundance;
 
-    private void copyInto(PlanetRandomConstructionContext p) {
+    private void copyInto(PlanetConstructionContext p) {
         this.radius = p.radius;
         this.star = p.star;
         this.countries = p.countries;
@@ -45,7 +45,7 @@ public class PlanetRandomConstructionContext {
         this.WaterAbundance = p.WaterAbundance;
     }
 
-    public PlanetRandomConstructionContext(SolarSystemRandomConstructionContext s) {
+    public PlanetConstructionContext(SolarSystemRandomConstructionContext s) {
         int num = utils.getRandomInt(0, 3);
         switch (num) {
             case 0:

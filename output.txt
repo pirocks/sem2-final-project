@@ -37,7 +37,7 @@ annotation java.lang.Override
 class ai.mayor.AiMayor
 class ai.ruler.AiRuler
 class com.sun.org.apache.regexp.internal.RE
-class engine.buildings.BuildingRandomConstructionContext
+class engine.buildings.BuildingConstructionContext
 class engine.buildings.UnderConstruction
 class engine.buildings.housing.ApartmentBlock
 class engine.buildings.housing.RulersHouse
@@ -54,7 +54,7 @@ class engine.buildings.workplaces.Warehouse
 class engine.cities.City
 class engine.cities.CityBlock
 class engine.cities.CityContainers
-class engine.cities.CityRandomConstructionContext
+class engine.cities.CityConstructionContext
 class engine.cities.FarmLand
 class engine.people.MoneySource
 class engine.people.PeopleRandomConstructionContext
@@ -69,12 +69,12 @@ class engine.people.cityworkers.Teacher
 class engine.people.cityworkers.Worker
 class engine.planets.Continent
 class engine.planets.Grid
-class engine.planets.GridRandomConstructionContext
+class engine.planets.GridConstructionContext
 class engine.planets.LocationPlanet
 class engine.planets.NaturalResource
 class engine.planets.Planet
 class engine.planets.PlanetContainers
-class engine.planets.PlanetRandomConstructionContext
+class engine.planets.PlanetConstructionContext
 class engine.planets.PreliminaryGrid
 class engine.planets.Road
 class engine.planets.RoadContainers
@@ -536,8 +536,8 @@ engine.planets.Grid --|> engine.cities.CityContainer
 engine.planets.Grid --|> engine.planets.PlanetContainer
 engine.planets.Grid --|> engine.universe.CountryContainer
 engine.planets.Grid --|> java.io.Serializable
-engine.planets.GridRandomConstructionContext ..> engine.planets.hazards.NaturalHazard
-engine.planets.GridRandomConstructionContext ..> java.util.ArrayList
+engine.planets.GridConstructionContext ..> engine.planets.hazards.NaturalHazard
+engine.planets.GridConstructionContext ..> java.util.ArrayList
 engine.planets.LocationPlanet ..> engine.buildings.Building
 engine.planets.LocationPlanet ..> java.lang.Override
 engine.planets.LocationPlanet ..> engine.cities.City
@@ -555,11 +555,11 @@ engine.planets.Planet --|> engine.universe.CountryContainer
 engine.planets.Planet --|> java.io.Serializable
 engine.planets.PlanetContainers ..> java.lang.Deprecated
 engine.planets.PlanetContainers ..> java.util.ArrayList
-engine.planets.PlanetRandomConstructionContext ..> engine.universe.Country
-engine.planets.PlanetRandomConstructionContext ..> engine.universe.SolarSystemRandomConstructionContext
-engine.planets.PlanetRandomConstructionContext ..> engine.universe.Star
-engine.planets.PlanetRandomConstructionContext ..> java.math.BigDecimal
-engine.planets.PlanetRandomConstructionContext ..> java.util.ArrayList
+engine.planets.PlanetConstructionContext ..> engine.universe.Country
+engine.planets.PlanetConstructionContext ..> engine.universe.SolarSystemRandomConstructionContext
+engine.planets.PlanetConstructionContext ..> engine.universe.Star
+engine.planets.PlanetConstructionContext ..> java.math.BigDecimal
+engine.planets.PlanetConstructionContext ..> java.util.ArrayList
 engine.planets.PreliminaryGrid ..> engine.planets.hazards.NaturalHazard
 engine.planets.PreliminaryGrid ..> engine.universe.Resource
 engine.planets.PreliminaryGrid ..> java.util.ArrayList
@@ -880,7 +880,7 @@ engine.universe.Resource --|> java.io.Serializable
 engine.universe.ResourceDemand --|> java.io.Serializable
 engine.universe.SolarSystem ..> java.lang.Override
 engine.universe.SolarSystem ..> engine.planets.Planet
-engine.universe.SolarSystem ..> engine.planets.PlanetRandomConstructionContext
+engine.universe.SolarSystem ..> engine.planets.PlanetConstructionContext
 engine.universe.SolarSystem ..> java.math.BigDecimal
 engine.universe.SolarSystem ..> java.util.ArrayList
 engine.universe.SolarSystem --|> engine.planets.PlanetContainer

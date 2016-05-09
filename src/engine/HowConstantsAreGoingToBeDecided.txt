@@ -30,8 +30,13 @@ variable names:
 	
 
 
+h and r should be decided such that neither can destry each other easily
 
+d should be determined based on type and h and r
 
+p should be determined based on max weight capacity and size
+
+should also be a universal constants price
 
 
 

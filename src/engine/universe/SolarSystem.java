@@ -1,8 +1,8 @@
 package engine.universe;
 
 import engine.planets.Planet;
+import engine.planets.PlanetConstructionContext;
 import engine.planets.PlanetContainer;
-import engine.planets.PlanetRandomConstructionContext;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -18,12 +18,25 @@ public class SolarSystem implements PlanetContainer, Serializable
     BigDecimal x,y,z;
     private ArrayList<Planet> planets = new ArrayList<Planet>();
     private ArrayList<BigDecimal> radii = new ArrayList<>();
-    public SolarSystem(BigDecimal x,BigDecimal y, BigDecimal z)
+    public String name;
+	public static String[] solarSystemNames = {
+		    "Kylar","Solar System 1","Solar System 2","Solar System 3"
+    };
+	public static int solarSystemNameCount = 0;
+	public SolarSystem(BigDecimal x,BigDecimal y, BigDecimal z)
     {
         registerPlanetContainer();
         this.x = x;
         this.y = y;
         this.z = z;
+	    try {
+		    name = solarSystemNames[solarSystemNameCount];
+	    }
+	    catch (Exception e)
+	    {
+		    name = "Solar System" + solarSystemNameCount;
+	    }
+	    solarSystemNameCount++;
     }
     public SolarSystem(SolarSystemRandomConstructionContext s)
     {
@@ -32,9 +45,17 @@ public class SolarSystem implements PlanetContainer, Serializable
 	    for(int i = 0; i < numPlanets;i++)
 	    {
 			radii.add(i,utils.getRandomBigDecimal(s.minRadius,s.maxRadius));
-		    PlanetRandomConstructionContext c = new PlanetRandomConstructionContext(s);
+		    PlanetConstructionContext c = new PlanetConstructionContext(s);
 		    planets.add(new Planet(c));// TODO: 4/11/2016 planet construction cntext
 	    }
+	    try {
+		    name = solarSystemNames[solarSystemNameCount];
+	    }
+	    catch (Exception e)
+	    {
+		    name = "Solar System" + solarSystemNameCount;
+	    }
+	    solarSystemNameCount++;
     }
     public BigDecimal getXInUniverse()
     {

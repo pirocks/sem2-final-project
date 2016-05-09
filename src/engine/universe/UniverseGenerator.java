@@ -27,5 +27,6 @@ public class UniverseGenerator implements Runnable
 	public void run() {
 		universe = new Universe(universeRandomConstructionContext);
 		Universe.universe = universe;
+		Thread mainGame = new Thread(new MainGame());
 	}
 }

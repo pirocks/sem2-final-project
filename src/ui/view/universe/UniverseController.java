@@ -1,6 +1,11 @@
 package ui.view.universe;
 
+import engine.universe.Universe;
+import javafx.embed.swing.SwingNode;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Accordion;
+import javafx.scene.control.MenuItem;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -10,6 +15,15 @@ import java.util.ResourceBundle;
  *
  */
 public class UniverseController implements Initializable {
+
+	@FXML
+	Accordion accordion;
+	@FXML
+	MenuItem  about;
+	@FXML
+	MenuItem closeButton;
+	@FXML
+	SwingNode swingNode;
 	/**
 	 * Called to initialize a controller after its root element has been
 	 * completely processed.
@@ -20,6 +34,13 @@ public class UniverseController implements Initializable {
 	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		swingNode.setContent(new UniverseJPanel(Universe.universe));
+	}
 
+	@FXML
+	public void onClose()
+	{
+		// TODO: 5/8/2016 implement global close
+		System.exit(0);
 	}
 }

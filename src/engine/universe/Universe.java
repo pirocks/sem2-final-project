@@ -8,15 +8,15 @@ import java.util.concurrent.ThreadLocalRandom;
 /**
  * Created by bob on 3/5/2016.
  * Created by bob on 3/5/2016.
- * todo serialazable won't work on container classes need to fix
+ * todo serializable won't work on container classes need to fix
  */
  
 
 public class Universe implements Serializable, CountryContainer
 {
-	public static Universe universe;
-    private ArrayList<SolarSystem> solarSystems;
-    private ArrayList<Country> countries;
+	public transient static Universe universe;// TODO: 5/8/2016 make this non tranient//  figure out how this will load
+	private ArrayList<SolarSystem> solarSystems;
+	private ArrayList<Country> countries;
     public Universe(int numSolarSystems,double size)//size is not related to engine.universe units
     {
         registerCountryContainer();
@@ -33,7 +33,6 @@ public class Universe implements Serializable, CountryContainer
         }
 	    universe = this;
     }
-
 	public Universe(UniverseRandomConstructionContext universeRandomConstructionContext)
 	{
 		final int numCountries = universeRandomConstructionContext.numCountries;
@@ -70,9 +69,17 @@ public class Universe implements Serializable, CountryContainer
 		}
 		universe = this;
 	}
-
     @Override
     public void remove(Country country,Country conqueror) {
         countries.remove(country);
     }
+
+	public ArrayList<SolarSystem> getSolarSystems() {
+		return solarSystems;
+	}
+
+	public ArrayList<Country> getCountries() {
+		return countries;
+	}
+
 }

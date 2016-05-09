@@ -32,7 +32,7 @@ public class Planet implements Serializable,CountryContainer
         grids = new Grid[size][size * 2];
     }
 
-    public Planet(PlanetRandomConstructionContext c) {
+    public Planet(PlanetConstructionContext c) {
 
     }
 

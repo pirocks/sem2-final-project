@@ -5,10 +5,8 @@ import engine.buildings.BuildingContainer;
 import engine.buildings.housing.Housing;
 import engine.buildings.housing.RulersHouse;
 import engine.buildings.workplaces.Hospital;
-import engine.buildings.workplaces.Workplace;
 import engine.people.AbstractPerson;
 import engine.people.PersonContainer;
-import engine.people.cityworkers.Bureaucrat;
 import engine.people.cityworkers.CityWorker;
 import engine.universe.Country;
 import engine.universe.CountryContainer;
@@ -31,11 +29,11 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 	public MoneySource moneySource;
 	public static double resistanceInitial;
 	public static double healthInitial;
-	//remeber to add stuff to thhe unique id if I add more member vars
+	//remember to add stuff to the unique id if I add more member vars
 	//read the above comment
 //    private MoneySource moneySource;
 	private boolean isCapital;
-	private int x,y;//center of city in grid//will be townhall locatiuon
+	private int x,y;//center of city in grid//will be townHall location
 	private Grid parentGrid;//can be used to find location//engine.cities limited to one grid
 	// private ArrayList<Grid> grids;//not yet
 	private ArrayList<CityBlock> cityBlocks;
@@ -43,7 +41,7 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 	public ArrayList<CityWorker> residents;
 //    public ArrayList<CityWorker> unemployedResidents;
 	private Country parentCountry;//make sutre to change when cuity is captured.
-	private AttackableConstants attackableConstants;
+//	private AttackableConstants attackableConstants;
 	public City(LocationPlanet location,boolean isCapital,Grid parentGrid,Country parentCountry,double wealth, int x, int y) {
 		super(new AttackableConstants(healthInitial,resistanceInitial,location));
 		moneySource = new MoneySource(wealth);
@@ -59,6 +57,11 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 		this.y = y;
 		this.parentGrid = parentGrid;
 		this.parentCountry = parentCountry;
+	}
+	public City(CityConstructionContext cityConstructionContext)
+	{
+		super(healthInitial,resistanceInitial,cityConstructionContext.locationPlanet);
+		// TODO: 5/8/2016 implement me
 	}
 	public ArrayList<CityBlock> getCityBlocks()
 	{

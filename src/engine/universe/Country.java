@@ -19,7 +19,7 @@ public class Country extends MoneySource implements Serializable,PersonContainer
 {
     public static String[] CountryNames = 
     {"England","USA","France","China","Tanzania","Botswana",
-        "Seychelles","Scotland"   
+        "Seychelles","Scotland","Liechtenstein","Comoros","Tuvalu"
     };
     public static int countryNameCount = 0;
     private ArrayList<Grid> grids;
@@ -33,8 +33,14 @@ public class Country extends MoneySource implements Serializable,PersonContainer
     public Country(UniverseRandomConstructionContext u)
     {
         super(Double.NaN);
-        name = CountryNames[countryNameCount];
-        countryNameCount++;
+        try {
+	        name = CountryNames[countryNameCount];
+        }
+        catch (Exception e)
+        {
+	        name = "country" + countryNameCount;
+        }
+	    countryNameCount++;
     }
 
     // public Country(double wealth,ArrayList<Grid> grids,String name)
