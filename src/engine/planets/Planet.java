@@ -26,14 +26,29 @@ public class Planet implements Serializable,CountryContainer
     private double planetRadius;//radius of spher planet
     private double orientationAtCurrentTime;//0 to 360 degrees//need something to be done every second
     private Grid[][] grids;//make sure that # of grids is based on size of plannet, to maintain coherent sizing of everything
+    public static String[] names = {"Earth","Mars","Venus","Mercury","Jupiter","Pluto","Saturn","Neptune","Uranus"};
+	public static int nameCount = 0;
+	public String name;
+
+	public void setName()
+	{
+		try {
+			name = names[nameCount];
+		} catch (Exception e) {
+			name = "Planet#" + nameCount;
+		}
+		nameCount++;
+	}
+
     public Planet(int size)
     {
         registerCountryContainer();
         grids = new Grid[size][size * 2];
+	    setName();
     }
 
     public Planet(PlanetConstructionContext c) {
-
+		setName();
     }
 
     public double getplanetRadius()

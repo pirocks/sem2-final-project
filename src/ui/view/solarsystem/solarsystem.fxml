@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.embed.swing.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.view.solarsystem.SolarSystemController">
    <children>
@@ -25,6 +25,23 @@
               </menus>
             </MenuBar>
          </top>
+         <left>
+            <Accordion fx:id="accordion" BorderPane.alignment="CENTER">
+               <panes>
+                  <TitledPane animated="false" text="untitled">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                  </TitledPane>
+               </panes></Accordion>
+         </left>
+         <center>
+            <ScrollPane>
+               <content>
+                  <SwingNode fx:id="swingNode" BorderPane.alignment="CENTER" />
+               </content>
+            </ScrollPane>
+         </center>
       </BorderPane>
    </children>
 </AnchorPane>

@@ -3,6 +3,8 @@ package ui.view.universe;
 import engine.universe.SolarSystem;
 import engine.universe.Universe;
 import javafx.embed.swing.SwingNode;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Group;
@@ -15,6 +17,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import ui.view.solarsystem.SolarSystemThread;
 
 import javax.swing.*;
 import java.awt.*;
@@ -54,7 +57,7 @@ public class UniverseController implements Initializable {
 		for(SolarSystem s: Universe.universe.getSolarSystems()) {
 			VBox pane = new VBox();
 			pane.getChildren().add(new Text(s.toString()));
-			Button button = new Button("Go To SolarSystem");
+			Button button = new SolarSystemButton(s,"Go To SolarSystem");
 			pane.getChildren().add(button);
 			accordion.getPanes().add(
 					new TitledPane(s.name, pane));
@@ -62,6 +65,22 @@ public class UniverseController implements Initializable {
 //		anchorPane.autosize();
 //		pane  = anchorPane;
 	}
+
+	public class SolarSystemButton extends Button
+	{
+		private SolarSystem solarSystem;
+		public SolarSystemButton(SolarSystem s,String string)
+		{
+			super(string);
+			solarSystem = s;
+			super.setOnAction(new EventHandler<ActionEvent>() {
+				@Override public void handle(ActionEvent e) {
+					new SolarSystemThread(solarSystem).run();
+				}
+			});
+		}
+	}
+
 
 	@FXML
 	public void onClose()

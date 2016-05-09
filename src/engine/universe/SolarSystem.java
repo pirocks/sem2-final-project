@@ -16,7 +16,12 @@ import java.util.ArrayList;
 public class SolarSystem implements PlanetContainer, Serializable
 {
     BigDecimal x,y,z;
-    private ArrayList<Planet> planets = new ArrayList<Planet>();
+
+	public ArrayList<Planet> getPlanets() {
+		return planets;
+	}
+
+	private ArrayList<Planet> planets = new ArrayList<Planet>();
     private ArrayList<BigDecimal> radii = new ArrayList<>();
     public String name;
 	public static String[] solarSystemNames = {

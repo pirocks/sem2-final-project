@@ -30,7 +30,7 @@ public class MainGameUniverse implements Runnable {
 	@Override
 	public void run() {
 		//init the Universe window
-		System.out.print("running");
+//		System.out.print("running");
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("universeview.fxml"));
 		Parent root = null;
 		try {
