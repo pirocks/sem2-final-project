@@ -1,9 +1,21 @@
 package ui.view.city;
 
+import engine.cities.City;
+import engine.universe.Country;
+
 /**
  * Created by bob on 5/9/2016.
+ *
  */
 public class CityThread implements Runnable{
+	private City city;
+	private Country playersCountry;
+
+	public CityThread(City city, Country playersCountry) {
+		this.city = city;
+		this.playersCountry = playersCountry;
+	}
+
 	/**
 	 * When an object implementing interface <code>Runnable</code> is used
 	 * to create a thread, starting the thread causes the object's

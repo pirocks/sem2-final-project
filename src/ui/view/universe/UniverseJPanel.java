@@ -21,6 +21,7 @@ public class UniverseJPanel extends JPanel
 	{
 		this.universe = universe;
 		super.setPreferredSize(new Dimension(1280,1381));
+		super.repaint();
 	}
 
 	@Override
@@ -51,6 +52,8 @@ public class UniverseJPanel extends JPanel
 			System.exit(35467);
 		}
 		add(new JLabel(new ImageIcon(background)));
+		revalidate();
+		repaint();
 //		g.fillRect(0,100,100,100);
 //		g.fillRect(-1000,-1000,2000000,2000000);
 	}

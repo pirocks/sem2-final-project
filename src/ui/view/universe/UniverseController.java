@@ -53,7 +53,8 @@ public class UniverseController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 //		swingNode.setContent(new UniverseJPanel(Universe.universe));
-		swingNode.setContent(new UniverseJPanel(Universe.universe));
+		JPanel panel = new UniverseJPanel(Universe.universe);
+		swingNode.setContent(panel);
 		for(SolarSystem s: Universe.universe.getSolarSystems()) {
 			VBox pane = new VBox();
 			pane.getChildren().add(new Text(s.toString()));

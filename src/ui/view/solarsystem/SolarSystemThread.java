@@ -1,5 +1,6 @@
 package ui.view.solarsystem;
 
+import engine.universe.Country;
 import engine.universe.SolarSystem;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,6 +15,8 @@ import java.io.IOException;
  */
 public class SolarSystemThread implements Runnable {
 	private SolarSystem solarSystem;
+	private Country playersCountry;
+
 	public SolarSystemThread(SolarSystem s)
 	{
 		solarSystem = s;
@@ -41,7 +44,8 @@ public class SolarSystemThread implements Runnable {
 			System.exit(102300);
 		}
 		SolarSystemController controller = loader.getController();
-		controller.updateAccordion(solarSystem);
+		controller.updateVars(solarSystem,playersCountry);
+		controller.updateAccordion();
 		Stage primaryStage =  new Stage();
 		primaryStage.setTitle(solarSystem.name);
 		primaryStage.setScene(new Scene(root));

@@ -16,11 +16,12 @@ public class SolarSystemConstructionContext {
 	public double minRadius;
 	public double x,y,z;//location
 	public Star star;
+	// TODO: 5/9/2016 change this to an arraylist
 	public PlanetConstructionContext context1;
 	public PlanetConstructionContext context2;
     public PlanetConstructionContext context3;
   
-	public SolarSystemConstructionContext(
+	/*public SolarSystemConstructionContext(
 			UnConstructedSolarSystem unConstructedSolarSystem,
 			int numMaxPlanets, int numMinPlanets,
 			ArrayList<Country> countries)
@@ -29,15 +30,20 @@ public class SolarSystemConstructionContext {
 		this.numMaxPlanets = numMaxPlanets;
 		this.numMinPlanets = numMinPlanets;
 		this.countries = countries;
-	}
+	}*/
 	public SolarSystemConstructionContext(UniverseConstructionContext u){
 		numMaxPlanets = u.numMaxPlanets;
 		numMinPlanets = u.numMinPlanets;
 		maxRadius = u.solarSystemMaxRadius;
 		minRadius = u.solarSystemMinRadius;
 		x = utils.getRandomDouble(0,u.universeRadius);
+		y = utils.getRandomDouble(0,u.universeRadius);
+		z = utils.getRandomDouble(0,u.universeRadius);
+		context1 = generateRandomPlanetContext(u);
+		context2 = generateRandomPlanetContext(u);
+		context3 = generateRandomPlanetContext(u);
 	}
-	public PlanetConstructionContext generateRandomPlanetContext(UniverseConstructionContext u,SolarSystemConstructionContext s)
+	public PlanetConstructionContext generateRandomPlanetContext(UniverseConstructionContext u)
 	{
 		double radius = utils.getRandomDouble(u.solarSystemMinRadius,u.solarSystemMaxRadius);
 		int gridNum = utils.getRandomInt(u.minPlanetSize,u.maxPlanetSize);
@@ -63,6 +69,6 @@ public class SolarSystemConstructionContext {
 				HeliumAbundance,
 				FoodAbundance,
 				WaterAbundance
-		)
+		);
 	}
 }

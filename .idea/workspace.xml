@@ -3,23 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/cities/City.java" afterPath="$PROJECT_DIR$/src/engine/cities/City.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/planets/Grid.java" afterPath="$PROJECT_DIR$/src/engine/planets/Grid.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/planets/GridConstructionContext.java" afterPath="$PROJECT_DIR$/src/engine/planets/GridConstructionContext.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/planets/Planet.java" afterPath="$PROJECT_DIR$/src/engine/planets/Planet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/planets/PlanetConstructionContext.java" afterPath="$PROJECT_DIR$/src/engine/planets/PlanetConstructionContext.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/space/EmpWeapon.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/space/EmpWeapon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/space/Laser.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/space/Laser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/space/SpaceMissile.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/space/SpaceMissile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/space/SpaceWeapon.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/space/SpaceWeapon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/universe/LocationUniverse.java" afterPath="$PROJECT_DIR$/src/engine/universe/LocationUniverse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/universe/SolarSystem.java" afterPath="$PROJECT_DIR$/src/engine/universe/SolarSystem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/planets/hazards/Volcano.java" afterPath="$PROJECT_DIR$/src/engine/planets/hazards/Volcano.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/universe/SolarSystemConstructionContext.java" afterPath="$PROJECT_DIR$/src/engine/universe/SolarSystemConstructionContext.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/universe/Star.java" afterPath="$PROJECT_DIR$/src/engine/universe/Star.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/universe/UnConstructedSolarSystem.java" afterPath="$PROJECT_DIR$/src/engine/universe/UnConstructedSolarSystem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/universe/UniversalConstants.java" afterPath="$PROJECT_DIR$/src/engine/universe/UniversalConstants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/universe/Universe.java" afterPath="$PROJECT_DIR$/src/engine/universe/Universe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/universe/UniverseConstructionContext.java" afterPath="$PROJECT_DIR$/src/engine/universe/UniverseConstructionContext.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/universe/utils.java" afterPath="$PROJECT_DIR$/src/engine/universe/utils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/city/CityThread.java" afterPath="$PROJECT_DIR$/src/ui/view/city/CityThread.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/planet/PlanetController.java" afterPath="$PROJECT_DIR$/src/ui/view/planet/PlanetController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/planet/PlanetThread.java" afterPath="$PROJECT_DIR$/src/ui/view/planet/PlanetThread.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/planet/planetview.fxml" afterPath="$PROJECT_DIR$/src/ui/view/planet/planetview.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/solarsystem/SolarSystemController.java" afterPath="$PROJECT_DIR$/src/ui/view/solarsystem/SolarSystemController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/solarsystem/SolarSystemThread.java" afterPath="$PROJECT_DIR$/src/ui/view/solarsystem/SolarSystemThread.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/solarsystem/solarsystem.fxml" afterPath="$PROJECT_DIR$/src/ui/view/solarsystem/solarsystem.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/universe/MainGameUniverse.java" afterPath="$PROJECT_DIR$/src/ui/view/universe/MainGameUniverse.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/universe/UniverseController.java" afterPath="$PROJECT_DIR$/src/ui/view/universe/UniverseController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/universe/UniverseJPanel.java" afterPath="$PROJECT_DIR$/src/ui/view/universe/UniverseJPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/welcomescreen/Controller.java" afterPath="$PROJECT_DIR$/src/ui/welcomescreen/Controller.java" />
     </list>
     <ignored path="testing.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,11 +47,85 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SolarSystemConstructionContext.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/engine/universe/SolarSystemConstructionContext.java">
+      <file leaf-file-name="SolarSystemController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ui/view/solarsystem/SolarSystemController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+            <state relative-caret-position="399">
+              <caret line="66" column="45" selection-start-line="66" selection-start-column="45" selection-end-line="66" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Planet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/engine/planets/Planet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#setName#0;class#Planet#0" expanded="false" />
+                <element signature="method#Planet#0;class#Planet#0" expanded="false" />
+                <element signature="method#getXInUniverse#0;class#Planet#0" expanded="false" />
+                <element signature="method#getYInUniverse#0;class#Planet#0" expanded="false" />
+                <element signature="method#getCountriesCities#0;class#Planet#0" expanded="false" />
+                <element signature="method#remove#0;class#Planet#0" expanded="false" />
+                <element signature="method#toString#0;class#Planet#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Grid.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/engine/planets/Grid.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="49" column="70" selection-start-line="49" selection-start-column="70" selection-end-line="49" selection-end-column="70" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GridConstructionContext.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/engine/planets/GridConstructionContext.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="365">
+              <caret line="57" column="26" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlanetController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ui/view/planet/PlanetController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="269">
+              <caret line="75" column="57" selection-start-line="75" selection-start-column="57" selection-end-line="75" selection-end-column="57" />
+              <folding>
+                <element signature="e#752#753#0" expanded="true" />
+                <element signature="e#773#774#0" expanded="true" />
+                <element signature="e#2177#2178#0" expanded="true" />
+                <element signature="e#2260#2261#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="City.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/engine/cities/City.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="78" column="20" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CityThread.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ui/view/city/CityThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,67 +133,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UniverseConstructionContext.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/universe/UniverseConstructionContext.java">
+      <file leaf-file-name="UniverseController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ui/view/universe/UniverseController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="19" column="77" selection-start-line="19" selection-start-column="77" selection-end-line="19" selection-end-column="77" />
+            <state relative-caret-position="-20">
+              <caret line="47" column="6" selection-start-line="47" selection-start-column="6" selection-end-line="47" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/universe/utils.java">
+      <file leaf-file-name="MainGameUniverse.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ui/view/universe/MainGameUniverse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+            <state relative-caret-position="527">
+              <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlanetConstructionContext.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/planets/PlanetConstructionContext.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SolarSystem.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/universe/SolarSystem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#374#375#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Star.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/universe/Star.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="26" column="87" selection-start-line="26" selection-start-column="87" selection-end-line="26" selection-end-column="87" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Universe.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/universe/Universe.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -148,8 +178,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/engine/people/cityworkers/Bureaucrat.java" />
-        <option value="$PROJECT_DIR$/src/engine/people/cityworkers/Doctor.java" />
         <option value="$PROJECT_DIR$/src/engine/people/cityworkers/Ruler.java" />
         <option value="$PROJECT_DIR$/src/ai/ruler/AiRuler.java" />
         <option value="$PROJECT_DIR$/src/ai/mayor/AiMayor.java" />
@@ -157,31 +185,21 @@
         <option value="$PROJECT_DIR$/src/ui/welcomescreen/sample.fxml" />
         <option value="$PROJECT_DIR$/src/ui/welcomescreen/welcomescreen.fxml" />
         <option value="$PROJECT_DIR$/src/ui/view/universe/Controller.java" />
-        <option value="$PROJECT_DIR$/src/ui/view/planet/PlanetController.java" />
         <option value="$PROJECT_DIR$/src/engine/universe/CountryConstructionContext.java" />
         <option value="$PROJECT_DIR$/src/engine/universe/Country.java" />
         <option value="$PROJECT_DIR$/src/engine/cities/CityConstructionContext.java" />
-        <option value="$PROJECT_DIR$/src/engine/cities/City.java" />
         <option value="$PROJECT_DIR$/src/engine/universe/MainGame.java" />
         <option value="$PROJECT_DIR$/src/engine/universe/MainGameUniverse.java" />
-        <option value="$PROJECT_DIR$/src/ui/welcomescreen/Controller.java" />
         <option value="$PROJECT_DIR$/src/engine/universe/UniverseGenerator.java" />
         <option value="$PROJECT_DIR$/src/ui/welcomescreen/Main.java" />
         <option value="$PROJECT_DIR$/src/ui/view/universe/universeview.fxml" />
         <option value="$PROJECT_DIR$/src/ui/view/solarsystem/SolarSystemJpanel.java" />
         <option value="$PROJECT_DIR$/src/ui/view/solarsystem/SolarSystemJPanel.java" />
         <option value="$PROJECT_DIR$/src/ui/view/solarsystem/SolarSystemThred.java" />
-        <option value="$PROJECT_DIR$/src/ui/view/universe/UniverseController.java" />
-        <option value="$PROJECT_DIR$/src/ui/view/universe/MainGameUniverse.java" />
-        <option value="$PROJECT_DIR$/src/ui/view/solarsystem/SolarSystemThread.java" />
-        <option value="$PROJECT_DIR$/src/ui/view/city/CityThread.java" />
-        <option value="$PROJECT_DIR$/src/ui/view/planet/PlanetThread.java" />
         <option value="$PROJECT_DIR$/src/ui/view/planet/PlanetJPanel.java" />
         <option value="$PROJECT_DIR$/src/ui/view/solarsystem/solarsystem.fxml" />
-        <option value="$PROJECT_DIR$/src/ui/view/solarsystem/SolarSystemController.java" />
         <option value="$PROJECT_DIR$/src/engine/HowConstantsAreGoingToBeDecided.txt" />
         <option value="$PROJECT_DIR$/src/engine/universe/SolarSystemRandomConstructionContext.java" />
-        <option value="$PROJECT_DIR$/src/engine/planets/Planet.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/weapons/space/EmpWeapon.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/weapons/space/Laser.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/weapons/space/SpaceMissile.java" />
@@ -189,16 +207,28 @@
         <option value="$PROJECT_DIR$/src/engine/universe/LocationUniverse.java" />
         <option value="$PROJECT_DIR$/src/engine/universe/UnConstructedSolarSystem.java" />
         <option value="$PROJECT_DIR$/src/engine/universe/UniversalConstants.java" />
-        <option value="$PROJECT_DIR$/src/ui/view/universe/UniverseJPanel.java" />
-        <option value="$PROJECT_DIR$/src/engine/planets/Grid.java" />
-        <option value="$PROJECT_DIR$/src/engine/universe/utils.java" />
         <option value="$PROJECT_DIR$/src/engine/universe/Universe.java" />
         <option value="$PROJECT_DIR$/src/engine/planets/PlanetConstructionContext.java" />
         <option value="$PROJECT_DIR$/src/engine/universe/IronAbundance.java" />
         <option value="$PROJECT_DIR$/src/engine/universe/UniverseConstructionContext.java" />
         <option value="$PROJECT_DIR$/src/engine/universe/Star.java" />
         <option value="$PROJECT_DIR$/src/engine/universe/SolarSystem.java" />
+        <option value="$PROJECT_DIR$/src/engine/universe/utils.java" />
         <option value="$PROJECT_DIR$/src/engine/universe/SolarSystemConstructionContext.java" />
+        <option value="$PROJECT_DIR$/src/ui/welcomescreen/Controller.java" />
+        <option value="$PROJECT_DIR$/src/ui/view/solarsystem/SolarSystemController.java" />
+        <option value="$PROJECT_DIR$/src/ui/view/solarsystem/SolarSystemThread.java" />
+        <option value="$PROJECT_DIR$/src/ui/view/planet/PlanetThread.java" />
+        <option value="$PROJECT_DIR$/src/ui/view/universe/UniverseJPanel.java" />
+        <option value="$PROJECT_DIR$/src/ui/view/universe/MainGameUniverse.java" />
+        <option value="$PROJECT_DIR$/src/ui/view/universe/UniverseController.java" />
+        <option value="$PROJECT_DIR$/src/ui/view/city/CityThread.java" />
+        <option value="$PROJECT_DIR$/src/ui/view/planet/PlanetController.java" />
+        <option value="$PROJECT_DIR$/src/engine/cities/City.java" />
+        <option value="$PROJECT_DIR$/src/engine/planets/Planet.java" />
+        <option value="$PROJECT_DIR$/src/engine/planets/NaturalResource.java" />
+        <option value="$PROJECT_DIR$/src/engine/planets/Grid.java" />
+        <option value="$PROJECT_DIR$/src/engine/planets/GridConstructionContext.java" />
       </list>
     </option>
   </component>
@@ -215,8 +245,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="784" />
+    <option name="width" value="1378" />
+    <option name="height" value="780" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -265,6 +295,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -521,15 +552,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="planets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hazards" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="people" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -574,121 +630,6 @@
       <recent name="C:\Users\bob\Documents\testing\src\ui\view\universe" />
       <recent name="C:\Users\bob\Documents\testing\src\ui" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/uml crap/uml11~</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/uml crap/uml12~</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/uml crap/uml5~</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/uml crap/uml7~</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/uml crap/uml8~</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/uml crap/uml9~</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -1320,7 +1261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1462838645126</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="stopping">
+      <created>1462843004377</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1462843004377</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1333,23 +1281,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="-8" y="-8" width="1378" height="780" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3154671" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32618684" sideWeight="0.49791667" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32511556" sideWeight="0.49791667" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16425993" sideWeight="0.503125" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32159266" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26799387" sideWeight="0.496875" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26656395" sideWeight="0.496875" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20090635" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32159266" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20075758" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1361,6 +1309,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39910978" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32159266" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1402,7 +1351,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="went through and checked register" />
     <MESSAGE value="fxml" />
     <MESSAGE value="fxml planetview and universe view" />
     <MESSAGE value="workplaces updates" />
@@ -1427,11 +1375,12 @@
     <MESSAGE value="no more uml" />
     <MESSAGE value="solar system gui additions" />
     <MESSAGE value="about to start ditching bigdecimal" />
-    <option name="LAST_COMMIT_MESSAGE" value="about to start ditching bigdecimal" />
+    <MESSAGE value="stopping" />
+    <option name="LAST_COMMIT_MESSAGE" value="stopping" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="56" />
+      <option name="time" value="58" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1440,52 +1389,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_71/javafx-src.zip!/javafx/scene/Scene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="2494" column="0" selection-start-line="2494" selection-start-column="0" selection-end-line="2494" selection-end-column="0" />
-          <folding>
-            <element signature="e#66573#66574#0" expanded="false" />
-            <element signature="e#66619#66620#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_71/javafx-src.zip!/javafx/event/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="197" column="0" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_71/javafx-src.zip!/com/sun/javafx/event/EventUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_71/javafx-src.zip!/com/sun/javafx/event/EventDispatchChainImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_71/javafx-src.zip!/com/sun/javafx/event/BasicEventDispatcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_71/javafx-src.zip!/com/sun/javafx/event/CompositeEventDispatcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_71/javafx-src.zip!/com/sun/javafx/event/EventHandlerManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -1497,7 +1400,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="8411" column="0" selection-start-line="8411" selection-start-column="0" selection-end-line="8411" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1515,35 +1417,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/welcomescreen/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_71/javafx-src.zip!/javafx/embed/swing/SwingNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="430" column="0" selection-start-line="430" selection-start-column="0" selection-end-line="430" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/view/universe/universeview.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/welcomescreen/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-398">
-          <caret line="53" column="9" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1584,7 +1461,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="80" column="22" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1592,7 +1468,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1603,82 +1478,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/view/universe/MainGameUniverse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="44" column="28" selection-start-line="33" selection-start-column="8" selection-end-line="44" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/view/solarsystem/SolarSystemThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/view/city/CityThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/view/planet/PlanetThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/view/universe/UniverseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/view/planet/PlanetJPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#237#238#0" expanded="true" />
-            <element signature="e#267#268#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/view/solarsystem/solarsystem.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/view/solarsystem/SolarSystemController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="48" column="17" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2005#2006#0" expanded="true" />
-            <element signature="e#2042#2043#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1686,15 +1500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/universe/UniverseGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1702,20 +1507,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
           <caret line="316" column="53" selection-start-line="316" selection-start-column="53" selection-end-line="316" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/planets/Planet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#1620#1621#0" expanded="true" />
-            <element signature="e#1639#1640#0" expanded="true" />
-            <element signature="e#1973#1974#0" expanded="true" />
-            <element signature="e#2030#2031#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1723,7 +1514,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1731,7 +1521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1739,7 +1528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1747,7 +1535,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1755,9 +1542,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1765,7 +1549,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1773,96 +1556,245 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/view/universe/UniverseJPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/engine/universe/IronAbundance.java" />
+    <entry file="file://$PROJECT_DIR$/src/engine/universe/UniverseConstructionContext.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="323">
+          <caret line="19" column="77" selection-start-line="19" selection-start-column="77" selection-end-line="19" selection-end-column="77" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/planets/Grid.java">
+    <entry file="file://$PROJECT_DIR$/src/engine/universe/Star.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="118" column="73" selection-start-line="118" selection-start-column="73" selection-end-line="118" selection-end-column="73" />
+        <state relative-caret-position="442">
+          <caret line="26" column="87" selection-start-line="26" selection-start-column="87" selection-end-line="26" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/universe/SolarSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#374#375#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/universe/utils.java">
+    <entry file="file://$PROJECT_DIR$/src/engine/universe/UniverseGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/universe/IronAbundance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="493">
+          <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/universe/Universe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
+        <state relative-caret-position="391">
           <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/universe/UniverseConstructionContext.java">
+    <entry file="file://$PROJECT_DIR$/src/engine/universe/utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="19" column="77" selection-start-line="19" selection-start-column="77" selection-end-line="19" selection-end-column="77" />
+        <state relative-caret-position="170">
+          <caret line="11" column="60" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/universe/SolarSystemConstructionContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/planets/PlanetConstructionContext.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/universe/Star.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="26" column="87" selection-start-line="26" selection-start-column="87" selection-end-line="26" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/universe/SolarSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+        <state relative-caret-position="527">
+          <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#374#375#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/universe/SolarSystemConstructionContext.java">
+    <entry file="file://$PROJECT_DIR$/src/ui/welcomescreen/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+        <state relative-caret-position="340">
+          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/welcomescreen/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/planet/PlanetThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="45" column="52" selection-start-line="45" selection-start-column="52" selection-end-line="45" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/universe/universeview.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/solarsystem/SolarSystemThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="50" column="27" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/universe/UniverseJPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="55" column="17" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/universe/MainGameUniverse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/universe/UniverseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-20">
+          <caret line="47" column="6" selection-start-line="47" selection-start-column="6" selection-end-line="47" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/city/CityThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/solarsystem/SolarSystemController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="66" column="45" selection-start-line="66" selection-start-column="45" selection-end-line="66" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/cities/City.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/planets/Planet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#setName#0;class#Planet#0" expanded="false" />
+            <element signature="method#Planet#0;class#Planet#0" expanded="false" />
+            <element signature="method#getXInUniverse#0;class#Planet#0" expanded="false" />
+            <element signature="method#getYInUniverse#0;class#Planet#0" expanded="false" />
+            <element signature="method#getCountriesCities#0;class#Planet#0" expanded="false" />
+            <element signature="method#remove#0;class#Planet#0" expanded="false" />
+            <element signature="method#toString#0;class#Planet#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/planet/PlanetController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="75" column="57" selection-start-line="75" selection-start-column="57" selection-end-line="75" selection-end-column="57" />
+          <folding>
+            <element signature="e#752#753#0" expanded="true" />
+            <element signature="e#773#774#0" expanded="true" />
+            <element signature="e#2177#2178#0" expanded="true" />
+            <element signature="e#2260#2261#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/cities/City.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="78" column="20" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/universe/Resource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/planets/NaturalResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/planets/GridConstructionContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="57" column="26" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/planets/Grid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="49" column="70" selection-start-line="49" selection-start-column="70" selection-end-line="49" selection-end-column="70" />
+          <folding />
         </state>
       </provider>
     </entry>

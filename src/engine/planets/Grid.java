@@ -21,20 +21,16 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
     private int x,y;
     private Planet parentPlanet;
     private Country parentCountry;
+
     private ArrayList<City> citys;
+
     private ArrayList<NaturalResource> naturalResources;
     private TerrainType terrainType;
     private ArrayList<NaturalHazard> hazards;
     private FarmLand farmLand;
-    //TODO: what the fuck is with these constructors
-    private Grid()
-    {
-	    //make sure that registers if other constructor isn't use
-        //random generation
-    }
+    //TODO: what the fuck is with these constructors//// TODO: 5/10/2016 clean up this todo
     public Grid(int x, int y,Country parentCountry,Planet parentPlanet)
     {
-        this();//random generation
 	    registerCountryContainer();
 	    registerPlanetContainer();
 	    registerCityContainer();
@@ -43,7 +39,38 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
         this.parentCountry = parentCountry;
         this.parentPlanet = parentPlanet;
     }
-    public Country getParentCountry()
+
+    public Grid(GridConstructionContext gridConstructionContext) {
+        registerPlanetContainer();// TODO: 5/10/2016 go through and check for thsese in all of the construction context  constructors
+        registerCountryContainer();
+	    registerCityContainer();
+	    x = gridConstructionContext.x;
+	    y = gridConstructionContext.y;
+	    naturalResources = gridConstructionContext.naturalResources;
+	    terrainType = gridConstructionContext.getSuitableTerrainType();
+	    double hazardProb = Math.random();
+	    if(hazardProb < gridConstructionContext.hazardAbundance)
+	    {
+		    hazards.add(getRandomHazard());
+		    hazardProb = Math.random();
+		    if(hazardProb < gridConstructionContext.hazardAbundance)
+		    {
+			    hazards.add(getRandomHazard());
+			    hazardProb = Math.random();
+			    if(hazardProb < gridConstructionContext.hazardAbundance)
+			    {
+				    hazards.add(getRandomHazard());
+			    }//up to three natural hazards
+		    }
+	    }
+
+    }
+
+	private NaturalHazard getRandomHazard() {
+
+	}
+
+	public Country getParentCountry()
     {
         return parentCountry;
     }
@@ -122,7 +149,6 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
     {
         return parentPlanet;
     }
-
 	@Override
 	public void remove(City city) {
 		citys.remove(city);
@@ -144,4 +170,16 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
 			assert(false);
 		}
 	}
+
+    public ArrayList<City> getCitys() {
+        return citys;
+    }
+
+    public TerrainType getTerrainType() {
+        return terrainType;
+    }
+
+    public FarmLand getFarmLand() {
+        return farmLand;
+    }
 }

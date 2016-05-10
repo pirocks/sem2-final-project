@@ -1,6 +1,7 @@
 package ui.view.solarsystem;
 
 import engine.planets.Planet;
+import engine.universe.Country;
 import engine.universe.SolarSystem;
 import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
@@ -24,6 +25,7 @@ import java.util.ResourceBundle;
 public class SolarSystemController implements Initializable {
 
 	private SolarSystem solarSystem;
+	private Country playersCountry;
 	@FXML
 	Accordion accordion;
 	@FXML
@@ -41,9 +43,8 @@ public class SolarSystemController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 
 	}
-	public void updateAccordion(SolarSystem s)
+	public void updateAccordion()
 	{
-		solarSystem = s;
 		swingNode.setContent(new SolarSystemJPanel());
 //		System.out.print(solarSystem.getPlanets());
 		for(Planet planet:solarSystem.getPlanets())
@@ -61,6 +62,11 @@ public class SolarSystemController implements Initializable {
 		System.exit(0);//maje surre that this is actuall named exit game // TODO: 5/9/2016
 	}
 
+	public void updateVars(SolarSystem solarSystem, Country playersCountry) {
+		this.solarSystem = solarSystem;
+		this.playersCountry = playersCountry;
+	}
+
 	private class PlanetButton extends Button {
 		Planet planet;
 		public PlanetButton(Planet planet, String s) {
@@ -69,7 +75,7 @@ public class SolarSystemController implements Initializable {
 			super.setOnAction(new EventHandler<ActionEvent>() {
 				@Override
 				public void handle(ActionEvent event) {
-					new PlanetThread().run();
+					new PlanetThread(planet, playersCountry).run();
 				}
 			});
 		}

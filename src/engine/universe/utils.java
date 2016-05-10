@@ -8,6 +8,8 @@ public class utils
     {
 	    if(a == b)
 		    return a;
+	    if(a > b)
+		    return ThreadLocalRandom.current().nextInt(b,a);
         return ThreadLocalRandom.current().nextInt(a,b);
     }
     public static double getRandomDouble(double a, double b)

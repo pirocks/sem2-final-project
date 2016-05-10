@@ -45,7 +45,7 @@ public class Controller implements Initializable {
 	}
 	@FXML public void generateClicked()
 	{
-		int solaySystemCount= 50;
+		int solaySystemCount = 15;
 		try
 		{
 			solaySystemCount = Integer.parseInt(numSolarSystem.getText());
@@ -74,7 +74,7 @@ public class Controller implements Initializable {
 		{
 //			e.printStackTrace();// TODO: 5/7/2016
 		}
-		int numPlanets = 500;
+		int numPlanets = 10;
 		try
 		{
 			numPlanets = solaySystemCount*Integer.parseInt(numPlanetsPerSolarSystem.getText());
