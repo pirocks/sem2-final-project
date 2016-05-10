@@ -7,9 +7,7 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 
 /**
@@ -30,18 +28,19 @@ public class UniverseJPanel extends JPanel
 		super.paintComponent(g);
 		ArrayList<SolarSystem> systems = universe.getSolarSystems();
 		System.out.print(universe.getSolarSystems());
-		BigDecimal x = new BigDecimal(0);
-		BigDecimal y = new BigDecimal(0);
-		BigDecimal z = new BigDecimal(0);
+		double x = 0;
+		double y = 0;
+		double z = 0;
 		g.setColor(Color.black);
 		for (SolarSystem s : systems) {
 			x = s.getXInUniverse();
 			y = s.getYInUniverse();
 			z = s.getZInUniverse();
 			// TODO: 5/8/2016 fix magic numbers
-			double locx = x.divide(new BigDecimal(10000000)).doubleValue();
-			double locy = y.divide(new BigDecimal(10000000)).doubleValue();
-			double locz = z.divide(new BigDecimal(10000000)).doubleValue();
+			double shrinkConstant = 1;
+			double locx = x/shrinkConstant;
+			double locy = y/shrinkConstant;
+			double locz = z/shrinkConstant;
 			g.fillRect((int) locx, (int) locy, 10, 10);
 		}
 		BufferedImage background = null;

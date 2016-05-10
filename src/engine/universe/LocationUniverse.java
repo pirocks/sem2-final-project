@@ -4,14 +4,13 @@ import engine.planets.LocationPlanet;
 import engine.planets.Planet;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 
 /**
  * Created by bob on 4/7/2016.
  *
  */
 public class LocationUniverse implements Serializable{
-	private BigDecimal x, y, z;
+	private double x, y, z;
 	@Deprecated private LocationPlanet localLocation;//not necesary
 	private Planet planet;
 	private SolarSystem solarSystem;

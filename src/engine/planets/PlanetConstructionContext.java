@@ -13,7 +13,7 @@ import java.util.ArrayList;
  *
  */
 public class PlanetConstructionContext {
-    BigDecimal         radius;
+    double             radius;
     Star               star;
     ArrayList<Country> countries;
     int                gridNum;
@@ -30,8 +30,39 @@ public class PlanetConstructionContext {
     double             FoodAbundance;
     double             WaterAbundance;
 
+	public PlanetConstructionContext(
+			double             radius,
+			Star               star,
+			ArrayList<Country> countries,
+			int                gridNum,
+			double             percentWater,
+			int                numHazards,
+			double             IronAbundance,
+			double             OilAbundance,
+			double             UraniumAbundance,
+			double             HeliumAbundance,
+			double             FoodAbundance,
+			double             WaterAbundance
+	)
+	{
+		this.radius = radius;
+		this.star = star;
+		this.countries = countries;
+		this.gridNum = gridNum;
+		this.percentWater = percentWater;
+		this.numHazards = numHazards;
+		this.IronAbundance = IronAbundance;
+		this.OilAbundance = OilAbundance;
+		this.UraniumAbundance = UraniumAbundance;
+		this.HeliumAbundance = HeliumAbundance;
+		this.FoodAbundance = FoodAbundance;
+		this.WaterAbundance = WaterAbundance;
+
+	}
+
+
     private void copyInto(PlanetConstructionContext p) {
-        this.radius = p.radius;
+        this.radius = p.radius + utils.getRandomDouble(100000,1000000);// TODO: 5/9/2016 make sure these nums are reasonable
         this.star = p.star;
         this.countries = p.countries;
         this.gridNum = p.gridNum;

@@ -9,7 +9,6 @@ import engine.universe.Country;
 import engine.universe.CountryContainer;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 /**
  * Created by bob on 3/5/2016.
@@ -99,25 +98,25 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
     {
         return 0;//maybe I should return the center
     }
-    public BigDecimal getZInUniverse()//top left corner of grid not actual center
+    public double getZInUniverse()//top left corner of grid not actual center
     {
-        BigDecimal planetZ = parentPlanet.getZInUniverse();
+        double planetZ = parentPlanet.getZInUniverse();
         double planetHeight = parentPlanet.getplanetRadius();
-        BigDecimal startHeight = planetZ.add(new BigDecimal(planetHeight));
-        BigDecimal gridHeight = new BigDecimal(planetHeight*2/parentPlanet.getGridCountHeight());///should be built in as a constant and final. Planets should not be created that don't have the appropriate height
-        return startHeight.subtract((new BigDecimal(y)).multiply(gridHeight));
+        double startHeight = planetZ + planetHeight;
+        double gridHeight = planetHeight*2/parentPlanet.getGridCountHeight();///should be built in as a constant and final. Planets should not be created that don't have the appropriate height
+        return startHeight - y*gridHeight;
     }
-    public BigDecimal getXInUniverse()
+    public double getXInUniverse()
     {
         double xAngle = ((double)x/(double)parentPlanet.getGridCountLength())*360.0;
-        BigDecimal planetX = parentPlanet.getXInUniverse();
-        return planetX.add(new BigDecimal(parentPlanet.getplanetRadius()*Math.cos(xAngle)));
+        double planetX = parentPlanet.getXInUniverse();
+        return planetX + (parentPlanet.getplanetRadius()*Math.cos(xAngle));
     }
-    public BigDecimal getYInUniverse()
+    public double getYInUniverse()
     {
         double yAngle = ((double)y/(double)parentPlanet.getGridCountLength())*360.0;
-        BigDecimal planetY = parentPlanet.getYInUniverse();
-        return planetY.add(new BigDecimal(parentPlanet.getplanetRadius()*Math.sin(yAngle)));
+        double planetY = parentPlanet.getYInUniverse();
+        return planetY + (parentPlanet.getplanetRadius()*Math.sin(yAngle));
     }
     public Planet getParentPlanet()
     {

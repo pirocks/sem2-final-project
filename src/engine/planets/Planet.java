@@ -9,7 +9,6 @@ import engine.universe.CountryContainer;
 import engine.universe.SolarSystem;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 /*planet contains the following:
     grid array that serves as building block of planet
@@ -22,7 +21,7 @@ public class Planet implements Serializable,CountryContainer
     private ArrayList<Continent> continents = new ArrayList<>();
     boolean inhabitedq = false;
     private SolarSystem parentSolarSystem;
-    private BigDecimal radius;//distance in engine.universe units from cemter of solar sstem
+    private double radius;//distance in engine.universe units from cemter of solar sstem
     private double planetRadius;//radius of spher planet
     private double orientationAtCurrentTime;//0 to 360 degrees//need something to be done every second
     private Grid[][] grids;//make sure that # of grids is based on size of plannet, to maintain coherent sizing of everything
@@ -64,17 +63,17 @@ public class Planet implements Serializable,CountryContainer
         return grids[0].length;
     }
     //plaanets always orbit solar system along x y plane.
-    public BigDecimal getZInUniverse()
+    public double getZInUniverse()
     {
         return parentSolarSystem.getZInUniverse();
     }
-    public BigDecimal getXInUniverse() {
-        BigDecimal parentX = parentSolarSystem.getXInUniverse();
-        return parentX.add(radius.multiply(new BigDecimal(Math.cos(orientationAtCurrentTime))));
+    public double getXInUniverse() {
+        double parentX = parentSolarSystem.getXInUniverse();
+        return parentX + radius*Math.cos(orientationAtCurrentTime);
     }
-    public BigDecimal getYInUniverse() {
-        BigDecimal parentY = parentSolarSystem.getYInUniverse();
-        return parentY.add(radius.multiply(new BigDecimal(Math.sin(orientationAtCurrentTime))));
+    public double getYInUniverse() {
+        double parentY = parentSolarSystem.getYInUniverse();
+        return parentY + radius*Math.sin(orientationAtCurrentTime);
     }
     @Override
     public void remove(Country country,Country conqueror) {

@@ -4,8 +4,6 @@ import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.universe.ResourceDemand;
 
-import java.math.BigDecimal;
-
 /**
  * Created by bob on 4/6/2016.
  *

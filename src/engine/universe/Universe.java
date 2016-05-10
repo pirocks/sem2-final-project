@@ -1,7 +1,7 @@
 package engine.universe;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+//import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -25,7 +25,7 @@ public class Universe implements Serializable, CountryContainer
         for(int i = 0; i < numSolarSystems;i++)
         {
             //location of solar systems
-            BigDecimal largeNumber = new BigDecimal(1000000000);
+            double largeNumber = 1000000000;// TODO: 5/9/2016 fix magic number
             double x = ThreadLocalRandom.current().nextDouble(-size/2, size/2);
             double y = ThreadLocalRandom.current().nextDouble(-size/2, size/2);
             double z = ThreadLocalRandom.current().nextDouble(-size/2, size/2);
@@ -35,6 +35,7 @@ public class Universe implements Serializable, CountryContainer
     }
 	@Deprecated public Universe(UniverseConstructionContext universeConstructionContext)
 	{
+		//what on earth is the point of this // TODO: 5/9/2016
 		this(universeConstructionContext,universeConstructionContext.numSolarSystems,universeConstructionContext.universeRadius);
 	}
     @Override

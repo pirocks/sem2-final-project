@@ -1,17 +1,4 @@
-
-
-
-
-
-
-
-
-
-
-
 package engine.universe;
-
-import java.math.BigDecimal;
 
 /**
  * Created by bob on 4/10/2016.
@@ -19,8 +6,8 @@ import java.math.BigDecimal;
  */
 public class UnConstructedSolarSystem
 {
-	public BigDecimal x,y,z;
-	public UnConstructedSolarSystem(BigDecimal x, BigDecimal y, BigDecimal z){
+	public double x,y,z;
+	public UnConstructedSolarSystem(double x, double y, double z){
 		this.x = x;
 		this.y = y;
 		this.z = z;

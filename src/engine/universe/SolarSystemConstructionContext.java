@@ -1,16 +1,4 @@
 package engine.universe;
-
-
-
-
-
-
-
-
-
-
-
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import engine.planets.*;
 // import engine.universe.*;
@@ -20,12 +8,14 @@ import engine.planets.*;
  *
  */
 public class SolarSystemConstructionContext {
-//	public UnConstructedSolarSystem unConstructedSolarSystem;
+	//	public UnConstructedSolarSystem unConstructedSolarSystem;
 	public ArrayList<Country> countries;
 	public int numMinPlanets;
 	public int numMaxPlanets;
-	public BigDecimal maxRadius;
-	public BigDecimal minRadius;
+	public double maxRadius;
+	public double minRadius;
+	public double x,y,z;//location
+	public Star star;
 	public PlanetConstructionContext context1;
 	public PlanetConstructionContext context2;
     public PlanetConstructionContext context3;
@@ -35,7 +25,7 @@ public class SolarSystemConstructionContext {
 			int numMaxPlanets, int numMinPlanets,
 			ArrayList<Country> countries)
 	{
-		this.unConstructedSolarSystem = unConstructedSolarSystem;
+//		this.unConstructedSolarSystem = unConstructedSolarSystem;
 		this.numMaxPlanets = numMaxPlanets;
 		this.numMinPlanets = numMinPlanets;
 		this.countries = countries;
@@ -43,7 +33,36 @@ public class SolarSystemConstructionContext {
 	public SolarSystemConstructionContext(UniverseConstructionContext u){
 		numMaxPlanets = u.numMaxPlanets;
 		numMinPlanets = u.numMinPlanets;
-		maxRadius = new BigDecimal(u.);
-		minRadius = new BigDecimal(u.);
+		maxRadius = u.solarSystemMaxRadius;
+		minRadius = u.solarSystemMinRadius;
+		x = utils.getRandomDouble(0,u.universeRadius);
+	}
+	public PlanetConstructionContext generateRandomPlanetContext(UniverseConstructionContext u,SolarSystemConstructionContext s)
+	{
+		double radius = utils.getRandomDouble(u.solarSystemMinRadius,u.solarSystemMaxRadius);
+		int gridNum = utils.getRandomInt(u.minPlanetSize,u.maxPlanetSize);
+		double percentWater = utils.getRandomDouble(0.25,0.75);
+		int numHazards = u.numHazardsPerPlanet;
+		double IronAbundance = utils.getRandomDouble(0.25,0.75);
+		double OilAbundance = utils.getRandomDouble(0.25,0.75);
+		// TODO: 5/9/2016 fix magic nums
+		double WaterAbundance = utils.getRandomDouble(0.1,0.9);
+		double FoodAbundance = utils.getRandomDouble(0.8,0.97);
+		double HeliumAbundance = utils.getRandomDouble(0.01,0.2);
+		double UraniumAbundance = utils.getRandomDouble(0.05,0.3);
+		return new PlanetConstructionContext(
+				radius,
+				star,
+				countries,
+				gridNum,
+				percentWater,
+				numHazards,
+				IronAbundance,
+				OilAbundance,
+				UraniumAbundance,
+				HeliumAbundance,
+				FoodAbundance,
+				WaterAbundance
+		)
 	}
 }

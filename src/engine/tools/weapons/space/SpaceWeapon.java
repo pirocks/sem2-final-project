@@ -3,8 +3,6 @@ package engine.tools.weapons.space;
 import engine.tools.AttackableConstants;
 import engine.tools.weapons.Weapon;
 
-import java.math.BigDecimal;
-
 /**
  * Created by bob on 4/4/2016.
  *

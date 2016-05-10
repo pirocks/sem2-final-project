@@ -6,10 +6,14 @@ public class utils
 {
     public static int getRandomInt(int a,int b)
     {
+	    if(a == b)
+		    return a;
         return ThreadLocalRandom.current().nextInt(a,b);
     }
     public static double getRandomDouble(double a, double b)
     {
+	    if(a == b)
+		    return a;
         return ThreadLocalRandom.current().nextDouble(a,b);
     }
 	public static BigDecimal getRandomBigDecimal(BigDecimal a,BigDecimal b){

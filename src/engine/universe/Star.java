@@ -9,8 +9,21 @@ import java.io.Serializable;
 
 public class Star implements Serializable
 {
+    private double x,y,z;
     private SolarSystem parentSolarSystem;
     private double radius;
+	// TODO: 5/9/2016 fix magic numbers/ determine constants
+	public static final double maxRadius = 100000;
+	public static final double minRadius = 100;
     private double energyEmitted;
+	public static final double minEnergy = 100;
+	public static final double maxRnergy = 10000;
     private double mass;
+	public static final double starDensity = 10;
+	public Star(double x, double  y, double z)
+	{
+		radius = utils.getRandomDouble(minRadius,maxRadius);
+		energyEmitted = utils.getRandomDouble(minEnergy,maxRnergy);
+		mass = starDensity*radius*radius*Math.PI;// TODO: 5/9/2016 make this a  3d star
+	}
 }

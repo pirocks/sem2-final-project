@@ -5,7 +5,6 @@ import engine.planets.PlanetConstructionContext;
 import engine.planets.PlanetContainer;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 
 
@@ -15,27 +14,32 @@ import java.util.ArrayList;
  */
 public class SolarSystem implements PlanetContainer, Serializable
 {
-    BigDecimal x,y,z;
+    double x,y,z;
 
+	public Star getStar() {
+		return star;
+	}
+
+	private Star star;
 	public ArrayList<Planet> getPlanets() {
 		return planets;
 	}
 
 	private ArrayList<Planet> planets = new ArrayList<Planet>();
-    private ArrayList<BigDecimal> radii = new ArrayList<>();
+    private ArrayList<Double> radii = new ArrayList<>();
     public String name;
 	public static String[] solarSystemNames = {
 		    "Kylar","Solar System 1","Solar System 2","Solar System 3"
     };
 	public static int solarSystemNameCount = 0;
-	@Deprecated public SolarSystem(BigDecimal x,BigDecimal y, BigDecimal z)
+	@Deprecated public SolarSystem(double x,double y, double z)
     {
         registerPlanetContainer();
         this.x = x;
         this.y = y;
         this.z = z;
+	    star = new Star(x,y,z);
 	    setName();
-	    solarSystemNameCount++;
     }
     public SolarSystem(SolarSystemConstructionContext s)
     {
@@ -43,12 +47,11 @@ public class SolarSystem implements PlanetContainer, Serializable
 	    int numPlanets = utils.getRandomInt(s.numMinPlanets,s.numMaxPlanets);
 	    for(int i = 0; i < numPlanets;i++)
 	    {
-			radii.add(i,utils.getRandomBigDecimal(s.minRadius,s.maxRadius));
+			radii.add(i,utils.getRandomDouble(s.minRadius,s.maxRadius));
 		    PlanetConstructionContext c = new PlanetConstructionContext(s);
 		    planets.add(new Planet(c));// TODO: 4/11/2016 planet construction cntext
 	    }
 	    setName();
-	    solarSystemNameCount++;
     }
 
 	public void setName() {
@@ -59,17 +62,18 @@ public class SolarSystem implements PlanetContainer, Serializable
 		{
 			name = "Solar System" + solarSystemNameCount;
 		}
+		solarSystemNameCount++;
 	}
 
-	public BigDecimal getXInUniverse()
+	public double getXInUniverse()
     {
         return x;
     }
-    public BigDecimal getYInUniverse()
+    public double getYInUniverse()
     {
         return y;
     }
-    public BigDecimal getZInUniverse()
+    public double getZInUniverse()
     {
         return z;
     }
