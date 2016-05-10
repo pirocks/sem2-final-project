@@ -19,8 +19,8 @@ import engine.planets.*;
  * Created by bob on 4/10/2016.
  *
  */
-public class SolarSystemRandomConstructionContext {
-	public UnConstructedSolarSystem unConstructedSolarSystem;
+public class SolarSystemConstructionContext {
+//	public UnConstructedSolarSystem unConstructedSolarSystem;
 	public ArrayList<Country> countries;
 	public int numMinPlanets;
 	public int numMaxPlanets;
@@ -28,9 +28,9 @@ public class SolarSystemRandomConstructionContext {
 	public BigDecimal minRadius;
 	public PlanetConstructionContext context1;
 	public PlanetConstructionContext context2;
-   public PlanetConstructionContext context3;
+    public PlanetConstructionContext context3;
   
-	public SolarSystemRandomConstructionContext(
+	public SolarSystemConstructionContext(
 			UnConstructedSolarSystem unConstructedSolarSystem,
 			int numMaxPlanets, int numMinPlanets,
 			ArrayList<Country> countries)
@@ -40,7 +40,10 @@ public class SolarSystemRandomConstructionContext {
 		this.numMinPlanets = numMinPlanets;
 		this.countries = countries;
 	}
-	public SolarSystemRandomConstructionContext(UniverseConstructionContext u){
-
+	public SolarSystemConstructionContext(UniverseConstructionContext u){
+		numMaxPlanets = u.numMaxPlanets;
+		numMinPlanets = u.numMinPlanets;
+		maxRadius = new BigDecimal(u.);
+		minRadius = new BigDecimal(u.);
 	}
 }

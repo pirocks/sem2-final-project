@@ -28,22 +28,16 @@ public class SolarSystem implements PlanetContainer, Serializable
 		    "Kylar","Solar System 1","Solar System 2","Solar System 3"
     };
 	public static int solarSystemNameCount = 0;
-	public SolarSystem(BigDecimal x,BigDecimal y, BigDecimal z)
+	@Deprecated public SolarSystem(BigDecimal x,BigDecimal y, BigDecimal z)
     {
         registerPlanetContainer();
         this.x = x;
         this.y = y;
         this.z = z;
-	    try {
-		    name = solarSystemNames[solarSystemNameCount];
-	    }
-	    catch (Exception e)
-	    {
-		    name = "Solar System" + solarSystemNameCount;
-	    }
+	    setName();
 	    solarSystemNameCount++;
     }
-    public SolarSystem(SolarSystemRandomConstructionContext s)
+    public SolarSystem(SolarSystemConstructionContext s)
     {
 	    registerPlanetContainer();
 	    int numPlanets = utils.getRandomInt(s.numMinPlanets,s.numMaxPlanets);
@@ -53,16 +47,21 @@ public class SolarSystem implements PlanetContainer, Serializable
 		    PlanetConstructionContext c = new PlanetConstructionContext(s);
 		    planets.add(new Planet(c));// TODO: 4/11/2016 planet construction cntext
 	    }
-	    try {
-		    name = solarSystemNames[solarSystemNameCount];
-	    }
-	    catch (Exception e)
-	    {
-		    name = "Solar System" + solarSystemNameCount;
-	    }
+	    setName();
 	    solarSystemNameCount++;
     }
-    public BigDecimal getXInUniverse()
+
+	public void setName() {
+		try {
+			name = solarSystemNames[solarSystemNameCount];
+		}
+		catch (Exception e)
+		{
+			name = "Solar System" + solarSystemNameCount;
+		}
+	}
+
+	public BigDecimal getXInUniverse()
     {
         return x;
     }

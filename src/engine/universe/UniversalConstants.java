@@ -1,5 +1,7 @@
 package engine.universe;
 
+import java.math.BigDecimal;
+
 public class UniversalConstants
 {
     //most of these should be moved to absract person
@@ -37,5 +39,9 @@ public class UniversalConstants
         }
         return corruptionFactor;
     }
-    
+
+
+    //actually universal
+	private static double bigDecimalConversionFactorAsDouble;
+	public static BigDecimal bigDecimalConversionFactor = new BigDecimal(bigDecimalConversionFactorAsDouble);
 }

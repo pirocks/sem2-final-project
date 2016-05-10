@@ -159,7 +159,7 @@ class engine.universe.MoneySourceContainers
 class engine.universe.Resource
 class engine.universe.ResourceDemand
 class engine.universe.SolarSystem
-class engine.universe.SolarSystemRandomConstructionContext
+class engine.universe.SolarSystemConstructionContext
 class engine.universe.Star
 class engine.universe.UnConstructedSolarSystem
 class engine.universe.UniversalConstants
@@ -556,7 +556,7 @@ engine.planets.Planet --|> java.io.Serializable
 engine.planets.PlanetContainers ..> java.lang.Deprecated
 engine.planets.PlanetContainers ..> java.util.ArrayList
 engine.planets.PlanetConstructionContext ..> engine.universe.Country
-engine.planets.PlanetConstructionContext ..> engine.universe.SolarSystemRandomConstructionContext
+engine.planets.PlanetConstructionContext ..> engine.universe.SolarSystemConstructionContext
 engine.planets.PlanetConstructionContext ..> engine.universe.Star
 engine.planets.PlanetConstructionContext ..> java.math.BigDecimal
 engine.planets.PlanetConstructionContext ..> java.util.ArrayList
@@ -885,8 +885,8 @@ engine.universe.SolarSystem ..> java.math.BigDecimal
 engine.universe.SolarSystem ..> java.util.ArrayList
 engine.universe.SolarSystem --|> engine.planets.PlanetContainer
 engine.universe.SolarSystem --|> java.io.Serializable
-engine.universe.SolarSystemRandomConstructionContext ..> java.math.BigDecimal
-engine.universe.SolarSystemRandomConstructionContext ..> java.util.ArrayList
+engine.universe.SolarSystemConstructionContext ..> java.math.BigDecimal
+engine.universe.SolarSystemConstructionContext ..> java.util.ArrayList
 engine.universe.Star --|> java.io.Serializable
 engine.universe.UnConstructedSolarSystem ..> java.math.BigDecimal
 engine.universe.Universe ..> java.lang.Override

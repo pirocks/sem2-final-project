@@ -13,6 +13,7 @@ public class UniverseConstructionContext
 	public int numCountries;
 	public int numMaxPlanets;
 	public int numMinPlanets;
+	public double
 
 	public UniverseConstructionContext(int numSolarSystems,
 	                                   double universeRadius,

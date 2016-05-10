@@ -1,7 +1,7 @@
 package engine.planets;
 
 import engine.universe.Country;
-import engine.universe.SolarSystemRandomConstructionContext;
+import engine.universe.SolarSystemConstructionContext;
 import engine.universe.Star;
 import engine.universe.*;
 
@@ -45,7 +45,7 @@ public class PlanetConstructionContext {
         this.WaterAbundance = p.WaterAbundance;
     }
 
-    public PlanetConstructionContext(SolarSystemRandomConstructionContext s) {
+    public PlanetConstructionContext(SolarSystemConstructionContext s) {
         int num = utils.getRandomInt(0, 3);
         switch (num) {
             case 0:

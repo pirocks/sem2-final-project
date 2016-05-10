@@ -17,7 +17,7 @@ public class Universe implements Serializable, CountryContainer
 	public transient static Universe universe;// TODO: 5/8/2016 make this non tranient//  figure out how this will load
 	private ArrayList<SolarSystem> solarSystems;
 	private ArrayList<Country> countries;
-    public Universe(int numSolarSystems,double size)//size is not related to engine.universe units
+    private Universe(UniverseConstructionContext u,int numSolarSystems,double size)//size is not related to engine.universe units
     {
         registerCountryContainer();
         solarSystems = new ArrayList<>();
@@ -29,47 +29,13 @@ public class Universe implements Serializable, CountryContainer
             double x = ThreadLocalRandom.current().nextDouble(-size/2, size/2);
             double y = ThreadLocalRandom.current().nextDouble(-size/2, size/2);
             double z = ThreadLocalRandom.current().nextDouble(-size/2, size/2);
-            solarSystems.add(new SolarSystem(new BigDecimal(x).multiply(largeNumber),new BigDecimal(y).multiply(largeNumber),new BigDecimal(z).multiply(largeNumber)));
+            solarSystems.add(new SolarSystem(new SolarSystemConstructionContext(u)));
         }
 	    universe = this;
     }
-	public Universe(UniverseConstructionContext universeConstructionContext)
+	@Deprecated public Universe(UniverseConstructionContext universeConstructionContext)
 	{
-		this(universeConstructionContext.numSolarSystems,universeConstructionContext.universeRadius);
-		/*final int numCountries = universeConstructionContext.numCountries;
-		final int numSolarSystems = universeConstructionContext.numSolarSystems;
-		final double universeRadius = universeConstructionContext.universeRadius;
-		final int numMinPlanets = universeConstructionContext.numMinPlanets;
-		final int numMaxPlanrts = universeConstructionContext.numMaxPlanets;
-		registerCountryContainer();
-		ArrayList<UnConstructedSolarSystem> UnConstructedSolarSystems = new ArrayList<>();
-		for(int i = 0; i < numSolarSystems;i++)
-		{
-			//location of solar systems
-			BigDecimal largeNumber = new BigDecimal(1000000000);
-			double x = utils.getRandomDouble(-universeRadius, universeRadius);
-			double y = utils.getRandomDouble(-universeRadius, universeRadius);
-			double z = utils.getRandomDouble(-universeRadius, universeRadius);
-			UnConstructedSolarSystems.add(new UnConstructedSolarSystem(new BigDecimal(x).multiply(largeNumber),
-					new BigDecimal(y).multiply(largeNumber),
-					new BigDecimal(z).multiply(largeNumber)));
-		}
-		//the bellow needs to be completed b/c null pointer exceptions
-		ArrayList<SolarSystemRandomConstructionContext> constructionContexts = new ArrayList<>();
-		ArrayList<ArrayList<Country>> countries  = new ArrayList<>();
-		for(int  i = 0; i < universeConstructionContext.numCountries;i++)
-		{
-			countries.add(new ArrayList<>());// TODO: 4/11/2016 figure out how o get apprpriate num of countries//add them safter the fact  or make a condition that there must be more solars than countries
-		}
-
-		int i = 0;
-		for(UnConstructedSolarSystem unConstructed:UnConstructedSolarSystems){
-			constructionContexts.add(new SolarSystemRandomConstructionContext(
-					unConstructed,universeConstructionContext.numMaxPlanets,
-					universeConstructionContext.numMinPlanets,countries.get(i)));
-			i++;
-		}
-		universe = this;*/
+		this(universeConstructionContext,universeConstructionContext.numSolarSystems,universeConstructionContext.universeRadius);
 	}
     @Override
     public void remove(Country country,Country conqueror) {
