@@ -13,9 +13,10 @@ import java.util.ArrayList;
 
 public abstract class Housing extends Building implements PersonContainer
 {
-    private int maximumOccupancy;
-    private ArrayList<CityWorker> residents;
-    public Housing(AttackableConstants attackableConstants, CityBlock parentBlock) {
+	private int maximumOccupancy;
+
+	private ArrayList<CityWorker> residents;
+	public Housing(AttackableConstants attackableConstants, CityBlock parentBlock) {
     	super(attackableConstants,parentBlock);
 	    registerPersonContainer();
     	residents = new ArrayList<>();
@@ -32,11 +33,11 @@ public abstract class Housing extends Building implements PersonContainer
 	        maximumOccupancy = WorkersHouseBlock.maximumOccupancyInitial;
         }
     }
-    public boolean overcrowdedQ() {
+	public boolean overcrowdedQ() {
         int sum = getPopulation();
 	    return sum <= maximumOccupancy;
     }
-    public int getPopulation() {
+	public int getPopulation() {
         int sum = 0;
         for(CityWorker person:residents)
             sum += person.getPopulation();
@@ -49,5 +50,12 @@ public abstract class Housing extends Building implements PersonContainer
 	public void remove(AbstractPerson person) {
 //		assert(residents.contains(person));
 		residents.remove(person);
+	}
+	public int getMaximumOccupancy() {
+		return maximumOccupancy;
+	}
+
+	public ArrayList<CityWorker> getResidents() {
+		return residents;
 	}
 }

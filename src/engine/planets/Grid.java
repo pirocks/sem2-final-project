@@ -23,8 +23,7 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
     private Country parentCountry;
 
     private ArrayList<City> citys;
-
-    private ArrayList<NaturalResource> naturalResources;
+	private ArrayList<NaturalResource> naturalResources;
     private TerrainType terrainType;
     private ArrayList<NaturalHazard> hazards;
     private FarmLand farmLand;

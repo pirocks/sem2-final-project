@@ -154,4 +154,8 @@ public class LocationPlanet implements Serializable,PlanetContainer
 		LocationPlanet out = new LocationPlanet(a.getPlanet(),Gridxmid,Gridymid,Blockxmid,Blockymid);
 		return out;
 	}
+//	public CityBlock getCityBlock()
+//	{
+//		return planet.getGrids()[Gridy][Gridx];
+//	}
 }

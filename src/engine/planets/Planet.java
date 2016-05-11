@@ -5,6 +5,7 @@ package engine.planets;
  */
 
 import engine.cities.City;
+import engine.cities.CityBlock;
 import engine.universe.Country;
 import engine.universe.CountryContainer;
 import engine.universe.SolarSystem;
@@ -29,6 +30,7 @@ public class Planet implements Serializable,CountryContainer
     public static String[] names = {"Earth","Mars","Venus","Mercury","Jupiter","Pluto","Saturn","Neptune","Uranus"};
 	public static int nameCount = 0;
 	public String name;
+
 	public void setName() {
 		try {
 			name = names[nameCount];
@@ -109,5 +111,9 @@ public class Planet implements Serializable,CountryContainer
 		String out = "Planet:" + name + "\n";
 		out += "Occupying Countries:" + countries;
 		return out;
+	}
+
+	public Grid[][] getGrids() {
+		return grids;
 	}
 }

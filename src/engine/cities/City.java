@@ -2,8 +2,10 @@ package engine.cities;
 
 import engine.buildings.Building;
 import engine.buildings.BuildingContainer;
+import engine.buildings.housing.ApartmentBlock;
 import engine.buildings.housing.Housing;
 import engine.buildings.housing.RulersHouse;
+import engine.buildings.housing.WorkersHouseBlock;
 import engine.buildings.workplaces.Hospital;
 import engine.people.AbstractPerson;
 import engine.people.PersonContainer;
@@ -64,9 +66,61 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 		this.parentGrid = parentGrid;
 		this.parentCountry = parentCountry;
 	}
-	public City(CityConstructionContext cityConstructionContext)
-	{
+	public City(CityConstructionContext cityConstructionContext) throws ToManyPeopleException {
 		super(healthInitial,resistanceInitial,cityConstructionContext.locationPlanet);
+		setName();
+		cityBlocks = new ArrayList<>();
+		for(LocationPlanet locationPlanet:cityConstructionContext.locationPlanet)
+		{
+			Building building;
+			CityBlock cityBlock = new CityBlock(null,cityConstructionContext.parentGrid,null,this,locationPlanet.getBlockx(),locationPlanet.getBlocky());
+			//each building will be build here
+			if(cityConstructionContext.type == CityConstructionContext.Type.Industrial)
+			{
+				//add as much housing as necessary for population
+				//favor adding in outer areas
+				//favor apartment blocks
+				double apartmentBlockProb = 0.75;
+				//rest is workers house block
+				double rand = Math.random();
+				if(rand < apartmentBlockProb)
+				{
+					//apartment
+					building = new ApartmentBlock(cityBlock);
+				}
+				else
+				{
+					building = new WorkersHouseBlock(cityBlock);
+					//workers house block
+				}
+			}
+			else if(cityConstructionContext.type == CityConstructionContext.Type.Scientific)
+			{
+				//add as much huosing as necesary
+				//favor adding in uter areas
+				//favor housing
+				double housingProb = 0.8;// TODO: 5/10/2016 magic constants
+				//workers houseing is the rest.
+				double rand = Math.random();
+				if(rand < housingProb) {
+					//build a workersHouse block
+					building = new WorkersHouseBlock(cityBlock);
+				}
+				else {
+					//build a new apartment
+					building = new ApartmentBlock(cityBlock);
+				}
+			}
+			else//possibly add captital city
+				throw new UnsupportedOperationException();// this is really a npt implemented exception but java doesn't have that
+			cityBlock.setBuilding(building);
+			cityBlocks.add(cityBlock);
+			if(getMaximumHousingCapacity() > cityConstructionContext.population)
+				break;//enough houing has been made can  proced to next step
+		}
+		if(!(getMaximumHousingCapacity() > cityConstructionContext.population))
+			throw new ToManyPeopleException(cityConstructionContext.population,getMaximumHousingCapacity());
+
 		// TODO: 5/8/2016 implement me
 	}
 	public void setName()
@@ -156,6 +210,19 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 					return (Housing) block.getBuilding();
 		}
 		return null;
+	}
+	public int getMaximumHousingCapacity()
+	{
+		int out = 0;
+		for(CityBlock block:cityBlocks)
+		{
+			if(block.getBuilding() instanceof Housing)
+			{
+				Housing housing = (Housing) block.getBuilding();
+				out += housing.getMaximumOccupancy();
+			}
+		}
+		return out;
 	}
 
 	public void doLife(long time){

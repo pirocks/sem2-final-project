@@ -1,5 +1,7 @@
 package engine.cities;
 
+import engine.planets.Grid;
+import engine.planets.GridConstructionContext;
 import engine.planets.LocationPlanet;
 import engine.universe.Country;
 import engine.universe.CountryConstructionContext;
@@ -11,7 +13,7 @@ import java.util.ArrayList;
  *
  */
 public class CityConstructionContext {
-	LocationPlanet locationPlanet;
+	ArrayList<LocationPlanet> locationPlanet;//this is an arraylist which makes the entire city attackable and allows for the building sites to be pre-determined
 	int population;
 	//two basic types for now
 	//industrial cities are porer than scientific and havve obvious differences in buildings
@@ -19,9 +21,12 @@ public class CityConstructionContext {
 	{
 		Industrial,Scientific
 	}
+	Type type;
 	ArrayList<CityConstructionContext> roadsTo;
 	Country parentCountry;
-	public CityConstructionContext(CountryConstructionContext countryConstructionContext,)
+	Grid parentGrid;
+	public CityConstructionContext(CountryConstructionContext countryConstructionContext,
+	                               GridConstructionContext gridConstructionContext)
 	{
 
 	}
