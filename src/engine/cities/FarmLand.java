@@ -42,11 +42,9 @@ public class FarmLand implements Serializable //only one per grid
 	}
 	private ArrayList<Region> regions = new ArrayList<>();
 
-	public FarmLand(Grid parentGrid,int x, int y)
+	public FarmLand(Grid parentGrid)
 	{
 		this.parentGrid = parentGrid;
-		regions.add(new Region(y,x,x));
-
 	}
 
 	public void add(int x,int y){

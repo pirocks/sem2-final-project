@@ -15,9 +15,9 @@ import java.util.ArrayList;
 public class PlanetConstructionContext {
     double             radius;
     Star               star;
-    ArrayList<Country> countries;
+    ArrayList<Country> countries;// TODO: 5/10/2016 planets  don't have cpountries/citys randomly generrated yet
     int                gridNum;
-    double             percentWater;
+    double             percentWater;// TODO: 5/10/2016 make sure this is actually used or not
     int                numHazards;
     //	public static enum ResourceAbundance
     //	{

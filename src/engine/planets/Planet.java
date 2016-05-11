@@ -48,6 +48,7 @@ public class Planet implements Serializable,CountryContainer
 	    for(int y = 0; y < futureGrids.length;y++)
 		    for(int x = 0;x < futureGrids[y].length;x++)
 		    {
+			    futureGrids[y][x] = new GridConstructionContext(c,grids,y,x);
 			    grids[y][x] = new Grid(futureGrids[y][x]);
 		    }
 		setName();

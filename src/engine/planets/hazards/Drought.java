@@ -7,7 +7,7 @@ import engine.planets.Grid;
  * todo wtf ois going on with food.
  */
 public class Drought extends NaturalHazard{
-	protected Drought(Grid parentGrid) {
+	public Drought(Grid parentGrid) {
 		super(Type.Drought, parentGrid);
 	}
 

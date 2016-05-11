@@ -29,7 +29,8 @@ public abstract class NaturalHazard implements Serializable
 		Volcano,
 	    Weather,
 	    Disease,//disease other than standard person health decrease.
-		Drought
+		Drought,
+	    Earthquake
     }
 	public final Type type; //necessary for random construction purposes
     private Grid affectedGrid;

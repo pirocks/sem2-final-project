@@ -6,7 +6,7 @@ import engine.planets.Grid;
  * Created by bob on 4/11/2016.
  */
 public class Disease extends NaturalHazard {
-	protected Disease(Grid parentGrid) {
+	public Disease(Grid parentGrid) {
 		super(Type.Disease, parentGrid);
 	}
 

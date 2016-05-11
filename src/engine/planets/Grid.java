@@ -4,7 +4,7 @@ import engine.cities.City;
 import engine.cities.CityBlock;
 import engine.cities.CityContainer;
 import engine.cities.FarmLand;
-import engine.planets.hazards.NaturalHazard;
+import engine.planets.hazards.*;
 import engine.universe.Country;
 import engine.universe.CountryContainer;
 
@@ -28,8 +28,7 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
     private TerrainType terrainType;
     private ArrayList<NaturalHazard> hazards;
     private FarmLand farmLand;
-    //TODO: what the fuck is with these constructors//// TODO: 5/10/2016 clean up this todo
-    public Grid(int x, int y,Country parentCountry,Planet parentPlanet)
+   /* public Grid(int x, int y,Country parentCountry,Planet parentPlanet)
     {
 	    registerCountryContainer();
 	    registerPlanetContainer();
@@ -38,7 +37,7 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
         this.y = y;
         this.parentCountry = parentCountry;
         this.parentPlanet = parentPlanet;
-    }
+    }*/
 
     public Grid(GridConstructionContext gridConstructionContext) {
         registerPlanetContainer();// TODO: 5/10/2016 go through and check for thsese in all of the construction context  constructors
@@ -48,6 +47,7 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
 	    y = gridConstructionContext.y;
 	    naturalResources = gridConstructionContext.naturalResources;
 	    terrainType = gridConstructionContext.getSuitableTerrainType();
+	    hazards = new ArrayList<>();
 	    double hazardProb = Math.random();
 	    if(hazardProb < gridConstructionContext.hazardAbundance)
 	    {
@@ -63,11 +63,31 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
 			    }//up to three natural hazards
 		    }
 	    }
+		farmLand = new FarmLand(this);
 
+	    //now we deal with the citys
+	    citys = new ArrayList<>();
+	    // TODO: 5/10/2016
     }
 
 	private NaturalHazard getRandomHazard() {
-
+		int type = (int) (Math.random()*5);
+		switch (type)
+		{
+			case 0:
+				return new Disease(this);
+			case 1:
+				return new Drought(this);
+			case 2:
+				return new Volcano(this);
+			case 3:
+				return new Weather(this);
+			case 4:
+				return new Earthquake(this);
+			default:
+				assert(false);
+				throw new IllegalStateException();
+		}
 	}
 
 	public Country getParentCountry()

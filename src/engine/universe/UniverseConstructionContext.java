@@ -17,7 +17,7 @@ public class UniverseConstructionContext
 	public double solarSystemMaxRadius;// TODO: 5/9/2016 include in startup menus
 	public int numHazardsPerPlanet = 20;// TODO: 5/9/2016 include in startup menus
 	public int minPlanetSize = 20;// TODO: 5/9/2016 include instartup menu
-	public int maxPlanetSize = 1000;// TODO: 5/9/2016 include in startup menu
+	public int maxPlanetSize = 25;// TODO: 5/9/2016 include in startup menu
 	public UniverseConstructionContext(int numSolarSystems,
 	                                   double universeRadius,
 	                                   int numCountries,

@@ -6,7 +6,7 @@ import engine.planets.Grid;
  * Created by bob on 4/11/2016.
  */
 public class Weather extends NaturalHazard {
-	protected Weather(Grid parentGrid) {
+	public Weather(Grid parentGrid) {
 		super(Type.Weather, parentGrid);
 	}
 
