@@ -15,6 +15,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Universe implements Serializable, CountryContainer
 {
 	public transient static Universe universe;// TODO: 5/8/2016 make this non tranient//  figure out how this will load
+	public static Country playersCountry;
 	private ArrayList<SolarSystem> solarSystems;
 	private ArrayList<Country> countries;
     private Universe(UniverseConstructionContext u,int numSolarSystems,double size)//size is not related to engine.universe units
@@ -29,9 +30,13 @@ public class Universe implements Serializable, CountryContainer
             double x = ThreadLocalRandom.current().nextDouble(-size/2, size/2);
             double y = ThreadLocalRandom.current().nextDouble(-size/2, size/2);
             double z = ThreadLocalRandom.current().nextDouble(-size/2, size/2);
-            solarSystems.add(new SolarSystem(new SolarSystemConstructionContext(u)));
+            SolarSystem system = new SolarSystem(new SolarSystemConstructionContext(u));
+	        system.setStar(new Star(x,y,z,system));
+	        solarSystems.add(system);
+
         }
 	    universe = this;
+	    playersCountry = new Country(u);
     }
 	@Deprecated public Universe(UniverseConstructionContext universeConstructionContext)
 	{

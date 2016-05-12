@@ -6,10 +6,11 @@ import engine.buildings.housing.ApartmentBlock;
 import engine.buildings.housing.Housing;
 import engine.buildings.housing.RulersHouse;
 import engine.buildings.housing.WorkersHouseBlock;
-import engine.buildings.workplaces.Hospital;
+import engine.buildings.workplaces.*;
 import engine.people.AbstractPerson;
 import engine.people.PersonContainer;
 import engine.people.cityworkers.CityWorker;
+import engine.planets.TerrainType;
 import engine.universe.Country;
 import engine.universe.CountryContainer;
 import engine.planets.Grid;
@@ -33,7 +34,7 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 	public static double healthInitial;
 	//remember to add stuff to the unique id if I add more member vars
 	//read the above comment
-//    private MoneySource moneySource;
+//    private MoneySource moneySourceForBuildings;
 	private boolean isCapital;
 	private int x,y;//center of city in grid//will be townHall location
 	private Grid parentGrid;//can be used to find location//engine.cities limited to one grid
@@ -67,64 +68,144 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 		this.parentCountry = parentCountry;
 	}
 	public City(CityConstructionContext cityConstructionContext) throws ToManyPeopleException {
-		super(healthInitial,resistanceInitial,cityConstructionContext.locationPlanet);
+		super(healthInitial,resistanceInitial,cityConstructionContext.buildingLocations);
 		setName();
 		cityBlocks = new ArrayList<>();
-		for(LocationPlanet locationPlanet:cityConstructionContext.locationPlanet)
+		for(LocationPlanet locationPlanet:cityConstructionContext.buildingLocations)
 		{
 			Building building;
 			CityBlock cityBlock = new CityBlock(null,cityConstructionContext.parentGrid,null,this,locationPlanet.getBlockx(),locationPlanet.getBlocky());
 			//each building will be build here
-			if(cityConstructionContext.type == CityConstructionContext.Type.Industrial)
+			if(getMaximumHousingCapacity() > cityConstructionContext.population)
 			{
-				//add as much housing as necessary for population
-				//favor adding in outer areas
-				//favor apartment blocks
-				double apartmentBlockProb = 0.75;
-				//rest is workers house block
-				double rand = Math.random();
-				if(rand < apartmentBlockProb)
+				if (cityConstructionContext.type == CityConstructionContext.Type.Industrial) {
+					//add as much housing as necessary for population
+					//favor adding in outer areas
+					//favor apartment blocks
+					double apartmentBlockProb = 0.75;
+					//rest is workers house block
+					double rand = Math.random();
+					if (rand < apartmentBlockProb)
+						building = new ApartmentBlock(cityBlock);                    //apartment
+					else
+						building = new WorkersHouseBlock(cityBlock); //workers house block
+				} else if (cityConstructionContext.type == CityConstructionContext.Type.Scientific) {
+					//add as much huosing as necesary
+					//favor adding in uter areas
+					//favor housing
+					double housingProb = 0.8;// TODO: 5/10/2016 magic constants
+					//workers houseing is the rest.
+					double rand = Math.random();
+					if (rand < housingProb)
+						building = new WorkersHouseBlock(cityBlock);//build a workersHouse block
+					else
+						building = new ApartmentBlock(cityBlock);//build a new apartment
+				} else//possibly add captital city
+					throw new UnsupportedOperationException();// this is really a npt implemented exception but java doesn't have that
+			}
+			else
+			{
+				//factories etc:
+				if(cityConstructionContext.type == CityConstructionContext.Type.Industrial)
 				{
-					//apartment
-					building = new ApartmentBlock(cityBlock);
+					double dockYardProb = 0;
+					double industrialDockProb = 0;
+					if(locationPlanet.getGrid().getTerrainType() == TerrainType.Coast)
+					{
+						dockYardProb = 0.15;
+						industrialDockProb = 0.15;
+					}
+					double schoolProb = 0.25;
+					double hospitalProb = 0.15;
+					double warehouseProb = 0.2;
+					//rest is  factory
+					double rand = Math.random();
+					double runningTotal = dockYardProb;
+					if(runningTotal < rand)
+						building = new DockYard(cityBlock,cityConstructionContext.moneySourceForBuildings);
+					else {
+						runningTotal += industrialDockProb;
+						if (runningTotal < rand)
+							building = new IndustrialDock(cityBlock,cityConstructionContext.moneySourceForBuildings);
+						else {
+							runningTotal += schoolProb;
+							if(runningTotal  < rand)
+								building = new School(cityBlock,cityConstructionContext.moneySourceForBuildings);
+							else {
+								runningTotal += hospitalProb;
+								if(runningTotal < rand) {
+									building = new Hospital(cityBlock, cityConstructionContext.moneySourceForBuildings);
+									hospitals.add((Hospital) building);
+								}
+								else{
+									runningTotal += warehouseProb;
+									if(runningTotal < rand)
+										building = new Warehouse(cityBlock,cityConstructionContext.moneySourceForBuildings);
+									else{
+										building = new Factory(cityBlock,cityConstructionContext.moneySourceForBuildings);
+									}
+								}
+							}
+						}
+					}
+				}
+				else if(cityConstructionContext.type == CityConstructionContext.Type.Scientific)
+				{
+					//extract redundant code
+					double dockYardProb = 0;
+					double industrialDockProb = 0;
+					if(locationPlanet.getGrid().getTerrainType() == TerrainType.Coast)
+					{
+						dockYardProb = 0.1;
+						industrialDockProb = 0.1;
+					}
+					double schoolProb = 0.3;
+					double hospitalProb = 0.15;
+					double warehouseProb = 0.1;
+					//rest is  research area
+					double rand = Math.random();
+					double runningTotal = dockYardProb;
+					if(runningTotal < rand)
+						building = new DockYard(cityBlock,cityConstructionContext.moneySourceForBuildings);
+					else {
+						runningTotal += industrialDockProb;
+						if (runningTotal < rand)
+							building = new IndustrialDock(cityBlock,cityConstructionContext.moneySourceForBuildings);
+						else {
+							runningTotal += schoolProb;
+							if(runningTotal  < rand)
+								building = new School(cityBlock,cityConstructionContext.moneySourceForBuildings);
+							else {
+								runningTotal += hospitalProb;
+								if(runningTotal < rand) {
+									building = new Hospital(cityBlock, cityConstructionContext.moneySourceForBuildings);
+									hospitals.add((Hospital) building);
+								}
+								else{
+									runningTotal += warehouseProb;
+									if(runningTotal < rand)
+										building = new Warehouse(cityBlock,cityConstructionContext.moneySourceForBuildings);
+									else{
+										building = new ResearchArea(cityBlock,cityConstructionContext.moneySourceForBuildings);
+									}
+								}
+							}
+						}
+					}
 				}
 				else
 				{
-					building = new WorkersHouseBlock(cityBlock);
-					//workers house block
+					throw new UnsupportedOperationException();
 				}
 			}
-			else if(cityConstructionContext.type == CityConstructionContext.Type.Scientific)
-			{
-				//add as much huosing as necesary
-				//favor adding in uter areas
-				//favor housing
-				double housingProb = 0.8;// TODO: 5/10/2016 magic constants
-				//workers houseing is the rest.
-				double rand = Math.random();
-				if(rand < housingProb) {
-					//build a workersHouse block
-					building = new WorkersHouseBlock(cityBlock);
-				}
-				else {
-					//build a new apartment
-					building = new ApartmentBlock(cityBlock);
-				}
-			}
-			else//possibly add captital city
-				throw new UnsupportedOperationException();// this is really a npt implemented exception but java doesn't have that
 			cityBlock.setBuilding(building);
 			cityBlocks.add(cityBlock);
-			if(getMaximumHousingCapacity() > cityConstructionContext.population)
-				break;//enough houing has been made can  proced to next step
 		}
 		if(!(getMaximumHousingCapacity() > cityConstructionContext.population))
 			throw new ToManyPeopleException(cityConstructionContext.population,getMaximumHousingCapacity());
-
 		// TODO: 5/8/2016 implement me
 	}
-	public void setName()
-	{
+	public void setName() {
 		try {
 			name = names[nameCount];
 		} catch (Exception e) {
@@ -211,8 +292,7 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 		}
 		return null;
 	}
-	public int getMaximumHousingCapacity()
-	{
+	public int getMaximumHousingCapacity() {
 		int out = 0;
 		for(CityBlock block:cityBlocks)
 		{
@@ -224,7 +304,6 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 		}
 		return out;
 	}
-
 	public void doLife(long time){
 		for(CityWorker worker: residents)
 		{
@@ -237,7 +316,6 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 			 */
 		}
 	}
-
 	@Override
 	public void remove(Building building) {
 		for(CityBlock cityBlock:cityBlocks)

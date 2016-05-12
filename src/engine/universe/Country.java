@@ -17,18 +17,21 @@ import java.util.ArrayList;
 
 public class Country extends MoneySource implements Serializable,PersonContainer,CountryContainer, CityContainer,RoadContainer
 {
-    public static String[] CountryNames = 
+	private static String[] CountryNames =
     {"England","USA","France","China","Tanzania","Botswana",
         "Seychelles","Scotland","Liechtenstein","Comoros","Tuvalu"
     };
-    public static int countryNameCount = 0;
-    private ArrayList<Grid> grids;
-    private String name;
-    private ArrayList<Country> allies;
+	private static int countryNameCount = 0;
+	private ArrayList<Grid> grids;
+	private String name;
+	private ArrayList<Country> allies;
     private ArrayList<Country> atWarWith;
-    private ArrayList<AbstractPerson> people;
-    public ArrayList<Road> roads;
-    private City capitalCity;
+
+	private ArrayList<AbstractPerson> people;
+
+	public ArrayList<Road> roads;//not sure how this is going to be updated // TODO: 5/12/2016
+	private City capitalCity;
+
 
     public Country(UniverseConstructionContext u)
     {
@@ -41,6 +44,10 @@ public class Country extends MoneySource implements Serializable,PersonContainer
 	        name = "country" + countryNameCount;
         }
 	    countryNameCount++;
+	    allies = new ArrayList<>();
+	    atWarWith = new ArrayList<>();
+	    grids = new ArrayList<>();
+	    people = new ArrayList<>();
     }
 
     // public Country(double wealth,ArrayList<Grid> grids,String name)
@@ -77,13 +84,26 @@ public class Country extends MoneySource implements Serializable,PersonContainer
         // TODO: 4/10/2016
     }
 
-    // private //capital city whitehhouse
+	public String getName() {
+		return name;
+	}
+
+	public ArrayList<Country> getAllies() {
+		return allies;
+	}
+
+
+
+	public ArrayList<Country> getAtWarWith() {
+		return atWarWith;
+	}
+	// private //capital city whitehhouse
     public enum GovernmentType
     {
-        Democracy,Communist,Fascist,Totalitarian
+        Democracy,Communist,Fascist,Totalitarian;
     }
-    private GovernmentType governmentType;
-    public ArrayList<NaturalHazard> getNaturalHazards()
+	private GovernmentType governmentType;
+	public ArrayList<NaturalHazard> getNaturalHazards()
     {
         ArrayList<NaturalHazard> out = new ArrayList<NaturalHazard>();
         for(Grid grid:grids)
@@ -94,7 +114,7 @@ public class Country extends MoneySource implements Serializable,PersonContainer
         }
         return out;
     }
-    public ArrayList<NaturalResource> getNaturalResources()
+	public ArrayList<NaturalResource> getNaturalResources()
     {
         ArrayList<NaturalResource> out = new ArrayList<NaturalResource>();
         for(Grid grid:grids)
@@ -105,19 +125,19 @@ public class Country extends MoneySource implements Serializable,PersonContainer
         }
         return out;
     }
-    public GovernmentType getGovermentType()
+	public GovernmentType getGovermentType()
     {
         return governmentType;
     }
-    public City getCapitalCity()
+	public City getCapitalCity()
     {
         return capitalCity;
     }
-    public void addRoad(Road road)
+	public void addRoad(Road road)
     {
         roads.add(road);
     }
-    public ArrayList<Road> accessibleRoads(City c)
+	public ArrayList<Road> accessibleRoads(City c)
     {
         ArrayList<Road> out = new ArrayList<>();
         for(Road road: roads)
@@ -127,8 +147,11 @@ public class Country extends MoneySource implements Serializable,PersonContainer
         }
         return out;
     }
-    public void loosePerson(AbstractPerson person)
+	public void loosePerson(AbstractPerson person)
     {
         people.remove(person);
     }
+	public ArrayList<AbstractPerson> getPeople() {
+		return people;
+	}
 }

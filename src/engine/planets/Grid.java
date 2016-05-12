@@ -1,9 +1,6 @@
 package engine.planets;
 
-import engine.cities.City;
-import engine.cities.CityBlock;
-import engine.cities.CityContainer;
-import engine.cities.FarmLand;
+import engine.cities.*;
 import engine.planets.hazards.*;
 import engine.universe.Country;
 import engine.universe.CountryContainer;
@@ -38,7 +35,7 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
         this.parentPlanet = parentPlanet;
     }*/
 
-    public Grid(GridConstructionContext gridConstructionContext) {
+    public Grid(GridConstructionContext gridConstructionContext){
         registerPlanetContainer();// TODO: 5/10/2016 go through and check for thsese in all of the construction context  constructors
         registerCountryContainer();
 	    registerCityContainer();
@@ -63,9 +60,44 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
 		    }
 	    }
 		farmLand = new FarmLand(this);
-
+		//nowwe deal with  countries
+	    parentCountry = gridConstructionContext.country;
 	    //now we deal with the citys
 	    citys = new ArrayList<>();
+	    double cityProb = gridConstructionContext.citiesPerGrid;
+	    double rand = Math.random();
+	    if(rand < cityProb)
+	    {
+		    try {
+			    citys.add(new City(new CityConstructionContext(gridConstructionContext,this)));
+		    } catch (ToManyPeopleException e) {
+			    e.printStackTrace();
+			    assert (false);
+			    throw new UnsupportedOperationException();
+		    }
+		    rand = Math.random();
+		    if(rand < cityProb)
+		    {
+			    try {
+				    citys.add(new City(new CityConstructionContext(gridConstructionContext,this)));
+			    } catch (ToManyPeopleException e) {
+				    e.printStackTrace();
+				    assert (false);
+				    throw new UnsupportedOperationException();
+			    }
+			    rand = Math.random();
+			    if(rand < cityProb)
+			    {
+				    try {
+					    citys.add(new City(new CityConstructionContext(gridConstructionContext,this)));
+				    } catch (ToManyPeopleException e) {
+					    e.printStackTrace();
+					    assert (false);
+					    throw new UnsupportedOperationException();
+				    }
+			    }//up to three citys
+		    }
+	    }
 	    // TODO: 5/10/2016
     }
 

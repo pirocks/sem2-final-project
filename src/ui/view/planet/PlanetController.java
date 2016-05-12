@@ -59,6 +59,7 @@ public class PlanetController implements Initializable {
 
 
 	public void updateAccordion() {
+		System.out.print("cities:" + planet.getAllCities());
 		for(City c: planet.getAllCities())
 		{
 			VBox pane = new VBox();

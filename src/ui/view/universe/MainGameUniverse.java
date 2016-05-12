@@ -43,6 +43,6 @@ public class MainGameUniverse implements Runnable {
 		primaryStage.setScene(new Scene(root));
 		primaryStage.setTitle("Universe");
 		primaryStage.show();
-		primaryStage.setFullScreen(true);
+//		primaryStage.setFullScreen(true);
 	}
 }

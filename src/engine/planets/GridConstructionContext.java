@@ -1,7 +1,6 @@
 package engine.planets;
 
-import engine.planets.hazards.NaturalHazard;
-import engine.planets.hazards.Volcano;
+import engine.universe.Country;
 import engine.universe.Resource;
 
 import java.util.ArrayList;
@@ -18,10 +17,18 @@ public class GridConstructionContext
 	double hazardAbundance;
 //	ArrayList<NaturalHazard> hazards; handalleed by grid becuase parent grid needed in constructor
 	ArrayList<NaturalResource> naturalResources;
-	ArrayList<TerrainType> surroundingTerrains;// TODO: 4/11/2016 shoul  have an intial method which determines all terrain types before actually constructing grids would als fix above issue with hazards and resources by predefining which resources hazards and terrains to have
+	private ArrayList<TerrainType> surroundingTerrains;// TODO: 4/11/2016 shoul  have an intial method which determines all terrain types before actually constructing grids would als fix above issue with hazards and resources by predefining which resources hazards and terrains to have
+	double citiesPerGrid;
+	Country country;
+	public double industryProb;
 
-	public GridConstructionContext(PlanetConstructionContext planetConstructionContext,Grid[][] grids,int y, int x)
+	public GridConstructionContext(PlanetConstructionContext planetConstructionContext,
+	                               Grid[][] grids, int y, int x,
+	                               double citiesPerGrid, Country country, double industryProb)
 	{
+		this.citiesPerGrid = citiesPerGrid;
+		this.country = country;
+		this.industryProb = industryProb;
 //		hazards = new ArrayList<>();
 		int numGrids = planetConstructionContext.gridNum* planetConstructionContext.gridNum;
 		hazardAbundance = planetConstructionContext.numHazards/numGrids;
@@ -46,46 +53,38 @@ public class GridConstructionContext
 			naturalResources.add(new NaturalResource(Resource.Type.Water,100,0,100));
 		surroundingTerrains = new ArrayList<>();
 //		surroundingTerrains.add(grids[y - 0][x - 0].getTerrainType());
-		try {
+		try
+		{
 			surroundingTerrains.add(grids[y - 0][x - 1].getTerrainType());
-		} catch (IndexOutOfBoundsException e) {
-			//do nothing
-		}
-		try {
+		} catch (IndexOutOfBoundsException e) {}
+		try
+		{
 			surroundingTerrains.add(grids[y - 0][x - 2].getTerrainType());
-		} catch (IndexOutOfBoundsException e) {
-
-		}
-		try {
+		} catch (IndexOutOfBoundsException ignored) {}
+		try
+		{
 			surroundingTerrains.add(grids[y - 1][x - 0].getTerrainType());
-		} catch (IndexOutOfBoundsException e) {
-
-		}
-		try {
+		} catch (IndexOutOfBoundsException ignored) {}
+		try
+		{
 			surroundingTerrains.add(grids[y - 1][x - 1].getTerrainType());
-		} catch (IndexOutOfBoundsException e) {
-
-		}
-		try {
+		} catch (IndexOutOfBoundsException ignored) {}
+		try
+		{
 			surroundingTerrains.add(grids[y - 1][x - 2].getTerrainType());
-		} catch (IndexOutOfBoundsException e) {
-
-		}
-		try {
+		} catch (IndexOutOfBoundsException ignored) {}
+		try
+		{
 			surroundingTerrains.add(grids[y - 2][x - 0].getTerrainType());
-		} catch (IndexOutOfBoundsException e) {
-
-		}
-		try {
+		} catch (IndexOutOfBoundsException ignored) {}
+		try
+		{
 			surroundingTerrains.add(grids[y - 2][x - 1].getTerrainType());
-		} catch (IndexOutOfBoundsException  e) {
-
-		}
-		try {
+		} catch (IndexOutOfBoundsException ignored) {}
+		try
+		{
 			surroundingTerrains.add(grids[y - 2][x - 2].getTerrainType());
-		} catch (IndexOutOfBoundsException e) {
-
-		}
+		} catch (IndexOutOfBoundsException ignored) {}
 	}
 	public TerrainType getSuitableTerrainType()
 	{
@@ -96,7 +95,6 @@ public class GridConstructionContext
 		int MountainsCount = 0;
 		int HillsCount = 0;
 		int WastelandCount = 0;
-
 		for(TerrainType type:surroundingTerrains)
 		{
 			switch(type)

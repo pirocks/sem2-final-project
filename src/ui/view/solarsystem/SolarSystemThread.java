@@ -17,9 +17,10 @@ public class SolarSystemThread implements Runnable {
 	private SolarSystem solarSystem;
 	private Country playersCountry;
 
-	public SolarSystemThread(SolarSystem s)
+	public SolarSystemThread(SolarSystem s, Country playersCountry)
 	{
 		solarSystem = s;
+		this.playersCountry = playersCountry;
 	}
 	/**
 	 * When an object implementing interface <code>Runnable</code> is used

@@ -1,5 +1,4 @@
-
-
+distance could be decided on a cityBlock equals 1 basis that seems like a reasonable standard will adopt and some point but not now.
 
 
 

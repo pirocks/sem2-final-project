@@ -19,7 +19,7 @@ public class Warehouse extends Workplace
 	public static double costInitial;
 	public Resource resources;
 
-	public Warehouse(ArrayList<CityWorker> workers, CityBlock parentBlock, MoneySource owner) {
+	public Warehouse(CityBlock parentBlock, MoneySource owner) {
 		super(new AttackableConstants(healthInitial,resistanceInitial,parentBlock.getLocation()),parentBlock, owner);
 	}
 	@Override

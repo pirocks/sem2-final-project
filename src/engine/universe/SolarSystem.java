@@ -20,6 +20,10 @@ public class SolarSystem implements PlanetContainer, Serializable
 		return star;
 	}
 
+	public void setStar(Star star) {//kind of awkward that this is necessary.
+		this.star = star;
+	}
+
 	private Star star;
 	public ArrayList<Planet> getPlanets() {
 		return planets;
@@ -32,13 +36,13 @@ public class SolarSystem implements PlanetContainer, Serializable
 		    "Kylar","Solar System 1","Solar System 2","Solar System 3"
     };
 	public static int solarSystemNameCount = 0;
-	@Deprecated public SolarSystem(double x,double y, double z)
+	@Deprecated public SolarSystem(double x, double y, double z, SolarSystem parentSolarSystem)
     {
         registerPlanetContainer();
         this.x = x;
         this.y = y;
         this.z = z;
-	    star = new Star(x,y,z);
+	    star = new Star(x,y,z, parentSolarSystem);
 	    setName();
     }
     public SolarSystem(SolarSystemConstructionContext s)

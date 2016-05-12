@@ -5,7 +5,6 @@ import engine.universe.SolarSystemConstructionContext;
 import engine.universe.Star;
 import engine.universe.*;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 
 /**
@@ -13,7 +12,7 @@ import java.util.ArrayList;
  *
  */
 public class PlanetConstructionContext {
-    double             radius;
+    double radiusFromSolarSystem;
     Star               star;
     ArrayList<Country> countries;// TODO: 5/10/2016 planets  don't have cpountries/citys randomly generrated yet
     int                gridNum;
@@ -29,23 +28,28 @@ public class PlanetConstructionContext {
     double             HeliumAbundance;
     double             FoodAbundance;
     double             WaterAbundance;
+	double             cityDensity;
+	double industryProb;
 
 	public PlanetConstructionContext(
-			double             radius,
-			Star               star,
+			double radius,
+			Star star,
 			ArrayList<Country> countries,
-			int                gridNum,
-			double             percentWater,
-			int                numHazards,
-			double             IronAbundance,
-			double             OilAbundance,
-			double             UraniumAbundance,
-			double             HeliumAbundance,
-			double             FoodAbundance,
-			double             WaterAbundance
-	)
+			int gridNum,
+			double percentWater,
+			int numHazards,
+			double IronAbundance,
+			double OilAbundance,
+			double UraniumAbundance,
+			double HeliumAbundance,
+			double FoodAbundance,
+			double WaterAbundance,
+			double cityDensity,
+			double industryProb)
 	{
-		this.radius = radius;
+		if(countries == null)
+			throw new IllegalArgumentException();
+		this.radiusFromSolarSystem = radius;
 		this.star = star;
 		this.countries = countries;
 		this.gridNum = gridNum;
@@ -58,22 +62,31 @@ public class PlanetConstructionContext {
 		this.FoodAbundance = FoodAbundance;
 		this.WaterAbundance = WaterAbundance;
 
+		this.cityDensity = cityDensity;
+		this.industryProb = industryProb;
 	}
 
 
     private void copyInto(PlanetConstructionContext p) {
-        this.radius = p.radius + utils.getRandomDouble(100000,1000000);// TODO: 5/9/2016 make sure these nums are reasonable
-        this.star = p.star;
-        this.countries = p.countries;
-        this.gridNum = p.gridNum;
-        this.percentWater = p.percentWater;
-        this.numHazards = p.numHazards;
-        this.IronAbundance = p.IronAbundance;
-        this.OilAbundance = p.OilAbundance;
-        this.UraniumAbundance = p.UraniumAbundance;
-        this.HeliumAbundance = p.HeliumAbundance;
-        this.FoodAbundance = p.FoodAbundance;
-        this.WaterAbundance = p.WaterAbundance;
+	    if(p.countries == null)
+		    throw new IllegalArgumentException();
+	    if(p.star == null)
+		    throw new IllegalArgumentException();
+	    this.radiusFromSolarSystem = p.radiusFromSolarSystem + utils.getRandomDouble(100000,1000000);// TODO: 5/9/2016 make sure these nums are reasonable
+	    this.star = p.star;
+	    this.countries = p.countries;
+	    this.gridNum = p.gridNum;
+	    this.percentWater = p.percentWater;
+	    this.numHazards = p.numHazards;
+	    this.IronAbundance = p.IronAbundance;
+	    this.OilAbundance = p.OilAbundance;
+	    this.UraniumAbundance = p.UraniumAbundance;
+	    this.HeliumAbundance = p.HeliumAbundance;
+	    this.FoodAbundance = p.FoodAbundance;
+	    this.WaterAbundance = p.WaterAbundance;
+
+	    this.cityDensity = p.cityDensity;
+	    this.industryProb = p.industryProb;
     }
 
     public PlanetConstructionContext(SolarSystemConstructionContext s) {

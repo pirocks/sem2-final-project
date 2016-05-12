@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * Created by bob on 5/7/2016.
  *
  */
-public class CountryConstructionContext
+@Deprecated public class CountryConstructionContext
 {
 	public Planet planet;
 	public ArrayList<Grid> grids;

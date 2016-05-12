@@ -42,6 +42,7 @@ public class SolarSystemConstructionContext {
 		context1 = generateRandomPlanetContext(u);
 		context2 = generateRandomPlanetContext(u);
 		context3 = generateRandomPlanetContext(u);
+		countries = u.countries;
 	}
 	public PlanetConstructionContext generateRandomPlanetContext(UniverseConstructionContext u)
 	{
@@ -56,6 +57,8 @@ public class SolarSystemConstructionContext {
 		double FoodAbundance = utils.getRandomDouble(0.8,0.97);
 		double HeliumAbundance = utils.getRandomDouble(0.01,0.2);
 		double UraniumAbundance = utils.getRandomDouble(0.05,0.3);
+		double citiesPerGrid = utils.getRandomDouble(0,0.1);// TODO: 5/11/2016 add in menu
+		double industryProb = utils.getRandomDouble(0,1);// TODO: 5/11/2016 add this as an option in universe
 		return new PlanetConstructionContext(
 				radius,
 				star,
@@ -68,7 +71,8 @@ public class SolarSystemConstructionContext {
 				UraniumAbundance,
 				HeliumAbundance,
 				FoodAbundance,
-				WaterAbundance
-		);
+				WaterAbundance,
+				citiesPerGrid,
+				industryProb);
 	}
 }

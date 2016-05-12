@@ -59,7 +59,7 @@ public class SolarSystemController implements Initializable {
 	@FXML
 	public void onClose()
 	{
-		System.exit(0);//maje surre that this is actuall named exit game // TODO: 5/9/2016
+		System.exit(0);//make sure that this is actually named exit game // TODO: 5/9/2016
 	}
 
 	public void updateVars(SolarSystem solarSystem, Country playersCountry) {

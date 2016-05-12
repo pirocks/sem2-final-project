@@ -6,6 +6,7 @@ import engine.cities.City;
 import engine.cities.CityBlock;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class LocationPlanet implements Serializable,PlanetContainer
 {
@@ -40,6 +41,13 @@ public class LocationPlanet implements Serializable,PlanetContainer
 	{
 		this(b.getParentBlock());
 	}
+
+	public LocationPlanet(Grid parentGrid, int centerx, int centery) {
+		planet = parentGrid.getParentPlanet();
+		Blockx = centerx;
+		Blocky = centery;
+	}
+
 	public void moveBlock(int x,int y) {
 		Blockx = x;
 		Blocky = y;
@@ -154,8 +162,27 @@ public class LocationPlanet implements Serializable,PlanetContainer
 		LocationPlanet out = new LocationPlanet(a.getPlanet(),Gridxmid,Gridymid,Blockxmid,Blockymid);
 		return out;
 	}
+	public Grid getGrid()
+	{
+		return planet.getGrids()[Gridy][Gridx];
+	}
 //	public CityBlock getCityBlock()
 //	{
 //		return planet.getGrids()[Gridy][Gridx];
 //	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hashCode(this);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if(obj != null && obj instanceof LocationPlanet) {
+			LocationPlanet toTest = (LocationPlanet) obj;
+			if(toTest.getBlocky() ==  getBlocky()&& toTest.getBlockx() == getBlockx() && toTest.getGridy() == getGridy() && toTest.getGridx() == getGridx() && toTest.getPlanet() == getPlanet())
+				return true;
+		}
+		return false;
+	}
 }
