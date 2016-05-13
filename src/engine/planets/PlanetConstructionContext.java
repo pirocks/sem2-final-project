@@ -4,6 +4,7 @@ import engine.universe.Country;
 import engine.universe.SolarSystemConstructionContext;
 import engine.universe.Star;
 import engine.universe.*;
+import org.jetbrains.annotations.Contract;
 
 import java.util.ArrayList;
 
@@ -70,8 +71,8 @@ public class PlanetConstructionContext {
     private void copyInto(PlanetConstructionContext p) {
 	    if(p.countries == null)
 		    throw new IllegalArgumentException();
-	    if(p.star == null)
-		    throw new IllegalArgumentException();
+//	    if(p.star == null)
+//		    throw new IllegalArgumentException();
 	    this.radiusFromSolarSystem = p.radiusFromSolarSystem + utils.getRandomDouble(100000,1000000);// TODO: 5/9/2016 make sure these nums are reasonable
 	    this.star = p.star;
 	    this.countries = p.countries;

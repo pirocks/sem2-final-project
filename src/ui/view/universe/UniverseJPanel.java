@@ -2,26 +2,39 @@ package ui.view.universe;
 
 import engine.universe.SolarSystem;
 import engine.universe.Universe;
+import ui.ImagePanel;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
 /**
  * Created by bob on 5/8/2016.
- *
+ * this class was really irritating. It was easier to do stuff in 3d
  */
-public class UniverseJPanel extends JPanel
+@Deprecated public class UniverseJPanel extends JPanel
 {
 	private Universe universe;
+	private ImagePanel image;
 	public UniverseJPanel(Universe universe)
 	{
 		this.universe = universe;
 		super.setPreferredSize(new Dimension(1280,1381));
-		super.repaint();
+		image = new ImagePanel(new File(getClass().getResource("universe_background_image.jpg").getPath()));
+//		add(image);
+		BufferedImage wPic = null;
+		try {
+			wPic = ImageIO.read(this.getClass().getResource("universe_background_image.jpg"));
+		} catch (IOException e) {
+
+		}
+		JLabel wIcon = new JLabel(new ImageIcon(wPic));
+		add(wIcon);
+//		setVisible(true);
 	}
 
 	@Override
@@ -44,17 +57,6 @@ public class UniverseJPanel extends JPanel
 			double locz = z/shrinkConstant;
 			g.fillRect((int) locx, (int) locy, 10, 10);
 		}
-		BufferedImage background = null;
-		try {
-			background = ImageIO.read(this.getClass().getResource("universe_background_image.jpg"));
-		} catch (IOException e) {
-			e.printStackTrace();
-			System.exit(35467);
-		}
-		add(new JLabel(new ImageIcon(background)));
-		revalidate();
-		repaint();
-//		g.fillRect(0,100,100,100);
-//		g.fillRect(-1000,-1000,2000000,2000000);
+//		g.drawImage(image.getImage(),0,0,null);
 	}
 }

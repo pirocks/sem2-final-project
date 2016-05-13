@@ -13,6 +13,10 @@ import java.io.IOException;
  */
 public class ImagePanel extends JPanel
 {
+	public BufferedImage getImage() {
+		return image;
+	}
+
 	private BufferedImage image;
 	public ImagePanel(File image)
 	{

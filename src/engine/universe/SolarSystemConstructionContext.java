@@ -32,17 +32,21 @@ public class SolarSystemConstructionContext {
 		this.countries = countries;
 	}*/
 	public SolarSystemConstructionContext(UniverseConstructionContext u){
+		if(u.countries == null)
+			throw new IllegalArgumentException();
 		numMaxPlanets = u.numMaxPlanets;
 		numMinPlanets = u.numMinPlanets;
 		maxRadius = u.solarSystemMaxRadius;
 		minRadius = u.solarSystemMinRadius;
+		countries = u.countries;
 		x = utils.getRandomDouble(0,u.universeRadius);
 		y = utils.getRandomDouble(0,u.universeRadius);
 		z = utils.getRandomDouble(0,u.universeRadius);
 		context1 = generateRandomPlanetContext(u);
 		context2 = generateRandomPlanetContext(u);
 		context3 = generateRandomPlanetContext(u);
-		countries = u.countries;
+		if(countries == null)
+			throw new IllegalArgumentException();
 	}
 	public PlanetConstructionContext generateRandomPlanetContext(UniverseConstructionContext u)
 	{
@@ -59,10 +63,12 @@ public class SolarSystemConstructionContext {
 		double UraniumAbundance = utils.getRandomDouble(0.05,0.3);
 		double citiesPerGrid = utils.getRandomDouble(0,0.1);// TODO: 5/11/2016 add in menu
 		double industryProb = utils.getRandomDouble(0,1);// TODO: 5/11/2016 add this as an option in universe
+		if(countries == null)
+			throw new IllegalStateException();
 		return new PlanetConstructionContext(
 				radius,
 				star,
-				countries,
+				u.countries,
 				gridNum,
 				percentWater,
 				numHazards,

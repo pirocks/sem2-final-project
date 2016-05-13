@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
 <?import javafx.embed.swing.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
@@ -41,10 +42,10 @@
       <Group BorderPane.alignment="CENTER" />
    </bottom>
    <center>
-      <ScrollPane>
-         <content>
-            <SwingNode fx:id="swingNode" BorderPane.alignment="CENTER" />
-         </content>
-      </ScrollPane>
+      <AnchorPane fx:id="threeDPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <MeshView drawMode="LINE" layoutX="100.0" layoutY="100.0" scaleX="200.0" scaleY="200.0" scaleZ="200.0" />
+            <Box depth="200.0" height="200.0" layoutX="200.0" layoutY="100.0" width="200.0" />
+         </children></AnchorPane>
    </center>
 </BorderPane>

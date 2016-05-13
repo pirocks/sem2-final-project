@@ -20,4 +20,5 @@ public class ToManyPeopleException extends Throwable {
 		this.population = population;
 		this.available = available;
 	}
+
 }

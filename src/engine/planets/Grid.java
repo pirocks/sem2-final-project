@@ -69,31 +69,31 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
 	    if(rand < cityProb)
 	    {
 		    try {
-			    citys.add(new City(new CityConstructionContext(gridConstructionContext,this)));
+			    citys.add(new City(new CityConstructionContext(gridConstructionContext, terrainType, this)));
 		    } catch (ToManyPeopleException e) {
 			    e.printStackTrace();
-			    assert (false);
-			    throw new UnsupportedOperationException();
+////			    assert (false);//who cares
+//			    throw new UnsupportedOperationException(e);
 		    }
 		    rand = Math.random();
 		    if(rand < cityProb)
 		    {
 			    try {
-				    citys.add(new City(new CityConstructionContext(gridConstructionContext,this)));
+				    citys.add(new City(new CityConstructionContext(gridConstructionContext, terrainType, this)));
 			    } catch (ToManyPeopleException e) {
 				    e.printStackTrace();
-				    assert (false);
-				    throw new UnsupportedOperationException();
+//				    assert (false);
+//				    throw new UnsupportedOperationException();
 			    }
 			    rand = Math.random();
 			    if(rand < cityProb)
 			    {
 				    try {
-					    citys.add(new City(new CityConstructionContext(gridConstructionContext,this)));
+					    citys.add(new City(new CityConstructionContext(gridConstructionContext, terrainType, this)));
 				    } catch (ToManyPeopleException e) {
 					    e.printStackTrace();
-					    assert (false);
-					    throw new UnsupportedOperationException();
+//					    assert (false);
+//					    throw new UnsupportedOperationException();
 				    }
 			    }//up to three citys
 		    }

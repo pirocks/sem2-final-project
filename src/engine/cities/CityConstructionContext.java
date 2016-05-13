@@ -5,6 +5,7 @@ import engine.buildings.housing.WorkersHouseBlock;
 import engine.planets.Grid;
 import engine.planets.GridConstructionContext;
 import engine.planets.LocationPlanet;
+import engine.planets.TerrainType;
 import engine.universe.Country;
 import engine.universe.MoneySource;
 import engine.universe.utils;
@@ -19,6 +20,11 @@ public class CityConstructionContext {
 	ArrayList<LocationPlanet> buildingLocations;//this is an arraylist which makes the entire city attackable and allows for the building sites to be pre-determined
 	int population;
 	MoneySource moneySourceForBuildings;//the money ource used by buildings to pay staff
+	private TerrainType terrainType;
+
+	public TerrainType getTerrainType() {
+		return terrainType;
+	}
 
 	//two basic types for now
 	//industrial cities are porer than scientific and havve obvious differences in buildings
@@ -30,8 +36,9 @@ public class CityConstructionContext {
 	@Deprecated  ArrayList<CityConstructionContext> roadsTo;// I wn't use this, I'll have the AI catch up afterwards
 	Country parentCountry;
 	Grid parentGrid;
-	public CityConstructionContext(GridConstructionContext gridConstructionContext, Grid parentGrid)
+	public CityConstructionContext(GridConstructionContext gridConstructionContext, TerrainType terrainType, Grid parentGrid)
 	{
+		this.terrainType = terrainType;
 		this.parentGrid = parentGrid;
 		double industryProb = gridConstructionContext.industryProb;
 		double rand = Math.random();
@@ -50,6 +57,7 @@ public class CityConstructionContext {
 			throw new UnsupportedOperationException();
 		int centerx = utils.getRandomInt(0,100);
 		int centery = utils.getRandomInt(0,100);
+		buildingLocations = new ArrayList<>();
 		buildingLocations.add(new LocationPlanet(parentGrid,centerx,centery));
 		for(int count = 0; count < numBuildings;count++)
 		{
@@ -62,14 +70,21 @@ public class CityConstructionContext {
 		int dy = utils.getRandomInt(-1*searchDistance,searchDistance);
 		int finalx = centerx + dx;
 		int finaly = centery + dy;
-		if(finalx < 100 && finalx > 0)
-			if(finaly < 100 && finaly > 0) {
-				if (usedLocations.contains(new LocationPlanet(grid, finalx, finaly)))
-					return getSuitableLocation(usedLocations, grid, centerx, centery, searchDistance + 1);
-				else
-					return new LocationPlanet(grid,finalx,finaly);
-			}
-		return getSuitableLocation(usedLocations, grid, centerx, centery, searchDistance + 1);
-
+		if (finalx < 100)
+			if (finaly < 100)
+				if (finalx > 0)
+					if (finaly > 0) {
+						if (usedLocations.contains(new LocationPlanet(grid, finalx, finaly)))
+							return getSuitableLocation(usedLocations, grid, centerx, centery, searchDistance + 1);
+						else
+							return new LocationPlanet(grid, finalx, finaly);
+					}
+		if(searchDistance < 100) {
+			return getSuitableLocation(usedLocations, grid, centerx, centery, searchDistance + 1);
+		}
+		else {
+			System.out.println(usedLocations.size());
+			return getSuitableLocation(usedLocations, grid, centerx, centery, searchDistance);
+		}
 	}
 }

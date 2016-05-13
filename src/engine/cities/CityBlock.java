@@ -28,8 +28,8 @@ public class CityBlock extends Attackable implements Serializable, CityContainer
         this.parentGrid = parentGrid;
         this.building = building;
         this.parentCity = parentCity;
-        if(parentGrid.cityBlockLocationExists(x,y))
-            throw new IllegalArgumentException();
+//        if(parentGrid.cityBlockLocationExists(x,y))
+//            throw new IllegalArgumentException();
         this.x = x;
         this.y = y;
     }

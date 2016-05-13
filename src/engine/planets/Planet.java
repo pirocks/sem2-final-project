@@ -82,7 +82,7 @@ public class Planet implements Serializable,CountryContainer
 	    double surfaceArea = (double)(grids.length*grids[0].length);//todo multiply by conversion factor
 //	    A = 4 pi r^2
 	    planetRadius = Math.sqrt(surfaceArea/4/Math.PI);
-	    parentSolarSystem = c.star.getParentSolarSystem();
+//	    parentSolarSystem = c.star.getParentSolarSystem();
 	    solarSystemRadius = c.radiusFromSolarSystem;
     }
 

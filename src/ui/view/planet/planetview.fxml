@@ -40,10 +40,14 @@
       </TableView>
    </left>
    <right>
-      <Accordion fx:id="accordion" BorderPane.alignment="CENTER">
-        <panes>
-          <TitledPane animated="false" text="untitled 1" />
-        </panes>
-      </Accordion>
+      <ScrollPane prefViewportHeight="375.0" prefViewportWidth="84.0">
+         <content>
+            <Accordion fx:id="accordion" BorderPane.alignment="CENTER">
+              <panes>
+                <TitledPane animated="false" text="untitled 1" />
+              </panes>
+            </Accordion>
+         </content>
+      </ScrollPane>
    </right>
 </BorderPane>

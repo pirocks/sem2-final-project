@@ -71,13 +71,16 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 		super(healthInitial,resistanceInitial,cityConstructionContext.buildingLocations);
 		setName();
 		cityBlocks = new ArrayList<>();
+		hospitals = new ArrayList<>();
 		for(LocationPlanet locationPlanet:cityConstructionContext.buildingLocations)
 		{
 			Building building;
 			CityBlock cityBlock = new CityBlock(null,cityConstructionContext.parentGrid,null,this,locationPlanet.getBlockx(),locationPlanet.getBlocky());
 			//each building will be build here
-			if(getMaximumHousingCapacity() > cityConstructionContext.population)
+//			System.out.print("maximum capacity" + getMaximumHousingCapacity() + "pop:" + cityConstructionContext.population);
+			if(getMaximumHousingCapacity() < cityConstructionContext.population)
 			{
+//				System.out.println("generating housing");
 				if (cityConstructionContext.type == CityConstructionContext.Type.Industrial) {
 					//add as much housing as necessary for population
 					//favor adding in outer areas
@@ -100,7 +103,7 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 						building = new WorkersHouseBlock(cityBlock);//build a workersHouse block
 					else
 						building = new ApartmentBlock(cityBlock);//build a new apartment
-				} else//possibly add captital city
+				} else//possibly add capital city
 					throw new UnsupportedOperationException();// this is really a npt implemented exception but java doesn't have that
 			}
 			else
@@ -110,7 +113,7 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 				{
 					double dockYardProb = 0;
 					double industrialDockProb = 0;
-					if(locationPlanet.getGrid().getTerrainType() == TerrainType.Coast)
+					if(cityConstructionContext.getTerrainType() == TerrainType.Coast)
 					{
 						dockYardProb = 0.15;
 						industrialDockProb = 0.15;
@@ -121,25 +124,25 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 					//rest is  factory
 					double rand = Math.random();
 					double runningTotal = dockYardProb;
-					if(runningTotal < rand)
+					if(runningTotal > rand)
 						building = new DockYard(cityBlock,cityConstructionContext.moneySourceForBuildings);
 					else {
 						runningTotal += industrialDockProb;
-						if (runningTotal < rand)
+						if (runningTotal > rand)
 							building = new IndustrialDock(cityBlock,cityConstructionContext.moneySourceForBuildings);
 						else {
 							runningTotal += schoolProb;
-							if(runningTotal  < rand)
+							if(runningTotal  > rand)
 								building = new School(cityBlock,cityConstructionContext.moneySourceForBuildings);
 							else {
 								runningTotal += hospitalProb;
-								if(runningTotal < rand) {
+								if(runningTotal > rand) {
 									building = new Hospital(cityBlock, cityConstructionContext.moneySourceForBuildings);
 									hospitals.add((Hospital) building);
 								}
 								else{
 									runningTotal += warehouseProb;
-									if(runningTotal < rand)
+									if(runningTotal > rand)
 										building = new Warehouse(cityBlock,cityConstructionContext.moneySourceForBuildings);
 									else{
 										building = new Factory(cityBlock,cityConstructionContext.moneySourceForBuildings);
@@ -154,7 +157,7 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 					//extract redundant code
 					double dockYardProb = 0;
 					double industrialDockProb = 0;
-					if(locationPlanet.getGrid().getTerrainType() == TerrainType.Coast)
+					if(cityConstructionContext.getTerrainType() == TerrainType.Coast)
 					{
 						dockYardProb = 0.1;
 						industrialDockProb = 0.1;
@@ -165,25 +168,25 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 					//rest is  research area
 					double rand = Math.random();
 					double runningTotal = dockYardProb;
-					if(runningTotal < rand)
+					if(runningTotal > rand)
 						building = new DockYard(cityBlock,cityConstructionContext.moneySourceForBuildings);
 					else {
 						runningTotal += industrialDockProb;
-						if (runningTotal < rand)
+						if (runningTotal > rand)
 							building = new IndustrialDock(cityBlock,cityConstructionContext.moneySourceForBuildings);
 						else {
 							runningTotal += schoolProb;
-							if(runningTotal  < rand)
+							if(runningTotal  > rand)
 								building = new School(cityBlock,cityConstructionContext.moneySourceForBuildings);
 							else {
 								runningTotal += hospitalProb;
-								if(runningTotal < rand) {
+								if(runningTotal > rand) {
 									building = new Hospital(cityBlock, cityConstructionContext.moneySourceForBuildings);
 									hospitals.add((Hospital) building);
 								}
 								else{
 									runningTotal += warehouseProb;
-									if(runningTotal < rand)
+									if(runningTotal > rand)
 										building = new Warehouse(cityBlock,cityConstructionContext.moneySourceForBuildings);
 									else{
 										building = new ResearchArea(cityBlock,cityConstructionContext.moneySourceForBuildings);
@@ -201,9 +204,27 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 			cityBlock.setBuilding(building);
 			cityBlocks.add(cityBlock);
 		}
-		if(!(getMaximumHousingCapacity() > cityConstructionContext.population))
-			throw new ToManyPeopleException(cityConstructionContext.population,getMaximumHousingCapacity());
+		if(!(getMaximumHousingCapacity() > cityConstructionContext.population)) {
+//			System.out.print("\n");
+//			System.out.println("pop:" +  cityConstructionContext.population + "getMaximum capacity" + getMaximumHousingCapacity() +  "\nHousing:" + getHousing().toString() + "Buildings" + getBuilding());
+			throw new ToManyPeopleException(cityConstructionContext.population, getMaximumHousingCapacity());
+		}
 		// TODO: 5/8/2016 implement me
+	}
+	public ArrayList<Housing> getHousing()
+	{
+		ArrayList<Housing> out = new ArrayList<>();
+		for(CityBlock block:cityBlocks)
+			if(block.getBuilding() instanceof Housing)
+				out.add((Housing)block.getBuilding());
+		return out;
+	}
+	public ArrayList<Building> getBuilding()
+	{
+		ArrayList<Building> out = new ArrayList<>();
+		for(CityBlock block:cityBlocks)
+			out.add(block.getBuilding());
+		return out;
 	}
 	public void setName() {
 		try {

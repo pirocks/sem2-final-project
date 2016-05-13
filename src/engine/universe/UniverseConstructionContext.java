@@ -31,12 +31,13 @@ public class UniverseConstructionContext
 	{
 		this.numSolarSystems = numSolarSystems;
 		this.universeRadius = universeRadius;
-		for(int i = 0; i < numCountries;i++)
-		{
-
-		}
 		this.numMaxPlanets = numMaxPlanets;
 		this.numMinPlanets = numMinPlanets;
+		countries = new ArrayList<>();
+		for(int i = 0; i < numCountries;i++)
+			countries.add(new Country(this));
+		if(countries == null)
+			throw new IllegalStateException();
 	}
 
 
