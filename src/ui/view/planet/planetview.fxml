@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.view.planet.PlanetController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
@@ -42,11 +39,7 @@
    <right>
       <ScrollPane prefViewportHeight="375.0" prefViewportWidth="84.0">
          <content>
-            <Accordion fx:id="accordion" BorderPane.alignment="CENTER">
-              <panes>
-                <TitledPane animated="false" text="untitled 1" />
-              </panes>
-            </Accordion>
+            <Accordion fx:id="accordion" BorderPane.alignment="CENTER" />
          </content>
       </ScrollPane>
    </right>

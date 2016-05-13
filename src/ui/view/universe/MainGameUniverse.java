@@ -30,7 +30,6 @@ public class MainGameUniverse implements Runnable {
 	@Override
 	public void run() {
 		//init the Universe window
-//		System.out.print("running");
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("universeview.fxml"));
 		Parent root = null;
 		try {
@@ -39,10 +38,14 @@ public class MainGameUniverse implements Runnable {
 			e.printStackTrace();
 			System.exit(102300);
 		}
+		UniverseController controller = loader.getController();
 		Stage primaryStage =  new Stage();
-		primaryStage.setScene(new Scene(root));
+		Scene scene = new Scene(root);
+		primaryStage.setScene(scene);
 		primaryStage.setTitle("Universe");
+		controller.subScene.requestFocus();
+		controller.accordion.setDisable(true);
 		primaryStage.show();
-//		primaryStage.setFullScreen(true);
+		controller.subScene.requestFocus();
 	}
 }

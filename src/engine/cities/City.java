@@ -10,13 +10,13 @@ import engine.buildings.workplaces.*;
 import engine.people.AbstractPerson;
 import engine.people.PersonContainer;
 import engine.people.cityworkers.CityWorker;
-import engine.planets.TerrainType;
-import engine.universe.Country;
-import engine.universe.CountryContainer;
 import engine.planets.Grid;
 import engine.planets.LocationPlanet;
+import engine.planets.TerrainType;
 import engine.tools.AttackableConstants;
 import engine.tools.weapons.Attackable;
+import engine.universe.Country;
+import engine.universe.CountryContainer;
 import engine.universe.MoneySource;
 
 import java.io.Serializable;
@@ -209,6 +209,7 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 //			System.out.println("pop:" +  cityConstructionContext.population + "getMaximum capacity" + getMaximumHousingCapacity() +  "\nHousing:" + getHousing().toString() + "Buildings" + getBuilding());
 			throw new ToManyPeopleException(cityConstructionContext.population, getMaximumHousingCapacity());
 		}
+		parentCountry = cityConstructionContext.parentCountry;
 		// TODO: 5/8/2016 implement me
 	}
 	public ArrayList<Housing> getHousing()

@@ -1,9 +1,10 @@
 package engine.universe;
 
 import java.io.Serializable;
-//import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
+
+//import java.math.BigDecimal;
 
 /**
  * Created by bob on 3/5/2016.
@@ -40,6 +41,7 @@ public class Universe implements Serializable, CountryContainer
         }
 	    universe = this;
 	    playersCountry = new Country(u);
+	    countries.add(playersCountry);
     }
 	@Deprecated public Universe(UniverseConstructionContext universeConstructionContext)
 	{

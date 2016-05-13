@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.shape.*?>
-<?import javafx.embed.swing.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
+<?import javafx.scene.Group?>
 <?import javafx.scene.layout.*?>
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.view.universe.UniverseController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#keyPressed" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.view.universe.UniverseController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -32,7 +26,7 @@
       </MenuBar>
    </top>
    <left>
-      <ScrollPane prefViewportHeight="375.0">
+      <ScrollPane fx:id="scrollPane" prefViewportHeight="375.0">
          <content>
             <Accordion fx:id="accordion" BorderPane.alignment="CENTER" />
          </content>
@@ -42,10 +36,6 @@
       <Group BorderPane.alignment="CENTER" />
    </bottom>
    <center>
-      <AnchorPane fx:id="threeDPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <MeshView drawMode="LINE" layoutX="100.0" layoutY="100.0" scaleX="200.0" scaleY="200.0" scaleZ="200.0" />
-            <Box depth="200.0" height="200.0" layoutX="200.0" layoutY="100.0" width="200.0" />
-         </children></AnchorPane>
+      <AnchorPane fx:id="threeDPane" onKeyPressed="#keyPressed" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>

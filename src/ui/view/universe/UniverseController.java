@@ -3,25 +3,27 @@ package ui.view.universe;
 import engine.universe.Country;
 import engine.universe.SolarSystem;
 import engine.universe.Universe;
-import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.PerspectiveCamera;
-import javafx.scene.control.*;
+import javafx.scene.SceneAntialiasing;
+import javafx.scene.SubScene;
+import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.TitledPane;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.*;
-import javafx.scene.shape.Box;
+import javafx.scene.shape.Sphere;
 import javafx.scene.text.Text;
 import ui.view.solarsystem.SolarSystemThread;
 
-import javax.swing.*;
 import java.net.URL;
-import java.util.*;
+import java.util.ResourceBundle;
 
 /**
  * Created by bob on 5/7/2016.
@@ -35,13 +37,6 @@ public class UniverseController implements Initializable {
 	MenuItem  about;
 	@FXML
 	MenuItem closeButton;
-	@FXML
-	SwingNode swingNode;
-	@FXML
-	AnchorPane anchorPane;
-	public static AnchorPane pane;
-	@FXML
-	AnchorPane threeDPane;
 	/**
 	 * Called to initialize a controller after its root element has been
 	 * completely processed.
@@ -51,10 +46,13 @@ public class UniverseController implements Initializable {
 	 * @param resources The resources used to localize the root object, or <tt>null</tt> if
 	 */
 	PerspectiveCamera camera;
+	SubScene subScene;
+
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 //		swingNode.setContent(new UniverseJPanel(Universe.universe));
+		Pane threeDPane = new Pane();
 		for(SolarSystem s: Universe.universe.getSolarSystems()) {
 			VBox pane = new VBox();
 			pane.getChildren().add(new Text(s.toString()));
@@ -67,11 +65,14 @@ public class UniverseController implements Initializable {
 			solarSystemSphere.setTranslateY(0);
 			solarSystemSphere.setTranslateZ(0);
 			threeDPane.getChildren().add(solarSystemSphere);
-			camera = new PerspectiveCamera();
 		}
+		camera = new PerspectiveCamera();
+		subScene = new SubScene(threeDPane,100,100,true,SceneAntialiasing.BALANCED);
+		threeDPane.getChildren().add(subScene);
+		subScene.requestFocus();
 	}
 
-	public class SolarSystemButton extends Button
+	class SolarSystemButton extends Button
 	{
 		private SolarSystem solarSystem;
 		private Country playersCountry;
@@ -95,5 +96,71 @@ public class UniverseController implements Initializable {
 	{
 		// TODO: 5/8/2016 implement global close
 		System.exit(0);
+	}
+
+	public void up(){
+		camera.setTranslateY(100 + camera.getTranslateY());
+	}
+	public void down(){
+		camera.setTranslateY(0 - 100 + camera.getTranslateY());
+	}
+	public void forward(){
+		camera.setTranslateZ(100 + camera.getTranslateZ());
+	}
+	public void backward(){
+		camera.setTranslateZ(0 - 100 + camera.getTranslateZ());
+	}
+	public void right(){
+		camera.setTranslateX(100 + camera.getTranslateX());
+	}
+	public void left(){
+		camera.setTranslateX(0 - 100 + camera.getTranslateX());
+	}
+
+	@FXML
+	public void keyPressed(KeyEvent keyEvent)
+	{
+		System.out.println("key pressed");
+		KeyCode code = keyEvent.getCode();
+		switch (code)
+		{
+			//intellij is great when you want to write tons of code
+			case PAGE_UP:
+				forward();
+				break;
+			case PAGE_DOWN:
+				backward();
+				break;
+			case LEFT:
+				left();
+				break;
+			case UP:
+				up();
+				break;
+			case RIGHT:
+				right();
+				break;
+			case DOWN:
+				down();
+				break;
+			case A:
+				left();
+				break;
+			case D:
+				right();
+				break;
+			case E:
+				down();
+				break;
+			case Q:
+				up();
+				break;
+			case S:
+				backward();
+				break;
+			case W:
+				forward();
+				break;
+		}
 	}
 }
