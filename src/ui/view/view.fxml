@@ -5,70 +5,56 @@
 <TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.view.Controller">
   <tabs>
     <Tab text="Universe">
-      <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <BorderPane fx:id="universeBorderPane" prefHeight="373.0" prefWidth="600.0">
-                     <right>
-                        <ScrollPane prefViewportHeight="373.0">
-                           <content>
-                              <Accordion fx:id="universeAccordion" BorderPane.alignment="CENTER" />
-                           </content>
-                        </ScrollPane>
-                     </right>
-                  </BorderPane>
-               </children></AnchorPane>
-      </content>
+         <content>
+            <BorderPane fx:id="universeBorderPane">
+               <right>
+                  <ScrollPane prefViewportHeight="373.0">
+                     <content>
+                        <Accordion fx:id="universeAccordion" BorderPane.alignment="CENTER" />
+                     </content>
+                  </ScrollPane>
+               </right>
+            </BorderPane>
+         </content>
     </Tab>
     <Tab text="SolarSystem">
-      <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <BorderPane fx:id="solarSystemBorderPane" prefHeight="371.0" prefWidth="600.0">
-                     <right>
-                        <ScrollPane prefViewportHeight="371.0">
-                           <content>
-                              <Accordion fx:id="solarSystemAccordion" BorderPane.alignment="CENTER" />
-                           </content>
-                        </ScrollPane>
-                     </right>
-                  </BorderPane>
-               </children></AnchorPane>
-      </content>
+         <content>
+            <BorderPane fx:id="solarSystemBorderPane">
+               <right>
+                  <ScrollPane prefViewportHeight="371.0">
+                     <content>
+                        <Accordion fx:id="solarSystemAccordion" BorderPane.alignment="CENTER" />
+                     </content>
+                  </ScrollPane>
+               </right>
+            </BorderPane>
+         </content>
     </Tab>
       <Tab text="Planet">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <BorderPane fx:id="planetBorderPane" prefHeight="371.0" prefWidth="600.0">
-                     <right>
-                        <ScrollPane prefViewportHeight="371.0">
-                           <content>
-                              <Accordion fx:id="planetAccordion" BorderPane.alignment="CENTER" />
-                           </content>
-                        </ScrollPane>
-                     </right>
-                  </BorderPane>
-               </children>
-            </AnchorPane>
-        </content>
+         <content>
+            <BorderPane fx:id="planetBorderPane">
+               <right>
+                  <ScrollPane prefViewportHeight="371.0">
+                     <content>
+                        <Accordion fx:id="planetAccordion" BorderPane.alignment="CENTER" />
+                     </content>
+                  </ScrollPane>
+               </right>
+            </BorderPane>
+         </content>
       </Tab>
       <Tab text="City">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <BorderPane fx:id="cityBorderPane" prefHeight="373.0" prefWidth="600.0">
-                     <right>
-                        <ScrollPane prefViewportHeight="373.0" prefViewportWidth="202.0">
-                           <content>
-                              <Accordion fx:id="cityAccordion" BorderPane.alignment="CENTER" />
-                           </content>
-                        </ScrollPane>
-                     </right>
-                  </BorderPane>
-               </children>
-            </AnchorPane>
-        </content>
+         <content>
+            <BorderPane fx:id="cityBorderPane">
+               <right>
+                  <ScrollPane prefViewportHeight="373.0" prefViewportWidth="202.0">
+                     <content>
+                        <Accordion fx:id="cityAccordion" BorderPane.alignment="CENTER" />
+                     </content>
+                  </ScrollPane>
+               </right>
+            </BorderPane>
+         </content>
       </Tab>
   </tabs>
 </TabPane>

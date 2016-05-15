@@ -51,6 +51,11 @@ public class Hospital extends Workplace
     }
 
 	@Override
+	protected String getName() {
+		return "Hospital";
+	}
+
+	@Override
 	public ResourceDemand getResourceCost() {
 		return null;// TODO: 4/9/2016
 	}

@@ -25,6 +25,11 @@ public class Factory extends Workplace
 	}
 
 	@Override
+	protected String getName() {
+		return "factory";
+	}
+
+	@Override
 	public ResourceDemand getResourceCost() {
 		return null;// TODO: 4/9/2016
 	}

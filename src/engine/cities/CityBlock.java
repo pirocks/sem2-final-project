@@ -2,7 +2,6 @@ package engine.cities;
 
 import engine.buildings.Building;
 import engine.buildings.BuildingContainer;
-//import engine.buildings.BuildingContainers;
 import engine.planets.Grid;
 import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
@@ -11,6 +10,8 @@ import engine.tools.weapons.Weapon;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+
+//import engine.buildings.BuildingContainers;
 
 public class CityBlock extends Attackable implements Serializable, CityContainer, BuildingContainer
 {
@@ -99,7 +100,6 @@ public class CityBlock extends Attackable implements Serializable, CityContainer
 	public void remove(Building building) {
 		if(this.building == building)
 		{
-			BuildingContainer.killBuilding(building);//todo is this consistent with other classes?
 			this.building = null;
 		}
 	}

@@ -21,6 +21,11 @@ public class DockYard extends Workplace
 	}
 
 	@Override
+	protected String getName() {
+		return "DockYard";
+	}
+
+	@Override
 	public ResourceDemand getResourceCost() {
 		return null;// TODO: 4/10/2016
 	}

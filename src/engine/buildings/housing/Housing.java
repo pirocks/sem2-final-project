@@ -33,6 +33,8 @@ public abstract class Housing extends Building implements PersonContainer
 	        maximumOccupancy = WorkersHouseBlock.maximumOccupancyInitial;
         }
     }
+
+
 	public boolean overcrowdedQ() {
         int sum = getPopulation();
 	    return sum <= maximumOccupancy;

@@ -17,6 +17,11 @@ public class WorkersHouseBlock extends Housing
 	}
 
 	@Override
+	protected String getName() {
+		return "WorkersHouseBlock";
+	}
+
+	@Override
 	public ResourceDemand getResourceCost() {
 		return null;// TODO: 4/9/2016
 	}

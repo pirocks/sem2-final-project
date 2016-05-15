@@ -57,40 +57,21 @@ public class Controller implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		initVars();
-		try {
-			initUniverseTab();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		try {
-			initSolarSystemTab();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		try {
-			initPlanetTab();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		try {
-			initCityTab();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		initUniverseTab();
+		initSolarSystemTab();
+		initPlanetTab();
+		initCityTab();
+		switchTo(city);
 	}
 	private void initVars(){
 		playersCountry = Universe.playersCountry;
 		city = Universe.playersCountry.getCapitalCity();
-		try {
-			planet = city.getParentGrid().getParentPlanet();
-			solarSystem = planet.getParentSolarSystem();
-		} catch (NullPointerException e) {
-			// TODO: 5/14/2016
-//			throw new IllegalStateException();
-		}
+		planet = city.getParentGrid().getParentPlanet();
+		solarSystem = planet.getParentSolarSystem();
 		universe = Main.getUniverse();
 	}
 	private void initUniverseTab(){
+		universeAccordion.getPanes().removeAll();
 		for(SolarSystem solarSystem:universe.getSolarSystems())
 		{
 			VBox pane = new VBox();
@@ -100,16 +81,19 @@ public class Controller implements Initializable{
 		}
 	}
 	private void initSolarSystemTab(){
-//		System.out.println("" + solarSystem.getPlanets());
+		getSolarSystemTab().setText("Solar System:" + solarSystem.name);
+		solarSystemAccordion.getPanes().removeAll();
 		for(Planet planet:solarSystem.getPlanets())
 		{
 			VBox pane = new VBox();
 			pane.getChildren().add(new Text(planet.name));
-			pane.getChildren().add(new PlanetButton(planet,"ClickMe",this));
+			pane.getChildren().add(new PlanetButton(planet,"Go To Planet",this));
 			solarSystemAccordion.getPanes().add(new TitledPane(planet.name,pane));
 		}
 	}
 	private void initPlanetTab(){
+		getPlanetTab().setText("Planet:" + planet.name);
+		planetAccordion.getPanes().removeAll();
 		for(City c: planet.getAllCities())
 		{
 			VBox pane = new VBox();
@@ -134,9 +118,14 @@ public class Controller implements Initializable{
 		}
 	}
 	private void initCityTab(){
+		getCityTab().setText("City:"  + city.name);
+		cityAccordion.getPanes().removeAll();
 		for(Building b:city.getBuilding())
 		{
-
+			VBox pane = new VBox();
+			pane.getChildren().add(new Text(b.toString()));
+			TitledPane titledPane = new TitledPane(b.name,pane);
+			cityAccordion.getPanes().add(titledPane);
 		}
 	}
 	public void switchTo(Universe u)

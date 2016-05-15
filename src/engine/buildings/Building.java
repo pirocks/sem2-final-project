@@ -1,19 +1,17 @@
 package engine.buildings;
 
 import engine.buildings.housing.Housing;
-import engine.buildings.workplaces.*;
+import engine.buildings.workplaces.Workplace;
 import engine.cities.City;
 import engine.cities.CityBlock;
 import engine.cities.CityContainer;
 import engine.people.AbstractPerson;
 import engine.people.PersonContainer;
-import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.tools.weapons.Attackable;
 import engine.universe.ResourceDemand;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 /**
  * Created by bob on 3/5/2016.
@@ -22,15 +20,20 @@ import java.util.ArrayList;
 public abstract class Building extends Attackable implements Serializable,CityContainer, PersonContainer//extends moneysource for workplace maybe??
 {
 	protected CityBlock parentBlock;
-//	private AttackableConstants attackableConstants;
+	public String name;
+
+	//	private AttackableConstants attackableConstants;
 	public Building(AttackableConstants attackableConstants,
 	                CityBlock parentBlock) {
 	    super(attackableConstants);
 	    registerCityContainer();
 	    registerPersonContainer();//TODO:go through and make sure every constructor has these
         this.parentBlock = parentBlock;
-
+		name = getName();
     }
+
+	protected abstract String getName();
+
 	public City getParentCity()
     {
         return parentBlock.getParentCity();

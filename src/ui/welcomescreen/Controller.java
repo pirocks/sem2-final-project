@@ -1,14 +1,14 @@
 package ui.welcomescreen;
 
-import engine.universe.UniverseGenerator;
 import engine.universe.UniverseConstructionContext;
+import engine.universe.UniverseGenerator;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
-import java.util.*;
+import java.util.ResourceBundle;
 
 
 
@@ -45,10 +45,10 @@ public class Controller implements Initializable {
 	}
 	@FXML public void generateClicked()
 	{
-		int solaySystemCount = 15;
+		int solarSystemCount = 15;
 		try
 		{
-			solaySystemCount = Integer.parseInt(numSolarSystem.getText());
+			solarSystemCount = Integer.parseInt(numSolarSystem.getText());
 		}
 		catch (NumberFormatException e)
 		{
@@ -65,7 +65,7 @@ public class Controller implements Initializable {
 			// TODO: 5/7/2016 handle invalid
 //			e.printStackTrace();
 		}
-		int numCountries = 10;
+		int numCountries = 5;
 		try
 		{
 			numCountries = Integer.parseInt(numEnemyCountries.getText());
@@ -74,10 +74,10 @@ public class Controller implements Initializable {
 		{
 //			e.printStackTrace();// TODO: 5/7/2016
 		}
-		int numPlanets = 10;
+		int numPlanets = 5;
 		try
 		{
-			numPlanets = solaySystemCount*Integer.parseInt(numPlanetsPerSolarSystem.getText());
+			numPlanets = solarSystemCount*Integer.parseInt(numPlanetsPerSolarSystem.getText());
 		}
 		catch(Exception e)
 		{
@@ -86,7 +86,7 @@ public class Controller implements Initializable {
 
 		UniverseGenerator generator = new UniverseGenerator(
 				new UniverseConstructionContext(
-						solaySystemCount,universeRadius,
+						solarSystemCount,universeRadius,
 						numCountries,numPlanets,numPlanets
 				));
 //		Thread universeGenerationThread = new Thread(generator);

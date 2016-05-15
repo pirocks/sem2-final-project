@@ -22,6 +22,11 @@ public class TownHall extends Workplace
 	}
 
 	@Override
+	protected String getName() {
+		return "TownHall";
+	}
+
+	@Override
 	public ResourceDemand getResourceCost() {
 		return null;// TODO: 4/9/2016
 	}

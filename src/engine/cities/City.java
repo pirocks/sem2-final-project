@@ -13,7 +13,6 @@ import engine.people.cityworkers.CityWorker;
 import engine.planets.Grid;
 import engine.planets.LocationPlanet;
 import engine.planets.TerrainType;
-import engine.tools.AttackableConstants;
 import engine.tools.weapons.Attackable;
 import engine.universe.Country;
 import engine.universe.CountryContainer;
@@ -49,24 +48,8 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 			"London", "San Francisco", "Beverly Hills","Los Altos", "Cambridge","San Jose","Edinburgh","Paris","Rome","Berlin","Moscow","Stalingrad","I'm out of clever Names"
 	};
 	public static int nameCount = 0;
+	private Building[] noNHousingBuildings;
 
-	//	private AttackableConstants attackableConstants;
-	public City(LocationPlanet location,boolean isCapital,Grid parentGrid,Country parentCountry,double wealth, int x, int y) {
-		super(new AttackableConstants(healthInitial,resistanceInitial,location));
-		moneySource = new MoneySource(wealth);
-		if(x > 100 || x < 0)
-			throw new IllegalArgumentException();
-		if(y > 100 || y < 0)
-			throw new IllegalArgumentException();
-		registerBuildingContainer();
-		registerCountryContainer();
-		registerPersonContainer();
-		this.isCapital = isCapital;
-		this.x = x;
-		this.y = y;
-		this.parentGrid = parentGrid;
-		this.parentCountry = parentCountry;
-	}
 	public City(CityConstructionContext cityConstructionContext) throws ToManyPeopleException {
 		super(healthInitial,resistanceInitial,cityConstructionContext.buildingLocations);
 		parentGrid = cityConstructionContext.parentGrid;
@@ -81,7 +64,6 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 //			System.out.print("maximum capacity" + getMaximumHousingCapacity() + "pop:" + cityConstructionContext.population);
 			if(getMaximumHousingCapacity() < cityConstructionContext.population)
 			{
-//				System.out.println("generating housing");
 				if (cityConstructionContext.type == CityConstructionContext.Type.Industrial) {
 					//add as much housing as necessary for population
 					//favor adding in outer areas
@@ -93,6 +75,7 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 						building = new ApartmentBlock(cityBlock);                    //apartment
 					else
 						building = new WorkersHouseBlock(cityBlock); //workers house block
+
 				} else if (cityConstructionContext.type == CityConstructionContext.Type.Scientific) {
 					//add as much huosing as necesary
 					//favor adding in uter areas
@@ -106,6 +89,7 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 						building = new ApartmentBlock(cityBlock);//build a new apartment
 				} else//possibly add capital city
 					throw new UnsupportedOperationException();// this is really a npt implemented exception but java doesn't have that
+
 			}
 			else
 			{
@@ -206,13 +190,38 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 			cityBlocks.add(cityBlock);
 		}
 		if(!(getMaximumHousingCapacity() > cityConstructionContext.population)) {
-//			System.out.print("\n");
-//			System.out.println("pop:" +  cityConstructionContext.population + "getMaximum capacity" + getMaximumHousingCapacity() +  "\nHousing:" + getHousing().toString() + "Buildings" + getBuilding());
-			throw new ToManyPeopleException(cityConstructionContext.population, getMaximumHousingCapacity());
+			notEnoughHousingHandler(cityConstructionContext);
 		}
 		parentCountry = cityConstructionContext.parentCountry;
 		// TODO: 5/8/2016 implement me
 	}
+
+	private void notEnoughHousingHandler(CityConstructionContext c) {
+		if(getMaximumHousingCapacity() > c.population)
+			return;
+		Workplace w = null;
+		try {
+			w = getWorkPlaces().get(0);
+		} catch (IndexOutOfBoundsException e) {
+			//this shouldn't happen
+			//but if it does get rid of people
+			System.out.println("city:" + name);
+			System.out.println("population:" + c.population);
+			System.out.println(getBuilding());
+			if(c.population > 1000)
+				c.population -= 1000;
+			else
+				c.population -= 1;
+			notEnoughHousingHandler(c);
+			return;
+		}
+		CityBlock block = w.getParentBlock();
+		w.die();
+		block.setBuilding(new ApartmentBlock(block));
+		if (getMaximumHousingCapacity() <  c.population)
+			notEnoughHousingHandler(c);
+	}
+
 	public ArrayList<Housing> getHousing()
 	{
 		ArrayList<Housing> out = new ArrayList<>();
@@ -369,5 +378,13 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 
 	public Grid getParentGrid() {
 		return parentGrid;
+	}
+
+	public ArrayList<Workplace> getWorkPlaces() {
+		ArrayList<Workplace> out = new ArrayList<>();
+		for(Building building:getBuilding())
+			if(building instanceof Workplace)
+				out.add((Workplace)building);
+		return out;
 	}
 }

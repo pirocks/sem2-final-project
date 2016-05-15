@@ -1,12 +1,9 @@
 package engine.buildings.workplaces;
 
 import engine.cities.CityBlock;
-import engine.people.cityworkers.CityWorker;
 import engine.tools.AttackableConstants;
 import engine.universe.MoneySource;
 import engine.universe.ResourceDemand;
-
-import java.util.ArrayList;
 
 public class School extends Workplace
 {
@@ -16,6 +13,11 @@ public class School extends Workplace
 
 	public School(CityBlock parentBlock, MoneySource owner) {
 		super(new AttackableConstants(healthInitial,resistanceInitial,parentBlock.getLocation()), parentBlock, owner);
+	}
+
+	@Override
+	protected String getName() {
+		return "School";
 	}
 
 	@Override

@@ -52,6 +52,7 @@ public abstract class Workplace extends Building implements PersonContainer, Mon
 		assert(workers.contains(person));
 		workers.remove(person);
 	}
+
 	public void remove(AbstractPerson abstractPerson) {
 		workers.remove(abstractPerson);
 	}

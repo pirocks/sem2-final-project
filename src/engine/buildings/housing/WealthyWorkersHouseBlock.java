@@ -15,6 +15,11 @@ import engine.universe.ResourceDemand;
 	}
 
 	@Override
+	protected String getName() {
+		return "you shouldn't be seeing this";
+	}
+
+	@Override
 	public ResourceDemand getResourceCost() {
 		return null;// TODO: 4/9/2016
 	}

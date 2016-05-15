@@ -16,6 +16,11 @@ public class IndustrialDock extends Workplace
 	}
 
 	@Override
+	protected String getName() {
+		return "IndustrialDock";
+	}
+
+	@Override
 	public ResourceDemand getResourceCost() {
 		return null;// TODO: 4/9/2016
 	}
