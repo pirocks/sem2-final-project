@@ -1,6 +1,6 @@
 package engine.universe;
 
-import ui.view.universe.MainGameUniverse;
+import ui.view.Main;
 
 /**
  * Created by bob on 5/7/2016.
@@ -29,6 +29,6 @@ public class UniverseGenerator implements Runnable
 	public void run() {
 		universe = new Universe(universeConstructionContext);
 		Universe.universe = universe;
-		new MainGameUniverse().run();
+		new Main().run();
 	}
 }
