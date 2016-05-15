@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="many view changes almost done with refactor">
+    <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="commit before delete">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/view/city/CityController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/view/city/CityThread.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/view/city/cityview.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/view/planet/PlanetController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/view/planet/PlanetJPanel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/view/planet/PlanetThread.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/view/planet/planetview.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/view/solarsystem/SolarSystemController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/view/solarsystem/SolarSystemJpanel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/view/solarsystem/SolarSystemThread.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/view/solarsystem/solarsystem.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/view/universe/MainGameUniverse.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/view/universe/UnFocusableAccordion.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/view/universe/UniverseController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/view/universe/UniverseJPanel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/view/universe/universeview.fxml" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ui/view/universe/universe_background_image.jpg" afterPath="$PROJECT_DIR$/src/ui/view/universe_background_image.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/Building.java" afterPath="$PROJECT_DIR$/src/engine/buildings/Building.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/housing/ApartmentBlock.java" afterPath="$PROJECT_DIR$/src/engine/buildings/housing/ApartmentBlock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/housing/Housing.java" afterPath="$PROJECT_DIR$/src/engine/buildings/housing/Housing.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/housing/RulersHouse.java" afterPath="$PROJECT_DIR$/src/engine/buildings/housing/RulersHouse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/housing/WealthyWorkersHouseBlock.java" afterPath="$PROJECT_DIR$/src/engine/buildings/housing/WealthyWorkersHouseBlock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/housing/WorkersHouseBlock.java" afterPath="$PROJECT_DIR$/src/engine/buildings/housing/WorkersHouseBlock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/DockYard.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/DockYard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/Factory.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/Factory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/Hospital.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/Hospital.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/IndustrialDock.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/IndustrialDock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/ResearchArea.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/ResearchArea.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/School.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/School.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/TownHall.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/TownHall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/Warehouse.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/Warehouse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/Workplace.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/Workplace.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/cities/City.java" afterPath="$PROJECT_DIR$/src/engine/cities/City.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/cities/CityBlock.java" afterPath="$PROJECT_DIR$/src/engine/cities/CityBlock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/Controller.java" afterPath="$PROJECT_DIR$/src/ui/view/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/view.fxml" afterPath="$PROJECT_DIR$/src/ui/view/view.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/welcomescreen/Controller.java" afterPath="$PROJECT_DIR$/src/ui/welcomescreen/Controller.java" />
     </list>
     <ignored path="testing.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,8 +77,10 @@
         <entry file="file://$PROJECT_DIR$/src/engine/cities/CityBlock.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-68">
-              <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-              <folding />
+              <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -109,22 +108,9 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ui/welcomescreen/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
+            <state relative-caret-position="697">
               <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TownHall.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/TownHall.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-              <folding>
-                <element signature="e#783#784#0" expanded="true" />
-                <element signature="e#807#808#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -133,10 +119,11 @@
         <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/Warehouse.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+              <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
               <folding>
-                <element signature="e#792#793#0" expanded="true" />
-                <element signature="e#817#818#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#718#719#0" expanded="true" />
+                <element signature="e#743#744#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -434,22 +421,23 @@
     <property name="extract.method.default.visibility" value="public" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\bob\Documents\testing\src\ui\view\universe" />
-      <recent name="C:\Users\bob\Documents\testing\src\ui" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="ui.view" />
       <recent name="ui" />
       <recent name="engine" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bob\Documents\testing\src\ui\welcomescreen" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="engine.cities" />
       <recent name="engine.universe" />
       <recent name="ui.view.universe" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\bob\Documents\testing\src\ui\welcomescreen" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\bob\Documents\testing\src\ui\view" />
+      <recent name="C:\Users\bob\Documents\testing\src\ui\view\universe" />
+      <recent name="C:\Users\bob\Documents\testing\src\ui" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -748,13 +736,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1460006225713</updated>
-    </task>
-    <task id="LOCAL-00010" summary="sea refactored">
-      <created>1460145631583</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1460145631583</updated>
     </task>
     <task id="LOCAL-00011" summary="roadgoing refactored">
       <created>1460145781739</created>
@@ -1092,7 +1073,14 @@
       <option name="project" value="LOCAL" />
       <updated>1463333340043</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="commit before delete">
+      <created>1463336813201</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1463336813201</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1116,12 +1104,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16425993" sideWeight="0.503125" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32159266" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2618683" sideWeight="0.496875" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2618683" sideWeight="0.496875" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32819724" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22356495" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31895223" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31852987" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1149,7 +1137,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="fixing person classes" />
     <MESSAGE value="code cleanup" />
     <MESSAGE value="starting random context generation" />
     <MESSAGE value="starting random context generation -universe" />
@@ -1174,7 +1161,8 @@
     <MESSAGE value="commiting all changes before a huuuugeeeeee ui refactor" />
     <MESSAGE value="started refactor" />
     <MESSAGE value="many view changes almost done with refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="many view changes almost done with refactor" />
+    <MESSAGE value="commit before delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit before delete" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1214,13 +1202,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/view/universe/MainGameUniverse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/view/planet/PlanetThread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
@@ -1244,9 +1225,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="50" column="33" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1254,6 +1233,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder">
@@ -1264,20 +1244,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-238">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/view/universe/UniverseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="91" column="5" selection-start-line="75" selection-start-column="4" selection-end-line="91" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#keyPressed#0;class#UniverseController#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1457,11 +1424,11 @@
         <state relative-caret-position="305">
           <caret line="217" column="19" selection-start-line="217" selection-start-column="19" selection-end-line="217" selection-end-column="19" />
           <folding>
-            <element signature="e#2689#2723#0" expanded="false" />
-            <element signature="e#3008#3057#0" expanded="false" />
-            <element signature="e#3525#3558#0" expanded="false" />
-            <marker date="1463334977891" expanded="true" signature="2517:7403" placeholder="{...}" />
-            <marker date="1463334977891" expanded="false" signature="4114:7333" placeholder="{...}" />
+            <element signature="e#2612#2646#0" expanded="false" />
+            <element signature="e#2931#2980#0" expanded="false" />
+            <element signature="e#3448#3481#0" expanded="false" />
+            <marker date="1463336808077" expanded="true" signature="2440:7326" placeholder="{...}" />
+            <marker date="1463336808077" expanded="false" signature="4037:7256" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1583,8 +1550,8 @@
         <state relative-caret-position="152">
           <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
           <folding>
-            <element signature="e#719#720#0" expanded="true" />
-            <element signature="e#747#748#0" expanded="true" />
+            <element signature="e#645#646#0" expanded="true" />
+            <element signature="e#673#674#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1594,8 +1561,8 @@
         <state relative-caret-position="152">
           <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
           <folding>
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#666#667#0" expanded="true" />
+            <element signature="e#570#571#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1614,10 +1581,11 @@
     <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/Warehouse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
           <folding>
-            <element signature="e#792#793#0" expanded="true" />
-            <element signature="e#817#818#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#718#719#0" expanded="true" />
+            <element signature="e#743#744#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1667,8 +1635,10 @@
     <entry file="file://$PROJECT_DIR$/src/engine/cities/CityBlock.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-68">
-          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-          <folding />
+          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1688,9 +1658,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/universe/MainGameUniverse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/universe/UniverseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="90" column="5" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/welcomescreen/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
+        <state relative-caret-position="697">
           <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
           <folding />
         </state>
