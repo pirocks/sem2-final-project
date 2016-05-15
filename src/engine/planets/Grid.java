@@ -35,10 +35,11 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
         this.parentPlanet = parentPlanet;
     }*/
 
-    public Grid(GridConstructionContext gridConstructionContext){
+    public Grid(GridConstructionContext gridConstructionContext,Planet parentPlanet){
         registerPlanetContainer();// TODO: 5/10/2016 go through and check for thsese in all of the construction context  constructors
         registerCountryContainer();
 	    registerCityContainer();
+	    this.parentPlanet = parentPlanet;
 	    x = gridConstructionContext.x;
 	    y = gridConstructionContext.y;
 	    naturalResources = gridConstructionContext.naturalResources;
@@ -59,43 +60,30 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
 			    }//up to three natural hazards
 		    }
 	    }
-		farmLand = new FarmLand(this);
-		//nowwe deal with  countries
+	    farmLand = new FarmLand(this);
+	    //nowwe deal with  countries
 	    parentCountry = gridConstructionContext.country;
 	    //now we deal with the citys
-	    citys = new ArrayList<>();
-	    double cityProb = gridConstructionContext.citiesPerGrid;
-	    double rand = Math.random();
-	    if(rand < cityProb)
+	    if(gridConstructionContext.country == null)
 	    {
-		    try {
-			    citys.add(new City(new CityConstructionContext(gridConstructionContext, terrainType, this)));
-		    } catch (ToManyPeopleException e) {
-			    e.printStackTrace();
-////			    assert (false);//who cares
-//			    throw new UnsupportedOperationException(e);
-		    }
-		    rand = Math.random();
+		    //unclaimed land
+		    citys = new ArrayList<>();
+	    }
+	    else {
+		    gridConstructionContext.country.getGrids().add(this);
+		    citys = new ArrayList<>();
+		    double cityProb = gridConstructionContext.citiesPerGrid;
+		    double rand = Math.random();
 		    if(rand < cityProb)
 		    {
 			    try {
-				    citys.add(new City(new CityConstructionContext(gridConstructionContext, terrainType, this)));
+				    City city = new City(new CityConstructionContext(gridConstructionContext, terrainType, this));
+				    citys.add(city);
 			    } catch (ToManyPeopleException e) {
 				    e.printStackTrace();
-//				    assert (false);
-//				    throw new UnsupportedOperationException();
+////			    assert (false);//who cares
+//			    throw new UnsupportedOperationException(e);
 			    }
-			    rand = Math.random();
-			    if(rand < cityProb)
-			    {
-				    try {
-					    citys.add(new City(new CityConstructionContext(gridConstructionContext, terrainType, this)));
-				    } catch (ToManyPeopleException e) {
-					    e.printStackTrace();
-//					    assert (false);
-//					    throw new UnsupportedOperationException();
-				    }
-			    }//up to three citys
 		    }
 	    }
 	    // TODO: 5/10/2016

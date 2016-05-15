@@ -29,6 +29,6 @@ public class UniverseGenerator implements Runnable
 	public void run() {
 		universe = new Universe(universeConstructionContext);
 		Universe.universe = universe;
-		new Main().run();
+		new Main(universe).run();
 	}
 }

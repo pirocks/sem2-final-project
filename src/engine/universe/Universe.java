@@ -1,5 +1,7 @@
 package engine.universe;
 
+import engine.cities.City;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
@@ -26,22 +28,26 @@ public class Universe implements Serializable, CountryContainer
         if(u.countries == null)
 	        throw new IllegalArgumentException();
 	    solarSystems = new ArrayList<>();
-	    countries = new ArrayList<>();
-        for(int i = 0; i < numSolarSystems;i++)
-        {
-            //location of solar systems
-            double largeNumber = 1000000000;// TODO: 5/9/2016 fix magic number
-            double x = ThreadLocalRandom.current().nextDouble(-size/2, size/2);
-            double y = ThreadLocalRandom.current().nextDouble(-size/2, size/2);
-            double z = ThreadLocalRandom.current().nextDouble(-size/2, size/2);
-            SolarSystem system = new SolarSystem(new SolarSystemConstructionContext(u));
-	        system.setStar(new Star(x,y,z,system));
-	        solarSystems.add(system);
-
-        }
-	    universe = this;
+	    countries = u.countries;
 	    playersCountry = new Country(u);
 	    countries.add(playersCountry);
+	    for(int i = 0; i < numSolarSystems;i++)
+        {
+	        //location of solar systems
+	        double largeNumber = 1000000000;// TODO: 5/9/2016 fix magic number
+	        double x = ThreadLocalRandom.current().nextDouble(-size/2, size/2);
+	        double y = ThreadLocalRandom.current().nextDouble(-size/2, size/2);
+	        double z = ThreadLocalRandom.current().nextDouble(-size/2, size/2);
+	        SolarSystem system = new SolarSystem(new SolarSystemConstructionContext(u));
+	        system.setStar(new Star(x,y,z,system));
+	        solarSystems.add(system);
+        }
+	    universe = this;
+	    for(Country c:countries)
+	    {
+		    City capital = getSuitableCapital(c);
+		    c.setCapitalCity(capital);
+	    }
     }
 	@Deprecated public Universe(UniverseConstructionContext universeConstructionContext)
 	{
@@ -61,4 +67,11 @@ public class Universe implements Serializable, CountryContainer
 		return countries;
 	}
 
+	public City getSuitableCapital(Country c) {
+		City capital = c.getAllCities().get(0);
+		for(City city: c.getAllCities())
+			if(city.getMaximumHousingCapacity() >  capital.getMaximumHousingCapacity())
+				capital = city;
+		return capital;
+	}
 }

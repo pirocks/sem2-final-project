@@ -43,7 +43,8 @@ public class Planet implements Serializable,CountryContainer
         grids = new Grid[size][size * 2];
 	    setName();
     }
-    public Planet(PlanetConstructionContext c) {
+    public Planet(PlanetConstructionContext c, SolarSystem solarSystem) {
+	    parentSolarSystem = solarSystem;
 	    GridConstructionContext[][] futureGrids = new GridConstructionContext[c.gridNum][c.gridNum];
 	    grids = new Grid[c.gridNum][c.gridNum];
 	    int numCounties = c.countries.size();
@@ -74,7 +75,7 @@ public class Planet implements Serializable,CountryContainer
 		    for(int x = 0;x < futureGrids[y].length;x++)
 		    {
 			    futureGrids[y][x] = new GridConstructionContext(c,grids,y,x,c.cityDensity,countries[y][x], c.industryProb);
-			    grids[y][x] = new Grid(futureGrids[y][x]);
+			    grids[y][x] = new Grid(futureGrids[y][x],this);
 		    }
 
 		//misc cleanup stuff
@@ -147,5 +148,9 @@ public class Planet implements Serializable,CountryContainer
 
 	public double getSolarSystemRadius() {
 		return solarSystemRadius;
+	}
+
+	public SolarSystem getParentSolarSystem() {
+		return parentSolarSystem;
 	}
 }

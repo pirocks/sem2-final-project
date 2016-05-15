@@ -1,5 +1,6 @@
 package ui.view;
 
+import engine.universe.Universe;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -12,6 +13,11 @@ import java.io.IOException;
  *
  */
 public class Main implements Runnable{
+	private static Universe universe;
+	public Main(Universe universe) {
+		Main.universe = universe;
+	}
+
 	/**
 	 * When an object implementing interface <code>Runnable</code> is used
 	 * to create a thread, starting the thread causes the object's
@@ -37,5 +43,9 @@ public class Main implements Runnable{
 		primaryStage.setTitle("Hello World");
 		primaryStage.setScene(new Scene(root));
 		primaryStage.show();
+	}
+
+	public static Universe getUniverse() {
+		return universe;
 	}
 }

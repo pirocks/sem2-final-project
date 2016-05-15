@@ -69,6 +69,7 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 	}
 	public City(CityConstructionContext cityConstructionContext) throws ToManyPeopleException {
 		super(healthInitial,resistanceInitial,cityConstructionContext.buildingLocations);
+		parentGrid = cityConstructionContext.parentGrid;
 		setName();
 		cityBlocks = new ArrayList<>();
 		hospitals = new ArrayList<>();
@@ -364,5 +365,9 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 	public void die() {
 		CityContainers.remove(this);// TODO: 4/9/2016 make sure that this kills everything
 
+	}
+
+	public Grid getParentGrid() {
+		return parentGrid;
 	}
 }

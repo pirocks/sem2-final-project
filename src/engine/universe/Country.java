@@ -9,7 +9,10 @@ import engine.cities.City;
 import engine.cities.CityContainer;
 import engine.people.AbstractPerson;
 import engine.people.PersonContainer;
-import engine.planets.*;
+import engine.planets.Grid;
+import engine.planets.NaturalResource;
+import engine.planets.Road;
+import engine.planets.RoadContainer;
 import engine.planets.hazards.NaturalHazard;
 
 import java.io.Serializable;
@@ -22,17 +25,16 @@ public class Country extends MoneySource implements Serializable,PersonContainer
         "Seychelles","Scotland","Liechtenstein","Comoros","Tuvalu"
     };
 	private static int countryNameCount = 0;
-	private ArrayList<Grid> grids;
-	private String name;
-	private ArrayList<Country> allies;
-    private ArrayList<Country> atWarWith;
 
+	private ArrayList<Grid> grids;
+
+	private ArrayList<Country> allies;
+	private ArrayList<Country> atWarWith;
 	private ArrayList<AbstractPerson> people;
 
 	public ArrayList<Road> roads;//not sure how this is going to be updated // TODO: 5/12/2016
+
 	private City capitalCity;
-
-
     public Country(UniverseConstructionContext u)
     {
         super(Double.NaN);
@@ -49,6 +51,7 @@ public class Country extends MoneySource implements Serializable,PersonContainer
 	    grids = new ArrayList<>();
 	    people = new ArrayList<>();
     }
+
 
     // public Country(double wealth,ArrayList<Grid> grids,String name)
     // {
@@ -92,15 +95,19 @@ public class Country extends MoneySource implements Serializable,PersonContainer
 		return allies;
 	}
 
-
-
 	public ArrayList<Country> getAtWarWith() {
 		return atWarWith;
 	}
+
+	public void setCapitalCity(City capitalCity) {
+		this.capitalCity = capitalCity;
+	}
+
+
 	// private //capital city whitehhouse
     public enum GovernmentType
     {
-        Democracy,Communist,Fascist,Totalitarian;
+        Democracy,Communist,Fascist,Totalitarian
     }
 	private GovernmentType governmentType;
 	public ArrayList<NaturalHazard> getNaturalHazards()
@@ -147,11 +154,24 @@ public class Country extends MoneySource implements Serializable,PersonContainer
         }
         return out;
     }
+	public ArrayList<City> getAllCities()
+	{
+		ArrayList<City> out = new ArrayList<>();
+		for(Grid grid:grids)
+		{
+			out.addAll(grid.getCitys());
+		}
+		return out;
+	}
 	public void loosePerson(AbstractPerson person)
     {
         people.remove(person);
     }
 	public ArrayList<AbstractPerson> getPeople() {
 		return people;
+	}
+	private String name;
+	public ArrayList<Grid> getGrids() {
+		return grids;
 	}
 }
