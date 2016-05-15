@@ -8,9 +8,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Accordion;
-import javafx.scene.control.Button;
-import javafx.scene.control.TitledPane;
+import javafx.scene.control.*;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import ui.view.planet.PlanetThread;
@@ -30,7 +29,8 @@ public class SolarSystemController implements Initializable {
 	Accordion accordion;
 	@FXML
 	SwingNode swingNode;
-
+	@FXML
+	BorderPane borderPane;
 	/**
 	 * Called to initialize a controller after its root element has been
 	 * completely processed.
@@ -41,7 +41,6 @@ public class SolarSystemController implements Initializable {
 	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-
 	}
 	public void updateAccordion()
 	{
@@ -55,6 +54,11 @@ public class SolarSystemController implements Initializable {
 			pane.getChildren().add(button);
 			accordion.getPanes().add(new TitledPane(planet.name,pane));
 		}
+	}
+	public void updateTabs()
+	{
+		TabPane tabPane = new TabPane(new Tab("Universe"),new Tab(solarSystem.name));
+		borderPane.setBottom(tabPane);
 	}
 	@FXML
 	public void onClose()

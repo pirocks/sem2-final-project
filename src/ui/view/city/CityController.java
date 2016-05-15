@@ -3,8 +3,8 @@ package ui.view.city;
 import engine.cities.City;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Accordion;
 
-import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -14,15 +14,19 @@ import java.util.ResourceBundle;
  */
 public class CityController implements Initializable
 {
+//	TextField textField;
+//
+
 	@FXML
-	TextField textField;
+	Accordion accordion;
 
 	private int homelessPeopleCount;
 	private int joblessPeopleCount;
+
 	/*
 
 	 */
-	public CityController(City city)
+	public void updateVars(City city)
 	{
 		homelessPeopleCount = city.getHomeless().size();
 		joblessPeopleCount = city.getJobLess().size();
@@ -42,4 +46,11 @@ public class CityController implements Initializable
 	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {}
+
+	@FXML
+	public void onClose()
+	{
+		System.exit(0);
+	}
+
 }

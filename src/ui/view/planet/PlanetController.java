@@ -11,6 +11,7 @@ import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TitledPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import ui.view.city.CityThread;
@@ -29,6 +30,8 @@ public class PlanetController implements Initializable {
 	MenuItem about;
 	@FXML
 	MenuItem close;
+	@FXML
+	BorderPane borderPane;
 	@FXML
 	public void onClose()
 	{
@@ -73,9 +76,16 @@ public class PlanetController implements Initializable {
 			{
 				pane.getChildren().add(new Text(c.toString()));
 				pane.getChildren().add(new Text("YOU DO NOT CONTROL THIS CITY"));
+				Button button = new CityButton(c,"Go To City");
+				pane.getChildren().add(button);
 			}
 			accordion.getPanes().add(new TitledPane(c.name,pane));
 		}
+	}
+
+	public void updateTabs()
+	{
+
 	}
 
 	private class CityButton extends Button {

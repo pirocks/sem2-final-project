@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.embed.swing.*?>
+<?import javafx.embed.swing.SwingNode?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.view.solarsystem.SolarSystemController">
    <children>
-      <BorderPane layoutX="-2.0" layoutY="-1.0" prefHeight="400.0" prefWidth="600.0">
+      <BorderPane fx:id="borderPane" layoutX="-2.0" layoutY="-1.0" prefHeight="400.0" prefWidth="600.0">
          <top>
             <MenuBar BorderPane.alignment="CENTER">
               <menus>

@@ -10,12 +10,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.PerspectiveCamera;
 import javafx.scene.SceneAntialiasing;
 import javafx.scene.SubScene;
-import javafx.scene.control.Accordion;
-import javafx.scene.control.Button;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TitledPane;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Sphere;
@@ -37,6 +35,8 @@ public class UniverseController implements Initializable {
 	MenuItem  about;
 	@FXML
 	MenuItem closeButton;
+	@FXML
+	BorderPane borderPane;
 	/**
 	 * Called to initialize a controller after its root element has been
 	 * completely processed.
@@ -67,9 +67,10 @@ public class UniverseController implements Initializable {
 			threeDPane.getChildren().add(solarSystemSphere);
 		}
 		camera = new PerspectiveCamera();
-		subScene = new SubScene(threeDPane,100,100,true,SceneAntialiasing.BALANCED);
-		threeDPane.getChildren().add(subScene);
+		threeDPane.getChildren().add(new Sphere(100));
+		subScene = new SubScene(threeDPane,1000,1000,true,SceneAntialiasing.BALANCED);
 		subScene.requestFocus();
+		borderPane.setBottom(new TabPane(new Tab("Universe")));
 	}
 
 	class SolarSystemButton extends Button
@@ -124,7 +125,6 @@ public class UniverseController implements Initializable {
 		KeyCode code = keyEvent.getCode();
 		switch (code)
 		{
-			//intellij is great when you want to write tons of code
 			case PAGE_UP:
 				forward();
 				break;

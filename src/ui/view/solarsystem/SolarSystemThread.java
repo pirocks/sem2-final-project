@@ -47,6 +47,7 @@ public class SolarSystemThread implements Runnable {
 		SolarSystemController controller = loader.getController();
 		controller.updateVars(solarSystem,playersCountry);
 		controller.updateAccordion();
+		controller.updateTabs();
 		Stage primaryStage =  new Stage();
 		primaryStage.setTitle(solarSystem.name);
 		primaryStage.setScene(new Scene(root));

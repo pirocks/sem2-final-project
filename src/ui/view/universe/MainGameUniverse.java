@@ -44,7 +44,6 @@ public class MainGameUniverse implements Runnable {
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Universe");
 		controller.subScene.requestFocus();
-		controller.accordion.setDisable(true);
 		primaryStage.show();
 		controller.subScene.requestFocus();
 	}
