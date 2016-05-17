@@ -17,7 +17,10 @@ import javafx.scene.text.Text;
 import ui.view.city.CityBlockPanel;
 import ui.view.city.CityButton;
 import ui.view.city.EmptyCityBlock;
+import ui.view.planet.GridPanel;
+import ui.view.planet.PlanetButton;
 
+import javax.swing.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -101,6 +104,10 @@ public class Controller implements Initializable{
 	}
 	private void initPlanetTab(){
 		getPlanetTab().setText("Planet:" + planet.name);
+		initPlanetAccordion();
+		initPlanetView();
+	}
+	private void initPlanetAccordion() {
 		planetAccordion.getPanes().clear();
 		for(City c: planet.getAllCities())
 		{
@@ -125,14 +132,32 @@ public class Controller implements Initializable{
 			}
 		}
 	}
+	private void initPlanetView() {
+		GridPane gridPane = new GridPane();
+		for(int y = 0; y < planet.getGrids().length;y++)
+			for(int x = 0; x < planet.getGrids()[y].length;x++)
+			{
+				JComponent content;
+//				content = new GridPanel(planet.getGrids()[finalY][finalX]);
+//                content = new JButton();
+				content = new JPanel();
+//				content.add(new JButton());
+				System.out.println("" + planet.getGrids()[y][x].toString());
+				content.add(new GridPanel(planet.getGrids()[y][x]));
+				content.repaint();
+				content.revalidate();
+				gridPane.add(new SwingNode(){{setContent(content);}},x,y);
+				System.out.print("adding");
+			}
+		planetBorderPane.setCenter(new ScrollPane(gridPane));
+	}
 	private void initCityTab(){
 		getCityTab().setText("City:"  + city.name);
 		initCityAccordion();
 		initCityView();
 
 	}
-	private void initCityAccordion()
-	{
+	private void initCityAccordion() {
 		cityAccordion.getPanes().clear();
 		for(Building b:city.getBuilding())
 		{
@@ -142,7 +167,7 @@ public class Controller implements Initializable{
 			cityAccordion.getPanes().add(titledPane);
 		}
 	}
-	class Point {
+	private class Point {
 		int x,y;
 
 		public Point(int x, int y) {
@@ -154,6 +179,18 @@ public class Controller implements Initializable{
 		public boolean equals(Object obj) {
 			if(obj instanceof Point)
 				if(((Point) obj).x == x && ((Point) obj).y == y)
+					return true;
+			return false;
+		}
+
+		@Override
+		public String toString() {
+			return "x" + x + "y" + y  + "\n";
+		}
+
+		public boolean isValid() {
+			if(x < 101 && x > -1)
+				if(y < 101 && y > -1)
 					return true;
 			return false;
 		}
@@ -174,38 +211,30 @@ public class Controller implements Initializable{
 		addEmptyWrapper(points,gridPane);
 		cityBorderPane.setCenter(new ScrollPane(gridPane));
 	}
-	private void addEmptyWrapper(ArrayList<Point> points, GridPane gridPane)
-	{
+	private void addEmptyWrapper(ArrayList<Point> points, GridPane gridPane) {
 		for(Point p:points)
-			addEmpty(points,p,gridPane,0);
+			addEmpty(points,p,gridPane,2);
 	}
-	private void addEmpty(ArrayList<Point> points,Point p,GridPane gridPane,int depth)
-	{
-		gridPane.add(new SwingNode(){{setContent(new EmptyCityBlock());}},p.x,p.y);
+	private void addEmpty(ArrayList<Point> points,Point p,GridPane gridPane,int depth) {
+		if(!contains(points,p)) {
+			if(p.isValid())
+				gridPane.add(new SwingNode() {{setContent(new EmptyCityBlock());}}, p.x, p.y);
+		}
 		if(depth == 0)
 			return;
-		if(!contains(points,(new Point(p.x + 1,p.y))))
-			addEmpty(points,new Point(p.x + 1,p.y),gridPane,depth - 1);
-		if(!contains(points,(new Point(p.x + 1,p.y + 1))))
-			addEmpty(points,new Point(p.x + 1,p.y + 1),gridPane,depth - 1);
-		if(!contains(points,(new Point(p.x + 1,p.y - 1))))
-			addEmpty(points,new Point(p.x + 1,p.y - 1),gridPane,depth - 1);
-		if(!contains(points,(new Point(p.x,p.y + 1))))
-			addEmpty(points,new Point(p.x,p.y + 1), gridPane, depth - 1);
-		if(!contains(points,(new Point(p.x,p.y - 1))))
-			addEmpty(points,new Point(p.x,p.y - 1), gridPane, depth - 1);
-		if(!contains(points,(new Point(p.x - 1,p.y + 1))))
-			addEmpty(points,new Point(p.x - 1,p.y + 1),gridPane,depth - 1);
-		if(!contains(points,(new Point(p.x - 1,p.y))))
-			addEmpty(points,new Point(p.x - 1, p.y), gridPane, depth - 1);
-		if(!contains(points,(new Point(p.x,p.y))))
-			addEmpty(points,new Point(p.x,p.y),gridPane,depth - 1);
+		addEmpty(points,new Point(p.x + 1,p.y),gridPane,depth - 1);
+		addEmpty(points,new Point(p.x + 1,p.y + 1),gridPane,depth - 1);
+		addEmpty(points,new Point(p.x + 1,p.y - 1),gridPane,depth - 1);
+		addEmpty(points,new Point(p.x,p.y + 1), gridPane, depth - 1);
+		addEmpty(points,new Point(p.x,p.y - 1), gridPane, depth - 1);
+		addEmpty(points,new Point(p.x - 1,p.y + 1),gridPane,depth - 1);
+		addEmpty(points,new Point(p.x - 1, p.y), gridPane, depth - 1);
+		addEmpty(points,new Point(p.x,p.y),gridPane,depth - 1);
 
 	}
-	public boolean contains(ArrayList<Point> points,Point point)
-	{
+	public boolean contains(ArrayList<Point> points,Point point) {
 		for(Point p:points)
-			if(p.equals(points.get(0)))
+			if(point.x == p.x && point.y == p.y)
 				return true;
 		return false;
 	}

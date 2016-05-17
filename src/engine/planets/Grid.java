@@ -210,7 +210,12 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
 		}
 	}
 
-    public ArrayList<City> getCitys() {
+	@Override
+	public String toString() {
+		return "x:" + x + "y:" + y;
+	}
+
+	public ArrayList<City> getCitys() {
         return citys;
     }
 

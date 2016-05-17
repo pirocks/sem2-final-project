@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="working city view panel thing">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ui/view/city/CityPanel.java" afterPath="" />
+    <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="sync">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/planet/GridPanel.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ui/view/PlanetButton.java" afterPath="$PROJECT_DIR$/src/ui/view/planet/PlanetButton.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/planets/Grid.java" afterPath="$PROJECT_DIR$/src/engine/planets/Grid.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/Controller.java" afterPath="$PROJECT_DIR$/src/ui/view/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/cities/CityConstructionContext.java" afterPath="$PROJECT_DIR$/src/engine/cities/CityConstructionContext.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/city/CityBlockPanel.java" afterPath="$PROJECT_DIR$/src/ui/view/city/CityBlockPanel.java" />
     </list>
     <ignored path="testing.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,13 +37,87 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/view/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2278">
-              <caret line="157" column="36" selection-start-line="157" selection-start-column="36" selection-end-line="157" selection-end-column="36" />
+            <state relative-caret-position="255">
+              <caret line="145" column="64" selection-start-line="145" selection-start-column="64" selection-end-line="145" selection-end-column="64" />
               <folding>
+                <element signature="method#initVars#0;class#Controller#0" expanded="false" />
+                <element signature="method#initUniverseTab#0;class#Controller#0" expanded="false" />
+                <element signature="method#initPlanetAccordion#0;class#Controller#0" expanded="false" />
+                <element signature="method#initCityTab#0;class#Controller#0" expanded="false" />
+                <element signature="method#initCityAccordion#0;class#Controller#0" expanded="false" />
+                <element signature="class#Point#0;class#Controller#0" expanded="false" />
+                <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
+                <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
+                <element signature="method#contains#0;class#Controller#0" expanded="false" />
                 <element signature="method#getUniverseTab#0;class#Controller#0" expanded="false" />
                 <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
                 <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
                 <element signature="method#getCityTab#0;class#Controller#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Planet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/engine/planets/Planet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="76" column="75" selection-start-line="76" selection-start-column="75" selection-end-line="76" selection-end-column="75" />
+              <folding>
+                <element signature="e#5058#5059#0" expanded="true" />
+                <element signature="e#5077#5078#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Grid.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/engine/planets/Grid.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="33">
+              <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="17" />
+              <folding>
+                <element signature="e#6115#6116#0" expanded="true" />
+                <element signature="e#6148#6149#0" expanded="true" />
+                <marker date="1463514809369" expanded="false" signature="1681:2065" ph="{...}" />
+                <marker date="1463514809369" expanded="false" signature="2278:2342" ph="{...}" />
+                <marker date="1463514809369" expanded="false" signature="2353:2907" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GridConstructionContext.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/engine/planets/GridConstructionContext.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="69">
+              <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GridPanel.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ui/view/planet/GridPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-119">
+              <caret line="25" column="60" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlanetButton.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ui/view/planet/PlanetButton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#556#557#0" expanded="false" />
+                <element signature="e#594#595#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -52,18 +128,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
               <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CityBlockPanel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CityBlockPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/view/city/CityBlockPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="26" column="42" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="42" />
+            <state relative-caret-position="136">
+              <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,8 +170,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/ui/ImagePanel.java" />
-        <option value="$PROJECT_DIR$/src/ui/view/universe/UniverseJPanel.java" />
         <option value="$PROJECT_DIR$/src/ui/view/universe/UnFocusableAccordion.java" />
         <option value="$PROJECT_DIR$/src/ui/view/universe/MainGameUniverse.java" />
         <option value="$PROJECT_DIR$/src/ui/view/city/CityThread.java" />
@@ -113,7 +185,6 @@
         <option value="$PROJECT_DIR$/src/engine/universe/SolarSystem.java" />
         <option value="$PROJECT_DIR$/src/engine/planets/Planet.java" />
         <option value="$PROJECT_DIR$/src/engine/universe/Universe.java" />
-        <option value="$PROJECT_DIR$/src/engine/planets/Grid.java" />
         <option value="$PROJECT_DIR$/src/engine/buildings/Building.java" />
         <option value="$PROJECT_DIR$/src/engine/buildings/workplaces/Workplace.java" />
         <option value="$PROJECT_DIR$/src/engine/buildings/housing/WorkersHouseBlock.java" />
@@ -139,14 +210,17 @@
         <option value="$PROJECT_DIR$/src/ui/view/CityPanel.java" />
         <option value="$PROJECT_DIR$/src/ui/view/CityBlockPanel.java" />
         <option value="$PROJECT_DIR$/src/ui/view/emptyCityBlock.java" />
-        <option value="$PROJECT_DIR$/src/ui/view/city/CityBlockPanel.java" />
         <option value="$PROJECT_DIR$/src/ui/view/CityButton.java" />
         <option value="$PROJECT_DIR$/src/ui/view/city/CityButton.java" />
         <option value="$PROJECT_DIR$/src/ui/view/city/CityPanel.java" />
         <option value="$PROJECT_DIR$/src/ui/view/city/emptyCityBlock.java" />
         <option value="$PROJECT_DIR$/src/engine/cities/CityConstructionContext.java" />
-        <option value="$PROJECT_DIR$/src/ui/view/Controller.java" />
         <option value="$PROJECT_DIR$/src/ui/view/city/EmptyCityBlock.java" />
+        <option value="$PROJECT_DIR$/src/ui/view/city/CityBlockPanel.java" />
+        <option value="$PROJECT_DIR$/src/ui/view/planet/PlanetButton.java" />
+        <option value="$PROJECT_DIR$/src/ui/view/planet/GridPanel.java" />
+        <option value="$PROJECT_DIR$/src/engine/planets/Grid.java" />
+        <option value="$PROJECT_DIR$/src/ui/view/Controller.java" />
       </list>
     </option>
   </component>
@@ -213,7 +287,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -305,6 +381,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="planet" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -464,8 +566,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -810,13 +910,6 @@
       <option name="presentableId" value="Default" />
       <updated>1460006225713</updated>
     </task>
-    <task id="LOCAL-00013" summary="air refactored">
-      <created>1460146243280</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1460146243280</updated>
-    </task>
     <task id="LOCAL-00014" summary="space weapons refactored">
       <created>1460165577132</created>
       <option name="number" value="00014" />
@@ -1153,7 +1246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1463462710602</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="sync">
+      <created>1463446950464</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1463446950465</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1167,34 +1267,35 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31432974" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31852987" sideWeight="0.49791667" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16425993" sideWeight="0.503125" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Analyze Dataflow to" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924962" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32159266" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2588055" sideWeight="0.496875" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32819724" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22356495" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22356495" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31699848" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31852987" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31852987" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31852987" sideWeight="0.49791667" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39910978" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2603369" sideWeight="0.496875" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31699848" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1227,7 +1328,6 @@
     <MESSAGE value="more construction context edits" />
     <MESSAGE value="working on city constructor" />
     <MESSAGE value="nice image class + misc edits&#10;" />
-    <MESSAGE value="sync" />
     <MESSAGE value="got subpane working" />
     <MESSAGE value="commiting all changes before a huuuugeeeeee ui refactor" />
     <MESSAGE value="started refactor" />
@@ -1235,12 +1335,13 @@
     <MESSAGE value="commit before delete" />
     <MESSAGE value="delete done" />
     <MESSAGE value="working city view panel thing" />
-    <option name="LAST_COMMIT_MESSAGE" value="working city view panel thing" />
+    <MESSAGE value="sync" />
+    <option name="LAST_COMMIT_MESSAGE" value="sync" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="95" />
+      <option name="time" value="101" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1251,9 +1352,80 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/ui/view/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2278">
-          <caret line="157" column="36" selection-start-line="157" selection-start-column="36" selection-end-line="157" selection-end-column="36" />
+        <state relative-caret-position="1428">
+          <caret line="146" column="73" selection-start-line="146" selection-start-column="73" selection-end-line="146" selection-end-column="73" />
           <folding>
+            <element signature="method#initVars#0;class#Controller#0" expanded="false" />
+            <element signature="method#initUniverseTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initPlanetAccordion#0;class#Controller#0" expanded="false" />
+            <element signature="method#initCityTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initCityAccordion#0;class#Controller#0" expanded="false" />
+            <element signature="class#Point#0;class#Controller#0" expanded="false" />
+            <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
+            <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
+            <element signature="method#contains#0;class#Controller#0" expanded="false" />
+            <element signature="method#getUniverseTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#getCityTab#0;class#Controller#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/planet/GridPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/planet/PlanetButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#556#557#0" expanded="false" />
+            <element signature="e#594#595#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/city/EmptyCityBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/city/CityBlockPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#initVars#0;class#Controller#0" expanded="false" />
+            <element signature="method#initUniverseTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initPlanetAccordion#0;class#Controller#0" expanded="false" />
+            <element signature="method#initCityTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initCityAccordion#0;class#Controller#0" expanded="false" />
+            <element signature="class#Point#0;class#Controller#0" expanded="false" />
+            <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
+            <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
+            <element signature="method#contains#0;class#Controller#0" expanded="false" />
             <element signature="method#getUniverseTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
@@ -1266,9 +1438,127 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/city/CityBlockPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#initVars#0;class#Controller#0" expanded="false" />
+            <element signature="method#initUniverseTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initPlanetAccordion#0;class#Controller#0" expanded="false" />
+            <element signature="method#initCityTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initCityAccordion#0;class#Controller#0" expanded="false" />
+            <element signature="class#Point#0;class#Controller#0" expanded="false" />
+            <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
+            <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
+            <element signature="method#contains#0;class#Controller#0" expanded="false" />
+            <element signature="method#getUniverseTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#getCityTab#0;class#Controller#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/city/EmptyCityBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/city/CityBlockPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#initVars#0;class#Controller#0" expanded="false" />
+            <element signature="method#initUniverseTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initPlanetAccordion#0;class#Controller#0" expanded="false" />
+            <element signature="method#initCityTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initCityAccordion#0;class#Controller#0" expanded="false" />
+            <element signature="class#Point#0;class#Controller#0" expanded="false" />
+            <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
+            <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
+            <element signature="method#contains#0;class#Controller#0" expanded="false" />
+            <element signature="method#getUniverseTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#getCityTab#0;class#Controller#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/city/EmptyCityBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/city/CityBlockPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2278">
+          <caret line="154" column="36" selection-start-line="154" selection-start-column="36" selection-end-line="154" selection-end-column="36" />
+          <folding>
+            <element signature="method#initVars#0;class#Controller#0" expanded="false" />
+            <element signature="method#initUniverseTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initPlanetAccordion#0;class#Controller#0" expanded="false" />
+            <element signature="method#initCityTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initCityAccordion#0;class#Controller#0" expanded="false" />
+            <element signature="class#Point#0;class#Controller#0" expanded="false" />
+            <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
+            <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
+            <element signature="method#contains#0;class#Controller#0" expanded="false" />
+            <element signature="method#getUniverseTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#getCityTab#0;class#Controller#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/city/EmptyCityBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1287,6 +1577,15 @@
         <state relative-caret-position="2278">
           <caret line="157" column="36" selection-start-line="157" selection-start-column="36" selection-end-line="157" selection-end-column="36" />
           <folding>
+            <element signature="method#initVars#0;class#Controller#0" expanded="false" />
+            <element signature="method#initUniverseTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initPlanetAccordion#0;class#Controller#0" expanded="false" />
+            <element signature="method#initCityTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initCityAccordion#0;class#Controller#0" expanded="false" />
+            <element signature="class#Point#0;class#Controller#0" expanded="false" />
+            <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
+            <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
+            <element signature="method#contains#0;class#Controller#0" expanded="false" />
             <element signature="method#getUniverseTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
@@ -1299,16 +1598,109 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/city/CityBlockPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/city/EmptyCityBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/planet/PlanetButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#556#557#0" expanded="false" />
+            <element signature="e#594#595#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/view/city/CityBlockPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="26" column="42" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="42" />
+        <state relative-caret-position="136">
+          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="145" column="64" selection-start-line="145" selection-start-column="64" selection-end-line="145" selection-end-column="64" />
+          <folding>
+            <element signature="method#initVars#0;class#Controller#0" expanded="false" />
+            <element signature="method#initUniverseTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initPlanetAccordion#0;class#Controller#0" expanded="false" />
+            <element signature="method#initCityTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initCityAccordion#0;class#Controller#0" expanded="false" />
+            <element signature="class#Point#0;class#Controller#0" expanded="false" />
+            <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
+            <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
+            <element signature="method#contains#0;class#Controller#0" expanded="false" />
+            <element signature="method#getUniverseTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#getCityTab#0;class#Controller#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/planets/Grid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="17" />
+          <folding>
+            <element signature="e#6115#6116#0" expanded="true" />
+            <element signature="e#6148#6149#0" expanded="true" />
+            <marker date="1463514809369" expanded="false" signature="1681:2065" ph="{...}" />
+            <marker date="1463514809369" expanded="false" signature="2278:2342" ph="{...}" />
+            <marker date="1463514809369" expanded="false" signature="2353:2907" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/planets/GridConstructionContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/planets/Planet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="76" column="75" selection-start-line="76" selection-start-column="75" selection-end-line="76" selection-end-column="75" />
+          <folding>
+            <element signature="e#5058#5059#0" expanded="true" />
+            <element signature="e#5077#5078#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/planet/GridPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret line="25" column="60" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

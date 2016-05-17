@@ -1,15 +1,16 @@
-package ui.view;
+package ui.view.planet;
 
 import engine.planets.Planet;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import ui.view.Controller;
 
 
 /**
  * Created by bob on 5/15/2016.
  */
-class PlanetButton extends Button {
+public class PlanetButton extends Button {
 	Planet planet;
 	Controller controller;
 	public PlanetButton(Planet planet, String s,Controller controller) {
