@@ -8,6 +8,7 @@ import engine.planets.LocationPlanet;
 import engine.planets.TerrainType;
 import engine.universe.Country;
 import engine.universe.MoneySource;
+import engine.universe.UniversalConstants;
 import engine.universe.utils;
 
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ public class CityConstructionContext {
 
 	//two basic types for now
 	//industrial cities are porer than scientific and havve obvious differences in buildings
-	static enum Type
+	enum Type
 	{
 		Industrial,Scientific
 	}
@@ -47,7 +48,7 @@ public class CityConstructionContext {
 		else
 			type = Type.Scientific;
 		parentCountry = parentGrid.getParentCountry();
-		population = (int) (100000*Math.random()*Math.random());
+		population = (int) (UniversalConstants.peoplePerCity* Math.sqrt(Math.random()));
 		int numBuildings;
 		if(type == Type.Industrial)
 			numBuildings = (int) (3.5*population/ ApartmentBlock.maximumOccupancyInitial);

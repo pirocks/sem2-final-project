@@ -1,14 +1,15 @@
-package ui.view;
+package ui.view.city;
 
 import engine.cities.City;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import ui.view.Controller;
 
 /**
  * Created by bob on 5/15/2016.
  */
-class CityButton extends Button {
+public class CityButton extends Button {
 	private City city;
 	private Controller controller;
 	public CityButton(City c, String s,Controller controller) {

@@ -22,7 +22,7 @@ public class Country extends MoneySource implements Serializable,PersonContainer
 {
 	private static String[] CountryNames =
     {"England","USA","France","China","Tanzania","Botswana",
-        "Seychelles","Scotland","Liechtenstein","Comoros","Tuvalu"
+        "Seychelles","Scotland","Liechtenstein","Comoros","Tuvalu","Kosovo","Sahrawi"
     };
 	private static int countryNameCount = 0;
 

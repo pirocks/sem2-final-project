@@ -1,5 +1,6 @@
 package ui.welcomescreen;
 
+import engine.universe.UniversalConstants;
 import engine.universe.UniverseConstructionContext;
 import engine.universe.UniverseGenerator;
 import javafx.fxml.FXML;
@@ -27,9 +28,13 @@ public class Controller implements Initializable {
 	@FXML
 	TextField numPlanetsPerSolarSystem;
 	@FXML
-	TextField numEnemyCountries;
-	@FXML
 	TextField universeSize;
+	@FXML
+	TextField numHazards;
+	@FXML
+	TextField numCountries;
+	@FXML
+	TextField peoplePerCity;
 
 	/**
 	 * Called to initialize a controller after its root element has been
@@ -68,7 +73,7 @@ public class Controller implements Initializable {
 		int numCountries = 5;
 		try
 		{
-			numCountries = Integer.parseInt(numEnemyCountries.getText());
+			numCountries = Integer.parseInt(this.numCountries.getText());
 		}
 		catch (Exception e)
 		{
@@ -83,11 +88,24 @@ public class Controller implements Initializable {
 		{
 //			e.printStackTrace();// TODO: 5/7/2016
 		}
+		UniversalConstants.peoplePerCity = 10000;
+		try {
+			UniversalConstants.peoplePerCity = Integer.parseInt(peoplePerCity.getText());
+		} catch (NumberFormatException e) {
+			// TODO: 5/15/2016
+		}
+		int numHazards = 0;
+		try {
+			numHazards = Integer.parseInt(this.numHazards.getText());
+		} catch (NumberFormatException e) {
+			// TODO: 5/15/2016
+		}
+
 
 		UniverseGenerator generator = new UniverseGenerator(
 				new UniverseConstructionContext(
 						solarSystemCount,universeRadius,
-						numCountries,numPlanets,numPlanets
+						numCountries,numPlanets,numHazards
 				));
 //		Thread universeGenerationThread = new Thread(generator);
 //		universeGenerationThread.run();

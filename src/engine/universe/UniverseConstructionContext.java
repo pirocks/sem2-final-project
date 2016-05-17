@@ -12,9 +12,7 @@ public class UniverseConstructionContext
 {
 	public int numSolarSystems;
 	public double universeRadius;
-	@Deprecated public int numCountries;
-	public int numMaxPlanets;
-	public int numMinPlanets;
+	public int numPlanets;
 	public double solarSystemMinRadius; // TODO: 5/9/2016 include in startuup menus
 	public double solarSystemMaxRadius;// TODO: 5/9/2016 include in startup menus
 	public int numHazardsPerPlanet = 20;// TODO: 5/9/2016 include in startup menus
@@ -25,19 +23,17 @@ public class UniverseConstructionContext
 	public UniverseConstructionContext(int numSolarSystems,
 	                                   double universeRadius,
 	                                   int numCountries,
-	                                   int numMinPlanets,
-	                                   int numMaxPlanet
+	                                   int numPlanets,
+	                                   int numHazardsPerPlanet
 	)
 	{
 		this.numSolarSystems = numSolarSystems;
 		this.universeRadius = universeRadius;
-		this.numMaxPlanets = numMaxPlanets;
-		this.numMinPlanets = numMinPlanets;
+		this.numPlanets = numPlanets;
+		this.numHazardsPerPlanet = numHazardsPerPlanet;
 		countries = new ArrayList<>();
 		for(int i = 0; i < numCountries;i++)
 			countries.add(new Country(this));
-		if(countries == null)
-			throw new IllegalStateException();
 	}
 
 

@@ -1,6 +1,8 @@
 package engine.universe;
+
+import engine.planets.PlanetConstructionContext;
+
 import java.util.ArrayList;
-import engine.planets.*;
 // import engine.universe.*;
 
 /**
@@ -34,8 +36,8 @@ public class SolarSystemConstructionContext {
 	public SolarSystemConstructionContext(UniverseConstructionContext u){
 		if(u.countries == null)
 			throw new IllegalArgumentException();
-		numMaxPlanets = u.numMaxPlanets;
-		numMinPlanets = u.numMinPlanets;
+		numMaxPlanets = u.numPlanets;
+		numMinPlanets = 0;
 		maxRadius = u.solarSystemMaxRadius;
 		minRadius = u.solarSystemMinRadius;
 		countries = u.countries;
@@ -61,7 +63,7 @@ public class SolarSystemConstructionContext {
 		double FoodAbundance = utils.getRandomDouble(0.8,0.97);
 		double HeliumAbundance = utils.getRandomDouble(0.01,0.2);
 		double UraniumAbundance = utils.getRandomDouble(0.05,0.3);
-		double citiesPerGrid = utils.getRandomDouble(0,0.1);// TODO: 5/11/2016 add in menu
+		double citiesPerGrid = utils.getRandomDouble(0,0.05);// TODO: 5/11/2016 add in menu
 		double industryProb = utils.getRandomDouble(0,1);// TODO: 5/11/2016 add this as an option in universe
 		if(countries == null)
 			throw new IllegalStateException();

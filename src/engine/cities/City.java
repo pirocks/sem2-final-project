@@ -45,10 +45,10 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 	private Country parentCountry;//make sutre to change when cuity is captured.
 	public String name; // TODO: 5/10/2016 go through and make all the names final or private and extract interface
 	public static String[] names = {
-			"London", "San Francisco", "Beverly Hills","Los Altos", "Cambridge","San Jose","Edinburgh","Paris","Rome","Berlin","Moscow","Stalingrad","I'm out of clever Names"
+			"London", "San Francisco", "Beverly Hills","Los Altos", "Cambridge","San Jose","Edinburgh","Paris","Rome","Berlin","Moscow","Stalingrad","I'm out of clever Names","New London","Edinburgh","Boston","Lima","Leningrad","Portland",
+			"Seattle","Hong Kong","Taipei","Lhasa","Sukhumi","Pristina","Hell, Michigan","Taumata whakatangi hangakoauau"
 	};
 	public static int nameCount = 0;
-	private Building[] noNHousingBuildings;
 
 	public City(CityConstructionContext cityConstructionContext) throws ToManyPeopleException {
 		super(healthInitial,resistanceInitial,cityConstructionContext.buildingLocations);
