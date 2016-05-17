@@ -76,15 +76,20 @@ public class CityConstructionContext {
 				if (finalx > 0)
 					if (finaly > 0) {
 						if (usedLocations.contains(new LocationPlanet(grid, finalx, finaly)))
-							return getSuitableLocation(usedLocations, grid, centerx, centery, searchDistance + 1);
+							if(Math.random() < 0.02)
+								return getSuitableLocation(usedLocations, grid, centerx, centery, searchDistance + 1);
+							else
+								return getSuitableLocation(usedLocations, grid, centerx, centery, searchDistance);
 						else
 							return new LocationPlanet(grid, finalx, finaly);
 					}
 		if(searchDistance < 100) {
-			return getSuitableLocation(usedLocations, grid, centerx, centery, searchDistance + 1);
+			if(Math.random()< 0.02)//only sometimes increase search area
+				return getSuitableLocation(usedLocations, grid, centerx, centery, searchDistance + 1);
+			else
+				return getSuitableLocation(usedLocations,grid,centerx,centery,searchDistance);
 		}
 		else {
-			System.out.println(usedLocations.size());
 			return getSuitableLocation(usedLocations, grid, centerx, centery, searchDistance);
 		}
 	}

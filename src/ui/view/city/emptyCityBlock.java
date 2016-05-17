@@ -7,17 +7,17 @@ import java.awt.*;
  * Created by bob on 5/16/2016.
  *
  */
-public class emptyCityBlock extends JPanel {
-	public emptyCityBlock()
+public class EmptyCityBlock extends JPanel {
+	public EmptyCityBlock()
 	{
 		super();
-		setPreferredSize(new Dimension(100,100));
+		setPreferredSize(new Dimension(200,200));
 		add(new JLabel("empty"));
 	}
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		g.setColor(Color.BLACK);
-		g.fillRect(0,0,100,100);
+		g.fillRect(0,0,200,200);
 	}
 }
