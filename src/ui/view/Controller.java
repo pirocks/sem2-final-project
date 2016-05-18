@@ -145,7 +145,7 @@ public class Controller implements Initializable{
 				content = new JPanel();
 //				content.add(new JButton());
 				System.out.println("" + planet.getGrids()[y][x].toString());
-				content.add(new GridPanel(planet.getGrids()[y][x]));
+				content.add(new GridPanel(this, planet.getGrids()[y][x]));
 				content.repaint();
 				content.revalidate();
 				gridPane.add(new SwingNode(){{setContent(content);}},x,y);
@@ -240,28 +240,24 @@ public class Controller implements Initializable{
 				return true;
 		return false;
 	}
-	public void switchTo(Universe u)
-	{
+	public void switchTo(Universe u) {
 		//unlikely to have more than one universe
 		tabPane.getSelectionModel().select(getUniverseTab());
 	}
-	public void switchTo(SolarSystem s)
-	{
+	public void switchTo(SolarSystem s) {
 		solarSystem = s;
 		initSolarSystemTab();
 		tabPane.getSelectionModel().select(getSolarSystemTab());
 
 	}
-	public void switchTo(Planet p)
-	{
+	public void switchTo(Planet p) {
 		solarSystem = p.getParentSolarSystem();
 		planet = p;
 		initSolarSystemTab();
 		initPlanetTab();
 		tabPane.getSelectionModel().select(getPlanetTab());
 	}
-	public void switchTo(City c)
-	{
+	public void switchTo(City c) {
 		solarSystem = c.getGrid().getParentPlanet().getParentSolarSystem();
 		planet = c.getGrid().getParentPlanet();
 		city = c;
@@ -269,6 +265,17 @@ public class Controller implements Initializable{
 		initPlanetTab();
 		initCityTab();
 		tabPane.getSelectionModel().select(getCityTab());
+	}
+
+	public void focusCityInAccordion(City c)
+	{
+		for(TitledPane p:planetAccordion.getPanes())
+		{
+			if(p.getText().equals(c.name)) {
+				System.out.print("found");
+				p.setExpanded(true);
+			}
+		}
 	}
 
 	public Tab getUniverseTab() {

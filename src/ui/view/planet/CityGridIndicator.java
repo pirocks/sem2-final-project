@@ -1,9 +1,11 @@
 package ui.view.planet;
 
 import engine.cities.City;
+import ui.view.Controller;
 
 import javax.swing.*;
 import javax.swing.event.MouseInputListener;
+import java.awt.*;
 import java.awt.event.MouseEvent;
 
 /**
@@ -12,6 +14,20 @@ import java.awt.event.MouseEvent;
 public class CityGridIndicator extends JPanel implements MouseInputListener{
 
 	private City city;
+	private Controller controller;
+
+	public CityGridIndicator(City city, Controller controller) {
+		this.city = city;
+		this.controller = controller;
+		addMouseListener(this);
+		add(new JLabel("City:\n" + city.name));
+	}
+
+	@Override
+	protected void paintComponent(Graphics g) {
+		super.paintComponent(g);
+
+	}
 
 	/**
 	 * Invoked when the mouse button has been clicked (pressed
@@ -21,6 +37,8 @@ public class CityGridIndicator extends JPanel implements MouseInputListener{
 	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
+		System.out.println("clicked");
+		controller.focusCityInAccordion(city);
 
 	}
 
@@ -51,7 +69,8 @@ public class CityGridIndicator extends JPanel implements MouseInputListener{
 	 */
 	@Override
 	public void mouseEntered(MouseEvent e) {
-
+		System.out.println("entered");
+		controller.focusCityInAccordion(city);
 	}
 
 	/**

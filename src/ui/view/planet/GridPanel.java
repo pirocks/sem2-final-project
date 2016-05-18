@@ -1,7 +1,10 @@
 package ui.view.planet;
 
+import engine.cities.City;
 import engine.planets.Grid;
 import engine.planets.TerrainType;
+import engine.universe.Universe;
+import ui.view.Controller;
 
 import javax.swing.*;
 import javax.swing.event.MouseInputListener;
@@ -13,16 +16,22 @@ import java.awt.event.MouseEvent;
  */
 public class GridPanel extends JPanel implements MouseInputListener
 {
+	private Controller controller;
 	private Grid grid;
+	private boolean redQ = true;
 
-	public GridPanel(Grid grid) {
+	public GridPanel(Controller controller, Grid grid) {
 		super();
+		this.controller = controller;
 		addMouseListener(this);
 		this.grid = grid;
-		setPreferredSize(new Dimension(50,50));
+		setPreferredSize(new Dimension(110,110));
 		add(new JLabel(grid.toString()));
 		if(grid.getCitys().size() != 0)
-			add(new CityGridIndicator())
+			for(City city:grid.getCitys())
+				add(new CityGridIndicator(city, this.controller));
+		if(grid.getParentCountry() == Universe.playersCountry)
+			redQ = false;
 	}
 
 
@@ -32,6 +41,10 @@ public class GridPanel extends JPanel implements MouseInputListener
 		super.paintComponent(g);
 		TerrainType type = grid.getTerrainType();
 //		System.out.println("painting x:"+grid.getX()+"y:" + grid.getY() + "color:" + type.toString());
+		g.setColor(Color.GREEN);
+		if(redQ)
+			g.setColor(Color.RED);
+		g.fillRect(0,0,110,110);
 		switch (type)
 		{
 			case Land:
@@ -53,7 +66,7 @@ public class GridPanel extends JPanel implements MouseInputListener
 				g.setColor(Color.LIGHT_GRAY);
 				break;
 		}
-		g.fillRect(0,0,50,50);
+		g.fillRect(5,5,100,100);
 	}
 
 	/**

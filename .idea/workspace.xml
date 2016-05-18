@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="backup /hasn't committed yet">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/planet/CityGridIndicator.java" />
+    <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="some stuff works">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/planets/Grid.java" afterPath="$PROJECT_DIR$/src/engine/planets/Grid.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/planets/GridConstructionContext.java" afterPath="$PROJECT_DIR$/src/engine/planets/GridConstructionContext.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/Controller.java" afterPath="$PROJECT_DIR$/src/ui/view/Controller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/planet/CityGridIndicator.java" afterPath="$PROJECT_DIR$/src/ui/view/planet/CityGridIndicator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/planet/GridPanel.java" afterPath="$PROJECT_DIR$/src/ui/view/planet/GridPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/planet/PlanetButton.java" afterPath="$PROJECT_DIR$/src/ui/view/planet/PlanetButton.java" />
     </list>
     <ignored path="testing.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,7 +19,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/testing$Main.coverage" NAME="Main Coverage Results" MODIFIED="1462668020180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/testing$Main.coverage" NAME="Main Coverage Results" MODIFIED="1463534283430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ui.welcomescreen.*</FILTER>
     </SUITE>
   </component>
@@ -38,18 +35,25 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/view/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="137" column="26" selection-start-line="137" selection-start-column="26" selection-end-line="137" selection-end-column="26" />
+            <state relative-caret-position="224">
+              <caret line="272" column="40" selection-start-line="272" selection-start-column="40" selection-end-line="272" selection-end-column="40" />
               <folding>
                 <element signature="method#initVars#0;class#Controller#0" expanded="false" />
                 <element signature="method#initUniverseTab#0;class#Controller#0" expanded="false" />
+                <element signature="method#initSolarSystemTab#0;class#Controller#0" expanded="false" />
+                <element signature="method#initPlanetTab#0;class#Controller#0" expanded="false" />
                 <element signature="method#initPlanetAccordion#0;class#Controller#0" expanded="false" />
                 <element signature="method#initCityTab#0;class#Controller#0" expanded="false" />
                 <element signature="method#initCityAccordion#0;class#Controller#0" expanded="false" />
                 <element signature="class#Point#0;class#Controller#0" expanded="false" />
+                <element signature="method#initCityView#0;class#Controller#0" expanded="false" />
                 <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
                 <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
                 <element signature="method#contains#0;class#Controller#0" expanded="false" />
+                <element signature="method#switchTo#0;class#Controller#0" expanded="false" />
+                <element signature="method#switchTo#1;class#Controller#0" expanded="false" />
+                <element signature="method#switchTo#2;class#Controller#0" expanded="false" />
+                <element signature="method#switchTo#3;class#Controller#0" expanded="false" />
                 <element signature="method#getUniverseTab#0;class#Controller#0" expanded="false" />
                 <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
                 <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
@@ -72,7 +76,7 @@
       <file leaf-file-name="Grid.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/engine/planets/Grid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2584">
+            <state relative-caret-position="2380">
               <caret line="229" column="0" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
               <folding>
                 <element signature="e#6115#6116#0" expanded="true" />
@@ -88,18 +92,18 @@
       <file leaf-file-name="GridConstructionContext.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/engine/planets/GridConstructionContext.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="146" column="29" selection-start-line="146" selection-start-column="29" selection-end-line="146" selection-end-column="29" />
+            <state relative-caret-position="139">
+              <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GridPanel.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GridPanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ui/view/planet/GridPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+            <state relative-caret-position="309">
+              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -107,11 +111,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CityGridIndicator.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CityGridIndicator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/view/planet/CityGridIndicator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+            <state relative-caret-position="258">
+              <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -132,7 +136,7 @@
       <file leaf-file-name="CityBlockPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/view/city/CityBlockPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="136">
               <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -211,12 +215,12 @@
         <option value="$PROJECT_DIR$/src/ui/view/city/EmptyCityBlock.java" />
         <option value="$PROJECT_DIR$/src/ui/view/city/CityBlockPanel.java" />
         <option value="$PROJECT_DIR$/src/engine/planets/Planet.java" />
-        <option value="$PROJECT_DIR$/src/ui/view/Controller.java" />
         <option value="$PROJECT_DIR$/src/engine/planets/GridConstructionContext.java" />
         <option value="$PROJECT_DIR$/src/engine/planets/Grid.java" />
         <option value="$PROJECT_DIR$/src/ui/view/planet/PlanetButton.java" />
-        <option value="$PROJECT_DIR$/src/ui/view/planet/GridPanel.java" />
         <option value="$PROJECT_DIR$/src/ui/view/planet/CityGridIndicator.java" />
+        <option value="$PROJECT_DIR$/src/ui/view/Controller.java" />
+        <option value="$PROJECT_DIR$/src/ui/view/planet/GridPanel.java" />
       </list>
     </option>
   </component>
@@ -907,13 +911,6 @@
       <option name="presentableId" value="Default" />
       <updated>1460006225713</updated>
     </task>
-    <task id="LOCAL-00015" summary="created arg classes for wepons/tools and cleaned up vehicles/space">
-      <created>1460233648882</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1460233648882</updated>
-    </task>
     <task id="LOCAL-00016" summary="created arg classes for wepons/tools and cleaned up vehicles/space">
       <created>1460233654801</created>
       <option name="number" value="00016" />
@@ -1250,7 +1247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1463515121239</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="some stuff works">
+      <created>1463530872650</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1463530872650</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1275,6 +1279,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32159266" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2588055" sideWeight="0.496875" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32819724" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1292,7 +1297,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39910978" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1308,7 +1312,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="misc edits + natural hazards" />
     <MESSAGE value="misc refactor" />
     <MESSAGE value="significantly thinned errors" />
     <MESSAGE value="all errors fixed. compiles now" />
@@ -1333,20 +1336,21 @@
     <MESSAGE value="working city view panel thing" />
     <MESSAGE value="sync" />
     <MESSAGE value="backup /hasn't committed yet" />
-    <option name="LAST_COMMIT_MESSAGE" value="backup /hasn't committed yet" />
+    <MESSAGE value="some stuff works" />
+    <option name="LAST_COMMIT_MESSAGE" value="some stuff works" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/engine/planets/GridConstructionContext.java</url>
-          <line>99</line>
+          <url>file://$PROJECT_DIR$/src/ui/view/Controller.java</url>
+          <line>274</line>
           <properties />
-          <option name="timeStamp" value="104" />
+          <option name="timeStamp" value="107" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="105" />
+      <option name="time" value="109" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1362,13 +1366,20 @@
           <folding>
             <element signature="method#initVars#0;class#Controller#0" expanded="false" />
             <element signature="method#initUniverseTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initSolarSystemTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initPlanetTab#0;class#Controller#0" expanded="false" />
             <element signature="method#initPlanetAccordion#0;class#Controller#0" expanded="false" />
             <element signature="method#initCityTab#0;class#Controller#0" expanded="false" />
             <element signature="method#initCityAccordion#0;class#Controller#0" expanded="false" />
             <element signature="class#Point#0;class#Controller#0" expanded="false" />
+            <element signature="method#initCityView#0;class#Controller#0" expanded="false" />
             <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
             <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
             <element signature="method#contains#0;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#0;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#1;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#2;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#3;class#Controller#0" expanded="false" />
             <element signature="method#getUniverseTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
@@ -1450,13 +1461,20 @@
           <folding>
             <element signature="method#initVars#0;class#Controller#0" expanded="false" />
             <element signature="method#initUniverseTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initSolarSystemTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initPlanetTab#0;class#Controller#0" expanded="false" />
             <element signature="method#initPlanetAccordion#0;class#Controller#0" expanded="false" />
             <element signature="method#initCityTab#0;class#Controller#0" expanded="false" />
             <element signature="method#initCityAccordion#0;class#Controller#0" expanded="false" />
             <element signature="class#Point#0;class#Controller#0" expanded="false" />
+            <element signature="method#initCityView#0;class#Controller#0" expanded="false" />
             <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
             <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
             <element signature="method#contains#0;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#0;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#1;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#2;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#3;class#Controller#0" expanded="false" />
             <element signature="method#getUniverseTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
@@ -1508,13 +1526,20 @@
           <folding>
             <element signature="method#initVars#0;class#Controller#0" expanded="false" />
             <element signature="method#initUniverseTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initSolarSystemTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initPlanetTab#0;class#Controller#0" expanded="false" />
             <element signature="method#initPlanetAccordion#0;class#Controller#0" expanded="false" />
             <element signature="method#initCityTab#0;class#Controller#0" expanded="false" />
             <element signature="method#initCityAccordion#0;class#Controller#0" expanded="false" />
             <element signature="class#Point#0;class#Controller#0" expanded="false" />
+            <element signature="method#initCityView#0;class#Controller#0" expanded="false" />
             <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
             <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
             <element signature="method#contains#0;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#0;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#1;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#2;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#3;class#Controller#0" expanded="false" />
             <element signature="method#getUniverseTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
@@ -1548,13 +1573,20 @@
           <folding>
             <element signature="method#initVars#0;class#Controller#0" expanded="false" />
             <element signature="method#initUniverseTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initSolarSystemTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initPlanetTab#0;class#Controller#0" expanded="false" />
             <element signature="method#initPlanetAccordion#0;class#Controller#0" expanded="false" />
             <element signature="method#initCityTab#0;class#Controller#0" expanded="false" />
             <element signature="method#initCityAccordion#0;class#Controller#0" expanded="false" />
             <element signature="class#Point#0;class#Controller#0" expanded="false" />
+            <element signature="method#initCityView#0;class#Controller#0" expanded="false" />
             <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
             <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
             <element signature="method#contains#0;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#0;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#1;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#2;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#3;class#Controller#0" expanded="false" />
             <element signature="method#getUniverseTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
@@ -1588,13 +1620,20 @@
           <folding>
             <element signature="method#initVars#0;class#Controller#0" expanded="false" />
             <element signature="method#initUniverseTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initSolarSystemTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initPlanetTab#0;class#Controller#0" expanded="false" />
             <element signature="method#initPlanetAccordion#0;class#Controller#0" expanded="false" />
             <element signature="method#initCityTab#0;class#Controller#0" expanded="false" />
             <element signature="method#initCityAccordion#0;class#Controller#0" expanded="false" />
             <element signature="class#Point#0;class#Controller#0" expanded="false" />
+            <element signature="method#initCityView#0;class#Controller#0" expanded="false" />
             <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
             <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
             <element signature="method#contains#0;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#0;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#1;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#2;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#3;class#Controller#0" expanded="false" />
             <element signature="method#getUniverseTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
@@ -1628,13 +1667,20 @@
           <folding>
             <element signature="method#initVars#0;class#Controller#0" expanded="false" />
             <element signature="method#initUniverseTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initSolarSystemTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initPlanetTab#0;class#Controller#0" expanded="false" />
             <element signature="method#initPlanetAccordion#0;class#Controller#0" expanded="false" />
             <element signature="method#initCityTab#0;class#Controller#0" expanded="false" />
             <element signature="method#initCityAccordion#0;class#Controller#0" expanded="false" />
             <element signature="class#Point#0;class#Controller#0" expanded="false" />
+            <element signature="method#initCityView#0;class#Controller#0" expanded="false" />
             <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
             <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
             <element signature="method#contains#0;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#0;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#1;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#2;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#3;class#Controller#0" expanded="false" />
             <element signature="method#getUniverseTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
@@ -1668,13 +1714,20 @@
           <folding>
             <element signature="method#initVars#0;class#Controller#0" expanded="false" />
             <element signature="method#initUniverseTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initSolarSystemTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initPlanetTab#0;class#Controller#0" expanded="false" />
             <element signature="method#initPlanetAccordion#0;class#Controller#0" expanded="false" />
             <element signature="method#initCityTab#0;class#Controller#0" expanded="false" />
             <element signature="method#initCityAccordion#0;class#Controller#0" expanded="false" />
             <element signature="class#Point#0;class#Controller#0" expanded="false" />
+            <element signature="method#initCityView#0;class#Controller#0" expanded="false" />
             <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
             <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
             <element signature="method#contains#0;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#0;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#1;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#2;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#3;class#Controller#0" expanded="false" />
             <element signature="method#getUniverseTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
@@ -1701,72 +1754,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/view/city/CityBlockPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/planets/Planet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
           <caret line="76" column="52" selection-start-line="76" selection-start-column="52" selection-end-line="76" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/view/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="137" column="26" selection-start-line="137" selection-start-column="26" selection-end-line="137" selection-end-column="26" />
-          <folding>
-            <element signature="method#initVars#0;class#Controller#0" expanded="false" />
-            <element signature="method#initUniverseTab#0;class#Controller#0" expanded="false" />
-            <element signature="method#initPlanetAccordion#0;class#Controller#0" expanded="false" />
-            <element signature="method#initCityTab#0;class#Controller#0" expanded="false" />
-            <element signature="method#initCityAccordion#0;class#Controller#0" expanded="false" />
-            <element signature="class#Point#0;class#Controller#0" expanded="false" />
-            <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
-            <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
-            <element signature="method#contains#0;class#Controller#0" expanded="false" />
-            <element signature="method#getUniverseTab#0;class#Controller#0" expanded="false" />
-            <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
-            <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
-            <element signature="method#getCityTab#0;class#Controller#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/planets/GridConstructionContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="146" column="29" selection-start-line="146" selection-start-column="29" selection-end-line="146" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/planets/Grid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2584">
-          <caret line="229" column="0" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
-          <folding>
-            <element signature="e#6115#6116#0" expanded="true" />
-            <element signature="e#6186#6187#0" expanded="true" />
-            <marker date="1463530480303" expanded="false" signature="1681:2065" ph="{...}" />
-            <marker date="1463530480303" expanded="false" signature="2278:2342" ph="{...}" />
-            <marker date="1463530480303" expanded="false" signature="2353:2907" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/view/city/EmptyCityBlock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -1795,10 +1786,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/view/planet/GridPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/ui/view/city/EmptyCityBlock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+        <state relative-caret-position="323">
+          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/city/CityBlockPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1807,8 +1806,93 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/view/planet/CityGridIndicator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        <state relative-caret-position="258">
+          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/planets/GridConstructionContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="272" column="40" selection-start-line="272" selection-start-column="40" selection-end-line="272" selection-end-column="40" />
+          <folding>
+            <element signature="method#initVars#0;class#Controller#0" expanded="false" />
+            <element signature="method#initUniverseTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initSolarSystemTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initPlanetTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initPlanetAccordion#0;class#Controller#0" expanded="false" />
+            <element signature="method#initCityTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#initCityAccordion#0;class#Controller#0" expanded="false" />
+            <element signature="class#Point#0;class#Controller#0" expanded="false" />
+            <element signature="method#initCityView#0;class#Controller#0" expanded="false" />
+            <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
+            <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
+            <element signature="method#contains#0;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#0;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#1;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#2;class#Controller#0" expanded="false" />
+            <element signature="method#switchTo#3;class#Controller#0" expanded="false" />
+            <element signature="method#getUniverseTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
+            <element signature="method#getCityTab#0;class#Controller#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/planets/Grid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2380">
+          <caret line="229" column="0" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
+          <folding>
+            <element signature="e#6115#6116#0" expanded="true" />
+            <element signature="e#6186#6187#0" expanded="true" />
+            <marker date="1463530480303" expanded="false" signature="1681:2065" ph="{...}" />
+            <marker date="1463530480303" expanded="false" signature="2278:2342" ph="{...}" />
+            <marker date="1463530480303" expanded="false" signature="2353:2907" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/welcomescreen/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/welcomescreen/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/universe/UniverseGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/planet/GridPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
