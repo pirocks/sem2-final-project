@@ -1,10 +1,11 @@
-package ui.view;
+package ui.view.solarsystem;
 
 import engine.universe.Country;
 import engine.universe.SolarSystem;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import ui.view.Controller;
 
 /**
  * Created by bob on 5/14/2016.

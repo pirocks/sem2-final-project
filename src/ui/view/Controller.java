@@ -17,8 +17,10 @@ import javafx.scene.text.Text;
 import ui.view.city.CityBlockPanel;
 import ui.view.city.CityButton;
 import ui.view.city.EmptyCityBlock;
-import ui.view.planet.GridPanel;
+import ui.view.planet.GridViewPanel;
 import ui.view.planet.PlanetButton;
+import ui.view.solarsystem.SolarSystemButton;
+import ui.view.solarsystem.SolarSystemJPanel;
 
 import javax.swing.*;
 import java.net.URL;
@@ -93,6 +95,11 @@ public class Controller implements Initializable{
 	}
 	private void initSolarSystemTab(){
 		getSolarSystemTab().setText("Solar System:" + solarSystem.name);
+		initSolarSystemAccordion();
+		initSolarSystemView();
+	}
+
+	private void initSolarSystemAccordion() {
 		solarSystemAccordion.getPanes().clear();
 		for(Planet planet:solarSystem.getPlanets())
 		{
@@ -102,6 +109,21 @@ public class Controller implements Initializable{
 			solarSystemAccordion.getPanes().add(new TitledPane(planet.name,pane));
 		}
 	}
+	private void initSolarSystemView(){
+		SwingNode node = new SwingNode();
+		node.setContent(new SolarSystemJPanel(solarSystem,this));
+		solarSystemBorderPane.setCenter(new ScrollPane(node));
+	}
+	public void focusPlanetInAccordion(Planet planet)
+	{
+		for(TitledPane p:solarSystemAccordion.getPanes())
+		{
+			if(p.getText().equals(planet.name)) {
+				p.setExpanded(true);
+			}
+		}
+	}
+
 	private void initPlanetTab(){
 		getPlanetTab().setText("Planet:" + planet.name);
 		initPlanetAccordion();
@@ -133,7 +155,7 @@ public class Controller implements Initializable{
 		}
 	}
 	private void initPlanetView() {
-		GridPane gridPane = new GridPane();
+		/*GridPane gridPane = new GridPane();
 		gridPane.setVgap(0);
 		gridPane.setHgap(0);
 		for(int y = 0; y < planet.getGrids().length;y++)
@@ -141,17 +163,19 @@ public class Controller implements Initializable{
 			{
 				JComponent content;
 //				content = new GridPanel(planet.getGrids()[finalY][finalX]);
-//                content = new JButton();
+//              content = new JButton();
 				content = new JPanel();
 //				content.add(new JButton());
-				System.out.println("" + planet.getGrids()[y][x].toString());
 				content.add(new GridPanel(this, planet.getGrids()[y][x]));
 				content.repaint();
 				content.revalidate();
 				gridPane.add(new SwingNode(){{setContent(content);}},x,y);
-				System.out.print("adding");
 			}
-		planetBorderPane.setCenter(new ScrollPane(gridPane));
+		planetBorderPane.setCenter(new ScrollPane(gridPane));*/
+		JPanel gridView = new GridViewPanel(planet,this);
+		SwingNode swingNode = new SwingNode();
+		swingNode.setContent(gridView);
+		planetBorderPane.setCenter(new ScrollPane(swingNode));
 	}
 	private void initCityTab(){
 		getCityTab().setText("City:"  + city.name);
@@ -198,18 +222,49 @@ public class Controller implements Initializable{
 		}
 	}
 	private void initCityView() {
+		System.out.println(""+System.nanoTime());
 		GridPane gridPane = new GridPane();
 		gridPane.setHgap(0);
 		gridPane.setVgap(0);
 		ArrayList<Point> points =  new ArrayList<>();
+		class Column {
+			ArrayList<SwingNode> nodes;
+			int y;
+			public Column(ArrayList<SwingNode> nodes,int y)
+			{
+				this.y = y;
+				this.nodes = nodes;
+			}
+		}
+
+		ArrayList<Column> columns = new ArrayList<>();
 		for (Building b : city.getBuilding()) {
 			int x = b.getParentBlock().x;
 			int y = b.getParentBlock().y;
 			SwingNode node = new SwingNode();
 			node.setContent(new CityBlockPanel(b.getParentBlock(), x, y));
-			gridPane.add(node, x, y);
 			points.add(new Point(x,y));
+			gridPane.add(node,x,y);
+//			boolean foundQ = false;
+//			for(Column c:columns)
+//			{
+//				if(c.y == y)
+//				{
+//					c.nodes.add(node);
+//					foundQ = true;
+//					break;
+//				}
+//			}
+//			if(!foundQ) {
+//				ArrayList<SwingNode> list = new ArrayList<>();
+//				list.add(node);
+//				columns.add(new Column(list, y));
+//			}
 		}
+//		for(Column column:columns)
+//		{
+////			gridPane.addColumn(column.y, column.nodes);
+//		}
 		addEmptyWrapper(points,gridPane);
 		cityBorderPane.setCenter(new ScrollPane(gridPane));
 	}
@@ -254,9 +309,10 @@ public class Controller implements Initializable{
 		solarSystem = p.getParentSolarSystem();
 		planet = p;
 		initSolarSystemTab();
-		initPlanetTab();
 		tabPane.getSelectionModel().select(getPlanetTab());
+		initPlanetTab();
 	}
+
 	public void switchTo(City c) {
 		solarSystem = c.getGrid().getParentPlanet().getParentSolarSystem();
 		planet = c.getGrid().getParentPlanet();
@@ -267,8 +323,7 @@ public class Controller implements Initializable{
 		tabPane.getSelectionModel().select(getCityTab());
 	}
 
-	public void focusCityInAccordion(City c)
-	{
+	public void focusCityInAccordion(City c) {
 		for(TitledPane p:planetAccordion.getPanes())
 		{
 			if(p.getText().equals(c.name)) {
@@ -277,7 +332,6 @@ public class Controller implements Initializable{
 			}
 		}
 	}
-
 	public Tab getUniverseTab() {
 		try {
 			return tabPane.getTabs().get(0);
@@ -302,6 +356,7 @@ public class Controller implements Initializable{
 			return null;
 		}
 	}
+
 	public Tab getCityTab() {
 		try {
 			return tabPane.getTabs().get(3);

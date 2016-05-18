@@ -12,7 +12,7 @@ public class EmptyCityBlock extends JPanel {
 	{
 		super();
 		setPreferredSize(new Dimension(200,200));
-		add(new JLabel("empty"));
+//		add(new JLabel("empty"));
 	}
 	@Override
 	protected void paintComponent(Graphics g) {
