@@ -11,8 +11,8 @@ import ui.view.Controller;
  * Created by bob on 5/15/2016.
  */
 public class PlanetButton extends Button {
-	Planet planet;
-	Controller controller;
+	private Planet planet;
+	private Controller controller;
 	public PlanetButton(Planet planet, String s,Controller controller) {
 		super(s);
 		this.planet = planet;

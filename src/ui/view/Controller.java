@@ -134,6 +134,8 @@ public class Controller implements Initializable{
 	}
 	private void initPlanetView() {
 		GridPane gridPane = new GridPane();
+		gridPane.setVgap(0);
+		gridPane.setHgap(0);
 		for(int y = 0; y < planet.getGrids().length;y++)
 			for(int x = 0; x < planet.getGrids()[y].length;x++)
 			{

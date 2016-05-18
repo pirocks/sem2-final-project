@@ -1,60 +1,17 @@
 package ui.view.planet;
 
-import engine.planets.Grid;
-import engine.planets.TerrainType;
+import engine.cities.City;
 
 import javax.swing.*;
 import javax.swing.event.MouseInputListener;
-import java.awt.*;
 import java.awt.event.MouseEvent;
 
 /**
  * Created by bob on 5/17/2016.
  */
-public class GridPanel extends JPanel implements MouseInputListener
-{
-	private Grid grid;
+public class CityGridIndicator extends JPanel implements MouseInputListener{
 
-	public GridPanel(Grid grid) {
-		super();
-		addMouseListener(this);
-		this.grid = grid;
-		setPreferredSize(new Dimension(50,50));
-		add(new JLabel(grid.toString()));
-		if(grid.getCitys().size() != 0)
-			add(new CityGridIndicator())
-	}
-
-
-
-	@Override
-	protected void paintComponent(Graphics g) {
-		super.paintComponent(g);
-		TerrainType type = grid.getTerrainType();
-//		System.out.println("painting x:"+grid.getX()+"y:" + grid.getY() + "color:" + type.toString());
-		switch (type)
-		{
-			case Land:
-				g.setColor(Color.GREEN);
-				break;
-			case Sea:
-				g.setColor(Color.BLUE);
-				break;
-			case Coast:
-				g.setColor(Color.cyan);
-				break;
-			case Mountains:
-				g.setColor(Color.DARK_GRAY);
-				break;
-			case Hills:
-				g.setColor(Color.GRAY);
-				break;
-			case Wasteland:
-				g.setColor(Color.LIGHT_GRAY);
-				break;
-		}
-		g.fillRect(0,0,50,50);
-	}
+	private City city;
 
 	/**
 	 * Invoked when the mouse button has been clicked (pressed

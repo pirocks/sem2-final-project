@@ -26,6 +26,8 @@ public class GridConstructionContext
 	                               Grid[][] grids, int y, int x,
 	                               double citiesPerGrid, Country country, double industryProb)
 	{
+		this.y = y;
+		this.x = x;
 		this.citiesPerGrid = citiesPerGrid;
 		this.country = country;
 		this.industryProb = industryProb;
@@ -126,8 +128,24 @@ public class GridConstructionContext
 				return Mountains;
 			else
 				return Hills;
-		else if(LandCount - 4 < surroundingTerrains.size())
+		if(SeaCount == 1 || SeaCount == 2 || SeaCount == 3)
+			return Sea;
+		if(LandCount == surroundingTerrains.size())
+			if(Math.random() < 0.5)
+				return Sea;
+			else
+				return Land;
+		else if (LandCount >  WastelandCount)
 			return Land;
+		else if(LandCount == WastelandCount) {
+			double rand = Math.random();
+			if (rand < 0.2)
+				return Wasteland;
+			else if (rand < 0.7)
+				return Land;
+			else
+				return Hills;
+		}
 		else if(WastelandCount  > LandCount)
 			return Wasteland;
 		int rand = (int) (Math.random()*(surroundingTerrains.size() + 1));
