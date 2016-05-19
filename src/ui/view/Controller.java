@@ -1,6 +1,11 @@
 package ui.view;
 
 import engine.buildings.Building;
+import engine.buildings.housing.ApartmentBlock;
+import engine.buildings.housing.Housing;
+import engine.buildings.housing.RulersHouse;
+import engine.buildings.housing.WorkersHouseBlock;
+import engine.buildings.workplaces.*;
 import engine.cities.City;
 import engine.planets.Grid;
 import engine.planets.Planet;
@@ -368,15 +373,49 @@ public class Controller implements Initializable{
 	private Image apartmentBlockImage = new Image("https://photos.travelblog.org/Photos/12544/398145/f/3804575-Soviet-apartment-block-0.jpg");
 	private Image houseBlockImage = new Image("http://www.fritzhaeg.com/wikidiary/wp-content/uploads/2010/04/2010-04-09-P1140314.jpg");
 	private Image rulersHouseImage = new Image("http://joanneleedom-ackerman.com/wp-content/uploads/2016/02/WhiteHouseAerialView.jpg");
-	private Image dockYardImage = new Image("http://antiguahistory.net/Museum/images/DockyardAirEastDec03-3.jpg");
-	private Image factoryImage = new Image("");
-	private Image hospitalImage = new Image("");
-	private Image industrialDockImage = new Image("");
-	private Image researchAreaImage = new Image("");
-	private Image schoolImage = new Image("");
-	private Image townHallImage = new Image("");
-	private Image warehouseImage = new Image("");
-	private Image workplaceImage = new Image("");
+	private Image dockYardImage = new Image("https://i.ytimg.com/vi/ePDoCPi06rk/maxresdefault.jpg");
+	private Image factoryImage = new Image("https://si.wsj.net/public/resources/images/BT-AA578_LAFARG_GR_20150316194834.jpg");
+	private Image hospitalImage = new Image("http://vignette1.wikia.nocookie.net/zombie/images/1/18/Hospital.jpg/revision/latest?cb=20160329114824");
+	private Image industrialDockImage = new Image("http://antiguahistory.net/Museum/images/DockyardAirEastDec03-3.jpg");
+	private Image researchAreaImage = new Image("http://tees.tamu.edu/media/246752/gerb_750x460.jpg");
+	private Image schoolImage = new Image("https://d.wattpad.com/story_parts/231562063/images/143bd5d22ed4314e.jpg");
+	private Image townHallImage = new Image("http://sterlingma.virtualtownhall.net/Pages/SterlingMA_Webdocs/0154FDE4-000F8513.0/old%20town%20hall.jpg");
+	private Image warehouseImage = new Image("http://cijjournal.com/uploads/encompassme/images/7975b64476926cf9b6ac9498c40a697f50e3de53.png");
+	private Image emptyImage = new Image("https://gregfallisdotcom.files.wordpress.com/2011/08/dairy-section.jpg");
+
+
+	private Image getImage(Building building)
+	{
+		if(building instanceof Housing)
+		{
+			if(building instanceof ApartmentBlock)
+				return apartmentBlockImage;
+			if(building instanceof RulersHouse)
+				return rulersHouseImage;
+			if(building instanceof WorkersHouseBlock)
+				return houseBlockImage;
+		}
+		else if(building instanceof Workplace)
+		{
+			if(building instanceof DockYard)
+				return dockYardImage;
+			if(building instanceof Factory)
+				return factoryImage;
+			if(building instanceof Hospital)
+				return hospitalImage;
+			if(building instanceof IndustrialDock)
+				return industrialDockImage;
+			if(building instanceof  ResearchArea)
+				return researchAreaImage;
+			if(building instanceof School)
+				return schoolImage;
+			if(building instanceof TownHall)
+				return townHallImage;
+			if(building instanceof Warehouse)
+				return warehouseImage;
+		}
+		return null;
+	}
 
 	public void switchTo(Universe u) {
 		//unlikely to have more than one universe

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="solar system">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/solarsystem/SolarSystemJpanel.java" />
+    <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="switched tpo javafx images&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/Controller.java" afterPath="$PROJECT_DIR$/src/ui/view/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/planet/GridViewPanel.java" afterPath="$PROJECT_DIR$/src/ui/view/planet/GridViewPanel.java" />
     </list>
     <ignored path="testing.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,11 +33,11 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ui/view/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="371" column="44" selection-start-line="371" selection-start-column="44" selection-end-line="371" selection-end-column="44" />
+            <state relative-caret-position="1106">
+              <caret line="395" column="39" selection-start-line="395" selection-start-column="39" selection-end-line="395" selection-end-column="39" />
               <folding>
                 <element signature="docComment;class#Controller#0" expanded="false" />
-                <element signature="e#1663#1671#0" expanded="false" />
+                <element signature="e#1886#1894#0" expanded="false" />
                 <element signature="docComment;method#initialize#0;class#Controller#0" expanded="false" />
                 <element signature="method#initialize#0;class#Controller#0" expanded="false" />
                 <element signature="method#initVars#0;class#Controller#0" expanded="false" />
@@ -58,15 +56,13 @@
                 <element signature="method#Point#0;class#Point#0;class#Controller#0" expanded="false" />
                 <element signature="method#equals#0;class#Point#0;class#Controller#0" expanded="false" />
                 <element signature="method#isValid#0;class#Point#0;class#Controller#0" expanded="false" />
-                <element signature="method#initCityView#0;class#Controller#0" expanded="false" />
-                <element signature="class#9364:9524" expanded="false" />
-                <element signature="method#Column#0;class#9364:9524" expanded="false" />
-                <element signature="e#9844#9872#0" expanded="false" />
-                <element signature="e#10156#10186#0" expanded="false" />
+                <element signature="class#9587:9747" expanded="false" />
+                <element signature="method#Column#0;class#9587:9747" expanded="false" />
+                <element signature="e#10379#10409#0" expanded="false" />
                 <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
                 <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
-                <element signature="class#10632:10681" expanded="false" />
-                <element signature="initializer##0;class#10632:10681" expanded="false" />
+                <element signature="class#10855:10904" expanded="false" />
+                <element signature="initializer##0;class#10855:10904" expanded="false" />
                 <element signature="method#contains#0;class#Controller#0" expanded="false" />
                 <element signature="method#switchTo#0;class#Controller#0" expanded="false" />
                 <element signature="method#switchTo#1;class#Controller#0" expanded="false" />
@@ -76,9 +72,19 @@
                 <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
                 <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
                 <element signature="method#getCityTab#0;class#Controller#0" expanded="false" />
-                <marker date="1463618937638" expanded="false" signature="5451:5475" ph="{...}" />
-                <marker date="1463618937638" expanded="false" signature="5452:5474" ph="{...}" />
+                <marker date="1463619853837" expanded="false" signature="5674:5698" ph="{...}" />
+                <marker date="1463619853837" expanded="false" signature="5675:5697" ph="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Building.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/engine/buildings/Building.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-204">
+              <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -88,9 +94,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1207">
               <caret line="79" column="4" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -100,9 +104,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
               <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -112,7 +114,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="595">
               <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#343#344#0" expanded="false" />
+                <element signature="e#374#375#0" expanded="false" />
+                <element signature="e#1193#1194#0" expanded="false" />
+                <element signature="e#1215#1216#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -122,7 +130,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="969">
               <caret line="66" column="22" selection-start-line="49" selection-start-column="8" selection-end-line="66" selection-end-column="22" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -168,7 +178,11 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
               <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1198#1199#0" expanded="false" />
+                <element signature="e#1234#1235#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -263,8 +277,10 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="683" />
-    <option name="height" value="768" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -314,7 +330,130 @@
     </navigator>
     <panes>
       <pane id="ProjectPane">
-        <subPane />
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="buildings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="buildings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="workplaces" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="buildings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="housing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
       <pane id="Scope" />
       <pane id="Scratches" />
@@ -664,13 +803,6 @@
       <option name="presentableId" value="Default" />
       <updated>1460006225713</updated>
     </task>
-    <task id="LOCAL-00018" summary="everything  compiles">
-      <created>1460242276955</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1460242276955</updated>
-    </task>
     <task id="LOCAL-00019" summary="road constructor">
       <created>1460250017051</created>
       <option name="number" value="00019" />
@@ -1007,7 +1139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1463600164192</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="switched tpo javafx images&#10;">
+      <created>1463618958708</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1463618958709</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1020,7 +1159,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="683" height="768" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1033,7 +1172,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32771823" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.472" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24546827" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1067,7 +1206,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="all errors fixed. compiles now" />
     <MESSAGE value="figured  out fxml" />
     <MESSAGE value="some fxml additions" />
     <MESSAGE value="misc edits&#10;" />
@@ -1092,7 +1230,8 @@
     <MESSAGE value="some stuff works" />
     <MESSAGE value="some listeners stuff" />
     <MESSAGE value="solar system" />
-    <option name="LAST_COMMIT_MESSAGE" value="solar system" />
+    <MESSAGE value="switched tpo javafx images&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="switched tpo javafx images&#10;" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1106,13 +1245,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/engine/planets/Planet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="76" column="75" selection-start-line="76" selection-start-column="75" selection-end-line="76" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/planets/Grid.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1169,7 +1301,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
           <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1203,7 +1337,7 @@
           <caret line="146" column="73" selection-start-line="146" selection-start-column="73" selection-end-line="146" selection-end-column="73" />
           <folding>
             <element signature="docComment;class#Controller#0" expanded="false" />
-            <element signature="e#1663#1671#0" expanded="false" />
+            <element signature="e#1886#1894#0" expanded="false" />
             <element signature="docComment;method#initialize#0;class#Controller#0" expanded="false" />
             <element signature="method#initialize#0;class#Controller#0" expanded="false" />
             <element signature="method#initVars#0;class#Controller#0" expanded="false" />
@@ -1222,15 +1356,13 @@
             <element signature="method#Point#0;class#Point#0;class#Controller#0" expanded="false" />
             <element signature="method#equals#0;class#Point#0;class#Controller#0" expanded="false" />
             <element signature="method#isValid#0;class#Point#0;class#Controller#0" expanded="false" />
-            <element signature="method#initCityView#0;class#Controller#0" expanded="false" />
-            <element signature="class#9364:9524" expanded="false" />
-            <element signature="method#Column#0;class#9364:9524" expanded="false" />
-            <element signature="e#9844#9872#0" expanded="false" />
-            <element signature="e#10156#10186#0" expanded="false" />
+            <element signature="class#9587:9747" expanded="false" />
+            <element signature="method#Column#0;class#9587:9747" expanded="false" />
+            <element signature="e#10379#10409#0" expanded="false" />
             <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
             <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
-            <element signature="class#10632:10681" expanded="false" />
-            <element signature="initializer##0;class#10632:10681" expanded="false" />
+            <element signature="class#10855:10904" expanded="false" />
+            <element signature="initializer##0;class#10855:10904" expanded="false" />
             <element signature="method#contains#0;class#Controller#0" expanded="false" />
             <element signature="method#switchTo#0;class#Controller#0" expanded="false" />
             <element signature="method#switchTo#1;class#Controller#0" expanded="false" />
@@ -1240,8 +1372,8 @@
             <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getCityTab#0;class#Controller#0" expanded="false" />
-            <marker date="1463618937638" expanded="false" signature="5451:5475" ph="{...}" />
-            <marker date="1463618937638" expanded="false" signature="5452:5474" ph="{...}" />
+            <marker date="1463619853837" expanded="false" signature="5674:5698" ph="{...}" />
+            <marker date="1463619853837" expanded="false" signature="5675:5697" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1250,7 +1382,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1284,7 +1418,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#Controller#0" expanded="false" />
-            <element signature="e#1663#1671#0" expanded="false" />
+            <element signature="e#1886#1894#0" expanded="false" />
             <element signature="docComment;method#initialize#0;class#Controller#0" expanded="false" />
             <element signature="method#initialize#0;class#Controller#0" expanded="false" />
             <element signature="method#initVars#0;class#Controller#0" expanded="false" />
@@ -1303,15 +1437,13 @@
             <element signature="method#Point#0;class#Point#0;class#Controller#0" expanded="false" />
             <element signature="method#equals#0;class#Point#0;class#Controller#0" expanded="false" />
             <element signature="method#isValid#0;class#Point#0;class#Controller#0" expanded="false" />
-            <element signature="method#initCityView#0;class#Controller#0" expanded="false" />
-            <element signature="class#9364:9524" expanded="false" />
-            <element signature="method#Column#0;class#9364:9524" expanded="false" />
-            <element signature="e#9844#9872#0" expanded="false" />
-            <element signature="e#10156#10186#0" expanded="false" />
+            <element signature="class#9587:9747" expanded="false" />
+            <element signature="method#Column#0;class#9587:9747" expanded="false" />
+            <element signature="e#10379#10409#0" expanded="false" />
             <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
             <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
-            <element signature="class#10632:10681" expanded="false" />
-            <element signature="initializer##0;class#10632:10681" expanded="false" />
+            <element signature="class#10855:10904" expanded="false" />
+            <element signature="initializer##0;class#10855:10904" expanded="false" />
             <element signature="method#contains#0;class#Controller#0" expanded="false" />
             <element signature="method#switchTo#0;class#Controller#0" expanded="false" />
             <element signature="method#switchTo#1;class#Controller#0" expanded="false" />
@@ -1321,8 +1453,8 @@
             <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getCityTab#0;class#Controller#0" expanded="false" />
-            <marker date="1463618937638" expanded="false" signature="5451:5475" ph="{...}" />
-            <marker date="1463618937638" expanded="false" signature="5452:5474" ph="{...}" />
+            <marker date="1463619853837" expanded="false" signature="5674:5698" ph="{...}" />
+            <marker date="1463619853837" expanded="false" signature="5675:5697" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1349,7 +1481,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#Controller#0" expanded="false" />
-            <element signature="e#1663#1671#0" expanded="false" />
+            <element signature="e#1886#1894#0" expanded="false" />
             <element signature="docComment;method#initialize#0;class#Controller#0" expanded="false" />
             <element signature="method#initialize#0;class#Controller#0" expanded="false" />
             <element signature="method#initVars#0;class#Controller#0" expanded="false" />
@@ -1368,15 +1500,13 @@
             <element signature="method#Point#0;class#Point#0;class#Controller#0" expanded="false" />
             <element signature="method#equals#0;class#Point#0;class#Controller#0" expanded="false" />
             <element signature="method#isValid#0;class#Point#0;class#Controller#0" expanded="false" />
-            <element signature="method#initCityView#0;class#Controller#0" expanded="false" />
-            <element signature="class#9364:9524" expanded="false" />
-            <element signature="method#Column#0;class#9364:9524" expanded="false" />
-            <element signature="e#9844#9872#0" expanded="false" />
-            <element signature="e#10156#10186#0" expanded="false" />
+            <element signature="class#9587:9747" expanded="false" />
+            <element signature="method#Column#0;class#9587:9747" expanded="false" />
+            <element signature="e#10379#10409#0" expanded="false" />
             <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
             <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
-            <element signature="class#10632:10681" expanded="false" />
-            <element signature="initializer##0;class#10632:10681" expanded="false" />
+            <element signature="class#10855:10904" expanded="false" />
+            <element signature="initializer##0;class#10855:10904" expanded="false" />
             <element signature="method#contains#0;class#Controller#0" expanded="false" />
             <element signature="method#switchTo#0;class#Controller#0" expanded="false" />
             <element signature="method#switchTo#1;class#Controller#0" expanded="false" />
@@ -1386,8 +1516,8 @@
             <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getCityTab#0;class#Controller#0" expanded="false" />
-            <marker date="1463618937638" expanded="false" signature="5451:5475" ph="{...}" />
-            <marker date="1463618937638" expanded="false" signature="5452:5474" ph="{...}" />
+            <marker date="1463619853837" expanded="false" signature="5674:5698" ph="{...}" />
+            <marker date="1463619853837" expanded="false" signature="5675:5697" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1414,7 +1544,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#Controller#0" expanded="false" />
-            <element signature="e#1663#1671#0" expanded="false" />
+            <element signature="e#1886#1894#0" expanded="false" />
             <element signature="docComment;method#initialize#0;class#Controller#0" expanded="false" />
             <element signature="method#initialize#0;class#Controller#0" expanded="false" />
             <element signature="method#initVars#0;class#Controller#0" expanded="false" />
@@ -1433,15 +1563,13 @@
             <element signature="method#Point#0;class#Point#0;class#Controller#0" expanded="false" />
             <element signature="method#equals#0;class#Point#0;class#Controller#0" expanded="false" />
             <element signature="method#isValid#0;class#Point#0;class#Controller#0" expanded="false" />
-            <element signature="method#initCityView#0;class#Controller#0" expanded="false" />
-            <element signature="class#9364:9524" expanded="false" />
-            <element signature="method#Column#0;class#9364:9524" expanded="false" />
-            <element signature="e#9844#9872#0" expanded="false" />
-            <element signature="e#10156#10186#0" expanded="false" />
+            <element signature="class#9587:9747" expanded="false" />
+            <element signature="method#Column#0;class#9587:9747" expanded="false" />
+            <element signature="e#10379#10409#0" expanded="false" />
             <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
             <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
-            <element signature="class#10632:10681" expanded="false" />
-            <element signature="initializer##0;class#10632:10681" expanded="false" />
+            <element signature="class#10855:10904" expanded="false" />
+            <element signature="initializer##0;class#10855:10904" expanded="false" />
             <element signature="method#contains#0;class#Controller#0" expanded="false" />
             <element signature="method#switchTo#0;class#Controller#0" expanded="false" />
             <element signature="method#switchTo#1;class#Controller#0" expanded="false" />
@@ -1451,8 +1579,8 @@
             <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getCityTab#0;class#Controller#0" expanded="false" />
-            <marker date="1463618937638" expanded="false" signature="5451:5475" ph="{...}" />
-            <marker date="1463618937638" expanded="false" signature="5452:5474" ph="{...}" />
+            <marker date="1463619853837" expanded="false" signature="5674:5698" ph="{...}" />
+            <marker date="1463619853837" expanded="false" signature="5675:5697" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1479,7 +1607,7 @@
           <caret line="154" column="36" selection-start-line="154" selection-start-column="36" selection-end-line="154" selection-end-column="36" />
           <folding>
             <element signature="docComment;class#Controller#0" expanded="false" />
-            <element signature="e#1663#1671#0" expanded="false" />
+            <element signature="e#1886#1894#0" expanded="false" />
             <element signature="docComment;method#initialize#0;class#Controller#0" expanded="false" />
             <element signature="method#initialize#0;class#Controller#0" expanded="false" />
             <element signature="method#initVars#0;class#Controller#0" expanded="false" />
@@ -1498,15 +1626,13 @@
             <element signature="method#Point#0;class#Point#0;class#Controller#0" expanded="false" />
             <element signature="method#equals#0;class#Point#0;class#Controller#0" expanded="false" />
             <element signature="method#isValid#0;class#Point#0;class#Controller#0" expanded="false" />
-            <element signature="method#initCityView#0;class#Controller#0" expanded="false" />
-            <element signature="class#9364:9524" expanded="false" />
-            <element signature="method#Column#0;class#9364:9524" expanded="false" />
-            <element signature="e#9844#9872#0" expanded="false" />
-            <element signature="e#10156#10186#0" expanded="false" />
+            <element signature="class#9587:9747" expanded="false" />
+            <element signature="method#Column#0;class#9587:9747" expanded="false" />
+            <element signature="e#10379#10409#0" expanded="false" />
             <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
             <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
-            <element signature="class#10632:10681" expanded="false" />
-            <element signature="initializer##0;class#10632:10681" expanded="false" />
+            <element signature="class#10855:10904" expanded="false" />
+            <element signature="initializer##0;class#10855:10904" expanded="false" />
             <element signature="method#contains#0;class#Controller#0" expanded="false" />
             <element signature="method#switchTo#0;class#Controller#0" expanded="false" />
             <element signature="method#switchTo#1;class#Controller#0" expanded="false" />
@@ -1516,8 +1642,8 @@
             <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getCityTab#0;class#Controller#0" expanded="false" />
-            <marker date="1463618937638" expanded="false" signature="5451:5475" ph="{...}" />
-            <marker date="1463618937638" expanded="false" signature="5452:5474" ph="{...}" />
+            <marker date="1463619853837" expanded="false" signature="5674:5698" ph="{...}" />
+            <marker date="1463619853837" expanded="false" signature="5675:5697" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1544,7 +1670,7 @@
           <caret line="157" column="36" selection-start-line="157" selection-start-column="36" selection-end-line="157" selection-end-column="36" />
           <folding>
             <element signature="docComment;class#Controller#0" expanded="false" />
-            <element signature="e#1663#1671#0" expanded="false" />
+            <element signature="e#1886#1894#0" expanded="false" />
             <element signature="docComment;method#initialize#0;class#Controller#0" expanded="false" />
             <element signature="method#initialize#0;class#Controller#0" expanded="false" />
             <element signature="method#initVars#0;class#Controller#0" expanded="false" />
@@ -1563,15 +1689,13 @@
             <element signature="method#Point#0;class#Point#0;class#Controller#0" expanded="false" />
             <element signature="method#equals#0;class#Point#0;class#Controller#0" expanded="false" />
             <element signature="method#isValid#0;class#Point#0;class#Controller#0" expanded="false" />
-            <element signature="method#initCityView#0;class#Controller#0" expanded="false" />
-            <element signature="class#9364:9524" expanded="false" />
-            <element signature="method#Column#0;class#9364:9524" expanded="false" />
-            <element signature="e#9844#9872#0" expanded="false" />
-            <element signature="e#10156#10186#0" expanded="false" />
+            <element signature="class#9587:9747" expanded="false" />
+            <element signature="method#Column#0;class#9587:9747" expanded="false" />
+            <element signature="e#10379#10409#0" expanded="false" />
             <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
             <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
-            <element signature="class#10632:10681" expanded="false" />
-            <element signature="initializer##0;class#10632:10681" expanded="false" />
+            <element signature="class#10855:10904" expanded="false" />
+            <element signature="initializer##0;class#10855:10904" expanded="false" />
             <element signature="method#contains#0;class#Controller#0" expanded="false" />
             <element signature="method#switchTo#0;class#Controller#0" expanded="false" />
             <element signature="method#switchTo#1;class#Controller#0" expanded="false" />
@@ -1581,8 +1705,8 @@
             <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getCityTab#0;class#Controller#0" expanded="false" />
-            <marker date="1463618937638" expanded="false" signature="5451:5475" ph="{...}" />
-            <marker date="1463618937638" expanded="false" signature="5452:5474" ph="{...}" />
+            <marker date="1463619853837" expanded="false" signature="5674:5698" ph="{...}" />
+            <marker date="1463619853837" expanded="false" signature="5675:5697" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1718,7 +1842,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
           <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#343#344#0" expanded="false" />
+            <element signature="e#374#375#0" expanded="false" />
+            <element signature="e#1193#1194#0" expanded="false" />
+            <element signature="e#1215#1216#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1743,7 +1873,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1198#1199#0" expanded="false" />
+            <element signature="e#1234#1235#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1751,9 +1885,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1790,7 +1922,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="969">
           <caret line="66" column="22" selection-start-line="49" selection-start-column="8" selection-end-line="66" selection-end-column="22" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1798,9 +1932,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1207">
           <caret line="79" column="4" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1812,13 +1944,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/buildings/Building.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-204">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/view/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="371" column="44" selection-start-line="371" selection-start-column="44" selection-end-line="371" selection-end-column="44" />
+        <state relative-caret-position="1106">
+          <caret line="395" column="39" selection-start-line="395" selection-start-column="39" selection-end-line="395" selection-end-column="39" />
           <folding>
             <element signature="docComment;class#Controller#0" expanded="false" />
-            <element signature="e#1663#1671#0" expanded="false" />
+            <element signature="e#1886#1894#0" expanded="false" />
             <element signature="docComment;method#initialize#0;class#Controller#0" expanded="false" />
             <element signature="method#initialize#0;class#Controller#0" expanded="false" />
             <element signature="method#initVars#0;class#Controller#0" expanded="false" />
@@ -1837,15 +1977,13 @@
             <element signature="method#Point#0;class#Point#0;class#Controller#0" expanded="false" />
             <element signature="method#equals#0;class#Point#0;class#Controller#0" expanded="false" />
             <element signature="method#isValid#0;class#Point#0;class#Controller#0" expanded="false" />
-            <element signature="method#initCityView#0;class#Controller#0" expanded="false" />
-            <element signature="class#9364:9524" expanded="false" />
-            <element signature="method#Column#0;class#9364:9524" expanded="false" />
-            <element signature="e#9844#9872#0" expanded="false" />
-            <element signature="e#10156#10186#0" expanded="false" />
+            <element signature="class#9587:9747" expanded="false" />
+            <element signature="method#Column#0;class#9587:9747" expanded="false" />
+            <element signature="e#10379#10409#0" expanded="false" />
             <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
             <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
-            <element signature="class#10632:10681" expanded="false" />
-            <element signature="initializer##0;class#10632:10681" expanded="false" />
+            <element signature="class#10855:10904" expanded="false" />
+            <element signature="initializer##0;class#10855:10904" expanded="false" />
             <element signature="method#contains#0;class#Controller#0" expanded="false" />
             <element signature="method#switchTo#0;class#Controller#0" expanded="false" />
             <element signature="method#switchTo#1;class#Controller#0" expanded="false" />
@@ -1855,8 +1993,8 @@
             <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getCityTab#0;class#Controller#0" expanded="false" />
-            <marker date="1463618937638" expanded="false" signature="5451:5475" ph="{...}" />
-            <marker date="1463618937638" expanded="false" signature="5452:5474" ph="{...}" />
+            <marker date="1463619853837" expanded="false" signature="5674:5698" ph="{...}" />
+            <marker date="1463619853837" expanded="false" signature="5675:5697" ph="{...}" />
           </folding>
         </state>
       </provider>
