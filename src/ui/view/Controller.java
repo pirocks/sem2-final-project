@@ -27,7 +27,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import ui.view.city.CityBlockPanel;
 import ui.view.city.CityButton;
 import ui.view.city.EmptyCityBlock;
 import ui.view.planet.PlanetButton;
@@ -110,7 +109,6 @@ public class Controller implements Initializable{
 		initSolarSystemAccordion();
 		initSolarSystemView();
 	}
-
 	private void initSolarSystemAccordion() {
 		solarSystemAccordion.getPanes().clear();
 		for(Planet planet:solarSystem.getPlanets())
@@ -315,30 +313,15 @@ public class Controller implements Initializable{
 		for (Building b : city.getBuilding()) {
 			int x = b.getParentBlock().x;
 			int y = b.getParentBlock().y;
-			SwingNode node = new SwingNode();
-			node.setContent(new CityBlockPanel(b.getParentBlock(), x, y));
+
+			ImageView buildingImageView = new ImageView();
+			buildingImageView.setImage(getImage(b));
+			buildingImageView.setPreserveRatio(true);
+			buildingImageView.setFitHeight(200);
+			buildingImageView.setFitWidth(200);
 			points.add(new Point(x,y));
-			gridPane.add(node,x,y);
-//			boolean foundQ = false;
-//			for(Column c:columns)
-//			{
-//				if(c.y == y)
-//				{
-//					c.nodes.add(node);
-//					foundQ = true;
-//					break;
-//				}
-//			}
-//			if(!foundQ) {
-//				ArrayList<SwingNode> list = new ArrayList<>();
-//				list.add(node);
-//				columns.add(new Column(list, y));
-//			}
+			gridPane.add(buildingImageView,x,y);
 		}
-//		for(Column column:columns)
-//		{
-////			gridPane.addColumn(column.y, column.nodes);
-//		}
 		addEmptyWrapper(points,gridPane);
 		cityBorderPane.setCenter(new ScrollPane(gridPane));
 	}
