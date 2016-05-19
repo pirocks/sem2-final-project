@@ -2,9 +2,8 @@ package ui.view.planet;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.SceneAntialiasing;
+import javafx.scene.*;
+import javafx.scene.shape.Sphere;
 import javafx.stage.Stage;
 
 /**
@@ -34,12 +33,16 @@ public class MountainMain  extends Application{
 	 */
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("mountain1.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("mountain1resized2.fxml"));
 		Parent root = loader.load();
-//	    Controller controller = (Controller)loader.getController();
-//		loader.setController(controller);
+		PerspectiveCamera camera = new PerspectiveCamera();
+		camera.setTranslateX(0);
+		camera.setTranslateY(0);
+		camera.setTranslateZ(0);
+//		AmbientLight ambientLight = new AmbientLight();
+		Group group = new Group(root,new Sphere(100));
 		primaryStage.setTitle("Hello World");
-		primaryStage.setScene(new Scene(root,1000,1000,true, SceneAntialiasing.BALANCED));
+		primaryStage.setScene(new Scene(group,1000,1000,true, SceneAntialiasing.BALANCED){{setCamera(camera);}});
 		primaryStage.show();
 	}
 }
