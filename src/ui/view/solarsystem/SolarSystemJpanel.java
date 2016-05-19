@@ -1,73 +1,57 @@
-package ui.view.planet;
+package ui.view.solarsystem;
 
-import engine.planets.Grid;
 import engine.planets.Planet;
-import engine.planets.TerrainType;
+import engine.universe.SolarSystem;
+import javafx.application.Platform;
 import ui.view.Controller;
 
 import javax.swing.*;
-import javax.swing.event.MouseInputListener;
 import java.awt.*;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 /**
  * Created by bob on 5/18/2016.
  *
  */
-public class GridViewPanel extends JPanel implements MouseInputListener
+public class SolarSystemJPanel extends JPanel implements MouseListener,MouseMotionListener
 {
-
+	private SolarSystem solarSystem;
+	private double scale;
 	private Controller controller;
-	private Grid[][] grids;
 
-	public GridViewPanel(Planet planet, Controller controller)
-	{
-		grids  = planet.getGrids();
+	public SolarSystemJPanel(SolarSystem solarSystem, Controller controller) {
+		super();
 		this.controller = controller;
 		addMouseListener(this);
-//		setLayout(new GridLayout(grids.length,grids[0].length){{setVgap(0);setHgap(0);}});
-//		for(Grid[] row:grids)
-//			for(Grid grid:row)
-//			{
-//				add(new GridPanel(controller,grid));
-//			}
-		setPreferredSize(new Dimension(100*grids.length,100*grids[0].length));
+		addMouseMotionListener(this);
+		this.solarSystem = solarSystem;
+		setPreferredSize(new Dimension(3000,1000));
+		double maxRadius = -1;
+		for(Planet p:solarSystem.getPlanets())
+		{
+			if(maxRadius < p.getSolarSystemRadius())
+				maxRadius = p.getSolarSystemRadius();
+		}
+		scale = maxRadius/2500;
 	}
 
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		int x = 0;
-		int y = 0;
+		g.setColor(Color.YELLOW);
+		drawCircle(g,0,500,200);
 		g.setColor(Color.green);
-		for(Grid[] row:grids) {
-			x = 0;
-			for (Grid grid : row) {
-				g.setColor(getColor(grid.getTerrainType()));
-				g.fillRect(100*x,100*y,100,100);
-				x++;
-			}
-			y++;
+		for(Planet planet:solarSystem.getPlanets())
+		{
+			int radius = 10*(int)(planet.getplanetRadius());//the 10 is that yu can actually see the planets in question
+			drawCircle(g,(int)(planet.getSolarSystemRadius()/scale),500,radius);
 		}
 	}
-
-	private Color getColor(TerrainType terrainType)
+	private void drawCircle(Graphics g,int x,int y,int r)
 	{
-		switch (terrainType) {
-			case Land:
-				return (Color.GREEN);
-			case Sea:
-				return (Color.BLUE);
-			case Coast:
-				return (Color.cyan);
-			case Mountains:
-				return (Color.DARK_GRAY);
-			case Hills:
-				return (Color.GRAY);
-			case Wasteland:
-				return (Color.LIGHT_GRAY);
-		}
-		return null;
+		g.fillOval(x - r,y - r,2*r,2*r);
 	}
 
 	/**
@@ -78,7 +62,25 @@ public class GridViewPanel extends JPanel implements MouseInputListener
 	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
-
+		int x = e.getX();
+		int y = e.getY();
+		System.out.print("moved x:" + x + "y:" + y);
+		for(Planet p:solarSystem.getPlanets())
+		{
+			int xPosition = (int) (p.getSolarSystemRadius()/scale);
+			int dx = x - xPosition;
+			int dy = y - 500;
+			if(Math.sqrt(dx*dx+dy*dy) < 10*p.getplanetRadius())
+			{
+				Platform.runLater(new Runnable() {
+					@Override
+					public void run() {
+						controller.switchTo(p);
+					}
+				});
+				break;
+			}
+		}
 	}
 
 	/**
@@ -147,6 +149,19 @@ public class GridViewPanel extends JPanel implements MouseInputListener
 	 */
 	@Override
 	public void mouseMoved(MouseEvent e) {
-
+		int x = e.getX();
+		int y = e.getY();
+		System.out.print("moved x:" + x + "y:" + y);
+		for(Planet p:solarSystem.getPlanets())
+		{
+			int xPosition = (int) (p.getSolarSystemRadius()/scale);
+			int dx = x - xPosition;
+			int dy = y - 500;
+			if(Math.sqrt(dx*dx+dy*dy) < 10*p.getplanetRadius())
+			{
+				controller.focusPlanetInAccordion(p);
+				break;
+			}
+		}
 	}
 }

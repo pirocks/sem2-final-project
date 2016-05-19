@@ -2,14 +2,22 @@ package ui.view;
 
 import engine.buildings.Building;
 import engine.cities.City;
+import engine.planets.Grid;
 import engine.planets.Planet;
+import engine.planets.TerrainType;
 import engine.universe.Country;
 import engine.universe.SolarSystem;
 import engine.universe.Universe;
 import javafx.embed.swing.SwingNode;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -17,12 +25,10 @@ import javafx.scene.text.Text;
 import ui.view.city.CityBlockPanel;
 import ui.view.city.CityButton;
 import ui.view.city.EmptyCityBlock;
-import ui.view.planet.GridViewPanel;
 import ui.view.planet.PlanetButton;
 import ui.view.solarsystem.SolarSystemButton;
 import ui.view.solarsystem.SolarSystemJPanel;
 
-import javax.swing.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -32,7 +38,8 @@ import java.util.ResourceBundle;
  *
  */
 public class Controller implements Initializable{
-	//despite the vast number of vars having this all in one class seems good
+	//despite the vast number of vars having this all in one class seems like the best way. having multiple
+	// controller classes gets very messy with controller class references all over the place
 	@FXML
 	TabPane tabPane;
 	@FXML
@@ -114,8 +121,7 @@ public class Controller implements Initializable{
 		node.setContent(new SolarSystemJPanel(solarSystem,this));
 		solarSystemBorderPane.setCenter(new ScrollPane(node));
 	}
-	public void focusPlanetInAccordion(Planet planet)
-	{
+	public void focusPlanetInAccordion(Planet planet) {
 		for(TitledPane p:solarSystemAccordion.getPanes())
 		{
 			if(p.getText().equals(planet.name)) {
@@ -123,7 +129,6 @@ public class Controller implements Initializable{
 			}
 		}
 	}
-
 	private void initPlanetTab(){
 		getPlanetTab().setText("Planet:" + planet.name);
 		initPlanetAccordion();
@@ -172,10 +177,74 @@ public class Controller implements Initializable{
 				gridPane.add(new SwingNode(){{setContent(content);}},x,y);
 			}
 		planetBorderPane.setCenter(new ScrollPane(gridPane));*/
-		JPanel gridView = new GridViewPanel(planet,this);
+		/*JPanel gridView = new GridViewPanel(planet,this);
 		SwingNode swingNode = new SwingNode();
 		swingNode.setContent(gridView);
-		planetBorderPane.setCenter(new ScrollPane(swingNode));
+		planetBorderPane.setCenter(new ScrollPane(swingNode));*/
+
+		GridPane gridPane = new GridPane();
+		gridPane.setHgap(0);
+		gridPane.setHgap(0);
+		gridPane.autosize();
+		for(int y = 0; y < planet.getGrids().length;y++)
+			for (int x = 0; x < planet.getGrids()[y].length; x++) {
+				Grid grid = planet.getGrids()[y][x];
+				ImageView terrainImageView = new ImageView();
+				terrainImageView.setImage(getImage(grid.getTerrainType()));
+				terrainImageView.setPreserveRatio(true);
+				terrainImageView.setFitHeight(200);
+				terrainImageView.setFitWidth(200);
+				ArrayList<Node> imageList = new ArrayList<>();
+				imageList.add(terrainImageView);
+				for (City c : grid.getCitys()) {
+					ImageView cityImageView = new ImageView();
+					cityImageView.setOnMouseMoved(new EventHandler<MouseEvent>() {
+						@Override
+						public void handle(MouseEvent event) {
+							focusCityInAccordion(c);
+						}
+					});
+					cityImageView.setImage(cityImage);
+					cityImageView.setPreserveRatio(true);
+					cityImageView.setFitWidth(150);
+					cityImageView.setFitHeight(150);
+					imageList.add(cityImageView);
+				}
+				Group completeGridImage = new Group(imageList);
+				gridPane.add(completeGridImage, x, y);
+			}
+		planetBorderPane.setCenter(new ScrollPane(gridPane));
+		System.out.print("done");
+	}
+
+	private static Image mountainImage = new Image("http://3.imimg.com/data3/FK/TS/MY-16623584/himalayan-gateway-tour-package-125x12.jpg");
+	private static Image hillImage = new Image("http://s7.eu.is.pp.ru/l/larismilke/1/46299541Rkj.jpg");
+	private static Image seaImage =  new Image("http://cs629408.vk.me/v629408061/2cabc/LoMYe0EB2HI.jpg");
+	private static Image landImage = new Image("http://www.mayrwirt.at/wp-content/uploads/musik-haus.jpg");
+	private static Image wastelandImage =  new Image("http://vignette4.wikia.nocookie.net/fallout/images/a/a0/WastelandPicture.jpg/revision/latest/scale-to-width-down/180?cb=20110309003621");
+	private static Image coastImage = new Image("http://republic.pink/MyThumb.php?file=images/1/0/2/8/8/3/4/en/1-coastImage.jpg&size=200");
+	private static Image cityImage = new Image("https://image.freepik" +
+			".com/free-icon/set-of-buildings-in-a-city_318-41262" +
+			".jpg");
+	private static boolean resizedQ = false;
+
+
+	private Image getImage(TerrainType terrainType) {
+		switch (terrainType) {
+			case Land:
+				return landImage;
+			case Sea:
+				return seaImage;
+			case Coast:
+				return coastImage;
+			case Mountains:
+				return mountainImage;
+			case Hills:
+				return hillImage;
+			case Wasteland:
+				return wastelandImage;
+		}
+		return null;
 	}
 	private void initCityTab(){
 		getCityTab().setText("City:"  + city.name);
@@ -289,12 +358,26 @@ public class Controller implements Initializable{
 		addEmpty(points,new Point(p.x,p.y),gridPane,depth - 1);
 
 	}
-	public boolean contains(ArrayList<Point> points,Point point) {
+	private boolean contains(ArrayList<Point> points,Point point) {
 		for(Point p:points)
 			if(point.x == p.x && point.y == p.y)
 				return true;
 		return false;
 	}
+
+	private Image apartmentBlockImage = new Image("https://photos.travelblog.org/Photos/12544/398145/f/3804575-Soviet-apartment-block-0.jpg");
+	private Image houseBlockImage = new Image("http://www.fritzhaeg.com/wikidiary/wp-content/uploads/2010/04/2010-04-09-P1140314.jpg");
+	private Image rulersHouseImage = new Image("http://joanneleedom-ackerman.com/wp-content/uploads/2016/02/WhiteHouseAerialView.jpg");
+	private Image dockYardImage = new Image("http://antiguahistory.net/Museum/images/DockyardAirEastDec03-3.jpg");
+	private Image factoryImage = new Image("");
+	private Image hospitalImage = new Image("");
+	private Image industrialDockImage = new Image("");
+	private Image researchAreaImage = new Image("");
+	private Image schoolImage = new Image("");
+	private Image townHallImage = new Image("");
+	private Image warehouseImage = new Image("");
+	private Image workplaceImage = new Image("");
+
 	public void switchTo(Universe u) {
 		//unlikely to have more than one universe
 		tabPane.getSelectionModel().select(getUniverseTab());
@@ -327,7 +410,6 @@ public class Controller implements Initializable{
 		for(TitledPane p:planetAccordion.getPanes())
 		{
 			if(p.getText().equals(c.name)) {
-				System.out.print("found");
 				p.setExpanded(true);
 			}
 		}
