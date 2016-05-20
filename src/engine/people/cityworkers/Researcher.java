@@ -1,9 +1,7 @@
 package engine.people.cityworkers;
 
-import engine.buildings.housing.Housing;
 import engine.buildings.workplaces.ResearchArea;
 import engine.cities.City;
-import engine.people.AbstractPerson;
 import engine.planets.LocationPlanet;
 import engine.universe.UniversalConstants;
 
@@ -33,7 +31,8 @@ public class Researcher extends CityWorker
     }
     @Override
     public void doSkill(long time) {
-        //TODO:implement
+	    assert (workplace.getDiscovery().canBeResearched());
+        workplace.getDiscovery().makeProgress(time*UniversalConstants.timeToDiscoveryConstant);
     }
     @Override
     public double getWeight() {

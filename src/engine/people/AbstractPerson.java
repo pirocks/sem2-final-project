@@ -1,14 +1,15 @@
 package engine.people;
 
-import engine.people.cityworkers.*;
-import engine.universe.*;
-import engine.planets.LocationPlanet;
+import engine.people.cityworkers.PeopleInitialConstants;
 import engine.tools.AttackableConstants;
 import engine.tools.vehicles.Weighable;
 import engine.tools.weapons.Attackable;
+import engine.universe.Country;
+import engine.universe.CountryContainer;
+import engine.universe.MoneySource;
+import engine.universe.MoneySourceContainer;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public abstract class AbstractPerson extends Attackable implements Serializable, CountryContainer, MoneySourceContainer,Weighable
 {
@@ -24,7 +25,7 @@ public abstract class AbstractPerson extends Attackable implements Serializable,
 	private double crimeRisk;
 	private double crimeImpact;
 	private double salary;
-	protected boolean employedq = false;
+	@Deprecated protected boolean employedq = false;
 
 	protected MoneySource salaryGiver = null;// TODO: 4/10/2016 need to initialize this
 	protected AbstractPerson(PeopleInitialConstants peopleInitialConstants) {

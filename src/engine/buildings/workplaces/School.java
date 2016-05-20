@@ -9,10 +9,10 @@ public class School extends Workplace
 {
 	public static double healthInitial;
 	public static double resistanceInitial;
-	public static int maximumOccupancyInitial = -1;
+	public static int maxWorkersInitial;// TODO: 5/19/2016
 
 	public School(CityBlock parentBlock, MoneySource owner) {
-		super(new AttackableConstants(healthInitial,resistanceInitial,parentBlock.getLocation()), parentBlock, owner);
+		super(new AttackableConstants(healthInitial,resistanceInitial,parentBlock.getLocation()), parentBlock, maxWorkersInitial, owner);
 	}
 
 	@Override

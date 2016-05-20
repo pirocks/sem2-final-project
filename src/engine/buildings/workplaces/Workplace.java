@@ -20,8 +20,9 @@ public abstract class Workplace extends Building implements PersonContainer, Mon
 	private MoneySource owner;
 	private Resource inStock;
 	public Workplace(AttackableConstants attackableConstants,
-	                 CityBlock parentBlock, MoneySource owner) {
+	                 CityBlock parentBlock, int maxWorkers, MoneySource owner) {
 		super(attackableConstants,parentBlock);
+		this.maxWorkers = maxWorkers;
 		registerPersonContainer();
 		registerMoneySourceContainer();
 		workers = new ArrayList<>();
@@ -61,5 +62,13 @@ public abstract class Workplace extends Building implements PersonContainer, Mon
 		{
 			owner = null;
 		}
+	}
+
+	public int getMaxWorkers() {
+		return maxWorkers;
+	}
+
+	public Resource getInStock() {
+		return inStock;
 	}
 }

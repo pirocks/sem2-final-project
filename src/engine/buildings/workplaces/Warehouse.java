@@ -12,12 +12,12 @@ public class Warehouse extends Workplace
 	public static double healthInitial;
 	//stores weighable object
 	//resource or tool
-	public static int maximumOccupancyInitial = -1;
+	public static int maxiWorkersInitial;
 	public static double costInitial;
 	public Resource resources;
 
 	public Warehouse(CityBlock parentBlock, MoneySource owner) {
-		super(new AttackableConstants(healthInitial,resistanceInitial,parentBlock.getLocation()),parentBlock, owner);
+		super(new AttackableConstants(healthInitial,resistanceInitial,parentBlock.getLocation()),parentBlock, maxiWorkersInitial, owner);
 	}
 
 	@Override

@@ -14,11 +14,11 @@ public class TownHall extends Workplace
 	public static double healthInitial;
 	public static double resistanceInitial;
 	private City parentCity;//money for city
-	public static int maximumOccupancyInitial = 10;
+	public static int maxWorkersInitial = 10;// TODO: 5/19/2016 magic cnstant
 	public static double costInitial;
 
 	public TownHall(ArrayList<CityWorker> workers, CityBlock parentBlock, MoneySource owner) {
-		super(new AttackableConstants(parentBlock.getLocation(),healthInitial,resistanceInitial), parentBlock, owner);
+		super(new AttackableConstants(parentBlock.getLocation(),healthInitial,resistanceInitial), parentBlock, maxWorkersInitial, owner);
 	}
 
 	@Override

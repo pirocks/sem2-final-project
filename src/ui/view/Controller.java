@@ -271,6 +271,80 @@ public class Controller implements Initializable{
 			cityAccordion.getPanes().add(titledPane);
 		}
 	}
+	private VBox initBuildingPane(Building building)
+	{
+		if(building instanceof Workplace)
+			return initWorkplacePane((Workplace) building);
+		else if(building instanceof Housing)
+			return
+	}
+	private VBox initWorkplacePane(Workplace workplace)
+	{
+		VBox out = new VBox();
+		out.getChildren().add(new Text(workplace.name));
+		out.getChildren().add(new Text("Currently Employs:" + workplace.workerCount()));
+		out.getChildren().add(new Text("Worker Limit:" + workplace.getMaxWorkers()));
+		out.getChildren().add(new Text("Resources in Stock:"));
+		out.getChildren().add(new Text(workplace.getInStock().toString()));
+		if(workplace instanceof DockYard)
+		{
+			// TODO: 5/19/2016
+		}
+		else if(workplace instanceof Factory)
+		{
+			// TODO: 5/19/2016
+		}
+		else if(workplace instanceof Hospital)
+		{
+			// TODO: 5/19/2016
+		}
+		else if(workplace instanceof IndustrialDock)
+		{
+			// TODO: 5/19/2016
+		}
+		else if(workplace instanceof ResearchArea)
+		{
+			// TODO: 5/19/2016
+		}
+		else if(workplace instanceof School)
+		{
+			// TODO: 5/19/2016
+		}
+		else if(workplace instanceof TownHall)
+		{
+			// TODO: 5/19/2016
+		}
+		else if(workplace instanceof Warehouse)
+		{
+			// TODO: 5/19/2016
+		}
+		else if(workplace instanceof Workplace)
+		{
+			// TODO: 5/19/2016
+		}
+		else
+			throw new IllegalStateException();
+		return out;
+	}
+	private VBox initHousingPane(Housing housing)
+	{
+		VBox out = new VBox();
+		out.getChildren().add(new Text(""));
+		// TODO: 5/19/2016
+		if(housing instanceof ApartmentBlock)
+		{
+			// TODO: 5/19/2016
+		}
+		else if(housing instanceof RulersHouse)
+		{
+			// TODO: 5/19/2016
+		}
+		else if(housing instanceof WorkersHouseBlock)
+		{
+			// TODO: 5/19/2016
+		}
+		return out;
+	}
 	private class Point {
 		int x,y;
 

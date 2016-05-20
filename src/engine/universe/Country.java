@@ -14,6 +14,7 @@ import engine.planets.NaturalResource;
 import engine.planets.Road;
 import engine.planets.RoadContainer;
 import engine.planets.hazards.NaturalHazard;
+import engine.science.CountriesDiscoveries;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -31,6 +32,8 @@ public class Country extends MoneySource implements Serializable,PersonContainer
 	private ArrayList<Country> allies;
 	private ArrayList<Country> atWarWith;
 	private ArrayList<AbstractPerson> people;
+
+	private CountriesDiscoveries countriesDiscoveries;
 
 	public ArrayList<Road> roads;//not sure how this is going to be updated // TODO: 5/12/2016
 
@@ -50,6 +53,7 @@ public class Country extends MoneySource implements Serializable,PersonContainer
 	    atWarWith = new ArrayList<>();
 	    grids = new ArrayList<>();
 	    people = new ArrayList<>();
+	    countriesDiscoveries = new CountriesDiscoveries(this);
     }
 
 

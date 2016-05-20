@@ -14,10 +14,10 @@ public class DockYard extends Workplace
 	public static double healthInitial;
 	public static double resistanceInitial;
 
-	public static int maximumOccupancyInitial = -1;
+	public static int maxiWorkersInitial = -1;
 
 	public DockYard(CityBlock parentBlock, MoneySource owner) {
-		super(new AttackableConstants(parentBlock.getLocation(),healthInitial,resistanceInitial), parentBlock, owner);
+		super(new AttackableConstants(parentBlock.getLocation(),healthInitial,resistanceInitial), parentBlock, maxiWorkersInitial, owner);
 	}
 
 	@Override

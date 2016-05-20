@@ -9,10 +9,10 @@ public class IndustrialDock extends Workplace
 {
 	public static double resistanceInitial;
 	public static double healthInitial;
-	public static int maximumOccupancyInitial = 5000;
+	public static int maxWorkersInitial = 5000;
 
 	public IndustrialDock(CityBlock parentBlock, MoneySource owner) {
-		super(new AttackableConstants(healthInitial,resistanceInitial,parentBlock.getLocation()), parentBlock, owner);
+		super(new AttackableConstants(healthInitial,resistanceInitial,parentBlock.getLocation()), parentBlock, maxWorkersInitial, owner);
 	}
 
 	@Override
