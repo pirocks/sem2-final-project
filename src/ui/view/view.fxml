@@ -47,11 +47,16 @@
          <content>
             <BorderPane fx:id="cityBorderPane">
                <right>
-                  <ScrollPane prefViewportHeight="373.0" prefViewportWidth="202.0">
-                     <content>
-                        <Accordion fx:id="cityAccordion" BorderPane.alignment="CENTER" />
-                     </content>
-                  </ScrollPane>
+                  <SplitPane dividerPositions="0.5">
+                     <items>
+                        <ScrollPane prefViewportHeight="373.0" prefViewportWidth="202.0">
+                           <content>
+                              <Accordion fx:id="cityAccordion" BorderPane.alignment="CENTER" />
+                           </content>
+                        </ScrollPane>
+                        <AnchorPane fx:id="citySpecificPane" prefHeight="200.0" prefWidth="200.0" />
+                     </items>
+                  </SplitPane>
                </right>
             </BorderPane>
          </content>

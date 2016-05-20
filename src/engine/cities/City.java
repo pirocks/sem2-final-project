@@ -28,7 +28,7 @@ import java.util.ArrayList;
 
 public class City extends Attackable implements Serializable ,BuildingContainer, CountryContainer, PersonContainer
 {
-	public MoneySource moneySource;
+	public MoneySource moneySource;// if I don't have time this will just be the country money source
 	public static double resistanceInitial;
 	public static double healthInitial;
 	//remember to add stuff to the unique id if I add more member vars
@@ -193,7 +193,8 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 			notEnoughHousingHandler(cityConstructionContext);
 		}
 		parentCountry = cityConstructionContext.parentCountry;
-		// TODO: 5/8/2016 implement me
+		residents = new ArrayList<>();
+		// TODO: 5/8/2016 implement me residents
 	}
 
 	private void notEnoughHousingHandler(CityConstructionContext c) {
@@ -316,6 +317,20 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 		}
 		return out;
 	}
+	public double getJobLessCount() {
+		double out = 0;
+		for (CityWorker cityWorker : getJobLess()) {
+			out += cityWorker.getPopulation();
+		}
+		return out;
+	}
+	public double getHomeLessCount() {
+		double out = 0;
+		for (CityWorker cityWorker : getJobLess()) {
+			out += cityWorker.getPopulation();
+		}
+		return out;
+	}
 	public Housing findEmptyHousing(int minimumFree){
 		for(CityBlock block:cityBlocks){
 			if(block.getBuilding() instanceof Housing)
@@ -386,5 +401,9 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 			if(building instanceof Workplace)
 				out.add((Workplace)building);
 		return out;
+	}
+
+	public MoneySource getMoneySource() {
+		return moneySource;
 	}
 }

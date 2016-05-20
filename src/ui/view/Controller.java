@@ -23,12 +23,12 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import ui.view.city.CityButton;
-import ui.view.city.EmptyCityBlock;
 import ui.view.planet.PlanetButton;
 import ui.view.solarsystem.SolarSystemButton;
 import ui.view.solarsystem.SolarSystemJPanel;
@@ -62,6 +62,8 @@ public class Controller implements Initializable{
 	Accordion planetAccordion;
 	@FXML
 	Accordion cityAccordion;
+	@FXML
+	AnchorPane citySpecificPane;
 //	@FXML
 //	SwingNode citySwingNode;
 
@@ -207,6 +209,12 @@ public class Controller implements Initializable{
 							focusCityInAccordion(c);
 						}
 					});
+					cityImageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+						@Override
+						public void handle(MouseEvent event) {
+							switchTo(c);
+						}
+					});
 					cityImageView.setImage(cityImage);
 					cityImageView.setPreserveRatio(true);
 					cityImageView.setFitWidth(150);
@@ -229,8 +237,6 @@ public class Controller implements Initializable{
 	private static Image cityImage = new Image("https://image.freepik" +
 			".com/free-icon/set-of-buildings-in-a-city_318-41262" +
 			".jpg");
-	private static boolean resizedQ = false;
-
 
 	private Image getImage(TerrainType terrainType) {
 		switch (terrainType) {
@@ -253,7 +259,7 @@ public class Controller implements Initializable{
 		getCityTab().setText("City:"  + city.name);
 		initCityAccordion();
 		initCityView();
-
+		initCityAnchorPane();
 	}
 	private void initCityAccordion() {
 		cityAccordion.getPanes().clear();
@@ -299,17 +305,7 @@ public class Controller implements Initializable{
 		gridPane.setHgap(0);
 		gridPane.setVgap(0);
 		ArrayList<Point> points =  new ArrayList<>();
-		class Column {
-			ArrayList<SwingNode> nodes;
-			int y;
-			public Column(ArrayList<SwingNode> nodes,int y)
-			{
-				this.y = y;
-				this.nodes = nodes;
-			}
-		}
 
-		ArrayList<Column> columns = new ArrayList<>();
 		for (Building b : city.getBuilding()) {
 			int x = b.getParentBlock().x;
 			int y = b.getParentBlock().y;
@@ -325,6 +321,19 @@ public class Controller implements Initializable{
 		addEmptyWrapper(points,gridPane);
 		cityBorderPane.setCenter(new ScrollPane(gridPane));
 	}
+	private void initCityAnchorPane(){
+		VBox content = new VBox();
+		content.getChildren().add(new Text("City Stats:"));
+		content.getChildren().add(new Text("City Name:" + city.name));
+		content.getChildren().add(new Text("Unemployment:" + city.getJobLessCount()));
+		content.getChildren().add(new Button("Assign unemployed to Job"));// TODO: 5/19/2016
+		content.getChildren().add(new Button("Automatically assign unemployed to Job"));// TODO: 5/19/2016
+		content.getChildren().add(new Text("Homeless:" + city.getHomeLessCount()));
+		content.getChildren().add(new Button("Assign homeless to housing")); // TODO: 5/19/2016
+		content.getChildren().add(new Button("Automatically assign homeless to housing"));// TODO: 5/19/2016
+		content.getChildren().add(new Text("Money Available:" + city.getMoneySource().getWealth()));
+		citySpecificPane.getChildren().add(new ScrollPane(content));
+	}
 	private void addEmptyWrapper(ArrayList<Point> points, GridPane gridPane) {
 		for(Point p:points)
 			addEmpty(points,p,gridPane,2);
@@ -332,7 +341,8 @@ public class Controller implements Initializable{
 	private void addEmpty(ArrayList<Point> points,Point p,GridPane gridPane,int depth) {
 		if(!contains(points,p)) {
 			if(p.isValid())
-				gridPane.add(new SwingNode() {{setContent(new EmptyCityBlock());}}, p.x, p.y);
+				gridPane.add(new ImageView(emptyImage){{setPreserveRatio(true);setFitHeight(200);setFitWidth(200);}}, p
+						.x, p.y);
 		}
 		if(depth == 0)
 			return;
@@ -367,8 +377,7 @@ public class Controller implements Initializable{
 	private Image emptyImage = new Image("https://gregfallisdotcom.files.wordpress.com/2011/08/dairy-section.jpg");
 
 
-	private Image getImage(Building building)
-	{
+	private Image getImage(Building building) {
 		if(building instanceof Housing)
 		{
 			if(building instanceof ApartmentBlock)

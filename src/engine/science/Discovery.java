@@ -7,6 +7,11 @@ public abstract class Discovery implements Serializable //todo maybe make interf
 {
 	private double percentComplete = 0.0; //0 to 1
 	private ArrayList<Discovery> required;
+
+	protected Discovery(ArrayList<Discovery> required) {
+		this.required = required;
+	}
+
 	public abstract void postDiscovery();
 	public boolean canBeResearched()
 	{

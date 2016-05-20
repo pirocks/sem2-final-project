@@ -485,5 +485,6 @@ public class MountainController implements Initializable {
 				}
 			}
 		});
+		anchorPane.requestFocus();
 	}
 }
