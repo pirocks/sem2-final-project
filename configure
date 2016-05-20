@@ -1064,7 +1064,7 @@ Try \`$0 --help' for more information"
     # FIXME: should be removed in autoconf 3.0.
     $as_echo "$as_me: WARNING: you should use --build, --host, --target" >&2
     expr "x$ac_option" : ".*[^-._$as_cr_alnum]" >/dev/null &&
-      $as_echo "$as_me: WARNING: invalid host type: $ac_option" >&2
+      $as_echo "$as_me: WARNING: invalid host types: $ac_option" >&2
     : "${build_alias=$ac_option} ${host_alias=$ac_option} ${target_alias=$ac_option}"
     ;;
 

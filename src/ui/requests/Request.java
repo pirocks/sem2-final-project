@@ -6,7 +6,7 @@ import java.util.ArrayList;
 /**
  * Created by user on 4/13/2016.
  * this class is used by the engine to send "requests to the ui for infomation
- * aka what to build next, what type of worker to train...
+ * aka what to build next, what types of worker to train...
  */
 
 

@@ -4,11 +4,23 @@ import java.io.Serializable;
 
 public class ResourceDemand implements Serializable
 {
-	public Resource.Type type;
-	public double quantity;
-	public ResourceDemand(Resource.Type type,double quantity)
+	private Resource resource;
+	public ResourceDemand(Resource resource)
 	{
-		this.type = type;
-		this.quantity = quantity;
+		this.resource = resource;
+	}
+
+	public Resource getResource() {
+		return resource;
+	}
+
+	public boolean fullFilledQ()
+	{
+		for (Double quantity : resource.getValues().values()) {
+			if(quantity != 0)
+				return false;
+		}
+		return true;
+
 	}
 }

@@ -31,7 +31,7 @@ engine/constants management//need better name
     //how is this going too work??
     //each class could be registerd and updated based on technology
     //a engine.science would list what types and how it would affect them
-    //could also contain a lot of interfaces so that engine.science can affecct everuythin of the apropriate type
+    //could also contain a lot of interfaces so that engine.science can affecct everuythin of the apropriate types
     //every construcctor would have to register here
 engine/random generation
     // not actually a package but would be a random generation class in every subdirectory for this
@@ -47,7 +47,7 @@ engine/misc
     
 more random ideas:
 abstract person would have a defualt task that do defualt task would be. use abstract mthod
-non abstract method for reasigning tasks -- forces me to still provide some kind of type getter
+non abstract method for reasigning tasks -- forces me to still provide some kind of types getter
 
 
 

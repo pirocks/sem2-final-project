@@ -30,7 +30,7 @@ public class ToolUnderConstruction <Type extends Tool> implements Serializable
 	}
 	public boolean areWeDoneYet()
 	{
-		return timeRequired < 0 || resourceDemand.quantity == 0;
+		return timeRequired < 0 && resourceDemand.fullFilledQ();
 	}
 	public Type getFinishedTool()
 	{

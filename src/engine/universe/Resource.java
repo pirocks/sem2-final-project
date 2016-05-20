@@ -4,6 +4,8 @@ import engine.tools.vehicles.Weighable;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Resource implements Serializable,Weighable
 {
@@ -11,8 +13,9 @@ public class Resource implements Serializable,Weighable
     {
         Iron,Oil,Uranium,Helium,Food,Water,Wood
     }
-	public ArrayList<Type> type;
-	private ArrayList<Double> quantity;//don't forget to check for overflow with sun
+
+	private Map<Type,Double> values;
+
 	public static double IronValue;
 	public static double OilValue;
 	public static double UraniumValue;
@@ -49,46 +52,57 @@ public class Resource implements Serializable,Weighable
 	        	throw new IllegalStateException();
     	}
     }
-	public Resource(ArrayList<Type> type, ArrayList<Double> quantity) {
-		this.type = type;
-		this.quantity = quantity;
+	public Resource(ArrayList<Type> types, ArrayList<Double> quantities) {
+		values = new HashMap<>();
+		values.put(Type.Iron, (double) 0);
+		values.put(Type.Oil, (double) 0);
+		values.put(Type.Uranium, (double) 0);
+		values.put(Type.Helium, (double) 0);
+		values.put(Type.Food, (double) 0);
+		values.put(Type.Wood, (double) 0);
+		values.put(Type.Water, (double) 0);
+		for (int i = 0; i < types.size(); i++) {
+			Type type = types.get(i);
+			double val = quantities.get(i);
+			values.put(type,val);
+		}
 	}
-	public Resource(ArrayList<Type> type)
+	public Resource(Type type)
 	{
-		this(type,);
+		this(new ArrayList<Type>(){{add(type);}},new ArrayList<Double>(){{add(Double.NaN);}});
 	}
 	public Resource(Type type,double quantity)
 	{
-		this.type = new ArrayList<>();
-		this.type.add(type);
-		this.quantity = new ArrayList<>();
-		this.quantity.add(quantity);
+		this(new ArrayList<Type>(){{add(type);}},new ArrayList<Double>(){{add(quantity);}});
 	}
 	public void add(Resource r) {
-		assert(r.type == this.type);
-		quantity += r.getQuantity();
-		r.clear();
+		sanityCheck();
+		for (Type type : r.getValues().keySet()) {
+			values.put(type,values.get(type) + r.getValues().get(type));
+		}
+		sanityCheck();
 	}
-	public double getQuantity()
+	public double getQuantity(Type type)
 	{
-		return quantity;
+		sanityCheck();
+		return values.get(type);
 	}
-	public void clear()
-	{
-		quantity = 0.0;
-	}
-	public Resource split(double amount) {
-		quantity -= amount;
-		return new Resource(type,amount);
+	private void subtract(Resource r) {
+		for (Type type : r.getValues().keySet()) {
+			values.put(type,values.get(type) - r.getValues().get(type));
+		}
+		sanityCheck();
 	}
 	public void pay(ResourceDemand r) {
-		assert(this.type == r.type);
-		quantity -= r.quantity;
-		r.quantity = 0;
+		subtract(r.getResource());
 	}
 	@Override
 	public double getWeight() {
-		return getWeightType(type)*quantity;
+		double weight = 0;
+		for (Type type : values.keySet()) {
+			weight += getWeightType(type)* values.get(type);
+		}
+		return weight;
 	}
 	private static double getWeightType(Type type)
 	{
@@ -111,6 +125,18 @@ public class Resource implements Serializable,Weighable
 			default:
 				throw new IllegalStateException();
 		}
+	}
+	private void sanityCheck()
+	{
+		for (Double quantity : values.values()) {
+			assert (quantity > 0 || quantity == Double.NaN);
+			if(quantity < 0 || quantity != Double.NaN)
+				throw  new IllegalStateException();
+		}
+
+	}
+	public Map<Type, Double> getValues() {
+		return values;
 	}
 
 }

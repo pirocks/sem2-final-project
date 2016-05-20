@@ -40,7 +40,7 @@ public class GridPanel extends JPanel implements MouseInputListener
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		TerrainType type = grid.getTerrainType();
-//		System.out.println("painting x:"+grid.getX()+"y:" + grid.getY() + "color:" + type.toString());
+//		System.out.println("painting x:"+grid.getX()+"y:" + grid.getY() + "color:" + types.toString());
 		g.setColor(Color.GREEN);
 		if(redQ)
 			g.setColor(Color.RED);

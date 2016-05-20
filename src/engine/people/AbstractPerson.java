@@ -95,7 +95,7 @@ public abstract class AbstractPerson extends Attackable implements Serializable,
 	    {
 		    assert (false);
 	    }
-        // this(type,population,health,foodUsePerPerson,crimeRisk,crimeImpact,productivity,salary,wealth,currentCity,home);
+        // this(types,population,health,foodUsePerPerson,crimeRisk,crimeImpact,productivity,salary,wealth,currentCity,home);
         super.setWealth(wealth);
 	    this.salaryGiver = salaryGiver;
         this.population = population;

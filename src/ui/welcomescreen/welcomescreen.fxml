@@ -95,7 +95,7 @@
                                  <children>
                                     <TextField fx:id="enemyGovernmentStartWealth" />
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enemy Governmnt start wealth" GridPane.columnIndex="1" />
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enemy country government type" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enemy country government types" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                     <MenuButton fx:id="enemyGovernmentType" mnemonicParsing="false" GridPane.rowIndex="1">
                                        <items>
                                           <MenuItem mnemonicParsing="false" text="Democracy" />

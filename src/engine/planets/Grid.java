@@ -212,7 +212,7 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
 
 	@Override
 	public String toString() {
-		return "x:" + x + "y:" + y;// + "type:" + terrainType.toString();
+		return "x:" + x + "y:" + y;// + "types:" + terrainType.toString();
 	}
 
 	public ArrayList<City> getCitys() {

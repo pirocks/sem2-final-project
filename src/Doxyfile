@@ -318,7 +318,7 @@ SIP_SUPPORT            = NO
 # getter and setter methods for a property. Setting this option to YES will make
 # doxygen to replace the get and set methods by a property in the documentation.
 # This will only work if the methods are indeed getting or setting a simple
-# type. If this is not the case, or you want to show the methods anyway, you
+# types. If this is not the case, or you want to show the methods anyway, you
 # should set this option to NO.
 # The default value is: YES.
 
@@ -332,9 +332,9 @@ IDL_PROPERTY_SUPPORT   = YES
 
 DISTRIBUTE_GROUP_DOC   = NO
 
-# Set the SUBGROUPING tag to YES to allow class member groups of the same type
+# Set the SUBGROUPING tag to YES to allow class member groups of the same types
 # (for instance a group of public functions) to be put as a subgroup of that
-# type (e.g. under the Public Functions section). Set it to NO to prevent
+# types (e.g. under the Public Functions section). Set it to NO to prevent
 # subgrouping. Alternatively, this can be done per class using the
 # \nosubgrouping command.
 # The default value is: YES.
@@ -566,7 +566,7 @@ SORT_GROUP_NAMES       = NO
 SORT_BY_SCOPE_NAME     = NO
 
 # If the STRICT_PROTO_MATCHING option is enabled and doxygen fails to do proper
-# type resolution of all parameters of a function it will reject a match between
+# types resolution of all parameters of a function it will reject a match between
 # the prototype and the implementation of a member function even if there is
 # only one candidate or it is obvious which candidate to choose by doing a
 # simple string match. By disabling STRICT_PROTO_MATCHING doxygen will still
@@ -1576,7 +1576,7 @@ MAKEINDEX_CMD_NAME     = makeindex
 
 COMPACT_LATEX          = NO
 
-# The PAPER_TYPE tag can be used to set the paper type that is used by the
+# The PAPER_TYPE tag can be used to set the paper types that is used by the
 # printer.
 # Possible values are: a4 (210 x 297 mm), letter (8.5 x 11 inches), legal (8.5 x
 # 14 inches) and executive (7.25 x 10.5 inches).
@@ -2120,7 +2120,7 @@ UML_LOOK               = YES
 # If the UML_LOOK tag is enabled, the fields and methods are shown inside the
 # class node. If there are many fields or methods and many nodes the graph may
 # become too big to be useful. The UML_LIMIT_NUM_FIELDS threshold limits the
-# number of items for each type to make the size more manageable. Set this to 0
+# number of items for each types to make the size more manageable. Set this to 0
 # for no limit. Note that the threshold may be exceeded by 50% before the limit
 # is enforced. So when you set the threshold to 10, up to 15 fields may appear,
 # but if the number exceeds 15, the total amount of fields shown is limited to
