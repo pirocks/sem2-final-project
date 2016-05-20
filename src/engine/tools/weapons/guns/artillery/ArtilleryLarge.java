@@ -8,11 +8,11 @@ import engine.universe.ResourceDemand;
  *
  */
 public class ArtilleryLarge extends Artillery{
-	public static double startHealthInitial;
-	public static double resistanceInitial;
-	public static double accuracyInitial;
-	public static double damageInitial;
-	public static double rangeInitial;
+	public static double startHealthInitial = 16000;
+	public static double resistanceInitial = 8000;
+	public static double accuracyInitial = 0.3;
+	public static double damageInitial = 75000;
+	public static double rangeInitial = 500;
 
 	public ArtilleryLarge() {
 		super(new GunInitialConstants(

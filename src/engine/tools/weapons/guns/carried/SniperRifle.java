@@ -8,11 +8,11 @@ import engine.universe.ResourceDemand;
  *
  */
 public class SniperRifle extends Carried{
-	public static double startHealthInitial;
-	public static double resistanceInitial;
-	public static double accuracyInitial;
-	public static double damageInitial;
-	public static double rangeInitial;
+	public static double startHealthInitial = 2;
+	public static double resistanceInitial = 0;
+	public static double accuracyInitial = 0.9;
+	public static double damageInitial = 100;
+	public static double rangeInitial = 100;
 
 	public SniperRifle() {
 		super(new GunInitialConstants(

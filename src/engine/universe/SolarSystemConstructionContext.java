@@ -64,7 +64,7 @@ public class SolarSystemConstructionContext {
 		double HeliumAbundance = utils.getRandomDouble(0.01,0.2);
 		double UraniumAbundance = utils.getRandomDouble(0.05,0.3);
 		double citiesPerGrid = utils.getRandomDouble(0,0.05);// TODO: 5/11/2016 add in menu
-		double industryProb = utils.getRandomDouble(0,1);// TODO: 5/11/2016 add this as an option in universe
+		double industryProb = u.industryProb;// TODO: 5/11/2016 add this as an option in universe
 		if(countries == null)
 			throw new IllegalStateException();
 		return new PlanetConstructionContext(

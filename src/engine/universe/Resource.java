@@ -1,6 +1,8 @@
 package engine.universe;
 
 import engine.tools.vehicles.Weighable;
+import javafx.scene.layout.GridPane;
+import javafx.scene.text.Text;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -54,13 +56,13 @@ public class Resource implements Serializable,Weighable
     }
 	public Resource(ArrayList<Type> types, ArrayList<Double> quantities) {
 		values = new HashMap<>();
-		values.put(Type.Iron, (double) 0);
-		values.put(Type.Oil, (double) 0);
-		values.put(Type.Uranium, (double) 0);
-		values.put(Type.Helium, (double) 0);
-		values.put(Type.Food, (double) 0);
-		values.put(Type.Wood, (double) 0);
-		values.put(Type.Water, (double) 0);
+		values.put(Type.Iron,new Double(0));
+		values.put(Type.Oil,new Double(0));
+		values.put(Type.Uranium,new Double(0));
+		values.put(Type.Helium,new Double(0));
+		values.put(Type.Food,new Double(0));
+		values.put(Type.Wood,new Double(0));
+		values.put(Type.Water,new Double(0));
 		for (int i = 0; i < types.size(); i++) {
 			Type type = types.get(i);
 			double val = quantities.get(i);
@@ -129,8 +131,8 @@ public class Resource implements Serializable,Weighable
 	private void sanityCheck()
 	{
 		for (Double quantity : values.values()) {
-			assert (quantity > 0 || quantity == Double.NaN);
-			if(quantity < 0 || quantity != Double.NaN)
+			assert (quantity > 0    );
+			if(quantity < 0)
 				throw  new IllegalStateException();
 		}
 
@@ -139,4 +141,21 @@ public class Resource implements Serializable,Weighable
 		return values;
 	}
 
+	@Override
+	public String toString() {
+		sanityCheck();
+		return values.toString();
+	}
+
+	public GridPane toTable()
+	{
+		GridPane out = new GridPane();
+		int row = 0;
+		for (Type type : values.keySet()) {
+			double val = values.get(type);
+			out.add(new Text(),0,row);
+
+		}
+
+	}
 }

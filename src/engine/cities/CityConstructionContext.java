@@ -43,7 +43,7 @@ public class CityConstructionContext {
 		this.parentGrid = parentGrid;
 		double industryProb = gridConstructionContext.industryProb;
 		double rand = Math.random();
-		if(industryProb < rand)
+		if(industryProb > rand)
 			type = Type.Industrial;
 		else
 			type = Type.Scientific;

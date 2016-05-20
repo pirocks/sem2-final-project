@@ -7,11 +7,11 @@ import engine.universe.ResourceDemand;
  * Created by bob on 4/3/2016.
  */
 public class Howitzer extends Artillery{
-	public static double startHealthInitial;
-	public static double resistanceInitial;
-	public static double accuracyInitial;
-	public static double damageInitial;
-	public static double rangeInitial;
+	public static double startHealthInitial = 8000;
+	public static double resistanceInitial = 4000;
+	public static double accuracyInitial = 0.9;
+	public static double damageInitial = 16666.66666666666666666667;
+	public static double rangeInitial = 6000/50;
 
 	public Howitzer() {
 		super(new GunInitialConstants(

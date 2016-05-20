@@ -6,6 +6,7 @@ import engine.universe.ResourceDemand;
 
 /**
  * Created by bob on 5/19/2016.
+ *
  */
 public interface ToolBuilder <Type extends Tool>
 {

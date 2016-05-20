@@ -100,13 +100,15 @@ public class Controller implements Initializable {
 		} catch (NumberFormatException e) {
 			// TODO: 5/15/2016
 		}
+		double industryProb = 0.9;// TODO: 5/20/2016
+
 
 
 		UniverseGenerator generator = new UniverseGenerator(
 				new UniverseConstructionContext(
 						solarSystemCount,universeRadius,
-						numCountries,numPlanets,numHazards
-				));
+						numCountries,numPlanets,numHazards,
+						industryProb));
 //		Thread universeGenerationThread = new Thread(generator);
 //		universeGenerationThread.run();
 		generator.run();

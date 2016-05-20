@@ -8,11 +8,11 @@ import engine.universe.ResourceDemand;
  *
  */
 public class MachineGunLarge extends MachineGun {
-	public static double startHealthInitial;
-	public static double resistanceInitial;
-	public static double accuracyInitial;
-	public static double damageInitial;
-	public static double rangeInitial;
+	public static double startHealthInitial = 4000;
+	public static double resistanceInitial = 1000;
+	public static double accuracyInitial = 0.5;
+	public static double damageInitial = 5760;
+	public static double rangeInitial = 4;
 
 	public MachineGunLarge() {
 		super(new GunInitialConstants(

@@ -290,9 +290,16 @@ public class Controller implements Initializable{
 		if(workplace instanceof ToolBuilder)
 		{
 			ToolBuilder dockYard = (ToolBuilder) workplace;
-			out.getChildren().add(new Text("Currently building:" + dockYard.getCurrentlyBuilding()));
-			out.getChildren().add(new Text("Resources Required To Finish Construction:" + dockYard
-					.getResourcesRemaining().toString()));
+			String currentlyBuilding = "nothing";
+			try {
+				currentlyBuilding = dockYard.getCurrentlyBuilding();
+			} catch (NullPointerException ignored){}
+			out.getChildren().add(new Text("Currently building:" + currentlyBuilding));
+			String resourcesRequiredToFinish = "n/a";
+			try {
+				 resourcesRequiredToFinish = dockYard.getResourcesRemaining().toString();
+			}catch (NullPointerException ignored) {}
+			out.getChildren().add(new Text("Resources Required To Finish Construction:" + resourcesRequiredToFinish));
 			// TODO: 5/19/2016 add menu to provide more or less resources and view resource flow
 		}
 		else if(workplace instanceof Hospital)
