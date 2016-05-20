@@ -13,6 +13,7 @@ public class CountriesDiscoveries
 
 
 	public CountriesDiscoveries(Country country) {
+		discoveries = new ArrayList<>();
 		ArrayList<Discovery> noPreq = new ArrayList<>();
 		Economics economics = new Economics(noPreq);
 		Graphene graphene = new Graphene(noPreq);

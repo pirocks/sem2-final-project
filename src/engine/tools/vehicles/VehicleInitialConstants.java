@@ -11,6 +11,7 @@ public class VehicleInitialConstants {
 	public AttackableConstants attackableConstants;
 	public int maxPassengers;
 	public double maxWeight;
+	public double speed;
 	public VehicleInitialConstants(AttackableConstants attackableConstants, int maxPassengers, double maxWeight){
 		this.attackableConstants = attackableConstants;
 		this.maxPassengers = maxPassengers;

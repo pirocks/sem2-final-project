@@ -28,7 +28,7 @@ public class ToolUnderConstruction <Type extends Tool> implements Serializable
 		timeRequired -= time;
 		return areWeDoneYet();
 	}
-	private boolean areWeDoneYet()
+	public boolean areWeDoneYet()
 	{
 		return timeRequired < 0 || resourceDemand.quantity == 0;
 	}
@@ -37,5 +37,17 @@ public class ToolUnderConstruction <Type extends Tool> implements Serializable
 		if(areWeDoneYet())
 			return object;
 		return null;//// TODO: 4/8/2016 actually this should work
+	}
+	public ResourceDemand getResourcesRequired()
+	{
+		return resourceDemand;
+	}
+	public long getTimeRequired()
+	{
+		return timeRequired;
+	}
+
+	public String getName() {
+		return object.getClass().getName();
 	}
 }

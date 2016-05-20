@@ -3,20 +3,22 @@ package engine.universe;
 import engine.tools.vehicles.Weighable;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Resource implements Serializable,Weighable
 {
 	public enum Type
     {
-        Iron,Oil,Uranium,Helium,Food,Water
+        Iron,Oil,Uranium,Helium,Food,Water,Wood
     }
-	public final Type type;
-	private double quantity;//don't forget to check for overflow with sun
+	public ArrayList<Type> type;
+	private ArrayList<Double> quantity;//don't forget to check for overflow with sun
 	public static double IronValue;
 	public static double OilValue;
 	public static double UraniumValue;
 	public static double HeliumValue;
 	public static double FoodValue;
+	public static double WoodValue;
 	public static double WaterValue;
 	public static double IronWeight;
 	public static double OilWeight;
@@ -24,6 +26,7 @@ public class Resource implements Serializable,Weighable
 	public static double HeliumWeight;
 	public static double FoodWeight;
 	public static double WaterWeight;
+	public static double WoodWeight;
 	public static double getTypeValue(Type type) {
     	switch(type)
     	{
@@ -39,18 +42,27 @@ public class Resource implements Serializable,Weighable
 	        	return FoodValue;
 	        case Water:
 	        	return WaterValue;
-	        default:
+		    case Wood:
+			    return WoodValue;
+		    default:
 	        	assert(false);
 	        	throw new IllegalStateException();
     	}
     }
-	public Resource(Type type,double quantity) {
+	public Resource(ArrayList<Type> type, ArrayList<Double> quantity) {
 		this.type = type;
 		this.quantity = quantity;
 	}
-	public Resource(Type type)
+	public Resource(ArrayList<Type> type)
 	{
-		this(type,0.0);
+		this(type,);
+	}
+	public Resource(Type type,double quantity)
+	{
+		this.type = new ArrayList<>();
+		this.type.add(type);
+		this.quantity = new ArrayList<>();
+		this.quantity.add(quantity);
 	}
 	public void add(Resource r) {
 		assert(r.type == this.type);
@@ -94,6 +106,8 @@ public class Resource implements Serializable,Weighable
 				return FoodWeight;
 			case Water:
 				return WaterWeight;
+			case Wood:
+				return WoodWeight;
 			default:
 				throw new IllegalStateException();
 		}

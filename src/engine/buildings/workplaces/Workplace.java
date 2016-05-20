@@ -27,6 +27,7 @@ public abstract class Workplace extends Building implements PersonContainer, Mon
 		registerMoneySourceContainer();
 		workers = new ArrayList<>();
 		this.owner = owner;
+		inStock = new Resource(Resource.Type.Food);// TODO: 5/19/2016 mske one resource object hold many resources
 	}
 	public boolean isEmployee(CityWorker worker) {
 		for(CityWorker c:workers)

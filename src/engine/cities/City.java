@@ -28,7 +28,8 @@ import java.util.ArrayList;
 
 public class City extends Attackable implements Serializable ,BuildingContainer, CountryContainer, PersonContainer
 {
-	public MoneySource moneySource;// if I don't have time this will just be the country money source
+	public MoneySource moneySource;// if I don't have time this will just be the country money source//working
+	// assumption as of 5/19/2016
 	public static double resistanceInitial;
 	public static double healthInitial;
 	//remember to add stuff to the unique id if I add more member vars
@@ -193,6 +194,7 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 			notEnoughHousingHandler(cityConstructionContext);
 		}
 		parentCountry = cityConstructionContext.parentCountry;
+		moneySource = parentCountry;
 		residents = new ArrayList<>();
 		// TODO: 5/8/2016 implement me residents
 	}

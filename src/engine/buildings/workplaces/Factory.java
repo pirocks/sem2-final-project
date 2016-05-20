@@ -7,9 +7,7 @@ import engine.tools.ToolUnderConstruction;
 import engine.universe.MoneySource;
 import engine.universe.ResourceDemand;
 
-import java.util.ArrayList;
-
-public class Factory extends Workplace
+public class Factory extends Workplace implements ToolBuilder<Tool>
 {
 	public static double healthInitial;
 	public static double resistanceInitial;
@@ -17,11 +15,10 @@ public class Factory extends Workplace
 	//only builds weapons/ vehicles roadgoing or otherwise
 	public static int maxiWorkersInitial;// TODO: 5/19/2016
 //	public double toolProgress = 0.0; //form 0 to 1
-	public ArrayList<ToolUnderConstruction<Tool>> inProduction;
+	public ToolUnderConstruction<Tool> inProduction;
 
 	public Factory(CityBlock parentBlock, MoneySource owner) {
 		super(new AttackableConstants(parentBlock.getLocation(),healthInitial,resistanceInitial), parentBlock, maxiWorkersInitial, owner);
-		inProduction = new ArrayList<>();
 	}
 
 	@Override
@@ -34,4 +31,15 @@ public class Factory extends Workplace
 		return null;// TODO: 4/9/2016
 	}
 
+	//Tool
+	@Override
+	public Tool setToolUnderConstruction(ToolUnderConstruction<Tool> in) {
+		inProduction = in;
+		return inProduction.getFinishedTool();
+	}
+
+	@Override
+	public ToolUnderConstruction<Tool> getToolUnderConstruction() {
+		return inProduction;
+	}
 }

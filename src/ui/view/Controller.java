@@ -265,8 +265,7 @@ public class Controller implements Initializable{
 		cityAccordion.getPanes().clear();
 		for(Building b:city.getBuilding())
 		{
-			VBox pane = new VBox();
-			pane.getChildren().add(new Text(b.toString()));
+			VBox pane = initBuildingPane(b);
 			TitledPane titledPane = new TitledPane(b.name,pane);
 			cityAccordion.getPanes().add(titledPane);
 		}
@@ -276,7 +275,9 @@ public class Controller implements Initializable{
 		if(building instanceof Workplace)
 			return initWorkplacePane((Workplace) building);
 		else if(building instanceof Housing)
-			return
+			return initHousingPane((Housing) building);
+		else
+			throw new IllegalStateException();
 	}
 	private VBox initWorkplacePane(Workplace workplace)
 	{
@@ -286,40 +287,37 @@ public class Controller implements Initializable{
 		out.getChildren().add(new Text("Worker Limit:" + workplace.getMaxWorkers()));
 		out.getChildren().add(new Text("Resources in Stock:"));
 		out.getChildren().add(new Text(workplace.getInStock().toString()));
-		if(workplace instanceof DockYard)
+		if(workplace instanceof ToolBuilder)
 		{
-			// TODO: 5/19/2016
-		}
-		else if(workplace instanceof Factory)
-		{
-			// TODO: 5/19/2016
+			ToolBuilder dockYard = (ToolBuilder) workplace;
+			out.getChildren().add(new Text("Currently building:" + dockYard.getCurrentlyBuilding()));
+			out.getChildren().add(new Text("Resources Required To Finish Construction:" + dockYard
+					.getResourcesRemaining().toString()));
+			// TODO: 5/19/2016 add menu to provide more or less resources and view resource flow
 		}
 		else if(workplace instanceof Hospital)
 		{
-			// TODO: 5/19/2016
-		}
-		else if(workplace instanceof IndustrialDock)
-		{
+			Hospital theBuilding = (Hospital) workplace;
 			// TODO: 5/19/2016
 		}
 		else if(workplace instanceof ResearchArea)
 		{
+			ResearchArea theBuilding = (ResearchArea) workplace;
 			// TODO: 5/19/2016
 		}
 		else if(workplace instanceof School)
 		{
+			School theBuilding = (School) workplace;
 			// TODO: 5/19/2016
 		}
 		else if(workplace instanceof TownHall)
 		{
+			TownHall theBuilding = (TownHall) workplace;
 			// TODO: 5/19/2016
 		}
 		else if(workplace instanceof Warehouse)
 		{
-			// TODO: 5/19/2016
-		}
-		else if(workplace instanceof Workplace)
-		{
+			Warehouse theBuilding = (Warehouse) workplace;
 			// TODO: 5/19/2016
 		}
 		else
