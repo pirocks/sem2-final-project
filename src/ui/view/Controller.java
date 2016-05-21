@@ -37,9 +37,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-/**
+/*
  * Created by bob on 5/14/2016.
- *
  */
 public class Controller implements Initializable{
 	//despite the vast number of vars having this all in one class seems like the best way. having multiple
@@ -64,8 +63,6 @@ public class Controller implements Initializable{
 	Accordion cityAccordion;
 	@FXML
 	AnchorPane citySpecificPane;
-//	@FXML
-//	SwingNode citySwingNode;
 
 	private Universe universe;
 	private Country playersCountry;
@@ -295,11 +292,12 @@ public class Controller implements Initializable{
 				currentlyBuilding = dockYard.getCurrentlyBuilding();
 			} catch (NullPointerException ignored){}
 			out.getChildren().add(new Text("Currently building:" + currentlyBuilding));
-			String resourcesRequiredToFinish = "n/a";
+			out.getChildren().add(new Text("Resources Required To Finish Construction:" ));
 			try {
-				 resourcesRequiredToFinish = dockYard.getResourcesRemaining().toString();
-			}catch (NullPointerException ignored) {}
-			out.getChildren().add(new Text("Resources Required To Finish Construction:" + resourcesRequiredToFinish));
+				out.getChildren().add(dockYard.getResourcesRemaining().getResource().toTable());
+			}catch (NullPointerException ignored) {
+				out.getChildren().add(new Text("n/a"));
+			}
 			// TODO: 5/19/2016 add menu to provide more or less resources and view resource flow
 		}
 		else if(workplace instanceof Hospital)

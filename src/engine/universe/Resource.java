@@ -153,9 +153,10 @@ public class Resource implements Serializable,Weighable
 		int row = 0;
 		for (Type type : values.keySet()) {
 			double val = values.get(type);
-			out.add(new Text(),0,row);
-
+			out.add(new Text(type.toString()),0,row);
+			out.add(new Text(""+val),1,row);
 		}
+		return out;
 
 	}
 }

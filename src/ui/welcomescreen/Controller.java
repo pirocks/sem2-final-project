@@ -4,16 +4,23 @@ import engine.universe.UniversalConstants;
 import engine.universe.UniverseConstructionContext;
 import engine.universe.UniverseGenerator;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 
 
 public class Controller implements Initializable {
+
+	public static boolean areWeGoForLaunchQ;
 
 	@FXML
 	TextField enemyGovernmentStartWealth;
@@ -46,10 +53,16 @@ public class Controller implements Initializable {
 	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		System.out.println("working");
+		numSolarSystem.setText("15");
+		universeSize.setText(""+Double.MAX_VALUE);
+		numCountries.setText("5");
+		numPlanetsPerSolarSystem.setText("5");
+		peoplePerCity.setText("10000");
+		numHazards.setText("0");
 	}
 	@FXML public void generateClicked()
 	{
+		boolean invalidQ = false;
 		int solarSystemCount = 15;
 		try
 		{
@@ -57,8 +70,7 @@ public class Controller implements Initializable {
 		}
 		catch (NumberFormatException e)
 		{
-			// TODO: 5/7/2016 handle invalid values
-//			e.printStackTrace();
+			invalidQ = true;
 		}
 		Double universeRadius = Double.MAX_VALUE;
 		try
@@ -67,8 +79,7 @@ public class Controller implements Initializable {
 		}
 		catch (Exception e)
 		{
-			// TODO: 5/7/2016 handle invalid
-//			e.printStackTrace();
+			invalidQ = true;
 		}
 		int numCountries = 5;
 		try
@@ -77,7 +88,7 @@ public class Controller implements Initializable {
 		}
 		catch (Exception e)
 		{
-//			e.printStackTrace();// TODO: 5/7/2016
+			invalidQ = true;
 		}
 		int numPlanets = 5;
 		try
@@ -86,32 +97,51 @@ public class Controller implements Initializable {
 		}
 		catch(Exception e)
 		{
-//			e.printStackTrace();// TODO: 5/7/2016
+			invalidQ = true;
 		}
 		UniversalConstants.peoplePerCity = 10000;
 		try {
 			UniversalConstants.peoplePerCity = Integer.parseInt(peoplePerCity.getText());
-		} catch (NumberFormatException e) {
-			// TODO: 5/15/2016
+		} catch (NumberFormatException e)
+		{
+			invalidQ = true;
 		}
 		int numHazards = 0;
 		try {
 			numHazards = Integer.parseInt(this.numHazards.getText());
-		} catch (NumberFormatException e) {
-			// TODO: 5/15/2016
+		} catch (NumberFormatException e)
+		{
+			invalidQ = true;
 		}
 		double industryProb = 0.9;// TODO: 5/20/2016
-
-
-
-		UniverseGenerator generator = new UniverseGenerator(
-				new UniverseConstructionContext(
-						solarSystemCount,universeRadius,
-						numCountries,numPlanets,numHazards,
-						industryProb));
+		UniverseConstructionContext universeConstructionContext = new UniverseConstructionContext(
+				solarSystemCount, universeRadius,
+				numCountries, numPlanets, numHazards,
+				industryProb);
+		areWeGoForLaunchQ = true;
+		if(invalidQ)
+		{
+			areWeGoForLaunchQ = false;
+			try {
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("invalid.fxml"));
+				Parent root = loader.load();
+				InvalidController invalidController = loader.getController();
+				invalidController.setConstructionContext(universeConstructionContext);
+				Scene scene = new Scene(root);
+				Stage stage = new Stage();
+				stage.setScene(scene);
+				stage.show();
+			} catch (IOException e) {
+				e.printStackTrace();
+				throw new IllegalStateException(e);
+			}
+		}
+		if(areWeGoForLaunchQ) {
+			UniverseGenerator generator = new UniverseGenerator(universeConstructionContext);
 //		Thread universeGenerationThread = new Thread(generator);
 //		universeGenerationThread.run();
-		generator.run();
+			generator.run();
+		}
 	}
 
 }
