@@ -27,7 +27,7 @@ public class TransporterMedium extends Transporter {
 	}
 
 	@Override
-	public long constructionManHours() {
+	public long getManDaysForConstruction() {
 		return 0;//todo unimplemented
 	}
 

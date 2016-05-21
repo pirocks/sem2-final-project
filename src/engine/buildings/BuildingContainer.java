@@ -1,8 +1,5 @@
 package engine.buildings;
 
-import engine.universe.Country;
-import engine.universe.CountryContainer;
-
 import java.util.ArrayList;
 
 /**
@@ -16,7 +13,7 @@ public interface BuildingContainer
 	{
 		registerContainer(this);
 	}
-	static ArrayList<BuildingContainer> containers = new ArrayList<>();
+	ArrayList<BuildingContainer> containers = new ArrayList<>();
 	static void registerContainer(BuildingContainer in)
 	{
 		containers.add(in);

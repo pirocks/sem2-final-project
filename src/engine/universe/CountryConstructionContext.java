@@ -1,6 +1,5 @@
 package engine.universe;
 
-import engine.cities.City;
 import engine.people.AbstractPerson;
 import engine.planets.Grid;
 import engine.planets.Planet;

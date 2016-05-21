@@ -25,7 +25,7 @@ public class Helicopter extends Aircraft {
 	}
 
 	@Override
-	public long constructionManHours() {
+	public long getManDaysForConstruction() {
 		return 0;//todo
 	}
 

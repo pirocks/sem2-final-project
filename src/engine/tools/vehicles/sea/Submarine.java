@@ -29,7 +29,7 @@ public class Submarine extends SeaCraft {
 	}
 
 	@Override
-	public long constructionManHours() {
+	public long getManDaysForConstruction() {
 		return 0;//todo unimplmented
 	}
 

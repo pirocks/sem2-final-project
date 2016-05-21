@@ -24,7 +24,7 @@ public class FighterPlaneSmall extends FighterPlane {
 	}
 
 	@Override
-	public long constructionManHours() {
+	public long getManDaysForConstruction() {
 		return 0;//todo
 	}
 

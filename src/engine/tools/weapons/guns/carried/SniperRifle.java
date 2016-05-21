@@ -29,7 +29,7 @@ public class SniperRifle extends Carried{
 	}
 
 	@Override
-	public long constructionManHours() {
+	public long getManDaysForConstruction() {
 		return 0;// TODO: 4/8/2016
 	}
 

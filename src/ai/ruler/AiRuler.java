@@ -1,6 +1,5 @@
 package ai.ruler;
 
-import engine.cities.City;
 import engine.people.cityworkers.Ruler;
 import engine.universe.Country;
 

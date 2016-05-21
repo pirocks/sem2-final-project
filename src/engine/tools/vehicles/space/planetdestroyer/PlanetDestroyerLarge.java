@@ -27,7 +27,7 @@ public class PlanetDestroyerLarge extends PlanetDestroyer {
 	}
 
 	@Override
-	public long constructionManHours() {
+	public long getManDaysForConstruction() {
 		return 0;// TODO: 4/7/2016
 	}
 

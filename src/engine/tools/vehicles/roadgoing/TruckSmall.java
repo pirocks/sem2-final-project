@@ -25,7 +25,7 @@ public class TruckSmall extends Truck {
 	}
 
 	@Override
-	public long constructionManHours() {
+	public long getManDaysForConstruction() {
 		return 0;//todo
 	}
 

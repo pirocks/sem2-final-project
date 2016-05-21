@@ -13,7 +13,7 @@ public class ToolUnderConstruction <Type extends Tool> implements Serializable
 {
 	private Type object;
 	private ResourceDemand resourceDemand = object.requiredResourcesForConstruction();
-	private long timeRequired = object.constructionManHours();
+	private long timeRequired = object.getManDaysForConstruction();
 	public ToolUnderConstruction(Type object)
 	{
 		this.object = object;

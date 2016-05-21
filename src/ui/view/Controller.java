@@ -348,7 +348,7 @@ public class Controller implements Initializable{
 		}
 		return out;
 	}
-	private class Point {
+	private static class Point {
 		int x,y;
 
 		public Point(int x, int y) {
@@ -392,7 +392,7 @@ public class Controller implements Initializable{
 			buildingImageView.setPreserveRatio(true);
 			buildingImageView.setFitHeight(200);
 			buildingImageView.setFitWidth(200);
-			points.add(new Point(x,y));
+			points.add(new Point(x, y));
 			gridPane.add(buildingImageView,x,y);
 		}
 		addEmptyWrapper(points,gridPane);
@@ -423,14 +423,14 @@ public class Controller implements Initializable{
 		}
 		if(depth == 0)
 			return;
-		addEmpty(points,new Point(p.x + 1,p.y),gridPane,depth - 1);
-		addEmpty(points,new Point(p.x + 1,p.y + 1),gridPane,depth - 1);
-		addEmpty(points,new Point(p.x + 1,p.y - 1),gridPane,depth - 1);
-		addEmpty(points,new Point(p.x,p.y + 1), gridPane, depth - 1);
-		addEmpty(points,new Point(p.x,p.y - 1), gridPane, depth - 1);
-		addEmpty(points,new Point(p.x - 1,p.y + 1),gridPane,depth - 1);
-		addEmpty(points,new Point(p.x - 1, p.y), gridPane, depth - 1);
-		addEmpty(points,new Point(p.x,p.y),gridPane,depth - 1);
+		addEmpty(points, new Point(p.x + 1, p.y),gridPane,depth - 1);
+		addEmpty(points, new Point(p.x + 1, p.y + 1),gridPane,depth - 1);
+		addEmpty(points, new Point(p.x + 1, p.y - 1),gridPane,depth - 1);
+		addEmpty(points, new Point(p.x, p.y + 1), gridPane, depth - 1);
+		addEmpty(points, new Point(p.x, p.y - 1), gridPane, depth - 1);
+		addEmpty(points, new Point(p.x - 1, p.y + 1),gridPane,depth - 1);
+		addEmpty(points, new Point(p.x - 1, p.y), gridPane, depth - 1);
+		addEmpty(points, new Point(p.x, p.y),gridPane,depth - 1);
 
 	}
 	private boolean contains(ArrayList<Point> points,Point point) {

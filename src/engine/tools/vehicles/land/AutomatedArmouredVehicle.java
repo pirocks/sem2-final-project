@@ -24,7 +24,7 @@ public class AutomatedArmouredVehicle extends LandVehicle {
 	}
 
 	@Override
-	public long constructionManHours() {
+	public long getManDaysForConstruction() {
 		return 0;//todo
 	}
 

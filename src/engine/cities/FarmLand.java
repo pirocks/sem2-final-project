@@ -14,7 +14,7 @@ import java.util.Collections;
 public class FarmLand implements Serializable //only one per grid
 {
 	private Grid parentGrid;
-	public class Region implements Comparable
+	public static class Region implements Comparable
 	{
 		private int y;
 		private int startx;// from 0 to 100
@@ -50,7 +50,7 @@ public class FarmLand implements Serializable //only one per grid
 	public void add(int x,int y){
 		if(contains(x,y))
 			return;
-		regions.add(new Region(y,x,x));
+		regions.add(new Region(y, x, x));
 		Collections.sort(regions);
 		for(int i = 0; i < regions.size() - 1;i++){
 
@@ -86,14 +86,10 @@ public class FarmLand implements Serializable //only one per grid
 	}
 	public boolean containsRow(int y)
 	{
-		if(getRegionsOnRow(y).size() > 0)
-			return true;
-		return false;
+		return getRegionsOnRow(y).size() > 0;
 	}
 	public boolean containsColumn(int x)
 	{
-		if(getRegionsOnColumn(x).size() > 0)
-			return true;
-		return false;
+		return getRegionsOnColumn(x).size() > 0;
 	}
 }

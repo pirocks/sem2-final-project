@@ -15,7 +15,6 @@ package engine.planets.hazards;
 import engine.planets.Grid;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public abstract class NaturalHazard implements Serializable
 {
@@ -24,7 +23,7 @@ public abstract class NaturalHazard implements Serializable
 		affectedGrid = parentGrid;
 	}
 
-	public static enum Type
+	public enum Type
     {
 		Volcano,
 	    Weather,

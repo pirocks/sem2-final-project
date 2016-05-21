@@ -26,7 +26,7 @@ public class AircraftCarrier extends SeaCraft {
 	}
 
 	@Override
-	public long constructionManHours() {
+	public long getManDaysForConstruction() {
 		return 0;//todo unimplemted
 	}
 

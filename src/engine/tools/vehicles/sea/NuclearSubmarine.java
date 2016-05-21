@@ -30,8 +30,8 @@ public class NuclearSubmarine extends SeaCraft {
 	}
 
 	@Override
-	public long constructionManHours() {
-		return 0;//todo unimplmented
+	public double getconstructionManDays() {
+		return 0;
 	}
 
 	@Override

@@ -2,10 +2,9 @@ package engine.people;
 
 import engine.people.cityworkers.PeopleInitialConstants;
 import engine.planets.LocationPlanet;
-import engine.universe.Country;
 import engine.tools.vehicles.Vehicle;
 import engine.tools.vehicles.VehicleContainer;
-import engine.tools.weapons.Weapon;
+import engine.universe.Country;
 import engine.universe.MoneySource;
 import engine.universe.MoneySourceContainer;
 import engine.universe.UniversalConstants;

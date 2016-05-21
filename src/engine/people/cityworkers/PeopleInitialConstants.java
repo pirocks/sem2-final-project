@@ -1,7 +1,5 @@
 package engine.people.cityworkers;
 
-import engine.buildings.Building;
-import engine.cities.City;
 import engine.planets.LocationPlanet;
 import engine.universe.Country;
 

@@ -1,6 +1,5 @@
 package engine.people.cityworkers;
 
-import engine.buildings.housing.Housing;
 import engine.buildings.workplaces.Workplace;
 import engine.cities.City;
 import engine.planets.LocationPlanet;

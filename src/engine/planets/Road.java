@@ -2,11 +2,9 @@ package engine.planets;
 
 import engine.cities.City;
 import engine.cities.CityContainer;
-import engine.tools.AttackableConstants;
 import engine.tools.vehicles.Vehicle;
 import engine.tools.vehicles.VehicleContainer;
 import engine.tools.weapons.Attackable;
-import engine.tools.weapons.Weapon;
 
 import java.io.Serializable;
 import java.util.ArrayList;

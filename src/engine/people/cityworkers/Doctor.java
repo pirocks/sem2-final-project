@@ -1,9 +1,7 @@
 package engine.people.cityworkers;
 
-import engine.buildings.housing.Housing;
 import engine.buildings.workplaces.Hospital;
 import engine.cities.City;
-import engine.people.AbstractPerson;
 import engine.planets.LocationPlanet;
 import engine.universe.UniversalConstants;
 

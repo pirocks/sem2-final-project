@@ -26,7 +26,7 @@ public class TransporterSmall extends Transporter {
 	}
 
 	@Override
-	public long constructionManHours() {
+	public long getManDaysForConstruction() {
 		return 0;
 	}
 

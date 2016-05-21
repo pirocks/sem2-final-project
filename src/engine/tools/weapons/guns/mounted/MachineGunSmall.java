@@ -30,8 +30,8 @@ public class MachineGunSmall extends MachineGun {
 	}
 
 	@Override
-	public long constructionManHours() {
-		return 0;// TODO: 4/8/2016
+	public double getconstructionManDays() {
+		return 0;
 	}
 
 	@Override

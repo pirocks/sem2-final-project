@@ -26,10 +26,9 @@ public class ShuttleLarge extends Shuttle
 	}
 
 	@Override
-	public long constructionManHours() {
-		return 0;// TODO: 4/7/2016
+	public double getconstructionManDays() {
+		return 0;
 	}
-
 	@Override
 	public double getWeight() {
 		return 0;// TODO: 4/7/2016
