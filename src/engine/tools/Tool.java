@@ -9,7 +9,7 @@ import java.io.Serializable;
 public abstract class Tool extends Attackable implements Serializable,Weighable
 {
 	protected int numTools;
-	protected Tool(AttackableConstants attackableConstants)
+	protected Tool(AttackableConstants attackableConstants, int numToolsConstructor)
 	{
 		super(attackableConstants);
 		//TODO think of sme code to put here

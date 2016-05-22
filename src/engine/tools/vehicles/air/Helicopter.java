@@ -16,8 +16,8 @@ public class Helicopter extends Aircraft {
 	public static double resistanceInitial;
 
 
-	protected Helicopter(LocationPlanet locationPlanet) {
-		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial));
+	protected Helicopter(LocationPlanet locationPlanet, int numToolsConstructor) {
+		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial),numToolsConstructor);
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
@@ -25,12 +25,16 @@ public class Helicopter extends Aircraft {
 	}
 
 	@Override
-	public long getManDaysForConstruction() {
+	public double getconstructionManDays() {
+		return 0;
+	}
+	@Override
+	public double getWeight() {
 		return 0;//todo
 	}
 
 	@Override
-	public double getWeight() {
-		return 0;//todo
+	public double getSpeed() {
+		return 0;
 	}
 }

@@ -21,8 +21,8 @@ public abstract class Vehicle extends Tool implements PersonContainer, VehicleCo
 	private ArrayList<Vehicle> vehicles;
 	private int maxPassengers;
 	private double maxWeight;
-	protected Vehicle(VehicleInitialConstants vehicleInitialConstants) {
-		super(vehicleInitialConstants.attackableConstants);
+	protected Vehicle(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
+		super(vehicleInitialConstants.attackableConstants, numToolsConstructor);
 		registerPersonContainer();
 		registerMoneySourceContainer();
 		registerVehicleContainer();

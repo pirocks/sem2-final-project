@@ -7,7 +7,7 @@ import engine.tools.vehicles.VehicleInitialConstants;
 public abstract class RoadGoing extends Vehicle//maaube extend land
 {
 	protected RoadGoing(VehicleInitialConstants vehicleInitialConstants) {
-		super(vehicleInitialConstants);
+		super(vehicleInitialConstants, numToolsConstructor);
 	}
 
 	public boolean inWaterQ()

@@ -14,6 +14,8 @@ public class ResourceDemand implements Serializable
 		return resource;
 	}
 
+	public ResourceDemand(Resource.Type[] types,double startHealth,double resistance,double )
+
 	public boolean fullFilledQ()
 	{
 		for (Double quantity : resource.getValues().values()) {

@@ -12,7 +12,7 @@ public abstract class Weapon extends Tool
 
 	public Weapon(AttackableConstants attackableConstants, double damage, double range)
 	{
-		super(attackableConstants);
+		super(attackableConstants, numTools);
 		this.damage = damage;
 //		if(this instanceof )//maybe use this
 		//todo do nothing

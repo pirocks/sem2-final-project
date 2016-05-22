@@ -7,7 +7,7 @@ public abstract class SpaceCraft extends Vehicle
 {
 
 	protected SpaceCraft(VehicleInitialConstants vehicleInitialConstants) {
-		super(vehicleInitialConstants);
+		super(vehicleInitialConstants, numToolsConstructor);
 	}
 
 	@Override

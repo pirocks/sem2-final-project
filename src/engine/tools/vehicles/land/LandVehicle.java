@@ -7,7 +7,7 @@ public abstract class LandVehicle extends Vehicle
 {
 
 	protected LandVehicle(VehicleInitialConstants vehicleInitialConstants) {
-		super(vehicleInitialConstants);
+		super(vehicleInitialConstants, numToolsConstructor);
 	}
 
 	public boolean inSpaceQ()
