@@ -14,7 +14,7 @@ public class ArtilleryMedium extends Artillery{
 	public static double damageInitial = 30000;
 	public static double rangeInitial = 200;
 
-	public ArtilleryMedium() {
+	public ArtilleryMedium(int numToolsConstructor) {
 		super(new GunInitialConstants(
 			startHealthInitial,
 			resistanceInitial,
@@ -23,18 +23,14 @@ public class ArtilleryMedium extends Artillery{
 			damageInitial
 		), numToolsConstructor);
 	}
+
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
-		return null;// TODO: 4/8/2016
+		return null;// TODO: 5/22/2016
 	}
 
 	@Override
-	public long getManDaysForConstruction() {
-		return 0;// TODO: 4/8/2016
-	}
-
-	@Override
-	public double getWeight() {
-		return 0;// TODO: 4/8/2016
+	public double getconstructionManDays() {
+		return 0;// TODO: 5/22/2016
 	}
 }

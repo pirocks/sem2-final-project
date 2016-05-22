@@ -17,9 +17,9 @@ public class PlanetDestroyerLarge extends PlanetDestroyer {
 	public static double startHealthInitial;// TODO: 5/22/2016
 	public static double resistanceInitial;// TODO: 5/22/2016
 
-	protected PlanetDestroyerLarge(LocationPlanet locationPlanet) {
+	protected PlanetDestroyerLarge(LocationPlanet locationPlanet, int numToolsConstructor) {
 		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,
-				locationPlanet),maxPassengersInitial,maxWeightInitial));// TODO: 5/22/2016
+				locationPlanet),maxPassengersInitial,maxWeightInitial),numToolsConstructor);
 	}
 
 	@Override

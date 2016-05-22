@@ -13,7 +13,7 @@ public class Howitzer extends Artillery{
 	public static double damageInitial = 16666.66666666666666666667;
 	public static double rangeInitial = 6000/50;
 
-	public Howitzer() {
+	public Howitzer(int numToolsConstructor) {
 		super(new GunInitialConstants(
 			startHealthInitial,
 			resistanceInitial,
@@ -22,18 +22,14 @@ public class Howitzer extends Artillery{
 			damageInitial
 		), numToolsConstructor);
 	}
+
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
-		return null;// TODO: 4/8/2016
+		return null;// TODO: 5/22/2016
 	}
 
 	@Override
-	public long getManDaysForConstruction() {
-		return 0;// TODO: 4/8/2016
-	}
-
-	@Override
-	public double getWeight() {
-		return 0;// TODO: 4/8/2016
+	public double getconstructionManDays() {
+		return 0;// TODO: 5/22/2016
 	}
 }

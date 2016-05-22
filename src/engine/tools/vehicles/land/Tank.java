@@ -14,7 +14,7 @@ import static engine.universe.Resource.Type.Silicon;
  */
 public class Tank extends LandVehicle {
 	public static int maxPassengersInitial = 4;
-	public static double maxWeightInitial = 500 + new TankArtillery().getWeight();
+	public static double maxWeightInitial = 500 + new TankArtillery(1).getWeight();
 	public static double startHealthInitial = 20000;
 	public static double resistanceInitial = 20000;
 
