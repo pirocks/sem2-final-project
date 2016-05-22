@@ -36,6 +36,7 @@ public abstract class Vehicle extends Tool implements PersonContainer, VehicleCo
 	}
 	public abstract boolean inSpaceQ();
 	public abstract boolean inWaterQ();
+	public abstract double getSpeed();
 	public boolean weaponQ() {
 		return false;
 	}

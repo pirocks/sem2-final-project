@@ -7,6 +7,11 @@ package engine.tools.vehicles;
 public interface Weighable
 {
 	double getWeight();
+	int getCount();
+	default double getWeightActual()
+	{
+		return getCount()*getWeight();
+	}
 	class ToHeavyException extends Exception
 	{
 		public Weighable weighable;

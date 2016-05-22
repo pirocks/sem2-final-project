@@ -4,92 +4,13 @@
     <option name="ANALYSIS_IN_BACKGROUND" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="invalid dialog">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source-archive.zip" afterPath="" />
+    <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="misc edits and deleted useless stuff">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/air/Bomb.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/air/Missile.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ai/ruler/AiRuler.java" afterPath="$PROJECT_DIR$/src/ai/ruler/AiRuler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/BuildingContainer.java" afterPath="$PROJECT_DIR$/src/engine/buildings/BuildingContainer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/UnderConstruction.java" afterPath="$PROJECT_DIR$/src/engine/buildings/UnderConstruction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/cities/FarmLand.java" afterPath="$PROJECT_DIR$/src/engine/cities/FarmLand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/people/Soldier.java" afterPath="$PROJECT_DIR$/src/engine/people/Soldier.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/people/cityworkers/Bureaucrat.java" afterPath="$PROJECT_DIR$/src/engine/people/cityworkers/Bureaucrat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/people/cityworkers/Doctor.java" afterPath="$PROJECT_DIR$/src/engine/people/cityworkers/Doctor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/people/cityworkers/PeopleInitialConstants.java" afterPath="$PROJECT_DIR$/src/engine/people/cityworkers/PeopleInitialConstants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/people/cityworkers/Ruler.java" afterPath="$PROJECT_DIR$/src/engine/people/cityworkers/Ruler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/people/cityworkers/Worker.java" afterPath="$PROJECT_DIR$/src/engine/people/cityworkers/Worker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/planets/PlanetConstructionContext.java" afterPath="$PROJECT_DIR$/src/engine/planets/PlanetConstructionContext.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/planets/Road.java" afterPath="$PROJECT_DIR$/src/engine/planets/Road.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/planets/hazards/NaturalHazard.java" afterPath="$PROJECT_DIR$/src/engine/planets/hazards/NaturalHazard.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/Tool.java" afterPath="$PROJECT_DIR$/src/engine/tools/Tool.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/ToolUnderConstruction.java" afterPath="$PROJECT_DIR$/src/engine/tools/ToolUnderConstruction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/air/Bomb.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/air/Bomb.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/air/CargoPlaneLarge.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/air/CargoPlaneLarge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/air/CargoPlaneMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/air/CargoPlaneMedium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/air/CargoPlaneSmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/air/CargoPlaneSmall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/air/FighterPlaneMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/air/FighterPlaneMedium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/air/FighterPlaneSmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/air/FighterPlaneSmall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/air/Helicopter.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/air/Helicopter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/air/Missile.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/air/Missile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/land/ArmouredVehicle.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/land/ArmouredVehicle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/land/Artillery.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/land/Artillery.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/land/AutomatedArmouredVehicle.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/land/AutomatedArmouredVehicle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/land/AutomatedArtillery.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/land/AutomatedArtillery.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/land/AutomatedTank.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/land/AutomatedTank.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/land/Tank.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/land/Tank.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/AllPurpose.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/AllPurpose.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/Bus.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/Bus.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/Train.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/Train.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/TruckLarge.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/TruckLarge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/TruckMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/TruckMedium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/TruckSmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/TruckSmall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/AircraftCarrier.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/AircraftCarrier.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/BattleShip.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/BattleShip.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/Destroyer.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/Destroyer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/NuclearAircraftCarrier.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/NuclearAircraftCarrier.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/NuclearSubmarine.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/NuclearSubmarine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/Submarine.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/Submarine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/TransporterLarge.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/TransporterLarge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/TransporterMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/TransporterMedium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/TransporterSmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/TransporterSmall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/Fighter.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/Fighter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/Freighter/FreighterLarge.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/Freighter/FreighterLarge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/Freighter/FreighterMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/Freighter/FreighterMedium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/Freighter/FreighterSmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/Freighter/FreighterSmall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/asteroidminer/AsteroidMinerLarge.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/asteroidminer/AsteroidMinerLarge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/asteroidminer/AsteroidMinerMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/asteroidminer/AsteroidMinerMedium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/asteroidminer/AsteroidMinerSmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/asteroidminer/AsteroidMinerSmall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/cityship/CityShipLarge.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/cityship/CityShipLarge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/cityship/CityShipMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/cityship/CityShipMedium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/cityship/CityShipSmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/cityship/CityShipSmall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/factory/FactorySpaceCraftLarge.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/factory/FactorySpaceCraftLarge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/factory/FactorySpaceCraftMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/factory/FactorySpaceCraftMedium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/factory/FactorySpaceCraftSmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/factory/FactorySpaceCraftSmall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/interstellarcraft/InterStellarCraftLarge.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/interstellarcraft/InterStellarCraftLarge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/interstellarcraft/InterStellarCraftMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/interstellarcraft/InterStellarCraftMedium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/interstellarcraft/InterStellarCraftSmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/interstellarcraft/InterStellarCraftSmall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/planetdestroyer/PlanetDestroyerLarge.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/planetdestroyer/PlanetDestroyerLarge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/planetdestroyer/PlanetDestroyerMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/planetdestroyer/PlanetDestroyerMedium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/shuttle/ShuttleLarge.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/shuttle/ShuttleLarge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/shuttle/ShuttleMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/shuttle/ShuttleMedium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/shuttle/ShuttleSmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/shuttle/ShuttleSmall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/ArtilleryLarge.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/ArtilleryLarge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/ArtilleryMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/ArtilleryMedium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/ArtillerySmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/ArtillerySmall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/Howitzer.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/Howitzer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/TankArtillery.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/TankArtillery.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/carried/HandGun.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/carried/HandGun.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/carried/SniperRifle.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/carried/SniperRifle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/AntiAirCraftGun.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/AntiAirCraftGun.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/MachineGunLarge.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/MachineGunLarge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/MachineGunMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/MachineGunMedium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/MachineGunSmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/MachineGunSmall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/space/EmpWeapon.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/space/EmpWeapon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/space/Laser.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/space/Laser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/space/SpaceMissile.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/space/SpaceMissile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/universe/CountryConstructionContext.java" afterPath="$PROJECT_DIR$/src/engine/universe/CountryConstructionContext.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/requests/BuildingTypeRequest.java" afterPath="$PROJECT_DIR$/src/ui/requests/BuildingTypeRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/Controller.java" afterPath="$PROJECT_DIR$/src/ui/view/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/welcomescreen/InvalidController.java" afterPath="$PROJECT_DIR$/src/ui/welcomescreen/InvalidController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/Vehicle.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/Vehicle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/Weighable.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/Weighable.java" />
     </list>
     <ignored path="testing.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -195,44 +116,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AutomatedArmouredVehicle.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AutomatedArmouredVehicle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/land/AutomatedArmouredVehicle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="18" column="128" selection-start-line="18" selection-start-column="128" selection-end-line="18" selection-end-column="128" />
+            <state relative-caret-position="323">
+              <caret line="21" column="56" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Artillery.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/land/Artillery.java">
+      <file leaf-file-name="Vehicle.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/Vehicle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Bus.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/Bus.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AllPurpose.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/AllPurpose.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+            <state relative-caret-position="271">
+              <caret line="38" column="38" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
               <folding>
-                <element signature="e#824#825#0" expanded="true" />
-                <element signature="e#839#840#0" expanded="true" />
+                <element signature="method#Vehicle#0;class#Vehicle#0" expanded="false" />
+                <element signature="method#loadObject#0;class#Vehicle#0" expanded="false" />
+                <element signature="method#getTotalWeightLoad#0;class#Vehicle#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tool.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/engine/tools/Tool.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+              <folding>
+                <element signature="e#737#738#0" expanded="true" />
+                <element signature="e#759#760#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -243,16 +158,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
               <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tool.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/tools/Tool.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -284,8 +189,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/engine/science/SpaceLiving.java" />
-        <option value="$PROJECT_DIR$/src/engine/science/SpaceLivingOne.java" />
         <option value="$PROJECT_DIR$/src/engine/science/HyperLoop.java" />
         <option value="$PROJECT_DIR$/src/engine/science/SpaceLivingTwo.java" />
         <option value="$PROJECT_DIR$/src/engine/science/LethalTasers.java" />
@@ -328,13 +231,15 @@
         <option value="$PROJECT_DIR$/src/engine/universe/Resource.java" />
         <option value="$PROJECT_DIR$/src/ui/welcomescreen/Controller.java" />
         <option value="$PROJECT_DIR$/src/ui/welcomescreen/InvalidController.java" />
-        <option value="$PROJECT_DIR$/src/engine/tools/Tool.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/AllPurpose.java" />
         <option value="$PROJECT_DIR$/src/ui/view/Controller.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/vehicles/space/shuttle/ShuttleLarge.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/vehicles/sea/NuclearSubmarine.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/MachineGunSmall.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/vehicles/land/AutomatedArmouredVehicle.java" />
+        <option value="$PROJECT_DIR$/src/engine/tools/vehicles/Weighable.java" />
+        <option value="$PROJECT_DIR$/src/engine/tools/Tool.java" />
+        <option value="$PROJECT_DIR$/src/engine/tools/vehicles/Vehicle.java" />
       </list>
     </option>
   </component>
@@ -566,126 +471,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="vehicles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="engine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vehicles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="space" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="engine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vehicles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sea" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="engine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vehicles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="roadgoing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="engine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vehicles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="land" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1088,13 +873,6 @@
       <option name="presentableId" value="Default" />
       <updated>1460006225713</updated>
     </task>
-    <task id="LOCAL-00029" summary="intermediate commit fixing person classes">
-      <created>1460329166046</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1460329166046</updated>
-    </task>
     <task id="LOCAL-00030" summary="intermediate commit fixing person classes">
       <created>1460329206730</created>
       <option name="number" value="00030" />
@@ -1431,7 +1209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1463871379550</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="misc edits and deleted useless stuff">
+      <created>1463874495329</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1463874495329</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1449,7 +1234,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3093415" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3093415" sideWeight="0.49791667" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3093415" sideWeight="0.49791667" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16425993" sideWeight="0.503125" order="10" side_tool="true" content_ui="tabs" />
@@ -1460,7 +1245,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32771823" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24546827" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24546827" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924962" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31699848" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1522,7 +1307,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="more construction context edits" />
     <MESSAGE value="working on city constructor" />
     <MESSAGE value="nice image class + misc edits&#10;" />
     <MESSAGE value="got subpane working" />
@@ -1547,7 +1331,8 @@
     <MESSAGE value="resource refactor" />
     <MESSAGE value="some of the gun initial commits" />
     <MESSAGE value="invalid dialog" />
-    <option name="LAST_COMMIT_MESSAGE" value="invalid dialog" />
+    <MESSAGE value="misc edits and deleted useless stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="misc edits and deleted useless stuff" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1566,7 +1351,7 @@
           <option name="timeStamp" value="111" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="125" />
+      <option name="time" value="126" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1575,25 +1360,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/engine/people/cityworkers/CityWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="80" column="10" selection-start-line="80" selection-start-column="10" selection-end-line="80" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/people/AbstractPerson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="29" column="48" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
-          <folding>
-            <element signature="method#AbstractPerson#0;class#AbstractPerson#0" expanded="false" />
-            <element signature="method#increaseHealth#0;class#AbstractPerson#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/people/cityworkers/Bureaucrat.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
@@ -1969,14 +1735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/tools/Tool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/Bus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -2075,19 +1833,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/land/Artillery.java">
+    <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/land/AutomatedArmouredVehicle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        <state relative-caret-position="323">
+          <caret line="21" column="56" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/land/AutomatedArmouredVehicle.java">
+    <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/Weighable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="128" selection-start-line="18" selection-start-column="128" selection-end-line="18" selection-end-column="128" />
+        <state relative-caret-position="34">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <element signature="e#176#177#0" expanded="true" />
+            <element signature="e#212#213#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/land/Artillery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/tools/Tool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+          <folding>
+            <element signature="e#737#738#0" expanded="true" />
+            <element signature="e#759#760#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/Vehicle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="38" column="38" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
+          <folding>
+            <element signature="method#Vehicle#0;class#Vehicle#0" expanded="false" />
+            <element signature="method#loadObject#0;class#Vehicle#0" expanded="false" />
+            <element signature="method#getTotalWeightLoad#0;class#Vehicle#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
