@@ -8,7 +8,7 @@ import engine.tools.vehicles.space.SpaceCraft;
  */
 public abstract class FactorySpaceCraft extends SpaceCraft
 {
-	protected FactorySpaceCraft(VehicleInitialConstants vehicleInitialConstants) {
-		super(vehicleInitialConstants);
+	protected FactorySpaceCraft(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
+		super(vehicleInitialConstants, numToolsConstructor);
 	}
 }

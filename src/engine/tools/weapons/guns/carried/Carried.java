@@ -9,7 +9,7 @@ import engine.tools.weapons.guns.GunInitialConstants;
  */
 public abstract class Carried extends Gun {
 
-	public Carried(GunInitialConstants gunInitialConstants) {
-		super(gunInitialConstants);
+	public Carried(GunInitialConstants gunInitialConstants, int numToolsConstructor) {
+		super(gunInitialConstants, numToolsConstructor);
 	}
 }

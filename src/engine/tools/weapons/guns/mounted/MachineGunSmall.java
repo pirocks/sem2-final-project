@@ -21,7 +21,7 @@ public class MachineGunSmall extends MachineGun {
 			accuracyInitial,
 			rangeInitial,
 			damageInitial
-		));
+		), numToolsConstructor);
 	}
 
 	@Override

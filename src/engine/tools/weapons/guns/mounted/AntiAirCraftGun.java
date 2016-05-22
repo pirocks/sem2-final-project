@@ -22,7 +22,7 @@ public class AntiAirCraftGun extends Mounted {
 			accuracyInitial,
 			rangeInitial,
 			damageInitial
-		));
+		), numToolsConstructor);
 	}
 
 

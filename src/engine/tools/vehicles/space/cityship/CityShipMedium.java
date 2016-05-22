@@ -1,7 +1,5 @@
 package engine.tools.vehicles.space.cityship;
 
-import engine.planets.LocationPlanet;
-import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
@@ -10,26 +8,27 @@ import engine.universe.ResourceDemand;
  */
 public class CityShipMedium extends CityShip
 {
-	public static int maxPassengersInitial;
-	public static double maxWeightInitial;
-	public static double startHealthInitial;
-	public static double resistanceInitial;
+	public static int maxPassengersInitial;// TODO: 5/22/2016
+	public static double maxWeightInitial;// TODO: 5/22/2016
+	public static double startHealthInitial;// TODO: 5/22/2016
+	public static double resistanceInitial;// TODO: 5/22/2016
 
-	protected CityShipMedium(LocationPlanet locationPlanet) {
-		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial));
+	protected CityShipMedium(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
+		super(vehicleInitialConstants, numToolsConstructor);// TODO: 5/22/2016
 	}
+
+	@Override
+	public double getSpeed() {
+		return 0;// TODO: 5/22/2016
+	}
+
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
-		return null;// TODO: 4/7/2016
+		return null;// TODO: 5/22/2016
 	}
 
 	@Override
-	public long getManDaysForConstruction() {
-		return 0;// TODO: 4/7/2016
-	}
-
-	@Override
-	public double getWeight() {
-		return 0;// TODO: 4/7/2016
+	public double getconstructionManDays() {
+		return 0;// TODO: 5/22/2016
 	}
 }

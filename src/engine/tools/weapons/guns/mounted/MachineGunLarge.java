@@ -21,7 +21,7 @@ public class MachineGunLarge extends MachineGun {
 			accuracyInitial,
 			rangeInitial,
 			damageInitial
-		));
+		), numToolsConstructor);
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {

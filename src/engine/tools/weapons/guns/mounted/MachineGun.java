@@ -7,7 +7,7 @@ import engine.tools.weapons.guns.GunInitialConstants;
  *
  */
 public abstract class MachineGun extends Mounted {
-	public MachineGun(GunInitialConstants gunInitialConstants) {
-		super(gunInitialConstants);
+	public MachineGun(GunInitialConstants gunInitialConstants, int numToolsConstructor) {
+		super(gunInitialConstants, numToolsConstructor);
 	}
 }

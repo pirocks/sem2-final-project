@@ -20,7 +20,7 @@ public class Howitzer extends Artillery{
 			accuracyInitial,
 			rangeInitial,
 			damageInitial
-		));
+		), numToolsConstructor);
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {

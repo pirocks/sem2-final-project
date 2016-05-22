@@ -8,7 +8,7 @@ import engine.tools.vehicles.VehicleInitialConstants;
  */
 public abstract class FighterPlane extends Aircraft {
 
-	protected FighterPlane(VehicleInitialConstants vehicleInitialConstants) {
-		super(vehicleInitialConstants);
+	protected FighterPlane(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
+		super(vehicleInitialConstants, numToolsConstructor);
 	}
 }

@@ -9,7 +9,7 @@ import engine.tools.weapons.Weapon;
  */
 public abstract class SpaceWeapon extends Weapon {
 	public double range;
-	public SpaceWeapon(AttackableConstants attackableConstants, double damage, double range) {
+	public SpaceWeapon(AttackableConstants attackableConstants, double damage, double range, int numToolsConstructor) {
 		super(attackableConstants,damage, range, numToolsConstructor);
 		this.range = range;
 	}

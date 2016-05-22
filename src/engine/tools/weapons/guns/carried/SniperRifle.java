@@ -21,7 +21,7 @@ public class SniperRifle extends Carried{
 			accuracyInitial,
 			rangeInitial,
 			damageInitial
-		));
+		), numToolsConstructor);
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {

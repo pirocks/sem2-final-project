@@ -21,7 +21,7 @@ public class ArtilleryMedium extends Artillery{
 			accuracyInitial,
 			rangeInitial,
 			damageInitial
-		));
+		), numToolsConstructor);
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {

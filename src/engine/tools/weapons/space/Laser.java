@@ -15,7 +15,7 @@ public class Laser extends SpaceWeapon {
 	public static double rangeInitial;
 
 	public Laser(LocationPlanet location) {
-		super(new AttackableConstants(startHealthInitial, resistanceInitial,location),damageInitial, rangeInitial);
+		super(new AttackableConstants(startHealthInitial, resistanceInitial,location),damageInitial, rangeInitial, numToolsConstructor);
 	}
 
 	@Override

@@ -10,7 +10,7 @@ import engine.tools.vehicles.space.SpaceCraft;
 public abstract class CityShip extends SpaceCraft
 {
 
-	protected CityShip(VehicleInitialConstants vehicleInitialConstants) {
-		super(vehicleInitialConstants);
+	protected CityShip(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
+		super(vehicleInitialConstants, numToolsConstructor);
 	}
 }

@@ -19,8 +19,9 @@ public class FighterPlaneMedium extends FighterPlane{
 	public static double maxWeightInitial = 10;
 
 
-	protected FighterPlaneMedium(LocationPlanet locationPlanet) {
-		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial));
+	protected FighterPlaneMedium(LocationPlanet locationPlanet, int numToolsConstructor) {
+		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,
+				locationPlanet),maxPassengersInitial,maxWeightInitial),numToolsConstructor);
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
