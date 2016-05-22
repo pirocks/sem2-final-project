@@ -10,7 +10,7 @@ import engine.tools.vehicles.space.SpaceCraft;
 public abstract class PlanetDestroyer extends SpaceCraft
 {
 
-	protected PlanetDestroyer(VehicleInitialConstants vehicleInitialConstants) {
-		super(vehicleInitialConstants);
+	protected PlanetDestroyer(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
+		super(vehicleInitialConstants, numToolsConstructor);
 	}
 }

@@ -9,27 +9,22 @@ import engine.universe.ResourceDemand;
  *
  */
 public class Laser extends SpaceWeapon {
-	public static double startHealthInitial;
-	public static double resistanceInitial;
-	public static double damageInitial;
-	public static double rangeInitial;
+	public static double startHealthInitial;// TODO: 5/22/2016
+	public static double resistanceInitial;// TODO: 5/22/2016
+	public static double damageInitial;// TODO: 5/22/2016
+	public static double rangeInitial;// TODO: 5/22/2016
 
-	public Laser(LocationPlanet location) {
+	public Laser(LocationPlanet location, int numToolsConstructor) {
 		super(new AttackableConstants(startHealthInitial, resistanceInitial,location),damageInitial, rangeInitial, numToolsConstructor);
 	}
 
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
-		return null;// TODO: 4/8/2016  
+		return null;// TODO: 5/22/2016
 	}
 
 	@Override
-	public long getManDaysForConstruction() {
-		return 0;// TODO: 4/8/2016  
-	}
-
-	@Override
-	public double getWeight() {
-		return 0;// TODO: 4/8/2016
+	public double getconstructionManDays() {
+		return 0;// TODO: 5/22/2016
 	}
 }

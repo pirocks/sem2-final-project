@@ -16,21 +16,23 @@ public class CityShipSmall extends CityShip
 	public static double resistanceInitial;
 
 
-	protected CityShipSmall(LocationPlanet locationPlanet) {
-		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial));
+	protected CityShipSmall(LocationPlanet locationPlanet, int numToolsConstructor) {
+		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,
+				locationPlanet),maxPassengersInitial,maxWeightInitial),numToolsConstructor);
 	}
+
+	@Override
+	public double getSpeed() {
+		return 0;// TODO: 5/22/2016
+	}
+
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
-		return null;// TODO: 4/7/2016
+		return null;// TODO: 5/22/2016
 	}
 
 	@Override
-	public long getManDaysForConstruction() {
-		return 0;// TODO: 4/7/2016
-	}
-
-	@Override
-	public double getWeight() {
-		return 0;// TODO: 4/7/2016
+	public double getconstructionManDays() {
+		return 0;// TODO: 5/22/2016
 	}
 }

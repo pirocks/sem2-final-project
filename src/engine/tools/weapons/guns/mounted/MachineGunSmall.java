@@ -14,7 +14,7 @@ public class MachineGunSmall extends MachineGun {
 	public static double damageInitial = 1440;
 	public static double rangeInitial = 1.5;
 
-	public MachineGunSmall() {
+	public MachineGunSmall(int numToolsConstructor) {
 		super(new GunInitialConstants(
 			startHealthInitial,
 			resistanceInitial,

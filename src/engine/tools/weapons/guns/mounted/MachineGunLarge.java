@@ -14,27 +14,23 @@ public class MachineGunLarge extends MachineGun {
 	public static double damageInitial = 5760;
 	public static double rangeInitial = 4;
 
-	public MachineGunLarge() {
+	public MachineGunLarge(int numToolsConstructor) {
 		super(new GunInitialConstants(
-			startHealthInitial,
-			resistanceInitial,
-			accuracyInitial,
-			rangeInitial,
-			damageInitial
+				startHealthInitial,
+				resistanceInitial,
+				accuracyInitial,
+				rangeInitial,
+				damageInitial
 		), numToolsConstructor);
 	}
+
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
-		return null;// TODO: 4/8/2016
+		return null;// TODO: 5/22/2016
 	}
 
 	@Override
-	public long getManDaysForConstruction() {
-		return 0;// TODO: 4/8/2016
-	}
-
-	@Override
-	public double getWeight() {
-		return 0;// TODO: 4/8/2016
+	public double getconstructionManDays() {
+		return 0;// TODO: 5/22/2016
 	}
 }
