@@ -11,6 +11,11 @@ import java.util.Map;
 
 public class Resource implements Serializable,Weighable
 {
+	@Override
+	public double getWeightActual() {
+		return getWeight();
+	}
+
 	public enum Type
     {
         Iron,Oil,Uranium,Helium,Food,Water,Wood
@@ -106,6 +111,12 @@ public class Resource implements Serializable,Weighable
 		}
 		return weight;
 	}
+
+	@Override
+	public int getCount() {
+		return -1;//meaningless
+	}
+
 	private static double getWeightType(Type type)
 	{
 		switch (type)
