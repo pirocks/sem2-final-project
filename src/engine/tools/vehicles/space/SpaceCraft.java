@@ -6,7 +6,8 @@ import engine.tools.vehicles.VehicleInitialConstants;
 public abstract class SpaceCraft extends Vehicle
 {
 
-	protected SpaceCraft(VehicleInitialConstants vehicleInitialConstants) {
+
+	protected SpaceCraft(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
 		super(vehicleInitialConstants, numToolsConstructor);
 	}
 

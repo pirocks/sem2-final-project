@@ -9,7 +9,7 @@ import engine.tools.vehicles.space.SpaceCraft;
 public abstract class Shuttle extends SpaceCraft
 {
 
-	protected Shuttle(VehicleInitialConstants vehicleInitialConstants) {
-		super(vehicleInitialConstants);
+	protected Shuttle(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
+		super(vehicleInitialConstants, numToolsConstructor);
 	}
 }

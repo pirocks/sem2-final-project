@@ -8,7 +8,7 @@ import engine.tools.vehicles.VehicleInitialConstants;
  */
 public abstract class Transporter extends SeaCraft {
 
-	protected Transporter(VehicleInitialConstants vehicleInitialConstants) {
-		super(vehicleInitialConstants);
+	protected Transporter(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
+		super(vehicleInitialConstants, numToolsConstructor);
 	}
 }

@@ -9,7 +9,8 @@ import engine.tools.vehicles.space.SpaceCraft;
  */
 public abstract class Freighter extends SpaceCraft
 {
-	protected Freighter(VehicleInitialConstants vehicleInitialConstants) {
-		super(vehicleInitialConstants);
+
+	protected Freighter(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
+		super(vehicleInitialConstants, numToolsConstructor);
 	}
 }

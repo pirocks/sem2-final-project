@@ -9,7 +9,8 @@ import engine.tools.vehicles.space.SpaceCraft;
  */
 public abstract class InterStellarCraft extends SpaceCraft {
 
-	protected InterStellarCraft(VehicleInitialConstants vehicleInitialConstants) {
-		super(vehicleInitialConstants);
+
+	protected InterStellarCraft(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
+		super(vehicleInitialConstants, numToolsConstructor);
 	}
 }

@@ -1,9 +1,10 @@
 package engine.tools.vehicles.sea;
 
-import engine.planets.LocationPlanet;
-import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
+import engine.universe.Resource;
 import engine.universe.ResourceDemand;
+
+import static engine.universe.Resource.Type.*;
 
 /**
  * Created by bob on 4/3/2016.
@@ -11,30 +12,28 @@ import engine.universe.ResourceDemand;
  */
 public class Submarine extends SeaCraft {
 
-	public static int maxPassengersInitial;
-	public static double maxWeightInitial;
-	public static double startHealthInitial;
-	public static double resistanceInitial;
+	public static int maxPassengersInitial = 400;
+	public static double maxWeightInitial =  1500;
+	public static double startHealthInitial = 750000;
+	public static double resistanceInitial = 50000;
 
-
-	protected Submarine(LocationPlanet locationPlanet) {
-		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial));
+	protected Submarine(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
+		super(vehicleInitialConstants, numToolsConstructor);
 	}
 
 
+	@Override
+	public double getSpeed() {
+		return 150;
+	}
 
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
-		return null;//todo unimplmented
+		return new ResourceDemand(new Resource.Type[]{Resource.Type.Iron,Oil,Silicon,Water},startHealthInitial,resistanceInitial,maxWeightInitial,maxPassengersInitial);
 	}
 
 	@Override
-	public long getManDaysForConstruction() {
-		return 0;//todo unimplmented
-	}
-
-	@Override
-	public double getWeight() {
-		return 0;//todo unimplmented
+	public double getconstructionManDays() {
+		return 2500000;
 	}
 }

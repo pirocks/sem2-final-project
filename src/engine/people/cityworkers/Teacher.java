@@ -42,11 +42,6 @@ public class Teacher<Type extends AbstractPerson> extends CityWorker {
     }
 
     @Override
-    public double getWeight() {
-        return 0;// TODO: 4/9/2016  people have weight for vehicles
-    }
-
-    @Override
     public ArrayList<LocationPlanet> getLocationPlanet() {
         return null;// TODO: 4/9/2016
     }

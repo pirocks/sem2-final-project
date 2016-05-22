@@ -8,11 +8,11 @@ public abstract class Weapon extends Tool
 	//one weapon per soldier, regarrdless of soldier population
 
 	private final double damage;
-	private double range;
+	private final double range;
 
-	public Weapon(AttackableConstants attackableConstants, double damage, double range)
+	public Weapon(AttackableConstants attackableConstants, double damage, double range, int numToolsConstructor)
 	{
-		super(attackableConstants, numTools);
+		super(attackableConstants, numToolsConstructor);
 		this.damage = damage;
 //		if(this instanceof )//maybe use this
 		//todo do nothing

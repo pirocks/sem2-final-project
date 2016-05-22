@@ -7,7 +7,7 @@ public abstract class SeaCraft extends Vehicle
 {
 	protected boolean inWaterQ = false;
 
-	protected SeaCraft(VehicleInitialConstants vehicleInitialConstants) {
+	protected SeaCraft(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
 		super(vehicleInitialConstants, numToolsConstructor);
 	}
 

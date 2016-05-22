@@ -152,6 +152,16 @@ public abstract class AbstractPerson extends Attackable implements Serializable,
 		if(country == this.country)
 			this.country = conqueror;// TODO: 4/10/2016 register a citizen and go through and fix that everywhere
 	}
+
+	@Override
+	public double getWeight() {
+		return 1;
+	}
+
+	@Override
+	public int getCount() {
+		return population;
+	}
 //	@Override
 //	public ArrayList<LocationPlanet> getLocationPlanet() {
 //		return location;
