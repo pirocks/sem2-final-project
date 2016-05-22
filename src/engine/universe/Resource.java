@@ -18,25 +18,26 @@ public class Resource implements Serializable,Weighable
 
 	public enum Type
     {
-        Iron,Oil,Uranium,Helium,Food,Water,Wood
+        Iron,Oil,Uranium,Helium,Food,Water,Wood,Silicon
     }
 
 	private Map<Type,Double> values;
-
-	public static double IronValue;
-	public static double OilValue;
-	public static double UraniumValue;
-	public static double HeliumValue;
-	public static double FoodValue;
-	public static double WoodValue;
-	public static double WaterValue;
-	public static double IronWeight;
-	public static double OilWeight;
-	public static double UraniumWeight;
-	public static double HeliumWeight;
-	public static double FoodWeight;
-	public static double WaterWeight;
-	public static double WoodWeight;
+	public static double IronValue;// TODO: 5/22/2016
+	public static double OilValue;// TODO: 5/22/2016
+	public static double UraniumValue;// TODO: 5/22/2016
+	public static double HeliumValue;// TODO: 5/22/2016
+	public static double FoodValue;// TODO: 5/22/2016
+	public static double WoodValue;// TODO: 5/22/2016
+	public static double WaterValue;// TODO: 5/22/2016
+	public static double SiliconValue;// TODO: 5/22/2016
+	public static double IronWeight;// TODO: 5/22/2016
+	public static double OilWeight;// TODO: 5/22/2016
+	public static double UraniumWeight;// TODO: 5/22/2016
+	public static double HeliumWeight;// TODO: 5/22/2016
+	public static double FoodWeight;// TODO: 5/22/2016
+	public static double WaterWeight;// TODO: 5/22/2016
+	public static double WoodWeight;// TODO: 5/22/2016
+	public static double SiliconWeight;// TODO: 5/22/2016
 	public static double getTypeValue(Type type) {
     	switch(type)
     	{
@@ -54,6 +55,8 @@ public class Resource implements Serializable,Weighable
 	        	return WaterValue;
 		    case Wood:
 			    return WoodValue;
+		    case Silicon:
+			    return SiliconValue;
 		    default:
 	        	assert(false);
 	        	throw new IllegalStateException();
@@ -68,6 +71,7 @@ public class Resource implements Serializable,Weighable
 		values.put(Type.Food,new Double(0));
 		values.put(Type.Wood,new Double(0));
 		values.put(Type.Water,new Double(0));
+		values.put(Type.Silicon,new Double(0));
 		for (int i = 0; i < types.size(); i++) {
 			Type type = types.get(i);
 			double val = quantities.get(i);
@@ -114,7 +118,7 @@ public class Resource implements Serializable,Weighable
 
 	@Override
 	public int getCount() {
-		return -1;//meaningless
+		return 1;//meaningless
 	}
 
 	private static double getWeightType(Type type)
@@ -135,6 +139,8 @@ public class Resource implements Serializable,Weighable
 				return WaterWeight;
 			case Wood:
 				return WoodWeight;
+			case Silicon:
+				return SiliconWeight;
 			default:
 				throw new IllegalStateException();
 		}

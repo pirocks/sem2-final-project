@@ -3,17 +3,21 @@ package engine.tools.vehicles.air;
 import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
+import engine.universe.Resource;
 import engine.universe.ResourceDemand;
+
+import static engine.universe.Resource.Type.Oil;
+import static engine.universe.Resource.Type.Silicon;
 
 /**
  * Created by bob on 4/3/2016.
  *
  */
 public class Helicopter extends Aircraft {
-	public static int maxPassengersInitial;
-	public static double maxWeightInitial;
-	public static double startHealthInitial;
-	public static double resistanceInitial;
+	public static int maxPassengersInitial = 5;
+	public static double maxWeightInitial = 100;
+	public static double startHealthInitial = 1000;
+	public static double resistanceInitial = 500;
 
 
 	protected Helicopter(LocationPlanet locationPlanet, int numToolsConstructor) {
@@ -21,20 +25,16 @@ public class Helicopter extends Aircraft {
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
-		return null;//todo
+		return new ResourceDemand(new Resource.Type[]{Resource.Type.Iron,Oil,Silicon},startHealthInitial,resistanceInitial,maxWeightInitial,maxPassengersInitial);
 	}
 
 	@Override
 	public double getconstructionManDays() {
-		return 0;
-	}
-	@Override
-	public double getWeight() {
-		return 0;//todo
+		return 20000;
 	}
 
 	@Override
 	public double getSpeed() {
-		return 0;
+		return 1000;
 	}
 }

@@ -9,6 +9,7 @@ import java.io.Serializable;
 public abstract class Tool extends Attackable implements Serializable,Weighable
 {
 	protected int numTools;
+
 	protected Tool(AttackableConstants attackableConstants, int numToolsConstructor)
 	{
 		super(attackableConstants);
@@ -20,9 +21,13 @@ public abstract class Tool extends Attackable implements Serializable,Weighable
 	public abstract boolean weaponQ();
 	public abstract ResourceDemand requiredResourcesForConstruction();
 	public abstract double getconstructionManDays();//doesn't need o be abstract
-
 	@Override
 	public int getCount() {
 		return numTools;
+	}
+
+	@Override
+	public double getWeight() {
+		return requiredResourcesForConstruction().getWeight();
 	}
 }

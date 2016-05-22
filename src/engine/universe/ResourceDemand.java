@@ -14,7 +14,10 @@ public class ResourceDemand implements Serializable
 		return resource;
 	}
 
-	public ResourceDemand(Resource.Type[] types,double startHealth,double resistance,double )
+	public ResourceDemand(Resource.Type[] types,double startHealth,double resistance,double maxWeight,double maxPassengers)
+	{
+		// TODO: 5/22/2016
+	}
 
 	public boolean fullFilledQ()
 	{
@@ -24,5 +27,9 @@ public class ResourceDemand implements Serializable
 		}
 		return true;
 
+	}
+
+	public double getWeight() {
+		return resource.getWeight();
 	}
 }
