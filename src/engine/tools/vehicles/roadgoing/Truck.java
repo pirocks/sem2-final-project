@@ -7,7 +7,8 @@ import engine.tools.vehicles.VehicleInitialConstants;
  */
 public abstract class Truck extends RoadGoing {
 
-	protected Truck(VehicleInitialConstants vehicleInitialConstants) {
-		super(vehicleInitialConstants);
+
+	protected Truck(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
+		super(vehicleInitialConstants, numToolsConstructor);
 	}
 }

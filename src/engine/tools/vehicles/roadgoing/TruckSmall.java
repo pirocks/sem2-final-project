@@ -1,7 +1,5 @@
 package engine.tools.vehicles.roadgoing;
 
-import engine.planets.LocationPlanet;
-import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
@@ -14,23 +12,23 @@ public class TruckSmall extends Truck {
 	public static double startHealthInitial;
 	public static double resistanceInitial;
 
+	protected TruckSmall(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
+		super(vehicleInitialConstants, numToolsConstructor);
+	}
 
-	protected TruckSmall(LocationPlanet locationPlanet) {
-		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial));
+
+	@Override
+	public double getSpeed() {
+		return 0;
 	}
 
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
-		return null;//todo
+		return null;
 	}
 
 	@Override
-	public long getManDaysForConstruction() {
-		return 0;//todo
-	}
-
-	@Override
-	public double getWeight() {
-		return 0;//todo
+	public double getconstructionManDays() {
+		return 0;
 	}
 }

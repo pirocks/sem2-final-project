@@ -6,7 +6,9 @@ import engine.tools.vehicles.VehicleInitialConstants;
 //possible deprecation b/c roads ot clear;y defined
 public abstract class RoadGoing extends Vehicle//maaube extend land
 {
-	protected RoadGoing(VehicleInitialConstants vehicleInitialConstants) {
+
+
+	protected RoadGoing(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
 		super(vehicleInitialConstants, numToolsConstructor);
 	}
 
