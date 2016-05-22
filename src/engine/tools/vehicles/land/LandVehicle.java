@@ -6,7 +6,7 @@ import engine.tools.vehicles.VehicleInitialConstants;
 public abstract class LandVehicle extends Vehicle
 {
 
-	protected LandVehicle(VehicleInitialConstants vehicleInitialConstants) {
+	protected LandVehicle(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
 		super(vehicleInitialConstants, numToolsConstructor);
 	}
 
