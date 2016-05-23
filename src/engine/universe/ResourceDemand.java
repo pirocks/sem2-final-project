@@ -10,6 +10,10 @@ public class ResourceDemand implements Serializable
 		this.resource = resource;
 	}
 
+	public ResourceDemand() {
+		resource = new Resource(Resource.Type.Food);//doesn;t matter as long as its zero
+	}
+
 	public Resource getResource() {
 		return resource;
 	}
@@ -31,5 +35,9 @@ public class ResourceDemand implements Serializable
 
 	public double getWeight() {
 		return resource.getWeight();
+	}
+
+	public void pay(Resource resource) {
+		resource.pay(this);
 	}
 }

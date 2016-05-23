@@ -1,11 +1,8 @@
 package engine.buildings.housing;
 
 import engine.cities.CityBlock;
-import engine.people.cityworkers.CityWorker;
 import engine.tools.AttackableConstants;
 import engine.universe.ResourceDemand;
-
-import java.util.ArrayList;
 
 public class RulersHouse extends Housing
 {
@@ -14,7 +11,7 @@ public class RulersHouse extends Housing
 	public static int maximumOccupancyInitial = 10;
 	public static double costInitial;
 
-	public RulersHouse(ArrayList<CityWorker> residents, CityBlock parentBlock) {
+	public RulersHouse(CityBlock parentBlock) {
 		super(new AttackableConstants(parentBlock.getLocation(),healthInitial,resistanceInitial), parentBlock);
 	}
 

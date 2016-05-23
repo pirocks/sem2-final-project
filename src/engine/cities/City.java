@@ -2,6 +2,7 @@ package engine.cities;
 
 import engine.buildings.Building;
 import engine.buildings.BuildingContainer;
+import engine.buildings.UnderConstruction;
 import engine.buildings.housing.ApartmentBlock;
 import engine.buildings.housing.Housing;
 import engine.buildings.housing.RulersHouse;
@@ -225,16 +226,18 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 			notEnoughHousingHandler(c);
 	}
 
-	public ArrayList<Housing> getHousing()
+	public void buildBuilding(UnderConstruction building)
 	{
+
+	}
+	public ArrayList<Housing> getHousing() {
 		ArrayList<Housing> out = new ArrayList<>();
 		for(CityBlock block:cityBlocks)
 			if(block.getBuilding() instanceof Housing)
 				out.add((Housing)block.getBuilding());
 		return out;
 	}
-	public ArrayList<Building> getBuilding()
-	{
+	public ArrayList<Building> getBuilding() {
 		ArrayList<Building> out = new ArrayList<>();
 		for(CityBlock block:cityBlocks)
 			out.add(block.getBuilding());
@@ -407,5 +410,12 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 
 	public MoneySource getMoneySource() {
 		return moneySource;
+	}
+
+	public void setBuilding(Building building)
+	{
+		CityBlock block = building.getParentBlock();
+		block.setBuilding(building);
+		cityBlocks.add(block);
 	}
 }

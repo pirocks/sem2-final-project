@@ -63,5 +63,5 @@ public abstract class Building extends Attackable implements Serializable,CityCo
 	public boolean WorkplaceQ(){
 		return this instanceof Workplace;
 	}
-	public abstract ResourceDemand getResourceCost();
+	public abstract ResourceDemand getResourceCost();//cost to build
 }

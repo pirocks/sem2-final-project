@@ -29,6 +29,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import ui.view.city.CityButton;
+import ui.view.city.NewBuildingPane;
 import ui.view.planet.PlanetButton;
 import ui.view.solarsystem.SolarSystemButton;
 import ui.view.solarsystem.SolarSystemJPanel;
@@ -63,6 +64,8 @@ public class Controller implements Initializable{
 	Accordion cityAccordion;
 	@FXML
 	AnchorPane citySpecificPane;
+
+	ScrollPane cityScrollPane;
 
 	private Universe universe;
 	private Country playersCountry;
@@ -162,27 +165,7 @@ public class Controller implements Initializable{
 		}
 	}
 	private void initPlanetView() {
-		/*GridPane gridPane = new GridPane();
-		gridPane.setVgap(0);
-		gridPane.setHgap(0);
-		for(int y = 0; y < planet.getGrids().length;y++)
-			for(int x = 0; x < planet.getGrids()[y].length;x++)
-			{
-				JComponent content;
-//				content = new GridPanel(planet.getGrids()[finalY][finalX]);
-//              content = new JButton();
-				content = new JPanel();
-//				content.add(new JButton());
-				content.add(new GridPanel(this, planet.getGrids()[y][x]));
-				content.repaint();
-				content.revalidate();
-				gridPane.add(new SwingNode(){{setContent(content);}},x,y);
-			}
-		planetBorderPane.setCenter(new ScrollPane(gridPane));*/
-		/*JPanel gridView = new GridViewPanel(planet,this);
-		SwingNode swingNode = new SwingNode();
-		swingNode.setContent(gridView);
-		planetBorderPane.setCenter(new ScrollPane(swingNode));*/
+
 
 		GridPane gridPane = new GridPane();
 		gridPane.setHgap(0);
@@ -234,6 +217,7 @@ public class Controller implements Initializable{
 	private static Image cityImage = new Image("https://image.freepik" +
 			".com/free-icon/set-of-buildings-in-a-city_318-41262" +
 			".jpg");
+	private static Image constructionSite = new Image("http://vignette2.wikia.nocookie.net/simcountry/images/d/d6/Construction-site.jpeg/revision/latest?cb=20140403030541");
 
 	private Image getImage(TerrainType terrainType) {
 		switch (terrainType) {
@@ -250,7 +234,7 @@ public class Controller implements Initializable{
 			case Wasteland:
 				return wastelandImage;
 		}
-		return null;
+		throw  new IllegalStateException();
 	}
 	private void initCityTab(){
 		getCityTab().setText("City:"  + city.name);
@@ -267,8 +251,7 @@ public class Controller implements Initializable{
 			cityAccordion.getPanes().add(titledPane);
 		}
 	}
-	private VBox initBuildingPane(Building building)
-	{
+	private VBox initBuildingPane(Building building) {
 		if(building instanceof Workplace)
 			return initWorkplacePane((Workplace) building);
 		else if(building instanceof Housing)
@@ -276,8 +259,7 @@ public class Controller implements Initializable{
 		else
 			throw new IllegalStateException();
 	}
-	private VBox initWorkplacePane(Workplace workplace)
-	{
+	private VBox initWorkplacePane(Workplace workplace) {
 		VBox out = new VBox();
 		out.getChildren().add(new Text(workplace.name));
 		out.getChildren().add(new Text("Currently Employs:" + workplace.workerCount()));
@@ -329,8 +311,7 @@ public class Controller implements Initializable{
 			throw new IllegalStateException();
 		return out;
 	}
-	private VBox initHousingPane(Housing housing)
-	{
+	private VBox initHousingPane(Housing housing) {
 		VBox out = new VBox();
 		out.getChildren().add(new Text(""));
 		// TODO: 5/19/2016
@@ -376,7 +357,7 @@ public class Controller implements Initializable{
 			return false;
 		}
 	}
-	private void initCityView() {
+	public void initCityView() {
 		System.out.println(""+System.nanoTime());
 		GridPane gridPane = new GridPane();
 		gridPane.setHgap(0);
@@ -392,11 +373,18 @@ public class Controller implements Initializable{
 			buildingImageView.setPreserveRatio(true);
 			buildingImageView.setFitHeight(200);
 			buildingImageView.setFitWidth(200);
+			buildingImageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+				@Override
+				public void handle(MouseEvent event) {
+					focusBuildingInAccordion(b);
+				}
+			});
 			points.add(new Point(x, y));
 			gridPane.add(buildingImageView,x,y);
 		}
-		addEmptyWrapper(points,gridPane);
-		cityBorderPane.setCenter(new ScrollPane(gridPane));
+		addEmptyWrapper(points,gridPane);//add new building locations
+		cityScrollPane = new ScrollPane(gridPane);
+		cityBorderPane.setCenter(cityScrollPane);
 	}
 	private void initCityAnchorPane(){
 		VBox content = new VBox();
@@ -416,9 +404,25 @@ public class Controller implements Initializable{
 			addEmpty(points,p,gridPane,2);
 	}
 	private void addEmpty(ArrayList<Point> points,Point p,GridPane gridPane,int depth) {
+		Controller controller = this;
 		if(!contains(points,p)) {
 			if(p.isValid())
-				gridPane.add(new ImageView(emptyImage){{setPreserveRatio(true);setFitHeight(200);setFitWidth(200);}}, p
+				gridPane.add(new ImageView(emptyImage){{setPreserveRatio(true);setFitHeight(200);setFitWidth(200);
+					setOnMouseClicked(new EventHandler<MouseEvent>() {
+						@Override
+						public void handle(MouseEvent event) {
+							int i = cityAccordion.getPanes().size() - 1;
+							NewBuildingPane newBuildingPane;
+							if(cityAccordion.getPanes().get(i) instanceof NewBuildingPane)
+							{
+								cityAccordion.getPanes().remove(i);
+							}
+							newBuildingPane = new NewBuildingPane(controller,city, p.x, p.y);
+							cityAccordion.getPanes().add(newBuildingPane);
+							cityScrollPane.setVvalue(cityScrollPane.getVmax());
+							newBuildingPane.setExpanded(true);
+						}
+					});}}, p
 						.x, p.y);
 		}
 		if(depth == 0)
@@ -439,8 +443,8 @@ public class Controller implements Initializable{
 				return true;
 		return false;
 	}
-
 	private Image apartmentBlockImage = new Image("https://photos.travelblog.org/Photos/12544/398145/f/3804575-Soviet-apartment-block-0.jpg");
+
 	private Image houseBlockImage = new Image("http://www.fritzhaeg.com/wikidiary/wp-content/uploads/2010/04/2010-04-09-P1140314.jpg");
 	private Image rulersHouseImage = new Image("http://joanneleedom-ackerman.com/wp-content/uploads/2016/02/WhiteHouseAerialView.jpg");
 	private Image dockYardImage = new Image("https://i.ytimg.com/vi/ePDoCPi06rk/maxresdefault.jpg");
@@ -452,8 +456,6 @@ public class Controller implements Initializable{
 	private Image townHallImage = new Image("http://sterlingma.virtualtownhall.net/Pages/SterlingMA_Webdocs/0154FDE4-000F8513.0/old%20town%20hall.jpg");
 	private Image warehouseImage = new Image("http://cijjournal.com/uploads/encompassme/images/7975b64476926cf9b6ac9498c40a697f50e3de53.png");
 	private Image emptyImage = new Image("https://gregfallisdotcom.files.wordpress.com/2011/08/dairy-section.jpg");
-
-
 	private Image getImage(Building building) {
 		if(building instanceof Housing)
 		{
@@ -486,10 +488,12 @@ public class Controller implements Initializable{
 		return null;
 	}
 
+
 	public void switchTo(Universe u) {
 		//unlikely to have more than one universe
 		tabPane.getSelectionModel().select(getUniverseTab());
 	}
+
 	public void switchTo(SolarSystem s) {
 		solarSystem = s;
 		initSolarSystemTab();
@@ -503,7 +507,6 @@ public class Controller implements Initializable{
 		tabPane.getSelectionModel().select(getPlanetTab());
 		initPlanetTab();
 	}
-
 	public void switchTo(City c) {
 		solarSystem = c.getGrid().getParentPlanet().getParentSolarSystem();
 		planet = c.getGrid().getParentPlanet();
@@ -521,6 +524,11 @@ public class Controller implements Initializable{
 				p.setExpanded(true);
 			}
 		}
+	}
+
+	private void focusBuildingInAccordion(Building b) {
+		int i = city.getBuilding().indexOf(b);
+		cityAccordion.getPanes().get(i).setExpanded(true);
 	}
 	public Tab getUniverseTab() {
 		try {
