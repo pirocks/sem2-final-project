@@ -6,6 +6,7 @@ import engine.people.cityworkers.CityWorker;
 import engine.tools.AttackableConstants;
 import engine.universe.MoneySource;
 import engine.universe.ResourceDemand;
+import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
 
@@ -48,6 +49,11 @@ public class Hospital extends Workplace
 	    assert(sickPeople.contains(person));
 	    sickPeople.remove(person);
     }
+
+	@Override
+	public void addSpecific(VBox in) {
+		// TODO: 5/23/2016
+	}
 
 	@Override
 	protected String getName() {

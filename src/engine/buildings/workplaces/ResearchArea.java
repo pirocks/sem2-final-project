@@ -5,6 +5,8 @@ import engine.science.Discovery;
 import engine.tools.AttackableConstants;
 import engine.universe.MoneySource;
 import engine.universe.ResourceDemand;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 public class ResearchArea extends Workplace
 {
@@ -33,5 +35,11 @@ public class ResearchArea extends Workplace
 
 	public void setDiscovery(Discovery discovery) {
 		this.discovery = discovery;
+	}
+
+	@Override
+	public void addSpecific(VBox in) {
+		in.getChildren().add(new Text("working on:" + discovery.getClass().getCanonicalName()));
+		in.getChildren().add(new Text("Percent complete:" + 100*discovery.getPercentComplete() + "%"));
 	}
 }

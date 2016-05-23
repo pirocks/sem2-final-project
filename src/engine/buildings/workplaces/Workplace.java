@@ -10,15 +10,24 @@ import engine.people.cityworkers.CityWorker;
 import engine.tools.AttackableConstants;
 import engine.universe.MoneySource;
 import engine.universe.MoneySourceContainer;
-import engine.universe.Resource;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 import java.util.ArrayList;
 public abstract class Workplace extends Building implements PersonContainer, MoneySourceContainer
 {
+	public ArrayList<CityWorker> getWorkers() {
+		return workers;
+	}
+
+	public MoneySource getOwner() {
+		return owner;
+	}
+
 	private ArrayList<CityWorker> workers;
 	private int maxWorkers;
 	private MoneySource owner;
-	private Resource inStock;
+
 	public Workplace(AttackableConstants attackableConstants,
 	                 CityBlock parentBlock, int maxWorkers, MoneySource owner) {
 		super(attackableConstants,parentBlock);
@@ -27,7 +36,6 @@ public abstract class Workplace extends Building implements PersonContainer, Mon
 		registerMoneySourceContainer();
 		workers = new ArrayList<>();
 		this.owner = owner;
-		inStock = new Resource(Resource.Type.Food);// TODO: 5/19/2016 mske one resource object hold many resources
 	}
 	public boolean isEmployee(CityWorker worker) {
 		for(CityWorker c:workers)
@@ -69,7 +77,16 @@ public abstract class Workplace extends Building implements PersonContainer, Mon
 		return maxWorkers;
 	}
 
-	public Resource getInStock() {
-		return inStock;
+	@Override
+	public VBox getPane()
+	{
+		VBox out = new VBox();
+		out.getChildren().add(new Text(name));
+		out.getChildren().add(new Text("Currently Employs:" + workerCount()));
+		out.getChildren().add(new Text("Worker Limit:" + getMaxWorkers()));
+		addSpecific(out);
+		return out;
 	}
+
+	public abstract void addSpecific(VBox in);
 }

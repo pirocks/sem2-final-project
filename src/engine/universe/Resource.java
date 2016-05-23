@@ -2,6 +2,7 @@ package engine.universe;
 
 import engine.tools.vehicles.Weighable;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 import java.io.Serializable;
@@ -175,5 +176,16 @@ public class Resource implements Serializable,Weighable
 		}
 		return out;
 
+	}
+	public VBox toVbox()
+	{
+		VBox out = new VBox();
+		int row = 0;
+		for (Type type : values.keySet()) {
+			double val = values.get(type);
+			out.getChildren().add(new Text(type.toString()));
+			out.getChildren().add(new Text(""+val));
+		}
+		return out;
 	}
 }

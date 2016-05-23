@@ -43,4 +43,8 @@ public abstract class Discovery implements Serializable //todo maybe make interf
 	{
 		workingOn.remove(researchArea);
 	}
+
+	public double getPercentComplete() {
+		return percentComplete;
+	}
 }

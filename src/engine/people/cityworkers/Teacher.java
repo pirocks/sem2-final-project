@@ -10,6 +10,11 @@ import java.util.ArrayList;
 
 public class Teacher<Type extends AbstractPerson> extends CityWorker {
     public double progress = 0.0;//from 0 to 1
+
+    public Type getStudent() {
+        return student;
+    }
+
     private Type student;
     public School workplace;
 

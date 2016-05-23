@@ -7,6 +7,8 @@ import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.universe.Resource;
 import engine.universe.ResourceDemand;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 import java.io.Serializable;
 
@@ -59,5 +61,13 @@ public class UnderConstruction<Type extends Building> extends Building implement
 	@Override
 	public ResourceDemand getResourceCost() {
 		return new ResourceDemand();
+	}
+
+	@Override
+	public VBox getPane() {
+		VBox out = new VBox();
+		out.getChildren().add(new Text("unconstructed"));
+		out.getChildren().add(new Text(type.getName()));
+		return out;
 	}
 }

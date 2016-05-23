@@ -6,6 +6,8 @@ import engine.people.AbstractPerson;
 import engine.people.PersonContainer;
 import engine.people.cityworkers.CityWorker;
 import engine.tools.AttackableConstants;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 import java.util.ArrayList;
 
@@ -53,6 +55,16 @@ public abstract class Housing extends Building implements PersonContainer
 //		assert(residents.contains(person));
 		residents.remove(person);
 	}
+
+	@Override
+	public VBox getPane() {
+		VBox out =  new VBox();
+		out.getChildren().add(new Text(getName()));
+		out.getChildren().add(new Text("Maximum Occupancy:" + getMaximumOccupancy()));
+		out.getChildren().add(new Text("Number of residents:" + getPopulation()));
+		return out;
+	}
+
 	public int getMaximumOccupancy() {
 		return maximumOccupancy;
 	}

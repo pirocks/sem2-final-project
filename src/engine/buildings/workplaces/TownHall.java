@@ -5,6 +5,7 @@ import engine.cities.CityBlock;
 import engine.tools.AttackableConstants;
 import engine.universe.MoneySource;
 import engine.universe.ResourceDemand;
+import javafx.scene.layout.VBox;
 
 public class TownHall extends Workplace
 {
@@ -28,4 +29,7 @@ public class TownHall extends Workplace
 		return null;// TODO: 4/9/2016
 	}
 
+	@Override
+	public void addSpecific(VBox in) {
+	}
 }

@@ -10,6 +10,7 @@ import engine.people.PersonContainer;
 import engine.tools.AttackableConstants;
 import engine.tools.weapons.Attackable;
 import engine.universe.ResourceDemand;
+import javafx.scene.layout.VBox;
 
 import java.io.Serializable;
 
@@ -64,4 +65,5 @@ public abstract class Building extends Attackable implements Serializable,CityCo
 		return this instanceof Workplace;
 	}
 	public abstract ResourceDemand getResourceCost();//cost to build
+	public abstract VBox getPane();
 }

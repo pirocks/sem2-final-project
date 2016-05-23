@@ -6,6 +6,7 @@ import engine.tools.ToolUnderConstruction;
 import engine.tools.vehicles.sea.SeaCraft;
 import engine.universe.MoneySource;
 import engine.universe.ResourceDemand;
+import javafx.scene.layout.VBox;
 
 /**
  * Created by bob on 4/9/2016.
@@ -47,4 +48,8 @@ public class DockYard extends Workplace implements ToolBuilder<SeaCraft> {
 		return seaCraftUnderConstruction.getFinishedTool();
 	}
 
+	@Override
+	public void addSpecific(VBox in) {
+		// TODO: 5/23/2016
+	}
 }

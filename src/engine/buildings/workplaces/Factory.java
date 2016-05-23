@@ -6,6 +6,7 @@ import engine.tools.Tool;
 import engine.tools.ToolUnderConstruction;
 import engine.universe.MoneySource;
 import engine.universe.ResourceDemand;
+import javafx.scene.layout.VBox;
 
 public class Factory extends Workplace implements ToolBuilder<Tool>
 {
@@ -41,5 +42,10 @@ public class Factory extends Workplace implements ToolBuilder<Tool>
 	@Override
 	public ToolUnderConstruction<Tool> getToolUnderConstruction() {
 		return inProduction;
+	}
+
+	@Override
+	public void addSpecific(VBox in) {
+		// TODO: 5/23/2016
 	}
 }

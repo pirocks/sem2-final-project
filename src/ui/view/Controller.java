@@ -72,6 +72,8 @@ public class Controller implements Initializable{
 	private SolarSystem solarSystem;
 	private Planet planet;
 	private City city;
+	private Housing housing;
+
 	/**
 	 * Called to initialize a controller after its root element has been
 	 * completely processed.
@@ -165,8 +167,6 @@ public class Controller implements Initializable{
 		}
 	}
 	private void initPlanetView() {
-
-
 		GridPane gridPane = new GridPane();
 		gridPane.setHgap(0);
 		gridPane.setHgap(0);
@@ -247,89 +247,12 @@ public class Controller implements Initializable{
 		cityAccordion.getPanes().clear();
 		for(Building b:city.getBuilding())
 		{
-			VBox pane = initBuildingPane(b);
+			VBox pane = b.getPane();
 			TitledPane titledPane = new TitledPane(b.name,pane);
 			cityAccordion.getPanes().add(titledPane);
 		}
 	}
-	private VBox initBuildingPane(Building building) {
-		if(building instanceof Workplace)
-			return initWorkplacePane((Workplace) building);
-		else if(building instanceof Housing)
-			return initHousingPane((Housing) building);
-		else
-			throw new IllegalStateException();
-	}
-	private VBox initWorkplacePane(Workplace workplace) {
-		VBox out = new VBox();
-		out.getChildren().add(new Text(workplace.name));
-		out.getChildren().add(new Text("Currently Employs:" + workplace.workerCount()));
-		out.getChildren().add(new Text("Worker Limit:" + workplace.getMaxWorkers()));
-		out.getChildren().add(new Text("Resources in Stock:"));
-		out.getChildren().add(new Text(workplace.getInStock().toString()));
-		if(workplace instanceof ToolBuilder)
-		{
-			ToolBuilder dockYard = (ToolBuilder) workplace;
-			String currentlyBuilding = "nothing";
-			try {
-				currentlyBuilding = dockYard.getCurrentlyBuilding();
-			} catch (NullPointerException ignored){}
-			out.getChildren().add(new Text("Currently building:" + currentlyBuilding));
-			out.getChildren().add(new Text("Resources Required To Finish Construction:" ));
-			try {
-				out.getChildren().add(dockYard.getResourcesRemaining().getResource().toTable());
-			}catch (NullPointerException ignored) {
-				out.getChildren().add(new Text("n/a"));
-			}
-			// TODO: 5/19/2016 add menu to provide more or less resources and view resource flow
-		}
-		else if(workplace instanceof Hospital)
-		{
-			Hospital theBuilding = (Hospital) workplace;
-			// TODO: 5/19/2016
-		}
-		else if(workplace instanceof ResearchArea)
-		{
-			ResearchArea theBuilding = (ResearchArea) workplace;
-			// TODO: 5/19/2016
-		}
-		else if(workplace instanceof School)
-		{
-			School theBuilding = (School) workplace;
-			// TODO: 5/19/2016
-		}
-		else if(workplace instanceof TownHall)
-		{
-			TownHall theBuilding = (TownHall) workplace;
-			// TODO: 5/19/2016
-		}
-		else if(workplace instanceof Warehouse)
-		{
-			Warehouse theBuilding = (Warehouse) workplace;
-			// TODO: 5/19/2016
-		}
-		else
-			throw new IllegalStateException();
-		return out;
-	}
-	private VBox initHousingPane(Housing housing) {
-		VBox out = new VBox();
-		out.getChildren().add(new Text(""));
-		// TODO: 5/19/2016
-		if(housing instanceof ApartmentBlock)
-		{
-			// TODO: 5/19/2016
-		}
-		else if(housing instanceof RulersHouse)
-		{
-			// TODO: 5/19/2016
-		}
-		else if(housing instanceof WorkersHouseBlock)
-		{
-			// TODO: 5/19/2016
-		}
-		return out;
-	}
+
 	private static class Point {
 		int x,y;
 
@@ -488,13 +411,10 @@ public class Controller implements Initializable{
 		}
 		return null;
 	}
-
-
 	public void switchTo(Universe u) {
 		//unlikely to have more than one universe
 		tabPane.getSelectionModel().select(getUniverseTab());
 	}
-
 	public void switchTo(SolarSystem s) {
 		solarSystem = s;
 		initSolarSystemTab();
@@ -517,7 +437,6 @@ public class Controller implements Initializable{
 		initCityTab();
 		tabPane.getSelectionModel().select(getCityTab());
 	}
-
 	public void focusCityInAccordion(City c) {
 		for(TitledPane p:planetAccordion.getPanes())
 		{
@@ -526,7 +445,6 @@ public class Controller implements Initializable{
 			}
 		}
 	}
-
 	private void focusBuildingInAccordion(Building b) {
 		int i = city.getBuilding().indexOf(b);
 		cityAccordion.getPanes().get(i).setExpanded(true);
@@ -555,7 +473,6 @@ public class Controller implements Initializable{
 			return null;
 		}
 	}
-
 	public Tab getCityTab() {
 		try {
 			return tabPane.getTabs().get(3);

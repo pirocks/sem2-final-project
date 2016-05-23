@@ -25,4 +25,5 @@ public class ApartmentBlock extends Housing
 	public ResourceDemand getResourceCost() {
 		return null;// TODO: 4/9/2016
 	}
+
 }
