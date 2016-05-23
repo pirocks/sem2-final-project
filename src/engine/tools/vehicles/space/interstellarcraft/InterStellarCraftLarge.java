@@ -32,7 +32,7 @@ public class InterStellarCraftLarge extends InterStellarCraft {
 	}
 
 	@Override
-	public double getconstructionManDays() {
+	public double getConstructionManDays() {
 		return 0;// TODO: 5/22/2016
 	}
 }

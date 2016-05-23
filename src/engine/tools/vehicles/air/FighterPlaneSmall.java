@@ -29,7 +29,7 @@ public class FighterPlaneSmall extends FighterPlane {
 	}
 
 	@Override
-	public double getconstructionManDays() {
+	public double getConstructionManDays() {
 		return 80000;
 	}
 	@Override

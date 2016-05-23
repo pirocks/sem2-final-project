@@ -33,7 +33,7 @@ public class Train extends RoadGoing{
 	}
 
 	@Override
-	public double getconstructionManDays() {
+	public double getConstructionManDays() {
 		return 1000;
 	}
 }

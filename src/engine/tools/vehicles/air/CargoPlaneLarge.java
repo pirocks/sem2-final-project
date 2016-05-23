@@ -27,7 +27,7 @@ public class CargoPlaneLarge extends CargoPlane {
 	}
 
 	@Override
-	public double getconstructionManDays() {
+	public double getConstructionManDays() {
 		return 80000;
 	}
 

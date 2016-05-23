@@ -29,7 +29,7 @@ public class FighterPlaneMedium extends FighterPlane{
 	}
 
 	@Override
-	public double getconstructionManDays() {
+	public double getConstructionManDays() {
 		return 160000;
 	}
 

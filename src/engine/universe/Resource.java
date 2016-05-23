@@ -7,6 +7,7 @@ import javafx.scene.text.Text;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -63,6 +64,9 @@ public class Resource implements Serializable,Weighable
 	        	throw new IllegalStateException();
     	}
     }
+	public Resource(Type[] types,Double[] quantities) {
+		this(new ArrayList<Type>(Arrays.asList(types)),new ArrayList<Double>(Arrays.asList(quantities)));
+	}
 	public Resource(ArrayList<Type> types, ArrayList<Double> quantities) {
 		values = new HashMap<>();
 		values.put(Type.Iron,new Double(0));

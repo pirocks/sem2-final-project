@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -42,6 +43,10 @@ public class Controller implements Initializable {
 	TextField numCountries;
 	@FXML
 	TextField peoplePerCity;
+	@FXML
+	CheckBox disableEnemy;
+	@FXML
+	CheckBox generateOneStartingCity;
 
 	/**
 	 * Called to initialize a controller after its root element has been
@@ -59,65 +64,32 @@ public class Controller implements Initializable {
 		numPlanetsPerSolarSystem.setText("5");
 		peoplePerCity.setText("10000");
 		numHazards.setText("0");
+		disableEnemy.setSelected(true);
+		generateOneStartingCity.setSelected(true);
 	}
+	private boolean invalidQ = false;
 	@FXML public void generateClicked()
 	{
-		boolean invalidQ = false;
+		invalidQ = false;
 		int solarSystemCount = 15;
-		try
-		{
-			solarSystemCount = Integer.parseInt(numSolarSystem.getText());
-		}
-		catch (NumberFormatException e)
-		{
-			invalidQ = true;
-		}
+		solarSystemCount = getSolarSystemCount(solarSystemCount);
 		Double universeRadius = Double.MAX_VALUE;
-		try
-		{
-			universeRadius = Double.valueOf((universeSize.getText()));
-		}
-		catch (Exception e)
-		{
-			invalidQ = true;
-		}
+		universeRadius = getaDouble(universeRadius);
 		int numCountries = 5;
-		try
-		{
-			numCountries = Integer.parseInt(this.numCountries.getText());
-		}
-		catch (Exception e)
-		{
-			invalidQ = true;
-		}
+		numCountries = getNumCountries(numCountries);
 		int numPlanets = 5;
-		try
-		{
-			numPlanets = solarSystemCount*Integer.parseInt(numPlanetsPerSolarSystem.getText());
-		}
-		catch(Exception e)
-		{
-			invalidQ = true;
-		}
+		numPlanets = getNumPlanets(solarSystemCount, numPlanets);
 		UniversalConstants.peoplePerCity = 10000;
-		try {
-			UniversalConstants.peoplePerCity = Integer.parseInt(peoplePerCity.getText());
-		} catch (NumberFormatException e)
-		{
-			invalidQ = true;
-		}
+		getPeoplePerCity();
 		int numHazards = 0;
-		try {
-			numHazards = Integer.parseInt(this.numHazards.getText());
-		} catch (NumberFormatException e)
-		{
-			invalidQ = true;
-		}
+		numHazards = getNumHazards(numHazards);
 		double industryProb = 0.9;// TODO: 5/20/2016
+		boolean generateOtherCountries = disableEnemy.selectedProperty().getValue();
+		boolean onlyGenerateOnePlayersCountry = generateOneStartingCity.selectedProperty().getValue();
 		UniverseConstructionContext universeConstructionContext = new UniverseConstructionContext(
 				solarSystemCount, universeRadius,
 				numCountries, numPlanets, numHazards,
-				industryProb);
+				industryProb, generateOtherCountries, onlyGenerateOnePlayersCountry);
 		areWeGoForLaunchQ = true;
 		if(invalidQ)
 		{
@@ -142,6 +114,73 @@ public class Controller implements Initializable {
 //		universeGenerationThread.run();
 			generator.run();
 		}
+	}
+
+	public int getNumHazards(int numHazards) {
+		try {
+			numHazards = Integer.parseInt(this.numHazards.getText());
+		} catch (NumberFormatException e)
+		{
+			invalidQ = true;
+		}
+		return numHazards;
+	}
+
+	public void getPeoplePerCity() {
+		try {
+			UniversalConstants.peoplePerCity = Integer.parseInt(peoplePerCity.getText());
+		} catch (NumberFormatException e)
+		{
+			invalidQ = true;
+		}
+	}
+
+	public int getNumPlanets(int solarSystemCount, int numPlanets) {
+		try
+		{
+			numPlanets = solarSystemCount*Integer.parseInt(numPlanetsPerSolarSystem.getText());
+		}
+		catch(Exception e)
+		{
+			invalidQ = true;
+		}
+		return numPlanets;
+	}
+
+	public int getNumCountries(int numCountries) {
+		try
+		{
+			numCountries = Integer.parseInt(this.numCountries.getText());
+		}
+		catch (Exception e)
+		{
+			invalidQ = true;
+		}
+		return numCountries;
+	}
+
+	public Double getaDouble(Double universeRadius) {
+		try
+		{
+			universeRadius = Double.valueOf((universeSize.getText()));
+		}
+		catch (Exception e)
+		{
+			invalidQ = true;
+		}
+		return universeRadius;
+	}
+
+	public int getSolarSystemCount(int solarSystemCount) {
+		try
+		{
+			solarSystemCount = Integer.parseInt(numSolarSystem.getText());
+		}
+		catch (NumberFormatException e)
+		{
+			invalidQ = true;
+		}
+		return solarSystemCount;
 	}
 
 }

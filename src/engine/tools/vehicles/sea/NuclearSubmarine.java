@@ -37,7 +37,7 @@ public class NuclearSubmarine extends SeaCraft {
 	}
 
 	@Override
-	public double getconstructionManDays() {
+	public double getConstructionManDays() {
 		return 5000000;
 	}
 }

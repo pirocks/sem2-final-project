@@ -32,7 +32,7 @@ public class TruckMedium extends Truck {
 	}
 
 	@Override
-	public double getconstructionManDays() {
+	public double getConstructionManDays() {
 		return 3000;
 	}
 }

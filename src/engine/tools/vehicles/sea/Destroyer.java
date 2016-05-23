@@ -33,7 +33,7 @@ public class Destroyer extends SeaCraft {
 	}
 
 	@Override
-	public double getconstructionManDays() {
+	public double getConstructionManDays() {
 		return 1600000;
 	}
 }

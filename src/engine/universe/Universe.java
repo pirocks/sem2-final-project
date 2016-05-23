@@ -34,7 +34,6 @@ public class Universe implements Serializable, CountryContainer
 	    for(int i = 0; i < numSolarSystems;i++)
         {
 	        //location of solar systems
-	        double largeNumber = 1000000000;// TODO: 5/9/2016 fix magic number
 	        double x = ThreadLocalRandom.current().nextDouble(-size/2, size/2);
 	        double y = ThreadLocalRandom.current().nextDouble(-size/2, size/2);
 	        double z = ThreadLocalRandom.current().nextDouble(-size/2, size/2);
@@ -47,6 +46,13 @@ public class Universe implements Serializable, CountryContainer
 	    {
 		    City capital = getSuitableCapital(c);
 		    c.setCapitalCity(capital);
+	    }
+	    if(u.onlyGenerateOneCityPlayersCountry)
+	    {
+		    for (City city : playersCountry.getAllCities()) {
+			    city.die();
+		    }
+
 	    }
     }
 	@Deprecated public Universe(UniverseConstructionContext universeConstructionContext)

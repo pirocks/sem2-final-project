@@ -29,7 +29,7 @@ public class Helicopter extends Aircraft {
 	}
 
 	@Override
-	public double getconstructionManDays() {
+	public double getConstructionManDays() {
 		return 20000;
 	}
 

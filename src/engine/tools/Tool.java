@@ -20,7 +20,7 @@ public abstract class Tool extends Attackable implements Serializable,Weighable
 	public abstract boolean vehicleQ();
 	public abstract boolean weaponQ();
 	public abstract ResourceDemand requiredResourcesForConstruction();
-	public abstract double getconstructionManDays();//doesn't need o be abstract
+	public abstract double getConstructionManDays();//doesn't need o be abstract
 	@Override
 	public int getCount() {
 		return numTools;

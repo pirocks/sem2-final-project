@@ -20,19 +20,26 @@ public class UniverseConstructionContext
 	public int maxPlanetSize = 25;// TODO: 5/9/2016 include in startup menu
 	public ArrayList<Country> countries;
 	public double industryProb;
+	public boolean generateOtherCountries;
+	public boolean onlyGenerateOneCityPlayersCountry;
+
 
 	public UniverseConstructionContext(int numSolarSystems,
 	                                   double universeRadius,
 	                                   int numCountries,
 	                                   int numPlanets,
 	                                   int numHazardsPerPlanet,
-	                                   double industryProb)
+	                                   double industryProb,
+	                                   boolean generateOtherCountries,
+	                                   boolean onlyGenerateOneCityPlayersCountry)
 	{
 		this.numSolarSystems = numSolarSystems;
 		this.universeRadius = universeRadius;
 		this.numPlanets = numPlanets;
 		this.numHazardsPerPlanet = numHazardsPerPlanet;
 		this.industryProb = industryProb;
+		this.generateOtherCountries = generateOtherCountries;
+		this.onlyGenerateOneCityPlayersCountry = onlyGenerateOneCityPlayersCountry;
 		countries = new ArrayList<>();
 		for(int i = 0; i < numCountries;i++)
 			countries.add(new Country(this));

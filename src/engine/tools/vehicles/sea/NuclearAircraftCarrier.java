@@ -31,7 +31,7 @@ public class NuclearAircraftCarrier extends SeaCraft{
 	}
 
 	@Override
-	public double getconstructionManDays() {
+	public double getConstructionManDays() {
 		return 9600000;
 	}
 }

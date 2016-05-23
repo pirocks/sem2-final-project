@@ -33,7 +33,7 @@ public class TruckSmall extends Truck {
 	}
 
 	@Override
-	public double getconstructionManDays() {
+	public double getConstructionManDays() {
 		return 1500;
 	}
 }

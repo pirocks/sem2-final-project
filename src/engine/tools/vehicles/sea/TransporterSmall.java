@@ -33,7 +33,7 @@ public class TransporterSmall extends Transporter {
 	}
 
 	@Override
-	public double getconstructionManDays() {
+	public double getConstructionManDays() {
 		return 500000;
 	}
 }

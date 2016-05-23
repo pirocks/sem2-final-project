@@ -28,7 +28,7 @@ public class CargoPlaneMedium extends CargoPlane {
 	}
 
 	@Override
-	public double getconstructionManDays() {
+	public double getConstructionManDays() {
 		return 8000;
 	}
 	@Override

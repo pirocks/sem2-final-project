@@ -35,7 +35,7 @@ public class TransporterMedium extends Transporter {
 	}
 
 	@Override
-	public double getconstructionManDays() {
+	public double getConstructionManDays() {
 		return 750000;
 	}
 }
