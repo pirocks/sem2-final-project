@@ -201,6 +201,7 @@ public class Controller implements Initializable{
 					cityImageView.setFitHeight(150);
 					imageList.add(cityImageView);
 				}
+				grid.getVehicles();
 				Group completeGridImage = new Group(imageList);
 				gridPane.add(completeGridImage, x, y);
 			}

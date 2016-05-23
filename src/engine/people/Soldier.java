@@ -51,32 +51,35 @@ public class Soldier extends AbstractPerson implements VehicleContainer, MoneySo
 	    registerMoneySourceContainer();
     }
 
-	// TODO: 4/10/2016 implment do skill and figure out hjow the soldsier do skill worrks/asking for new orders?
-	public void doSkill(long time) {
-        switch(currentTask)
-        {
-            case March:
-                //how are estinations represented??
-                //location objects??
-                break;
-            case Drive:
-                assert(vehicle != null);
-                //??vehicle.drive(time);/////?????
-                break;
-            case Guard:
-                //moneysources could move very fast??
-                //how does this work
-                break;
-            case Heal:
-	            // TODO: 5/5/2016 update to use attackable constants
+	// TODO: 4/10/2016 implment do life and figure out hjow the soldsier do skill worrks/asking for new orders?
+	@Override
+	public void doLife(long time) {
+		switch(currentTask)
+		{
+			case March:
+				//how are estinations represented??
+				//location objects??
+				break;
+			case Drive:
+				assert(vehicle != null);
+				//??vehicle.drive(time);/////?????
+				break;
+			case Guard:
+				//moneysources could move very fast??
+				//how does this work
+				break;
+			case Heal:
+				// TODO: 5/5/2016 update to use attackable constants
 //                attackableConstants.health += healRate*time;
 //                if(attackableConstants.health > 1.0)
 //                    attackableConstants.health = 1.0;
-                break;
-        }
-        salaryGiver.pay(moneySource,time*getSalary());
-    }
-    @Override
+				break;
+		}
+		salaryGiver.pay(moneySource,time*getSalary());
+	}
+
+
+	@Override
     protected void dieSpecific()
     {
 		return;

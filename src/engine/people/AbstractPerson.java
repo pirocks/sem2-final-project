@@ -2,6 +2,7 @@ package engine.people;
 
 import engine.people.cityworkers.PeopleInitialConstants;
 import engine.tools.AttackableConstants;
+import engine.tools.vehicles.Liver;
 import engine.tools.vehicles.Weighable;
 import engine.tools.weapons.Attackable;
 import engine.universe.Country;
@@ -11,7 +12,8 @@ import engine.universe.MoneySourceContainer;
 
 import java.io.Serializable;
 
-public abstract class AbstractPerson extends Attackable implements Serializable, CountryContainer, MoneySourceContainer,Weighable
+public abstract class AbstractPerson extends Attackable implements Liver, Serializable, CountryContainer,
+		MoneySourceContainer,Weighable
 {
 	public MoneySource moneySource;
 	public static double healthInitial;
@@ -30,6 +32,9 @@ public abstract class AbstractPerson extends Attackable implements Serializable,
 	protected MoneySource salaryGiver = null;// TODO: 4/10/2016 need to initialize this
 	protected AbstractPerson(PeopleInitialConstants peopleInitialConstants) {
 	    super(new AttackableConstants(healthInitial,resistanceInitial,peopleInitialConstants.location));
+		registerCountryContainer();
+		registerMoneySourceContainer();
+		registerLiver();
 		moneySource = new MoneySource(0);
 	    population = peopleInitialConstants.population;
 	    foodUsePerPerson = peopleInitialConstants.foodUsePerPerson;
@@ -129,7 +134,7 @@ public abstract class AbstractPerson extends Attackable implements Serializable,
 			die();
 		return alliveQ;
 	}
-	public abstract void doSkill(long time);//I don't thinksalary is required
+	public abstract void doLife(long time);
 	public void die() {
 		alliveQ = false;
 		dieSpecific();

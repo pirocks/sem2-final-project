@@ -2,6 +2,7 @@ package engine.planets;
 
 import engine.cities.*;
 import engine.planets.hazards.*;
+import engine.tools.vehicles.Vehicle;
 import engine.universe.Country;
 import engine.universe.CountryContainer;
 
@@ -24,18 +25,9 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
     private TerrainType terrainType;
     private ArrayList<NaturalHazard> hazards;
     private FarmLand farmLand;
-   /* public Grid(int x, int y,Country parentCountry,Planet parentPlanet)
-    {
-	    registerCountryContainer();
-	    registerPlanetContainer();
-	    registerCityContainer();
-        this.x = x;
-        this.y = y;
-        this.parentCountry = parentCountry;
-        this.parentPlanet = parentPlanet;
-    }*/
+	private ArrayList<Vehicle> vehicles;
 
-    public Grid(GridConstructionContext gridConstructionContext,Planet parentPlanet){
+	public Grid(GridConstructionContext gridConstructionContext,Planet parentPlanet){
         registerPlanetContainer();// TODO: 5/10/2016 go through and check for thsese in all of the construction context  constructors
         registerCountryContainer();
 	    registerCityContainer();
@@ -86,9 +78,9 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
 			    }
 		    }
 	    }
+		vehicles = new ArrayList<>();
 	    // TODO: 5/10/2016
     }
-
 	private NaturalHazard getRandomHazard() {
 		int type = (int) (Math.random()*5);
 		switch (type)
@@ -108,14 +100,12 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
 				throw new IllegalStateException();
 		}
 	}
-
 	public Country getParentCountry()
     {
         return parentCountry;
     }
-    public void registerHazard(NaturalHazard hazard)//natural hzard v regular hazzrad
-    {
-        //TODO:figure this one out
+    public void registerHazard(NaturalHazard hazard){
+        //TODO:figure this one out//natural hazards arwe scehdule  for deprecation
     }
     public ArrayList<NaturalHazard> getHazards()
     {
@@ -125,8 +115,7 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
     {
         return naturalResources;
     }
-    public boolean cityBlockLocationExists(int x, int y)
-    {
+    public boolean cityBlockLocationExists(int x, int y) {
         ArrayList<CityBlock> blocks = new ArrayList<>();
         for(City city:citys)
             blocks.addAll(city.getCityBlocks());
@@ -172,14 +161,12 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
         double gridHeight = planetHeight*2/parentPlanet.getGridCountHeight();///should be built in as a constant and final. Planets should not be created that don't have the appropriate height
         return startHeight - y*gridHeight;
     }
-    public double getXInUniverse()
-    {
+    public double getXInUniverse() {
         double xAngle = ((double)x/(double)parentPlanet.getGridCountLength())*360.0;
         double planetX = parentPlanet.getXInUniverse();
         return planetX + (parentPlanet.getplanetRadius()*Math.cos(xAngle));
     }
-    public double getYInUniverse()
-    {
+    public double getYInUniverse() {
         double yAngle = ((double)y/(double)parentPlanet.getGridCountLength())*360.0;
         double planetY = parentPlanet.getYInUniverse();
         return planetY + (parentPlanet.getplanetRadius()*Math.sin(yAngle));
@@ -192,7 +179,6 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
 	public void remove(City city) {
 		citys.remove(city);
 	}
-
 	@Override
 	public void remove(Country country,Country conqueror) {
 		if(parentCountry == country) {
@@ -200,7 +186,6 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
 			assert(false);// TODO: 4/10/2016 get rid of this
         }
 	}
-
 	@Override
 	public void remove(Planet planet) {
 		if(parentPlanet == planet)
@@ -214,16 +199,22 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
 	public String toString() {
 		return "x:" + x + "y:" + y;// + "types:" + terrainType.toString();
 	}
-
 	public ArrayList<City> getCitys() {
         return citys;
     }
-
     public TerrainType getTerrainType() {
         return terrainType;
     }
-
     public FarmLand getFarmLand() {
         return farmLand;
     }
+	public void vehicleArrives(Vehicle vehicle) {
+		vehicles.add(vehicle);
+	}
+	public void vehicleLeaves(Vehicle v){
+		vehicles.remove(v);
+	}
+	public ArrayList<Vehicle> getVehicles() {
+		return vehicles;
+	}
 }

@@ -2,6 +2,7 @@ package engine.tools.vehicles;
 
 import engine.people.AbstractPerson;
 import engine.people.PersonContainer;
+import engine.planets.LocationPlanet;
 import engine.tools.Tool;
 import engine.tools.weapons.Weapon;
 import engine.tools.weapons.WeaponContainer;
@@ -11,7 +12,8 @@ import engine.universe.Resource;
 
 import java.util.ArrayList;
 
-public abstract class Vehicle extends Tool implements PersonContainer, VehicleContainer, WeaponContainer, MoneySourceContainer
+public abstract class Vehicle extends Tool implements Liver,PersonContainer, VehicleContainer, WeaponContainer,
+		MoneySourceContainer
 {
 	private double fuelPercent = 0.0;//from 0 t  1
 	private double fuelCapacity = 0.0;//from 0 to 1
@@ -27,6 +29,7 @@ public abstract class Vehicle extends Tool implements PersonContainer, VehicleCo
 		registerMoneySourceContainer();
 		registerVehicleContainer();
 		registerWeaponContainer();
+		registerLiver();// TODO: 5/22/2016 go through and check these
 		maxPassengers = vehicleInitialConstants.maxPassengers;
 		maxWeight = vehicleInitialConstants.maxWeight;
 		passengers = new ArrayList<>();
@@ -65,6 +68,7 @@ public abstract class Vehicle extends Tool implements PersonContainer, VehicleCo
 		else
 			throw new Weighable.ToHeavyException(weighable);
 	}
+	// TODO: 5/22/2016 unloading objects
 	public  boolean canAddObject(Weighable weighable)
 	{
 		return canAddWeight(weighable.getWeight());
@@ -102,6 +106,33 @@ public abstract class Vehicle extends Tool implements PersonContainer, VehicleCo
 	}
 	@Override
 	public void remove(MoneySource in) {
-		//TODO unimplemented
+		for (AbstractPerson passenger : passengers) {
+			if(passenger.moneySource == in)
+				passenger.moneySource = null;
+		}
+	}
+
+	public void setDestination(LocationPlanet locationPlanet) {
+		destination = locationPlanet;
+	}
+	private LocationPlanet destination = null;
+	@Override
+	public void doLife(long time) {
+		if(destination != null) {
+			assert (getLocation().size() == 1);
+			getLocation().get(0).goTowards(destination, (getSpeed() * time) / (12 * 60 * 60), false);
+			for (AbstractPerson passenger : passengers) {
+				// TODO: 5/22/2016 update passenger locations
+			}
+			for (Resource resource : cargo) {
+				// TODO: 5/22/2016 update locationn
+			}
+			for (Weapon weapon : weapons) {
+				// TODO: 5/22/2016 update llocations
+			}
+			for (Vehicle vehicle : vehicles) {
+				// TODO: 5/22/2016 update locations
+			}
+		}
 	}
 }
