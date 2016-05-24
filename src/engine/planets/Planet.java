@@ -6,7 +6,6 @@ package engine.planets;
 
 import engine.cities.City;
 import engine.universe.Country;
-import engine.universe.CountryContainer;
 import engine.universe.SolarSystem;
 
 import java.io.Serializable;

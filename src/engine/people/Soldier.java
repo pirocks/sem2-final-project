@@ -6,7 +6,6 @@ import engine.tools.vehicles.Vehicle;
 import engine.tools.vehicles.VehicleContainer;
 import engine.universe.Country;
 import engine.universe.MoneySource;
-import engine.universe.MoneySourceContainer;
 import engine.universe.UniversalConstants;
 
 //this is not one soldier unit. It isd a unit of soldiers

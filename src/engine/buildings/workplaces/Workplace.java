@@ -5,11 +5,9 @@ package engine.buildings.workplaces;
 import engine.buildings.Building;
 import engine.cities.CityBlock;
 import engine.people.AbstractPerson;
-import engine.people.PersonContainer;
 import engine.people.cityworkers.CityWorker;
 import engine.tools.AttackableConstants;
 import engine.universe.MoneySource;
-import engine.universe.MoneySourceContainer;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 

@@ -2,7 +2,6 @@ package engine.universe;
 
 import engine.planets.Planet;
 import engine.planets.PlanetConstructionContext;
-import engine.planets.PlanetContainer;
 
 import java.io.Serializable;
 import java.util.ArrayList;

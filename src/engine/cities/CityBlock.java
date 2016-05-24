@@ -1,7 +1,6 @@
 package engine.cities;
 
 import engine.buildings.Building;
-import engine.buildings.BuildingContainer;
 import engine.planets.Grid;
 import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;

@@ -6,7 +6,6 @@ import engine.cities.City;
 import engine.cities.CityBlock;
 import engine.cities.CityContainer;
 import engine.people.AbstractPerson;
-import engine.people.PersonContainer;
 import engine.tools.AttackableConstants;
 import engine.tools.weapons.Attackable;
 import engine.universe.ResourceDemand;

@@ -8,7 +8,6 @@ package engine.universe;
 import engine.cities.City;
 import engine.cities.CityContainer;
 import engine.people.AbstractPerson;
-import engine.people.PersonContainer;
 import engine.planets.Grid;
 import engine.planets.NaturalResource;
 import engine.planets.hazards.NaturalHazard;

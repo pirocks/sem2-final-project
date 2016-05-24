@@ -4,7 +4,6 @@ import engine.cities.*;
 import engine.planets.hazards.*;
 import engine.tools.vehicles.Vehicle;
 import engine.universe.Country;
-import engine.universe.CountryContainer;
 
 import java.io.Serializable;
 import java.util.ArrayList;

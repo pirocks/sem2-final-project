@@ -1,14 +1,12 @@
 package engine.people.cityworkers;
 
 import engine.buildings.Building;
-import engine.buildings.BuildingContainer;
 import engine.buildings.housing.Housing;
 import engine.buildings.workplaces.Hospital;
 import engine.buildings.workplaces.Workplace;
 import engine.cities.City;
 import engine.cities.CityContainer;
 import engine.people.AbstractPerson;
-import engine.people.PersonContainers;
 
 public abstract class CityWorker extends AbstractPerson implements BuildingContainer, CityContainer//don't foret to get the workplace
 {

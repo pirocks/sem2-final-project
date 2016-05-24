@@ -1,15 +1,12 @@
 package engine.tools.vehicles;
 
 import engine.people.AbstractPerson;
-import engine.people.PersonContainer;
 import engine.planets.Grid;
 import engine.planets.LocationPlanet;
 import engine.planets.Planet;
 import engine.tools.Tool;
 import engine.tools.weapons.Weapon;
-import engine.tools.weapons.WeaponContainer;
 import engine.universe.MoneySource;
-import engine.universe.MoneySourceContainer;
 import engine.universe.Resource;
 import javafx.scene.image.Image;
 

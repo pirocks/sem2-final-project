@@ -1,7 +1,6 @@
 package engine.cities;
 
 import engine.buildings.Building;
-import engine.buildings.BuildingContainer;
 import engine.buildings.UnderConstruction;
 import engine.buildings.housing.ApartmentBlock;
 import engine.buildings.housing.Housing;
@@ -9,7 +8,6 @@ import engine.buildings.housing.RulersHouse;
 import engine.buildings.housing.WorkersHouseBlock;
 import engine.buildings.workplaces.*;
 import engine.people.AbstractPerson;
-import engine.people.PersonContainer;
 import engine.people.cityworkers.CityWorker;
 import engine.planets.Grid;
 import engine.planets.LocationPlanet;
@@ -18,7 +16,6 @@ import engine.tools.AttackableConstants;
 import engine.tools.vehicles.CityBuilder;
 import engine.tools.weapons.Attackable;
 import engine.universe.Country;
-import engine.universe.CountryContainer;
 import engine.universe.MoneySource;
 
 import java.io.Serializable;

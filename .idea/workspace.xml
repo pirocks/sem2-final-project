@@ -4,13 +4,32 @@
     <option name="ANALYSIS_IN_BACKGROUND" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="clean up">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/engine/cities/Container.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/engine/cities/ContainerClass.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/engine/cities/CityContainer.java" afterPath="" />
+    <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="got something">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/engine/buildings/BuildingContainer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/engine/cities/ContainerClass.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/engine/people/PersonContainer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/engine/people/PersonContainers.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/engine/planets/PlanetContainer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/WeaponContainer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/engine/universe/CountryConstructionContext.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/engine/universe/CountryContainer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/engine/universe/CountryContainers.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/engine/universe/MoneySourceContainer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/engine/universe/MoneySourceContainers.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/Building.java" afterPath="$PROJECT_DIR$/src/engine/buildings/Building.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/housing/Housing.java" afterPath="$PROJECT_DIR$/src/engine/buildings/housing/Housing.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/Workplace.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/Workplace.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/cities/City.java" afterPath="$PROJECT_DIR$/src/engine/cities/City.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/Attackable.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/Attackable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/cities/CityBlock.java" afterPath="$PROJECT_DIR$/src/engine/cities/CityBlock.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/people/AbstractPerson.java" afterPath="$PROJECT_DIR$/src/engine/people/AbstractPerson.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/people/Soldier.java" afterPath="$PROJECT_DIR$/src/engine/people/Soldier.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/people/cityworkers/CityWorker.java" afterPath="$PROJECT_DIR$/src/engine/people/cityworkers/CityWorker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/planets/Grid.java" afterPath="$PROJECT_DIR$/src/engine/planets/Grid.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/planets/Planet.java" afterPath="$PROJECT_DIR$/src/engine/planets/Planet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/Vehicle.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/Vehicle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/universe/Country.java" afterPath="$PROJECT_DIR$/src/engine/universe/Country.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/universe/SolarSystem.java" afterPath="$PROJECT_DIR$/src/engine/universe/SolarSystem.java" />
     </list>
     <ignored path="testing.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -971,13 +990,6 @@
       <option name="presentableId" value="Default" />
       <updated>1460006225713</updated>
     </task>
-    <task id="LOCAL-00053" summary="nice image class + misc edits&#10;">
-      <created>1463077202854</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1463077202855</updated>
-    </task>
     <task id="LOCAL-00054" summary="sync">
       <created>1463103853071</created>
       <option name="number" value="00054" />
@@ -1314,7 +1326,14 @@
       <option name="project" value="LOCAL" />
       <updated>1464113957189</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="got something">
+      <created>1464117598977</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1464117598977</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1328,7 +1347,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3078101" sideWeight="0.4954683" order="6" side_tool="false" content_ui="tabs" />
@@ -1338,11 +1357,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3078101" sideWeight="0.50453174" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32159266" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25114855" sideWeight="0.496875" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25114855" sideWeight="0.496875" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32618684" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23338369" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23338369" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924962" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3093415" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24924472" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1405,7 +1424,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="another" />
     <MESSAGE value="lots of discoveries" />
     <MESSAGE value="more stuff todo" />
     <MESSAGE value="resource refactor" />
@@ -1430,7 +1448,8 @@
     <MESSAGE value="oops" />
     <MESSAGE value="going to rip out roads" />
     <MESSAGE value="clean up" />
-    <option name="LAST_COMMIT_MESSAGE" value="clean up" />
+    <MESSAGE value="got something" />
+    <option name="LAST_COMMIT_MESSAGE" value="got something" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1794,8 +1813,8 @@
           <folding>
             <element signature="method#CityBlock#0;class#CityBlock#0" expanded="false" />
             <element signature="method#getLocation#0;class#CityBlock#0" expanded="false" />
-            <element signature="e#1353#1354#0" expanded="true" />
-            <element signature="e#1400#1401#0" expanded="true" />
+            <element signature="e#1310#1311#0" expanded="true" />
+            <element signature="e#1357#1358#0" expanded="true" />
             <element signature="method#remove#0;class#CityBlock#0" expanded="false" />
             <element signature="method#remove#1;class#CityBlock#0" expanded="false" />
           </folding>
@@ -1886,13 +1905,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#200#201#0" expanded="true" />
-            <element signature="e#230#231#0" expanded="true" />
-            <element signature="e#286#303#0" expanded="true" />
-            <element signature="e#358#359#0" expanded="true" />
-            <element signature="e#383#384#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1917,8 +1930,8 @@
         <state relative-caret-position="90">
           <caret line="398" column="9" selection-start-line="398" selection-start-column="9" selection-end-line="398" selection-end-column="9" />
           <folding>
-            <element signature="e#13351#13352#0" expanded="true" />
-            <element signature="e#13386#13387#0" expanded="true" />
+            <element signature="e#13229#13230#0" expanded="true" />
+            <element signature="e#13264#13265#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1937,9 +1950,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
