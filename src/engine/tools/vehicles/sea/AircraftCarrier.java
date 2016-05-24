@@ -3,6 +3,7 @@ package engine.tools.vehicles.sea;
 import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.Resource;
 import engine.universe.ResourceDemand;
+import javafx.scene.image.Image;
 
 import static engine.universe.Resource.Type.Oil;
 import static engine.universe.Resource.Type.Silicon;
@@ -24,6 +25,11 @@ public class AircraftCarrier extends SeaCraft {
 	@Override
 	public double getSpeed() {
 		return 150;
+	}
+
+	@Override
+	public Image getImage() {
+		return null;// TODO: 5/23/2016
 	}
 
 	@Override

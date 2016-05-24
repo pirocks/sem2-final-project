@@ -4,6 +4,7 @@ import engine.planets.LocationPlanet;
 import engine.universe.Country;
 import engine.universe.Resource;
 import engine.universe.ResourceDemand;
+import javafx.scene.image.Image;
 
 import static engine.universe.Resource.Type.*;
 
@@ -41,6 +42,11 @@ public class CityBuilder extends Vehicle {
 	@Override
 	public double getSpeed() {
 		return 0;
+	}
+
+	@Override
+	public Image getImage() {
+		return null;// TODO: 5/23/2016
 	}
 
 	@Override

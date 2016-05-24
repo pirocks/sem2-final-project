@@ -3,6 +3,7 @@ package engine.tools.vehicles.sea;
 import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.Resource;
 import engine.universe.ResourceDemand;
+import javafx.scene.image.Image;
 
 import static engine.universe.Resource.Type.*;
 
@@ -29,6 +30,11 @@ public class NuclearSubmarine extends SeaCraft {
 	@Override
 	public double getSpeed() {
 		return 350;
+	}
+
+	@Override
+	public Image getImage() {
+		return null;
 	}
 
 	@Override

@@ -11,6 +11,7 @@ import engine.tools.weapons.WeaponContainer;
 import engine.universe.MoneySource;
 import engine.universe.MoneySourceContainer;
 import engine.universe.Resource;
+import javafx.scene.image.Image;
 
 import java.util.ArrayList;
 
@@ -47,6 +48,7 @@ public abstract class Vehicle extends Tool implements Liver,PersonContainer, Veh
 	public abstract boolean inSpaceQ();
 	public abstract boolean inWaterQ();
 	public abstract double getSpeed();
+	public abstract Image getImage();
 	public boolean weaponQ() {
 		return false;
 	}

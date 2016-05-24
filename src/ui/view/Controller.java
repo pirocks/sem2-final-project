@@ -338,11 +338,11 @@ public class Controller implements Initializable{
 				return true;
 		return false;
 	}
-	private Image apartmentBlockImage = new Image("https://photos.travelblog.org/Photos/12544/398145/f/3804575-Soviet-apartment-block-0.jpg");// TODO: 5/23/2016
+	private Image apartmentBlockImage = new Image("apartmentBlockImage.jpg");// TODO: 5/23/2016
 
-	private Image houseBlockImage = new Image("http://www.fritzhaeg.com/wikidiary/wp-content/uploads/2010/04/2010-04-09-P1140314.jpg");// TODO: 5/23/2016
-	private Image rulersHouseImage = new Image("http://joanneleedom-ackerman.com/wp-content/uploads/2016/02/WhiteHouseAerialView.jpg");// TODO: 5/23/2016
-	private Image dockYardImage = new Image("https://i.ytimg.com/vi/ePDoCPi06rk/maxresdefault.jpg");// TODO: 5/23/2016
+	private Image houseBlockImage = new Image("houseBlockImage.jpg");
+	private Image rulersHouseImage = new Image("rulersHouseImage.jpg");
+	private Image dockYardImage = new Image("dockYardImage.jpg");
 	private Image factoryImage = new Image("https://si.wsj" +
 			".net/public/resources/images/BT-AA578_LAFARG_GR_20150316194834.jpg");// TODO: 5/23/2016
 	private Image hospitalImage = new Image("http://vignette1.wikia.nocookie.net/zombie/images/1/18/Hospital.jpg/revision/latest?cb=20160329114824");// TODO: 5/23/2016

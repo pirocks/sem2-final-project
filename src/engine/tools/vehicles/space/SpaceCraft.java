@@ -2,6 +2,7 @@ package engine.tools.vehicles.space;
 
 import engine.tools.vehicles.Vehicle;
 import engine.tools.vehicles.VehicleInitialConstants;
+import javafx.scene.image.Image;
 
 public abstract class SpaceCraft extends Vehicle
 {
@@ -19,5 +20,10 @@ public abstract class SpaceCraft extends Vehicle
 	@Override
 	public boolean inWaterQ() {
 		return false;
+	}
+
+	@Override
+	public Image getImage() {
+		return null;
 	}
 }
