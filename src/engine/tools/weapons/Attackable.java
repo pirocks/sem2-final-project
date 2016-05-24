@@ -1,6 +1,7 @@
 package engine.tools.weapons;
 
 
+import engine.planets.Grid;
 import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 
@@ -11,6 +12,7 @@ public abstract class Attackable
 	private double health;
 	private double resistance;
 	public ArrayList<LocationPlanet> location;
+
 	public Attackable(double health, double resistance, ArrayList<LocationPlanet> location)
 	{
 		this.health = health;
@@ -33,9 +35,7 @@ public abstract class Attackable
 	{
 		assert(inRange(attacker.getRange(),attacker.getLocationPlanet().get(0)));
 		health -= damage/resistance;
-		if(amIDead())
-			return true;
-		return false;
+		return amIDead();
 	}
 	public boolean inRange(double range,LocationPlanet loc)
 	{
@@ -46,15 +46,11 @@ public abstract class Attackable
 	}
 	public boolean amIDead()
 	{
-		if(health <= 0)
-			return true;
-		return false;
+		return health <= 0;
 	}
 	public boolean amIAlive()
 	{
-		if(health > 0)
-			return true;
-		return false;
+		return health > 0;
 	}
 	public double increaseHealth(double amount)
 	{
@@ -75,4 +71,8 @@ public abstract class Attackable
 		return health;
 	}
 	public abstract void die();
+
+	public Grid getGrid() {
+		return location.get(0).getGrid();
+	}
 }

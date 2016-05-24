@@ -204,8 +204,12 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 
 	public City(CityBuilder cityBuilder){
 		super(new AttackableConstants(healthInitial,resistanceInitial,cityBuilder.getLocation()));
-		CityBlock cityBlock
-		buildBuilding(new UnderConstruction<TownHall>(getLocation(),new TownHall(),this));
+		moneySource = cityBuilder.getParentCountry();
+		CityBlock cityBlock = new CityBlock(new AttackableConstants(1,1,location),cityBuilder.getGrid(),null,this,49,
+				49);
+		buildBuilding(new UnderConstruction<TownHall>(getLocation().get(0),new TownHall(cityBlock,this.getMoneySource
+				()),
+				this));
 	}
 
 	private void notEnoughHousingHandler(CityConstructionContext c) {

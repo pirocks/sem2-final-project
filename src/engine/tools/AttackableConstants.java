@@ -1,5 +1,6 @@
 package engine.tools;
 
+import engine.planets.Grid;
 import engine.planets.LocationPlanet;
 import engine.tools.weapons.Attackable;
 
@@ -40,5 +41,8 @@ public class AttackableConstants {
 			return true;
 		}
 		return false;
+	}
+	public Grid getGrid() {
+		return  locationPlanet.get(0).getGrid();
 	}
 }

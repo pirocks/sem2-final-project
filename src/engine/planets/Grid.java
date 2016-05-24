@@ -153,8 +153,8 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
     {
         return 0;//maybe I should return the center
     }
-    public double getZInUniverse()//top left corner of grid not actual center
-    {
+    public double getZInUniverse() {
+	    //top left corner of grid not actual center
         double planetZ = parentPlanet.getZInUniverse();
         double planetHeight = parentPlanet.getplanetRadius();
         double startHeight = planetZ + planetHeight;
@@ -194,7 +194,6 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
 			assert(false);
 		}
 	}
-
 	@Override
 	public String toString() {
 		return "x:" + x + "y:" + y;// + "types:" + terrainType.toString();

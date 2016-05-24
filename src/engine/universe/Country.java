@@ -107,7 +107,6 @@ public class Country extends MoneySource implements Serializable,PersonContainer
 		this.capitalCity = capitalCity;
 	}
 
-
 	// private //capital city whitehhouse
     public enum GovernmentType
     {

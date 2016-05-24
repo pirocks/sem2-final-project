@@ -2,7 +2,9 @@ package engine.tools.vehicles;
 
 import engine.people.AbstractPerson;
 import engine.people.PersonContainer;
+import engine.planets.Grid;
 import engine.planets.LocationPlanet;
+import engine.planets.Planet;
 import engine.tools.Tool;
 import engine.tools.weapons.Weapon;
 import engine.tools.weapons.WeaponContainer;
@@ -36,6 +38,11 @@ public abstract class Vehicle extends Tool implements Liver,PersonContainer, Veh
 		cargo = new ArrayList<>();
 		weapons = new ArrayList<>();
 		vehicles = new ArrayList<>();
+		for (LocationPlanet locationPlanet : vehicleInitialConstants.attackableConstants.locationPlanet) {
+			Planet p = locationPlanet.getPlanet();
+			Grid grid = p.getGrids()[locationPlanet.getGridy()][locationPlanet.getGridx()];
+			grid.vehicleArrives(this);
+		}
 	}
 	public abstract boolean inSpaceQ();
 	public abstract boolean inWaterQ();
@@ -120,7 +127,13 @@ public abstract class Vehicle extends Tool implements Liver,PersonContainer, Veh
 	public void doLife(long time) {
 		if(destination != null) {
 			assert (getLocation().size() == 1);
+			Grid initialGrid = getLocation().get(0).getGrid();
 			getLocation().get(0).goTowards(destination, (getSpeed() * time) / (12 * 60 * 60), false);
+			Grid finalGrid = getLocation().get(0).getGrid();
+			if(finalGrid != initialGrid) {
+				initialGrid.vehicleLeaves(this);
+				finalGrid.vehicleArrives(this);
+			}
 			for (AbstractPerson passenger : passengers) {
 				// TODO: 5/22/2016 update passenger locations
 			}

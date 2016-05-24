@@ -60,7 +60,7 @@ public class Universe implements Serializable, CountryContainer
 		    }
 		    Grid[][] grids = planet.getGrids();
 		    Grid grid = grids[grids.length / 2][grids[0].length / 2];
-		    CityBuilder cityBuilder = new CityBuilder(new LocationPlanet(grid,50,50));
+		    CityBuilder cityBuilder = new CityBuilder(new LocationPlanet(grid,50,50),playersCountry);
 
 	    }
     }

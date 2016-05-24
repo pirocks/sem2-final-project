@@ -18,7 +18,6 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -174,53 +173,25 @@ public class Controller implements Initializable{
 		for(int y = 0; y < planet.getGrids().length;y++)
 			for (int x = 0; x < planet.getGrids()[y].length; x++) {
 				Grid grid = planet.getGrids()[y][x];
-				ImageView terrainImageView = new ImageView();
-				terrainImageView.setImage(getImage(grid.getTerrainType()));
-				terrainImageView.setPreserveRatio(true);
-				terrainImageView.setFitHeight(200);
-				terrainImageView.setFitWidth(200);
-				ArrayList<Node> imageList = new ArrayList<>();
-				imageList.add(terrainImageView);
-				for (City c : grid.getCitys()) {
-					ImageView cityImageView = new ImageView();
-					cityImageView.setOnMouseMoved(new EventHandler<MouseEvent>() {
-						@Override
-						public void handle(MouseEvent event) {
-							focusCityInAccordion(c);
-						}
-					});
-					cityImageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
-						@Override
-						public void handle(MouseEvent event) {
-							switchTo(c);
-						}
-					});
-					cityImageView.setImage(cityImage);
-					cityImageView.setPreserveRatio(true);
-					cityImageView.setFitWidth(150);
-					cityImageView.setFitHeight(150);
-					imageList.add(cityImageView);
-				}
-				grid.getVehicles();
-				Group completeGridImage = new Group(imageList);
+				Group completeGridImage =  new PlanetGroup(grid,playersCountry,this);
 				gridPane.add(completeGridImage, x, y);
 			}
 		planetBorderPane.setCenter(new ScrollPane(gridPane));
 		System.out.print("done");
 	}
 
-	private static Image mountainImage = new Image("http://3.imimg.com/data3/FK/TS/MY-16623584/himalayan-gateway-tour-package-125x12.jpg");
-	private static Image hillImage = new Image("http://s7.eu.is.pp.ru/l/larismilke/1/46299541Rkj.jpg");
-	private static Image seaImage =  new Image("http://cs629408.vk.me/v629408061/2cabc/LoMYe0EB2HI.jpg");
-	private static Image landImage = new Image("http://www.mayrwirt.at/wp-content/uploads/musik-haus.jpg");
-	private static Image wastelandImage =  new Image("http://vignette4.wikia.nocookie.net/fallout/images/a/a0/WastelandPicture.jpg/revision/latest/scale-to-width-down/180?cb=20110309003621");
-	private static Image coastImage = new Image("http://republic.pink/MyThumb.php?file=images/1/0/2/8/8/3/4/en/1-coastImage.jpg&size=200");
-	private static Image cityImage = new Image("https://image.freepik" +
+	private static Image mountainImage = new Image("http://3.imimg.com/data3/FK/TS/MY-16623584/himalayan-gateway-tour-package-125x12.jpg");// TODO: 5/23/2016
+	private static Image hillImage = new Image("http://s7.eu.is.pp.ru/l/larismilke/1/46299541Rkj.jpg");// TODO: 5/23/2016
+	private static Image seaImage =  new Image("http://cs629408.vk.me/v629408061/2cabc/LoMYe0EB2HI.jpg");// TODO: 5/23/2016
+	private static Image landImage = new Image("http://www.mayrwirt.at/wp-content/uploads/musik-haus.jpg");// TODO: 5/23/2016
+	private static Image wastelandImage =  new Image("http://vignette4.wikia.nocookie.net/fallout/images/a/a0/WastelandPicture.jpg/revision/latest/scale-to-width-down/180?cb=20110309003621");// TODO: 5/23/2016
+	private static Image coastImage = new Image("http://republic.pink/MyThumb.php?file=images/1/0/2/8/8/3/4/en/1-coastImage.jpg&size=200");// TODO: 5/23/2016
+	public static Image cityImage = new Image("https://image.freepik" +
 			".com/free-icon/set-of-buildings-in-a-city_318-41262" +
-			".jpg");
-	private static Image constructionSite = new Image("http://vignette2.wikia.nocookie.net/simcountry/images/d/d6/Construction-site.jpeg/revision/latest?cb=20140403030541");
+			".jpg");// TODO: 5/23/2016
+	private static Image constructionSite = new Image("http://vignette2.wikia.nocookie.net/simcountry/images/d/d6/Construction-site.jpeg/revision/latest?cb=20140403030541");// TODO: 5/23/2016
 
-	private Image getImage(TerrainType terrainType) {
+	public static Image getImage(TerrainType terrainType) {
 		switch (terrainType) {
 			case Land:
 				return landImage;
@@ -367,19 +338,21 @@ public class Controller implements Initializable{
 				return true;
 		return false;
 	}
-	private Image apartmentBlockImage = new Image("https://photos.travelblog.org/Photos/12544/398145/f/3804575-Soviet-apartment-block-0.jpg");
+	private Image apartmentBlockImage = new Image("https://photos.travelblog.org/Photos/12544/398145/f/3804575-Soviet-apartment-block-0.jpg");// TODO: 5/23/2016
 
-	private Image houseBlockImage = new Image("http://www.fritzhaeg.com/wikidiary/wp-content/uploads/2010/04/2010-04-09-P1140314.jpg");
-	private Image rulersHouseImage = new Image("http://joanneleedom-ackerman.com/wp-content/uploads/2016/02/WhiteHouseAerialView.jpg");
-	private Image dockYardImage = new Image("https://i.ytimg.com/vi/ePDoCPi06rk/maxresdefault.jpg");
-	private Image factoryImage = new Image("https://si.wsj.net/public/resources/images/BT-AA578_LAFARG_GR_20150316194834.jpg");
-	private Image hospitalImage = new Image("http://vignette1.wikia.nocookie.net/zombie/images/1/18/Hospital.jpg/revision/latest?cb=20160329114824");
-	private Image industrialDockImage = new Image("http://antiguahistory.net/Museum/images/DockyardAirEastDec03-3.jpg");
-	private Image researchAreaImage = new Image("http://tees.tamu.edu/media/246752/gerb_750x460.jpg");
-	private Image schoolImage = new Image("https://d.wattpad.com/story_parts/231562063/images/143bd5d22ed4314e.jpg");
-	private Image townHallImage = new Image("http://sterlingma.virtualtownhall.net/Pages/SterlingMA_Webdocs/0154FDE4-000F8513.0/old%20town%20hall.jpg");
-	private Image warehouseImage = new Image("http://cijjournal.com/uploads/encompassme/images/7975b64476926cf9b6ac9498c40a697f50e3de53.png");
-	private Image emptyImage = new Image("https://gregfallisdotcom.files.wordpress.com/2011/08/dairy-section.jpg");
+	private Image houseBlockImage = new Image("http://www.fritzhaeg.com/wikidiary/wp-content/uploads/2010/04/2010-04-09-P1140314.jpg");// TODO: 5/23/2016
+	private Image rulersHouseImage = new Image("http://joanneleedom-ackerman.com/wp-content/uploads/2016/02/WhiteHouseAerialView.jpg");// TODO: 5/23/2016
+	private Image dockYardImage = new Image("https://i.ytimg.com/vi/ePDoCPi06rk/maxresdefault.jpg");// TODO: 5/23/2016
+	private Image factoryImage = new Image("https://si.wsj" +
+			".net/public/resources/images/BT-AA578_LAFARG_GR_20150316194834.jpg");// TODO: 5/23/2016
+	private Image hospitalImage = new Image("http://vignette1.wikia.nocookie.net/zombie/images/1/18/Hospital.jpg/revision/latest?cb=20160329114824");// TODO: 5/23/2016
+	private Image industrialDockImage = new Image("http://antiguahistory.net/Museum/images/DockyardAirEastDec03-3" +
+			".jpg");// TODO: 5/23/2016
+	private Image researchAreaImage = new Image("http://tees.tamu.edu/media/246752/gerb_750x460.jpg");// TODO: 5/23/2016
+	private Image schoolImage = new Image("https://d.wattpad.com/story_parts/231562063/images/143bd5d22ed4314e.jpg");// TODO: 5/23/2016
+	private Image townHallImage = new Image("http://sterlingma.virtualtownhall.net/Pages/SterlingMA_Webdocs/0154FDE4-000F8513.0/old%20town%20hall.jpg");// TODO: 5/23/2016
+	private Image warehouseImage = new Image("http://cijjournal.com/uploads/encompassme/images/7975b64476926cf9b6ac9498c40a697f50e3de53.png");// TODO: 5/23/2016
+	private Image emptyImage = new Image("https://gregfallisdotcom.files.wordpress.com/2011/08/dairy-section.jpg");// TODO: 5/23/2016
 	private Image getImage(Building building) {
 		if(building instanceof Housing)
 		{
