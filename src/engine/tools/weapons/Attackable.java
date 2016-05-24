@@ -13,14 +13,12 @@ public abstract class Attackable
 	private double resistance;
 	public ArrayList<LocationPlanet> location;
 
-	public Attackable(double health, double resistance, ArrayList<LocationPlanet> location)
-	{
+	public Attackable(double health, double resistance, ArrayList<LocationPlanet> location) {
 		this.health = health;
 		this.resistance = resistance;
 		this.location = location;
 	}
-	public Attackable(AttackableConstants a)
-	{
+	public Attackable(AttackableConstants a) {
 		if(a == null) {
 			health = Integer.MAX_VALUE;
 			resistance = Integer.MAX_VALUE;// TODO: 5/10/2016 better eway f habdling cityblock behavior?
@@ -31,14 +29,12 @@ public abstract class Attackable
 			this.location = a.locationPlanet;
 		}
 	}
-	public boolean receiveDamage(double damage, Weapon attacker)
-	{
+	public boolean receiveDamage(double damage, Weapon attacker) {
 		assert(inRange(attacker.getRange(),attacker.getLocationPlanet().get(0)));
 		health -= damage/resistance;
 		return amIDead();
 	}
-	public boolean inRange(double range,LocationPlanet loc)
-	{
+	public boolean inRange(double range,LocationPlanet loc) {
 		for(LocationPlanet loc2:location)
 			if(loc.distanceBetween(loc2) < range)
 				return true;
@@ -52,8 +48,7 @@ public abstract class Attackable
 	{
 		return health > 0;
 	}
-	public double increaseHealth(double amount)
-	{
+	public double increaseHealth(double amount) {
 		health += amount;
 		return health;
 	}
@@ -61,13 +56,11 @@ public abstract class Attackable
 	{
 		return location;
 	}
-	public ArrayList<LocationPlanet> getLocation()
-	{
+	public ArrayList<LocationPlanet> getLocation() {
 		assert (location.size() == 1);
 		return location;
 	}
-	public double getHealth()
-	{
+	public double getHealth() {
 		return health;
 	}
 	public abstract void die();
