@@ -6,36 +6,31 @@ package engine.universe;
  */
 
 import engine.cities.City;
-import engine.cities.CityContainer;
+import engine.cities.Container;
 import engine.people.AbstractPerson;
 import engine.planets.Grid;
 import engine.planets.NaturalResource;
 import engine.planets.hazards.NaturalHazard;
 import engine.science.CountriesDiscoveries;
+import engine.tools.weapons.Attackable;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Country extends MoneySource implements Serializable,PersonContainer,CountryContainer, CityContainer
+public class Country extends MoneySource implements Serializable, Container
 {
 	private static String[] CountryNames =
     {"England","USA","France","China","Tanzania","Botswana",
         "Seychelles","Scotland","Liechtenstein","Comoros","Tuvalu","Kosovo","Sahrawi"
     };
 	private static int countryNameCount = 0;
-
 	private ArrayList<Grid> grids;
-
 	private ArrayList<Country> allies;
 	private ArrayList<Country> atWarWith;
 	private ArrayList<AbstractPerson> people;
-
 	private CountriesDiscoveries countriesDiscoveries;
-
-
 	private City capitalCity;
-    public Country(UniverseConstructionContext u)
-    {
+    public Country(UniverseConstructionContext u) {
         super(Double.NaN);
         try {
 	        name = CountryNames[countryNameCount];
@@ -51,17 +46,6 @@ public class Country extends MoneySource implements Serializable,PersonContainer
 	    people = new ArrayList<>();
 	    countriesDiscoveries = new CountriesDiscoveries(this);
     }
-
-
-    // public Country(double wealth,ArrayList<Grid> grids,String name)
-    // {
-    //     super(wealth);
-    //     allies = new ArrayList<>();
-    //     atWarWith = new ArrayList<>();
-    //     name = CountryNames[countryNameCount];
-    //     countryNameCount++;
-    // }
-    @Override
     public void remove(City city) {
         if(city == capitalCity)
         {
@@ -71,41 +55,41 @@ public class Country extends MoneySource implements Serializable,PersonContainer
 	        //TODO: if ruler dies
         }
     }
-
-    @Override
     public void remove(AbstractPerson person) {
-        // TODO: 4/10/2016
+        if(people.remove(person))
+	        remove(person);
     }
-
-    @Override
-    public void remove(Country country, Country conqueror) {
-        // TODO: 4/10/2016
-    }
-
 	public String getName() {
 		return name;
 	}
-
 	public ArrayList<Country> getAllies() {
 		return allies;
 	}
-
 	public ArrayList<Country> getAtWarWith() {
 		return atWarWith;
 	}
-
 	public void setCapitalCity(City capitalCity) {
 		this.capitalCity = capitalCity;
 	}
 
+	@Override
+	public void remove(Attackable attackable) {
+		if(attackable instanceof City){
+			remove((City)attackable);
+		}
+		else if(attackable instanceof AbstractPerson){
+			remove((AbstractPerson) attackable);
+		}
+		else
+			throw new IllegalStateException();
+	}
+
 	// private //capital city whitehhouse
-    public enum GovernmentType
-    {
+    public enum GovernmentType {
         Democracy,Communist,Fascist,Totalitarian
     }
 	private GovernmentType governmentType;
-	public ArrayList<NaturalHazard> getNaturalHazards()
-    {
+	public ArrayList<NaturalHazard> getNaturalHazards() {
         ArrayList<NaturalHazard> out = new ArrayList<NaturalHazard>();
         for(Grid grid:grids)
         {
@@ -115,8 +99,7 @@ public class Country extends MoneySource implements Serializable,PersonContainer
         }
         return out;
     }
-	public ArrayList<NaturalResource> getNaturalResources()
-    {
+	public ArrayList<NaturalResource> getNaturalResources() {
         ArrayList<NaturalResource> out = new ArrayList<NaturalResource>();
         for(Grid grid:grids)
         {
@@ -134,8 +117,7 @@ public class Country extends MoneySource implements Serializable,PersonContainer
     {
         return capitalCity;
     }
-	public ArrayList<City> getAllCities()
-	{
+	public ArrayList<City> getAllCities() {
 		ArrayList<City> out = new ArrayList<>();
 		for(Grid grid:grids)
 		{

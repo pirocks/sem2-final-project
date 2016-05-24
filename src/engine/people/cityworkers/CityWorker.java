@@ -5,14 +5,24 @@ import engine.buildings.housing.Housing;
 import engine.buildings.workplaces.Hospital;
 import engine.buildings.workplaces.Workplace;
 import engine.cities.City;
-import engine.cities.CityContainer;
+import engine.cities.Container;
 import engine.people.AbstractPerson;
+import engine.tools.weapons.Attackable;
 
-public abstract class CityWorker extends AbstractPerson implements BuildingContainer, CityContainer//don't foret to get the workplace
+public abstract class CityWorker extends AbstractPerson implements Container//don't foret to get the workplace
 {
 	public static long travelTimeConstant;
 	public static long TimeAtWork;
 	public static long TimeAtHome;
+
+	@Override
+	public void remove(Attackable attackable) {
+		if(attackable instanceof Building)
+			remove((Building)attackable);
+		if(attackable instanceof City)
+			remove((City)attackable);
+	}
+
 	public enum WhereAmI {
 		AtWork,AtHospital,AtHome,GoingToWork,GoingToHospital,GoingToHome
 	}
@@ -24,9 +34,8 @@ public abstract class CityWorker extends AbstractPerson implements BuildingConta
 	private Hospital hospital; //is null if not going to hospital
 	public CityWorker(PeopleInitialConstants peopleInitialConstants,City city) {
 		super(peopleInitialConstants);
-		registerCityContainer();
-		registerBuildingContainer();
 		currentCity = city;
+		registerContainer(city);
 	}
 	public void goHome() {
 		double distance = home.getLocation().get(0).distanceBetween(currentBuilding.getLocation().get(0));
@@ -74,6 +83,7 @@ public abstract class CityWorker extends AbstractPerson implements BuildingConta
 	}
 	public void doLife(long time) {
 		checkHealth();
+		registerContainer(currentBuilding);
 		if(home == null)
 			setWorkPlaceToNull();
 		//todo how does this class respond when workplace is null
@@ -130,16 +140,12 @@ public abstract class CityWorker extends AbstractPerson implements BuildingConta
 	@Override
 	public void dieSpecific()
 	{
-		PersonContainers.remove(this);
+		Container.kill(this);
 	}
-	//TODO: figure out how cityless workers work//they don't//whats more intersiting is workers that ar on roads when city is destroyed
-	@Override
 	public void remove(City city) {
-		//todo what about workers on roads.
 		if(currentCity == city)
 			die();
 	}
-	@Override
 	public void remove(Building building) {
 		if(currentBuilding == building) {
 			die();//not sure about this

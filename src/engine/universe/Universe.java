@@ -19,7 +19,7 @@ import java.util.concurrent.ThreadLocalRandom;
  */
  
 
-public class Universe implements Serializable, CountryContainer
+public class Universe implements Serializable
 {
 	public transient static Universe universe;// TODO: 5/8/2016 make this non tranient//  figure out how this will load
 	public static Country playersCountry;
@@ -27,8 +27,6 @@ public class Universe implements Serializable, CountryContainer
 	private ArrayList<Country> countries;
     private Universe(UniverseConstructionContext u,int numSolarSystems,double size)//size is not related to engine.universe units
     {
-
-        registerCountryContainer();
         if(u.countries == null)
 	        throw new IllegalArgumentException();
 	    solarSystems = new ArrayList<>();
@@ -69,10 +67,6 @@ public class Universe implements Serializable, CountryContainer
 		//what on earth is the point of this // TODO: 5/9/2016
 		this(universeConstructionContext,universeConstructionContext.numSolarSystems,universeConstructionContext.universeRadius);
 	}
-    @Override
-    public void remove(Country country,Country conqueror) {
-        countries.remove(country);
-    }
 
 	public ArrayList<SolarSystem> getSolarSystems() {
 		return solarSystems;

@@ -1,10 +1,12 @@
 package engine.tools.vehicles;
 
+import engine.cities.Container;
 import engine.people.AbstractPerson;
 import engine.planets.Grid;
 import engine.planets.LocationPlanet;
 import engine.planets.Planet;
 import engine.tools.Tool;
+import engine.tools.weapons.Attackable;
 import engine.tools.weapons.Weapon;
 import engine.universe.MoneySource;
 import engine.universe.Resource;
@@ -12,8 +14,7 @@ import javafx.scene.image.Image;
 
 import java.util.ArrayList;
 
-public abstract class Vehicle extends Tool implements Liver,PersonContainer, VehicleContainer, WeaponContainer,
-		MoneySourceContainer
+public abstract class Vehicle extends Tool implements Liver,Container
 {
 	private double fuelPercent = 0.0;//from 0 t  1
 	private double fuelCapacity = 0.0;//from 0 to 1
@@ -25,10 +26,6 @@ public abstract class Vehicle extends Tool implements Liver,PersonContainer, Veh
 	private double maxWeight;
 	protected Vehicle(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
 		super(vehicleInitialConstants.attackableConstants, numToolsConstructor);
-		registerPersonContainer();
-		registerMoneySourceContainer();
-		registerVehicleContainer();
-		registerWeaponContainer();
 		registerLiver();// TODO: 5/22/2016 go through and check these
 		maxPassengers = vehicleInitialConstants.maxPassengers;
 		maxWeight = vehicleInitialConstants.maxWeight;
@@ -36,6 +33,9 @@ public abstract class Vehicle extends Tool implements Liver,PersonContainer, Veh
 		cargo = new ArrayList<>();
 		weapons = new ArrayList<>();
 		vehicles = new ArrayList<>();
+		registerContainer(passengers);
+		registerContainer(weapons);
+		registerContainer(vehicles);
 		for (LocationPlanet locationPlanet : vehicleInitialConstants.attackableConstants.locationPlanet) {
 			Planet p = locationPlanet.getPlanet();
 			Grid grid = p.getGrids()[locationPlanet.getGridy()][locationPlanet.getGridx()];
@@ -57,16 +57,21 @@ public abstract class Vehicle extends Tool implements Liver,PersonContainer, Veh
 		if(canAddObject(weighable)) {
 			if (weighable instanceof Vehicle) {
 				vehicles.add((Vehicle) weighable);
+				registerContainer((Attackable) weighable);
 			}
 			else if(weighable instanceof Weapon) {
 				weapons.add((Weapon) weighable);
+				registerContainer((Attackable) weighable);
+
 			}
 			else if(weighable instanceof Resource) {
 				cargo.add((Resource) weighable);
 			}
 			else if(weighable instanceof AbstractPerson) {
-				if(passengers.size() < maxPassengers)
+				if(passengers.size() < maxPassengers) {
 					passengers.add((AbstractPerson) weighable);
+					registerContainer((Attackable) weighable);
+				}
 			}
 			else
 				throw new IllegalStateException();
@@ -74,7 +79,53 @@ public abstract class Vehicle extends Tool implements Liver,PersonContainer, Veh
 		else
 			throw new Weighable.ToHeavyException(weighable);
 	}
-	// TODO: 5/22/2016 unloading objects
+	public Vehicle unloadVehicle(Vehicle vehicle){
+		if(vehicles.contains(vehicle))
+		{
+			vehicles.remove(vehicle);
+			deregisterContainer(vehicle);
+		}
+		else
+		{
+			throw  new IllegalStateException();
+		}
+		return vehicle;
+	}
+	public Resource unloadResource(Resource resource){
+		if(cargo.contains(resource))
+		{
+			cargo.remove(resource);
+		}
+		else
+		{
+			throw  new IllegalStateException();
+		}
+		return resource;
+	}
+	public AbstractPerson unloadPerson(AbstractPerson abstractPerson){
+		if(passengers.contains(abstractPerson))
+		{
+			passengers.remove(abstractPerson);
+			deregisterContainer(abstractPerson);
+		}
+		else
+		{
+			throw  new IllegalStateException();
+		}
+		return abstractPerson;
+	}
+	public Weapon unloadWeapon(Weapon weapon){
+		if(weapons.contains(weapon))
+		{
+			weapons.remove(weapon);
+			deregisterContainer(weapon);
+		}
+		else
+		{
+			throw  new IllegalStateException();
+		}
+		return weapon;
+	}
 	public  boolean canAddObject(Weighable weighable)
 	{
 		return canAddWeight(weighable.getWeight());
@@ -94,30 +145,26 @@ public abstract class Vehicle extends Tool implements Liver,PersonContainer, Veh
 			out += vehicle.getWeight();
 		return out;
 	}
-	public void die()
-	{
-		VehicleContainer.killVehicle(this);
+	public void die() {
+		Container.kill(passengers);
+		Container.kill(weapons);
+		Container.kill(vehicles);
 	}
-	@Override
 	public void remove(AbstractPerson person) {
 		passengers.remove(person);
 	}
-	@Override
 	public void remove(Vehicle vehicle) {
 		vehicles.remove(vehicle);
 	}
-	@Override
 	public void remove(Weapon weapon) {
 		weapons.remove(weapon);
 	}
-	@Override
 	public void remove(MoneySource in) {
 		for (AbstractPerson passenger : passengers) {
 			if(passenger.moneySource == in)
 				passenger.moneySource = null;
 		}
 	}
-
 	public void setDestination(LocationPlanet locationPlanet) {
 		destination = locationPlanet;
 	}
@@ -146,5 +193,18 @@ public abstract class Vehicle extends Tool implements Liver,PersonContainer, Veh
 				// TODO: 5/22/2016 update locations
 			}
 		}
+	}
+	@Override
+	public void remove(Attackable attackable) {
+		if(attackable instanceof Weapon) {
+			remove((Weapon) attackable);
+		}
+		else if(attackable instanceof Vehicle) {
+			remove((Vehicle)attackable);
+		}
+		else if(attackable instanceof AbstractPerson){
+			remove((AbstractPerson)attackable);
+		}
+
 	}
 }

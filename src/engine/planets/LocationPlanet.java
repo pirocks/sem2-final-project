@@ -4,11 +4,13 @@ package engine.planets;
 import engine.buildings.Building;
 import engine.cities.City;
 import engine.cities.CityBlock;
+import engine.cities.Container;
+import engine.tools.weapons.Attackable;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-public class LocationPlanet implements Serializable,PlanetContainer
+public class LocationPlanet implements Serializable,Container
 {
 	public Planet planet;
 	private int Gridx;
@@ -23,7 +25,7 @@ public class LocationPlanet implements Serializable,PlanetContainer
 		this.Gridy = Gridy;
 	}
 	public LocationPlanet(CityBlock b) {
-		registerPlanetContainer();
+		registerContainer(planet);
 		Blockx = b.getXInGrid();
 		Blocky = b.getYInGrid();
 		Gridx = b.getGrid().getX();
@@ -137,14 +139,6 @@ public class LocationPlanet implements Serializable,PlanetContainer
 		return Blocky;
 	}
 	public Planet getPlanet() {return planet;}
-	@Override
-	public void remove(Planet planet) {
-		if(this.planet == planet)
-		{
-			this.planet = null;
-			assert(false);
-		}
-	}
 	public static LocationPlanet mediumLocation(LocationPlanet a,LocationPlanet b) {
 		assert (a.getPlanet() ==  b.getPlanet());
 		int Gridxa = a.getGridx();
@@ -184,5 +178,13 @@ public class LocationPlanet implements Serializable,PlanetContainer
 				return true;
 		}
 		return false;
+	}
+
+	@Override
+	public void remove(Attackable attackable) {
+		if(attackable instanceof Planet)
+			planet =null;
+		else
+			throw new IllegalStateException();
 	}
 }

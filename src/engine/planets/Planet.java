@@ -5,6 +5,8 @@ package engine.planets;
  */
 
 import engine.cities.City;
+import engine.cities.Container;
+import engine.tools.weapons.Attackable;
 import engine.universe.Country;
 import engine.universe.SolarSystem;
 
@@ -14,8 +16,10 @@ import java.util.ArrayList;
     grid array that serves as building block of planet
     resources on each grid array
     possible hazards volcano,temperature changes,weather. hazards are local to grid array*/
-public class Planet implements Serializable,CountryContainer
+public class Planet extends Attackable implements Serializable
 {
+	public static double resitanceInitial;
+	public static double startHeathInitial;
 	//TODO make a better constructor
     private ArrayList<Country> countries = new ArrayList<>();
     private ArrayList<Continent> continents = new ArrayList<>();
@@ -38,11 +42,14 @@ public class Planet implements Serializable,CountryContainer
 		nameCount++;
 	}
     public Planet(int size) {
-        registerCountryContainer();
+	    super(resitanceInitial,startHeathInitial,new ArrayList<LocationPlanet>(){{add(new LocationPlanet(null,0,0,0,0));}});
+	    super.setParentPlanet(this);
         grids = new Grid[size][size * 2];
 	    setName();
     }
     public Planet(PlanetConstructionContext c, SolarSystem solarSystem) {
+	    super(resitanceInitial,startHeathInitial,new ArrayList<LocationPlanet>(){{add(new LocationPlanet(null,0,0,0,0));}});
+	    super.setParentPlanet(this);
 	    parentSolarSystem = solarSystem;
 	    GridConstructionContext[][] futureGrids = new GridConstructionContext[c.gridNum][c.gridNum];
 	    grids = new Grid[c.gridNum][c.gridNum];
@@ -85,7 +92,6 @@ public class Planet implements Serializable,CountryContainer
 //	    parentSolarSystem = c.star.getParentSolarSystem();
 	    solarSystemRadius = c.radiusFromSolarSystem;
     }
-
     public double getplanetRadius()
     {
         return planetRadius;
@@ -128,28 +134,23 @@ public class Planet implements Serializable,CountryContainer
 
 		return out;
 	}
-    @Override
-    public void remove(Country country,Country conqueror) {
-        countries.remove(country);
-        if(!countries.contains(conqueror))
-	        countries.add(conqueror);
-    }
 	@Override
 	public String toString() {
 		String out = "Planet:" + name + "\n";
 		out += "Occupying Countries:" + countries;
 		return out;
 	}
-
 	public Grid[][] getGrids() {
 		return grids;
 	}
-
 	public double getSolarSystemRadius() {
 		return solarSystemRadius;
 	}
-
 	public SolarSystem getParentSolarSystem() {
 		return parentSolarSystem;
+	}
+	@Override
+	public void die() {
+		Container.kill(this);
 	}
 }

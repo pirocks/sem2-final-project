@@ -2,7 +2,6 @@ package engine.buildings;
 
 import engine.cities.City;
 import engine.cities.CityBlock;
-import engine.people.AbstractPerson;
 import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.universe.Resource;
@@ -52,11 +51,6 @@ public class UnderConstruction<Type extends Building> extends Building implement
 	@Override
 	protected String getName() {
 		return "Construction Site";
-	}
-
-	@Override
-	public void remove(AbstractPerson person) {
-		return;
 	}
 
 	@Override

@@ -12,26 +12,45 @@ import java.util.HashMap;
 public interface Container
 {
 	void remove(Attackable attackable);
-	default void registerContainer(ArrayList<Attackable> containedObjects)
-	{
+	default void registerContainer(ArrayList<? extends Attackable> containedObjects) {
 		for (Attackable object : containedObjects) {
-			registerContainer(this,object);
+			registerContainerInternal(this,object);
 		}
 	}
+	default void registerContainer(Attackable attackable)
+	{
+		registerContainerInternal(this,attackable);
+	}
+	default void deregisterContainer(Attackable object)
+	{
+		deregisterContainerInternal(this,object);
+	}
+
+	static void deregisterContainerInternal(Container container, Attackable object)
+	{
+		if(cityContainers.get(object).remove(container))
+			deregisterContainerInternal(container,object);
+	}
+
 	HashMap<Attackable,ArrayList<Container>> cityContainers= new HashMap<>();
 
-	static void registerContainer(Container typeContainer, Attackable object) {
+	static void registerContainerInternal(Container typeContainer, Attackable object) {
 		if(cityContainers.containsKey(object))
 			cityContainers.get(object).add(typeContainer);
 		else
 			cityContainers.put(object,new ArrayList<Container>(){{add(typeContainer);}});
 	}
-	static void kill(Attackable target)
-	{
+	static void kill(Attackable target) {
 		for (Container container : cityContainers.get(target)) {
 			container.remove(target);
 		}
 		cityContainers.remove(target);
+	}
+	static void kill(ArrayList<? extends Attackable> targets)
+	{
+		for (Attackable target : targets) {
+			kill(target);
+		}
 
 	}
 

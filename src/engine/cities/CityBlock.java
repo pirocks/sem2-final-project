@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 //import engine.buildings.BuildingContainers;
 
-public class CityBlock extends Attackable implements Serializable, CityContainer, BuildingContainer
+public class CityBlock extends Attackable implements Serializable, Container
 {
     public int x,y;//between 0-100 inclusive??
 
@@ -22,13 +22,12 @@ public class CityBlock extends Attackable implements Serializable, CityContainer
 	private Grid parentGrid;
 	public CityBlock(AttackableConstants attackableConstants,Grid parentGrid, Building building, City parentCity, int x, int y) {
 	    super(attackableConstants);
-	    registerCityContainer();
-	    registerBuildingContainer();
         this.parentGrid = parentGrid;
         this.building = building;
         this.parentCity = parentCity;
         this.x = x;
         this.y = y;
+		registerContainer(parentCity);
     }
 	public City getParentCity()
     {
@@ -45,7 +44,8 @@ public class CityBlock extends Attackable implements Serializable, CityContainer
     }
 	@Override
 	public void die() {
-		BuildingContainer.killBuilding(building);
+		super.die();
+		Container.kill(building);
 	}
 	public Grid getGrid()
     {
@@ -59,15 +59,11 @@ public class CityBlock extends Attackable implements Serializable, CityContainer
     {
         return y;
     }
-	@Override
-    public void remove(City city) {
-		if(parentCity == city) {
-			parentCity = null;
-            die();
-		}
-    }
 	public void setBuilding(Building building) {
+		deregisterContainer(building);
+		building.die();
 		this.building = building;
+		registerContainer(building);
 	}
 	public int getX() {
 		return x;
@@ -78,7 +74,12 @@ public class CityBlock extends Attackable implements Serializable, CityContainer
 	public Grid getParentGrid() {
 		return parentGrid;
 	}
-	@Override
+	public void remove(City city) {
+		if(parentCity == city) {
+			parentCity = null;
+			die();
+		}
+	}
 	public void remove(Building building) {
 		if(this.building == building)
 		{
@@ -88,5 +89,16 @@ public class CityBlock extends Attackable implements Serializable, CityContainer
 	@Override
 	public boolean receiveDamage(double damage, Weapon attacker) {
 		return building.receiveDamage(damage, attacker);
+	}
+	@Override
+	public void remove(Attackable attackable) {
+		if(attackable instanceof Building) {
+			remove((Building) attackable);
+		}
+		else if(attackable instanceof City){
+			remove((City)attackable);
+		}
+		else
+			throw new IllegalStateException();
 	}
 }

@@ -3,6 +3,7 @@ package engine.planets;
 import engine.cities.*;
 import engine.planets.hazards.*;
 import engine.tools.vehicles.Vehicle;
+import engine.tools.weapons.Attackable;
 import engine.universe.Country;
 
 import java.io.Serializable;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
  * grids contain 100 cityblocks. Not in an array though
  */
 
-public class Grid implements Serializable,PlanetContainer,CountryContainer, CityContainer
+public class Grid implements Serializable,Container
 {
     private int x,y;
     private Planet parentPlanet;
@@ -27,9 +28,8 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
 	private ArrayList<Vehicle> vehicles;
 
 	public Grid(GridConstructionContext gridConstructionContext,Planet parentPlanet){
-        registerPlanetContainer();// TODO: 5/10/2016 go through and check for thsese in all of the construction context  constructors
-        registerCountryContainer();
 	    this.parentPlanet = parentPlanet;
+		registerContainer(parentPlanet);
 	    x = gridConstructionContext.x;
 	    y = gridConstructionContext.y;
 	    naturalResources = gridConstructionContext.naturalResources;
@@ -69,16 +69,14 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
 			    try {
 				    City city = new City(new CityConstructionContext(gridConstructionContext, terrainType, this));
 				    citys.add(city);
-				    registerCityContainer();
+				    registerContainer(city);
 			    } catch (ToManyPeopleException e) {
 				    e.printStackTrace();
-////			    assert (false);//who cares
-//			    throw new UnsupportedOperationException(e);
 			    }
 		    }
 	    }
 		vehicles = new ArrayList<>();
-	    // TODO: 5/10/2016
+		// TODO: 5/10/2016
     }
 	private NaturalHazard getRandomHazard() {
 		int type = (int) (Math.random()*5);
@@ -174,20 +172,12 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
     {
         return parentPlanet;
     }
-	@Override
 	public void remove(City city) {
 		if(citys.size() == 0)
 			return;//performance optimization
-		citys.remove(city);
+		if(citys.remove(city))
+			remove(city);
 	}
-	@Override
-	public void remove(Country country,Country conqueror) {
-		if(parentCountry == country) {
-			parentCountry = conqueror;
-			assert(false);// TODO: 4/10/2016 get rid of this
-        }
-	}
-	@Override
 	public void remove(Planet planet) {
 		if(parentPlanet == planet)
 		{
@@ -209,12 +199,24 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
         return farmLand;
     }
 	public void vehicleArrives(Vehicle vehicle) {
+		registerContainer(vehicle);
 		vehicles.add(vehicle);
 	}
 	public void vehicleLeaves(Vehicle v){
+		deregisterContainer(v);
 		vehicles.remove(v);
 	}
 	public ArrayList<Vehicle> getVehicles() {
 		return vehicles;
+	}
+
+	@Override
+	public void remove(Attackable attackable) {
+		if(attackable instanceof City)
+			remove((City)attackable);
+		else if(attackable instanceof Planet)
+			remove((Planet) attackable);
+		else
+			throw new IllegalStateException();
 	}
 }

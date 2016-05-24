@@ -1,7 +1,9 @@
 package engine.universe;
 
+import engine.cities.Container;
 import engine.planets.Planet;
 import engine.planets.PlanetConstructionContext;
+import engine.tools.weapons.Attackable;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -11,7 +13,7 @@ import java.util.ArrayList;
  * Created by bob on 3/5/2016.
  *
  */
-public class SolarSystem implements PlanetContainer, Serializable
+public class SolarSystem implements Container, Serializable
 {
     double x,y,z;
 
@@ -35,18 +37,8 @@ public class SolarSystem implements PlanetContainer, Serializable
 		    "Kylar","Solar System 1","Solar System 2","Solar System 3"
     };
 	public static int solarSystemNameCount = 0;
-	@Deprecated public SolarSystem(double x, double y, double z, SolarSystem parentSolarSystem)
-    {
-        registerPlanetContainer();
-        this.x = x;
-        this.y = y;
-        this.z = z;
-	    star = new Star(x,y,z, parentSolarSystem);
-	    setName();
-    }
     public SolarSystem(SolarSystemConstructionContext s)
     {
-	    registerPlanetContainer();
 	    int numPlanets = utils.getRandomInt(s.numMinPlanets,s.numMaxPlanets);
 	    for(int i = 0; i < numPlanets;i++)
 	    {
@@ -55,6 +47,7 @@ public class SolarSystem implements PlanetContainer, Serializable
 		    Planet planet = new Planet(c,this);// TODO: 4/11/2016 planet construction cntext
 		    planets.add(planet);
 	    }
+	    registerContainer(planets);
 	    setName();
     }
 
@@ -83,7 +76,6 @@ public class SolarSystem implements PlanetContainer, Serializable
     }
 
 
-    @Override
     public void remove(Planet planet) {
         planets.remove(planet);
     }
@@ -94,5 +86,13 @@ public class SolarSystem implements PlanetContainer, Serializable
 		out += "Name:" + name;
 		out += "\nPlanets" + planets.toString();
 		return out;
+	}
+
+	@Override
+	public void remove(Attackable attackable) {
+		if(attackable instanceof Planet)
+			remove((Planet)attackable);
+		else
+			throw new IllegalStateException();
 	}
 }

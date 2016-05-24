@@ -4,15 +4,17 @@ package engine.buildings.workplaces;
 
 import engine.buildings.Building;
 import engine.cities.CityBlock;
+import engine.cities.Container;
 import engine.people.AbstractPerson;
 import engine.people.cityworkers.CityWorker;
 import engine.tools.AttackableConstants;
+import engine.tools.weapons.Attackable;
 import engine.universe.MoneySource;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 import java.util.ArrayList;
-public abstract class Workplace extends Building implements PersonContainer, MoneySourceContainer
+public abstract class Workplace extends Building implements Container
 {
 	public ArrayList<CityWorker> getWorkers() {
 		return workers;
@@ -30,9 +32,8 @@ public abstract class Workplace extends Building implements PersonContainer, Mon
 	                 CityBlock parentBlock, int maxWorkers, MoneySource owner) {
 		super(attackableConstants,parentBlock);
 		this.maxWorkers = maxWorkers;
-		registerPersonContainer();
-		registerMoneySourceContainer();
 		workers = new ArrayList<>();
+		registerContainer(workers);
 		this.owner = owner;
 	}
 	public boolean isEmployee(CityWorker worker) {
@@ -60,7 +61,6 @@ public abstract class Workplace extends Building implements PersonContainer, Mon
 		assert(workers.contains(person));
 		workers.remove(person);
 	}
-
 	public void remove(AbstractPerson abstractPerson) {
 		workers.remove(abstractPerson);
 	}
@@ -83,4 +83,11 @@ public abstract class Workplace extends Building implements PersonContainer, Mon
 		return out;
 	}
 	public abstract void addSpecific(VBox in);
+	@Override
+	public void remove(Attackable attackable) {
+		super.remove(attackable);
+		if(attackable instanceof AbstractPerson){
+			remove((AbstractPerson)attackable);
+		}
+	}
 }

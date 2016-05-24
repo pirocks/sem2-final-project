@@ -26,7 +26,7 @@ import java.util.ArrayList;
  *
  */
 
-public class City extends Attackable implements Serializable ,BuildingContainer, CountryContainer, PersonContainer
+public class City extends Attackable implements Serializable ,Container
 {
 	public MoneySource moneySource;// if I don't have time this will just be the country money source//working
 	// assumption as of 5/19/2016
@@ -379,37 +379,22 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 			 */
 		}
 	}
-	@Override
 	public void remove(Building building) {
 		for(CityBlock cityBlock:cityBlocks)
 			cityBlock.remove(building);
 		hospitals.remove(building);
 	}
-	@Override
 	public void remove(AbstractPerson person) {
 		residents.remove(person);
 	}
-	@Override
-	public void remove(Country country,Country conqueror) {
-		if(parentCountry == country) {
-			parentCountry = conqueror;
-		}
-	}
 	//TODO: if damage is greater than a certain number pass to city otherwise go to random cityblock
-//	@Override
-//	public boolean receiveDamage(double damage) {
-//		return attackableConstants.receiveDamage(damage,this);
-//	}
-
 	@Override
 	public void die() {
-		CityContainer.killCity(this);
+		Container.kill(this);
 	}
-
 	public Grid getParentGrid() {
 		return parentGrid;
 	}
-
 	public ArrayList<Workplace> getWorkPlaces() {
 		ArrayList<Workplace> out = new ArrayList<>();
 		for(Building building:getBuilding())
@@ -417,15 +402,20 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 				out.add((Workplace)building);
 		return out;
 	}
-
 	public MoneySource getMoneySource() {
 		return moneySource;
 	}
-
-	public void setBuilding(Building building)
-	{
+	public void setBuilding(Building building) {
 		CityBlock block = building.getParentBlock();
 		block.setBuilding(building);
 		cityBlocks.add(block);
+	}
+
+	@Override
+	public void remove(Attackable attackable) {
+		if(attackable instanceof Building)
+			remove((Building)attackable);
+		if(attackable instanceof AbstractPerson)
+			remove((AbstractPerson)attackable);
 	}
 }

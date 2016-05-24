@@ -34,9 +34,4 @@ public abstract class Weapon extends Tool
 	public double getRange() {
 		return range;
 	}
-	public void die()
-	{
-		assert (amIDead());
-		WeaponContainer.killWeapon(this);
-	}
 }
