@@ -338,21 +338,18 @@ public class Controller implements Initializable{
 				return true;
 		return false;
 	}
-	private Image apartmentBlockImage = new Image("apartmentBlockImage.jpg");// TODO: 5/23/2016
-
+	private Image apartmentBlockImage = new Image("apartmentBlockImage.jpg");
 	private Image houseBlockImage = new Image("houseBlockImage.jpg");
 	private Image rulersHouseImage = new Image("rulersHouseImage.jpg");
 	private Image dockYardImage = new Image("dockYardImage.jpg");
-	private Image factoryImage = new Image("https://si.wsj" +
-			".net/public/resources/images/BT-AA578_LAFARG_GR_20150316194834.jpg");// TODO: 5/23/2016
-	private Image hospitalImage = new Image("http://vignette1.wikia.nocookie.net/zombie/images/1/18/Hospital.jpg/revision/latest?cb=20160329114824");// TODO: 5/23/2016
-	private Image industrialDockImage = new Image("http://antiguahistory.net/Museum/images/DockyardAirEastDec03-3" +
-			".jpg");// TODO: 5/23/2016
-	private Image researchAreaImage = new Image("http://tees.tamu.edu/media/246752/gerb_750x460.jpg");// TODO: 5/23/2016
-	private Image schoolImage = new Image("https://d.wattpad.com/story_parts/231562063/images/143bd5d22ed4314e.jpg");// TODO: 5/23/2016
-	private Image townHallImage = new Image("http://sterlingma.virtualtownhall.net/Pages/SterlingMA_Webdocs/0154FDE4-000F8513.0/old%20town%20hall.jpg");// TODO: 5/23/2016
-	private Image warehouseImage = new Image("http://cijjournal.com/uploads/encompassme/images/7975b64476926cf9b6ac9498c40a697f50e3de53.png");// TODO: 5/23/2016
-	private Image emptyImage = new Image("https://gregfallisdotcom.files.wordpress.com/2011/08/dairy-section.jpg");// TODO: 5/23/2016
+	private Image factoryImage = new Image("factoryImage.jpg");
+	private Image hospitalImage = new Image("hospitalImage.jpg");
+	private Image industrialDockImage = new Image("industrialDockImage.jpg");
+	private Image researchAreaImage = new Image("researchAreaImage");
+	private Image schoolImage = new Image("schoolImage.jpg");
+	private Image townHallImage = new Image("townHallImage.jpg");
+	private Image warehouseImage = new Image("wareHouseImage.png");
+	private Image emptyImage = new Image("emptyImage.jpg");
 	private Image getImage(Building building) {
 		if(building instanceof Housing)
 		{

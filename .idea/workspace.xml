@@ -4,36 +4,18 @@
     <option name="ANALYSIS_IN_BACKGROUND" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="commit before mess">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/houseBlockImage.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/rulersHouseImage.jpg" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/configure" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Doxyfile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/engine/buildings/housing/WealthyWorkersHouseBlock.java" afterPath="" />
+    <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="some images and tool image craziness">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/apartmentBlockImage.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/dockYardImage.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/emptyImage.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/factoryImage.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/hospitalImage.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/industrialDockImage.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/researchAreaImage.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/schoolImage.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/townHallImage.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/wareHouseImage.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/CityBuilder.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/CityBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/Vehicle.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/Vehicle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/air/Aircraft.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/air/Aircraft.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/air/CargoPlane.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/air/CargoPlane.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/air/FighterPlane.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/air/FighterPlane.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/air/Helicopter.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/air/Helicopter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/land/ArmouredVehicle.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/land/ArmouredVehicle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/land/AutomatedArmouredVehicle.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/land/AutomatedArmouredVehicle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/land/AutomatedTank.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/land/AutomatedTank.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/land/Tank.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/land/Tank.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/AllPurpose.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/AllPurpose.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/Bus.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/Bus.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/Train.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/Train.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/Truck.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/Truck.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/AircraftCarrier.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/AircraftCarrier.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/BattleShip.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/BattleShip.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/Destroyer.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/Destroyer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/NuclearAircraftCarrier.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/NuclearAircraftCarrier.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/NuclearSubmarine.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/NuclearSubmarine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/Submarine.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/Submarine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/Transporter.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/Transporter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/SpaceCraft.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/SpaceCraft.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/Controller.java" afterPath="$PROJECT_DIR$/src/ui/view/Controller.java" />
     </list>
     <ignored path="testing.iws" />
@@ -68,8 +50,8 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ui/view/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="340" column="70" selection-start-line="340" selection-start-column="70" selection-end-line="340" selection-end-column="70" />
+            <state relative-caret-position="74">
+              <caret line="166" column="5" selection-start-line="166" selection-start-column="5" selection-end-line="166" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;method#initialize#0;class#Controller#0" expanded="false" />
@@ -992,13 +974,6 @@
       <option name="presentableId" value="Default" />
       <updated>1460006225713</updated>
     </task>
-    <task id="LOCAL-00047" summary="solar system gui additions">
-      <created>1462837941693</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1462837941693</updated>
-    </task>
     <task id="LOCAL-00048" summary="about to start ditching bigdecimal">
       <created>1462838645126</created>
       <option name="number" value="00048" />
@@ -1335,7 +1310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1464061478179</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="some images and tool image craziness">
+      <created>1464063111778</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1464063111779</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1358,7 +1340,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3078101" sideWeight="0.50453174" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32159266" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32718894" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32819724" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23409091" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1426,7 +1408,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="some listeners stuff" />
     <MESSAGE value="solar system" />
     <MESSAGE value="switched tpo javafx images&#10;" />
     <MESSAGE value="images" />
@@ -1451,7 +1432,8 @@
     <MESSAGE value="beginning to allow for settlers&#10;" />
     <MESSAGE value="sync" />
     <MESSAGE value="commit before mess" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit before mess" />
+    <MESSAGE value="some images and tool image craziness" />
+    <option name="LAST_COMMIT_MESSAGE" value="some images and tool image craziness" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1915,8 +1897,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/view/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="340" column="70" selection-start-line="340" selection-start-column="70" selection-end-line="340" selection-end-column="70" />
+        <state relative-caret-position="74">
+          <caret line="166" column="5" selection-start-line="166" selection-start-column="5" selection-end-line="166" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#initialize#0;class#Controller#0" expanded="false" />
