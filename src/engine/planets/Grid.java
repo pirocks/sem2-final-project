@@ -30,7 +30,6 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
 	public Grid(GridConstructionContext gridConstructionContext,Planet parentPlanet){
         registerPlanetContainer();// TODO: 5/10/2016 go through and check for thsese in all of the construction context  constructors
         registerCountryContainer();
-	    registerCityContainer();
 	    this.parentPlanet = parentPlanet;
 	    x = gridConstructionContext.x;
 	    y = gridConstructionContext.y;
@@ -71,6 +70,7 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
 			    try {
 				    City city = new City(new CityConstructionContext(gridConstructionContext, terrainType, this));
 				    citys.add(city);
+				    registerCityContainer();
 			    } catch (ToManyPeopleException e) {
 				    e.printStackTrace();
 ////			    assert (false);//who cares
@@ -177,6 +177,8 @@ public class Grid implements Serializable,PlanetContainer,CountryContainer, City
     }
 	@Override
 	public void remove(City city) {
+		if(citys.size() == 0)
+			return;//performance optimization
 		citys.remove(city);
 	}
 	@Override

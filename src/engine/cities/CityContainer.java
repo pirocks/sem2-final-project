@@ -6,6 +6,7 @@ package engine.cities;
  */
 public interface CityContainer
 {
+	// TODO: 5/24/2016
 	void remove(City city);
 	default void registerCityContainer()
 	{

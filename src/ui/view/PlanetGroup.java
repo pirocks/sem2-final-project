@@ -18,9 +18,8 @@ import java.util.ArrayList;
  */
 public class PlanetGroup extends Group
 {
-	private static Image red= new Image("http://images.all-free-download" +
-			".com/images/graphiclarge/solid_red_background_209961.jpg");// TODO: 5/23/2016
-	private static Image blue = new Image("https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Solid_blue.svg/2000px-Solid_blue.svg.png");// TODO: 5/23/2016
+	private static Image red= new Image("redImage.jpg");// TODO: 5/23/2016
+	private static Image blue = new Image("blueImage.png");// TODO: 5/23/2016
 	/**
 	 * Constructs a group.//intellij thinks it's  clever by putting this comment
 	 */

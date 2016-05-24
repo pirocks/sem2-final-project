@@ -8,17 +8,18 @@ import java.util.ArrayList;
  */
 public interface VehicleContainer
 {
+	// TODO: 5/24/2016
 	void remove(Vehicle vehicle);
 	default void registerVehicleContainer()
 	{
 		registerContainer(this);
 	}
-	static ArrayList<VehicleContainer> containers= new ArrayList<>();
-	public static void registerContainer(VehicleContainer vehicleContainer)
+	ArrayList<VehicleContainer> containers= new ArrayList<>();
+	static void registerContainer(VehicleContainer vehicleContainer)
 	{
 		containers.add(vehicleContainer);
 	}
-	public static void killVehicle(Vehicle in)
+	static void killVehicle(Vehicle in)
 	{
 		for(VehicleContainer container :containers)
 		{

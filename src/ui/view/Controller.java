@@ -65,14 +65,12 @@ public class Controller implements Initializable{
 	AnchorPane citySpecificPane;
 
 	ScrollPane cityScrollPane;
-
 	private Universe universe;
 	private Country playersCountry;
 	private SolarSystem solarSystem;
 	private Planet planet;
 	private City city;
 	private Housing housing;
-
 	/**
 	 * Called to initialize a controller after its root element has been
 	 * completely processed.
@@ -179,7 +177,6 @@ public class Controller implements Initializable{
 		planetBorderPane.setCenter(new ScrollPane(gridPane));
 		System.out.print("done");
 	}
-
 	private static Image mountainImage = new Image("mountainImage.jpg");
 	private static Image hillImage = new Image("hillImage.jpg");
 	private static Image seaImage =  new Image("seaImage.jpg");
@@ -187,8 +184,7 @@ public class Controller implements Initializable{
 	private static Image wastelandImage =  new Image("wastelandImage.jpg");
 	private static Image coastImage = new Image("coastImage.jpg");
 	public static Image cityImage = new Image("cityImage.jpg");
-	private static Image constructionSite = new Image("http://vignette2.wikia.nocookie.net/simcountry/images/d/d6/Construction-site.jpeg/revision/latest?cb=20140403030541");// TODO: 5/23/2016
-
+	private static Image constructionSite = new Image("constructionImage.jpg");// TODO: 5/23/2016
 	public static Image getImage(TerrainType terrainType) {
 		switch (terrainType) {
 			case Land:
@@ -221,7 +217,6 @@ public class Controller implements Initializable{
 			cityAccordion.getPanes().add(titledPane);
 		}
 	}
-
 	private static class Point {
 		int x,y;
 

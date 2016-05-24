@@ -4,15 +4,19 @@
     <option name="ANALYSIS_IN_BACKGROUND" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="building images complete">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/coastImage.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/hillImage.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/landImage.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/mountainImage.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/seaImage.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/wastelandImage.jpg" />
+    <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="oops">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/BuildingContainer.java" afterPath="$PROJECT_DIR$/src/engine/buildings/BuildingContainer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/cities/CityBlock.java" afterPath="$PROJECT_DIR$/src/engine/cities/CityBlock.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/cities/CityContainer.java" afterPath="$PROJECT_DIR$/src/engine/cities/CityContainer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/people/PersonContainer.java" afterPath="$PROJECT_DIR$/src/engine/people/PersonContainer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/planets/Grid.java" afterPath="$PROJECT_DIR$/src/engine/planets/Grid.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/planets/PlanetContainer.java" afterPath="$PROJECT_DIR$/src/engine/planets/PlanetContainer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/planets/RoadContainer.java" afterPath="$PROJECT_DIR$/src/engine/planets/RoadContainer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/VehicleContainer.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/VehicleContainer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/WeaponContainer.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/WeaponContainer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/Controller.java" afterPath="$PROJECT_DIR$/src/ui/view/Controller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/PlanetGroup.java" afterPath="$PROJECT_DIR$/src/ui/view/PlanetGroup.java" />
     </list>
     <ignored path="testing.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,167 +47,117 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ui/view/Controller.java">
+      <file leaf-file-name="CityContainers.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/engine/cities/CityContainers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="189" column="56" selection-start-line="189" selection-start-column="56" selection-end-line="189" selection-end-column="56" />
+            <state relative-caret-position="272">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CityBlock.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/engine/cities/CityBlock.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="docComment;method#initialize#0;class#Controller#0" expanded="false" />
-                <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-                <element signature="method#initVars#0;class#Controller#0" expanded="false" />
-                <element signature="method#initUniverseTab#0;class#Controller#0" expanded="false" />
-                <element signature="method#initSolarSystemTab#0;class#Controller#0" expanded="false" />
-                <element signature="method#initSolarSystemAccordion#0;class#Controller#0" expanded="false" />
-                <element signature="method#initSolarSystemView#0;class#Controller#0" expanded="false" />
-                <element signature="method#focusPlanetInAccordion#0;class#Controller#0" expanded="false" />
-                <element signature="method#initPlanetTab#0;class#Controller#0" expanded="false" />
-                <element signature="method#initPlanetAccordion#0;class#Controller#0" expanded="false" />
-                <element signature="method#initPlanetView#0;class#Controller#0" expanded="false" />
-                <element signature="method#getImage#0;class#Controller#0" expanded="false" />
-                <element signature="method#initCityTab#0;class#Controller#0" expanded="false" />
-                <element signature="method#initCityAccordion#0;class#Controller#0" expanded="false" />
-                <element signature="class#Point#0;class#Controller#0" expanded="false" />
-                <element signature="method#Point#0;class#Point#0;class#Controller#0" expanded="false" />
-                <element signature="method#equals#0;class#Point#0;class#Controller#0" expanded="false" />
-                <element signature="method#isValid#0;class#Point#0;class#Controller#0" expanded="false" />
-                <element signature="method#initCityView#0;class#Controller#0" expanded="false" />
-                <element signature="method#initCityAnchorPane#0;class#Controller#0" expanded="false" />
-                <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
-                <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
-                <element signature="method#contains#0;class#Controller#0" expanded="false" />
-                <element signature="method#getImage#1;class#Controller#0" expanded="false" />
-                <element signature="method#switchTo#0;class#Controller#0" expanded="false" />
-                <element signature="method#switchTo#1;class#Controller#0" expanded="false" />
-                <element signature="method#switchTo#2;class#Controller#0" expanded="false" />
-                <element signature="method#switchTo#3;class#Controller#0" expanded="false" />
-                <element signature="method#focusCityInAccordion#0;class#Controller#0" expanded="false" />
-                <element signature="method#focusBuildingInAccordion#0;class#Controller#0" expanded="false" />
-                <element signature="method#getUniverseTab#0;class#Controller#0" expanded="false" />
-                <element signature="method#getSolarSystemTab#0;class#Controller#0" expanded="false" />
-                <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
-                <element signature="method#getCityTab#0;class#Controller#0" expanded="false" />
+                <element signature="method#CityBlock#0;class#CityBlock#0" expanded="false" />
+                <element signature="method#getLocation#0;class#CityBlock#0" expanded="false" />
+                <element signature="e#1353#1354#0" expanded="true" />
+                <element signature="e#1400#1401#0" expanded="true" />
+                <element signature="method#remove#0;class#CityBlock#0" expanded="false" />
+                <element signature="method#remove#1;class#CityBlock#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TruckLarge.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/TruckLarge.java">
+      <file leaf-file-name="BuildingContainer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/engine/buildings/BuildingContainer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#734#735#0" expanded="false" />
-                <element signature="e#751#752#0" expanded="false" />
-                <element signature="e#1037#1038#0" expanded="false" />
-                <element signature="e#1055#1056#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="120">
+              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Train.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/Train.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#764#765#0" expanded="false" />
-                <element signature="e#781#782#0" expanded="false" />
-                <element signature="e#1142#1143#0" expanded="false" />
-                <element signature="e#1160#1161#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tank.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/land/Tank.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#855#856#0" expanded="false" />
-                <element signature="e#871#872#0" expanded="false" />
-                <element signature="e#1231#1232#0" expanded="false" />
-                <element signature="e#1250#1251#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TruckSmall.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/TruckSmall.java">
+      <file leaf-file-name="CityContainer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/engine/cities/CityContainer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#735#736#0" expanded="false" />
-                <element signature="e#752#753#0" expanded="false" />
-                <element signature="e#1038#1039#0" expanded="false" />
-                <element signature="e#1056#1057#0" expanded="false" />
-              </folding>
+              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AutomatedArmouredVehicle.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/land/AutomatedArmouredVehicle.java">
+      <file leaf-file-name="PersonContainer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/engine/people/PersonContainer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#802#803#0" expanded="false" />
-                <element signature="e#819#820#0" expanded="false" />
-                <element signature="e#1161#1162#0" expanded="false" />
-                <element signature="e#1179#1180#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="136">
+              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AllPurpose.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/AllPurpose.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#775#776#0" expanded="false" />
-                <element signature="e#792#793#0" expanded="false" />
-                <element signature="e#1135#1136#0" expanded="false" />
-                <element signature="e#1153#1154#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlanetGroup.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/view/PlanetGroup.java">
+      <file leaf-file-name="WeaponContainer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/engine/tools/weapons/WeaponContainer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="21" column="75" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/welcomescreen/Controller.java">
+      <file leaf-file-name="VehicleContainer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/VehicleContainer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1190">
-              <caret line="85" column="37" selection-start-line="85" selection-start-column="37" selection-end-line="85" selection-end-column="37" />
+            <state relative-caret-position="170">
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoadContainer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/engine/planets/RoadContainer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlanetContainer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/engine/planets/PlanetContainer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Grid.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/engine/planets/Grid.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="72" column="44" selection-start-line="72" selection-start-column="44" selection-end-line="72" selection-end-column="44" />
               <folding>
-                <element signature="imports" expanded="false" />
+                <element signature="method#getRandomHazard#0;class#Grid#0" expanded="false" />
+                <element signature="method#registerHazard#0;class#Grid#0" expanded="false" />
+                <element signature="method#cityBlockLocationExists#0;class#Grid#0" expanded="false" />
+                <element signature="method#getZInUniverse#0;class#Grid#0" expanded="false" />
+                <element signature="method#getXInUniverse#0;class#Grid#0" expanded="false" />
+                <element signature="method#getYInUniverse#0;class#Grid#0" expanded="false" />
+                <element signature="method#remove#1;class#Grid#0" expanded="false" />
+                <element signature="method#remove#2;class#Grid#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -235,14 +189,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/engine/buildings/housing/WealthyWorkersHouseBlock.java" />
-        <option value="$PROJECT_DIR$/src/engine/buildings/housing/ApartmentBlock.java" />
-        <option value="$PROJECT_DIR$/src/engine/buildings/housing/RulersHouse.java" />
-        <option value="$PROJECT_DIR$/src/engine/buildings/housing/WorkersHouseBlock.java" />
-        <option value="$PROJECT_DIR$/src/engine/buildings/housing/Housing.java" />
-        <option value="$PROJECT_DIR$/src/engine/buildings/workplaces/TownHall.java" />
-        <option value="$PROJECT_DIR$/src/engine/people/cityworkers/Teacher.java" />
-        <option value="$PROJECT_DIR$/src/engine/buildings/workplaces/School.java" />
         <option value="$PROJECT_DIR$/src/engine/science/Discovery.java" />
         <option value="$PROJECT_DIR$/src/engine/buildings/workplaces/ResearchArea.java" />
         <option value="$PROJECT_DIR$/src/engine/buildings/workplaces/IndustrialDock.java" />
@@ -259,10 +205,8 @@
         <option value="$PROJECT_DIR$/src/engine/tools/weapons/Attackable.java" />
         <option value="$PROJECT_DIR$/src/engine/universe/Country.java" />
         <option value="$PROJECT_DIR$/src/engine/cities/City.java" />
-        <option value="$PROJECT_DIR$/src/engine/planets/Grid.java" />
         <option value="$PROJECT_DIR$/src/engine/universe/Universe.java" />
         <option value="$PROJECT_DIR$/src/ui/view/PlanetPane.java" />
-        <option value="$PROJECT_DIR$/src/ui/view/PlanetGroup.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/vehicles/Vehicle.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/vehicles/air/Aircraft.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/vehicles/space/SpaceCraft.java" />
@@ -286,6 +230,16 @@
         <option value="$PROJECT_DIR$/src/engine/tools/vehicles/land/AutomatedArmouredVehicle.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/AllPurpose.java" />
         <option value="$PROJECT_DIR$/src/ui/view/Controller.java" />
+        <option value="$PROJECT_DIR$/src/ui/view/PlanetGroup.java" />
+        <option value="$PROJECT_DIR$/src/engine/planets/Grid.java" />
+        <option value="$PROJECT_DIR$/src/engine/cities/CityBlock.java" />
+        <option value="$PROJECT_DIR$/src/engine/buildings/BuildingContainer.java" />
+        <option value="$PROJECT_DIR$/src/engine/cities/CityContainer.java" />
+        <option value="$PROJECT_DIR$/src/engine/people/PersonContainer.java" />
+        <option value="$PROJECT_DIR$/src/engine/tools/weapons/WeaponContainer.java" />
+        <option value="$PROJECT_DIR$/src/engine/tools/vehicles/VehicleContainer.java" />
+        <option value="$PROJECT_DIR$/src/engine/planets/RoadContainer.java" />
+        <option value="$PROJECT_DIR$/src/engine/planets/PlanetContainer.java" />
       </list>
     </option>
   </component>
@@ -444,6 +398,58 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="planet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="city" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="engine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -466,7 +472,81 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="people" />
+              <option name="myItemId" value="tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weapons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vehicles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="planets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -489,10 +569,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="people" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cityworkers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -671,7 +747,7 @@
       <module name="testing" />
       <envs />
       <RunnerSettings RunnerId="Debug with VisualVM">
-        <option name="visualVMId" value="279243505777789" />
+        <option name="visualVMId" value="339935077845642" />
       </RunnerSettings>
       <method>
         <option name="Make" enabled="false" />
@@ -969,20 +1045,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1460006225713</updated>
-    </task>
-    <task id="LOCAL-00049" summary="stopping">
-      <created>1462843004377</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1462843004377</updated>
-    </task>
-    <task id="LOCAL-00050" summary="misc edits">
-      <created>1462912095506</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1462912095507</updated>
     </task>
     <task id="LOCAL-00051" summary="more construction context edits">
       <created>1462926031845</created>
@@ -1313,7 +1375,21 @@
       <option name="project" value="LOCAL" />
       <updated>1464063765699</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="all terrain immages but one">
+      <created>1464065123551</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1464065123551</updated>
+    </task>
+    <task id="LOCAL-00099" summary="oops">
+      <created>1464065148248</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1464065148248</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1337,13 +1413,13 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3078101" sideWeight="0.50453174" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32159266" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25114855" sideWeight="0.496875" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25114855" sideWeight="0.496875" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32618684" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23338369" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924962" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31490016" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31393567" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24924472" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1404,8 +1480,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="switched tpo javafx images&#10;" />
-    <MESSAGE value="images" />
     <MESSAGE value="3d mountain" />
     <MESSAGE value="forgot the textures" />
     <MESSAGE value="another" />
@@ -1429,7 +1503,9 @@
     <MESSAGE value="commit before mess" />
     <MESSAGE value="some images and tool image craziness" />
     <MESSAGE value="building images complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="building images complete" />
+    <MESSAGE value="all terrain immages but one" />
+    <MESSAGE value="oops" />
+    <option name="LAST_COMMIT_MESSAGE" value="oops" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1448,7 +1524,7 @@
           <option name="timeStamp" value="111" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="129" />
+      <option name="time" value="130" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1457,92 +1533,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/engine/people/AbstractPerson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/Warehouse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="42" column="50" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/universe/UniverseConstructionContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/universe/UniverseGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/universe/Resource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/DockYard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1">
-          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/Workplace.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/view/city/NewBuildingPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1683">
-          <caret line="113" column="26" selection-start-line="113" selection-start-column="26" selection-end-line="113" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_92/src.zip!/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6171">
-          <caret line="306" column="12" selection-start-line="306" selection-start-column="12" selection-end-line="306" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/tools/AttackableConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/tools/weapons/Attackable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="81" column="40" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/universe/Country.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="107" column="5" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/cities/City.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
@@ -1585,25 +1575,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/planets/Grid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
-          <folding>
-            <element signature="method#Grid#0;class#Grid#0" expanded="false" />
-            <element signature="method#getRandomHazard#0;class#Grid#0" expanded="false" />
-            <element signature="method#registerHazard#0;class#Grid#0" expanded="false" />
-            <element signature="method#cityBlockLocationExists#0;class#Grid#0" expanded="false" />
-            <element signature="method#getZInUniverse#0;class#Grid#0" expanded="false" />
-            <element signature="method#getXInUniverse#0;class#Grid#0" expanded="false" />
-            <element signature="method#getYInUniverse#0;class#Grid#0" expanded="false" />
-            <element signature="method#remove#1;class#Grid#0" expanded="false" />
-            <element signature="method#remove#2;class#Grid#0" expanded="false" />
-            <marker date="1464061471345" expanded="false" signature="32:250" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/tools/AttackableConstants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1615,6 +1586,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="e#1151#1152#0" expanded="true" />
+            <element signature="e#1186#1187#0" expanded="true" />
+            <element signature="e#1694#1695#0" expanded="true" />
+            <element signature="e#1712#1713#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1622,6 +1599,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
+          <folding>
+            <element signature="method#loadObject#0;class#Vehicle#0" expanded="false" />
+            <element signature="method#getTotalWeightLoad#0;class#Vehicle#0" expanded="false" />
+            <element signature="method#remove#3;class#Vehicle#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1863,16 +1845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/view/PlanetGroup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="21" column="75" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Doxyfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1893,8 +1865,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/view/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="189" column="56" selection-start-line="189" selection-start-column="56" selection-end-line="189" selection-end-column="56" />
+        <state relative-caret-position="-680">
+          <caret line="81" column="6" selection-start-line="81" selection-start-column="6" selection-end-line="81" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#initialize#0;class#Controller#0" expanded="false" />
@@ -1932,6 +1904,136 @@
             <element signature="method#getPlanetTab#0;class#Controller#0" expanded="false" />
             <element signature="method#getCityTab#0;class#Controller#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/planet/GridPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/planet/GridViewPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/PlanetGroup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="48" column="51" selection-start-line="48" selection-start-column="51" selection-end-line="48" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_92/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="385" column="17" selection-start-line="385" selection-start-column="17" selection-end-line="385" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/planets/Grid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="72" column="44" selection-start-line="72" selection-start-column="44" selection-end-line="72" selection-end-column="44" />
+          <folding>
+            <element signature="method#getRandomHazard#0;class#Grid#0" expanded="false" />
+            <element signature="method#registerHazard#0;class#Grid#0" expanded="false" />
+            <element signature="method#cityBlockLocationExists#0;class#Grid#0" expanded="false" />
+            <element signature="method#getZInUniverse#0;class#Grid#0" expanded="false" />
+            <element signature="method#getXInUniverse#0;class#Grid#0" expanded="false" />
+            <element signature="method#getYInUniverse#0;class#Grid#0" expanded="false" />
+            <element signature="method#remove#1;class#Grid#0" expanded="false" />
+            <element signature="method#remove#2;class#Grid#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/cities/CityContainers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/cities/CityBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
+          <folding>
+            <element signature="method#CityBlock#0;class#CityBlock#0" expanded="false" />
+            <element signature="method#getLocation#0;class#CityBlock#0" expanded="false" />
+            <element signature="e#1353#1354#0" expanded="true" />
+            <element signature="e#1400#1401#0" expanded="true" />
+            <element signature="method#remove#0;class#CityBlock#0" expanded="false" />
+            <element signature="method#remove#1;class#CityBlock#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/buildings/BuildingContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/cities/CityContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/people/PersonContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/tools/weapons/WeaponContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/VehicleContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/planets/RoadContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/planets/PlanetContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>

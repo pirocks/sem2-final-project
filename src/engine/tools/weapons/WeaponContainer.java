@@ -8,17 +8,18 @@ import java.util.ArrayList;
  */
 public interface WeaponContainer
 {
+	// TODO: 5/24/2016
 	void remove(Weapon weapon);
 	default void registerWeaponContainer()
 	{
 		registerContainer(this);
 	}
-	static ArrayList<WeaponContainer> containers = new ArrayList<>();
-	public static void registerContainer(WeaponContainer in)
+	ArrayList<WeaponContainer> containers = new ArrayList<>();
+	static void registerContainer(WeaponContainer in)
 	{
 		containers.add(in);
 	}
-	public static void killWeapon(Weapon in)
+	static void killWeapon(Weapon in)
 	{
 		for(WeaponContainer weaponContainer :containers)
 		{

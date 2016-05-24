@@ -21,16 +21,13 @@ public class CityBlock extends Attackable implements Serializable, CityContainer
 
 	private City parentCity;
 	private Grid parentGrid;
-	public CityBlock(AttackableConstants attackableConstants,Grid parentGrid, Building building, City parentCity, int x, int y)
-    {
+	public CityBlock(AttackableConstants attackableConstants,Grid parentGrid, Building building, City parentCity, int x, int y) {
 	    super(attackableConstants);
 	    registerCityContainer();
 	    registerBuildingContainer();
         this.parentGrid = parentGrid;
         this.building = building;
         this.parentCity = parentCity;
-//        if(parentGrid.cityBlockLocationExists(x,y))
-//            throw new IllegalArgumentException();
         this.x = x;
         this.y = y;
     }
@@ -42,8 +39,7 @@ public class CityBlock extends Attackable implements Serializable, CityContainer
     {
         return building;
     }
-	public ArrayList<LocationPlanet> getLocation()
-    {
+	public ArrayList<LocationPlanet> getLocation() {
         ArrayList<LocationPlanet> out = new ArrayList<LocationPlanet>();
 	    out.add(new LocationPlanet(this));
 	    return out;
@@ -52,12 +48,10 @@ public class CityBlock extends Attackable implements Serializable, CityContainer
 	public void die() {
 		BuildingContainer.killBuilding(building);
 	}
-
 	public Grid getGrid()
     {
         return parentGrid;
     }
-
 	public int getXInGrid()
     {
         return x;
@@ -73,29 +67,18 @@ public class CityBlock extends Attackable implements Serializable, CityContainer
             die();
 		}
     }
-	//	public void die() {
-//		building.die();
-//	}
-//	@Override
-//	public LocationPlanet getLocationPlanet() {
-//		return building.getLocationPlanet();
-//	}
 	public void setBuilding(Building building) {
 		this.building = building;
 	}
-
 	public int getX() {
 		return x;
 	}
-
 	public int getY() {
 		return y;
 	}
-
 	public Grid getParentGrid() {
 		return parentGrid;
 	}
-	//	@Override
 	@Override
 	public void remove(Building building) {
 		if(this.building == building)
@@ -103,7 +86,6 @@ public class CityBlock extends Attackable implements Serializable, CityContainer
 			this.building = null;
 		}
 	}
-
 	@Override
 	public boolean receiveDamage(double damage, Weapon attacker) {
 		return building.receiveDamage(damage, attacker);

@@ -6,6 +6,7 @@ package engine.people;
  */
 public interface PersonContainer
 {
+	// TODO: 5/24/2016
 	void remove(AbstractPerson person);
 	default void registerPersonContainer()
 	{
