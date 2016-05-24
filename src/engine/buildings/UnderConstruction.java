@@ -15,6 +15,7 @@ import java.io.Serializable;
 public class UnderConstruction<Type extends Building> extends Building implements Serializable
 {
 	private City city;
+
 	private Type type;
 
 	private ResourceDemand resourceDemand;
@@ -69,5 +70,9 @@ public class UnderConstruction<Type extends Building> extends Building implement
 		out.getChildren().add(new Text("unconstructed"));
 		out.getChildren().add(new Text(type.getName()));
 		return out;
+	}
+
+	public Type getBuilding() {
+		return type;
 	}
 }

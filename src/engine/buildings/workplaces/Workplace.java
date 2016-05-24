@@ -72,14 +72,11 @@ public abstract class Workplace extends Building implements PersonContainer, Mon
 			owner = null;
 		}
 	}
-
 	public int getMaxWorkers() {
 		return maxWorkers;
 	}
-
 	@Override
-	public VBox getPane()
-	{
+	public VBox getPane() {
 		VBox out = new VBox();
 		out.getChildren().add(new Text(name));
 		out.getChildren().add(new Text("Currently Employs:" + workerCount()));
@@ -87,6 +84,5 @@ public abstract class Workplace extends Building implements PersonContainer, Mon
 		addSpecific(out);
 		return out;
 	}
-
 	public abstract void addSpecific(VBox in);
 }

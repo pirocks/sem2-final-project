@@ -14,6 +14,8 @@ import engine.people.cityworkers.CityWorker;
 import engine.planets.Grid;
 import engine.planets.LocationPlanet;
 import engine.planets.TerrainType;
+import engine.tools.AttackableConstants;
+import engine.tools.vehicles.CityBuilder;
 import engine.tools.weapons.Attackable;
 import engine.universe.Country;
 import engine.universe.CountryContainer;
@@ -200,6 +202,12 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 		// TODO: 5/8/2016 implement me residents
 	}
 
+	public City(CityBuilder cityBuilder){
+		super(new AttackableConstants(healthInitial,resistanceInitial,cityBuilder.getLocation()));
+		CityBlock cityBlock
+		buildBuilding(new UnderConstruction<TownHall>(getLocation(),new TownHall(),this));
+	}
+
 	private void notEnoughHousingHandler(CityConstructionContext c) {
 		if(getMaximumHousingCapacity() > c.population)
 			return;
@@ -226,8 +234,10 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 			notEnoughHousingHandler(c);
 	}
 
-	public void buildBuilding(UnderConstruction building)
-	{
+	public void buildBuilding(UnderConstruction building) {
+		CityBlock block = building.getParentBlock();
+		cityBlocks.add(block);
+		block.setBuilding(building.getBuilding());
 
 	}
 	public ArrayList<Housing> getHousing() {

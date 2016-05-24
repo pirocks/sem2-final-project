@@ -23,144 +23,158 @@ public class NewBuildingPane extends TitledPane {
 	public NewBuildingPane(Controller controller,City city, int x, int y) {
 		super();
 		VBox content = new VBox();
-		content.getChildren().add(new Button("Build New Apartment Block"){{
+		LocationPlanet locationPlanet = new LocationPlanet(city.getParentGrid(),x,y);
+		CityBlock block = new CityBlock(new AttackableConstants(1,1,locationPlanet),locationPlanet.getGrid(),null, city, x,y);
+		addApartmentBlock(controller, city, content, locationPlanet, block);
+		addRulersHouse(controller, city, content, locationPlanet, block);
+		addWorkersHouseBlock(controller, city, content, locationPlanet, block);
+		addDockYard(controller, city, content, locationPlanet, block);
+		addFactory(controller, city, content, locationPlanet, block);
+		addHospital(content, city, locationPlanet, block, controller);
+		addIndustrialBlock(controller, city, content, locationPlanet, block);
+		addResearchArea(controller, city, content, locationPlanet, block);
+		addSchool(controller, city, content, locationPlanet, block);
+		addTownHall(controller, city, content, locationPlanet, block);
+		addWarehouse(controller, city, content, locationPlanet, block);
+		super.setContent(content);
+	}
+
+	public boolean addWarehouse(final Controller controller, final City city, VBox content, final LocationPlanet locationPlanet, final CityBlock block) {
+		return content.getChildren().add(new Button("Build New Warehouse"){{
 			setOnMouseClicked(new EventHandler<MouseEvent>() {
 				@Override
 				public void handle(MouseEvent event) {
-					LocationPlanet locationPlanet = new LocationPlanet(city.getParentGrid(),x,y);
-					city.buildBuilding(new UnderConstruction<ApartmentBlock>(locationPlanet,new ApartmentBlock(
-							new CityBlock(
-									new AttackableConstants(0,0,locationPlanet),
-									locationPlanet.getGrid(),
-									null,
-									city,
-									x,y
-							)
-					),city));// TODO: 5/22/2016 this is horrifying fix it
+					city.buildBuilding(new UnderConstruction<Warehouse>(locationPlanet,new Warehouse(block,city.getMoneySource()),
+							city));
+					controller.initCityView();
+				}
+			});
+		}});
+	}
+
+	public boolean addTownHall(final Controller controller, final City city, VBox content, final LocationPlanet locationPlanet, final CityBlock block) {
+		return content.getChildren().add(new Button("Build New Town Hall"){{
+			setOnMouseClicked(new EventHandler<MouseEvent>() {
+				@Override
+				public void handle(MouseEvent event) {
+					city.buildBuilding(new UnderConstruction<TownHall>(locationPlanet,new TownHall(block,city.getMoneySource()),
+							city));
+					controller.initCityView();
+				}
+			});
+		}});
+	}
+
+	public boolean addSchool(final Controller controller, final City city, VBox content, final LocationPlanet locationPlanet, final CityBlock block) {
+		return content.getChildren().add(new Button("Build New School"){{
+			setOnMouseClicked(new EventHandler<MouseEvent>() {
+				@Override
+				public void handle(MouseEvent event) {
+					city.buildBuilding(new UnderConstruction<School>(locationPlanet,new School(block,city
+							.getMoneySource()),
+							city));
+					controller.initCityView();
+				}
+			});
+		}});
+	}
+
+	public boolean addResearchArea(final Controller controller, final City city, VBox content, final LocationPlanet locationPlanet, final CityBlock block) {
+		return content.getChildren().add(new Button("Build New Research Area"){{
+			setOnMouseClicked(new EventHandler<MouseEvent>() {
+				@Override
+				public void handle(MouseEvent event) {
+					city.buildBuilding(new UnderConstruction<ResearchArea>(locationPlanet,new ResearchArea(block,city
+							.getMoneySource()),
+							city));
+					controller.initCityView();
+				}
+			});
+		}});
+	}
+
+	public boolean addIndustrialBlock(final Controller controller, final City city, VBox content, final LocationPlanet locationPlanet, final CityBlock block) {
+		return content.getChildren().add(new Button("Build New Industrial Dock"){{
+			setOnMouseClicked(new EventHandler<MouseEvent>() {
+				@Override
+				public void handle(MouseEvent event) {
+					city.buildBuilding(new UnderConstruction<IndustrialDock>(locationPlanet,new IndustrialDock(block,city.getMoneySource()),city));
+					controller.initCityView();
+				}
+			});
+		}});
+	}
+
+	public boolean addHospital(VBox content, City city, LocationPlanet locationPlanet, CityBlock block, Controller controller) {
+		return content.getChildren().add(new Button("Build New Hospital"){{
+			setOnMouseClicked(new EventHandler<MouseEvent>() {
+				@Override
+				public void handle(MouseEvent event) {
+					city.buildBuilding(new UnderConstruction<RulersHouse>(locationPlanet,new RulersHouse(block),city));
+					controller.initCityView();
 
 				}
 			});
 		}});
-		content.getChildren().add(new Button("Build New Ruler's House"){{
+	}
+
+	public boolean addFactory(final Controller controller, final City city, VBox content, final LocationPlanet locationPlanet, final CityBlock block) {
+		return content.getChildren().add(new Button("Build New Factory"){{
 			setOnMouseClicked(new EventHandler<MouseEvent>() {
 				@Override
 				public void handle(MouseEvent event) {
-					LocationPlanet locationPlanet = new LocationPlanet(city.getParentGrid(),x,y);
-					city.buildBuilding(new UnderConstruction<RulersHouse>(locationPlanet,new RulersHouse(new CityBlock(
-							new AttackableConstants(0,0,locationPlanet),city.getParentGrid(),null,city,x,y)
-					),city));// TODO: 5/22/2016 this is horrifying fix it
-controller.initCityView();
+					city.buildBuilding(new UnderConstruction<Factory>(locationPlanet,new Factory(block,city.getMoneySource()),city));
+					controller.initCityView();
 				}
 			});
 		}});
-		content.getChildren().add(new Button("Build New Workers House Block"){{
+	}
+
+	public boolean addDockYard(final Controller controller, final City city, VBox content, final LocationPlanet locationPlanet, final CityBlock block) {
+		return content.getChildren().add(new Button("Build New Dock Yard"){{
 			setOnMouseClicked(new EventHandler<MouseEvent>() {
 				@Override
 				public void handle(MouseEvent event) {
-					LocationPlanet locationPlanet = new LocationPlanet(city.getParentGrid(),x,y);
-					city.buildBuilding(new UnderConstruction<WorkersHouseBlock>(locationPlanet,new WorkersHouseBlock(new CityBlock(
-							new AttackableConstants(0,0,locationPlanet),city.getParentGrid(),null,city,x,y)
-					),city));// TODO: 5/22/2016 this is horrifying fix it
-controller.initCityView();
+					city.buildBuilding(new UnderConstruction<DockYard>(locationPlanet,new DockYard(block,city.getMoneySource()),city));
+					controller.initCityView();
 				}
 			});
 		}});
-		content.getChildren().add(new Button("Build New Dock Yard"){{
+	}
+
+	public boolean addWorkersHouseBlock(final Controller controller, final City city, VBox content, final LocationPlanet locationPlanet, final CityBlock block) {
+		return content.getChildren().add(new Button("Build New Workers House Block"){{
 			setOnMouseClicked(new EventHandler<MouseEvent>() {
 				@Override
 				public void handle(MouseEvent event) {
-					LocationPlanet locationPlanet = new LocationPlanet(city.getParentGrid(),x,y);
-					city.buildBuilding(new UnderConstruction<DockYard>(locationPlanet,new DockYard(new CityBlock(
-							new AttackableConstants(0,0,locationPlanet),city.getParentGrid(),null,city,x,y),city.getMoneySource()
-					),city));// TODO: 5/22/2016 this is horrifying fix it
-controller.initCityView();
+					city.buildBuilding(new UnderConstruction<WorkersHouseBlock>(locationPlanet,new WorkersHouseBlock(block),city));
+					controller.initCityView();
 				}
 			});
 		}});
-		content.getChildren().add(new Button("Build New Factory"){{
+	}
+
+	public boolean addRulersHouse(final Controller controller, final City city, VBox content, final LocationPlanet locationPlanet, final CityBlock block) {
+		return content.getChildren().add(new Button("Build New Ruler's House"){{
 			setOnMouseClicked(new EventHandler<MouseEvent>() {
 				@Override
 				public void handle(MouseEvent event) {
-					LocationPlanet locationPlanet = new LocationPlanet(city.getParentGrid(),x,y);
-					city.buildBuilding(new UnderConstruction<Factory>(locationPlanet,new Factory(new CityBlock(
-							new AttackableConstants(0,0,locationPlanet),city.getParentGrid(),null,city,x,y),city.getMoneySource()
-					),city));// TODO: 5/22/2016 this is horrifying fix it
-controller.initCityView();
+					city.buildBuilding(new UnderConstruction<RulersHouse>(locationPlanet,new RulersHouse(block),city));
+					controller.initCityView();
 				}
 			});
 		}});
-		content.getChildren().add(new Button("Build New Hospital"){{
+	}
+
+	public boolean addApartmentBlock(final Controller controller, final City city, VBox content, final LocationPlanet locationPlanet, final CityBlock block) {
+		return content.getChildren().add(new Button("Build New Apartment Block"){{
 			setOnMouseClicked(new EventHandler<MouseEvent>() {
 				@Override
 				public void handle(MouseEvent event) {
-					LocationPlanet locationPlanet = new LocationPlanet(city.getParentGrid(),x,y);
-					city.buildBuilding(new UnderConstruction<Hospital>(locationPlanet,new Hospital(new CityBlock(
-							new AttackableConstants(0,0,locationPlanet),city.getParentGrid(),null,city,x,y),city.getMoneySource()
-					),city));// TODO: 5/22/2016 this is horrifying fix it
-controller.initCityView();
+					city.buildBuilding(new UnderConstruction<ApartmentBlock>(locationPlanet,new ApartmentBlock(block),city));
+					controller.initCityView();
 				}
 			});
 		}});
-		content.getChildren().add(new Button("Build New Industrial Dock"){{
-			setOnMouseClicked(new EventHandler<MouseEvent>() {
-				@Override
-				public void handle(MouseEvent event) {
-					LocationPlanet locationPlanet = new LocationPlanet(city.getParentGrid(),x,y);
-					city.buildBuilding(new UnderConstruction<IndustrialDock>(locationPlanet,new IndustrialDock(new CityBlock(
-							new AttackableConstants(0,0,locationPlanet),city.getParentGrid(),null,city,x,y),city.getMoneySource()
-					),city));// TODO: 5/22/2016 this is horrifying fix it
-controller.initCityView();
-				}
-			});
-		}});
-		content.getChildren().add(new Button("Build New Research Area"){{
-			setOnMouseClicked(new EventHandler<MouseEvent>() {
-				@Override
-				public void handle(MouseEvent event) {
-					LocationPlanet locationPlanet = new LocationPlanet(city.getParentGrid(),x,y);
-					city.buildBuilding(new UnderConstruction<ResearchArea>(locationPlanet,new ResearchArea(new CityBlock(
-							new AttackableConstants(0,0,locationPlanet),city.getParentGrid(),null,city,x,y),city.getMoneySource()
-					),city));// TODO: 5/22/2016 this is horrifying fix it
-controller.initCityView();
-				}
-			});
-		}});
-		content.getChildren().add(new Button("Build New School"){{
-			setOnMouseClicked(new EventHandler<MouseEvent>() {
-				@Override
-				public void handle(MouseEvent event) {
-					LocationPlanet locationPlanet = new LocationPlanet(city.getParentGrid(),x,y);
-					city.buildBuilding(new UnderConstruction<School>(locationPlanet,new School(new CityBlock(
-							new AttackableConstants(0,0,locationPlanet),city.getParentGrid(),null,city,x,y),city.getMoneySource()
-					),city));// TODO: 5/22/2016 this is horrifying fix it
-controller.initCityView();
-				}
-			});
-		}});
-		content.getChildren().add(new Button("Build New Town Hall"){{
-			setOnMouseClicked(new EventHandler<MouseEvent>() {
-				@Override
-				public void handle(MouseEvent event) {
-					LocationPlanet locationPlanet = new LocationPlanet(city.getParentGrid(),x,y);
-					city.buildBuilding(new UnderConstruction<TownHall>(locationPlanet,new TownHall(new CityBlock(
-							new AttackableConstants(0,0,locationPlanet),city.getParentGrid(),null,city,x,y),city.getMoneySource()
-					),city));// TODO: 5/22/2016 this is horrifying fix it
-controller.initCityView();
-				}
-			});
-		}});
-		content.getChildren().add(new Button("Build New Warehouse"){{
-			setOnMouseClicked(new EventHandler<MouseEvent>() {
-				@Override
-				public void handle(MouseEvent event) {
-					LocationPlanet locationPlanet = new LocationPlanet(city.getParentGrid(),x,y);
-					city.buildBuilding(new UnderConstruction<Warehouse>(locationPlanet,new Warehouse(new CityBlock(
-							new AttackableConstants(0,0,locationPlanet),city.getParentGrid(),null,city,x,y),city.getMoneySource()
-					),city));// TODO: 5/22/2016 this is horrifying fix it
-controller.initCityView();
-				}
-			});
-		}});
-		super.setContent(content);
 	}
 }

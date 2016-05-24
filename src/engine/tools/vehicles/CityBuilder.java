@@ -10,7 +10,7 @@ import static engine.universe.Resource.Type.*;
  * Created by bob on 5/23/2016.
  */
 public class CityBuilder extends Vehicle {
-	protected CityBuilder(LocationPlanet locationPlanet) {
+	public CityBuilder(LocationPlanet locationPlanet) {
 		super(new VehicleInitialConstants(locationPlanet,1,1,1000,100000), 1);
 		try {
 			super.loadObject(new Resource(new Resource.Type[]{

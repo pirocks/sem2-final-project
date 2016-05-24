@@ -1,6 +1,10 @@
 package engine.universe;
 
 import engine.cities.City;
+import engine.planets.Grid;
+import engine.planets.LocationPlanet;
+import engine.planets.Planet;
+import engine.tools.vehicles.CityBuilder;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -49,9 +53,14 @@ public class Universe implements Serializable, CountryContainer
 	    }
 	    if(u.onlyGenerateOneCityPlayersCountry)
 	    {
+		    Planet planet = null;
 		    for (City city : playersCountry.getAllCities()) {
+			    planet = city.getLocation().get(0).getPlanet();
 			    city.die();
 		    }
+		    Grid[][] grids = planet.getGrids();
+		    Grid grid = grids[grids.length / 2][grids[0].length / 2];
+		    CityBuilder cityBuilder = new CityBuilder(new LocationPlanet(grid,50,50));
 
 	    }
     }

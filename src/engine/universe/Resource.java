@@ -68,6 +68,7 @@ public class Resource implements Serializable,Weighable
 		this(new ArrayList<Type>(Arrays.asList(types)),new ArrayList<Double>(Arrays.asList(quantities)));
 	}
 	public Resource(ArrayList<Type> types, ArrayList<Double> quantities) {
+		assert (types.size() == quantities.size());
 		values = new HashMap<>();
 		values.put(Type.Iron,new Double(0));
 		values.put(Type.Oil,new Double(0));
