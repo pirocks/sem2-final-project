@@ -7,11 +7,6 @@ import javafx.scene.image.Image;
 
 import static engine.universe.Resource.Type.*;
 
-//import static engine.planets.Road.resistance;
-
-//import static engine.planets.Road.resistance;
-
-//import static engine.planets.Road.resistance;
 
 /**
  * Created by bob on 4/3/2016.

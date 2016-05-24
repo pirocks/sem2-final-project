@@ -406,7 +406,7 @@ public class City extends Attackable implements Serializable ,BuildingContainer,
 
 	@Override
 	public void die() {
-		CityContainers.remove(this);// TODO: 4/9/2016 make sure that this kills everything
+		CityContainer.killCity(this);// TODO: 4/9/2016 make sure that this kills everything
 
 	}
 

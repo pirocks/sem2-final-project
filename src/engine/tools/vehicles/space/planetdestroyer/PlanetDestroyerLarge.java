@@ -5,7 +5,6 @@ import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
-//import static engine.planets.Road.resistance;
 
 /**
  * Created by bob on 4/7/2016.

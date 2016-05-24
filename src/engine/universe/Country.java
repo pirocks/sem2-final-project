@@ -11,15 +11,13 @@ import engine.people.AbstractPerson;
 import engine.people.PersonContainer;
 import engine.planets.Grid;
 import engine.planets.NaturalResource;
-import engine.planets.Road;
-import engine.planets.RoadContainer;
 import engine.planets.hazards.NaturalHazard;
 import engine.science.CountriesDiscoveries;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Country extends MoneySource implements Serializable,PersonContainer,CountryContainer, CityContainer,RoadContainer
+public class Country extends MoneySource implements Serializable,PersonContainer,CountryContainer, CityContainer
 {
 	private static String[] CountryNames =
     {"England","USA","France","China","Tanzania","Botswana",
@@ -35,7 +33,6 @@ public class Country extends MoneySource implements Serializable,PersonContainer
 
 	private CountriesDiscoveries countriesDiscoveries;
 
-	public ArrayList<Road> roads;//not sure how this is going to be updated // TODO: 5/12/2016
 
 	private City capitalCity;
     public Country(UniverseConstructionContext u)
@@ -83,11 +80,6 @@ public class Country extends MoneySource implements Serializable,PersonContainer
 
     @Override
     public void remove(Country country, Country conqueror) {
-        // TODO: 4/10/2016
-    }
-
-    @Override
-    public void remove(Road road) {
         // TODO: 4/10/2016
     }
 
@@ -142,20 +134,6 @@ public class Country extends MoneySource implements Serializable,PersonContainer
 	public City getCapitalCity()
     {
         return capitalCity;
-    }
-	public void addRoad(Road road)
-    {
-        roads.add(road);
-    }
-	public ArrayList<Road> accessibleRoads(City c)
-    {
-        ArrayList<Road> out = new ArrayList<>();
-        for(Road road: roads)
-        {
-            if(road.passesThrough(c))
-                out.add(road);
-        }
-        return out;
     }
 	public ArrayList<City> getAllCities()
 	{

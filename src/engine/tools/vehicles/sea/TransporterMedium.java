@@ -7,7 +7,6 @@ import engine.universe.ResourceDemand;
 import static engine.universe.Resource.Type.Oil;
 import static engine.universe.Resource.Type.Silicon;
 
-//import static engine.planets.Road.resistance;
 
 /**
  * Created by bob on 4/3/2016.

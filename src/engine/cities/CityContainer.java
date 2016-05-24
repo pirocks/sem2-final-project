@@ -1,15 +1,27 @@
 package engine.cities;
 
+import java.util.ArrayList;
+
 /**
  * Created by bob on 4/4/2016.
  * for destruction of engine.cities
  */
 public interface CityContainer
 {
-	// TODO: 5/24/2016
 	void remove(City city);
 	default void registerCityContainer()
 	{
-		CityContainers.registerContainer(this);
+		registerContainer(this);
+	}
+	ArrayList<CityContainer> containers = new ArrayList<CityContainer>();
+	static void registerContainer(CityContainer in)
+	{
+		containers.add(in);
+	}
+	static void killCity(City in) {
+		for(CityContainer container:containers)
+		{
+			container.remove(in);
+		}
 	}
 }

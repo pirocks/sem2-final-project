@@ -7,7 +7,6 @@ import java.util.ArrayList;
  *
  */
 
-// TODO: 5/24/2016
 public interface BuildingContainer
 {
 	void remove(Building building);
