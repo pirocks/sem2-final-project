@@ -180,15 +180,13 @@ public class Controller implements Initializable{
 		System.out.print("done");
 	}
 
-	private static Image mountainImage = new Image("http://3.imimg.com/data3/FK/TS/MY-16623584/himalayan-gateway-tour-package-125x12.jpg");// TODO: 5/23/2016
-	private static Image hillImage = new Image("http://s7.eu.is.pp.ru/l/larismilke/1/46299541Rkj.jpg");// TODO: 5/23/2016
-	private static Image seaImage =  new Image("http://cs629408.vk.me/v629408061/2cabc/LoMYe0EB2HI.jpg");// TODO: 5/23/2016
-	private static Image landImage = new Image("http://www.mayrwirt.at/wp-content/uploads/musik-haus.jpg");// TODO: 5/23/2016
-	private static Image wastelandImage =  new Image("http://vignette4.wikia.nocookie.net/fallout/images/a/a0/WastelandPicture.jpg/revision/latest/scale-to-width-down/180?cb=20110309003621");// TODO: 5/23/2016
-	private static Image coastImage = new Image("http://republic.pink/MyThumb.php?file=images/1/0/2/8/8/3/4/en/1-coastImage.jpg&size=200");// TODO: 5/23/2016
-	public static Image cityImage = new Image("https://image.freepik" +
-			".com/free-icon/set-of-buildings-in-a-city_318-41262" +
-			".jpg");// TODO: 5/23/2016
+	private static Image mountainImage = new Image("mountainImage.jpg");
+	private static Image hillImage = new Image("hillImage.jpg");
+	private static Image seaImage =  new Image("seaImage.jpg");
+	private static Image landImage = new Image("landImage.jpg");
+	private static Image wastelandImage =  new Image("wastelandImage.jpg");
+	private static Image coastImage = new Image("coastImage.jpg");
+	public static Image cityImage = new Image("cityImage.jpg");
 	private static Image constructionSite = new Image("http://vignette2.wikia.nocookie.net/simcountry/images/d/d6/Construction-site.jpeg/revision/latest?cb=20140403030541");// TODO: 5/23/2016
 
 	public static Image getImage(TerrainType terrainType) {
