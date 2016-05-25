@@ -17,6 +17,7 @@ import engine.tools.vehicles.CityBuilder;
 import engine.tools.weapons.Attackable;
 import engine.universe.Country;
 import engine.universe.MoneySource;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -64,127 +65,12 @@ public class City extends Attackable implements Serializable ,Container
 //			System.out.print("maximum capacity" + getMaximumHousingCapacity() + "pop:" + cityConstructionContext.population);
 			if(getMaximumHousingCapacity() < cityConstructionContext.population)
 			{
-				if (cityConstructionContext.type == CityConstructionContext.Type.Industrial) {
-					//add as much housing as necessary for population
-					//favor adding in outer areas
-					//favor apartment blocks
-					double apartmentBlockProb = 0.75;
-					//rest is workers house block
-					double rand = Math.random();
-					if (rand < apartmentBlockProb)
-						building = new ApartmentBlock(cityBlock);                    //apartment
-					else
-						building = new WorkersHouseBlock(cityBlock); //workers house block
-
-				} else if (cityConstructionContext.type == CityConstructionContext.Type.Scientific) {
-					//add as much huosing as necesary
-					//favor adding in uter areas
-					//favor housing
-					double housingProb = 0.8;// TODO: 5/10/2016 magic constants
-					//workers houseing is the rest.
-					double rand = Math.random();
-					if (rand < housingProb)
-						building = new WorkersHouseBlock(cityBlock);//build a workersHouse block
-					else
-						building = new ApartmentBlock(cityBlock);//build a new apartment
-				} else//possibly add capital city
-					throw new UnsupportedOperationException();// this is really a npt implemented exception but java doesn't have that
-
+				building = determineBuidingConstructorHousingNeeded(cityConstructionContext, cityBlock);
 			}
 			else
 			{
 				//factories etc:
-				if(cityConstructionContext.type == CityConstructionContext.Type.Industrial)
-				{
-					double dockYardProb = 0;
-					double industrialDockProb = 0;
-					if(cityConstructionContext.getTerrainType() == TerrainType.Coast)
-					{
-						dockYardProb = 0.15;
-						industrialDockProb = 0.15;
-					}
-					double schoolProb = 0.25;
-					double hospitalProb = 0.15;
-					double warehouseProb = 0.2;
-					//rest is  factory
-					double rand = Math.random();
-					double runningTotal = dockYardProb;
-					if(runningTotal > rand)
-						building = new DockYard(cityBlock,cityConstructionContext.moneySourceForBuildings);
-					else {
-						runningTotal += industrialDockProb;
-						if (runningTotal > rand)
-							building = new IndustrialDock(cityBlock,cityConstructionContext.moneySourceForBuildings);
-						else {
-							runningTotal += schoolProb;
-							if(runningTotal  > rand)
-								building = new School(cityBlock,cityConstructionContext.moneySourceForBuildings);
-							else {
-								runningTotal += hospitalProb;
-								if(runningTotal > rand) {
-									building = new Hospital(cityBlock, cityConstructionContext.moneySourceForBuildings);
-									hospitals.add((Hospital) building);
-								}
-								else{
-									runningTotal += warehouseProb;
-									if(runningTotal > rand)
-										building = new Warehouse(cityBlock,cityConstructionContext.moneySourceForBuildings);
-									else{
-										building = new Factory(cityBlock,cityConstructionContext.moneySourceForBuildings);
-									}
-								}
-							}
-						}
-					}
-				}
-				else if(cityConstructionContext.type == CityConstructionContext.Type.Scientific)
-				{
-					//extract redundant code
-					double dockYardProb = 0;
-					double industrialDockProb = 0;
-					if(cityConstructionContext.getTerrainType() == TerrainType.Coast)
-					{
-						dockYardProb = 0.1;
-						industrialDockProb = 0.1;
-					}
-					double schoolProb = 0.3;
-					double hospitalProb = 0.15;
-					double warehouseProb = 0.1;
-					//rest is  research area
-					double rand = Math.random();
-					double runningTotal = dockYardProb;
-					if(runningTotal > rand)
-						building = new DockYard(cityBlock,cityConstructionContext.moneySourceForBuildings);
-					else {
-						runningTotal += industrialDockProb;
-						if (runningTotal > rand)
-							building = new IndustrialDock(cityBlock,cityConstructionContext.moneySourceForBuildings);
-						else {
-							runningTotal += schoolProb;
-							if(runningTotal  > rand)
-								building = new School(cityBlock,cityConstructionContext.moneySourceForBuildings);
-							else {
-								runningTotal += hospitalProb;
-								if(runningTotal > rand) {
-									building = new Hospital(cityBlock, cityConstructionContext.moneySourceForBuildings);
-									hospitals.add((Hospital) building);
-								}
-								else{
-									runningTotal += warehouseProb;
-									if(runningTotal > rand)
-										building = new Warehouse(cityBlock,cityConstructionContext.moneySourceForBuildings);
-									else{
-										building = new ResearchArea(cityBlock,cityConstructionContext.moneySourceForBuildings);
-									}
-								}
-							}
-						}
-					}
-				}
-				else
-				{
-					throw new UnsupportedOperationException();
-				}
+				building = determinBuildingHousingNotNeeded(cityConstructionContext, cityBlock);
 			}
 			cityBlock.setBuilding(building);
 			cityBlocks.add(cityBlock);
@@ -198,6 +84,142 @@ public class City extends Attackable implements Serializable ,Container
 		residents = new ArrayList<>();
 		// TODO: 5/8/2016 implement me residents
 	}
+
+	@NotNull
+	private Building determinBuildingHousingNotNeeded(CityConstructionContext cityConstructionContext, CityBlock cityBlock) {
+		Building building;
+		if(cityConstructionContext.type == CityConstructionContext.Type.Industrial)
+			building = determineBuildingIndustriialHousingNotNeeded(cityConstructionContext, cityBlock);
+		else if(cityConstructionContext.type == CityConstructionContext.Type.Scientific)
+			building = determineBuildingScientficHousingNotNeeded(cityConstructionContext, cityBlock);
+		else
+			throw new UnsupportedOperationException();
+		return building;
+	}
+
+	@NotNull
+	private Building determineBuildingIndustriialHousingNotNeeded(CityConstructionContext cityConstructionContext, CityBlock cityBlock) {
+		Building building;
+		double dockYardProb = 0;
+		double industrialDockProb = 0;
+		if(cityConstructionContext.getTerrainType() == TerrainType.Coast)
+		{
+			dockYardProb = 0.15;
+			industrialDockProb = 0.15;
+		}
+		double schoolProb = 0.25;
+		double hospitalProb = 0.15;
+		double warehouseProb = 0.2;
+		//rest is  factory
+		double rand = Math.random();
+		double runningTotal = dockYardProb;
+		if(runningTotal > rand)
+			building = new DockYard(cityBlock,cityConstructionContext.moneySourceForBuildings);
+		else {
+			runningTotal += industrialDockProb;
+			if (runningTotal > rand)
+				building = new IndustrialDock(cityBlock,cityConstructionContext.moneySourceForBuildings);
+			else {
+				runningTotal += schoolProb;
+				if(runningTotal  > rand)
+					building = new School(cityBlock,cityConstructionContext.moneySourceForBuildings);
+				else {
+					runningTotal += hospitalProb;
+					if(runningTotal > rand) {
+						building = new Hospital(cityBlock, cityConstructionContext.moneySourceForBuildings);
+						hospitals.add((Hospital) building);
+					}
+					else{
+						runningTotal += warehouseProb;
+						if(runningTotal > rand)
+							building = new Warehouse(cityBlock,cityConstructionContext.moneySourceForBuildings);
+						else{
+							building = new Factory(cityBlock,cityConstructionContext.moneySourceForBuildings);
+						}
+					}
+				}
+			}
+		}
+		return building;
+	}
+
+	@NotNull
+	private Building determineBuildingScientficHousingNotNeeded(CityConstructionContext cityConstructionContext, CityBlock cityBlock) {
+		Building building;//extract redundant code
+		double dockYardProb = 0;
+		double industrialDockProb = 0;
+		if(cityConstructionContext.getTerrainType() == TerrainType.Coast)
+		{
+			dockYardProb = 0.1;
+			industrialDockProb = 0.1;
+		}
+		double schoolProb = 0.3;
+		double hospitalProb = 0.15;
+		double warehouseProb = 0.1;
+		//rest is  research area
+		double rand = Math.random();
+		double runningTotal = dockYardProb;
+		if(runningTotal > rand)
+			building = new DockYard(cityBlock,cityConstructionContext.moneySourceForBuildings);
+		else {
+			runningTotal += industrialDockProb;
+			if (runningTotal > rand)
+				building = new IndustrialDock(cityBlock,cityConstructionContext.moneySourceForBuildings);
+			else {
+				runningTotal += schoolProb;
+				if(runningTotal  > rand)
+					building = new School(cityBlock,cityConstructionContext.moneySourceForBuildings);
+				else {
+					runningTotal += hospitalProb;
+					if(runningTotal > rand) {
+						building = new Hospital(cityBlock, cityConstructionContext.moneySourceForBuildings);
+						hospitals.add((Hospital) building);
+					}
+					else{
+						runningTotal += warehouseProb;
+						if(runningTotal > rand)
+							building = new Warehouse(cityBlock,cityConstructionContext.moneySourceForBuildings);
+						else{
+							building = new ResearchArea(cityBlock,cityConstructionContext.moneySourceForBuildings);
+						}
+					}
+				}
+			}
+		}
+		return building;
+	}
+
+	@NotNull
+	private Building determineBuidingConstructorHousingNeeded(CityConstructionContext cityConstructionContext, CityBlock cityBlock) {
+		Building building;
+		if (cityConstructionContext.type == CityConstructionContext.Type.Industrial) {
+			//add as much housing as necessary for population
+			//favor adding in outer areas
+			//favor apartment blocks
+			double apartmentBlockProb = 0.75;
+			//rest is workers house block
+			double rand = Math.random();
+			if (rand < apartmentBlockProb)
+				building = new ApartmentBlock(cityBlock);                    //apartment
+			else
+				building = new WorkersHouseBlock(cityBlock); //workers house block
+
+		} else if (cityConstructionContext.type == CityConstructionContext.Type.Scientific) {
+			//add as much huosing as necesary
+			//favor adding in uter areas
+			//favor housing
+			double housingProb = 0.8;// TODO: 5/10/2016 magic constants
+			//workers houseing is the rest.
+			double rand = Math.random();
+			if (rand < housingProb)
+				building = new WorkersHouseBlock(cityBlock);//build a workersHouse block
+			else
+				building = new ApartmentBlock(cityBlock);//build a new apartment
+		} else//possibly add capital city
+			throw new UnsupportedOperationException();// this is really a npt implemented exception but java doesn't have that
+		return building;
+	}
+
 	public City(CityBuilder cityBuilder){
 		super(new AttackableConstants(healthInitial,resistanceInitial,cityBuilder.getLocation()));
 		moneySource = cityBuilder.getParentCountry();

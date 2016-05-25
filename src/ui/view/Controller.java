@@ -154,6 +154,10 @@ public class Controller implements Initializable{
 	}
 	private void initPlanetAccordion() {
 		planetAccordion.getPanes().clear();
+		planetAccordionAddCitys();
+		planetAccordionAddVehicles();
+	}
+	private void planetAccordionAddCitys() {
 		for(City c: planet.getAllCities())
 		{
 			VBox pane = new VBox();
@@ -176,6 +180,8 @@ public class Controller implements Initializable{
 				planetAccordion.getPanes().add(titledPane);
 			}
 		}
+	}
+	private void planetAccordionAddVehicles() {
 		for(Vehicle v: planet.getAllVehicles()) {
 			VBox pane = new VBox();
 			pane.getChildren().add(new Text("Vehicle:" + v.getClass().getSimpleName()));
@@ -188,6 +194,7 @@ public class Controller implements Initializable{
 				pane.getChildren().add(new Text(v.getDestination().toString()));
 			else
 				pane.getChildren().add(new Text("None"));
+			planetAccordion.getPanes().add(new TitledPane(v.getClass().getName(),pane));
 		}
 	}
 	private void initPlanetView() {
@@ -201,8 +208,6 @@ public class Controller implements Initializable{
 				gridPane.add(completeGridImage, x, y);
 			}
 		planetBorderPane.setCenter(new ScrollPane(gridPane));
-
-
 	}
 	private static Image mountainImage = new Image(Controller.class.getResourceAsStream("mountainImage.jpg"));
 	private static Image hillImage = new Image(Controller.class.getResourceAsStream("hillImage.jpg"));
