@@ -8,6 +8,7 @@ import engine.buildings.housing.WorkersHouseBlock;
 import engine.buildings.workplaces.*;
 import engine.cities.City;
 import engine.planets.Grid;
+import engine.planets.LocationPlanet;
 import engine.planets.Planet;
 import engine.planets.TerrainType;
 import engine.universe.Country;
@@ -70,7 +71,7 @@ public class Controller implements Initializable{
 	private SolarSystem solarSystem;
 	private Planet planet;
 	private City city;
-	private Housing housing;
+
 	/**
 	 * Called to initialize a controller after its root element has been
 	 * completely processed.
@@ -81,19 +82,33 @@ public class Controller implements Initializable{
 	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		initVars();
+		boolean capitalCityAvailable = initVars();
 		initUniverseTab();
 		initSolarSystemTab();
 		initPlanetTab();
-		initCityTab();
-		switchTo(city);
+		if(capitalCityAvailable) {
+			initCityTab();
+			switchTo(city);
+		}
+		else {
+			switchTo(planet);
+		}
 	}
-	private void initVars(){
+	private boolean initVars(){
 		playersCountry = Universe.playersCountry;
 		city = Universe.playersCountry.getCapitalCity();
-		planet = city.getParentGrid().getParentPlanet();
-		solarSystem = planet.getParentSolarSystem();
 		universe = Main.getUniverse();
+		if(city == null) {
+			LocationPlanet locationPlanet = playersCountry.initialBuilder.getLocation().get(0);
+			planet = locationPlanet.planet;
+			solarSystem = planet.getParentSolarSystem();
+			return false;
+		}
+		else {
+			planet = city.getParentGrid().getParentPlanet();
+			solarSystem = planet.getParentSolarSystem();
+			return true;
+		}
 	}
 	private void initUniverseTab(){
 		universeAccordion.getPanes().clear();
@@ -177,14 +192,14 @@ public class Controller implements Initializable{
 		planetBorderPane.setCenter(new ScrollPane(gridPane));
 		System.out.print("done");
 	}
-	private static Image mountainImage = new Image("mountainImage.jpg");
-	private static Image hillImage = new Image("hillImage.jpg");
-	private static Image seaImage =  new Image("seaImage.jpg");
-	private static Image landImage = new Image("landImage.jpg");
-	private static Image wastelandImage =  new Image("wastelandImage.jpg");
-	private static Image coastImage = new Image("coastImage.jpg");
-	public static Image cityImage = new Image("cityImage.jpg");
-	private static Image constructionSite = new Image("constructionImage.jpg");// TODO: 5/23/2016
+	private static Image mountainImage = new Image("file:mountainImage.jpg");
+	private static Image hillImage = new Image("file:hillImage.jpg");
+	private static Image seaImage =  new Image("file:seaImage.jpg");
+	private static Image landImage = new Image("file:landImage.jpg");
+	private static Image wastelandImage =  new Image("file:wastelandImage.jpg");
+	private static Image coastImage = new Image("file:coastImage.jpg");
+	public static Image cityImage = new Image("file:cityImage.jpg");
+	private static Image constructionSite = new Image("file:constructionImage.jpg");// TODO: 5/23/2016
 	public static Image getImage(TerrainType terrainType) {
 		switch (terrainType) {
 			case Land:
@@ -331,18 +346,18 @@ public class Controller implements Initializable{
 				return true;
 		return false;
 	}
-	private Image apartmentBlockImage = new Image("apartmentBlockImage.jpg");
-	private Image houseBlockImage = new Image("houseBlockImage.jpg");
-	private Image rulersHouseImage = new Image("rulersHouseImage.jpg");
-	private Image dockYardImage = new Image("dockYardImage.jpg");
-	private Image factoryImage = new Image("factoryImage.jpg");
-	private Image hospitalImage = new Image("hospitalImage.jpg");
-	private Image industrialDockImage = new Image("industrialDockImage.jpg");
-	private Image researchAreaImage = new Image("researchAreaImage");
-	private Image schoolImage = new Image("schoolImage.jpg");
-	private Image townHallImage = new Image("townHallImage.jpg");
-	private Image warehouseImage = new Image("wareHouseImage.png");
-	private Image emptyImage = new Image("emptyImage.jpg");
+	private Image apartmentBlockImage = new Image("file:apartmentBlockImage.jpg");
+	private Image houseBlockImage = new Image("file:houseBlockImage.jpg");
+	private Image rulersHouseImage = new Image("file:rulersHouseImage.jpg");
+	private Image dockYardImage = new Image("file:dockYardImage.jpg");
+	private Image factoryImage = new Image("file:factoryImage.jpg");
+	private Image hospitalImage = new Image("file:hospitalImage.jpg");
+	private Image industrialDockImage = new Image("file:industrialDockImage.jpg");
+	private Image researchAreaImage = new Image("file:researchAreaImage");
+	private Image schoolImage = new Image("file:schoolImage.jpg");
+	private Image townHallImage = new Image("file:townHallImage.jpg");
+	private Image warehouseImage = new Image("file:wareHouseImage.png");
+	private Image emptyImage = new Image("file:emptyImage.jpg");
 	private Image getImage(Building building) {
 		if(building instanceof Housing)
 		{

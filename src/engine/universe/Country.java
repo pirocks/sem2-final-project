@@ -12,6 +12,7 @@ import engine.planets.Grid;
 import engine.planets.NaturalResource;
 import engine.planets.hazards.NaturalHazard;
 import engine.science.CountriesDiscoveries;
+import engine.tools.vehicles.CityBuilder;
 import engine.tools.weapons.Attackable;
 
 import java.io.Serializable;
@@ -30,6 +31,7 @@ public class Country extends MoneySource implements Serializable, Container
 	private ArrayList<AbstractPerson> people;
 	private CountriesDiscoveries countriesDiscoveries;
 	private City capitalCity;
+	public CityBuilder initialBuilder;
     public Country(UniverseConstructionContext u) {
         super(Double.NaN);
         try {
@@ -69,7 +71,11 @@ public class Country extends MoneySource implements Serializable, Container
 		return atWarWith;
 	}
 	public void setCapitalCity(City capitalCity) {
+		if(this.capitalCity != null){
+			deregisterContainer(this.capitalCity);
+		}
 		this.capitalCity = capitalCity;
+		registerContainer(capitalCity);
 	}
 
 	@Override

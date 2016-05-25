@@ -7,8 +7,10 @@ import engine.buildings.housing.WorkersHouseBlock;
 import engine.buildings.workplaces.*;
 import engine.cities.City;
 import engine.cities.CityBlock;
+import engine.cities.Container;
 import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
+import engine.tools.weapons.Attackable;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.TitledPane;
@@ -19,12 +21,13 @@ import ui.view.Controller;
 /**
  * Created by bob on 5/22/2016.
  */
-public class NewBuildingPane extends TitledPane {
+public class NewBuildingPane extends TitledPane implements Container{
 	public NewBuildingPane(Controller controller,City city, int x, int y) {
 		super();
 		VBox content = new VBox();
 		LocationPlanet locationPlanet = new LocationPlanet(city.getParentGrid(),x,y);
 		CityBlock block = new CityBlock(new AttackableConstants(1,1,locationPlanet),locationPlanet.getGrid(),null, city, x,y);
+		registerContainer(block);
 		addApartmentBlock(controller, city, content, locationPlanet, block);
 		addRulersHouse(controller, city, content, locationPlanet, block);
 		addWorkersHouseBlock(controller, city, content, locationPlanet, block);
@@ -51,7 +54,6 @@ public class NewBuildingPane extends TitledPane {
 			});
 		}});
 	}
-
 	public boolean addTownHall(final Controller controller, final City city, VBox content, final LocationPlanet locationPlanet, final CityBlock block) {
 		return content.getChildren().add(new Button("Build New Town Hall"){{
 			setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -64,7 +66,6 @@ public class NewBuildingPane extends TitledPane {
 			});
 		}});
 	}
-
 	public boolean addSchool(final Controller controller, final City city, VBox content, final LocationPlanet locationPlanet, final CityBlock block) {
 		return content.getChildren().add(new Button("Build New School"){{
 			setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -78,7 +79,6 @@ public class NewBuildingPane extends TitledPane {
 			});
 		}});
 	}
-
 	public boolean addResearchArea(final Controller controller, final City city, VBox content, final LocationPlanet locationPlanet, final CityBlock block) {
 		return content.getChildren().add(new Button("Build New Research Area"){{
 			setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -92,7 +92,6 @@ public class NewBuildingPane extends TitledPane {
 			});
 		}});
 	}
-
 	public boolean addIndustrialBlock(final Controller controller, final City city, VBox content, final LocationPlanet locationPlanet, final CityBlock block) {
 		return content.getChildren().add(new Button("Build New Industrial Dock"){{
 			setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -104,7 +103,6 @@ public class NewBuildingPane extends TitledPane {
 			});
 		}});
 	}
-
 	public boolean addHospital(VBox content, City city, LocationPlanet locationPlanet, CityBlock block, Controller controller) {
 		return content.getChildren().add(new Button("Build New Hospital"){{
 			setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -117,7 +115,6 @@ public class NewBuildingPane extends TitledPane {
 			});
 		}});
 	}
-
 	public boolean addFactory(final Controller controller, final City city, VBox content, final LocationPlanet locationPlanet, final CityBlock block) {
 		return content.getChildren().add(new Button("Build New Factory"){{
 			setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -129,7 +126,6 @@ public class NewBuildingPane extends TitledPane {
 			});
 		}});
 	}
-
 	public boolean addDockYard(final Controller controller, final City city, VBox content, final LocationPlanet locationPlanet, final CityBlock block) {
 		return content.getChildren().add(new Button("Build New Dock Yard"){{
 			setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -141,7 +137,6 @@ public class NewBuildingPane extends TitledPane {
 			});
 		}});
 	}
-
 	public boolean addWorkersHouseBlock(final Controller controller, final City city, VBox content, final LocationPlanet locationPlanet, final CityBlock block) {
 		return content.getChildren().add(new Button("Build New Workers House Block"){{
 			setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -153,7 +148,6 @@ public class NewBuildingPane extends TitledPane {
 			});
 		}});
 	}
-
 	public boolean addRulersHouse(final Controller controller, final City city, VBox content, final LocationPlanet locationPlanet, final CityBlock block) {
 		return content.getChildren().add(new Button("Build New Ruler's House"){{
 			setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -165,7 +159,6 @@ public class NewBuildingPane extends TitledPane {
 			});
 		}});
 	}
-
 	public boolean addApartmentBlock(final Controller controller, final City city, VBox content, final LocationPlanet locationPlanet, final CityBlock block) {
 		return content.getChildren().add(new Button("Build New Apartment Block"){{
 			setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -176,5 +169,10 @@ public class NewBuildingPane extends TitledPane {
 				}
 			});
 		}});
+	}
+
+	@Override
+	public void remove(Attackable attackable) {
+
 	}
 }

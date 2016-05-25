@@ -23,14 +23,15 @@ public class LocationPlanet implements Serializable,Container
 		this.Blocky = Blocky;
 		this.Gridx = Gridx;
 		this.Gridy = Gridy;
+		registerContainer(planet);
 	}
 	public LocationPlanet(CityBlock b) {
-		registerContainer(planet);
 		Blockx = b.getXInGrid();
 		Blocky = b.getYInGrid();
 		Gridx = b.getGrid().getX();
 		Gridy = b.getGrid().getY();
 		Planet planet = b.getGrid().getParentPlanet();
+		registerContainer(planet);
 	}
 	public LocationPlanet(City c) {
 		Gridx = c.getGrid().getX();
@@ -38,6 +39,8 @@ public class LocationPlanet implements Serializable,Container
 		planet = c.getGrid().getParentPlanet();
 		Blockx = c.getCapitalBuilding().getParentBlock().getXInGrid();// TODO: 4/9/2016 see below
 		Blocky = c.getCapitalBuilding().getParentBlock().getYInGrid();// TODO: 4/9/2016 make sure that this gets the town hal not capital city and tht get y in grid gets cityblock
+		assert (planet!= null);
+		registerContainer(planet);
 	}
 	public LocationPlanet(Building b)
 	{
@@ -46,8 +49,12 @@ public class LocationPlanet implements Serializable,Container
 
 	public LocationPlanet(Grid parentGrid, int centerx, int centery) {
 		planet = parentGrid.getParentPlanet();
+		Gridx = parentGrid.getX();
+		Gridy = parentGrid.getY();
 		Blockx = centerx;
 		Blocky = centery;
+		assert (planet!= null);
+		registerContainer(planet);
 	}
 
 	public void moveBlock(int x,int y) {

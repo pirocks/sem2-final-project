@@ -50,7 +50,6 @@ public class City extends Attackable implements Serializable ,Container
 			"Seattle","Hong Kong","Taipei","Lhasa","Sukhumi","Pristina","Hell, Michigan","Taumata whakatangi hangakoauau"
 	};
 	public static int nameCount = 0;
-
 	public City(CityConstructionContext cityConstructionContext) throws ToManyPeopleException {
 		super(healthInitial,resistanceInitial,cityConstructionContext.buildingLocations);
 		parentGrid = cityConstructionContext.parentGrid;
@@ -189,6 +188,7 @@ public class City extends Attackable implements Serializable ,Container
 			}
 			cityBlock.setBuilding(building);
 			cityBlocks.add(cityBlock);
+			registerContainer(cityBlock);
 		}
 		if(!(getMaximumHousingCapacity() > cityConstructionContext.population)) {
 			notEnoughHousingHandler(cityConstructionContext);
@@ -198,7 +198,6 @@ public class City extends Attackable implements Serializable ,Container
 		residents = new ArrayList<>();
 		// TODO: 5/8/2016 implement me residents
 	}
-
 	public City(CityBuilder cityBuilder){
 		super(new AttackableConstants(healthInitial,resistanceInitial,cityBuilder.getLocation()));
 		moneySource = cityBuilder.getParentCountry();
@@ -208,7 +207,6 @@ public class City extends Attackable implements Serializable ,Container
 				()),
 				this));
 	}
-
 	private void notEnoughHousingHandler(CityConstructionContext c) {
 		if(getMaximumHousingCapacity() > c.population)
 			return;
@@ -234,7 +232,6 @@ public class City extends Attackable implements Serializable ,Container
 		if (getMaximumHousingCapacity() <  c.population)
 			notEnoughHousingHandler(c);
 	}
-
 	public void buildBuilding(UnderConstruction building) {
 		CityBlock block = building.getParentBlock();
 		cityBlocks.add(block);
@@ -390,7 +387,17 @@ public class City extends Attackable implements Serializable ,Container
 	//TODO: if damage is greater than a certain number pass to city otherwise go to random cityblock
 	@Override
 	public void die() {
-		Container.kill(this);
+		super.die();
+		for (CityBlock cityBlock : cityBlocks) {
+			cityBlock.die();
+		}
+		for (CityWorker resident : residents) {
+			resident.die();
+		}
+		for (Hospital hospital : hospitals) {
+			hospital.die();
+//todo make sure all has this
+		}
 	}
 	public Grid getParentGrid() {
 		return parentGrid;

@@ -15,6 +15,7 @@ public abstract class Attackable
 	private double resistance;
 	public ArrayList<LocationPlanet> location;
 	private Planet parentPlanet;
+	protected boolean amIDead = false;
 
 	public Attackable(double health, double resistance, ArrayList<LocationPlanet> location) {
 		this.health = health;
@@ -66,9 +67,10 @@ public abstract class Attackable
 	public double getHealth() {
 		return health;
 	}
-	public void die()
-	{
-		Container.kill(this);
+	public void die() {
+		if(!amIDead)
+			Container.kill(this);
+		amIDead = true;
 	}
 
 	public Grid getGrid() {

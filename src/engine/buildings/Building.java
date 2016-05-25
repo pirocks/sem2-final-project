@@ -27,6 +27,7 @@ public abstract class Building extends Attackable implements Serializable,Contai
 	                CityBlock parentBlock) {
 	    super(attackableConstants);
         this.parentBlock = parentBlock;
+		registerContainer(parentBlock);
 		name = getName();
     }
 

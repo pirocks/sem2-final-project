@@ -41,7 +41,12 @@ public interface Container
 			cityContainers.put(object,new ArrayList<Container>(){{add(typeContainer);}});
 	}
 	static void kill(Attackable target) {
-		for (Container container : cityContainers.get(target)) {
+		ArrayList<Container> containers = null;
+		containers = cityContainers.get(target);
+		if(containers == null) {
+			System.out.print("chgvj");
+		}
+		for (Container container : containers) {
 			container.remove(target);
 		}
 		cityContainers.remove(target);

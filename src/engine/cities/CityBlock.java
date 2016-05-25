@@ -44,8 +44,10 @@ public class CityBlock extends Attackable implements Serializable, Container
     }
 	@Override
 	public void die() {
-		super.die();
-		Container.kill(building);
+		if(!amIDead) {
+			super.die();
+			building.die();
+		}
 	}
 	public Grid getGrid()
     {
@@ -60,8 +62,10 @@ public class CityBlock extends Attackable implements Serializable, Container
         return y;
     }
 	public void setBuilding(Building building) {
-		deregisterContainer(building);
-		building.die();
+		if(this.building != null) {
+			deregisterContainer(this.building);
+			building.die();
+		}
 		this.building = building;
 		registerContainer(building);
 	}

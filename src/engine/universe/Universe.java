@@ -58,8 +58,7 @@ public class Universe implements Serializable
 		    }
 		    Grid[][] grids = planet.getGrids();
 		    Grid grid = grids[grids.length / 2][grids[0].length / 2];
-		    CityBuilder cityBuilder = new CityBuilder(new LocationPlanet(grid,50,50),playersCountry);
-
+		    playersCountry.initialBuilder = new CityBuilder(new LocationPlanet(grid,50,50),playersCountry);
 	    }
     }
 	@Deprecated public Universe(UniverseConstructionContext universeConstructionContext)

@@ -14,11 +14,8 @@ import java.io.Serializable;
 public class UnderConstruction<Type extends Building> extends Building implements Serializable
 {
 	private City city;
-
 	private Type type;
-
 	private ResourceDemand resourceDemand;
-
 	public UnderConstruction(LocationPlanet locationPlanet,Type building,City city)
 	{
 		super(new AttackableConstants(0,0,locationPlanet),
