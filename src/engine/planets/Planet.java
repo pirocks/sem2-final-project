@@ -6,6 +6,7 @@ package engine.planets;
 
 import engine.cities.City;
 import engine.cities.Container;
+import engine.tools.vehicles.Vehicle;
 import engine.tools.weapons.Attackable;
 import engine.universe.Country;
 import engine.universe.SolarSystem;
@@ -32,6 +33,7 @@ public class Planet extends Attackable implements Serializable
     public static String[] names = {"Earth","Mars","Venus","Mercury","Jupiter","Pluto","Saturn","Neptune","Uranus"};
 	private static int nameCount = 0;
 	public String name;
+	private Vehicle[] allVehicles;
 
 	private void setName() {
 		try {
@@ -152,5 +154,15 @@ public class Planet extends Attackable implements Serializable
 	@Override
 	public void die() {
 		Container.kill(this);
+	}
+
+	public ArrayList<Vehicle> getAllVehicles() {
+		ArrayList<Vehicle> out = new ArrayList<>();
+		for(Grid[] row: grids)
+			for(Grid grid: row)
+			{
+				out.addAll(grid.getVehicles());
+			}
+		return out;
 	}
 }

@@ -80,4 +80,9 @@ public abstract class Attackable
 	public void setParentPlanet(Planet parentPlanet) {
 		this.parentPlanet = parentPlanet;
 	}
+
+	public void setLocation(ArrayList<LocationPlanet> location)
+	{
+		this.location = location;
+	}
 }

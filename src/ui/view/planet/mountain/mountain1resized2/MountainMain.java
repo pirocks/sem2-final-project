@@ -1,4 +1,4 @@
-package ui.view.planet;
+package ui.view.planet.mountain.mountain1resized2;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -33,7 +33,7 @@ public class MountainMain  extends Application{
 	 */
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("mountain1resized2.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("mountain/mountain1resized2/mountain1resized2.fxml"));
 		Parent root = loader.load();
 		PerspectiveCamera camera = new PerspectiveCamera();
 		camera.setTranslateX(0);

@@ -1,4 +1,4 @@
-package ui.view.planet;
+package ui.view.planet.mountain.mountain1resized2;
 
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;

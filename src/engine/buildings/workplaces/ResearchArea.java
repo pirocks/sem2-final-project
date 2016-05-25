@@ -39,7 +39,15 @@ public class ResearchArea extends Workplace
 
 	@Override
 	public void addSpecific(VBox in) {
-		in.getChildren().add(new Text("working on:" + discovery.getClass().getCanonicalName()));
-		in.getChildren().add(new Text("Percent complete:" + 100*discovery.getPercentComplete() + "%"));
+		try {
+			in.getChildren().add(new Text("working on:" + discovery.getClass().getCanonicalName()));
+		} catch (NullPointerException ignored) {// TODO: 5/24/2016 be more graceful
+			System.out.print("you probably shouldn't see this but its really not that bad");
+		}
+		try {
+			in.getChildren().add(new Text("Percent complete:" + 100*discovery.getPercentComplete() + "%"));
+		} catch (NullPointerException e) {// TODO: 5/24/2016 be more graceful
+			System.out.print("you probably shouldn't see this but its really not that bad");
+		}
 	}
 }

@@ -168,6 +168,11 @@ public abstract class Vehicle extends Tool implements Liver,Container
 	public void setDestination(LocationPlanet locationPlanet) {
 		destination = locationPlanet;
 	}
+
+	public LocationPlanet getDestination() {
+		return destination;
+	}
+
 	private LocationPlanet destination = null;
 	@Override
 	public void doLife(long time) {
@@ -181,16 +186,16 @@ public abstract class Vehicle extends Tool implements Liver,Container
 				finalGrid.vehicleArrives(this);
 			}
 			for (AbstractPerson passenger : passengers) {
-				// TODO: 5/22/2016 update passenger locations
+				passenger.setLocation(this.location);
 			}
 			for (Resource resource : cargo) {
-				// TODO: 5/22/2016 update locationn
+				// TODO: 5/25/2016 location?
 			}
 			for (Weapon weapon : weapons) {
-				// TODO: 5/22/2016 update llocations
+				weapon.setLocation(this.location);
 			}
 			for (Vehicle vehicle : vehicles) {
-				// TODO: 5/22/2016 update locations
+				vehicle.setLocation(this.location);
 			}
 		}
 	}

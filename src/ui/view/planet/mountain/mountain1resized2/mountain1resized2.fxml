@@ -10,7 +10,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.view.planet.MountainController" fx:id="anchorPane">
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.view.planet.mountain.mountain1resized2.MountainController" fx:id="anchorPane">
 <Group id="AddedRootGroup_1463629890484" fx:id="group">
   <children>
     <MeshView id="Mesh1" cullFace="BACK" drawMode="FILL">
@@ -20,7 +20,7 @@
             <Color red="0.584314" green="0.560784" blue="0.505882" opacity="1.0"/>
           </diffuseColor>
           <diffuseMap>
-            <Image url="@mountain1resized2/Location_Snapshot.jpg"/>
+            <Image url="@Location_Snapshot.jpg"/>
           </diffuseMap>
           <specularColor>
             <Color red="0.33" green="0.33" blue="0.33" opacity="1.0"/>
@@ -43,7 +43,7 @@
             <Color red="0.423529" green="0.431373" blue="0.360784" opacity="1.0"/>
           </diffuseColor>
           <diffuseMap>
-            <Image url="@mountain1resized2/Location_Snapshot_1.jpg"/>
+            <Image url="@Location_Snapshot_1.jpg"/>
           </diffuseMap>
           <specularColor>
             <Color red="0.33" green="0.33" blue="0.33" opacity="1.0"/>
@@ -66,7 +66,7 @@
             <Color red="0.360784" green="0.380392" blue="0.313725" opacity="1.0"/>
           </diffuseColor>
           <diffuseMap>
-            <Image url="@mountain1resized2/Location_Snapshot_2.jpg"/>
+            <Image url="@Location_Snapshot_2.jpg"/>
           </diffuseMap>
           <specularColor>
             <Color red="0.33" green="0.33" blue="0.33" opacity="1.0"/>
@@ -89,7 +89,7 @@
             <Color red="0.384314" green="0.396078" blue="0.32549" opacity="1.0"/>
           </diffuseColor>
           <diffuseMap>
-            <Image url="@mountain1resized2/Location_Snapshot_3.jpg"/>
+            <Image url="@Location_Snapshot_3.jpg"/>
           </diffuseMap>
           <specularColor>
             <Color red="0.33" green="0.33" blue="0.33" opacity="1.0"/>
@@ -112,7 +112,7 @@
             <Color red="0.509804" green="0.501961" blue="0.431373" opacity="1.0"/>
           </diffuseColor>
           <diffuseMap>
-            <Image url="@mountain1resized2/Location_Snapshot_4.jpg"/>
+            <Image url="@Location_Snapshot_4.jpg"/>
           </diffuseMap>
           <specularColor>
             <Color red="0.33" green="0.33" blue="0.33" opacity="1.0"/>
@@ -135,7 +135,7 @@
             <Color red="0.478431" green="0.478431" blue="0.407843" opacity="1.0"/>
           </diffuseColor>
           <diffuseMap>
-            <Image url="@mountain1resized2/Location_Snapshot_5.jpg"/>
+            <Image url="@Location_Snapshot_5.jpg"/>
           </diffuseMap>
           <specularColor>
             <Color red="0.33" green="0.33" blue="0.33" opacity="1.0"/>
@@ -158,7 +158,7 @@
             <Color red="0.341176" green="0.364706" blue="0.298039" opacity="1.0"/>
           </diffuseColor>
           <diffuseMap>
-            <Image url="@mountain1resized2/Location_Snapshot_6.jpg"/>
+            <Image url="@Location_Snapshot_6.jpg"/>
           </diffuseMap>
           <specularColor>
             <Color red="0.33" green="0.33" blue="0.33" opacity="1.0"/>
@@ -181,7 +181,7 @@
             <Color red="0.45098" green="0.454902" blue="0.388235" opacity="1.0"/>
           </diffuseColor>
           <diffuseMap>
-            <Image url="@mountain1resized2/Location_Snapshot_7.jpg"/>
+            <Image url="@Location_Snapshot_7.jpg"/>
           </diffuseMap>
           <specularColor>
             <Color red="0.33" green="0.33" blue="0.33" opacity="1.0"/>
@@ -204,7 +204,7 @@
             <Color red="0.282353" green="0.313725" blue="0.247059" opacity="1.0"/>
           </diffuseColor>
           <diffuseMap>
-            <Image url="@mountain1resized2/Location_Snapshot_8.jpg"/>
+            <Image url="@Location_Snapshot_8.jpg"/>
           </diffuseMap>
           <specularColor>
             <Color red="0.33" green="0.33" blue="0.33" opacity="1.0"/>

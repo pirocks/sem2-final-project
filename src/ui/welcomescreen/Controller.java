@@ -138,7 +138,7 @@ public class Controller implements Initializable {
 	public int getNumPlanets(int solarSystemCount, int numPlanets) {
 		try
 		{
-			numPlanets = solarSystemCount*Integer.parseInt(numPlanetsPerSolarSystem.getText());
+			numPlanets = Integer.parseInt(numPlanetsPerSolarSystem.getText());
 		}
 		catch(Exception e)
 		{

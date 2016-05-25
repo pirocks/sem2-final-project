@@ -8,6 +8,7 @@ import java.io.Serializable;
 
 public abstract class Tool extends Attackable implements Serializable,Weighable
 {
+	// TODO: 5/25/2016 DO NOT OVERRIDE EQUALS AND HASHCODE FOR ANY TOOL SPECIFICALLY VEHICLE.
 	protected int numTools;
 
 	protected Tool(AttackableConstants attackableConstants, int numToolsConstructor)

@@ -40,7 +40,7 @@ public class Main implements Runnable{
 		}
 		Controller controller = loader.getController();
 		Stage primaryStage = new Stage();
-		primaryStage.setTitle("Hello World");
+		primaryStage.setTitle("Game Window");
 		primaryStage.setScene(new Scene(root));
 		primaryStage.show();
 	}

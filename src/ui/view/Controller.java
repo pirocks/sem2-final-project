@@ -11,6 +11,8 @@ import engine.planets.Grid;
 import engine.planets.LocationPlanet;
 import engine.planets.Planet;
 import engine.planets.TerrainType;
+import engine.tools.vehicles.CityBuilder;
+import engine.tools.vehicles.Vehicle;
 import engine.universe.Country;
 import engine.universe.SolarSystem;
 import engine.universe.Universe;
@@ -174,6 +176,19 @@ public class Controller implements Initializable{
 				planetAccordion.getPanes().add(titledPane);
 			}
 		}
+		for(Vehicle v: planet.getAllVehicles()) {
+			VBox pane = new VBox();
+			pane.getChildren().add(new Text("Vehicle:" + v.getClass().getSimpleName()));
+			if(v instanceof CityBuilder) {
+				Button button = new Button("Build City");// TODO: 5/25/2016 bind listener to cityBuilder
+				pane.getChildren().add(button);
+			}
+			pane.getChildren().add(new Text("Going Towards:"));
+			if(v.getDestination() != null)
+				pane.getChildren().add(new Text(v.getDestination().toString()));
+			else
+				pane.getChildren().add(new Text("None"));
+		}
 	}
 	private void initPlanetView() {
 		GridPane gridPane = new GridPane();
@@ -182,20 +197,21 @@ public class Controller implements Initializable{
 		for(int y = 0; y < planet.getGrids().length;y++)
 			for (int x = 0; x < planet.getGrids()[y].length; x++) {
 				Grid grid = planet.getGrids()[y][x];
-				Pane completeGridImage =  new PlanetGroup(grid,playersCountry,this);
+				Pane completeGridImage =  PlanetGroup.getPlanetGroup(grid,playersCountry,this);
 				gridPane.add(completeGridImage, x, y);
 			}
 		planetBorderPane.setCenter(new ScrollPane(gridPane));
-		System.out.print("done");
+
+
 	}
-	private static Image mountainImage = new Image("file:mountainImage.jpg");
-	private static Image hillImage = new Image("file:hillImage.jpg");
-	private static Image seaImage =  new Image("file:seaImage.jpg");
-	private static Image landImage = new Image("file:landImage.jpg");
-	private static Image wastelandImage =  new Image("file:wastelandImage.jpg");
-	private static Image coastImage = new Image("file:coastImage.jpg");
-	public static Image cityImage = new Image("file:cityImage.jpg");
-	private static Image constructionSite = new Image("file:constructionImage.jpg");// TODO: 5/23/2016
+	private static Image mountainImage = new Image(Controller.class.getResourceAsStream("mountainImage.jpg"));
+	private static Image hillImage = new Image(Controller.class.getResourceAsStream("hillImage.jpg"));
+	private static Image seaImage =  new Image(Controller.class.getResourceAsStream("seaImage.jpg"));
+	private static Image landImage = new Image(Controller.class.getResourceAsStream("landImage.jpg"));
+	private static Image wastelandImage =  new Image(Controller.class.getResourceAsStream("wastelandImage.jpg"));
+	private static Image coastImage = new Image(Controller.class.getResourceAsStream("coastImage.jpg"));
+	public static Image cityImage = new Image(Controller.class.getResourceAsStream("cityImage.jpg"));
+	private static Image constructionSite = new Image(Controller.class.getResourceAsStream("constructionImage.jpg"));
 	public static Image getImage(TerrainType terrainType) {
 		switch (terrainType) {
 			case Land:
@@ -342,18 +358,18 @@ public class Controller implements Initializable{
 				return true;
 		return false;
 	}
-	private Image apartmentBlockImage = new Image("file:apartmentBlockImage.jpg");
-	private Image houseBlockImage = new Image("file:houseBlockImage.jpg");
-	private Image rulersHouseImage = new Image("file:rulersHouseImage.jpg");
-	private Image dockYardImage = new Image("file:dockYardImage.jpg");
-	private Image factoryImage = new Image("file:factoryImage.jpg");
-	private Image hospitalImage = new Image("file:hospitalImage.jpg");
-	private Image industrialDockImage = new Image("file:industrialDockImage.jpg");
-	private Image researchAreaImage = new Image("file:researchAreaImage");
-	private Image schoolImage = new Image("file:schoolImage.jpg");
-	private Image townHallImage = new Image("file:townHallImage.jpg");
-	private Image warehouseImage = new Image("file:wareHouseImage.png");
-	private Image emptyImage = new Image("file:emptyImage.jpg");
+	private Image apartmentBlockImage = new Image(Controller.class.getResourceAsStream("apartmentBlockImage.jpg"));
+	private Image houseBlockImage = new Image(Controller.class.getResourceAsStream("houseBlockImage.jpg"));
+	private Image rulersHouseImage = new Image(Controller.class.getResourceAsStream("rulersHouseImage.jpg"));
+	private Image dockYardImage = new Image(Controller.class.getResourceAsStream("dockYardImage.jpg"));
+	private Image factoryImage = new Image(Controller.class.getResourceAsStream("factoryImage.jpg"));
+	private Image hospitalImage = new Image(Controller.class.getResourceAsStream("hospitalImage.jpg"));
+	private Image industrialDockImage = new Image(Controller.class.getResourceAsStream("industrialDockImage.jpg"));
+	private Image researchAreaImage = new Image(Controller.class.getResourceAsStream("researchAreaImage.jpg"));
+	private Image schoolImage = new Image(Controller.class.getResourceAsStream("schoolImage.jpg"));
+	private Image townHallImage = new Image(Controller.class.getResourceAsStream("townHallImage.jpg"));
+	private Image warehouseImage = new Image(Controller.class.getResourceAsStream("wareHouseImage.png"));
+	private Image emptyImage = new Image(Controller.class.getResourceAsStream("emptyImage.jpg"));
 	private Image getImage(Building building) {
 		if(building instanceof Housing)
 		{
