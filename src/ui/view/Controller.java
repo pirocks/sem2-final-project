@@ -18,19 +18,16 @@ import javafx.embed.swing.SwingNode;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Group;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import ui.view.city.CityButton;
 import ui.view.city.NewBuildingPane;
 import ui.view.planet.PlanetButton;
+import ui.view.planet.PlanetGroup;
 import ui.view.solarsystem.SolarSystemButton;
 import ui.view.solarsystem.SolarSystemJPanel;
 
@@ -181,12 +178,11 @@ public class Controller implements Initializable{
 	private void initPlanetView() {
 		GridPane gridPane = new GridPane();
 		gridPane.setHgap(0);
-		gridPane.setHgap(0);
-		gridPane.autosize();
+		gridPane.setVgap(0);
 		for(int y = 0; y < planet.getGrids().length;y++)
 			for (int x = 0; x < planet.getGrids()[y].length; x++) {
 				Grid grid = planet.getGrids()[y][x];
-				Group completeGridImage =  new PlanetGroup(grid,playersCountry,this);
+				Pane completeGridImage =  new PlanetGroup(grid,playersCountry,this);
 				gridPane.add(completeGridImage, x, y);
 			}
 		planetBorderPane.setCenter(new ScrollPane(gridPane));

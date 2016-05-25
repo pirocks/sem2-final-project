@@ -1,22 +1,23 @@
-package ui.view;
+package ui.view.planet;
 
 import engine.cities.City;
 import engine.planets.Grid;
 import engine.tools.vehicles.Vehicle;
 import engine.universe.Country;
 import javafx.event.EventHandler;
-import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
+import ui.view.Controller;
 
 import java.util.ArrayList;
 
 /**
  * Created by bob on 5/23/2016.
  */
-public class PlanetGroup extends Group
+public class PlanetGroup extends Pane
 {
 	private static Image red= new Image("file:redImage.jpg");
 	private static Image blue = new Image("file:blueImage.png");
