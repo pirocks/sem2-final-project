@@ -1,5 +1,6 @@
 package ui.view;
 
+import engine.tools.vehicles.Liver;
 import engine.universe.Universe;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -43,6 +44,7 @@ public class Main implements Runnable{
 		primaryStage.setTitle("Game Window");
 		primaryStage.setScene(new Scene(root));
 		primaryStage.show();
+		Liver.doGame();
 	}
 
 	public static Universe getUniverse() {

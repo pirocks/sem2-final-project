@@ -65,12 +65,12 @@ public class City extends Attackable implements Serializable ,Container
 //			System.out.print("maximum capacity" + getMaximumHousingCapacity() + "pop:" + cityConstructionContext.population);
 			if(getMaximumHousingCapacity() < cityConstructionContext.population)
 			{
-				building = determineBuidingConstructorHousingNeeded(cityConstructionContext, cityBlock);
+				building = getBuidingHousingNeeded(cityConstructionContext, cityBlock);
 			}
 			else
 			{
 				//factories etc:
-				building = determinBuildingHousingNotNeeded(cityConstructionContext, cityBlock);
+				building = getBuildingHousingNotNeeded(cityConstructionContext, cityBlock);
 			}
 			cityBlock.setBuilding(building);
 			cityBlocks.add(cityBlock);
@@ -84,21 +84,19 @@ public class City extends Attackable implements Serializable ,Container
 		residents = new ArrayList<>();
 		// TODO: 5/8/2016 implement me residents
 	}
-
 	@NotNull
-	private Building determinBuildingHousingNotNeeded(CityConstructionContext cityConstructionContext, CityBlock cityBlock) {
+	private Building getBuildingHousingNotNeeded(CityConstructionContext cityConstructionContext, CityBlock cityBlock) {
 		Building building;
 		if(cityConstructionContext.type == CityConstructionContext.Type.Industrial)
-			building = determineBuildingIndustriialHousingNotNeeded(cityConstructionContext, cityBlock);
+			building = getBuildingIndustrialHousingNotNeeded(cityConstructionContext, cityBlock);
 		else if(cityConstructionContext.type == CityConstructionContext.Type.Scientific)
-			building = determineBuildingScientficHousingNotNeeded(cityConstructionContext, cityBlock);
+			building = getBuildingScientificHousingNotNeeded(cityConstructionContext, cityBlock);
 		else
 			throw new UnsupportedOperationException();
 		return building;
 	}
-
 	@NotNull
-	private Building determineBuildingIndustriialHousingNotNeeded(CityConstructionContext cityConstructionContext, CityBlock cityBlock) {
+	private Building getBuildingIndustrialHousingNotNeeded(CityConstructionContext cityConstructionContext, CityBlock cityBlock) {
 		Building building;
 		double dockYardProb = 0;
 		double industrialDockProb = 0;
@@ -142,9 +140,8 @@ public class City extends Attackable implements Serializable ,Container
 		}
 		return building;
 	}
-
 	@NotNull
-	private Building determineBuildingScientficHousingNotNeeded(CityConstructionContext cityConstructionContext, CityBlock cityBlock) {
+	private Building getBuildingScientificHousingNotNeeded(CityConstructionContext cityConstructionContext, CityBlock cityBlock) {
 		Building building;//extract redundant code
 		double dockYardProb = 0;
 		double industrialDockProb = 0;
@@ -188,9 +185,8 @@ public class City extends Attackable implements Serializable ,Container
 		}
 		return building;
 	}
-
 	@NotNull
-	private Building determineBuidingConstructorHousingNeeded(CityConstructionContext cityConstructionContext, CityBlock cityBlock) {
+	private Building getBuidingHousingNeeded(CityConstructionContext cityConstructionContext, CityBlock cityBlock) {
 		Building building;
 		if (cityConstructionContext.type == CityConstructionContext.Type.Industrial) {
 			//add as much housing as necessary for population
@@ -219,7 +215,6 @@ public class City extends Attackable implements Serializable ,Container
 			throw new UnsupportedOperationException();// this is really a npt implemented exception but java doesn't have that
 		return building;
 	}
-
 	public City(CityBuilder cityBuilder){
 		super(new AttackableConstants(healthInitial,resistanceInitial,cityBuilder.getLocation()));
 		moneySource = cityBuilder.getParentCountry();

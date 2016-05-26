@@ -5,13 +5,14 @@ import engine.planets.Grid;
 import engine.tools.vehicles.Vehicle;
 import engine.universe.Country;
 import javafx.event.EventHandler;
-import javafx.scene.Group;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import ui.view.Controller;
@@ -52,8 +53,8 @@ public class PlanetGroup extends Pane
 			});
 			cityImageView.setImage(cityImage);
 			cityImageView.setPreserveRatio(true);
-			cityImageView.setFitWidth(50);
-			cityImageView.setFitHeight(50);
+			cityImageView.setFitWidth(Controller.pixelsPerGridPlanetViewX/3);
+			cityImageView.setFitHeight(Controller.pixelsPerGridPlanetViewY/3);
 			usableItems.add(cityImageView, usableItemsX, usableItemsY);
 			usableItemsX++;
 			usableItemsY++;
@@ -66,11 +67,19 @@ public class PlanetGroup extends Pane
 		for (Vehicle vehicle : grid.getVehicles()) {
 			Image vehicleImage = vehicle.getImage();
 			if(vehicleImage == null) {
-				Group background = new Group();
+				StackPane background = new StackPane();
+				background.getChildren().add(new Rectangle(50,50,Color.BEIGE));
 				background.getChildren().add(new Text(vehicle.getClass().getSimpleName()){{
 					setFill(Color.RED);
 					setFont(new Font("Verdana",16));
 				}});
+				background.setOnMouseClicked(new EventHandler<MouseEvent>() {
+					@Override
+					public void handle(MouseEvent event) {
+						System.out.println("clicked");
+						controller.selectVehicle(vehicle);
+					}
+				});
 				usableItems.add(background,usableItemsX,usableItemsY);
 				usableItemsX++;
 				if(usableItemsX > 4) {
@@ -79,36 +88,40 @@ public class PlanetGroup extends Pane
 				}
 			}
 			else{
-				usableItems.add(new ImageView(vehicleImage),usableItemsX,usableItemsX);
+				usableItems.add(new ImageView(vehicleImage){{
+					setOnMouseClicked(new EventHandler<MouseEvent>() {
+						@Override
+						public void handle(MouseEvent event) {
+							controller.selectVehicle(vehicle);
+						}
+					});
+				}},usableItemsX,usableItemsX);
 			}
 		}
 		out.getChildren().add(usableItems);
 		return out;
 
 	}
-
 	public static void terrain(Grid grid, Pane out) {
 		ImageView terrainImageView = new ImageView();
 		terrainImageView.setImage(Controller.getImage(grid.getTerrainType()));
 		terrainImageView.setPreserveRatio(true);
-		terrainImageView.setFitHeight(140);
-		terrainImageView.setFitWidth(190);
+		terrainImageView.setFitHeight((19./20.)*Controller.pixelsPerGridPlanetViewY);
+		terrainImageView.setFitWidth((19./20.)*Controller.pixelsPerGridPlanetViewX);
 		out.getChildren().add(terrainImageView);
 	}
-
 	public static void backGroundColor(Grid grid, Country playersCountry, Pane out) {
 		if(grid.getParentCountry() == playersCountry) {
 			ImageView redBorder = new ImageView(red);
-			redBorder.setFitHeight(150);
-			redBorder.setFitWidth(200);
+			redBorder.setFitHeight(Controller.pixelsPerGridPlanetViewY);
+			redBorder.setFitWidth(Controller.pixelsPerGridPlanetViewX);
 			out.getChildren().add(0,redBorder);
 		}
 		else{
 			ImageView blueBorder = new ImageView(blue);
-			blueBorder.setFitHeight(150);
-			blueBorder.setFitWidth(200);
+			blueBorder.setFitHeight(Controller.pixelsPerGridPlanetViewY);
+			blueBorder.setFitWidth(Controller.pixelsPerGridPlanetViewX);
 			out.getChildren().add(0,blueBorder);
 		}
 	}
-
 }

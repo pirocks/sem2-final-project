@@ -25,6 +25,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
 import ui.view.city.CityButton;
 import ui.view.city.NewBuildingPane;
@@ -51,6 +53,8 @@ public class Controller implements Initializable{
 	BorderPane solarSystemBorderPane;
 	@FXML
 	BorderPane planetBorderPane;
+	double planetViewScrollX = 0;
+	double planetViewScrollY = 0;
 	@FXML
 	BorderPane cityBorderPane;
 	@FXML
@@ -64,12 +68,18 @@ public class Controller implements Initializable{
 	@FXML
 	AnchorPane citySpecificPane;
 
-	ScrollPane cityScrollPane;
+	private ScrollPane cityScrollPane;
 	private Universe universe;
 	private Country playersCountry;
 	private SolarSystem solarSystem;
 	private Planet planet;
 	private City city;
+	private Vehicle currentlySelectedVehicle = null;
+
+	public final static int pixelsPerGridPlanetViewX = 100;
+	public final static int pixelsPerGridPlanetViewY = 75;
+	int mousePositionX = 0;
+	int mousePositionY = 0;
 
 	/**
 	 * Called to initialize a controller after its root element has been
@@ -198,6 +208,11 @@ public class Controller implements Initializable{
 		}
 	}
 	private void initPlanetView() {
+		try {
+			planetViewScrollY = ((ScrollPane)planetBorderPane.getCenter()).getVvalue();
+			planetViewScrollX = ((ScrollPane)planetBorderPane.getCenter()).getHvalue();
+		}catch(Exception ignored) {}
+		StackPane stackPane = new StackPane();
 		GridPane gridPane = new GridPane();
 		gridPane.setHgap(0);
 		gridPane.setVgap(0);
@@ -207,7 +222,72 @@ public class Controller implements Initializable{
 				Pane completeGridImage =  PlanetGroup.getPlanetGroup(grid,playersCountry,this);
 				gridPane.add(completeGridImage, x, y);
 			}
-		planetBorderPane.setCenter(new ScrollPane(gridPane));
+		stackPane.getChildren().add(gridPane);
+		stackPane.getChildren().add(new Pane(vehicleLine){{
+			setHeight(gridPane.getHeight());
+			setWidth(gridPane.getWidth());
+			setPickOnBounds(false);
+		}});
+		stackPane.setOnMouseMoved(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				mousePositionX = (int) event.getX();
+				mousePositionY = (int) event.getY();
+				if(currentlySelectedVehicle != null) {
+					double x = 100*mousePositionX/pixelsPerGridPlanetViewX;
+					double y = 100*mousePositionY/pixelsPerGridPlanetViewY;
+					LocationPlanet locationPlanet = new LocationPlanet(planet,x,y);
+					currentlySelectedVehicle.setDestination(locationPlanet);
+					updateVehicleLine(currentlySelectedVehicle);
+					System.out.println("x:" + mousePositionX + "y:" + mousePositionY + "gridx:" + locationPlanet
+							.getGridx() + "gridy:" + locationPlanet.getGridy());
+				}
+			}
+		});
+		planetBorderPane.setCenter(new ScrollPane(stackPane){{
+			setVvalue(planetViewScrollY);
+			setHvalue(planetViewScrollX);
+		}});
+	}
+	Line vehicleLine = new Line(0,0,0,0){{
+		setFill(Color.BLUE);
+		setStrokeWidth(10);
+		setOnMouseClicked(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				currentlySelectedVehicle = null;
+				vehicleLine.setStartX(0);
+				vehicleLine.setStartY(0);
+				vehicleLine.setEndY(0);
+				vehicleLine.setEndX(0);
+			}
+		});
+	}};
+	private void updateVehicleLine(Vehicle selectedVehicle) {
+		System.out.println("updating");
+		double startX = selectedVehicle.getLocation().get(0).getLocNumX();
+		double startY = selectedVehicle.getLocation().get(0).getLocNumY();
+		double endX = selectedVehicle.getDestination().getLocNumX();
+		double endY = selectedVehicle.getDestination().getLocNumY();
+		startX /= 100;
+		startY /= 100;
+		endX /= 100;
+		endY /= 100;
+		startX *= pixelsPerGridPlanetViewX;
+		startY *= pixelsPerGridPlanetViewY;
+		endX *= pixelsPerGridPlanetViewX;
+		endY *=  pixelsPerGridPlanetViewY;
+		vehicleLine.setEndY(endY);
+		vehicleLine.setEndX(endX);
+		vehicleLine.setStartY(startY);
+		vehicleLine.setStartX(startX);
+//		System.out.print("endX:" + endX +  "endY:" + endY);
+//		vehicleLine.setTranslateX(startX);
+//		vehicleLine.setTranslateY(startY);
+//		vehicleLine.setLayoutX(endX);
+//		vehicleLine.setLayoutY(endY);
+//		vehicleLine.setStartX(startX);
+//		vehicleLine.setStartY(startY);
 	}
 	private static Image mountainImage = new Image(Controller.class.getResourceAsStream("mountainImage.jpg"));
 	private static Image hillImage = new Image(Controller.class.getResourceAsStream("hillImage.jpg"));
@@ -248,6 +328,12 @@ public class Controller implements Initializable{
 			TitledPane titledPane = new TitledPane(b.name,pane);
 			cityAccordion.getPanes().add(titledPane);
 		}
+	}
+	public void selectVehicle(Vehicle vehicle) {
+		System.out.println("click recieved");
+		currentlySelectedVehicle = vehicle;
+		initPlanetAccordion();
+		initPlanetView();
 	}
 	private static class Point {
 		int x,y;

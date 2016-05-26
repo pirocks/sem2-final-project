@@ -41,7 +41,7 @@ public class CityBuilder extends Vehicle {
 
 	@Override
 	public double getSpeed() {
-		return 0;
+		return 1000;
 	}
 
 	@Override

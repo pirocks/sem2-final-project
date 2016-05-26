@@ -168,14 +168,13 @@ public abstract class Vehicle extends Tool implements Liver,Container
 	public void setDestination(LocationPlanet locationPlanet) {
 		destination = locationPlanet;
 	}
-
 	public LocationPlanet getDestination() {
 		return destination;
 	}
-
 	private LocationPlanet destination = null;
 	@Override
 	public void doLife(long time) {
+		System.out.println("called");
 		if(destination != null) {
 			assert (getLocation().size() == 1);
 			Grid initialGrid = getLocation().get(0).getGrid();
