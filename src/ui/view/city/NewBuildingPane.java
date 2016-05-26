@@ -9,7 +9,6 @@ import engine.cities.City;
 import engine.cities.CityBlock;
 import engine.cities.Container;
 import engine.planets.LocationPlanet;
-import engine.tools.AttackableConstants;
 import engine.tools.weapons.Attackable;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -26,7 +25,7 @@ public class NewBuildingPane extends TitledPane implements Container{
 		super();
 		VBox content = new VBox();
 		LocationPlanet locationPlanet = new LocationPlanet(city.getParentGrid(),x,y);
-		CityBlock block = new CityBlock(new AttackableConstants(1,1,locationPlanet),locationPlanet.getGrid(),null, city, x,y);
+		CityBlock block = new CityBlock(city, x,y);
 		registerContainer(block);
 		addApartmentBlock(controller, city, content, locationPlanet, block);
 		addRulersHouse(controller, city, content, locationPlanet, block);

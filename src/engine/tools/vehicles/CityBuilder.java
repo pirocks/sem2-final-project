@@ -1,5 +1,6 @@
 package engine.tools.vehicles;
 
+import engine.cities.City;
 import engine.planets.LocationPlanet;
 import engine.universe.Country;
 import engine.universe.Resource;
@@ -41,7 +42,7 @@ public class CityBuilder extends Vehicle {
 
 	@Override
 	public double getSpeed() {
-		return 1000;
+		return 10;
 	}
 
 	@Override
@@ -61,5 +62,9 @@ public class CityBuilder extends Vehicle {
 
 	public Country getParentCountry() {
 		return parentCountry;
+	}
+
+	public void buildCity() {
+		City city = new City(this);
 	}
 }

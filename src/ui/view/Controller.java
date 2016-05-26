@@ -78,8 +78,8 @@ public class Controller implements Initializable{
 
 	public final static int pixelsPerGridPlanetViewX = 100;
 	public final static int pixelsPerGridPlanetViewY = 75;
-	int mousePositionX = 0;
-	int mousePositionY = 0;
+	private int mousePositionX = 0;
+	private int mousePositionY = 0;
 
 	/**
 	 * Called to initialize a controller after its root element has been
@@ -196,7 +196,9 @@ public class Controller implements Initializable{
 			VBox pane = new VBox();
 			pane.getChildren().add(new Text("Vehicle:" + v.getClass().getSimpleName()));
 			if(v instanceof CityBuilder) {
-				Button button = new Button("Build City");// TODO: 5/25/2016 bind listener to cityBuilder
+				Button button = new Button("Build City"){{
+					((CityBuilder)v).buildCity();
+				}};
 				pane.getChildren().add(button);
 			}
 			pane.getChildren().add(new Text("Going Towards:"));
@@ -249,7 +251,7 @@ public class Controller implements Initializable{
 			setHvalue(planetViewScrollX);
 		}});
 	}
-	Line vehicleLine = new Line(0,0,0,0){{
+	private Line vehicleLine = new Line(0,0,0,0){{
 		setFill(Color.BLUE);
 		setStrokeWidth(10);
 		setOnMouseClicked(new EventHandler<MouseEvent>() {

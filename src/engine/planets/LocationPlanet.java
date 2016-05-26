@@ -16,7 +16,6 @@ public class LocationPlanet implements Serializable,Container
 	private int gridy;
 	private int blockx;
 	private int blocky;
-
 	public LocationPlanet(Planet planet,double x,double y){
 		this.planet = planet;
 		blockx = (int) (x % 100);
@@ -24,7 +23,6 @@ public class LocationPlanet implements Serializable,Container
 		gridx = (int) (x /100);
 		gridy = (int) (y/100);
 	}
-
 	public LocationPlanet(Planet planet,int Gridx,int Gridy,int Blockx,int Blocky){
 		this.planet = planet;
 		this.blockx = Blockx;
@@ -54,24 +52,21 @@ public class LocationPlanet implements Serializable,Container
 	{
 		this(b.getParentBlock());
 	}
-
-	public LocationPlanet(Grid parentGrid, int centerx, int centery) {
+	public LocationPlanet(Grid parentGrid, int centerX, int centerY) {
 		planet = parentGrid.getParentPlanet();
 		gridx = parentGrid.getX();
 		gridy = parentGrid.getY();
-		blockx = centerx;
-		blocky = centery;
+		blockx = centerX;
+		blocky = centerY;
 		assert (planet!= null);
 		registerContainer(planet);
 	}
-
 	public double getLocNumX(){
 		return 100*getGridx() + blockx;
 	}
 	public double getLocNumY(){
 		return 100*getGridy() + blocky;
 	}
-
 	public void moveBlock(int x,int y) {
 		blockx = x;
 		blocky = y;
@@ -117,32 +112,33 @@ public class LocationPlanet implements Serializable,Container
 		blocky = loc.getBlocky();
 		return this;
 	}
-	//force arrival is hacky. fix later by changing ints to doubles in internal representation
-	public LocationPlanet goTowards(LocationPlanet loc,double d,boolean forceArrival)//there are some places that you cannot go. need to check for that.
-	{
+	//force arrival is hacky. todo fix later by changing ints to doubles in internal representation
+	//there are some places that you cannot go. need to check for that.
+	public LocationPlanet goTowards(LocationPlanet loc,double d,boolean forceArrival,boolean canGoInWater,boolean
+			canGoInSpace) throws InTheOceanException {
+		if(canGoInSpace)
+			throw new IllegalStateException();
+		if(loc.getPlanet() != planet)
+			throw new IllegalStateException();
 		if(forceArrival)
-			go(loc);
+			return go(loc);
 		double percent = d/this.distanceBetween(loc);
-		assert(percent <= 1.0);//maybe should be illegal arg do both
-		if(percent > 1.0)
-			throw new IllegalArgumentException();
-		double x1 = (double)(gridx *100 + blockx);
-		double x2 = (double)(loc.getGridx()*100 + loc.getBlockx());
-		double y1 = (double)(gridy *100 + blocky);
-		double y2 = (double)(loc.getGridy()*100 + loc.getBlocky());
-		double dx = percent*(x2 - x1);
-		double dy = percent*(y2 - y1);
-		double blockAddX = (int)(dx % 100);
-		double blockAddY = (int)(dy % 100);
-		int GridAddX = (int)(dx/100.0);
-		int GridAddY = (int)(dy/100.0);
-		if(GridAddX != 0 || GridAddY != 0)
-			System.err.println("changing grid");
-		gridx += GridAddX;
-		gridy += GridAddY;
-		blockx += blockAddX;
-		blocky += blockAddY;
-		return this;
+		if(percent > 1.0){
+			return go(loc);
+		}
+		double startX = getLocNumX();
+		double startY = getLocNumY();
+		double endX = loc.getLocNumX();
+		double endY = loc.getLocNumY();
+		double dx = (endX - startX)*percent;
+		double dy = (endY - startY)*percent;
+		double x = startX + dx;
+		double y = startY + dy;
+		LocationPlanet result = new LocationPlanet(loc.getPlanet(),x,y);
+		if(result.getGrid().getTerrainType() == TerrainType.Sea)
+			throw new InTheOceanException(result.getGrid());
+		go(result);
+		return result;
 	}
 	public int getGridx()
 	{
@@ -182,11 +178,6 @@ public class LocationPlanet implements Serializable,Container
 	{
 		return planet.getGrids()[gridy][gridx];
 	}
-//	public CityBlock getCityBlock()
-//	{
-//		return planet.getGrids()[gridy][gridx];
-//	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if(obj != null && obj instanceof LocationPlanet) {
@@ -196,12 +187,24 @@ public class LocationPlanet implements Serializable,Container
 		}
 		return false;
 	}
-
 	@Override
 	public void remove(Attackable attackable) {
 		if(attackable instanceof Planet)
 			planet =null;
 		else
 			throw new IllegalStateException();
+	}
+	public class InTheOceanException extends Exception {
+		private Grid grid;
+		/**
+		 * Constructs a new exception with {@code null} as its detail message.
+		 * The cause is not initialized, and may subsequently be initialized by a
+		 * call to {@link #initCause}.
+		 * @param grid
+		 */
+		public InTheOceanException(Grid grid) {
+			super();
+			this.grid = grid;
+		}
 	}
 }

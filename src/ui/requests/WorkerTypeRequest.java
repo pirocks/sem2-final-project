@@ -14,11 +14,8 @@ public class WorkerTypeRequest extends Request
 		this.school = school;
 	}
 
-	@Override
-	public void fullFillRequest() {
 		// TODO: 4/13/2016  implment this
 		//todo also think about wether this will be imediately callled or request will be run through afterward, I think tht imediately called is a better Idea,, so call in constructor.
-	}
 
 	@Override
 	public void askUser() {

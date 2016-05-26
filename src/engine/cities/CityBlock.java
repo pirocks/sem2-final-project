@@ -20,15 +20,16 @@ public class CityBlock extends Attackable implements Serializable, Container
 
 	private City parentCity;
 	private Grid parentGrid;
-	public CityBlock(AttackableConstants attackableConstants,Grid parentGrid, Building building, City parentCity, int x, int y) {
-	    super(attackableConstants);
-        this.parentGrid = parentGrid;
-        this.building = building;
-        this.parentCity = parentCity;
-        this.x = x;
-        this.y = y;
+
+	public CityBlock(City parentCity, int x, int y) {
+		super(new AttackableConstants(0,1,new LocationPlanet(parentCity.getParentGrid(),x,y)));
+		this.parentGrid = parentCity.getParentGrid();
+		this.building = null;
+		this.parentCity = parentCity;
+		this.x = x;
+		this.y = y;
 		registerContainer(parentCity);
-    }
+	}
 	public City getParentCity()
     {
         return parentCity;

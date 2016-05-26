@@ -6,11 +6,16 @@ import engine.planets.Grid;
 import engine.planets.LocationPlanet;
 import engine.planets.Planet;
 import engine.tools.Tool;
+import engine.tools.vehicles.air.Aircraft;
+import engine.tools.vehicles.sea.SeaCraft;
+import engine.tools.vehicles.space.SpaceCraft;
 import engine.tools.weapons.Attackable;
 import engine.tools.weapons.Weapon;
 import engine.universe.MoneySource;
 import engine.universe.Resource;
 import javafx.scene.image.Image;
+import ui.requests.Request;
+import ui.requests.VehicleInWaterRequest;
 
 import java.util.ArrayList;
 
@@ -178,7 +183,15 @@ public abstract class Vehicle extends Tool implements Liver,Container
 		if(destination != null) {
 			assert (getLocation().size() == 1);
 			Grid initialGrid = getLocation().get(0).getGrid();
-			getLocation().get(0).goTowards(destination, (getSpeed() * time) / (12 * 60 * 60), false);
+			try {
+				for (LocationPlanet locationPlanet : getLocation()) {
+						locationPlanet.goTowards(destination, (getSpeed() * time) / (12 * 60 * 60), false,this instanceof SeaCraft || this instanceof Aircraft || this instanceof SpaceCraft,this instanceof SpaceCraft);
+				}
+			} catch (LocationPlanet.InTheOceanException e) {
+				Request request = new VehicleInWaterRequest(this);
+				request.askUser();
+			}
+
 			Grid finalGrid = getLocation().get(0).getGrid();
 			if(finalGrid != initialGrid) {
 				initialGrid.vehicleLeaves(this);

@@ -19,8 +19,7 @@ public class UnderConstruction<Type extends Building> extends Building implement
 	public UnderConstruction(LocationPlanet locationPlanet,Type building,City city)
 	{
 		super(new AttackableConstants(0,0,locationPlanet),
-				new CityBlock(new AttackableConstants(0,0,locationPlanet),locationPlanet.getGrid(),null,city,
-						locationPlanet.getBlockx(),locationPlanet.getBlocky()));//thats one massive super constructor
+				new CityBlock(city,locationPlanet.getBlockx(),locationPlanet.getBlocky()));//thats one massive super constructor
 		this.city = city;
 		type = building;
 		resourceDemand = building.getResourceCost();

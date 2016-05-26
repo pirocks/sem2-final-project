@@ -60,7 +60,7 @@ public class City extends Attackable implements Serializable ,Container
 		for(LocationPlanet locationPlanet:cityConstructionContext.buildingLocations)
 		{
 			Building building;
-			CityBlock cityBlock = new CityBlock(null,cityConstructionContext.parentGrid,null,this,locationPlanet.getBlockx(),locationPlanet.getBlocky());
+			CityBlock cityBlock = new CityBlock(this,locationPlanet.getBlockx(),locationPlanet.getBlocky());
 			//each building will be build here
 //			System.out.print("maximum capacity" + getMaximumHousingCapacity() + "pop:" + cityConstructionContext.population);
 			if(getMaximumHousingCapacity() < cityConstructionContext.population)
@@ -216,13 +216,15 @@ public class City extends Attackable implements Serializable ,Container
 		return building;
 	}
 	public City(CityBuilder cityBuilder){
-		super(new AttackableConstants(healthInitial,resistanceInitial,cityBuilder.getLocation()));
+		super(new AttackableConstants(healthInitial,resistanceInitial,cityBuilder.getLocation()));// TODO: 5/26/2016 add all building locations
 		moneySource = cityBuilder.getParentCountry();
-		CityBlock cityBlock = new CityBlock(new AttackableConstants(1,1,location),cityBuilder.getGrid(),null,this,49,
-				49);
-		buildBuilding(new UnderConstruction<TownHall>(getLocation().get(0),new TownHall(cityBlock,this.getMoneySource
-				()),
-				this));
+		CityBlock cityBlockTownHall = new CityBlock(this,49,49);
+		setBuilding(new TownHall(cityBlockTownHall,moneySource));
+		LocationPlanet warehouseLocation = new LocationPlanet(parentGrid,49,48);
+		CityBlock cityBlockWarehouse = new CityBlock(this,49,48);
+		setBuilding(new Warehouse(cityBlockWarehouse,moneySource));
+		LocationPlanet apartmentLocation = new LocationPlanet(parentGrid,49,47);
+		CityBlock apartmentBlock = new CityBlock(this,x,y);
 	}
 	private void notEnoughHousingHandler(CityConstructionContext c) {
 		if(getMaximumHousingCapacity() > c.population)

@@ -14,10 +14,9 @@ import java.util.ArrayList;
 public class PlanetConstructionContext {
     double radiusFromSolarSystem;
     Star               star;
-    ArrayList<Country> countries;// TODO: 5/10/2016 planets  don't have cpountries/citys randomly generrated yet
+    ArrayList<Country> countries;
     int                gridNum;
-    double             percentWater;// TODO: 5/10/2016 make sure this is actually used or not
-    int                numHazards;
+	int                numHazards;
     //	public static enum ResourceAbundance
     //	{
     //		veryLow,low, mediumLow,medium, mediumHigh,high, veryHigh
@@ -53,7 +52,6 @@ public class PlanetConstructionContext {
 		this.star = star;
 		this.countries = countries;
 		this.gridNum = gridNum;
-		this.percentWater = percentWater;
 		this.numHazards = numHazards;
 		this.IronAbundance = IronAbundance;
 		this.OilAbundance = OilAbundance;
@@ -76,7 +74,6 @@ public class PlanetConstructionContext {
 	    this.star = p.star;
 	    this.countries = p.countries;
 	    this.gridNum = p.gridNum;
-	    this.percentWater = p.percentWater;
 	    this.numHazards = p.numHazards;
 	    this.IronAbundance = p.IronAbundance;
 	    this.OilAbundance = p.OilAbundance;
