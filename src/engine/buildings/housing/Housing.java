@@ -42,8 +42,12 @@ public abstract class Housing extends Building implements Container
 		for (CityWorker cityWorker : cityWorkers) {
 			popToAdd += cityWorker.getPopulation();
 		}
-		if(getFreeSpace() >= popToAdd)
+		if(getFreeSpace() >= popToAdd) {
 			residents.addAll(cityWorkers);
+			for (CityWorker cityWorker : cityWorkers) {
+				cityWorker.setHome(this);
+			}
+		}
 		else
 			throw new ToManyPeopleException(getPopulation(), getFreeSpace());
 	}

@@ -56,13 +56,12 @@ public class CityConstructionContext {
 			numBuildings = (int) (3.5*population/ WorkersHouseBlock.maximumOccupancyInitial);
 		else
 			throw new UnsupportedOperationException();
-		int centerx = utils.getRandomInt(0,100);
-		int centery = utils.getRandomInt(0,100);
+		int centerX = utils.getRandomInt(0,100);
+		int centerY = utils.getRandomInt(0,100);
 		buildingLocations = new ArrayList<>();
-		buildingLocations.add(new LocationPlanet(parentGrid,centerx,centery));
-		for(int count = 0; count < numBuildings;count++)
-		{
-			buildingLocations.add(getSuitableLocation(buildingLocations,parentGrid,centerx,centery,1));
+		buildingLocations.add(new LocationPlanet(parentGrid,centerX,centerY));
+		for(int count = 0; count < numBuildings + 1;count++) {
+			buildingLocations.add(getSuitableLocation(buildingLocations,parentGrid,centerX,centerY,1));
 		}
 	}
 	public LocationPlanet getSuitableLocation(ArrayList<LocationPlanet> usedLocations,Grid grid,int centerx,int centery,int searchDistance)

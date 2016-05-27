@@ -57,8 +57,13 @@ public class CityWorkersConstructionContext {
 	public void assignWorkerToHousing(ArrayList<CityWorker> out,CityWorker cityWorker){
 		Housing emptyHousing = city.findEmptyHousing(cityWorker.getPopulation());
 		if(emptyHousing == null) {
-			out.add((CityWorker) cityWorker.split());
-			assignWorkerToHousing(out,cityWorker);
+//			out.add((CityWorker) cityWorker.split());
+//			assignWorkerToHousing(out,cityWorker);
+			try {
+				throw new UnsupportedOperationException();
+			} catch (UnsupportedOperationException e) {
+				e.printStackTrace();
+			}
 		}
 		else{
 			try {

@@ -9,6 +9,8 @@ import engine.cities.Container;
 import engine.people.AbstractPerson;
 import engine.tools.weapons.Attackable;
 
+import static engine.people.cityworkers.CityWorker.WhereAmI.Initing;
+
 public abstract class CityWorker extends AbstractPerson implements Container, Cloneable//don't foret to get the workplace
 {
 	public static long travelTimeConstant;
@@ -29,8 +31,13 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 		setWorkplace(workplace);
 	}
 	protected abstract void setWorkplace(Workplace workplace);
+
+	public void setHome(Housing home){
+		this.home = home;
+	}
+
 	public enum WhereAmI {
-		AtWork,AtHospital,AtHome,GoingToWork,GoingToHospital,GoingToHome
+		AtWork,AtHospital,AtHome,GoingToWork,GoingToHospital,GoingToHome,Initing
 	}
 	protected WhereAmI whereAmI;
 	private Building currentBuilding;
@@ -42,6 +49,7 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 		super(peopleInitialConstants);
 		currentCity = city;
 		registerContainer(city);
+		whereAmI = Initing;
 	}
 	public void goHome() {
 		double distance = home.getLocation().get(0).distanceBetween(currentBuilding.getLocation().get(0));
@@ -56,7 +64,7 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 		timeRemainingAtLocation = (long)(distance*travelTimeConstant);
 	}
 	private void goToHospital() {
-		Hospital h = currentCity.getLeastLoadedHosital();
+		Hospital h = currentCity.getLeastLoadedHospital();
 		double distance = h.getLocation().get(0).distanceBetween(currentBuilding.getLocation().get(0));
 		whereAmI = WhereAmI.GoingToHospital;
 		currentBuilding = null;
@@ -86,6 +94,15 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 	public void checkHealth() {
 		if(super.getHealth() < 0.3)
 			goToHospital();
+	}
+	@Override
+	public void sanityCheck(){
+		if(salaryGiver == null)
+			throw new IllegalStateException();
+		if(amIDead)
+			throw new UnKilledObjectException();
+
+
 	}
 	public void doLife(long time) {
 		checkHealth();
@@ -144,9 +161,9 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 		return home;
 	}
 	@Override
-	public void dieSpecific()
-	{
-		Container.kill(this);
+	public void dieSpecific() {
+		if(!amIDead)
+			Container.kill(this);
 	}
 	public void remove(City city) {
 		if(currentCity == city)

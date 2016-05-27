@@ -29,6 +29,7 @@ public abstract class AbstractPerson extends Attackable implements Liver, Serial
 	protected AbstractPerson(PeopleInitialConstants peopleInitialConstants) {
 		super(new AttackableConstants(healthInitial, resistanceInitial, peopleInitialConstants.location));
 		registerLiver();
+		registerContainer(this);
 		moneySource = new MoneySource(0);
 		population = peopleInitialConstants.population;
 		foodUsePerPerson = peopleInitialConstants.foodUsePerPerson;

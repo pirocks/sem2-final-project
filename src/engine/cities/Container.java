@@ -26,8 +26,7 @@ public interface Container
 		deregisterContainerInternal(this,object);
 	}
 
-	static void deregisterContainerInternal(Container container, Attackable object)
-	{
+	static void deregisterContainerInternal(Container container, Attackable object) {
 		if(cityContainers.get(object).remove(container))
 			deregisterContainerInternal(container,object);
 	}
@@ -41,8 +40,7 @@ public interface Container
 			cityContainers.put(object,new ArrayList<Container>(){{add(typeContainer);}});
 	}
 	static void kill(Attackable target) {
-		ArrayList<Container> containers = null;
-		containers = cityContainers.get(target);
+		ArrayList<Container> containers = cityContainers.get(target);
 		if(containers == null) {
 			System.out.print("chgvj");
 		}
@@ -51,8 +49,7 @@ public interface Container
 		}
 		cityContainers.remove(target);
 	}
-	static void kill(ArrayList<? extends Attackable> targets)
-	{
+	static void kill(ArrayList<? extends Attackable> targets) {
 		for (Attackable target : targets) {
 			kill(target);
 		}

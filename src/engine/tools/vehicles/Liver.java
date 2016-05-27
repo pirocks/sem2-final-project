@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public interface Liver {
 	ArrayList<Liver> livers = new ArrayList<>();
 	void doLife(long time);
+	boolean sanityCheck();
 	default void registerLiver()
 	{
 		Liver.register(this);
@@ -23,7 +24,12 @@ public interface Liver {
 	}
 	static void doLifeAll(long time) {
 		for (Liver liver : livers) {
-			System.out.println(liver.toString() + ((CityBuilder)liver).getLocation().get(0).getBlocky());
+			if(liver instanceof CityBuilder)
+				System.out.println(liver.toString() + ((CityBuilder)liver).getLocation().get(0).getBlocky());
+			boolean saneQ = liver.sanityCheck();
+			if(!saneQ) {
+
+			}
 			liver.doLife(time);
 		}
 		//update display // TODO: 5/26/2016

@@ -60,18 +60,20 @@ public class City extends Attackable implements Serializable ,Container
 		setName();
 		cityBlocks = new HashSet<>();
 		hospitals = new ArrayList<>();
-		for(LocationPlanet locationPlanet:cityConstructionContext.buildingLocations)
-		{
+		ArrayList<LocationPlanet> buildingLocations = cityConstructionContext.buildingLocations;
+		for (int i = 0; i < buildingLocations.size() - 1; i++) {
+			LocationPlanet locationPlanet = buildingLocations.get(i);
 			Building building;
-			CityBlock cityBlock = new CityBlock(this,locationPlanet.getBlockx(),locationPlanet.getBlocky());
-			if(getMaximumHousingCapacity() < cityConstructionContext.population)
-				building = getBuidingHousingNeeded(cityConstructionContext, cityBlock);
+			CityBlock cityBlock = new CityBlock(this, locationPlanet.getBlockx(), locationPlanet.getBlocky());
+			if (getMaximumHousingCapacity() < cityConstructionContext.population)
+				building = getBuildingHousingNeeded(cityConstructionContext, cityBlock);
 			else
 				building = getBuildingHousingNotNeeded(cityConstructionContext, cityBlock);
 			cityBlock.setBuilding(building);
 			cityBlocks.add(cityBlock);
 			registerContainer(cityBlock);
 		}
+		addHospital(buildingLocations);
 		if(!(getMaximumHousingCapacity() > cityConstructionContext.population)) {
 			notEnoughHousingHandler(cityConstructionContext);
 		}
@@ -79,7 +81,6 @@ public class City extends Attackable implements Serializable ,Container
 			if(workplace.getWorkers().size() > 0)
 				throw new IllegalStateException();
 		}
-
 		parentCountry = cityConstructionContext.parentCountry;
 		moneySource = parentCountry;
 		residents = new ArrayList<>();
@@ -89,10 +90,18 @@ public class City extends Attackable implements Serializable ,Container
 			CityWorkersConstructionContext cityWorkersConstructionContext = new CityWorkersConstructionContext(this,cityConstructionContext,workplace);
 			residents.addAll(cityWorkersConstructionContext.generateWorker());
 		}
-
-
-		// TODO: 5/8/2016 implement me residents
 	}
+
+	private void addHospital(ArrayList<LocationPlanet> buildingLocations) {
+		LocationPlanet locationPlanet =  buildingLocations.get(buildingLocations.size() - 1);
+		CityBlock block = new CityBlock(this, locationPlanet.getBlockx(), locationPlanet.getBlocky());
+		Hospital hospital = new Hospital(block,moneySource);
+		block.setBuilding(hospital);
+		cityBlocks.add(block);
+		registerContainer(block);
+		hospitals.add(hospital);
+	}
+
 	@NotNull
 	private Building getBuildingHousingNotNeeded(CityConstructionContext cityConstructionContext, CityBlock cityBlock) {
 		Building building;
@@ -195,7 +204,7 @@ public class City extends Attackable implements Serializable ,Container
 		return building;
 	}
 	@NotNull
-	private Building getBuidingHousingNeeded(CityConstructionContext cityConstructionContext, CityBlock cityBlock) {
+	private Building getBuildingHousingNeeded(CityConstructionContext cityConstructionContext, CityBlock cityBlock) {
 		Building building;
 		if (cityConstructionContext.type == CityConstructionContext.Type.Industrial) {
 			//add as much housing as necessary for population
@@ -321,7 +330,7 @@ public class City extends Attackable implements Serializable ,Container
 	public double getYInGrid() {
 		return y;
 	}
-	public Hospital getLeastLoadedHosital() {
+	public Hospital getLeastLoadedHospital() {
 		Hospital leastLoadedHospital = hospitals.get(0);
 		for(Hospital hospital:hospitals)
 			if(leastLoadedHospital.getWorkLoad() > hospital.getWorkLoad())
