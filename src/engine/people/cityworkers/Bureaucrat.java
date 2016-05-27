@@ -28,8 +28,6 @@ public class Bureaucrat extends CityWorker
 			    crimeImpactInitial,
 			    salaryInitial,
 			    parentCity.getParentCountry(),location),parentCity);
-
-//	    salaryGiver = workplace.
     }
 
     @Override
@@ -52,6 +50,6 @@ public class Bureaucrat extends CityWorker
 
     @Override
     public double getWeight() {
-        return 0;// TODO: 4/9/2016
+        return 2;
     }
 }

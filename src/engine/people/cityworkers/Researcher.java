@@ -36,6 +36,6 @@ public class Researcher extends CityWorker
     }
     @Override
     public double getWeight() {
-        return 0;// TODO: 4/9/2016
+        return 1.25;
     }
 }

@@ -1,6 +1,9 @@
 package engine.buildings.workplaces;
 
 import engine.cities.CityBlock;
+import engine.people.cityworkers.CityWorker;
+import engine.people.cityworkers.ManualWorker;
+import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.universe.MoneySource;
 import engine.universe.Resource;
@@ -14,12 +17,12 @@ public class Warehouse extends Workplace
 	public static double healthInitial;
 	//stores weighable object
 	//resource or tool
-	public static int maxiWorkersInitial;
+	public static int maxWorkersInitial;
 	public static double costInitial;
 	public Resource inStock;
 
 	public Warehouse(CityBlock parentBlock, MoneySource owner) {
-		super(new AttackableConstants(healthInitial,resistanceInitial,parentBlock.getLocation()),parentBlock, maxiWorkersInitial, owner);
+		super(new AttackableConstants(healthInitial,resistanceInitial,parentBlock.getLocation()),parentBlock, maxWorkersInitial, owner);
 		inStock = new Resource(Resource.Type.Food,0);
 	}
 
@@ -38,8 +41,18 @@ public class Warehouse extends Workplace
 	}
 
 	@Override
+	protected boolean isSuitableType(CityWorker cityWorker) {
+		return cityWorker instanceof ManualWorker;
+	}
+
+	@Override
 	public void addSpecific(VBox in) {
 		in.getChildren().add(new Text("Resources in Stock:"));
 		in.getChildren().addAll(inStock.toVbox());
+	}
+
+	@Override
+	public CityWorker createCorrectType() {
+		return new ManualWorker(getParentCity(),new LocationPlanet(this));
 	}
 }

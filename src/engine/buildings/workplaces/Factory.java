@@ -1,6 +1,9 @@
 package engine.buildings.workplaces;
 
 import engine.cities.CityBlock;
+import engine.people.cityworkers.CityWorker;
+import engine.people.cityworkers.ManualWorker;
+import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.tools.Tool;
 import engine.tools.ToolUnderConstruction;
@@ -45,7 +48,17 @@ public class Factory extends Workplace implements ToolBuilder<Tool>
 	}
 
 	@Override
+	protected boolean isSuitableType(CityWorker cityWorker) {
+		return cityWorker instanceof ManualWorker;
+	}
+
+	@Override
 	public void addSpecific(VBox in) {
 		// TODO: 5/23/2016
+	}
+
+	@Override
+	public CityWorker createCorrectType() {
+		return new ManualWorker(getParentCity(),new LocationPlanet(this));
 	}
 }

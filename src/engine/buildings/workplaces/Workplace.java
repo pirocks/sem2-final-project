@@ -16,18 +16,10 @@ import javafx.scene.text.Text;
 import java.util.ArrayList;
 public abstract class Workplace extends Building implements Container
 {
-	public ArrayList<CityWorker> getWorkers() {
-		return workers;
-	}
-
-	public MoneySource getOwner() {
-		return owner;
-	}
-
 	private ArrayList<CityWorker> workers;
+
 	private int maxWorkers;
 	private MoneySource owner;
-
 	public Workplace(AttackableConstants attackableConstants,
 	                 CityBlock parentBlock, int maxWorkers, MoneySource owner) {
 		super(attackableConstants,parentBlock);
@@ -42,14 +34,18 @@ public abstract class Workplace extends Building implements Container
 				return true;
 		return false;
 	}
+	protected abstract boolean isSuitableType(CityWorker cityWorker);
 	public boolean canAddWorker(CityWorker worker) {
 		return worker.getPopulation() + workerCount() < maxWorkers;
 	}
-	public void addWorker(CityWorker worker) throws IllegalStateException {
+	public void addWorker(CityWorker worker) throws ToManyWorkersException, InCorrectWorkerTypeException {
 		if(canAddWorker(worker))
-			workers.add(worker);
+			if(isSuitableType(worker))
+				workers.add(worker);
+			else
+				throw new InCorrectWorkerTypeException();
 		else
-			throw new IllegalStateException();
+			throw new ToManyWorkersException(maxWorkers - workerCount());
 	}
 	public int workerCount() {
 		int sum = 0;
@@ -90,4 +86,11 @@ public abstract class Workplace extends Building implements Container
 			remove((AbstractPerson)attackable);
 		}
 	}
+	public ArrayList<CityWorker> getWorkers() {
+		return workers;
+	}
+	public MoneySource getOwner() {
+		return owner;
+	}
+	public abstract CityWorker createCorrectType();
 }

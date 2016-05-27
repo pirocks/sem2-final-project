@@ -2,6 +2,10 @@ package engine.buildings.workplaces;
 
 import engine.cities.City;
 import engine.cities.CityBlock;
+import engine.people.cityworkers.Bureaucrat;
+import engine.people.cityworkers.CityWorker;
+import engine.people.cityworkers.Ruler;
+import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.universe.MoneySource;
 import engine.universe.ResourceDemand;
@@ -17,6 +21,7 @@ public class TownHall extends Workplace
 
 	public TownHall( CityBlock parentBlock, MoneySource owner) {
 		super(new AttackableConstants(parentBlock.getLocation(),healthInitial,resistanceInitial), parentBlock, maxWorkersInitial, owner);
+		parentCity= parentBlock.getParentCity();
 	}
 
 	@Override
@@ -30,6 +35,17 @@ public class TownHall extends Workplace
 	}
 
 	@Override
+	protected boolean isSuitableType(CityWorker cityWorker) {
+		return cityWorker instanceof Ruler || cityWorker instanceof Bureaucrat;
+	}
+
+	@Override
 	public void addSpecific(VBox in) {
+		// TODO: 5/26/2016
+	}
+
+	@Override
+	public CityWorker createCorrectType() {
+		return new Bureaucrat(parentCity,new LocationPlanet(this));
 	}
 }

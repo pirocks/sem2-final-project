@@ -3,6 +3,7 @@ package engine.buildings.workplaces;
 import engine.cities.CityBlock;
 import engine.people.cityworkers.CityWorker;
 import engine.people.cityworkers.Teacher;
+import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.universe.MoneySource;
 import engine.universe.ResourceDemand;
@@ -32,6 +33,11 @@ public class School extends Workplace
 	}
 
 	@Override
+	protected boolean isSuitableType(CityWorker cityWorker) {
+		return cityWorker instanceof Teacher;
+	}
+
+	@Override
 	public void addSpecific(VBox in) {
 		HashMap<String,Integer> typesOfStudents = new HashMap<>();
 		for (CityWorker cityWorker : super.getWorkers()) {
@@ -43,6 +49,11 @@ public class School extends Workplace
 		}
 
 
+	}
+
+	@Override
+	public CityWorker createCorrectType() {
+		return new Teacher<>(getParentCity(),new LocationPlanet(this));
 	}
 
 	//no member vars needed, teachers have all vars required

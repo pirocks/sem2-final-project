@@ -9,6 +9,7 @@ import engine.buildings.housing.WorkersHouseBlock;
 import engine.buildings.workplaces.*;
 import engine.people.AbstractPerson;
 import engine.people.cityworkers.CityWorker;
+import engine.people.cityworkers.CityWorkersConstructionContext;
 import engine.planets.Grid;
 import engine.planets.LocationPlanet;
 import engine.planets.TerrainType;
@@ -39,13 +40,12 @@ public class City extends Attackable implements Serializable ,Container
 	private boolean isCapital;
 	private int x,y;//center of city in grid//will be townHall location
 	private Grid parentGrid;//can be used to find location//engine.cities limited to one grid
-	// private ArrayList<Grid> grids;//not yet
 	private ArrayList<CityBlock> cityBlocks;
 	private ArrayList<Hospital> hospitals;
 	public ArrayList<CityWorker> residents;
-//    public ArrayList<CityWorker> unemployedResidents;
 	private Country parentCountry;//make sutre to change when cuity is captured.
-	public String name; // TODO: 5/10/2016 go through and make all the names final or private and extract interface
+	public String name; // TODO: 5/10/2016 go through and make all the names final or private and extract
+	// interface
 	public static String[] names = {
 			"London", "San Francisco", "Beverly Hills","Los Altos", "Cambridge","San Jose","Edinburgh","Paris","Rome","Berlin","Moscow","Stalingrad","I'm out of clever Names","New London","Edinburgh","Boston","Lima","Leningrad","Portland",
 			"Seattle","Hong Kong","Taipei","Lhasa","Sukhumi","Pristina","Hell, Michigan","Taumata whakatangi hangakoauau"
@@ -54,6 +54,7 @@ public class City extends Attackable implements Serializable ,Container
 	public City(CityConstructionContext cityConstructionContext) throws ToManyPeopleException {
 		super(healthInitial,resistanceInitial,cityConstructionContext.buildingLocations);
 		parentGrid = cityConstructionContext.parentGrid;
+		name = null;
 		setName();
 		cityBlocks = new ArrayList<>();
 		hospitals = new ArrayList<>();
@@ -82,6 +83,12 @@ public class City extends Attackable implements Serializable ,Container
 		parentCountry = cityConstructionContext.parentCountry;
 		moneySource = parentCountry;
 		residents = new ArrayList<>();
+		for (Workplace workplace : getWorkPlaces()) {
+			CityWorkersConstructionContext cityWorkersConstructionContext = new CityWorkersConstructionContext(this,cityConstructionContext,workplace);
+			residents.add(cityWorkersConstructionContext.generateWorker());
+		}
+
+
 		// TODO: 5/8/2016 implement me residents
 	}
 	@NotNull
@@ -225,6 +232,8 @@ public class City extends Attackable implements Serializable ,Container
 		setBuilding(new Warehouse(cityBlockWarehouse,moneySource));
 		LocationPlanet apartmentLocation = new LocationPlanet(parentGrid,49,47);
 		CityBlock apartmentBlock = new CityBlock(this,x,y);
+		name = null;
+		setName();
 	}
 	private void notEnoughHousingHandler(CityConstructionContext c) {
 		if(getMaximumHousingCapacity() > c.population)
@@ -278,8 +287,7 @@ public class City extends Attackable implements Serializable ,Container
 		}
 		nameCount++;
 	}
-	public ArrayList<CityBlock> getCityBlocks()
-	{
+	public ArrayList<CityBlock> getCityBlocks() {
 		return cityBlocks;
 	}
 	public Building getCapitalBuilding() {
@@ -302,16 +310,13 @@ public class City extends Attackable implements Serializable ,Container
 	{
 		return parentCountry;
 	}
-	public Grid getGrid()
-	{
+	public Grid getGrid() {
 		return parentGrid;
 	}
-	public double getXInGrid()
-	{
+	public double getXInGrid() {
 		return x;
 	}
-	public double getYInGrid()
-	{
+	public double getYInGrid() {
 		return y;
 	}
 	public Hospital getLeastLoadedHosital() {
@@ -322,13 +327,11 @@ public class City extends Attackable implements Serializable ,Container
 		return leastLoadedHospital;
 	}
 	public void leavePerson(AbstractPerson person) {
-		for(Hospital hospital:hospitals)
-		{
+		for(Hospital hospital:hospitals) {
 			hospital.leavePerson(person);
 		}
 		assert(residents.contains(person));
 		residents.remove(person);
-
 	}
 	//all people that are homeless are also jobless
 	public ArrayList<CityWorker> getHomeless(){
@@ -434,14 +437,17 @@ public class City extends Attackable implements Serializable ,Container
 	public void setBuilding(Building building) {
 		CityBlock block = building.getParentBlock();
 		block.setBuilding(building);
-		cityBlocks.add(block);
 	}
-
 	@Override
 	public void remove(Attackable attackable) {
 		if(attackable instanceof Building)
 			remove((Building)attackable);
 		if(attackable instanceof AbstractPerson)
 			remove((AbstractPerson)attackable);
+	}
+	public void registerCityBlock(CityBlock block) {
+		if(block.getParentCity() != this)
+			throw new IllegalArgumentException();
+		cityBlocks.add(block);
 	}
 }

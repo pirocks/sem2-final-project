@@ -1,6 +1,9 @@
 package engine.buildings.workplaces;
 
 import engine.cities.CityBlock;
+import engine.people.cityworkers.CityWorker;
+import engine.people.cityworkers.ManualWorker;
+import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.tools.ToolUnderConstruction;
 import engine.tools.vehicles.sea.SeaCraft;
@@ -32,8 +35,18 @@ public class IndustrialDock extends Workplace implements ToolBuilder<SeaCraft>
 	}
 
 	@Override
+	protected boolean isSuitableType(CityWorker cityWorker) {
+		return cityWorker instanceof ManualWorker;
+	}
+
+	@Override
 	public void addSpecific(VBox in) {
 		in.getChildren().add(new Text("Currently Building" + underConstruction.getName()));
+	}
+
+	@Override
+	public CityWorker createCorrectType() {
+		return new ManualWorker(getParentCity(),new LocationPlanet(this));
 	}
 
 	@Override

@@ -3,6 +3,8 @@ package engine.buildings.workplaces;
 import engine.cities.CityBlock;
 import engine.people.AbstractPerson;
 import engine.people.cityworkers.CityWorker;
+import engine.people.cityworkers.Doctor;
+import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.universe.MoneySource;
 import engine.universe.ResourceDemand;
@@ -44,7 +46,13 @@ public class Hospital extends Workplace
     {
         return sickPeople.remove(p);
     }
-    public void leavePerson(AbstractPerson person)
+
+	@Override
+	protected boolean isSuitableType(CityWorker cityWorker) {
+		return cityWorker instanceof Doctor;
+	}
+
+	public void leavePerson(AbstractPerson person)
     {
 	    assert(sickPeople.contains(person));
 	    sickPeople.remove(person);
@@ -53,6 +61,11 @@ public class Hospital extends Workplace
 	@Override
 	public void addSpecific(VBox in) {
 		// TODO: 5/23/2016
+	}
+
+	@Override
+	public CityWorker createCorrectType() {
+		return new Doctor(getParentCity(),new LocationPlanet(this));
 	}
 
 	@Override

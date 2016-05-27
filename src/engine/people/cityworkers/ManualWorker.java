@@ -6,43 +6,36 @@ import engine.planets.LocationPlanet;
 import engine.universe.UniversalConstants;
 
 /**
- * Created by bob on 4/10/2016.
+ * Created by bob on 5/26/2016.
  *
  */
-public class Worker extends CityWorker
-{
+public class ManualWorker extends CityWorker {
+	private Workplace workplace;
 	public static int populationInitial = 1000;
 	public static double foodUsePerPersonInitial = UniversalConstants.normalFoodUsePerPerson;
 	public static double crimeRiskInitial = UniversalConstants.normalCrimeRisk;
-	public static double crimeImpactInitial = 0.01*UniversalConstants.normalPersonCrimeImpact;
+	public static double crimeImpactInitial = UniversalConstants.normalPersonCrimeImpact;
 	public static double salaryInitial = UniversalConstants.normalPersonSalary;
 
-	public Worker(City parentCity, LocationPlanet locationPlanet) {
-		super(new PeopleInitialConstants(populationInitial,
-				foodUsePerPersonInitial,
-				crimeRiskInitial,
-				crimeImpactInitial,
-				salaryInitial,
-				parentCity.getParentCountry(),locationPlanet),parentCity);
+	public ManualWorker(City city,LocationPlanet locationPlanet) {
+		super(new PeopleInitialConstants(populationInitial,foodUsePerPersonInitial,crimeRiskInitial,crimeImpactInitial,salaryInitial,city.getParentCountry(),locationPlanet), city);
 	}
+
 
 	@Override
 	public Workplace getWorkBuilding() {
-		return null;// TODO: 4/10/2016
+		return workplace;
 	}
 
 	@Override
 	public void setWorkPlaceToNull() {
-		// TODO: 4/10/2016  //what the fuck is this method
+		workplace = null;
 	}
 
 	@Override
 	public void doSkill(long time) {
-		// TODO: 4/10/2016
-	}
-
-	@Override
-	public double getWeight() {
-		return 0;// TODO: 4/10/2016
+		// TODO: 5/26/2016
+		//workplace can be instance of industrial dock,
+		//factory, dockyard, construction site
 	}
 }

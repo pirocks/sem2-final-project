@@ -197,7 +197,12 @@ public class Controller implements Initializable{
 			pane.getChildren().add(new Text("Vehicle:" + v.getClass().getSimpleName()));
 			if(v instanceof CityBuilder) {
 				Button button = new Button("Build City"){{
-					((CityBuilder)v).buildCity();
+					setOnMouseClicked(new EventHandler<MouseEvent>() {
+						@Override
+						public void handle(MouseEvent event) {
+							((CityBuilder)v).buildCity();
+						}
+					});
 				}};
 				pane.getChildren().add(button);
 			}

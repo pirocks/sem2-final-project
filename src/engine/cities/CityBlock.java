@@ -29,6 +29,7 @@ public class CityBlock extends Attackable implements Serializable, Container
 		this.x = x;
 		this.y = y;
 		registerContainer(parentCity);
+		parentCity.registerCityBlock(this);
 	}
 	public City getParentCity()
     {

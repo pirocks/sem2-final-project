@@ -1,6 +1,9 @@
 package engine.buildings.workplaces;
 
 import engine.cities.CityBlock;
+import engine.people.cityworkers.CityWorker;
+import engine.people.cityworkers.Researcher;
+import engine.planets.LocationPlanet;
 import engine.science.Discovery;
 import engine.tools.AttackableConstants;
 import engine.universe.MoneySource;
@@ -38,6 +41,11 @@ public class ResearchArea extends Workplace
 	}
 
 	@Override
+	protected boolean isSuitableType(CityWorker cityWorker) {
+		return cityWorker instanceof Researcher;
+	}
+
+	@Override
 	public void addSpecific(VBox in) {
 		try {
 			in.getChildren().add(new Text("working on:" + discovery.getClass().getCanonicalName()));
@@ -49,5 +57,10 @@ public class ResearchArea extends Workplace
 		} catch (NullPointerException e) {// TODO: 5/24/2016 be more graceful
 			System.out.print("you probably shouldn't see this but its really not that bad");
 		}
+	}
+
+	@Override
+	public CityWorker createCorrectType() {
+		return new Researcher(getParentCity(),new LocationPlanet(this));
 	}
 }
