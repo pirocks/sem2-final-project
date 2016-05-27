@@ -16,13 +16,14 @@ public class VehicleInWaterRequest extends Request {
 	}
 
 	@Override
-	public void askUser() {
+	public String askUser() {
 		Alert alert  = new Alert(Alert.AlertType.CONFIRMATION);
 		alert.setTitle("A vehicle hit water");
 		alert.setContentText("A moving vehicle hit water and was unable to continue. \n Do you want to set a new course?");
 		ButtonType no = new ButtonType("No");
 		ButtonType yes = new ButtonType("Yes");
 		alert.getButtonTypes().setAll(no,yes);
+		return alert.getResult().getText();
 	}
 
 }

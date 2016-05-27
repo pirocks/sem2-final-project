@@ -13,7 +13,7 @@ import engine.universe.UniversalConstants;
 //remember that
 //how to do attacks???
 
-public class Soldier extends AbstractPerson implements Container
+public class Soldier extends AbstractPerson implements Container,Cloneable
 {
 	public static int populationInitial = 5000;
 	public static double foodUsePerPersonInitial =

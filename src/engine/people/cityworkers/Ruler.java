@@ -9,7 +9,7 @@ import engine.universe.UniversalConstants;
 /*
     one ruler per country
 */
-public class Ruler extends CityWorker //TODO:clean this up
+public class Ruler extends CityWorker implements Cloneable //TODO:clean this up
 {
 	public static int populationInitial = 1;
 	public static double foodUsePerPersonInitial = UniversalConstants.normalFoodUsePerPerson;
@@ -27,6 +27,11 @@ public class Ruler extends CityWorker //TODO:clean this up
 						getCorruptionFactor(parentCountry)*
 						salaryInitial,
 				parentCountry,location),parentCountry.getCapitalCity());
+	}
+
+	@Override
+	protected void setWorkplace(Workplace workplace) {
+		this.workplace = (TownHall) workplace;
 	}
 
 	@Override

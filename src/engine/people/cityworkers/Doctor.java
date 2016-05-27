@@ -1,6 +1,7 @@
 package engine.people.cityworkers;
 
 import engine.buildings.workplaces.Hospital;
+import engine.buildings.workplaces.Workplace;
 import engine.cities.City;
 import engine.planets.LocationPlanet;
 import engine.universe.UniversalConstants;
@@ -8,7 +9,7 @@ import engine.universe.UniversalConstants;
 //import engine.buildings.workplace.*;
 
 
-public class Doctor extends CityWorker
+public class Doctor extends CityWorker implements Cloneable
 {
 	public static int populationInitial = 100;
 	public static double foodUsePerPersonInitial = UniversalConstants.normalFoodUsePerPerson;
@@ -17,7 +18,13 @@ public class Doctor extends CityWorker
 	public static double salaryInitial = 2.0*UniversalConstants.normalPersonSalary;
 	public static long timeToHealOnePerson = 3600*24;
     private Hospital workplace;
-    public Hospital getWorkBuilding()
+
+	@Override
+	protected void setWorkplace(Workplace workplace) {
+		this.workplace = (Hospital) workplace;
+	}
+
+	public Hospital getWorkBuilding()
     {
         return workplace;
     }

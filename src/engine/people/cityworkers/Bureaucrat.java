@@ -1,11 +1,12 @@
 package engine.people.cityworkers;
 
 import engine.buildings.workplaces.TownHall;
+import engine.buildings.workplaces.Workplace;
 import engine.cities.City;
 import engine.planets.LocationPlanet;
 import engine.universe.UniversalConstants;
 
-public class Bureaucrat extends CityWorker
+public class Bureaucrat extends CityWorker implements Cloneable
 {
 	public static int populationInitial = 100;
 	public static double foodUsePerPersonInitial =
@@ -30,7 +31,12 @@ public class Bureaucrat extends CityWorker
 			    parentCity.getParentCountry(),location),parentCity);
     }
 
-    @Override
+	@Override
+	protected void setWorkplace(Workplace workplace) {
+		this.workplace = (TownHall) workplace;
+	}
+
+	@Override
     public TownHall getWorkBuilding() {
         return workplace;
     }

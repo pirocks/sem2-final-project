@@ -1,6 +1,7 @@
 package engine.people.cityworkers;
 
 import engine.buildings.workplaces.School;
+import engine.buildings.workplaces.Workplace;
 import engine.cities.City;
 import engine.people.AbstractPerson;
 import engine.planets.LocationPlanet;
@@ -8,7 +9,8 @@ import engine.universe.UniversalConstants;
 
 import java.util.ArrayList;
 
-public class Teacher<Type extends AbstractPerson> extends CityWorker {
+public class Teacher<Type extends AbstractPerson> extends CityWorker implements Cloneable
+{
     public double progress = 0.0;//from 0 to 1
 
     public Type getStudent() {
@@ -31,6 +33,11 @@ public class Teacher<Type extends AbstractPerson> extends CityWorker {
                 crimeImpactInitial,
                 salaryInitial,
                 parentCity.getParentCountry(),location),parentCity);
+    }
+
+    @Override
+    protected void setWorkplace(Workplace workplace) {
+        this.workplace = (School) workplace;
     }
 
     public School getWorkBuilding() {

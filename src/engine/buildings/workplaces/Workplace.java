@@ -23,8 +23,10 @@ public abstract class Workplace extends Building implements Container
 	public Workplace(AttackableConstants attackableConstants,
 	                 CityBlock parentBlock, int maxWorkers, MoneySource owner) {
 		super(attackableConstants,parentBlock);
-		this.maxWorkers = maxWorkers;
 		workers = new ArrayList<>();
+		this.maxWorkers = maxWorkers;
+		if(maxWorkers == 0)
+			this.maxWorkers = 1000;
 		registerContainer(workers);
 		this.owner = owner;
 	}
@@ -36,12 +38,14 @@ public abstract class Workplace extends Building implements Container
 	}
 	protected abstract boolean isSuitableType(CityWorker cityWorker);
 	public boolean canAddWorker(CityWorker worker) {
-		return worker.getPopulation() + workerCount() < maxWorkers;
+		return worker.getPopulation() + workerCount() <= maxWorkers;
 	}
 	public void addWorker(CityWorker worker) throws ToManyWorkersException, InCorrectWorkerTypeException {
 		if(canAddWorker(worker))
-			if(isSuitableType(worker))
+			if(isSuitableType(worker)) {
 				workers.add(worker);
+				worker.registerWorkplace(this);
+			}
 			else
 				throw new InCorrectWorkerTypeException();
 		else

@@ -9,7 +9,8 @@ import engine.universe.UniversalConstants;
  * Created by bob on 5/26/2016.
  *
  */
-public class ManualWorker extends CityWorker {
+public class ManualWorker extends CityWorker implements Cloneable
+{
 	private Workplace workplace;
 	public static int populationInitial = 1000;
 	public static double foodUsePerPersonInitial = UniversalConstants.normalFoodUsePerPerson;
@@ -21,6 +22,11 @@ public class ManualWorker extends CityWorker {
 		super(new PeopleInitialConstants(populationInitial,foodUsePerPersonInitial,crimeRiskInitial,crimeImpactInitial,salaryInitial,city.getParentCountry(),locationPlanet), city);
 	}
 
+
+	@Override
+	protected void setWorkplace(Workplace workplace) {
+		this.workplace = workplace;
+	}
 
 	@Override
 	public Workplace getWorkBuilding() {

@@ -1,11 +1,12 @@
 package engine.people.cityworkers;
 
 import engine.buildings.workplaces.ResearchArea;
+import engine.buildings.workplaces.Workplace;
 import engine.cities.City;
 import engine.planets.LocationPlanet;
 import engine.universe.UniversalConstants;
 
-public class Researcher extends CityWorker
+public class Researcher extends CityWorker implements Cloneable
 {
     public static int populationInitial = 100;
     public static double foodUsePerPersonInitial = UniversalConstants.normalFoodUsePerPerson;
@@ -21,7 +22,13 @@ public class Researcher extends CityWorker
 				salaryInitial,
 				parentCity.getParentCountry(),location),parentCity);
 	}
-    public ResearchArea getWorkBuilding()
+
+	@Override
+	protected void setWorkplace(Workplace workplace) {
+		this.workplace = (ResearchArea) workplace;
+	}
+
+	public ResearchArea getWorkBuilding()
     {
         return workplace;
     }

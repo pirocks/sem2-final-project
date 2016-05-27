@@ -13,4 +13,5 @@ public class AiRuler extends Ruler implements Serializable {
 	public AiRuler(Country parentCountry) {
 		super(parentCountry,null);
 	}
+
 }

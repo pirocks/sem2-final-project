@@ -22,6 +22,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by bob on 3/5/2016.
@@ -40,7 +42,7 @@ public class City extends Attackable implements Serializable ,Container
 	private boolean isCapital;
 	private int x,y;//center of city in grid//will be townHall location
 	private Grid parentGrid;//can be used to find location//engine.cities limited to one grid
-	private ArrayList<CityBlock> cityBlocks;
+	private Set<CityBlock> cityBlocks;
 	private ArrayList<Hospital> hospitals;
 	public ArrayList<CityWorker> residents;
 	private Country parentCountry;//make sutre to change when cuity is captured.
@@ -56,23 +58,16 @@ public class City extends Attackable implements Serializable ,Container
 		parentGrid = cityConstructionContext.parentGrid;
 		name = null;
 		setName();
-		cityBlocks = new ArrayList<>();
+		cityBlocks = new HashSet<>();
 		hospitals = new ArrayList<>();
 		for(LocationPlanet locationPlanet:cityConstructionContext.buildingLocations)
 		{
 			Building building;
 			CityBlock cityBlock = new CityBlock(this,locationPlanet.getBlockx(),locationPlanet.getBlocky());
-			//each building will be build here
-//			System.out.print("maximum capacity" + getMaximumHousingCapacity() + "pop:" + cityConstructionContext.population);
 			if(getMaximumHousingCapacity() < cityConstructionContext.population)
-			{
 				building = getBuidingHousingNeeded(cityConstructionContext, cityBlock);
-			}
 			else
-			{
-				//factories etc:
 				building = getBuildingHousingNotNeeded(cityConstructionContext, cityBlock);
-			}
 			cityBlock.setBuilding(building);
 			cityBlocks.add(cityBlock);
 			registerContainer(cityBlock);
@@ -80,12 +75,19 @@ public class City extends Attackable implements Serializable ,Container
 		if(!(getMaximumHousingCapacity() > cityConstructionContext.population)) {
 			notEnoughHousingHandler(cityConstructionContext);
 		}
+		for (Workplace workplace : getWorkPlaces()) {
+			if(workplace.getWorkers().size() > 0)
+				throw new IllegalStateException();
+		}
+
 		parentCountry = cityConstructionContext.parentCountry;
 		moneySource = parentCountry;
 		residents = new ArrayList<>();
 		for (Workplace workplace : getWorkPlaces()) {
+			if(workplace.getWorkers().size() > 0)
+ 				throw new IllegalStateException();
 			CityWorkersConstructionContext cityWorkersConstructionContext = new CityWorkersConstructionContext(this,cityConstructionContext,workplace);
-			residents.add(cityWorkersConstructionContext.generateWorker());
+			residents.addAll(cityWorkersConstructionContext.generateWorker());
 		}
 
 
@@ -287,7 +289,7 @@ public class City extends Attackable implements Serializable ,Container
 		}
 		nameCount++;
 	}
-	public ArrayList<CityBlock> getCityBlocks() {
+	public Set<CityBlock> getCityBlocks() {
 		return cityBlocks;
 	}
 	public Building getCapitalBuilding() {

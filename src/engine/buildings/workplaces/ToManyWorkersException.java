@@ -3,7 +3,7 @@ package engine.buildings.workplaces;
 /**
  * Created by bob on 5/26/2016.
  */
-class ToManyWorkersException extends Exception{
+public class ToManyWorkersException extends Exception{
 	private int workersRemaining;
 
 	ToManyWorkersException(int workersRemaining) {

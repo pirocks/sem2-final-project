@@ -3,6 +3,7 @@ package engine.buildings.housing;
 import engine.buildings.Building;
 import engine.cities.CityBlock;
 import engine.cities.Container;
+import engine.cities.ToManyPeopleException;
 import engine.people.AbstractPerson;
 import engine.people.cityworkers.CityWorker;
 import engine.tools.AttackableConstants;
@@ -36,6 +37,16 @@ public abstract class Housing extends Building implements Container
         int sum = getPopulation();
 	    return sum <= maximumOccupancy;
     }
+	public void addResidents(ArrayList<CityWorker> cityWorkers) throws ToManyPeopleException {
+		int popToAdd = 0;
+		for (CityWorker cityWorker : cityWorkers) {
+			popToAdd += cityWorker.getPopulation();
+		}
+		if(getFreeSpace() >= popToAdd)
+			residents.addAll(cityWorkers);
+		else
+			throw new ToManyPeopleException(getPopulation(), getFreeSpace());
+	}
 	public int getPopulation() {
         int sum = 0;
         for(CityWorker person:residents)

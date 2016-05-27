@@ -9,7 +9,7 @@ import engine.cities.Container;
 import engine.people.AbstractPerson;
 import engine.tools.weapons.Attackable;
 
-public abstract class CityWorker extends AbstractPerson implements Container//don't foret to get the workplace
+public abstract class CityWorker extends AbstractPerson implements Container, Cloneable//don't foret to get the workplace
 {
 	public static long travelTimeConstant;
 	public static long TimeAtWork;
@@ -22,7 +22,13 @@ public abstract class CityWorker extends AbstractPerson implements Container//do
 		if(attackable instanceof City)
 			remove((City)attackable);
 	}
-
+	public void setPopulation(int population) {
+		this.population = population;
+	}
+	public void registerWorkplace(Workplace workplace){
+		setWorkplace(workplace);
+	}
+	protected abstract void setWorkplace(Workplace workplace);
 	public enum WhereAmI {
 		AtWork,AtHospital,AtHome,GoingToWork,GoingToHospital,GoingToHome
 	}
