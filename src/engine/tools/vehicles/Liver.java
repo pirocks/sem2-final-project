@@ -17,8 +17,7 @@ public interface Liver {
 	ArrayList<Liver> livers = new ArrayList<>();
 	void doLife(long time);
 	boolean sanityCheck();
-	default void registerLiver()
-	{
+	default void registerLiver() {
 		Liver.register(this);
 	}
 	static void register(Liver liver){

@@ -91,7 +91,6 @@ public class City extends Attackable implements Serializable ,Container
 			residents.addAll(cityWorkersConstructionContext.generateWorker());
 		}
 	}
-
 	private void addHospital(ArrayList<LocationPlanet> buildingLocations) {
 		LocationPlanet locationPlanet =  buildingLocations.get(buildingLocations.size() - 1);
 		CityBlock block = new CityBlock(this, locationPlanet.getBlockx(), locationPlanet.getBlocky());
@@ -101,7 +100,6 @@ public class City extends Attackable implements Serializable ,Container
 		registerContainer(block);
 		hospitals.add(hospital);
 	}
-
 	@NotNull
 	private Building getBuildingHousingNotNeeded(CityConstructionContext cityConstructionContext, CityBlock cityBlock) {
 		Building building;

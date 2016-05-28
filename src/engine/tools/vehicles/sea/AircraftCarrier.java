@@ -1,5 +1,7 @@
 package engine.tools.vehicles.sea;
 
+import engine.planets.LocationPlanet;
+import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.Resource;
 import engine.universe.ResourceDemand;
@@ -18,9 +20,8 @@ public class AircraftCarrier extends SeaCraft {
 	public static double startHealthInitial = 10000000;
 	public static double resistanceInitial = 10000;
 
-	protected AircraftCarrier(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
-		super(vehicleInitialConstants, numToolsConstructor);
-	}
+	protected AircraftCarrier(LocationPlanet locationPlanet, int numToolsConstructor) {
+		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial), numToolsConstructor);	}
 
 	@Override
 	public double getSpeed() {

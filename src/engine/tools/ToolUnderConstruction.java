@@ -13,18 +13,16 @@ public class ToolUnderConstruction <Type extends Tool> implements Serializable
 {
 	private Type object;
 	private ResourceDemand resourceDemand = object.requiredResourcesForConstruction();
-	private long timeRequired = (long) object.getConstructionManDays();
+	private long timeRequired = (long) object.getConstructionManDays();// TODO: 5/27/2016 write the cnversion for this or refactor long to double
 	public ToolUnderConstruction(Type object)
 	{
 		this.object = object;
 	}
-	public boolean pay(Resource resource)
-	{
+	public boolean pay(Resource resource) {
 		resource.pay(resourceDemand);
 		return areWeDoneYet();
 	}
-	public boolean pay(long time)
-	{
+	public boolean pay(long time) {
 		timeRequired -= time;
 		return areWeDoneYet();
 	}
@@ -32,8 +30,7 @@ public class ToolUnderConstruction <Type extends Tool> implements Serializable
 	{
 		return timeRequired < 0 && resourceDemand.fullFilledQ();
 	}
-	public Type getFinishedTool()
-	{
+	public Type getFinishedTool() {
 		if(areWeDoneYet())
 			return object;
 		return null;//// TODO: 4/8/2016 actually this should work
@@ -42,11 +39,12 @@ public class ToolUnderConstruction <Type extends Tool> implements Serializable
 	{
 		return resourceDemand;
 	}
-	public long getTimeRequired()
-	{
+	public long getTimeRequired() {
 		return timeRequired;
 	}
-
+	public Type getTool(){
+		return object;
+	}
 	public String getName() {
 		return object.getClass().getName();
 	}

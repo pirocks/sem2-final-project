@@ -1,5 +1,7 @@
 package engine.tools.vehicles.land;
 
+import engine.planets.LocationPlanet;
+import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.Resource;
 import engine.universe.ResourceDemand;
@@ -18,9 +20,8 @@ public class ArmouredVehicle extends LandVehicle {
 	public static double startHealthInitial = 10000;
 	public static double resistanceInitial = 6000;
 
-	protected ArmouredVehicle(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
-		super(vehicleInitialConstants, numToolsConstructor);
-	}
+	protected ArmouredVehicle(int numToolsConstructor, LocationPlanet locationPlanet) {
+		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial), numToolsConstructor);	}
 
 	@Override
 	public double getSpeed() {

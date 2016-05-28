@@ -19,10 +19,10 @@ public abstract class Housing extends Building implements Container
 {
 	private int maximumOccupancy;
 	private ArrayList<CityWorker> residents;
-	public Housing(AttackableConstants attackableConstants, CityBlock parentBlock) {
+	protected Housing(AttackableConstants attackableConstants, CityBlock parentBlock) {
     	super(attackableConstants,parentBlock);
     	residents = new ArrayList<>();
-		registerContainer(residents);// TODO: 5/24/2016 track changes in container
+		registerContainer(residents);
 		if(this instanceof ApartmentBlock) {
 	        maximumOccupancy = ApartmentBlock.maximumOccupancyInitial;
         }
@@ -50,6 +50,14 @@ public abstract class Housing extends Building implements Container
 		}
 		else
 			throw new ToManyPeopleException(getPopulation(), getFreeSpace());
+		for (CityWorker cityWorker : cityWorkers) {
+			registerContainer(cityWorker);
+		}
+
+	}
+	public void removeResident(CityWorker cityWorker){
+		residents.remove(cityWorker);
+		deregisterContainer(cityWorker);
 	}
 	public int getPopulation() {
         int sum = 0;

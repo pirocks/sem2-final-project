@@ -1,5 +1,7 @@
 package engine.tools.vehicles.sea;
 
+import engine.planets.LocationPlanet;
+import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.Resource;
 import engine.universe.ResourceDemand;
@@ -18,8 +20,8 @@ public class Submarine extends SeaCraft {
 	public static double startHealthInitial = 750000;
 	public static double resistanceInitial = 50000;
 
-	protected Submarine(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
-		super(vehicleInitialConstants, numToolsConstructor);
+	protected Submarine(LocationPlanet locationPlanet, int numToolsConstructor) {
+		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial), numToolsConstructor);
 	}
 
 

@@ -1,5 +1,7 @@
 package engine.tools.vehicles.roadgoing;
 
+import engine.planets.LocationPlanet;
+import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.Resource;
 import engine.universe.ResourceDemand;
@@ -17,9 +19,8 @@ public class AllPurpose extends RoadGoing {
 	public static double startHealthInitial = 1000;
 	public static double resistanceInitial = 1000;
 
-	protected AllPurpose(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
-		super(vehicleInitialConstants, numToolsConstructor);
-	}
+	protected AllPurpose(LocationPlanet locationPlanet, int numToolsConstructor) {
+		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial), numToolsConstructor);	}
 
 
 	@Override

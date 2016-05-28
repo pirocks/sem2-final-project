@@ -32,10 +32,13 @@ public interface ToolBuilder <Type extends Tool>
 	default String getCurrentlyBuilding(){
 		return getToolUnderConstruction().getName();
 	}
-	default void addSpecific(VBox in){
+	default void addSpecificToolBuilder(VBox in){
 		in.getChildren().add(new Text("Type of" + getToolUnderConstruction().getClass().getTypeName() + "under " +
 				"construction: "));
 		in.getChildren().add(new Text("Resources required:" + getToolUnderConstruction().getResourcesRequired()
 				.getResource().toTable()));
+		in.getChildren().add(new Text("Time Remaining:" + getToolUnderConstruction().getTimeRequired()));
+		addBuildOptions(in);
 	}
+	void addBuildOptions(VBox in);
 }

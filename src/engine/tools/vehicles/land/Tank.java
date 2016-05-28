@@ -1,5 +1,7 @@
 package engine.tools.vehicles.land;
 
+import engine.planets.LocationPlanet;
+import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
 import engine.tools.weapons.guns.artillery.TankArtillery;
 import engine.universe.Resource;
@@ -19,9 +21,8 @@ public class Tank extends LandVehicle {
 	public static double startHealthInitial = 20000;
 	public static double resistanceInitial = 20000;
 
-	protected Tank(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
-		super(vehicleInitialConstants, numToolsConstructor);
-	}
+	protected Tank(LocationPlanet locationPlanet, int numToolsConstructor) {
+		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial), numToolsConstructor);	}
 
 
 	@Override

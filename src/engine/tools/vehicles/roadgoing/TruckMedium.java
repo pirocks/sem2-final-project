@@ -1,5 +1,7 @@
 package engine.tools.vehicles.roadgoing;
 
+import engine.planets.LocationPlanet;
+import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.Resource;
 import engine.universe.ResourceDemand;
@@ -16,8 +18,8 @@ public class TruckMedium extends Truck {
 	public static double startHealthInitial = 500;
 	public static double resistanceInitial = 40;
 
-	protected TruckMedium(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
-		super(vehicleInitialConstants, numToolsConstructor);
+	protected TruckMedium(LocationPlanet locationPlanet, int numToolsConstructor) {
+		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial), numToolsConstructor);
 	}
 
 

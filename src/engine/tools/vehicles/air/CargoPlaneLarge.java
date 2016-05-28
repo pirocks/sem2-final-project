@@ -1,5 +1,7 @@
 package engine.tools.vehicles.air;
 
+import engine.planets.LocationPlanet;
+import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.Resource;
 import engine.universe.ResourceDemand;
@@ -16,9 +18,8 @@ public class CargoPlaneLarge extends CargoPlane {
 	public static int maxPassengersInitial = 1000;
 	public static double maxWeightInitial = 3000;
 
-	protected CargoPlaneLarge(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
-		super(vehicleInitialConstants, numToolsConstructor);
-	}
+	protected CargoPlaneLarge(LocationPlanet locationPlanet, int numToolsConstructor) {
+		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial), numToolsConstructor);	}
 
 
 	@Override

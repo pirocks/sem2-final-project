@@ -38,7 +38,7 @@ public class CityWorkersConstructionContext {
 			CityWorker cityWorker = out.get(i);
 			assignWorkerToHousing(out,cityWorker);
 		}
-		return out;// TODO: 5/26/2016 postprocessing everyrhing in order//I think this is good now
+		return out;
 	}
 
 	public void assignWorkerToWorkplace(CityWorker cityWorker) {
@@ -55,6 +55,13 @@ public class CityWorkersConstructionContext {
 		}
 	}
 	public void assignWorkerToHousing(ArrayList<CityWorker> out,CityWorker cityWorker){
+		// TODO: 5/28/2016 this can be done better as such:
+		/*
+		* precondition: there is enough housing for every worker.
+		* iterate over housing and ver workers in conjunction
+		* split workers to fit
+		* the split operator needs to be created in abstractperson/cityworker/al subclases
+		* */
 		Housing emptyHousing = city.findEmptyHousing(cityWorker.getPopulation());
 		if(emptyHousing == null) {
 //			out.add((CityWorker) cityWorker.split());
