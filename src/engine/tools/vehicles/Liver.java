@@ -1,9 +1,11 @@
 package engine.tools.vehicles;
 
+import engine.tools.weapons.Attackable;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Alert;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
@@ -26,9 +28,15 @@ public interface Liver {
 		for (Liver liver : livers) {
 			if(liver instanceof CityBuilder)
 				System.out.println(liver.toString() + ((CityBuilder)liver).getLocation().get(0).getBlocky());
-			boolean saneQ = liver.sanityCheck();
-			if(!saneQ) {
+			try {
+				liver.sanityCheck();
+			} catch(Exception e){
+				Alert alert = new Alert(Alert.AlertType.WARNING);
+				alert.setTitle("An object failed its sanity check. It will now die.");
+				alert.setContentText(e.toString());
 
+				if(liver instanceof Attackable)
+					((Attackable)liver).die();
 			}
 			liver.doLife(time);
 		}

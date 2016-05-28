@@ -397,18 +397,6 @@ public class City extends Attackable implements Serializable ,Container
 		}
 		return out;
 	}
-	public void doLife(long time){
-		for(CityWorker worker: residents)
-		{
-			worker.doLife(time);//// TODO: 4/13/2016 bureucrats and rulers should run the city
-
-			//// TODO: 4/27/2016
-			//more stuff:
-			/*
-		things that the should do list
-			 */
-		}
-	}
 	public void remove(Building building) {
 		for(CityBlock cityBlock:cityBlocks)
 			cityBlock.remove(building);

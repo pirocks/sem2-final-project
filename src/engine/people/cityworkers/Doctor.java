@@ -53,10 +53,10 @@ public class Doctor extends CityWorker implements Cloneable
         double healthIncrease = workDone/((double)pop);
         if(1.0 - target.getHealth() < healthIncrease)
             healthIncrease = 1.0 - target.getHealth();
-        if(salaryGiver.canPay(getSalary()*healthIncrease))
+        if(workplace.getMoneySource().canPay(getSalary()*healthIncrease))
         {    
             target.increaseHealth(healthIncrease);
-            salaryGiver.pay(moneySource,getSalary()*healthIncrease);
+            workplace.getMoneySource().pay(moneySource,getSalary()*healthIncrease);
             if(target.getHealth() > 0.99)
             {
                 target.leaveHospital();
@@ -66,7 +66,7 @@ public class Doctor extends CityWorker implements Cloneable
         }
         else
         {
-            salaryGiver.outOfMoneyHandler(getSalary()*healthIncrease);
+            workplace.getMoneySource().outOfMoneyHandler(getSalary()*healthIncrease);
         }
     }
 

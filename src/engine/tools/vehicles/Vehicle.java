@@ -21,8 +21,6 @@ import java.util.ArrayList;
 
 public abstract class Vehicle extends Tool implements Liver,Container
 {
-	private double fuelPercent = 0.0;//from 0 t  1
-	private double fuelCapacity = 0.0;//from 0 to 1
 	private ArrayList<AbstractPerson> passengers;
 	private ArrayList<Resource> cargo;
 	private ArrayList<Weapon> weapons;
@@ -131,8 +129,7 @@ public abstract class Vehicle extends Tool implements Liver,Container
 		}
 		return weapon;
 	}
-	public  boolean canAddObject(Weighable weighable)
-	{
+	public  boolean canAddObject(Weighable weighable) {
 		return canAddWeight(weighable.getWeight());
 	}
 	private boolean canAddWeight(double weight) {
@@ -177,6 +174,32 @@ public abstract class Vehicle extends Tool implements Liver,Container
 		return destination;
 	}
 	private LocationPlanet destination = null;
+	@Override
+	public boolean sanityCheck() {
+		if(passengers == null)
+			throw new IllegalStateException();
+		if(cargo == null)
+			throw new IllegalStateException();
+		if(weapons == null)
+			throw new IllegalStateException();
+		if(maxPassengers < 0)
+			throw new IllegalStateException();
+		double weight = 0;
+		for (AbstractPerson passenger : passengers) {
+			weight += passenger.getWeight();
+		}
+		for (Resource resource : cargo) {
+			weight += resource.getWeight();
+		}
+		for (Weapon weapon : weapons) {
+			weight += weapon.getWeight();
+		}
+		if(weight > getWeight())
+			throw new IllegalStateException();
+		if(numTools  <= 0)
+			throw new IllegalStateException();
+		return true;
+	}
 	@Override
 	public void doLife(long time) {
 		System.out.println("called");

@@ -14,7 +14,6 @@ import static engine.universe.Resource.Type.*;
  */
 public class CityBuilder extends Vehicle {
 	private final Country parentCountry;
-
 	public CityBuilder(LocationPlanet locationPlanet, Country parentCountry) {
 		super(new VehicleInitialConstants(locationPlanet,1,1,1000,100000), 1);
 		this.parentCountry = parentCountry;
@@ -29,42 +28,38 @@ public class CityBuilder extends Vehicle {
 			throw new IllegalStateException(e);
 		}
 	}
-
 	@Override
 	public boolean inSpaceQ() {
 		return false;
 	}
-
 	@Override
 	public boolean inWaterQ() {
 		return false;
 	}
-
 	@Override
 	public double getSpeed() {
 		return 10;
 	}
-
 	@Override
 	public Image getImage() {
 		return null;// TODO: 5/23/2016
 	}
-
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
 		return null;
 	}
-
 	@Override
 	public double getConstructionManDays() {
 		return 0;
 	}
-
 	public Country getParentCountry() {
 		return parentCountry;
 	}
-
 	public void buildCity() {
 		City city = new City(this);
+	}
+	@Override
+	public boolean sanityCheck() {
+		return false;
 	}
 }

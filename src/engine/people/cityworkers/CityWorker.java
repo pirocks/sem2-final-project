@@ -13,10 +13,22 @@ import static engine.people.cityworkers.CityWorker.WhereAmI.Initing;
 
 public abstract class CityWorker extends AbstractPerson implements Container, Cloneable//don't foret to get the workplace
 {
-	public static long travelTimeConstant;
-	public static long TimeAtWork;
-	public static long TimeAtHome;
+	public static long travelTimeConstant;// TODO: 5/27/2016
+	public static long TimeAtWork;// TODO: 5/27/2016
+	public static long TimeAtHome;// TODO: 5/27/2016
 
+	protected WhereAmI whereAmI;
+	private Building currentBuilding;
+	private Housing home = null;
+	private City currentCity;//should be renamed to parent city
+	protected long timeRemainingAtLocation;
+	private Hospital hospital; //is null if not going to hospital
+	public CityWorker(PeopleInitialConstants peopleInitialConstants,City city) {
+		super(peopleInitialConstants);
+		currentCity = city;
+		registerContainer(city);
+		whereAmI = Initing;
+	}
 	@Override
 	public void remove(Attackable attackable) {
 		if(attackable instanceof Building)
@@ -31,25 +43,11 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 		setWorkplace(workplace);
 	}
 	protected abstract void setWorkplace(Workplace workplace);
-
 	public void setHome(Housing home){
 		this.home = home;
 	}
-
 	public enum WhereAmI {
-		AtWork,AtHospital,AtHome,GoingToWork,GoingToHospital,GoingToHome,Initing
-	}
-	protected WhereAmI whereAmI;
-	private Building currentBuilding;
-	private Housing home = null;
-    private City currentCity;//should be renamed to parent city
-	protected long timeRemainingAtLocation;
-	private Hospital hospital; //is null if not going to hospital
-	public CityWorker(PeopleInitialConstants peopleInitialConstants,City city) {
-		super(peopleInitialConstants);
-		currentCity = city;
-		registerContainer(city);
-		whereAmI = Initing;
+		AtWork, AtHospital, AtHome, GoingToWork, GoingToHospital, GoingToHome, Initing
 	}
 	public void goHome() {
 		double distance = home.getLocation().get(0).distanceBetween(currentBuilding.getLocation().get(0));
@@ -96,15 +94,35 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 			goToHospital();
 	}
 	@Override
-	public void sanityCheck(){
-		if(salaryGiver == null)
-			throw new IllegalStateException();
+	public boolean sanityCheck(){
 		if(amIDead)
 			throw new UnKilledObjectException();
-
-
+		if(whereAmI == Initing)
+			throw new InCompleteDataException();
+		if(timeRemainingAtLocation < 0)
+			throw new IllegalStateException();
+		if(home == null)
+			throw new IllegalStateException();
+		if(currentCity == null)
+			throw new IllegalStateException();
+		if(population <= 0)
+			throw new IllegalStateException();
+		if(moneySource == null)
+			throw new IllegalStateException();
+		if(location == null)
+			throw new IllegalStateException();
+		if(location.size() != 1)
+			throw new IllegalStateException();
+		if(location.get(0).getGrid() != getWorkBuilding().getGrid())
+			throw new IllegalStateException();
+		if(location.get(0).getGrid() != getHome().getGrid())
+			throw new IllegalStateException();
+		if(amIDead())
+			throw new UnKilledObjectException();
+		return true;
 	}
 	public void doLife(long time) {
+		sanityCheck();
 		checkHealth();
 		registerContainer(currentBuilding);
 		if(home == null)

@@ -19,8 +19,7 @@ public class Bureaucrat extends CityWorker implements Cloneable
 			2.0*UniversalConstants.normalPersonSalary;
 	private TownHall workplace;
     public static double bureaucratSalary;//secondly value
-	public Bureaucrat(City parentCity,LocationPlanet location)
-    {
+	public Bureaucrat(City parentCity,LocationPlanet location) {
 	    super(new PeopleInitialConstants(populationInitial,
 			    foodUsePerPersonInitial,
 			    UniversalConstants.
@@ -51,7 +50,7 @@ public class Bureaucrat extends CityWorker implements Cloneable
         // TODO: 4/9/2016  make sure this ties into ui/ai
         //really this has nothing to do , in fact the args don't allow for any sort of management.
 		//so just charge the salarygiver for time
-	    salaryGiver.pay(moneySource,bureaucratSalary*time);
+	    workplace.getMoneySource().pay(moneySource,bureaucratSalary*time);
     }
 
     @Override

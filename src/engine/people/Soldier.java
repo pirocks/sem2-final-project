@@ -26,27 +26,20 @@ public class Soldier extends AbstractPerson implements Container,Cloneable
 			UniversalConstants.normalPersonSalary;
 	private static long timeToHealOnePerson = 3600*24;
 
-	@Override
-	public void remove(Attackable attackable) {
-		if(attackable instanceof Vehicle)
-			remove((Vehicle) attackable);
-		else
-			throw new IllegalStateException();
-	}
+
 
 	public enum TypeOfTask {
         March,Drive,Guard,Heal//what about attack??
-    }
-
+	}
 	private Country parentCountry;
-    private TypeOfTask currentTask;
-    /*public???*/public static double healRate;//figure out the constants
-    /*public?? constants figure out*/ public static double walkingSpeed;
-    private Vehicle vehicle;// TODO: 5/24/2016 register this with the container
+
+	private TypeOfTask currentTask;
+	public static double healRate;
+	public static double walkingSpeed;
+	private Vehicle vehicle;// TODO: 5/24/2016 register this with the container
 	// TODO: 5/24/2016 soldiers need weapons
 	private MoneySource toGuard;
-    private double xDestination,yDestination;
-
+	private double xDestination,yDestination;
 	public Soldier(Country parentCountry,LocationPlanet location) {
 	    //todo what about location here
 	    super(new PeopleInitialConstants(populationInitial,
@@ -82,25 +75,35 @@ public class Soldier extends AbstractPerson implements Container,Cloneable
 //                    attackableConstants.health = 1.0;
 				break;
 		}
-		salaryGiver.pay(moneySource,time*getSalary());
+		paySalary(time);
 	}
 
-
+	@Override
+	public boolean sanityCheck() {
+		super.sanityCheck();
+		return true;
+	}
 	@Override
     protected void dieSpecific()
     {
 		return;
     }//TODO:implement this
+	@Override
+	public void remove(Attackable attackable) {
+		if(attackable instanceof Vehicle)
+			remove((Vehicle) attackable);
+		else
+			throw new IllegalStateException();
+	}
 	public void remove(Vehicle vehicle) {
-		if(this.vehicle == vehicle)
-		{
+		if(this.vehicle == vehicle) {
 			die();
 			vehicle = null;
 		}
 	}
 	@Override
 	public double getWeight() {
-		return 0;// TODO: 4/9/2016
+		return 1;
 	}
 
 }

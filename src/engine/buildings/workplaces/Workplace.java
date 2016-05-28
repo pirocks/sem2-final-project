@@ -20,6 +20,8 @@ public abstract class Workplace extends Building implements Container
 
 	private int maxWorkers;
 	private MoneySource owner;
+	private MoneySource moneySource;
+
 	public Workplace(AttackableConstants attackableConstants,
 	                 CityBlock parentBlock, int maxWorkers, MoneySource owner) {
 		super(attackableConstants,parentBlock);
@@ -97,4 +99,8 @@ public abstract class Workplace extends Building implements Container
 		return owner;
 	}
 	public abstract CityWorker createCorrectType();
+
+	public MoneySource getMoneySource() {
+		return moneySource;
+	}
 }

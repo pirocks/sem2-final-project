@@ -16,16 +16,12 @@ public abstract class AbstractPerson extends Attackable implements Liver, Serial
 	public MoneySource moneySource;
 	public static double healthInitial;
 	public static double resistanceInitial;
-	private boolean alliveQ;
 	private Country country;//final??
-
 	protected int population;
-
 	private double foodUsePerPerson;
 	private double crimeRisk;
 	private double crimeImpact;
 	private double salary;
-	protected MoneySource salaryGiver = null;// TODO: 4/10/2016 need to initialize this
 	protected AbstractPerson(PeopleInitialConstants peopleInitialConstants) {
 		super(new AttackableConstants(healthInitial, resistanceInitial, peopleInitialConstants.location));
 		registerLiver();
@@ -37,7 +33,6 @@ public abstract class AbstractPerson extends Attackable implements Liver, Serial
 		crimeImpact = peopleInitialConstants.crimeImpact;
 		salary = peopleInitialConstants.salary;
 	}
-
 	public double getSalary() {
 		return salary;
 	}
@@ -53,16 +48,24 @@ public abstract class AbstractPerson extends Attackable implements Liver, Serial
 			die();
 		if (getHealth() <= 0)
 			die();
-		return alliveQ;
+		return true;
 	}
 	public abstract void doLife(long time);
+	@Override
+	public boolean sanityCheck() {
+		if(moneySource  == null)
+			throw new IllegalStateException();
+		if(country == null)
+			throw new IllegalStateException();
+		return true;
+	}
 	@Override
 	public void die() {
 		super.die();
 		dieSpecific();
 	}
 	protected void paySalary(long time) {
-		salaryGiver.pay(moneySource, salary * time);
+		moneySource.pay(moneySource, salary * time);
 	}
 	protected abstract void dieSpecific();
 	@Override
