@@ -47,7 +47,10 @@ public class Teacher<Type extends AbstractPerson> extends CityWorker implements 
 
     @Override
     protected void setWorkplace(Workplace workplace) {
+	    if(this.workplace != null)
+		    deregisterContainer(this.workplace);
         this.workplace = (School) workplace;
+	    registerContainer(workplace);
     }
 
     public School getWorkBuilding() {
@@ -56,6 +59,7 @@ public class Teacher<Type extends AbstractPerson> extends CityWorker implements 
 
     @Override
     public void setWorkPlaceToNull() {
+        deregisterContainer(workplace);
         workplace = null;
     }
 

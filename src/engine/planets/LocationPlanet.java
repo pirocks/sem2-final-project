@@ -20,6 +20,7 @@ public class LocationPlanet implements Serializable,Container
 		if(planet == null)
 			throw new IllegalArgumentException();
 		this.planet = planet;
+		registerContainer(planet);
 		blockx = (int) (x % 100);
 		blocky = (int) (y % 100);
 		gridx = (int) (x /100);
@@ -31,7 +32,6 @@ public class LocationPlanet implements Serializable,Container
 		this.blocky = Blocky;
 		this.gridx = Gridx;
 		this.gridy = Gridy;
-		registerContainer(planet);
 	}
 	public LocationPlanet(CityBlock b) {
 		blockx = b.getXInGrid();
@@ -89,6 +89,7 @@ public class LocationPlanet implements Serializable,Container
 		gridx = b.getGrid().getX();
 		gridy = b.getGrid().getY();
 		planet = b.getGrid().getParentPlanet();
+		registerContainer(planet);
 	}
 	public double distanceBetween(LocationPlanet loc) {
 		double x1 = (double)(gridx *100 + blockx);
@@ -189,7 +190,10 @@ public class LocationPlanet implements Serializable,Container
 	}
 
 	public void setPlanet(Planet planet) {
+		if(this.planet != null)
+			deregisterContainer(this.planet);
 		this.planet = planet;
+		registerContainer(planet);
 	}
 
 	public class InTheOceanException extends Exception {
@@ -215,6 +219,7 @@ public class LocationPlanet implements Serializable,Container
 		gridy = y;
 	}
 	public void leavePlanet() {
+		deregisterContainer(planet);
 		planet = null;
 		gridx = -1;
 		gridy = -1;

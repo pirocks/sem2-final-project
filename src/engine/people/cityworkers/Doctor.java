@@ -29,11 +29,13 @@ public class Doctor extends CityWorker implements Cloneable
 	private Doctor(Doctor doctor){
 		super(doctor);
 		workplace = doctor.getWorkBuilding();
-		registerContainer(workplace);// TODO: 5/29/2016 implment remove
 	}
 	@Override
 	protected void setWorkplace(Workplace workplace) {
+		if(this.workplace != null)
+			deregisterContainer(this.workplace);
 		this.workplace = (Hospital) workplace;
+		registerContainer(workplace);
 	}
 	public Hospital getWorkBuilding()
     {
@@ -43,8 +45,7 @@ public class Doctor extends CityWorker implements Cloneable
     public void setWorkPlaceToNull() {
         workplace = null;
     }
-    public void doSkill(double time)//time is in seconds
-    {
+    public void doSkill(double time) {
 	    CityWorker target = workplace.getNextPatient();
         double workDone = time/timeToHealOnePerson;
         int pop = target.getPopulation();
@@ -64,6 +65,6 @@ public class Doctor extends CityWorker implements Cloneable
 	}
 	@Override
     public double getWeight() {
-        return 0;// TODO: 4/9/2016
+        return 1.5;
     }
 }

@@ -26,6 +26,7 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 	private City currentCity;// TODO: 5/29/2016 check registration for these //should be renamed to parent city
 	protected double timeRemainingAtLocation;
 	private Hospital hospital;// TODO: 5/29/2016 check registration for these  //is null if not going to hospital
+	private Workplace workplace;
 	public CityWorker(PeopleInitialConstants peopleInitialConstants,City city) {
 		super(peopleInitialConstants);
 		currentCity = city;
@@ -246,11 +247,10 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 		}
 		if(getWorkBuilding() == building)
 		{
-			setWorkPlaceToNull();
+			setWorkplace(null);
 		}
 	}
 	public abstract Workplace getWorkBuilding();
-	public abstract void setWorkPlaceToNull();
 	public abstract void doSkill(double time);
 	public Building getCurrentBuilding() {
 		return currentBuilding;

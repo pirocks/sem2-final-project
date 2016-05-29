@@ -26,12 +26,14 @@ public class Researcher extends CityWorker implements Cloneable
 	private Researcher(Researcher researcher){
 		super(researcher);
 		workplace = getWorkBuilding();
-		registerContainer(workplace);// TODO: 5/29/2016 implment remove
 	}
 
 	@Override
 	protected void setWorkplace(Workplace workplace) {
+		if(this.workplace != null)
+			deregisterContainer(this.workplace);
 		this.workplace = (ResearchArea) workplace;
+		registerContainer(workplace);
 	}
 
 	public ResearchArea getWorkBuilding()
@@ -40,6 +42,7 @@ public class Researcher extends CityWorker implements Cloneable
     }
     @Override
     public void setWorkPlaceToNull() {
+	    deregisterContainer(workplace);
         workplace = null;
     }
     @Override
@@ -47,12 +50,10 @@ public class Researcher extends CityWorker implements Cloneable
 	    assert (workplace.getDiscovery().canBeResearched());
         workplace.getDiscovery().makeProgress(time/UniversalConstants.timeToDiscoveryConstant);
     }
-
 	@Override
 	protected CityWorker splitInternal() {
 		return new Researcher(this);
 	}
-
 	@Override
     public double getWeight() {
         return 1.25;

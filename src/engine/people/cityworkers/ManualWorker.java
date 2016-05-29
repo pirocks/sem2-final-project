@@ -29,11 +29,13 @@ public class ManualWorker extends CityWorker implements Cloneable
 	private ManualWorker(ManualWorker manualWorker){
 		super(manualWorker);
 		workplace = manualWorker.getWorkBuilding();
-		registerContainer(workplace);// TODO: 5/29/2016 implment remove
 	}
 	@Override
 	protected void setWorkplace(Workplace workplace) {
+		if(this.workplace != null)
+			deregisterContainer(this.workplace);
 		this.workplace = workplace;
+		registerContainer(workplace);
 	}
 	@Override
 	public Workplace getWorkBuilding() {
