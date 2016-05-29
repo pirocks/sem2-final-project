@@ -61,6 +61,13 @@ public class LocationPlanet implements Serializable,Container
 		assert (planet!= null);
 		registerContainer(planet);
 	}
+	public LocationPlanet(LocationPlanet locationPlanet){
+		planet = locationPlanet.planet;
+		gridx = locationPlanet.getGridx();
+		gridy = locationPlanet.getGridy();
+		blockx = locationPlanet.getBlockx();
+		blocky = locationPlanet.getBlocky();
+	}
 	public double getLocNumX(){
 		return 100*getGridx() + blockx;
 	}

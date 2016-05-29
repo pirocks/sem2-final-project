@@ -6,7 +6,6 @@ import engine.buildings.workplaces.ToManyWorkersException;
 import engine.buildings.workplaces.Workplace;
 import engine.cities.City;
 import engine.cities.CityConstructionContext;
-import engine.cities.ToManyPeopleException;
 
 import java.util.ArrayList;
 
@@ -63,22 +62,8 @@ public class CityWorkersConstructionContext {
 		* the split operator needs to be created in abstractperson/cityworker/al subclases
 		* */
 		Housing emptyHousing = city.findEmptyHousing(cityWorker.getPopulation());
-		if(emptyHousing == null) {
-//			out.add((CityWorker) cityWorker.split());
-//			assignWorkerToHousing(out,cityWorker);
-			try {
-				throw new UnsupportedOperationException();
-			} catch (UnsupportedOperationException e) {
-				e.printStackTrace();
-			}
-		}
-		else{
-			try {
-				emptyHousing.addResidents(new ArrayList<CityWorker>(){{add(cityWorker);}});
-			} catch (ToManyPeopleException e) {
-				throw new IllegalStateException(e);
-			}
-		}
+		if(emptyHousing == null){
 
+		}
 	}
 }

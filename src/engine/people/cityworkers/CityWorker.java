@@ -20,16 +20,29 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 	public static long TimeAtHome;// TODO: 5/27/2016
 
 	protected WhereAmI whereAmI;
-	private Building currentBuilding;
-	private Housing home = null;
-	private City currentCity;//should be renamed to parent city
+	private Building currentBuilding;// TODO: 5/29/2016 check registration for these
+	private Housing home = null;// TODO: 5/29/2016 check registration for these
+	private City currentCity;// TODO: 5/29/2016 check registration for these //should be renamed to parent city
 	protected long timeRemainingAtLocation;
-	private Hospital hospital; //is null if not going to hospital
+	private Hospital hospital;// TODO: 5/29/2016 check registration for these  //is null if not going to hospital
 	public CityWorker(PeopleInitialConstants peopleInitialConstants,City city) {
 		super(peopleInitialConstants);
 		currentCity = city;
 		registerContainer(city);
 		whereAmI = Initing;
+	}
+	public CityWorker(CityWorker cityWorker) {
+		super(cityWorker);
+		whereAmI = cityWorker.whereAmI;
+		currentCity = cityWorker.currentCity;
+		registerContainer(currentCity);
+		currentBuilding = cityWorker.getCurrentBuilding();
+		registerContainer(currentBuilding);
+		home = getHome();
+		registerContainer(home);
+		hospital = getHospital();
+		registerContainer(hospital);
+		timeRemainingAtLocation = cityWorker.getTimeRemainingAtLocation();
 	}
 	@Override
 	public void remove(Attackable attackable) {
@@ -49,7 +62,8 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 		this.home = home;
 	}
 	public enum WhereAmI {
-		AtWork, AtHospital, AtHome, GoingToWork, GoingToHospital, GoingToHome, Initing
+		AtWork, AtHome, GoingToWork, GoingToHome, Initing
+
 	}
 	public void goHome() {
 		double distance = home.getLocation().get(0).distanceBetween(currentBuilding.getLocation().get(0));
@@ -61,7 +75,6 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 		whereAmI = WhereAmI.GoingToWork;
 		timeRemainingAtLocation = (long)(distance*travelTimeConstant);
 	}
-
 	private void arriveAtHome() {
 		whereAmI = WhereAmI.AtHome;
 		deregisterContainer(currentBuilding);
@@ -76,21 +89,20 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 		timeRemainingAtLocation = TimeAtWork;
 		currentBuilding.registerContainer(this);
 	}
-	private void arriveAtHospital() {
-		whereAmI = WhereAmI.AtHospital;
-		deregisterContainer(currentBuilding);
-		currentBuilding = hospital;
-		currentBuilding.registerContainer(this);
-		timeRemainingAtLocation = Long.MAX_VALUE;
-		hospital.admit(this);
-	}
 	public void leaveHospital() {
 		hospital = null;
 		goHome();
 	}
 	public void checkHealth() {
-		if(super.getHealth() < 0.3)
-			goToHospital();
+		if(super.getHealth() < 0.3) {
+			hospital = currentCity.getLeastLoadedHospital();
+			currentCity.getLeastLoadedHospital().admit(this);
+		}
+		if(super.getHealth() > 0.9){
+			hospital.releasePatient(this);
+			hospital = null;
+		}
+
 	}
 	@Override
 	public boolean sanityCheck(){
@@ -154,8 +166,7 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
             return;
 		if(timeRemainingAtLocation >= time)
         {
-        	if(whereAmI == WhereAmI.AtWork)
-        	{
+        	if(whereAmI == WhereAmI.AtWork) {
         		doSkill(time);
         		assert(getWorkBuilding() == currentBuilding);
         	}
@@ -165,7 +176,7 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
         switch(whereAmI)
         {
             case GoingToHome:
-                time -= timeRemainingAtLocation;// TODO: 5/28/2016 not sure this is right
+                time -= timeRemainingAtLocation;
                 arriveAtHome();
                 doLife(time);
                 break;
@@ -174,19 +185,9 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
                 arriveAtWork();
                 doLife(time);
                 break;
-            case GoingToHospital:
-                time -= timeRemainingAtLocation;
-                arriveAtHospital();
-                doLife(time);
-                break;
             case AtHome:
                 time -= timeRemainingAtLocation;
                 goToWork();
-                doLife(time);
-                break;
-            case AtHospital:
-            	assert(false);//will never happen
-                time -= timeRemainingAtLocation;
                 doLife(time);
                 break;
             case AtWork:
@@ -231,4 +232,22 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 	public abstract Workplace getWorkBuilding();
 	public abstract void setWorkPlaceToNull();
 	public abstract void doSkill(long time);
+	public Building getCurrentBuilding() {
+		return currentBuilding;
+	}
+	public Hospital getHospital() {
+		return hospital;
+	}
+	public long getTimeRemainingAtLocation() {
+		return timeRemainingAtLocation;
+	}
+	public CityWorker split(int popa,int popb){
+		if(popa + popb != population)
+			throw new IllegalArgumentException();
+		this.population = popa;
+		CityWorker out = splitInternal();
+		out.setPopulation(popb);
+		return out;
+	}
+	protected abstract CityWorker splitInternal();
 }

@@ -29,6 +29,12 @@ public class Ruler extends CityWorker implements Cloneable //TODO:clean this up
 				parentCountry,location),parentCountry.getCapitalCity());
 	}
 
+	private Ruler(Ruler ruler){
+		super(ruler);
+		workplace = (TownHall) ruler.getWorkBuilding();
+		registerContainer(workplace);// TODO: 5/29/2016 implent  remove
+	}
+
 	@Override
 	protected void setWorkplace(Workplace workplace) {
 		this.workplace = (TownHall) workplace;
@@ -49,6 +55,11 @@ public class Ruler extends CityWorker implements Cloneable //TODO:clean this up
 		//TODO unimplemented
         //needs to tie into ai and ui
     }
+
+	@Override
+	protected CityWorker splitInternal() {
+		return new Ruler(this);
+	}
 
 	@Override
 	public double getWeight() {

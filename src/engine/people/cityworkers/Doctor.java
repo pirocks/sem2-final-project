@@ -18,29 +18,30 @@ public class Doctor extends CityWorker implements Cloneable
 	public static double salaryInitial = 2.0*UniversalConstants.normalPersonSalary;
 	public static long timeToHealOnePerson = 3600*24;
     private Hospital workplace;
-
+	public Doctor(City parentCity, LocationPlanet location) {
+		super(new PeopleInitialConstants(populationInitial,
+				foodUsePerPersonInitial,
+				crimeRiskInitial,
+				crimeImpactInitial,
+				salaryInitial,
+				parentCity.getParentCountry(),location),parentCity);
+	}
+	private Doctor(Doctor doctor){
+		super(doctor);
+		workplace = doctor.getWorkBuilding();
+		registerContainer(workplace);// TODO: 5/29/2016 implment remove
+	}
 	@Override
 	protected void setWorkplace(Workplace workplace) {
 		this.workplace = (Hospital) workplace;
 	}
-
 	public Hospital getWorkBuilding()
     {
         return workplace;
     }
-
-    @Override
+	@Override
     public void setWorkPlaceToNull() {
         workplace = null;
-    }
-
-    public Doctor(City parentCity, LocationPlanet location) {
-        super(new PeopleInitialConstants(populationInitial,
-		        foodUsePerPersonInitial,
-		        crimeRiskInitial,
-		        crimeImpactInitial,
-		        salaryInitial,
-		        parentCity.getParentCountry(),location),parentCity);
     }
     public void doSkill(long time)//time is in seconds
     {
@@ -69,8 +70,11 @@ public class Doctor extends CityWorker implements Cloneable
             workplace.getMoneySource().outOfMoneyHandler(getSalary()*healthIncrease);
         }
     }
-
-    @Override
+	@Override
+	protected CityWorker splitInternal() {
+		return new Doctor(this);
+	}
+	@Override
     public double getWeight() {
         return 0;// TODO: 4/9/2016
     }

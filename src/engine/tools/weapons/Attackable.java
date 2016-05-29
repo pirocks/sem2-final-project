@@ -33,6 +33,16 @@ public abstract class Attackable
 			this.location = a.locationPlanet;
 		}
 	}
+
+	public Attackable(Attackable a) {
+		health = a.getHealth();
+		resistance = a.getResistance();
+		for (LocationPlanet locationPlanet : a.location) {
+			location.add(new LocationPlanet(locationPlanet));
+		}
+		parentPlanet = a.getParentPlanet();
+		amIDead = a.amIDead;
+	}
 	public boolean receiveDamage(double damage, Weapon attacker) {
 		assert(inRange(attacker.getRange(),attacker.getLocationPlanet().get(0)));
 		health -= damage/resistance;
@@ -72,17 +82,22 @@ public abstract class Attackable
 			Container.kill(this);
 		amIDead = true;
 	}
-
 	public Grid getGrid() {
 		return location.get(0).getGrid();
 	}
-
 	public void setParentPlanet(Planet parentPlanet) {
 		this.parentPlanet = parentPlanet;
 	}
-
 	public void setLocation(ArrayList<LocationPlanet> location)
 	{
 		this.location = location;
+	}
+
+	public double getResistance() {
+		return resistance;
+	}
+
+	public Planet getParentPlanet() {
+		return parentPlanet;
 	}
 }

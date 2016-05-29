@@ -13,6 +13,16 @@ public class Teacher<Type extends AbstractPerson> extends CityWorker implements 
 {
     public double progress = 0.0;//from 0 to 1
 
+    public Teacher(Teacher<Type> typeTeacher) {
+        super(typeTeacher);
+        //two teachers cannot work on same student
+	    //in the conext of this cnstructor studdent i most likely nullanyway
+	    student = null;
+	    workplace = typeTeacher.getWorkBuilding();
+	    progress = 0;
+	    registerContainer(workplace);// TODO: 5/29/2016 implment more
+    }
+
     public Type getStudent() {
         return student;
     }
@@ -51,6 +61,11 @@ public class Teacher<Type extends AbstractPerson> extends CityWorker implements 
 
     public void doSkill(long time) {
         //TODO:unimplmented
+    }
+
+    @Override
+    protected CityWorker splitInternal() {
+        return new Teacher<>(this);
     }
 
     @Override

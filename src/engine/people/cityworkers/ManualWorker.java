@@ -21,8 +21,11 @@ public class ManualWorker extends CityWorker implements Cloneable
 	public ManualWorker(City city,LocationPlanet locationPlanet) {
 		super(new PeopleInitialConstants(populationInitial,foodUsePerPersonInitial,crimeRiskInitial,crimeImpactInitial,salaryInitial,city.getParentCountry(),locationPlanet), city);
 	}
-
-
+	private ManualWorker(ManualWorker manualWorker){
+		super(manualWorker);
+		workplace = manualWorker.getWorkBuilding();
+		registerContainer(workplace);// TODO: 5/29/2016 implment remove
+	}
 	@Override
 	protected void setWorkplace(Workplace workplace) {
 		this.workplace = workplace;
@@ -43,5 +46,10 @@ public class ManualWorker extends CityWorker implements Cloneable
 		// TODO: 5/26/2016
 		//workplace can be instance of industrial dock,
 		//factory, dockyard, construction site
+	}
+
+	@Override
+	protected CityWorker splitInternal() {
+		return new ManualWorker(this);
 	}
 }
