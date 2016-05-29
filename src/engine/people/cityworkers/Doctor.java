@@ -1,7 +1,6 @@
 package engine.people.cityworkers;
 
 import engine.buildings.workplaces.Hospital;
-import engine.buildings.workplaces.Workplace;
 import engine.cities.City;
 import engine.planets.LocationPlanet;
 import engine.universe.UniversalConstants;
@@ -17,7 +16,6 @@ public class Doctor extends CityWorker implements Cloneable
 	public static double crimeImpactInitial = UniversalConstants.importantPersonCrimeImpact;
 	public static double salaryInitial = 2.0*UniversalConstants.normalPersonSalary;
 	public static long timeToHealOnePerson = 3600*24;
-    private Hospital workplace;
 	public Doctor(City parentCity, LocationPlanet location) {
 		super(new PeopleInitialConstants(populationInitial,
 				foodUsePerPersonInitial,
@@ -28,24 +26,9 @@ public class Doctor extends CityWorker implements Cloneable
 	}
 	private Doctor(Doctor doctor){
 		super(doctor);
-		workplace = doctor.getWorkBuilding();
 	}
-	@Override
-	protected void setWorkplace(Workplace workplace) {
-		if(this.workplace != null)
-			deregisterContainer(this.workplace);
-		this.workplace = (Hospital) workplace;
-		registerContainer(workplace);
-	}
-	public Hospital getWorkBuilding()
-    {
-        return workplace;
-    }
-	@Override
-    public void setWorkPlaceToNull() {
-        workplace = null;
-    }
     public void doSkill(double time) {
+	    Hospital workplace = (Hospital)getWorkBuilding();
 	    CityWorker target = workplace.getNextPatient();
         double workDone = time/timeToHealOnePerson;
         int pop = target.getPopulation();

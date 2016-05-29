@@ -3,7 +3,6 @@ package engine.people.cityworkers;
 import engine.buildings.UnderConstruction;
 import engine.buildings.workplaces.ToolBuilder;
 import engine.buildings.workplaces.Warehouse;
-import engine.buildings.workplaces.Workplace;
 import engine.cities.City;
 import engine.planets.LocationPlanet;
 import engine.universe.UniversalConstants;
@@ -14,7 +13,6 @@ import engine.universe.UniversalConstants;
  */
 public class ManualWorker extends CityWorker implements Cloneable
 {
-	private Workplace workplace;
 	public static int populationInitial = 1000;
 	public static double foodUsePerPersonInitial = UniversalConstants.normalFoodUsePerPerson;
 	public static double crimeRiskInitial = UniversalConstants.normalCrimeRisk;
@@ -28,36 +26,20 @@ public class ManualWorker extends CityWorker implements Cloneable
 	}
 	private ManualWorker(ManualWorker manualWorker){
 		super(manualWorker);
-		workplace = manualWorker.getWorkBuilding();
-	}
-	@Override
-	protected void setWorkplace(Workplace workplace) {
-		if(this.workplace != null)
-			deregisterContainer(this.workplace);
-		this.workplace = workplace;
-		registerContainer(workplace);
-	}
-	@Override
-	public Workplace getWorkBuilding() {
-		return workplace;
-	}
-	@Override
-	public void setWorkPlaceToNull() {
-		workplace = null;
 	}
 	@Override
 	public void doSkill(double time) {
 		//workplace can be instance of industrial dock,
 		//factory, dockyard, construction site
-		if(workplace  instanceof ToolBuilder){
-			ToolBuilder workplace = (ToolBuilder)this.workplace;
+		if(getWorkBuilding() instanceof ToolBuilder){
+			ToolBuilder workplace = (ToolBuilder)getWorkBuilding();
 			workplace.makeProgress(time*getPopulation());
 		}
-		else if(workplace instanceof UnderConstruction){
-			UnderConstruction workplace = (UnderConstruction) this.workplace;
+		else if(getWorkBuilding() instanceof UnderConstruction){
+			UnderConstruction workplace = (UnderConstruction) getWorkBuilding();
 			workplace.makeProgress(time*getPopulation());
 		}
-		else if(workplace instanceof Warehouse){
+		else if(getWorkBuilding() instanceof Warehouse){
 			// TODO: 5/29/2016
 		}
 		else

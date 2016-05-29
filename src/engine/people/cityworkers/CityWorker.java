@@ -41,10 +41,13 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 		currentBuilding = cityWorker.getCurrentBuilding();
 		registerContainer(currentBuilding);
 		home = getHome();
-		registerContainer(home);
+		if(home != null)
+			registerContainer(home);
 		hospital = getHospital();
 		registerContainer(hospital);
 		timeRemainingAtLocation = cityWorker.getTimeRemainingAtLocation();
+		if(workplace != null)
+			workplace = cityWorker.getWorkBuilding();
 	}
 	@Override
 	public void remove(Attackable attackable) {
@@ -59,7 +62,13 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 	public void registerWorkplace(Workplace workplace){
 		setWorkplace(workplace);
 	}
-	protected abstract void setWorkplace(Workplace workplace);
+	protected void setWorkplace(Workplace workplace){
+		if(this.workplace != null)
+			deregisterContainer(this.workplace);
+		if(workplace != null)
+			registerContainer(workplace);
+		this.workplace = workplace;
+	}
 	public void setHome(Housing home){
 		this.home = home;
 	}
@@ -250,7 +259,9 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 			setWorkplace(null);
 		}
 	}
-	public abstract Workplace getWorkBuilding();
+	public Workplace getWorkBuilding(){
+		return workplace;
+	}
 	public abstract void doSkill(double time);
 	public Building getCurrentBuilding() {
 		return currentBuilding;
