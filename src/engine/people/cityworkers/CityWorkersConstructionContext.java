@@ -6,6 +6,7 @@ import engine.buildings.workplaces.ToManyWorkersException;
 import engine.buildings.workplaces.Workplace;
 import engine.cities.City;
 import engine.cities.CityConstructionContext;
+import engine.cities.ToManyPeopleException;
 
 import java.util.ArrayList;
 
@@ -54,16 +55,25 @@ public class CityWorkersConstructionContext {
 		}
 	}
 	public void assignWorkerToHousing(ArrayList<CityWorker> out,CityWorker cityWorker){
-		// TODO: 5/28/2016 this can be done better as such:
 		/*
 		* precondition: there is enough housing for every worker.
 		* iterate over housing and ver workers in conjunction
 		* split workers to fit
 		* the split operator needs to be created in abstractperson/cityworker/al subclases
 		* */
-		Housing emptyHousing = city.findEmptyHousing(cityWorker.getPopulation());
+		Housing emptyHousing = city.findEmptyHousing(1);
 		if(emptyHousing == null){
-
+			throw new IllegalStateException();
+		}
+		else{
+			int popa = emptyHousing.getFreeSpace();
+			int popb = cityWorker.getPopulation() - popa;
+			out.add(cityWorker.split(popa,popb));
+			try {
+				emptyHousing.addResidents(new ArrayList<CityWorker>(){{add(cityWorker);}});
+			} catch (ToManyPeopleException e) {
+				throw new IllegalStateException();
+			}
 		}
 	}
 }

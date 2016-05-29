@@ -159,8 +159,6 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 		sanityCheck();
 		checkHealth();
 		registerContainer(currentBuilding);
-		if(home == null)
-			setWorkPlaceToNull();
 		//todo how does this class respond when workplace is null
 		if(time < 1)
             return;
@@ -216,12 +214,10 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 		}
 		if(home == building)
 		{
-			//TODO:homeless
+			home = null;
 		}
 		if(hospital == building)
 		{
-			//should be dead right//however above has handled it
-			assert(super.amIDead());
 			hospital = null;
 		}
 		if(getWorkBuilding() == building)

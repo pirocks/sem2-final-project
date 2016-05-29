@@ -403,7 +403,7 @@ public class City extends Attackable implements Serializable ,Container
 	public void remove(AbstractPerson person) {
 		residents.remove(person);
 	}
-	//TODO: if damage is greater than a certain number pass to city otherwise go to random cityblock
+	////how about no if damage is greater than a certain number pass to city otherwise go to random cityblock
 	@Override
 	public void die() {
 		super.die();
@@ -446,5 +446,12 @@ public class City extends Attackable implements Serializable ,Container
 		if(block.getParentCity() != this)
 			throw new IllegalArgumentException();
 		cityBlocks.add(block);
+	}
+	public double getAverageHealth() {
+		double total = 0;
+		for (CityWorker resident : residents) {
+			total += resident.getHealth();
+		}
+		return total/(residents.size() - 1);
 	}
 }

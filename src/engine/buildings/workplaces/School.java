@@ -14,8 +14,8 @@ import java.util.HashMap;
 
 public class School extends Workplace
 {
-	public static double healthInitial;
-	public static double resistanceInitial;
+	public static double healthInitial;// TODO: 5/29/2016
+	public static double resistanceInitial;// TODO: 5/29/2016
 	public static int maxWorkersInitial;// TODO: 5/19/2016
 
 	public School(CityBlock parentBlock, MoneySource owner) {

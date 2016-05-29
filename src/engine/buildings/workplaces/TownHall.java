@@ -10,15 +10,14 @@ import engine.tools.AttackableConstants;
 import engine.universe.MoneySource;
 import engine.universe.ResourceDemand;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 public class TownHall extends Workplace
 {
-	public static double healthInitial;
-	public static double resistanceInitial;
+	public static double healthInitial;// TODO: 5/29/2016
+	public static double resistanceInitial;// TODO: 5/29/2016
 	private City parentCity;//money for city
 	public static int maxWorkersInitial = 10;// TODO: 5/19/2016 magic cnstant
-	public static double costInitial;
-
 	public TownHall( CityBlock parentBlock, MoneySource owner) {
 		super(new AttackableConstants(parentBlock.getLocation(),healthInitial,resistanceInitial), parentBlock, maxWorkersInitial, owner);
 		parentCity= parentBlock.getParentCity();
@@ -41,7 +40,8 @@ public class TownHall extends Workplace
 
 	@Override
 	public void addSpecific(VBox in) {
-		// TODO: 5/26/2016
+		in.getChildren().add(new Text("TownHall for:" + parentCity.name));
+		in.getChildren().add(new Text("Money avaliable" + parentCity.getMoneySource().getWealth()));
 	}
 
 	@Override

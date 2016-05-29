@@ -1,7 +1,4 @@
 package engine.buildings.workplaces;
-
-//TODO figure out what  the worplace classes actually do.
-
 import engine.buildings.Building;
 import engine.cities.CityBlock;
 import engine.cities.Container;

@@ -24,7 +24,7 @@ public class Bureaucrat extends CityWorker implements Cloneable
 	private Bureaucrat(Bureaucrat  bureaucrat){
 		super(bureaucrat);
 		workplace = getWorkBuilding();
-		registerContainer(workplace);// TODO: 5/29/2016 implment remove
+		registerContainer(workplace);
 	}
 	@Override
 	protected void setWorkplace(Workplace workplace) {
@@ -45,12 +45,10 @@ public class Bureaucrat extends CityWorker implements Cloneable
 		//so just charge the salarygiver for time
 	    paySalary(time);
     }
-
 	@Override
 	protected CityWorker splitInternal() {
 		return new Bureaucrat(this);
 	}
-
 	@Override
     public double getWeight() {
         return 2;
