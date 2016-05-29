@@ -23,7 +23,6 @@ public class ArtillerySmall extends Artillery{
 			damageInitial
 		), numToolsConstructor);
 	}
-
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
 		return null;// TODO: 5/22/2016
@@ -31,6 +30,6 @@ public class ArtillerySmall extends Artillery{
 
 	@Override
 	public double getConstructionManDays() {
-		return 0;// TODO: 5/22/2016
+		return 1 * getNumTools();
 	}
 }

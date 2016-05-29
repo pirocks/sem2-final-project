@@ -16,7 +16,7 @@ public class UniversalConstants
     public static final double corruptionFactorInFascist = 2.0;
     public static final double corruptionFactorInTotalitarian = 10.0;
     public static int peoplePerCity;
-    public static double timeToDiscoveryConstant;
+    public static double timeToDiscoveryConstant = 1000.0;
 
     public static double getCorruptionFactor(Country parentCountry)
     {

@@ -43,32 +43,20 @@ public class Doctor extends CityWorker implements Cloneable
     public void setWorkPlaceToNull() {
         workplace = null;
     }
-    public void doSkill(long time)//time is in seconds
+    public void doSkill(double time)//time is in seconds
     {
-        //use productivity;
-        //not sure if this is good yet
-	    // TODO: 4/10/2016 need to reread this at some point
-	    CityWorker target = workplace.getNextPatient();//mybe make this an array or city
+	    CityWorker target = workplace.getNextPatient();
         double workDone = time/timeToHealOnePerson;
         int pop = target.getPopulation();
-        double healthIncrease = workDone/((double)pop);
-        if(1.0 - target.getHealth() < healthIncrease)
-            healthIncrease = 1.0 - target.getHealth();
-        if(workplace.getMoneySource().canPay(getSalary()*healthIncrease))
-        {    
-            target.increaseHealth(healthIncrease);
-            workplace.getMoneySource().pay(moneySource,getSalary()*healthIncrease);
-            if(target.getHealth() > 0.99)
-            {
-                target.leaveHospital();
-                if(!workplace.releasePatient(target))
-                    assert(false);
-            }
-        }
-        else
+        double healthIncrease = getPopulation()*workDone/((double)pop);
+        target.increaseHealth(healthIncrease);
+        if(target.getHealth() > 0.9)
         {
-            workplace.getMoneySource().outOfMoneyHandler(getSalary()*healthIncrease);
+            target.leaveHospital();
+            if(!workplace.releasePatient(target))
+                throw new IllegalStateException();
         }
+        paySalary(time);
     }
 	@Override
 	protected CityWorker splitInternal() {

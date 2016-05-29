@@ -199,7 +199,7 @@ public abstract class Vehicle extends Tool implements Liver,Container
 		return true;
 	}
 	@Override
-	public void doLife(long time) {
+	public void doLife(double time) {
 		System.out.println("called");
 		if(destination != null) {
 			assert (getLocation().size() == 1);

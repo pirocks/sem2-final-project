@@ -51,7 +51,7 @@ public class Ruler extends CityWorker implements Cloneable //TODO:clean this up
     }
 
     @Override
-    public void doSkill(long time) {
+    public void doSkill(double time) {
 		//TODO unimplemented
         //needs to tie into ai and ui
     }

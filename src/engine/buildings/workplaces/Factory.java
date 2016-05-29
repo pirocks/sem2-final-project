@@ -42,7 +42,7 @@ public class Factory extends Workplace implements ToolBuilder<Tool>
 	public static double healthInitial;// TODO: 5/27/2016
 	public static double resistanceInitial;// TODO: 5/27/2016
 	//only builds weapons/ vehicles roadgoing or otherwise
-	public static int maxWorkersInitial = 1000;// TODO: 5/19/2016
+	public static int maxWorkersInitial = 2000;
 	public ToolUnderConstruction<Tool> inProduction;
 	public Factory(CityBlock parentBlock, MoneySource owner) {
 		super(new AttackableConstants(parentBlock.getLocation(),healthInitial,resistanceInitial), parentBlock, maxWorkersInitial, owner);
@@ -64,15 +64,6 @@ public class Factory extends Workplace implements ToolBuilder<Tool>
 	public ToolUnderConstruction<Tool> getToolUnderConstruction() {
 		return inProduction;
 	}
-
-	/*
-	* A factor can build the following:
-	* everything in the guns package
-	* everything in the air package
-	* everything in the land package
-	* everything in the roadgoing package
-	* shuttle small and medium from the space package
-	* */
 	@Override
 	public void addBuildOptions(VBox in) {
 		ArrayList<Node> buttons = new ArrayList<>();
@@ -165,7 +156,6 @@ public class Factory extends Workplace implements ToolBuilder<Tool>
 		addButton(buttons,new Howitzer(-1));
 		addButton(buttons,new TankArtillery(-1));
 	}
-
 	@Override
 	protected boolean isSuitableType(CityWorker cityWorker) {
 		return cityWorker instanceof ManualWorker;

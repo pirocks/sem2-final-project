@@ -28,7 +28,7 @@ public abstract class Discovery implements Serializable //todo maybe make interf
 		assert(percentComplete < 1.0);
 		assert(canBeResearched());
 		percentComplete += progress;
-		if(percentComplete > 1.0)
+		if(percentComplete >= 1.0)
 			postDiscovery();
 	}
 	public boolean discoveredQ()

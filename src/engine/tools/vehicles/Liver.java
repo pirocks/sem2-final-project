@@ -14,7 +14,8 @@ import java.util.ArrayList;
  */
 public interface Liver {
 	ArrayList<Liver> livers = new ArrayList<>();
-	void doLife(long time);
+	//1 = one day
+	void doLife(double time);
 	boolean sanityCheck();
 	default void registerLiver() {
 		Liver.register(this);

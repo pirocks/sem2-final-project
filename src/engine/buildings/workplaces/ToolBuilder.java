@@ -23,7 +23,7 @@ public interface ToolBuilder <Type extends Tool>
 	{
 		return getToolUnderConstruction().areWeDoneYet();
 	}
-	default long getTimeRemaining(){
+	default double getTimeRemaining(){
 		return getToolUnderConstruction().getTimeRequired();
 	}
 	default ResourceDemand getResourcesRemaining(){
@@ -41,4 +41,8 @@ public interface ToolBuilder <Type extends Tool>
 		addBuildOptions(in);
 	}
 	void addBuildOptions(VBox in);
+
+	default void makeProgress(double time){
+		getToolUnderConstruction().pay(time);
+	}
 }

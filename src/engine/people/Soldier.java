@@ -25,9 +25,6 @@ public class Soldier extends AbstractPerson implements Container,Cloneable
 	public static double salaryInitial =
 			UniversalConstants.normalPersonSalary;
 	private static long timeToHealOnePerson = 3600*24;
-
-
-
 	public enum TypeOfTask {
         March,Drive,Guard,Heal//what about attack??
 	}
@@ -42,18 +39,12 @@ public class Soldier extends AbstractPerson implements Container,Cloneable
 	private double xDestination,yDestination;
 	public Soldier(Country parentCountry,LocationPlanet location) {
 	    //todo what about location here
-	    super(new PeopleInitialConstants(populationInitial,
-			    foodUsePerPersonInitial,
-			    crimeRiskInitial,
-			    crimeImpactInitial,
-			    salaryInitial,
-			    parentCountry,
-			    location));
+	    super(new PeopleInitialConstants(populationInitial, foodUsePerPersonInitial, crimeRiskInitial, crimeImpactInitial, salaryInitial, parentCountry,location));
 	}
 
-	// TODO: 4/10/2016 implment do life and figure out hjow the soldsier do skill worrks/asking for new orders?
+	// TODO: 4/10/2016 implement do life and figure out hjow the soldsier do skill worrks/asking for new orders?
 	@Override
-	public void doLife(long time) {
+	public void doLife(double time) {
 		switch(currentTask)
 		{
 			case March:

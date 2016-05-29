@@ -27,6 +27,9 @@ public abstract class Tool extends Attackable implements Serializable,Weighable
 	public int getCount() {
 		return numTools;
 	}
+	public int getNumTools() {
+		return numTools;
+	}
 	@Override
 	public double getWeight() {
 		return requiredResourcesForConstruction().getWeight();// TODO: 5/22/2016 go through and make sure that get weight actual is being used

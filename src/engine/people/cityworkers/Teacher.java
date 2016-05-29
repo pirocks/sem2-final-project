@@ -59,11 +59,17 @@ public class Teacher<Type extends AbstractPerson> extends CityWorker implements 
         workplace = null;
     }
 
-    public void doSkill(long time) {
-        //TODO:unimplmented
+    public void doSkill(double time) {
+        progress += population*time/(AbstractPerson.timeToTrain*student.getPopulation());
+	    if(progress > 1.0)
+		    studentCompletedHandler(student);
     }
 
-    @Override
+	private void studentCompletedHandler(Type student) {
+		// TODO: 5/29/2016
+	}
+
+	@Override
     protected CityWorker splitInternal() {
         return new Teacher<>(this);
     }

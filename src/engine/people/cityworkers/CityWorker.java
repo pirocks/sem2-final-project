@@ -23,7 +23,7 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 	private Building currentBuilding;// TODO: 5/29/2016 check registration for these
 	private Housing home = null;// TODO: 5/29/2016 check registration for these
 	private City currentCity;// TODO: 5/29/2016 check registration for these //should be renamed to parent city
-	protected long timeRemainingAtLocation;
+	protected double timeRemainingAtLocation;
 	private Hospital hospital;// TODO: 5/29/2016 check registration for these  //is null if not going to hospital
 	public CityWorker(PeopleInitialConstants peopleInitialConstants,City city) {
 		super(peopleInitialConstants);
@@ -155,7 +155,7 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 			throw new UnKilledObjectException();
 		return true;
 	}
-	public void doLife(long time) {
+	public void doLife(double time) {
 		sanityCheck();
 		checkHealth();
 		registerContainer(currentBuilding);
@@ -231,14 +231,14 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 	}
 	public abstract Workplace getWorkBuilding();
 	public abstract void setWorkPlaceToNull();
-	public abstract void doSkill(long time);
+	public abstract void doSkill(double time);
 	public Building getCurrentBuilding() {
 		return currentBuilding;
 	}
 	public Hospital getHospital() {
 		return hospital;
 	}
-	public long getTimeRemainingAtLocation() {
+	public double getTimeRemainingAtLocation() {
 		return timeRemainingAtLocation;
 	}
 	public CityWorker split(int popa,int popb){

@@ -14,8 +14,9 @@ import java.io.Serializable;
 public abstract class AbstractPerson extends Attackable implements Liver, Serializable, Container,Weighable,Cloneable
 {
 	public MoneySource moneySource;
-	public static double healthInitial;
-	public static double resistanceInitial;
+	public static double healthInitial = 1;
+	public static double resistanceInitial = 1;
+	public static double timeToTrain = 20;
 	private Country country;//final??
 	protected int population;
 	private double foodUsePerPerson;
@@ -60,7 +61,7 @@ public abstract class AbstractPerson extends Attackable implements Liver, Serial
 			die();
 		return true;
 	}
-	public abstract void doLife(long time);
+	public abstract void doLife(double time);
 	@Override
 	public boolean sanityCheck() {
 		if(moneySource  == null)
@@ -74,7 +75,7 @@ public abstract class AbstractPerson extends Attackable implements Liver, Serial
 		super.die();
 		dieSpecific();
 	}
-	protected void paySalary(long time) {
+	protected void paySalary(double time) {
 		moneySource.pay(moneySource, salary * time);
 	}
 	protected abstract void dieSpecific();
