@@ -7,8 +7,10 @@ import engine.buildings.workplaces.Workplace;
 import engine.cities.City;
 import engine.cities.Container;
 import engine.people.AbstractPerson;
+import engine.tools.vehicles.Liver;
 import engine.tools.weapons.Attackable;
 
+import static engine.people.cityworkers.CityWorker.WhereAmI.AtHome;
 import static engine.people.cityworkers.CityWorker.WhereAmI.Initing;
 
 public abstract class CityWorker extends AbstractPerson implements Container, Cloneable//don't foret to get the workplace
@@ -71,17 +73,23 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 	}
 	private void arriveAtHome() {
 		whereAmI = WhereAmI.AtHome;
+		deregisterContainer(currentBuilding);
 		currentBuilding = home;
 		timeRemainingAtLocation = TimeAtHome;
+		home.registerContainer(this);
 	}
 	private void arriveAtWork() {
 		whereAmI = WhereAmI.AtWork;
+		deregisterContainer(currentBuilding);
 		currentBuilding = getWorkBuilding();
 		timeRemainingAtLocation = TimeAtWork;
+		currentBuilding.registerContainer(this);
 	}
 	private void arriveAtHospital() {
 		whereAmI = WhereAmI.AtHospital;
+		deregisterContainer(currentBuilding);
 		currentBuilding = hospital;
+		currentBuilding.registerContainer(this);
 		timeRemainingAtLocation = Long.MAX_VALUE;
 		hospital.admit(this);
 	}
@@ -95,10 +103,18 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 	}
 	@Override
 	public boolean sanityCheck(){
-		if(amIDead)
-			throw new UnKilledObjectException();
-		if(whereAmI == Initing)
-			throw new InCompleteDataException();
+		if(amIDead) {
+			Liver.livers.remove(this);
+			return false;
+		}
+		if(whereAmI == Initing) {
+			if(home != null){
+				whereAmI = AtHome;
+				currentBuilding = home;
+				goHome();
+			}
+			return false;
+		}
 		if(timeRemainingAtLocation < 0)
 			throw new IllegalStateException();
 		if(home == null)

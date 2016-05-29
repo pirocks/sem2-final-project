@@ -19,7 +19,7 @@ public class FighterPlaneSmall extends FighterPlane {
 	public static int maxPassengersInitial = 1;
 	public static double maxWeightInitial = 10;
 
-	protected FighterPlaneSmall(LocationPlanet locationPlanet, int numToolsConstructor) {
+	public FighterPlaneSmall(LocationPlanet locationPlanet, int numToolsConstructor) {
 		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,
 				locationPlanet),maxPassengersInitial,maxWeightInitial),numToolsConstructor);
 	}

@@ -20,7 +20,7 @@ public class AutomatedTank extends LandVehicle {
 	public static double startHealthInitial = 30000;
 	public static double resistanceInitial = 20000;
 
-	protected AutomatedTank(LocationPlanet locationPlanet, int numToolsConstructor) {
+	public AutomatedTank(LocationPlanet locationPlanet, int numToolsConstructor) {
 		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial), numToolsConstructor);	}
 
 

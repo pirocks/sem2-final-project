@@ -18,7 +18,7 @@ public class TruckLarge extends Truck {
 	public static double startHealthInitial = 1000;
 	public static double resistanceInitial = 50;
 
-	protected TruckLarge(LocationPlanet locationPlanet, int numToolsConstructor) {
+	public TruckLarge(LocationPlanet locationPlanet, int numToolsConstructor) {
 		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial), numToolsConstructor);	}
 
 

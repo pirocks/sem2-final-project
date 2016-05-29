@@ -19,7 +19,7 @@ public class CargoPlaneSmall extends CargoPlane
 	public static int maxPassengersInitial = 100;
 	public static double maxWeightInitial = 200;
 
-	protected CargoPlaneSmall(LocationPlanet locationPlanet, int numToolsConstructor) {
+	public CargoPlaneSmall(LocationPlanet locationPlanet, int numToolsConstructor) {
 		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial), numToolsConstructor);	}
 
 

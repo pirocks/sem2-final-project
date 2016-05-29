@@ -20,7 +20,7 @@ public class AircraftCarrier extends SeaCraft {
 	public static double startHealthInitial = 10000000;
 	public static double resistanceInitial = 10000;
 
-	protected AircraftCarrier(LocationPlanet locationPlanet, int numToolsConstructor) {
+	public AircraftCarrier(LocationPlanet locationPlanet, int numToolsConstructor) {
 		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial), numToolsConstructor);	}
 
 	@Override

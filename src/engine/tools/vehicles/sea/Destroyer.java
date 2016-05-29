@@ -20,7 +20,7 @@ public class Destroyer extends SeaCraft {
 	public static double startHealthInitial = 4000000;
 	public static double resistanceInitial =  50000;
 
-	protected Destroyer(LocationPlanet locationPlanet, int numToolsConstructor) {
+	public Destroyer(LocationPlanet locationPlanet, int numToolsConstructor) {
 		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial), numToolsConstructor);
 	}
 

@@ -19,7 +19,7 @@ public class CargoPlaneMedium extends CargoPlane {
 	public static int maxPassengersInitial = 200;
 	public static double maxWeightInitial = 600;
 
-	protected CargoPlaneMedium(LocationPlanet locationPlanet, int numToolsConstructor) {
+	public CargoPlaneMedium(LocationPlanet locationPlanet, int numToolsConstructor) {
 		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial), numToolsConstructor);	}
 
 

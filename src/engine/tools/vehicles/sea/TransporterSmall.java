@@ -19,7 +19,7 @@ public class TransporterSmall extends Transporter {
 	public static double startHealthInitial = 2500;
 	public static double resistanceInitial = 500;
 
-	protected TransporterSmall(LocationPlanet locationPlanet, int numToolsConstructor) {
+	public TransporterSmall(LocationPlanet locationPlanet, int numToolsConstructor) {
 		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial), numToolsConstructor);
 	}
 

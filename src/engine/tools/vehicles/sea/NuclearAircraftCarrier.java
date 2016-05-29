@@ -19,7 +19,7 @@ public class NuclearAircraftCarrier extends SeaCraft{
 	public static double startHealthInitial = 20000000;
 	public static double resistanceInitial = 100000;
 
-	protected NuclearAircraftCarrier(LocationPlanet locationPlanet, int numToolsConstructor) {
+	public NuclearAircraftCarrier(LocationPlanet locationPlanet, int numToolsConstructor) {
 		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial), numToolsConstructor);
 	}
 

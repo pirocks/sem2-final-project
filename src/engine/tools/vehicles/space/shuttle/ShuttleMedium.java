@@ -15,7 +15,7 @@ public class ShuttleMedium extends Shuttle
 	public static double startHealthInitial;// TODO: 5/22/2016
 	public static double resistanceInitial;// TODO: 5/22/2016
 
-	protected ShuttleMedium(LocationPlanet locationPlanet, int numToolsConstructor) {
+	public ShuttleMedium(LocationPlanet locationPlanet, int numToolsConstructor) {
 		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,
 				locationPlanet),maxPassengersInitial,maxWeightInitial),numToolsConstructor);
 	}

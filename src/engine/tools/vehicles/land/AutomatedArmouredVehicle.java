@@ -20,7 +20,7 @@ public class AutomatedArmouredVehicle extends LandVehicle {
 	public static double startHealthInitial = 10000;
 	public static double resistanceInitial = 6000;
 
-	protected AutomatedArmouredVehicle(LocationPlanet locationPlanet, int numToolsConstructor) {
+	public AutomatedArmouredVehicle(LocationPlanet locationPlanet, int numToolsConstructor) {
 		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial), numToolsConstructor);	}
 
 	@Override

@@ -13,7 +13,6 @@ import engine.tools.weapons.Attackable;
 import engine.tools.weapons.Weapon;
 import engine.universe.MoneySource;
 import engine.universe.Resource;
-import javafx.scene.image.Image;
 import ui.requests.Request;
 import ui.requests.VehicleInWaterRequest;
 
@@ -48,7 +47,6 @@ public abstract class Vehicle extends Tool implements Liver,Container
 	public abstract boolean inSpaceQ();
 	public abstract boolean inWaterQ();
 	public abstract double getSpeed();
-	public abstract Image getImage();
 	public boolean weaponQ() {
 		return false;
 	}

@@ -1,5 +1,7 @@
 package engine.tools.vehicles.space.cityship;
 
+import engine.planets.LocationPlanet;
+import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
@@ -13,8 +15,8 @@ public class CityShipMedium extends CityShip
 	public static double startHealthInitial;// TODO: 5/22/2016
 	public static double resistanceInitial;// TODO: 5/22/2016
 
-	protected CityShipMedium(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
-		super(vehicleInitialConstants, numToolsConstructor);// TODO: 5/22/2016
+	protected CityShipMedium(LocationPlanet locationPlanet, int numToolsConstructor) {
+		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial, locationPlanet),maxPassengersInitial,maxWeightInitial),numToolsConstructor);
 	}
 
 	@Override

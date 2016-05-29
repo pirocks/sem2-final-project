@@ -17,8 +17,7 @@ public class AsteroidMinerMedium extends AsteroidMiner
 
 
 	protected AsteroidMinerMedium(LocationPlanet locationPlanet, int numToolsConstructor) {
-		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,
-				locationPlanet),maxPassengersInitial,maxWeightInitial),numToolsConstructor);
+		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial, locationPlanet),maxPassengersInitial,maxWeightInitial),numToolsConstructor);
 	}
 
 	@Override

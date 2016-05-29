@@ -2,6 +2,7 @@ package engine.tools.weapons.guns.artillery;
 
 import engine.tools.weapons.guns.GunInitialConstants;
 import engine.universe.ResourceDemand;
+import javafx.scene.image.Image;
 
 /**
  * Created by bob on 4/3/2016.
@@ -14,13 +15,12 @@ public class Howitzer extends Artillery{
 	public static double rangeInitial = 6000/50;
 
 	public Howitzer(int numToolsConstructor) {
-		super(new GunInitialConstants(
-			startHealthInitial,
-			resistanceInitial,
-			accuracyInitial,
-			rangeInitial,
-			damageInitial
-		), numToolsConstructor);
+		super(new GunInitialConstants(startHealthInitial,resistanceInitial,accuracyInitial,rangeInitial,damageInitial), numToolsConstructor);
+	}
+
+	@Override
+	public Image getImage() {
+		return null;// TODO: 5/28/2016
 	}
 
 	@Override

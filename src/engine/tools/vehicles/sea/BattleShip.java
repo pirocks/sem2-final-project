@@ -20,7 +20,7 @@ public class BattleShip extends SeaCraft {
 	public static double startHealthInitial = 7500000;
 	public static double resistanceInitial = 100000;
 
-	protected BattleShip(LocationPlanet locationPlanet, int numToolsConstructor) {
+	public BattleShip(LocationPlanet locationPlanet, int numToolsConstructor) {
 		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial), numToolsConstructor);
 	}
 

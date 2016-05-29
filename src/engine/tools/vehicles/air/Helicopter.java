@@ -21,7 +21,7 @@ public class Helicopter extends Aircraft {
 	public static double resistanceInitial = 500;
 
 
-	protected Helicopter(LocationPlanet locationPlanet, int numToolsConstructor) {
+	public Helicopter(LocationPlanet locationPlanet, int numToolsConstructor) {
 		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial),numToolsConstructor);
 	}
 	@Override

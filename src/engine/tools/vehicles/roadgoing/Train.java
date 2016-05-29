@@ -20,7 +20,7 @@ public class Train extends RoadGoing{
 	public static double startHealthInitial = 200;
 	public static double resistanceInitial = 20;
 
-	protected Train(LocationPlanet locationPlanet, int numToolsConstructor) {
+	public Train(LocationPlanet locationPlanet, int numToolsConstructor) {
 		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial), numToolsConstructor);	}
 
 

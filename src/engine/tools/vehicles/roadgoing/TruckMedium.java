@@ -18,7 +18,7 @@ public class TruckMedium extends Truck {
 	public static double startHealthInitial = 500;
 	public static double resistanceInitial = 40;
 
-	protected TruckMedium(LocationPlanet locationPlanet, int numToolsConstructor) {
+	public TruckMedium(LocationPlanet locationPlanet, int numToolsConstructor) {
 		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial), numToolsConstructor);
 	}
 

@@ -1,5 +1,7 @@
 package engine.tools.vehicles.space.factory;
 
+import engine.planets.LocationPlanet;
+import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
 import engine.universe.ResourceDemand;
 
@@ -12,8 +14,8 @@ public class FactorySpaceCraftMedium extends FactorySpaceCraft {
 	public static double startHealthInitial;// TODO: 5/22/2016
 	public static double resistanceInitial;// TODO: 5/22/2016
 
-	protected FactorySpaceCraftMedium(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
-		super(vehicleInitialConstants, numToolsConstructor);// TODO: 5/22/2016
+	protected FactorySpaceCraftMedium(LocationPlanet locationPlanet, int numToolsConstructor) {
+		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial, locationPlanet),maxPassengersInitial,maxWeightInitial),numToolsConstructor);
 	}
 
 	@Override

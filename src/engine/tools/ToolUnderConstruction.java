@@ -14,8 +14,7 @@ public class ToolUnderConstruction <Type extends Tool> implements Serializable
 	private Type object;
 	private ResourceDemand resourceDemand = object.requiredResourcesForConstruction();
 	private long timeRequired = (long) object.getConstructionManDays();// TODO: 5/27/2016 write the cnversion for this or refactor long to double
-	public ToolUnderConstruction(Type object)
-	{
+	public ToolUnderConstruction(Type object) {
 		this.object = object;
 	}
 	public boolean pay(Resource resource) {

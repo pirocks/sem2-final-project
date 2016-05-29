@@ -20,7 +20,7 @@ public class NuclearSubmarine extends SeaCraft {
 	public static double startHealthInitial = 1000000;
 	public static double resistanceInitial = 50000;
 
-	protected NuclearSubmarine(LocationPlanet locationPlanet, int numToolsConstructor) {
+	public NuclearSubmarine(LocationPlanet locationPlanet, int numToolsConstructor) {
 		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial), numToolsConstructor);
 	}
 

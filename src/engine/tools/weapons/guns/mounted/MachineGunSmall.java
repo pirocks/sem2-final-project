@@ -2,6 +2,7 @@ package engine.tools.weapons.guns.mounted;
 
 import engine.tools.weapons.guns.GunInitialConstants;
 import engine.universe.ResourceDemand;
+import javafx.scene.image.Image;
 
 /**
  * Created by bob on 4/3/2016.
@@ -15,13 +16,12 @@ public class MachineGunSmall extends MachineGun {
 	public static double rangeInitial = 1.5;
 
 	public MachineGunSmall(int numToolsConstructor) {
-		super(new GunInitialConstants(
-			startHealthInitial,
-			resistanceInitial,
-			accuracyInitial,
-			rangeInitial,
-			damageInitial
-		), numToolsConstructor);
+		super(new GunInitialConstants(startHealthInitial,resistanceInitial,accuracyInitial,rangeInitial,damageInitial), numToolsConstructor);
+	}
+
+	@Override
+	public Image getImage() {
+		return null;// TODO: 5/28/2016
 	}
 
 	@Override

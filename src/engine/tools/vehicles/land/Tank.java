@@ -21,7 +21,7 @@ public class Tank extends LandVehicle {
 	public static double startHealthInitial = 20000;
 	public static double resistanceInitial = 20000;
 
-	protected Tank(LocationPlanet locationPlanet, int numToolsConstructor) {
+	public Tank(LocationPlanet locationPlanet, int numToolsConstructor) {
 		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,locationPlanet),maxPassengersInitial,maxWeightInitial), numToolsConstructor);	}
 
 

@@ -1,5 +1,6 @@
 package engine.cities;
 
+import engine.tools.vehicles.Liver;
 import engine.tools.weapons.Attackable;
 
 import java.util.ArrayList;
@@ -25,7 +26,6 @@ public interface Container
 	{
 		deregisterContainerInternal(this,object);
 	}
-
 	static void deregisterContainerInternal(Container container, Attackable object) {
 		if(cityContainers.get(object).remove(container))
 			deregisterContainerInternal(container,object);
@@ -47,6 +47,7 @@ public interface Container
 		for (Container container : containers) {
 			container.remove(target);
 		}
+		Liver.livers.remove(target);
 		cityContainers.remove(target);
 	}
 	static void kill(ArrayList<? extends Attackable> targets) {
@@ -55,5 +56,4 @@ public interface Container
 		}
 
 	}
-
 }
