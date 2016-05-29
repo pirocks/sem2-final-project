@@ -4,58 +4,11 @@
     <option name="ANALYSIS_IN_BACKGROUND" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="constructor changes + buttons">
+    <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="bunch of edits">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/DockYard.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/DockYard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/Factory.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/Factory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/IndustrialDock.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/IndustrialDock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/cities/Container.java" afterPath="$PROJECT_DIR$/src/engine/cities/Container.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/people/cityworkers/CityWorker.java" afterPath="$PROJECT_DIR$/src/engine/people/cityworkers/CityWorker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/Tool.java" afterPath="$PROJECT_DIR$/src/engine/tools/Tool.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/ToolUnderConstruction.java" afterPath="$PROJECT_DIR$/src/engine/tools/ToolUnderConstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/planets/LocationPlanet.java" afterPath="$PROJECT_DIR$/src/engine/planets/LocationPlanet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/Liver.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/Liver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/Vehicle.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/Vehicle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/air/CargoPlaneLarge.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/air/CargoPlaneLarge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/air/CargoPlaneMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/air/CargoPlaneMedium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/air/CargoPlaneSmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/air/CargoPlaneSmall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/air/FighterPlaneMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/air/FighterPlaneMedium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/air/FighterPlaneSmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/air/FighterPlaneSmall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/air/Helicopter.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/air/Helicopter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/land/ArmouredVehicle.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/land/ArmouredVehicle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/land/AutomatedArmouredVehicle.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/land/AutomatedArmouredVehicle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/land/AutomatedTank.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/land/AutomatedTank.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/land/Tank.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/land/Tank.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/AllPurpose.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/AllPurpose.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/Bus.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/Bus.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/Train.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/Train.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/TruckLarge.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/TruckLarge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/TruckMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/TruckMedium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/TruckSmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/roadgoing/TruckSmall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/AircraftCarrier.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/AircraftCarrier.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/BattleShip.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/BattleShip.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/Destroyer.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/Destroyer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/NuclearAircraftCarrier.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/NuclearAircraftCarrier.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/NuclearSubmarine.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/NuclearSubmarine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/Submarine.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/Submarine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/TransporterLarge.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/TransporterLarge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/TransporterMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/TransporterMedium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/TransporterSmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/sea/TransporterSmall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/Freighter/FreighterSmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/Freighter/FreighterSmall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/asteroidminer/AsteroidMinerMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/asteroidminer/AsteroidMinerMedium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/cityship/CityShipMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/cityship/CityShipMedium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/factory/FactorySpaceCraftLarge.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/factory/FactorySpaceCraftLarge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/factory/FactorySpaceCraftMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/factory/FactorySpaceCraftMedium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/shuttle/ShuttleMedium.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/shuttle/ShuttleMedium.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/space/shuttle/ShuttleSmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/space/shuttle/ShuttleSmall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/Artillery.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/Artillery.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/Howitzer.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/Howitzer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/TankArtillery.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/TankArtillery.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/carried/HandGun.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/carried/HandGun.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/carried/SniperRifle.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/carried/SniperRifle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/AntiAirCraftGun.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/AntiAirCraftGun.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/MachineGun.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/MachineGun.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/MachineGunSmall.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/MachineGunSmall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/weapons/space/SpaceWeapon.java" afterPath="$PROJECT_DIR$/src/engine/tools/weapons/space/SpaceWeapon.java" />
     </list>
     <ignored path="testing.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,7 +42,7 @@
       <file leaf-file-name="Factory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/Factory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
+            <state relative-caret-position="544">
               <caret line="76" column="41" selection-start-line="76" selection-start-column="41" selection-end-line="76" selection-end-column="41" />
               <folding>
                 <element signature="method#setToolUnderConstruction#0;class#Factory#0" expanded="false" />
@@ -111,8 +64,8 @@
       <file leaf-file-name="IndustrialDock.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/IndustrialDock.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="115" column="1" selection-start-line="115" selection-start-column="1" selection-end-line="115" selection-end-column="1" />
+            <state relative-caret-position="493">
+              <caret line="113" column="1" selection-start-line="113" selection-start-column="1" selection-end-line="113" selection-end-column="1" />
               <folding>
                 <element signature="method#IndustrialDock#0;class#IndustrialDock#0" expanded="false" />
                 <element signature="method#setToolUnderConstruction#0;class#IndustrialDock#0" expanded="false" />
@@ -126,7 +79,7 @@
       <file leaf-file-name="MachineGunMedium.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/MachineGunMedium.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
+            <state relative-caret-position="136">
               <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
               <folding />
             </state>
@@ -150,22 +103,9 @@
       <file leaf-file-name="ArtillerySmall.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/ArtillerySmall.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-204">
+            <state relative-caret-position="153">
               <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Artillery.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/Artillery.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-              <folding>
-                <element signature="e#438#439#0" expanded="true" />
-                <element signature="e#456#457#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -183,15 +123,12 @@
       <file leaf-file-name="CityWorker.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/engine/people/cityworkers/CityWorker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="87" column="36" selection-start-line="87" selection-start-column="36" selection-end-line="87" selection-end-column="36" />
+            <state relative-caret-position="187">
+              <caret line="57" column="4" selection-start-line="53" selection-start-column="4" selection-end-line="57" selection-end-column="4" />
               <folding>
                 <element signature="method#CityWorker#0;class#CityWorker#0" expanded="false" />
                 <element signature="method#remove#0;class#CityWorker#0" expanded="false" />
                 <element signature="class#WhereAmI#0;class#CityWorker#0" expanded="false" />
-                <element signature="method#goHome#0;class#CityWorker#0" expanded="false" />
-                <element signature="method#goToWork#0;class#CityWorker#0" expanded="false" />
-                <element signature="method#goToHospital#0;class#CityWorker#0" expanded="false" />
                 <element signature="method#arriveAtHome#0;class#CityWorker#0" expanded="false" />
                 <element signature="method#arriveAtWork#0;class#CityWorker#0" expanded="false" />
                 <element signature="method#arriveAtHospital#0;class#CityWorker#0" expanded="false" />
@@ -202,14 +139,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Liver.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/Liver.java">
+      <file leaf-file-name="LocationPlanet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/engine/planets/LocationPlanet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+            <state relative-caret-position="2550">
+              <caret line="178" column="0" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
               <folding>
-                <element signature="method#doLifeAll#0;class#Liver#0" expanded="false" />
-                <element signature="method#doGame#0;class#Liver#0" expanded="false" />
+                <element signature="e#5086#5087#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -218,7 +154,7 @@
       <file leaf-file-name="Container.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/engine/cities/Container.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
+            <state relative-caret-position="255">
               <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
               <folding>
                 <element signature="method#registerContainer#0;class#Container#0" expanded="false" />
@@ -229,10 +165,22 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Liver.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/Liver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding>
+                <element signature="method#doGame#0;class#Liver#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ToolUnderConstruction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/engine/tools/ToolUnderConstruction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
+            <state relative-caret-position="221">
               <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
               <folding>
                 <element signature="e#541#542#0" expanded="true" />
@@ -248,8 +196,8 @@
       <file leaf-file-name="DockYard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/DockYard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+            <state relative-caret-position="221">
+              <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
               <folding>
                 <element signature="method#DockYard#0;class#DockYard#0" expanded="false" />
                 <element signature="method#addBuildOptions#0;class#DockYard#0" expanded="false" />
@@ -354,8 +302,9 @@
         <option value="$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/MachineGun.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/Artillery.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/TankArtillery.java" />
-        <option value="$PROJECT_DIR$/src/engine/tools/vehicles/Liver.java" />
         <option value="$PROJECT_DIR$/src/engine/cities/Container.java" />
+        <option value="$PROJECT_DIR$/src/engine/tools/vehicles/Liver.java" />
+        <option value="$PROJECT_DIR$/src/engine/planets/LocationPlanet.java" />
         <option value="$PROJECT_DIR$/src/engine/people/cityworkers/CityWorker.java" />
       </list>
     </option>
@@ -429,6 +378,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -608,8 +559,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -971,13 +920,6 @@
       <option name="presentableId" value="Default" />
       <updated>1460006225713</updated>
     </task>
-    <task id="LOCAL-00067" summary="switched tpo javafx images&#10;">
-      <created>1463618958708</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1463618958709</updated>
-    </task>
     <task id="LOCAL-00068" summary="images">
       <created>1463619862493</created>
       <option name="number" value="00068" />
@@ -1314,7 +1256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1464454484824</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="bunch of edits">
+      <created>1464499612109</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1464499612109</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1328,37 +1277,37 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3047473" sideWeight="0.4954683" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3078101" sideWeight="0.49791667" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3078101" sideWeight="0.50453174" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32159266" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3078101" sideWeight="0.496875" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32440946" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22507553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32771823" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3062787" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22507553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24848942" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39816234" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924962" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Analyze Dataflow to" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924962" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39816234" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3078101" sideWeight="0.49791667" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41194487" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3078101" sideWeight="0.496875" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32771823" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3062787" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924962" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1374,7 +1323,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="sea cnstants" />
     <MESSAGE value="lots of edits trying to get succsesfull compilation" />
     <MESSAGE value="it compiles" />
     <MESSAGE value="beginning to allow for settlers&#10;" />
@@ -1399,12 +1347,21 @@
     <MESSAGE value="misc edits/bug fixes" />
     <MESSAGE value="started adding  sanity checks" />
     <MESSAGE value="constructor changes + buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="constructor changes + buttons" />
+    <MESSAGE value="bunch of edits" />
+    <option name="LAST_COMMIT_MESSAGE" value="bunch of edits" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="203" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/engine/planets/LocationPlanet.java</url>
+          <line>177</line>
+          <properties />
+          <option name="timeStamp" value="205" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="206" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1413,6 +1370,166 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/Factory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="76" column="41" selection-start-line="76" selection-start-column="41" selection-end-line="76" selection-end-column="41" />
+          <folding>
+            <element signature="method#setToolUnderConstruction#0;class#Factory#0" expanded="false" />
+            <element signature="method#addBuildOptions#0;class#Factory#0" expanded="false" />
+            <element signature="method#addButton#0;class#Factory#0" expanded="false" />
+            <element signature="method#addSpaceButtons#0;class#Factory#0" expanded="false" />
+            <element signature="method#addRoadGoingButtons#0;class#Factory#0" expanded="false" />
+            <element signature="method#addLandButtons#0;class#Factory#0" expanded="false" />
+            <element signature="method#addAirButtons#0;class#Factory#0" expanded="false" />
+            <element signature="method#addGunsButtons#0;class#Factory#0" expanded="false" />
+            <element signature="method#addMountedButtons#0;class#Factory#0" expanded="false" />
+            <element signature="method#addCarriedButtons#0;class#Factory#0" expanded="false" />
+            <element signature="method#addArtilleryButtons#0;class#Factory#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/IndustrialDock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="113" column="1" selection-start-line="113" selection-start-column="1" selection-end-line="113" selection-end-column="1" />
+          <folding>
+            <element signature="method#IndustrialDock#0;class#IndustrialDock#0" expanded="false" />
+            <element signature="method#setToolUnderConstruction#0;class#IndustrialDock#0" expanded="false" />
+            <element signature="method#addBuildOptions#0;class#IndustrialDock#0" expanded="false" />
+            <element signature="method#addButton#0;class#IndustrialDock#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/MachineGunMedium.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/MachineGun.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#403#404#0" expanded="true" />
+            <element signature="e#421#422#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/ArtillerySmall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/Artillery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+          <folding>
+            <element signature="e#438#439#0" expanded="true" />
+            <element signature="e#456#457#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/TankArtillery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/people/cityworkers/CityWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#CityWorker#0;class#CityWorker#0" expanded="false" />
+            <element signature="method#remove#0;class#CityWorker#0" expanded="false" />
+            <element signature="class#WhereAmI#0;class#CityWorker#0" expanded="false" />
+            <element signature="method#arriveAtHome#0;class#CityWorker#0" expanded="false" />
+            <element signature="method#arriveAtWork#0;class#CityWorker#0" expanded="false" />
+            <element signature="method#arriveAtHospital#0;class#CityWorker#0" expanded="false" />
+            <element signature="method#leaveHospital#0;class#CityWorker#0" expanded="false" />
+            <element signature="method#checkHealth#0;class#CityWorker#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/planets/LocationPlanet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2550">
+          <caret line="178" column="0" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
+          <folding>
+            <element signature="e#5086#5087#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/cities/Container.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+          <folding>
+            <element signature="method#registerContainer#0;class#Container#0" expanded="false" />
+            <element signature="method#registerContainerInternal#0;class#Container#0" expanded="false" />
+            <element signature="method#kill#1;class#Container#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/Liver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="method#doGame#0;class#Liver#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/tools/ToolUnderConstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+          <folding>
+            <element signature="e#541#542#0" expanded="true" />
+            <element signature="e#568#569#0" expanded="true" />
+            <element signature="method#pay#0;class#ToolUnderConstruction#0" expanded="false" />
+            <element signature="method#pay#1;class#ToolUnderConstruction#0" expanded="false" />
+            <element signature="method#getFinishedTool#0;class#ToolUnderConstruction#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/DockYard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+          <folding>
+            <element signature="method#DockYard#0;class#DockYard#0" expanded="false" />
+            <element signature="method#addBuildOptions#0;class#DockYard#0" expanded="false" />
+            <element signature="method#addButton#0;class#DockYard#0" expanded="false" />
+            <element signature="method#addTransporterMediumButton#0;class#DockYard#0" expanded="false" />
+            <element signature="method#addTransporterSmallButton#0;class#DockYard#0" expanded="false" />
+            <element signature="method#addSubmarineButton#0;class#DockYard#0" expanded="false" />
+            <element signature="method#addDestroyerButton#0;class#DockYard#0" expanded="false" />
+            <element signature="method#setToolUnderConstruction#0;class#DockYard#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/people/cityworkers/things that vureacrats should do city.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1424,7 +1541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="42" column="11" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1447,10 +1563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-          <folding>
-            <element signature="e#629#630#0" expanded="false" />
-            <element signature="e#664#665#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1475,18 +1587,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#Bureaucrat#0;class#Bureaucrat#0" expanded="false" />
-            <element signature="e#1228#1229#0" expanded="false" />
-            <element signature="e#1272#1273#0" expanded="false" />
-            <element signature="e#1324#1325#0" expanded="false" />
-            <element signature="e#1356#1357#0" expanded="false" />
-            <element signature="e#1410#1411#0" expanded="false" />
-            <element signature="e#1442#1443#0" expanded="false" />
-            <element signature="e#1770#1771#0" expanded="false" />
-            <element signature="e#1794#1795#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1494,11 +1594,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#548#549#0" expanded="false" />
-            <element signature="e#575#576#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1506,11 +1601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#528#529#0" expanded="false" />
-            <element signature="e#561#562#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1535,9 +1625,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1582,7 +1669,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1590,7 +1676,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
           <caret line="23" column="180" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="180" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1598,7 +1683,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="22" column="110" selection-start-line="22" selection-start-column="110" selection-end-line="22" selection-end-column="110" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1606,7 +1690,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="22" column="108" selection-start-line="22" selection-start-column="108" selection-end-line="22" selection-end-column="108" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1614,7 +1697,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="23" column="110" selection-start-line="23" selection-start-column="110" selection-end-line="23" selection-end-column="110" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1622,7 +1704,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1630,7 +1711,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1638,7 +1718,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
           <caret line="23" column="106" selection-start-line="23" selection-start-column="106" selection-end-line="23" selection-end-column="106" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1646,7 +1725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="22" column="111" selection-start-line="22" selection-start-column="111" selection-end-line="22" selection-end-column="111" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1654,7 +1732,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="23" column="103" selection-start-line="23" selection-start-column="103" selection-end-line="23" selection-end-column="103" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1662,7 +1739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="23" column="107" selection-start-line="23" selection-start-column="107" selection-end-line="23" selection-end-column="107" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1670,7 +1746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="23" column="107" selection-start-line="23" selection-start-column="107" selection-end-line="23" selection-end-column="107" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1678,7 +1753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="22" column="103" selection-start-line="22" selection-start-column="103" selection-end-line="22" selection-end-column="103" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1686,7 +1760,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="21" column="105" selection-start-line="21" selection-start-column="105" selection-end-line="21" selection-end-column="105" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1694,7 +1767,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
           <caret line="21" column="117" selection-start-line="21" selection-start-column="117" selection-end-line="21" selection-end-column="117" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1702,7 +1774,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="23" column="103" selection-start-line="23" selection-start-column="103" selection-end-line="23" selection-end-column="103" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1710,7 +1781,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="11" column="58" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1718,7 +1788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="22" column="103" selection-start-line="22" selection-start-column="103" selection-end-line="22" selection-end-column="103" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1726,7 +1795,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="22" column="115" selection-start-line="22" selection-start-column="115" selection-end-line="22" selection-end-column="115" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1734,7 +1802,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="24" column="103" selection-start-line="24" selection-start-column="103" selection-end-line="24" selection-end-column="103" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1742,7 +1809,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1750,7 +1816,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="23" column="117" selection-start-line="23" selection-start-column="117" selection-end-line="23" selection-end-column="117" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1758,7 +1823,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="23" column="107" selection-start-line="23" selection-start-column="107" selection-end-line="23" selection-end-column="107" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1766,7 +1830,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1774,7 +1837,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1782,7 +1844,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1790,7 +1851,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1798,7 +1858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="22" column="116" selection-start-line="22" selection-start-column="116" selection-end-line="22" selection-end-column="116" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1806,7 +1865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="21" column="117" selection-start-line="21" selection-start-column="117" selection-end-line="21" selection-end-column="117" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1814,7 +1872,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1822,7 +1879,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="22" column="117" selection-start-line="22" selection-start-column="117" selection-end-line="22" selection-end-column="117" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1830,20 +1886,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-          <folding>
-            <element signature="method#Vehicle#0;class#Vehicle#0" expanded="false" />
-            <element signature="method#loadObject#0;class#Vehicle#0" expanded="false" />
-            <element signature="method#unloadVehicle#0;class#Vehicle#0" expanded="false" />
-            <element signature="method#unloadResource#0;class#Vehicle#0" expanded="false" />
-            <element signature="method#unloadPerson#0;class#Vehicle#0" expanded="false" />
-            <element signature="method#unloadWeapon#0;class#Vehicle#0" expanded="false" />
-            <element signature="method#getTotalWeightLoad#0;class#Vehicle#0" expanded="false" />
-            <element signature="method#die#0;class#Vehicle#0" expanded="false" />
-            <element signature="method#remove#3;class#Vehicle#0" expanded="false" />
-            <element signature="method#sanityCheck#0;class#Vehicle#0" expanded="false" />
-            <element signature="method#doLife#0;class#Vehicle#0" expanded="false" />
-            <element signature="method#remove#4;class#Vehicle#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1851,7 +1893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1859,7 +1900,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1867,7 +1907,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="18" column="58" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1875,7 +1914,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1883,7 +1921,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1891,7 +1928,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1899,7 +1935,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1907,7 +1942,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1915,7 +1949,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="18" column="118" selection-start-line="18" selection-start-column="118" selection-end-line="18" selection-end-column="118" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1923,7 +1956,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1931,7 +1963,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1939,7 +1970,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1947,7 +1977,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="16" column="69" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1955,7 +1984,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1963,7 +1991,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1971,7 +1998,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1979,7 +2005,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1987,7 +2012,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1995,7 +2019,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2003,7 +2026,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="17" column="60" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2011,10 +2033,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
-          <folding>
-            <element signature="method#Tool#0;class#Tool#0" expanded="false" />
-            <element signature="method#getWeight#0;class#Tool#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2030,7 +2048,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="22" column="68" selection-start-line="22" selection-start-column="68" selection-end-line="22" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2038,10 +2055,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
           <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-          <folding>
-            <element signature="e#717#718#0" expanded="false" />
-            <element signature="e#753#754#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2049,10 +2062,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
           <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-          <folding>
-            <element signature="e#689#690#0" expanded="false" />
-            <element signature="e#725#726#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2060,10 +2069,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
           <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
-          <folding>
-            <element signature="e#700#701#0" expanded="false" />
-            <element signature="e#736#737#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2071,10 +2076,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
-          <folding>
-            <element signature="e#728#729#0" expanded="false" />
-            <element signature="e#764#765#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2082,9 +2083,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding>
-            <element signature="method#Gun#0;class#Gun#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2092,10 +2090,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
           <caret line="19" column="119" selection-start-line="19" selection-start-column="119" selection-end-line="19" selection-end-column="119" />
-          <folding>
-            <element signature="e#774#775#0" expanded="false" />
-            <element signature="e#810#811#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2103,7 +2097,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2111,10 +2104,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="20" />
-          <folding>
-            <element signature="e#507#508#0" expanded="false" />
-            <element signature="e#525#526#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2122,7 +2111,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
           <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2130,7 +2118,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2146,7 +2133,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="70" column="54" selection-start-line="70" selection-start-column="54" selection-end-line="70" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2154,7 +2140,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="60" column="60" selection-start-line="60" selection-start-column="60" selection-end-line="60" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2162,7 +2147,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="143" column="43" selection-start-line="143" selection-start-column="43" selection-end-line="143" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2170,7 +2154,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2178,14 +2161,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/DockYard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+        <state relative-caret-position="221">
+          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
           <folding>
             <element signature="method#DockYard#0;class#DockYard#0" expanded="false" />
             <element signature="method#addBuildOptions#0;class#DockYard#0" expanded="false" />
@@ -2201,7 +2183,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/tools/ToolUnderConstruction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
+        <state relative-caret-position="221">
           <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
           <folding>
             <element signature="e#541#542#0" expanded="true" />
@@ -2215,7 +2197,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/Factory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
+        <state relative-caret-position="544">
           <caret line="76" column="41" selection-start-line="76" selection-start-column="41" selection-end-line="76" selection-end-column="41" />
           <folding>
             <element signature="method#setToolUnderConstruction#0;class#Factory#0" expanded="false" />
@@ -2235,8 +2217,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/IndustrialDock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="115" column="1" selection-start-line="115" selection-start-column="1" selection-end-line="115" selection-end-column="1" />
+        <state relative-caret-position="493">
+          <caret line="113" column="1" selection-start-line="113" selection-start-column="1" selection-end-line="113" selection-end-column="1" />
           <folding>
             <element signature="method#IndustrialDock#0;class#IndustrialDock#0" expanded="false" />
             <element signature="method#setToolUnderConstruction#0;class#IndustrialDock#0" expanded="false" />
@@ -2248,7 +2230,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/tools/weapons/guns/mounted/MachineGunMedium.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
+        <state relative-caret-position="136">
           <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
           <folding />
         </state>
@@ -2279,7 +2261,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/tools/weapons/guns/artillery/ArtillerySmall.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204">
+        <state relative-caret-position="153">
           <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
           <folding />
         </state>
@@ -2293,28 +2275,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/Liver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding>
-            <element signature="method#doLifeAll#0;class#Liver#0" expanded="false" />
-            <element signature="method#doGame#0;class#Liver#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/dictionaries/bob.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="49">
           <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/cities/Container.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
+        <state relative-caret-position="255">
           <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
           <folding>
             <element signature="method#registerContainer#0;class#Container#0" expanded="false" />
@@ -2324,17 +2294,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/Liver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="method#doGame#0;class#Liver#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/planets/LocationPlanet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2550">
+          <caret line="178" column="0" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
+          <folding>
+            <element signature="e#5086#5087#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/people/cityworkers/CityWorker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="87" column="36" selection-start-line="87" selection-start-column="36" selection-end-line="87" selection-end-column="36" />
+        <state relative-caret-position="187">
+          <caret line="57" column="4" selection-start-line="53" selection-start-column="4" selection-end-line="57" selection-end-column="4" />
           <folding>
             <element signature="method#CityWorker#0;class#CityWorker#0" expanded="false" />
             <element signature="method#remove#0;class#CityWorker#0" expanded="false" />
             <element signature="class#WhereAmI#0;class#CityWorker#0" expanded="false" />
-            <element signature="method#goHome#0;class#CityWorker#0" expanded="false" />
-            <element signature="method#goToWork#0;class#CityWorker#0" expanded="false" />
-            <element signature="method#goToHospital#0;class#CityWorker#0" expanded="false" />
             <element signature="method#arriveAtHome#0;class#CityWorker#0" expanded="false" />
             <element signature="method#arriveAtWork#0;class#CityWorker#0" expanded="false" />
             <element signature="method#arriveAtHospital#0;class#CityWorker#0" expanded="false" />

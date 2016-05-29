@@ -5,7 +5,6 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.control.Alert;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
@@ -30,10 +29,7 @@ public interface Liver {
 			try {
 				liver.sanityCheck();
 			} catch(Exception e){
-				Alert alert = new Alert(Alert.AlertType.WARNING);
-				alert.setTitle("An object failed its sanity check. It will now die.");
-				alert.setContentText(e.toString());
-
+				e.printStackTrace();
 				if(liver instanceof Attackable)
 					((Attackable)liver).die();
 			}

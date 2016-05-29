@@ -54,23 +54,14 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 	public void goHome() {
 		double distance = home.getLocation().get(0).distanceBetween(currentBuilding.getLocation().get(0));
 		whereAmI = WhereAmI.GoingToHome;
-		currentBuilding = null;
 		timeRemainingAtLocation = (long)(distance*travelTimeConstant);
 	}
 	private void goToWork() {
 		double distance = getWorkBuilding().getLocation().get(0).distanceBetween(currentBuilding.getLocation().get(0));
 		whereAmI = WhereAmI.GoingToWork;
-		currentBuilding = null;
 		timeRemainingAtLocation = (long)(distance*travelTimeConstant);
 	}
-	private void goToHospital() {
-		Hospital h = currentCity.getLeastLoadedHospital();
-		double distance = h.getLocation().get(0).distanceBetween(currentBuilding.getLocation().get(0));
-		whereAmI = WhereAmI.GoingToHospital;
-		currentBuilding = null;
-		timeRemainingAtLocation = (long)(distance*travelTimeConstant);
-		hospital = h;
-	}
+
 	private void arriveAtHome() {
 		whereAmI = WhereAmI.AtHome;
 		deregisterContainer(currentBuilding);
@@ -107,12 +98,27 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 			Liver.livers.remove(this);
 			return false;
 		}
+		if(currentCity.getLeastLoadedHospital().getLocation() == null ) {
+			throw new IllegalStateException();
+		}
 		if(whereAmI == Initing) {
 			if(home != null){
 				whereAmI = AtHome;
 				currentBuilding = home;
 				goHome();
 			}
+			else
+				throw new IllegalStateException();
+			return false;
+		}
+		if(currentBuilding == null) {
+			if(home != null){
+				whereAmI = AtHome;
+				currentBuilding = home;
+				goHome();
+			}
+			else
+				throw new IllegalStateException();
 			return false;
 		}
 		if(timeRemainingAtLocation < 0)
@@ -159,7 +165,7 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
         switch(whereAmI)
         {
             case GoingToHome:
-                time -= timeRemainingAtLocation;
+                time -= timeRemainingAtLocation;// TODO: 5/28/2016 not sure this is right
                 arriveAtHome();
                 doLife(time);
                 break;
@@ -205,8 +211,7 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 	}
 	public void remove(Building building) {
 		if(currentBuilding == building) {
-			die();//not sure about this
-			currentBuilding = null;
+			die();
 		}
 		if(home == building)
 		{
