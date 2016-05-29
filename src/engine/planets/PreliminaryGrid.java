@@ -1,6 +1,5 @@
 package engine.planets;
 
-import engine.planets.hazards.NaturalHazard;
 import engine.universe.Resource;
 
 import java.util.ArrayList;
@@ -12,6 +11,5 @@ import java.util.ArrayList;
 public class PreliminaryGrid
 {
 	TerrainType type;
-	ArrayList<NaturalHazard.Type> hazardTypes;
 	ArrayList<Resource.Type> resourceTypes;
 }

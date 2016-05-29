@@ -1,7 +1,6 @@
 package engine.planets;
 
 import engine.cities.*;
-import engine.planets.hazards.*;
 import engine.tools.vehicles.Vehicle;
 import engine.tools.weapons.Attackable;
 import engine.universe.Country;
@@ -23,7 +22,6 @@ public class Grid implements Serializable,Container
     private ArrayList<City> citys;
 	private ArrayList<NaturalResource> naturalResources;
     private TerrainType terrainType;
-    private ArrayList<NaturalHazard> hazards;
     private FarmLand farmLand;
 	private ArrayList<Vehicle> vehicles;
 
@@ -34,22 +32,6 @@ public class Grid implements Serializable,Container
 	    y = gridConstructionContext.y;
 	    naturalResources = gridConstructionContext.naturalResources;
 	    terrainType = gridConstructionContext.getSuitableTerrainType();
-	    hazards = new ArrayList<>();
-	    double hazardProb = Math.random();
-	    if(hazardProb < gridConstructionContext.hazardAbundance)
-	    {
-		    hazards.add(getRandomHazard());
-		    hazardProb = Math.random();
-		    if(hazardProb < gridConstructionContext.hazardAbundance)
-		    {
-			    hazards.add(getRandomHazard());
-			    hazardProb = Math.random();
-			    if(hazardProb < gridConstructionContext.hazardAbundance)
-			    {
-				    hazards.add(getRandomHazard());
-			    }//up to three natural hazards
-		    }
-	    }
 	    farmLand = new FarmLand(this);
 	    //nowwe deal with  countries
 	    parentCountry = gridConstructionContext.country;
@@ -78,35 +60,9 @@ public class Grid implements Serializable,Container
 		vehicles = new ArrayList<>();
 		// TODO: 5/10/2016
     }
-	private NaturalHazard getRandomHazard() {
-		int type = (int) (Math.random()*5);
-		switch (type)
-		{
-			case 0:
-				return new Disease(this);
-			case 1:
-				return new Drought(this);
-			case 2:
-				return new Volcano(this);
-			case 3:
-				return new Weather(this);
-			case 4:
-				return new Earthquake(this);
-			default:
-				assert(false);
-				throw new IllegalStateException();
-		}
-	}
 	public Country getParentCountry()
     {
         return parentCountry;
-    }
-    public void registerHazard(NaturalHazard hazard){
-        //TODO:figure this one out//natural hazards arwe scehdule  for deprecation
-    }
-    public ArrayList<NaturalHazard> getHazards()
-    {
-        return hazards;
     }
     public ArrayList<NaturalResource> getNaturalResources()
     {

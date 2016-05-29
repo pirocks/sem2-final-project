@@ -10,7 +10,6 @@ import engine.cities.Container;
 import engine.people.AbstractPerson;
 import engine.planets.Grid;
 import engine.planets.NaturalResource;
-import engine.planets.hazards.NaturalHazard;
 import engine.science.CountriesDiscoveries;
 import engine.tools.vehicles.CityBuilder;
 import engine.tools.weapons.Attackable;
@@ -95,16 +94,6 @@ public class Country extends MoneySource implements Serializable, Container
         Democracy,Communist,Fascist,Totalitarian
     }
 	private GovernmentType governmentType;
-	public ArrayList<NaturalHazard> getNaturalHazards() {
-        ArrayList<NaturalHazard> out = new ArrayList<NaturalHazard>();
-        for(Grid grid:grids)
-        {
-            ArrayList<NaturalHazard> hazards = grid.getHazards();
-            for(NaturalHazard hazard:hazards)
-                out.add(hazard);
-        }
-        return out;
-    }
 	public ArrayList<NaturalResource> getNaturalResources() {
         ArrayList<NaturalResource> out = new ArrayList<NaturalResource>();
         for(Grid grid:grids)
