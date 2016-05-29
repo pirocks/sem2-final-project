@@ -45,13 +45,17 @@ public class Planet extends Attackable implements Serializable
 	}
     public Planet(int size) {
 	    super(resitanceInitial,startHeathInitial,new ArrayList<LocationPlanet>(){{add(new LocationPlanet(null,0,0,0,0));}});
-	    super.setParentPlanet(this);
+	    for (LocationPlanet locationPlanet : super.location) {
+		    locationPlanet.setPlanet(this);
+	    }
         grids = new Grid[size][size * 2];
 	    setName();
     }
     public Planet(PlanetConstructionContext c, SolarSystem solarSystem) {
 	    super(resitanceInitial,startHeathInitial,new ArrayList<LocationPlanet>(){{add(new LocationPlanet(null,0,0,0,0));}});
-	    super.setParentPlanet(this);
+	    for (LocationPlanet locationPlanet : super.location) {
+		    locationPlanet.setPlanet(this);
+	    }
 	    parentSolarSystem = solarSystem;
 	    GridConstructionContext[][] futureGrids = new GridConstructionContext[c.gridNum][c.gridNum];
 	    grids = new Grid[c.gridNum][c.gridNum];

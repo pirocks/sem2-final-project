@@ -124,8 +124,7 @@ public class Grid implements Serializable,Container
         double planetY = parentPlanet.getYInUniverse();
         return planetY + (parentPlanet.getplanetRadius()*Math.sin(yAngle));
     }
-    public Planet getParentPlanet()
-    {
+    public Planet getParentPlanet() {
         return parentPlanet;
     }
 	public void remove(City city) {

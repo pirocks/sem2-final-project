@@ -109,7 +109,7 @@ public class Controller implements Initializable{
 		universe = Main.getUniverse();
 		if(city == null) {
 			LocationPlanet locationPlanet = playersCountry.initialBuilder.getLocation().get(0);
-			planet = locationPlanet.planet;
+			planet = locationPlanet.getPlanet();
 			solarSystem = planet.getParentSolarSystem();
 			return false;
 		}

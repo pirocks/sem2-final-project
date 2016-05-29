@@ -2,6 +2,7 @@ package engine.people.cityworkers;
 
 import engine.buildings.UnderConstruction;
 import engine.buildings.workplaces.ToolBuilder;
+import engine.buildings.workplaces.Warehouse;
 import engine.buildings.workplaces.Workplace;
 import engine.cities.City;
 import engine.planets.LocationPlanet;
@@ -22,6 +23,8 @@ public class ManualWorker extends CityWorker implements Cloneable
 
 	public ManualWorker(City city,LocationPlanet locationPlanet) {
 		super(new PeopleInitialConstants(populationInitial,foodUsePerPersonInitial,crimeRiskInitial,crimeImpactInitial,salaryInitial,city.getParentCountry(),locationPlanet), city);
+		if(locationPlanet == null)
+			throw new IllegalArgumentException();
 	}
 	private ManualWorker(ManualWorker manualWorker){
 		super(manualWorker);
@@ -51,6 +54,9 @@ public class ManualWorker extends CityWorker implements Cloneable
 		else if(workplace instanceof UnderConstruction){
 			UnderConstruction workplace = (UnderConstruction) this.workplace;
 			workplace.makeProgress(time*getPopulation());
+		}
+		else if(workplace instanceof Warehouse){
+			// TODO: 5/29/2016
 		}
 		else
 			throw new IllegalStateException();

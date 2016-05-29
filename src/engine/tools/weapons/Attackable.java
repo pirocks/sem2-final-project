@@ -4,7 +4,6 @@ package engine.tools.weapons;
 import engine.cities.Container;
 import engine.planets.Grid;
 import engine.planets.LocationPlanet;
-import engine.planets.Planet;
 import engine.tools.AttackableConstants;
 
 import java.util.ArrayList;
@@ -14,7 +13,6 @@ public abstract class Attackable
 	private double health;
 	private double resistance;
 	public ArrayList<LocationPlanet> location;
-	private Planet parentPlanet;
 	protected boolean amIDead = false;
 
 	public Attackable(double health, double resistance, ArrayList<LocationPlanet> location) {
@@ -35,12 +33,12 @@ public abstract class Attackable
 	}
 
 	public Attackable(Attackable a) {
+		location = new ArrayList<>();
 		health = a.getHealth();
 		resistance = a.getResistance();
 		for (LocationPlanet locationPlanet : a.location) {
 			location.add(new LocationPlanet(locationPlanet));
 		}
-		parentPlanet = a.getParentPlanet();
 		amIDead = a.amIDead;
 	}
 	public boolean receiveDamage(double damage, Weapon attacker) {
@@ -85,9 +83,7 @@ public abstract class Attackable
 	public Grid getGrid() {
 		return location.get(0).getGrid();
 	}
-	public void setParentPlanet(Planet parentPlanet) {
-		this.parentPlanet = parentPlanet;
-	}
+
 	public void setLocation(ArrayList<LocationPlanet> location)
 	{
 		this.location = location;
@@ -97,7 +93,4 @@ public abstract class Attackable
 		return resistance;
 	}
 
-	public Planet getParentPlanet() {
-		return parentPlanet;
-	}
 }

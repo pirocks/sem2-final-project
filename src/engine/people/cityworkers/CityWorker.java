@@ -7,6 +7,7 @@ import engine.buildings.workplaces.Workplace;
 import engine.cities.City;
 import engine.cities.Container;
 import engine.people.AbstractPerson;
+import engine.planets.Planet;
 import engine.tools.vehicles.Liver;
 import engine.tools.weapons.Attackable;
 
@@ -98,7 +99,7 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 			hospital = currentCity.getLeastLoadedHospital();
 			currentCity.getLeastLoadedHospital().admit(this);
 		}
-		if(super.getHealth() > 0.9){
+		if(super.getHealth() > 0.9 && hospital != null){
 			hospital.releasePatient(this);
 			hospital = null;
 		}
@@ -147,10 +148,31 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 			throw new IllegalStateException();
 		if(location.size() != 1)
 			throw new IllegalStateException();
-		if(location.get(0).getGrid() != getWorkBuilding().getGrid())
-			throw new IllegalStateException();
-		if(location.get(0).getGrid() != getHome().getGrid())
-			throw new IllegalStateException();
+		try {
+			if (location.get(0).getGrid() != getWorkBuilding().getGrid()) {
+				throw new IllegalStateException();
+			}
+		}catch (NullPointerException e){
+			//assume that this is caused by a planet null pointer exception
+			Planet planet = currentCity.getLocation().get(0).getPlanet();
+			if(planet == null)
+				throw new IllegalStateException();
+			if (location.get(0).getPlanet() == null) {
+				location.get(0).setPlanet(planet);
+			}
+		}
+		try{
+			if(location.get(0).getGrid() != getHome().getGrid())
+				throw new IllegalStateException();
+		}catch (NullPointerException e){
+			if(getHome() != null){
+				Planet planet = currentBuilding.getLocation().get(0).getPlanet();
+				if(planet == null)
+					throw new IllegalStateException();
+				if(location.get(0).getPlanet() == null)
+					location.get(0).setPlanet(planet);
+			}
+		}
 		if(amIDead())
 			throw new UnKilledObjectException();
 		return true;
@@ -171,6 +193,8 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
             timeRemainingAtLocation -= time;
             return;
         }
+		if(home == null)
+			increaseHealth(-0.1);
         switch(whereAmI)
         {
             case GoingToHome:
@@ -238,6 +262,10 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 		return timeRemainingAtLocation;
 	}
 	public CityWorker split(int popa,int popb){
+		if(popa > population ||popb > population)
+			throw new IllegalArgumentException();
+		if(popa <= 0 & popb <= 0 )
+			throw new IllegalArgumentException();
 		if(popa + popb != population)
 			throw new IllegalArgumentException();
 		this.population = popa;

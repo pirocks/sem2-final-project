@@ -63,9 +63,18 @@ public class CityWorkersConstructionContext {
 		* */
 		Housing emptyHousing = city.findEmptyHousing(1);
 		if(emptyHousing == null){
-			throw new IllegalStateException();
+//give up on tryingto put everyone into apartments.
+// throw new IllegalStateException();
 		}
 		else{
+			if(emptyHousing.getFreeSpace() >= cityWorker.getPopulation()) {
+				try {
+					emptyHousing.addResidents(new ArrayList<CityWorker>(){{add(cityWorker);}});
+				} catch (ToManyPeopleException e) {
+					throw new IllegalStateException();
+				}
+				return;
+			}
 			int popa = emptyHousing.getFreeSpace();
 			int popb = cityWorker.getPopulation() - popa;
 			out.add(cityWorker.split(popa,popb));

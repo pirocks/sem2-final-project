@@ -11,12 +11,14 @@ import java.io.Serializable;
 
 public class LocationPlanet implements Serializable,Container
 {
-	public Planet planet;
+	private Planet planet;
 	private int gridx;
 	private int gridy;
 	private int blockx;
 	private int blocky;
 	public LocationPlanet(Planet planet,double x,double y){
+		if(planet == null)
+			throw new IllegalArgumentException();
 		this.planet = planet;
 		blockx = (int) (x % 100);
 		blocky = (int) (y % 100);
@@ -37,6 +39,8 @@ public class LocationPlanet implements Serializable,Container
 		gridx = b.getGrid().getX();
 		gridy = b.getGrid().getY();
 		Planet planet = b.getGrid().getParentPlanet();
+		if(planet  == null)
+			throw new IllegalArgumentException();
 		registerContainer(planet);
 	}
 	public LocationPlanet(City c) {
@@ -45,7 +49,8 @@ public class LocationPlanet implements Serializable,Container
 		planet = c.getGrid().getParentPlanet();
 		blockx = c.getCapitalBuilding().getParentBlock().getXInGrid();// TODO: 4/9/2016 see below
 		blocky = c.getCapitalBuilding().getParentBlock().getYInGrid();// TODO: 4/9/2016 make sure that this gets the town hal not capital city and tht get y in grid gets cityblock
-		assert (planet!= null);
+		if(planet == null)
+			throw new IllegalArgumentException();
 		registerContainer(planet);
 	}
 	public LocationPlanet(Building b)
@@ -58,11 +63,14 @@ public class LocationPlanet implements Serializable,Container
 		gridy = parentGrid.getY();
 		blockx = centerX;
 		blocky = centerY;
-		assert (planet!= null);
+		if(planet == null)
+			throw new IllegalArgumentException();
 		registerContainer(planet);
 	}
 	public LocationPlanet(LocationPlanet locationPlanet){
-		planet = locationPlanet.planet;
+		planet = locationPlanet.getPlanet();
+//		if(planet == null)// TODO: 5/29/2016 fix this bug
+//			throw new IllegalArgumentException();
 		gridx = locationPlanet.getGridx();
 		gridy = locationPlanet.getGridy();
 		blockx = locationPlanet.getBlockx();
@@ -74,34 +82,13 @@ public class LocationPlanet implements Serializable,Container
 	public double getLocNumY(){
 		return 100*getGridy() + blocky;
 	}
-	public void moveBlock(int x,int y) {
-		blockx = x;
-		blocky = y;
-	}
-	public void moveGrid(int x, int y) {
-		assert(Math.abs(gridx - x) < 2 && Math.abs(gridy - y) < 2 );
-		gridx = x;
-		gridy = y;
-	}
-	public void leavePlanet() {
-		planet = null;
-		gridx = -1;
-		gridy = -1;
-		blockx = -1;
-		blocky = -1;
-	}
 	public void arrivePlanet(CityBlock b) {
 		assert(planet == null);
 		blockx = b.getXInGrid();
 		blocky = b.getYInGrid();
 		gridx = b.getGrid().getX();
 		gridy = b.getGrid().getY();
-		Planet planet = b.getGrid().getParentPlanet();
-
-	}
-	public void arrivePlanet(Building b)
-	{
-		arrivePlanet(b.getParentBlock());
+		planet = b.getGrid().getParentPlanet();
 	}
 	public double distanceBetween(LocationPlanet loc) {
 		double x1 = (double)(gridx *100 + blockx);
@@ -200,6 +187,11 @@ public class LocationPlanet implements Serializable,Container
 		else
 			throw new IllegalStateException();
 	}
+
+	public void setPlanet(Planet planet) {
+		this.planet = planet;
+	}
+
 	public class InTheOceanException extends Exception {
 		private Grid grid;
 		/**
@@ -212,5 +204,25 @@ public class LocationPlanet implements Serializable,Container
 			super();
 			this.grid = grid;
 		}
+	}
+	public void moveBlock(int x,int y) {
+		blockx = x;
+		blocky = y;
+	}
+	public void moveGrid(int x, int y) {
+		assert(Math.abs(gridx - x) < 2 && Math.abs(gridy - y) < 2 );
+		gridx = x;
+		gridy = y;
+	}
+	public void leavePlanet() {
+		planet = null;
+		gridx = -1;
+		gridy = -1;
+		blockx = -1;
+		blocky = -1;
+	}
+	public void arrivePlanet(Building b)
+	{
+		arrivePlanet(b.getParentBlock());
 	}
 }

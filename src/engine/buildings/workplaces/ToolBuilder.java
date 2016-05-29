@@ -41,8 +41,11 @@ public interface ToolBuilder <Type extends Tool>
 		addBuildOptions(in);
 	}
 	void addBuildOptions(VBox in);
-
 	default void makeProgress(double time){
+		if(getToolUnderConstruction() == null) {
+			//assume nothing is being built
+			return;
+		}
 		getToolUnderConstruction().pay(time);
 	}
 }
