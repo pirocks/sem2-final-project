@@ -14,7 +14,8 @@ public abstract class Tool extends Attackable implements Serializable,Weighable
 
 	protected Tool(AttackableConstants attackableConstants, int numToolsConstructor) {
 		super(attackableConstants);
-		//TODO think of sme code to put here
+		this.numTools = numToolsConstructor;
+		//TODO think of some code to put here
 		//what about construction costs
 		//constructor from a another class
 	}
@@ -32,9 +33,9 @@ public abstract class Tool extends Attackable implements Serializable,Weighable
 	}
 	@Override
 	public double getWeight() {
-		return requiredResourcesForConstruction().getWeight();// TODO: 5/22/2016 go through and make sure that get weight actual is being used
+		return requiredResourcesForConstruction().getWeight();
 	}
-	// TODO: 5/28/2016 this really shouldn't be used once the vehicle is out in the real world
+	//  this really shouldn't be used once the vehicle is out in the real world
 	public void setNumTools(int numTools) {
 		this.numTools = numTools;
 	}

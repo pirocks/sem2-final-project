@@ -21,7 +21,6 @@ public class Planet extends Attackable implements Serializable
 {
 	public static double resitanceInitial;
 	public static double startHeathInitial;
-	//TODO make a better constructor
     private ArrayList<Country> countries = new ArrayList<>();
     private ArrayList<Continent> continents = new ArrayList<>();
     boolean inhabitedq = false;
@@ -92,7 +91,7 @@ public class Planet extends Attackable implements Serializable
 
 		//misc cleanup stuff
 	    setName();
-	    double surfaceArea = (double)(grids.length*grids[0].length);//todo multiply by conversion factor
+	    double surfaceArea = (double)(100*100*grids.length*grids[0].length);
 //	    A = 4 pi r^2
 	    planetRadius = Math.sqrt(surfaceArea/4/Math.PI);
 //	    parentSolarSystem = c.star.getParentSolarSystem();

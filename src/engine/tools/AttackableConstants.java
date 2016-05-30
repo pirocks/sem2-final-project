@@ -2,7 +2,6 @@ package engine.tools;
 
 import engine.planets.Grid;
 import engine.planets.LocationPlanet;
-import engine.tools.weapons.Attackable;
 
 import java.util.ArrayList;
 
@@ -37,15 +36,6 @@ public class AttackableConstants {
 		this(healthInitial,resistanceInitial,location);
 	}
 
-	// TODO: 5/30/2016 what is this?
-	public boolean receiveDamage(double damage, Attackable attacked) {
-		health -= damage/resistance;
-		if(health <= 0) {
-			attacked.die();
-			return true;
-		}
-		return false;
-	}
 	public Grid getGrid() {
 		return  locationPlanet.get(0).getGrid();
 	}

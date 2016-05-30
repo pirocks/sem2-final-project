@@ -60,7 +60,7 @@ public class Grid implements Serializable,Container
 		    }
 	    }
 		vehicles = new ArrayList<>();
-		// TODO: 5/10/2016
+		// TODO: 5/10/2016 possibly add random vehicles and/or do nothing
     }
 	public Country getParentCountry()
     {

@@ -31,7 +31,7 @@ public class Train extends RoadGoing{
 
 	@Override
 	public Image getImage() {
-		return null;// TODO: 5/23/2016
+		return new Image(getClass().getResourceAsStream("train.jpg"));
 	}
 
 	@Override

@@ -13,7 +13,7 @@ public class ToolUnderConstruction <Type extends Tool> implements Serializable
 {
 	private Type object;
 	private ResourceDemand resourceDemand = object.requiredResourcesForConstruction();
-	private double timeRequired = (long) object.getConstructionManDays();// TODO: 5/27/2016 write the cnversion for this or refactor long to double
+	private double timeRequired = object.getConstructionManDays();
 	public ToolUnderConstruction(Type object) {
 		this.object = object;
 	}
@@ -32,7 +32,7 @@ public class ToolUnderConstruction <Type extends Tool> implements Serializable
 	public Type getFinishedTool() {
 		if(areWeDoneYet())
 			return object;
-		return null;//// TODO: 4/8/2016 actually this should work
+		return null;
 	}
 	public ResourceDemand getResourcesRequired()
 	{
