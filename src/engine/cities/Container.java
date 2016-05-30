@@ -32,6 +32,9 @@ public interface Container
 		if(cityContainers.get(object).remove(container))
 			deregisterContainerInternal(container,object);
 	}
+	default void registerContainer(Set<? extends Attackable> containedObjects){
+		registerContainer(new ArrayList<Attackable>(containedObjects));
+	}
 
 	HashMap<Attackable,Set<Container>> cityContainers= new HashMap<>();
 

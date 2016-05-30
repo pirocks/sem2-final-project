@@ -24,8 +24,8 @@ import java.util.Optional;
 
 public class IndustrialDock extends Workplace implements ToolBuilder<SeaCraft>
 {
-	public static double resistanceInitial;// TODO: 5/23/2016
-	public static double healthInitial;// TODO: 5/23/2016
+	public static double resistanceInitial = 3000;
+	public static double healthInitial = 25000;
 	public static int maxWorkersInitial = 5000;
 	private ToolUnderConstruction<SeaCraft> underConstruction;// TODO: 5/23/2016  make sure that this can bbe set by
 	// user

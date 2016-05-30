@@ -13,11 +13,11 @@ import javafx.scene.text.Text;
 
 public class Warehouse extends Workplace
 {
-	public static double resistanceInitial;// TODO: 5/29/2016
-	public static double healthInitial;// TODO: 5/29/2016
+	public static double resistanceInitial = 500;
+	public static double healthInitial = 20000;
 	//stores weighable object
 	//resource or tool
-	public static int maxWorkersInitial;// TODO: 5/29/2016
+	public static int maxWorkersInitial = 1000;
 	public Resource inStock;
 
 	public Warehouse(CityBlock parentBlock, MoneySource owner) {

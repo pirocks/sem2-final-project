@@ -17,6 +17,7 @@ import ui.requests.Request;
 import ui.requests.VehicleInWaterRequest;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 public abstract class Vehicle extends Tool implements Liver,Container
@@ -32,10 +33,10 @@ public abstract class Vehicle extends Tool implements Liver,Container
 		registerLiver();// TODO: 5/22/2016 go through and check these
 		maxPassengers = vehicleInitialConstants.maxPassengers;
 		maxWeight = vehicleInitialConstants.maxWeight;
-		passengers = new ArrayList<>();
-		cargo = new ArrayList<>();
-		weapons = new ArrayList<>();
-		vehicles = new ArrayList<>();
+		passengers = new HashSet<>();
+		cargo = new HashSet<>();
+		weapons = new HashSet<>();
+		vehicles = new HashSet<>();
 		registerContainer(passengers);
 		registerContainer(weapons);
 		registerContainer(vehicles);

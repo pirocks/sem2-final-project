@@ -6,8 +6,8 @@ import engine.universe.ResourceDemand;
 
 public class RulersHouse extends Housing
 {
-	public static double healthInitial;// TODO: 5/30/2016
-	public static double resistanceInitial;// TODO: 5/30/2016
+	public static double healthInitial = 15000;
+	public static double resistanceInitial = 3000;
 	public static int maximumOccupancyInitial = 10;
 
 	public RulersHouse(CityBlock parentBlock) {

@@ -69,8 +69,9 @@ public abstract class Housing extends Building implements Container
 		return maximumOccupancy - getPopulation();
 	}
 	private void remove(AbstractPerson person) {
-		residents.remove(person);
-		deregisterContainer(person);
+		if(residents.contains(person))
+			if(residents.remove(person))
+				remove(person);
 	}
 	@Override
 	public void remove(Attackable attackable) {

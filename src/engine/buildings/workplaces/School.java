@@ -14,9 +14,9 @@ import java.util.HashMap;
 
 public class School extends Workplace
 {
-	public static double healthInitial;// TODO: 5/29/2016
-	public static double resistanceInitial;// TODO: 5/29/2016
-	public static int maxWorkersInitial;// TODO: 5/19/2016
+	public static double healthInitial = 7000;
+	public static double resistanceInitial = 500;
+	public static int maxWorkersInitial = 500;
 
 	public School(CityBlock parentBlock, MoneySource owner) {
 		super(new AttackableConstants(healthInitial,resistanceInitial,parentBlock.getLocation()), parentBlock, maxWorkersInitial, owner);

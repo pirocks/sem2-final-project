@@ -13,9 +13,9 @@ import javafx.scene.text.Text;
 
 public class ResearchArea extends Workplace
 {
-	public static double healthInitial;
-	public static double resistanceInitial;
-	public static int maxWorkersInitial; // TODO: 5/19/2016
+	public static double healthInitial = 5000;
+	public static double resistanceInitial = 1000;
+	public static int maxWorkersInitial;
 	private Discovery discovery;
 
 	public ResearchArea(CityBlock parentBlock, MoneySource owner) {

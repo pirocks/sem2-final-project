@@ -15,13 +15,13 @@ import javafx.scene.text.Text;
 
 public class TownHall extends Workplace
 {
-	public static double healthInitial;// TODO: 5/29/2016
-	public static double resistanceInitial;// TODO: 5/29/2016
+	public static double healthInitial = 10000;
+	public static double resistanceInitial = 1500;
 	private City parentCity;//money for city
-	public static int maxWorkersInitial = 10;// TODO: 5/19/2016 magic cnstant
+	public static int maxWorkersInitial = 10;
 	public TownHall( CityBlock parentBlock, MoneySource owner) {
 		super(new AttackableConstants(parentBlock.getLocation(),healthInitial,resistanceInitial), parentBlock, maxWorkersInitial, owner);
-		parentCity= parentBlock.getParentCity();
+		parentCity = parentBlock.getParentCity();
 	}
 
 	@Override

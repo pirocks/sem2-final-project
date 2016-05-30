@@ -8,8 +8,8 @@ import engine.universe.ResourceDemand;
 
 public class ApartmentBlock extends Housing
 {
-	public static double resistanceInitial;
-	public static double healthInitial;
+	public static double resistanceInitial = 1000;
+	public static double healthInitial = 10000;
 	public static int maximumOccupancyInitial = 5000;
 
 	public ApartmentBlock(CityBlock parentBlock) {

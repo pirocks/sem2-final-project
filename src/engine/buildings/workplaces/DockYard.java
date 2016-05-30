@@ -28,8 +28,8 @@ import java.util.Optional;
  *
  */
 public class DockYard extends Workplace implements ToolBuilder<SeaCraft> {
-	public static double healthInitial;// TODO: 5/27/2016
-	public static double resistanceInitial;// TODO: 5/27/2016
+	public static double healthInitial = 15000;
+	public static double resistanceInitial= 2000;
 	public static int maxWorkersInitial = 1000;
 	private ToolUnderConstruction<SeaCraft> seaCraftUnderConstruction;
 	Building buildingSelfReference = this;//for the listeners who need a this
@@ -44,7 +44,7 @@ public class DockYard extends Workplace implements ToolBuilder<SeaCraft> {
 	public ResourceDemand getResourceCost() {
 		return null;// TODO: 4/10/2016
 	}
-	//the two classes bellow  should only be used by Toolbuilder
+	//the two methods bellow  should only be used by Toolbuilder
 	@Override
 	public ToolUnderConstruction<SeaCraft> getToolUnderConstruction() {
 		return seaCraftUnderConstruction;

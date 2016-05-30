@@ -39,10 +39,10 @@ import java.util.Optional;
 
 public class Factory extends Workplace implements ToolBuilder<Tool>
 {
-	public static double healthInitial;// TODO: 5/27/2016
-	public static double resistanceInitial;// TODO: 5/27/2016
+	public static double healthInitial = 10000;
+	public static double resistanceInitial = 2000;
 	//only builds weapons/ vehicles roadgoing or otherwise
-	public static int maxWorkersInitial = 2000;
+	public static int maxWorkersInitial = 2001;//just in cas I have off by one
 	public ToolUnderConstruction<Tool> inProduction;
 	public Factory(CityBlock parentBlock, MoneySource owner) {
 		super(new AttackableConstants(parentBlock.getLocation(),healthInitial,resistanceInitial), parentBlock, maxWorkersInitial, owner);

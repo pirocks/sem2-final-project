@@ -16,8 +16,8 @@ import java.util.ArrayList;
 
 public class Hospital extends Workplace
 {
-	public static double healthInitial;// TODO: 5/29/2016
-	public static double resistanceInitial;// TODO: 5/29/2016
+	public static double healthInitial = 20000;
+	public static double resistanceInitial = 1000;
 	public static int maxWorkersInitial = 1000;
 	private ArrayList<CityWorker> sickPeople;
 	public Hospital(CityBlock parentBlock, MoneySource owner) {
@@ -90,7 +90,7 @@ public class Hospital extends Workplace
 
 	@Override
 	public void die() {
-		super.die();//go through and check for these
+		super.die();//todo:go through and check for these
 		for (CityWorker cityWorker : sickPeople) {
 			cityWorker.die();
 		}
