@@ -23,7 +23,7 @@ public class AntiAirCraftGun extends Mounted {
 
 	@Override
 	public Image getImage() {
-		return new Image(getClass().getResourceAsStream("ntiaircraftgun.jpg"));
+		return new Image(getClass().getResourceAsStream("antiaircraftgun.jpg"));
 	}
 
 	@Override

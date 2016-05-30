@@ -21,6 +21,9 @@ public interface Liver {
 	default void registerLiver() {
 		Liver.register(this);
 	}
+	static void deregister(Liver liver){
+		livers.remove(liver);
+	}
 	static void register(Liver liver){
 		livers.add(liver);
 	}

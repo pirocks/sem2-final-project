@@ -286,7 +286,8 @@ public class City extends Attackable implements Serializable ,Container
 	public ArrayList<Building> getBuilding() {
 		ArrayList<Building> out = new ArrayList<>();
 		for(CityBlock block:cityBlocks)
-			out.add(block.getBuilding());
+			if(block.getBuilding() != null)
+				out.add(block.getBuilding());
 		return out;
 	}
 	public void setName() {

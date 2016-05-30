@@ -33,11 +33,17 @@ public interface ToolBuilder <Type extends Tool>
 		return getToolUnderConstruction().getName();
 	}
 	default void addSpecificToolBuilder(VBox in){
-		in.getChildren().add(new Text("Type of" + getToolUnderConstruction().getClass().getTypeName() + "under " +
-				"construction: "));
-		in.getChildren().add(new Text("Resources required:" + getToolUnderConstruction().getResourcesRequired()
-				.getResource().toTable()));
-		in.getChildren().add(new Text("Time Remaining:" + getToolUnderConstruction().getTimeRequired()));
+		if(getToolUnderConstruction() != null) {
+			in.getChildren().add(new Text("Type of" + getToolUnderConstruction().getClass().getTypeName() + "under " +
+					"construction: "));
+			if(getToolUnderConstruction().getResourcesRequired().getResource() != null)
+			in.getChildren().add(new Text("Resources required:" + getToolUnderConstruction().getResourcesRequired()
+					.getResource().toTable()));// TODO: 5/30/2016remove if later
+			in.getChildren().add(new Text("Time Remaining:" + getToolUnderConstruction().getTimeRequired()));
+		}
+		else {
+			in.getChildren().add(new Text("Nothing under construction"));
+		}
 		addBuildOptions(in);
 	}
 	void addBuildOptions(VBox in);

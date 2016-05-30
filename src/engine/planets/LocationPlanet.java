@@ -56,6 +56,8 @@ public class LocationPlanet implements Serializable,Container
 	public LocationPlanet(Building b)
 	{
 		this(b.getParentBlock());
+		if(b.getParentBlock().getParentGrid().getParentPlanet() == null)
+			throw new IllegalArgumentException();
 	}
 	public LocationPlanet(Grid parentGrid, int centerX, int centerY) {
 		planet = parentGrid.getParentPlanet();

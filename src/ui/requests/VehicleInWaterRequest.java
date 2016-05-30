@@ -15,7 +15,6 @@ public class VehicleInWaterRequest extends Request {
 		this.vehicle =  vehicle;
 	}
 
-	@Override
 	public String askUser() {
 		Alert alert  = new Alert(Alert.AlertType.CONFIRMATION);
 		alert.setTitle("A vehicle hit water");

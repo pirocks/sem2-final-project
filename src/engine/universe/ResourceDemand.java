@@ -14,6 +14,10 @@ public class ResourceDemand implements Serializable
 		resource = new Resource(Resource.Type.Food);//doesn;t matter as long as its zero
 	}
 
+	public ResourceDemand(Resource.Type[] types, double startHealthInitial, double resistanceInitial, double damageInitial, double rangeInitial, double accuracyInitial) {
+		// TODO: 5/30/2016
+	}
+
 	public Resource getResource() {
 		return resource;
 	}
@@ -34,6 +38,8 @@ public class ResourceDemand implements Serializable
 	}
 
 	public double getWeight() {
+		if(resource == null)
+			return 0;// TODO: 5/30/2016 remove later
 		return resource.getWeight();
 	}
 

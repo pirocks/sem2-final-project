@@ -33,6 +33,8 @@ public abstract class Tool extends Attackable implements Serializable,Weighable
 	}
 	@Override
 	public double getWeight() {
+		if(requiredResourcesForConstruction() == null)
+			return 0;//// TODO: 5/30/2016 remove later
 		return requiredResourcesForConstruction().getWeight();
 	}
 	//  this really shouldn't be used once the vehicle is out in the real world

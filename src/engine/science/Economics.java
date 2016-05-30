@@ -13,6 +13,6 @@ public class Economics extends Discovery {
 
 	@Override
 	public void postDiscovery() {
-		// TODO: 5/19/2016
+		// TODO: 5/30/2016 these need to be done after ther constants have been figured out.
 	}
 }

@@ -7,6 +7,7 @@ import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.tools.Tool;
 import engine.tools.ToolUnderConstruction;
+import engine.tools.vehicles.Liver;
 import engine.tools.vehicles.air.*;
 import engine.tools.vehicles.land.ArmouredVehicle;
 import engine.tools.vehicles.land.AutomatedArmouredVehicle;
@@ -46,6 +47,8 @@ public class Factory extends Workplace implements ToolBuilder<Tool>
 	public ToolUnderConstruction<Tool> inProduction;
 	public Factory(CityBlock parentBlock, MoneySource owner) {
 		super(new AttackableConstants(parentBlock.getLocation(),healthInitial,resistanceInitial), parentBlock, maxWorkersInitial, owner);
+		if(parentBlock.getParentGrid().getParentPlanet() == null)
+			throw new IllegalArgumentException();
 	}
 	@Override
 	protected String getName() {
@@ -75,6 +78,8 @@ public class Factory extends Workplace implements ToolBuilder<Tool>
 		in.getChildren().addAll(buttons);
 	}
 	private void addButton(ArrayList<Node> buttons,Tool tool){
+		if(tool instanceof Liver)
+			Liver.deregister((Liver) tool);
 		EventHandler<MouseEvent> handler= new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {

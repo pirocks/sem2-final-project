@@ -83,7 +83,9 @@ public abstract class CityWorker extends AbstractPerson implements Container//do
 		timeRemainingAtLocation = (long)(distance*travelTimeConstant);
 	}
 	private void goToWork() {
-		double distance = getWorkBuilding().getLocation().get(0).distanceBetween(currentBuilding.getLocation().get(0));
+		double distance = 0;
+		if(currentBuilding != null)
+			distance = getWorkBuilding().getLocation().get(0).distanceBetween(currentBuilding.getLocation().get(0));
 		whereAmI = WhereAmI.GoingToWork;
 		timeRemainingAtLocation = (long)(distance*travelTimeConstant);
 	}
@@ -92,7 +94,8 @@ public abstract class CityWorker extends AbstractPerson implements Container//do
 		deregisterContainer(currentBuilding);
 		currentBuilding = home;
 		timeRemainingAtLocation = TimeAtHome;
-		home.registerContainer(this);
+		if(home != null)
+			home.registerContainer(this);
 	}
 	private void arriveAtWork() {
 		whereAmI = WhereAmI.AtWork;
@@ -127,6 +130,8 @@ public abstract class CityWorker extends AbstractPerson implements Container//do
 			Liver.livers.remove(this);
 			return false;
 		}
+//		if(getWorkBuilding() == null)
+//			throw new IllegalStateException();//this really shouldn't happen but it does
 		if(currentCity.getLeastLoadedHospital().getLocation() == null ) {
 			throw new IllegalStateException();
 		}
@@ -139,16 +144,6 @@ public abstract class CityWorker extends AbstractPerson implements Container//do
 				whereAmI = AtWork;
 				currentBuilding = workplace;
 				goToWork();
-			}
-			else
-				throw new IllegalStateException();
-			return false;
-		}
-		if(currentBuilding == null) {
-			if(home != null){
-				whereAmI = AtHome;
-				currentBuilding = home;
-				goHome();
 			}
 			else
 				throw new IllegalStateException();
