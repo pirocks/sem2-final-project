@@ -44,7 +44,7 @@ public class City extends Attackable implements Serializable ,Container
 	private Grid parentGrid;//can be used to find location//engine.cities limited to one grid
 	private Set<CityBlock> cityBlocks;
 	private ArrayList<Hospital> hospitals;
-	public ArrayList<CityWorker> residents;
+	private Set<CityWorker> residents;
 	private Country parentCountry;//make sutre to change when cuity is captured.
 	public String name; // TODO: 5/10/2016 go through and make all the names final or private and extract
 	// interface
@@ -83,13 +83,14 @@ public class City extends Attackable implements Serializable ,Container
 		}
 		parentCountry = cityConstructionContext.parentCountry;
 		moneySource = parentCountry;
-		residents = new ArrayList<>();
+		residents = new HashSet<>();
 		for (Workplace workplace : getWorkPlaces()) {
 			if(workplace.getWorkers().size() > 0)
  				throw new IllegalStateException();
 			CityWorkersConstructionContext cityWorkersConstructionContext = new CityWorkersConstructionContext(this,cityConstructionContext,workplace);
 			residents.addAll(cityWorkersConstructionContext.generateWorker());
 		}
+		registerContainer(new ArrayList<Attackable>(residents));
 	}
 	private void addHospital(ArrayList<LocationPlanet> buildingLocations) {
 		LocationPlanet locationPlanet =  buildingLocations.get(buildingLocations.size() - 1);
@@ -370,7 +371,7 @@ public class City extends Attackable implements Serializable ,Container
 	}
 	public double getHomeLessCount() {
 		double out = 0;
-		for (CityWorker cityWorker : getJobLess()) {
+		for (CityWorker cityWorker : getHomeless()) {
 			out += cityWorker.getPopulation();
 		}
 		return out;

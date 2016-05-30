@@ -7,13 +7,14 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.util.Duration;
 
-import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by bob on 5/22/2016.
  */
 public interface Liver {
-	ArrayList<Liver> livers = new ArrayList<>();
+	Set<Liver> livers = new HashSet<>();
 	//1 = one day
 	void doLife(double time);
 	boolean sanityCheck();
@@ -24,7 +25,8 @@ public interface Liver {
 		livers.add(liver);
 	}
 	static void doLifeAll(long time) {
-		for (Liver liver : livers) {
+		Set<Liver> workingCopy = new HashSet<>(livers);
+		for (Liver liver : workingCopy) {
 			if(liver instanceof CityBuilder)
 				System.out.println(liver.toString() + ((CityBuilder)liver).getLocation().get(0).getBlocky());
 			try {
@@ -43,7 +45,7 @@ public interface Liver {
 		Timeline timeline = new Timeline(new KeyFrame(new Duration(100), new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				doLifeAll(100);
+				doLifeAll(1);
 			}
 		}));
 		timeline.setCycleCount(Timeline.INDEFINITE);

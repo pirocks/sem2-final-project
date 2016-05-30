@@ -1,10 +1,11 @@
 package engine.cities;
 
-import engine.tools.vehicles.Liver;
 import engine.tools.weapons.Attackable;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by bob on 4/4/2016.
@@ -31,24 +32,30 @@ public interface Container
 			deregisterContainerInternal(container,object);
 	}
 
-	HashMap<Attackable,ArrayList<Container>> cityContainers= new HashMap<>();
+	HashMap<Attackable,Set<Container>> cityContainers= new HashMap<>();
 
 	static void registerContainerInternal(Container typeContainer, Attackable object) {
 		if(cityContainers.containsKey(object))
 			cityContainers.get(object).add(typeContainer);
 		else
-			cityContainers.put(object,new ArrayList<Container>(){{add(typeContainer);}});
+			cityContainers.put(object,new HashSet<Container>(){{add(typeContainer);}});
 	}
 	static void kill(Attackable target) {
-		ArrayList<Container> containers = cityContainers.get(target);
-		if(containers == null) {
-			System.out.print("chgvj");
+//		Killer.kill(target);
+		Set<Container> toRemove = cityContainers.get(target);
+		if(toRemove.size() == 0) {
+			cityContainers.remove(target);
+			return;
 		}
-		for (Container container : containers) {
+		if(toRemove ==  null)
+			System.out.print("vugjhbj");
+		Set<Container> workingCopy  = new HashSet<>(toRemove);
+		for (Container container : workingCopy) {
 			container.remove(target);
 		}
-		Liver.livers.remove(target);
-		cityContainers.remove(target);
+		cityContainers.get(target).removeAll(workingCopy);
+		kill(target);
+
 	}
 	static void kill(ArrayList<? extends Attackable> targets) {
 		for (Attackable target : targets) {

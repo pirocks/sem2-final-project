@@ -11,14 +11,13 @@ import engine.planets.Planet;
 import engine.tools.vehicles.Liver;
 import engine.tools.weapons.Attackable;
 
-import static engine.people.cityworkers.CityWorker.WhereAmI.AtHome;
-import static engine.people.cityworkers.CityWorker.WhereAmI.Initing;
+import static engine.people.cityworkers.CityWorker.WhereAmI.*;
 
 public abstract class CityWorker extends AbstractPerson implements Container, Cloneable//don't foret to get the workplace
 {
-	public static long travelTimeConstant;// TODO: 5/27/2016
-	public static long TimeAtWork;// TODO: 5/27/2016
-	public static long TimeAtHome;// TODO: 5/27/2016
+	public static double travelTimeConstant;// TODO: 5/27/2016
+	public static double TimeAtWork = 0.4;
+	public static double TimeAtHome = 0.5;
 
 	protected WhereAmI whereAmI;
 	private Building currentBuilding;// TODO: 5/29/2016 check registration for these
@@ -105,11 +104,15 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 		goHome();
 	}
 	public void checkHealth() {
-		if(super.getHealth() < 0.3) {
-			hospital = currentCity.getLeastLoadedHospital();
-			currentCity.getLeastLoadedHospital().admit(this);
+		if(super.getHealth() < 0)
+			die();
+		if(hospital == null) {
+			if (super.getHealth() < 0.3) {
+				hospital = currentCity.getLeastLoadedHospital();
+				currentCity.getLeastLoadedHospital().admit(this);
+			}
 		}
-		if(super.getHealth() > 0.9 && hospital != null){
+		if (super.getHealth() > 0.9 && hospital != null) {
 			hospital.releasePatient(this);
 			hospital = null;
 		}
@@ -117,6 +120,7 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 	}
 	@Override
 	public boolean sanityCheck(){
+		super.sanityCheck();
 		if(amIDead) {
 			Liver.livers.remove(this);
 			return false;
@@ -129,6 +133,10 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 				whereAmI = AtHome;
 				currentBuilding = home;
 				goHome();
+			}else if(workplace != null){
+				whereAmI = AtWork;
+				currentBuilding = workplace;
+				goToWork();
 			}
 			else
 				throw new IllegalStateException();
@@ -145,8 +153,6 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 			return false;
 		}
 		if(timeRemainingAtLocation < 0)
-			throw new IllegalStateException();
-		if(home == null)
 			throw new IllegalStateException();
 		if(currentCity == null)
 			throw new IllegalStateException();
@@ -177,19 +183,22 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 		}catch (NullPointerException e){
 			if(getHome() != null){
 				Planet planet = currentBuilding.getLocation().get(0).getPlanet();
-				if(planet == null)
-					throw new IllegalStateException();
+				if(planet == null){}//unable to handle but don't kill program just for that
+//					throw new IllegalStateException();
 				if(location.get(0).getPlanet() == null)
 					location.get(0).setPlanet(planet);
 			}
 		}
-		if(amIDead())
+		if(amIDead)
 			throw new UnKilledObjectException();
 		return true;
 	}
 	public void doLife(double time) {
+		if(time < 0)
+			throw new IllegalArgumentException();
 		sanityCheck();
 		checkHealth();
+		deregisterContainer(currentBuilding);
 		registerContainer(currentBuilding);
 		//todo how does this class respond when workplace is null
 		if(time < 1)

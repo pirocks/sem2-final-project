@@ -26,9 +26,11 @@ public class Researcher extends CityWorker implements Cloneable
 	}
 	@Override
     public void doSkill(double time) {
-	    assert (((ResearchArea)getWorkBuilding()).getDiscovery().canBeResearched());
-		((ResearchArea)getWorkBuilding()).getDiscovery().makeProgress(time/UniversalConstants.timeToDiscoveryConstant);
-		paySalary(time);
+		if(getWorkBuilding() != null && ((ResearchArea)getWorkBuilding()).getDiscovery() != null) {
+			assert (((ResearchArea) getWorkBuilding()).getDiscovery().canBeResearched());
+			((ResearchArea) getWorkBuilding()).getDiscovery().makeProgress(time / UniversalConstants.timeToDiscoveryConstant);
+			paySalary(time);
+		}
     }
 	@Override
 	protected CityWorker splitInternal() {

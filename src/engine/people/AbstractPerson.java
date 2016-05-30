@@ -33,6 +33,7 @@ public abstract class AbstractPerson extends Attackable implements Liver, Serial
 		crimeRisk = peopleInitialConstants.crimeRisk;
 		crimeImpact = peopleInitialConstants.crimeImpact;
 		salary = peopleInitialConstants.salary;
+		country = peopleInitialConstants.country;
 	}
 	protected AbstractPerson(AbstractPerson abstractPerson){
 		super(abstractPerson);

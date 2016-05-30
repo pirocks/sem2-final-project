@@ -26,6 +26,8 @@ public class Grid implements Serializable,Container
 	private ArrayList<Vehicle> vehicles;
 
 	public Grid(GridConstructionContext gridConstructionContext,Planet parentPlanet){
+		if(parentPlanet == null)
+			throw new IllegalArgumentException();
 	    this.parentPlanet = parentPlanet;
 		registerContainer(parentPlanet);
 	    x = gridConstructionContext.x;

@@ -23,6 +23,8 @@ public class CityBlock extends Attackable implements Serializable, Container
 
 	public CityBlock(City parentCity, int x, int y) {
 		super(new AttackableConstants(0,1,new LocationPlanet(parentCity.getParentGrid(),x,y)));
+		if(parentCity.getParentGrid().getParentPlanet() == null)
+			throw new IllegalArgumentException();
 		this.parentGrid = parentCity.getParentGrid();
 		this.building = null;
 		this.parentCity = parentCity;

@@ -30,16 +30,17 @@ public class Doctor extends CityWorker implements Cloneable
     public void doSkill(double time) {
 	    Hospital workplace = (Hospital)getWorkBuilding();
 	    CityWorker target = workplace.getNextPatient();
-        double workDone = time/timeToHealOnePerson;
-        int pop = target.getPopulation();
-        double healthIncrease = getPopulation()*workDone/((double)pop);
-        target.increaseHealth(healthIncrease);
-        if(target.getHealth() > 0.9)
-        {
-            target.leaveHospital();
-            if(!workplace.releasePatient(target))
-                throw new IllegalStateException();
-        }
+	    if(target != null) {
+		    double workDone = time / timeToHealOnePerson;
+		    int pop = target.getPopulation();
+		    double healthIncrease = getPopulation() * workDone / ((double) pop);
+		    target.increaseHealth(healthIncrease);
+		    if (target.getHealth() > 0.9) {
+			    target.leaveHospital();
+			    if (!workplace.releasePatient(target))
+				    throw new IllegalStateException();
+		    }
+	    }
         paySalary(time);
     }
 	@Override

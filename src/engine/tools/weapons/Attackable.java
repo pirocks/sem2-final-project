@@ -13,7 +13,7 @@ public abstract class Attackable
 	private double health;
 	private double resistance;
 	public ArrayList<LocationPlanet> location;
-	protected boolean amIDead = false;
+	public boolean amIDead = false;//set after class is successfully killed. In theory any class with this as true is being garbage collected or has been garbage collected
 
 	public Attackable(double health, double resistance, ArrayList<LocationPlanet> location) {
 		this.health = health;
@@ -52,8 +52,7 @@ public abstract class Attackable
 				return true;
 		return false;
 	}
-	public boolean amIDead()
-	{
+	public boolean amIDead() {
 		return health <= 0;
 	}
 	public boolean amIAlive()

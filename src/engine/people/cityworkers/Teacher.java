@@ -39,9 +39,12 @@ public class Teacher<Type extends AbstractPerson> extends CityWorker implements 
     }
 
     public void doSkill(double time) {
-        progress += population*time/(AbstractPerson.timeToTrain*student.getPopulation());
-	    if(progress > 1.0)
-		    studentCompletedHandler(student);
+	    if(student != null) {
+		    progress += population * time / (AbstractPerson.timeToTrain * student.getPopulation());
+		    if (progress > 1.0)
+			    studentCompletedHandler(student);
+	    }
+	    paySalary(time);
     }
 
 	private void studentCompletedHandler(Type student) {
