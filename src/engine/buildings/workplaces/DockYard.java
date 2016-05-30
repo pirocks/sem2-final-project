@@ -9,6 +9,7 @@ import engine.tools.AttackableConstants;
 import engine.tools.ToolUnderConstruction;
 import engine.tools.vehicles.sea.*;
 import engine.universe.MoneySource;
+import engine.universe.Resource;
 import engine.universe.ResourceDemand;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
@@ -42,7 +43,7 @@ public class DockYard extends Workplace implements ToolBuilder<SeaCraft> {
 	}
 	@Override
 	public ResourceDemand getResourceCost() {
-		return null;// TODO: 4/10/2016
+		return new ResourceDemand(new Resource.Type[] {},healthInitial,resistanceInitial,maxWorkersInitial);
 	}
 	//the two methods bellow  should only be used by Toolbuilder
 	@Override

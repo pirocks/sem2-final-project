@@ -6,6 +6,7 @@ import engine.people.cityworkers.Teacher;
 import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.universe.MoneySource;
+import engine.universe.Resource;
 import engine.universe.ResourceDemand;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -36,7 +37,7 @@ public class School extends Workplace
 
 	@Override
 	public ResourceDemand getResourceCost() {
-		return null;// TODO: 4/9/2016
+		return new ResourceDemand(new Resource.Type[] {},healthInitial,resistanceInitial,maxWorkersInitial);
 	}
 
 	@Override

@@ -8,6 +8,7 @@ import engine.tools.AttackableConstants;
 import engine.tools.ToolUnderConstruction;
 import engine.tools.vehicles.sea.*;
 import engine.universe.MoneySource;
+import engine.universe.Resource;
 import engine.universe.ResourceDemand;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
@@ -27,8 +28,7 @@ public class IndustrialDock extends Workplace implements ToolBuilder<SeaCraft>
 	public static double resistanceInitial = 3000;
 	public static double healthInitial = 25000;
 	public static int maxWorkersInitial = 5000;
-	private ToolUnderConstruction<SeaCraft> underConstruction;// TODO: 5/23/2016  make sure that this can bbe set by
-	// user
+	private ToolUnderConstruction<SeaCraft> underConstruction;
 	public IndustrialDock(CityBlock parentBlock, MoneySource owner) {
 		super(new AttackableConstants(healthInitial,resistanceInitial,parentBlock.getLocation()), parentBlock, maxWorkersInitial, owner);
 	}
@@ -38,7 +38,7 @@ public class IndustrialDock extends Workplace implements ToolBuilder<SeaCraft>
 	}
 	@Override
 	public ResourceDemand getResourceCost() {
-		return null;// TODO: 4/9/2016
+		return new ResourceDemand(new Resource.Type[] {},healthInitial,resistanceInitial,maxWorkersInitial);
 	}
 	@Override
 	protected boolean isSuitableType(CityWorker cityWorker) {

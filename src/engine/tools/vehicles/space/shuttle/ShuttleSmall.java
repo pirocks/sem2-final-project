@@ -3,6 +3,7 @@ package engine.tools.vehicles.space.shuttle;
 import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
+import engine.tools.vehicles.air.FighterPlaneSmall;
 import engine.universe.ResourceDemand;
 
 /**
@@ -11,10 +12,10 @@ import engine.universe.ResourceDemand;
  */
 public class ShuttleSmall extends Shuttle
 {
-	public static int maxPassengersInitial;// TODO: 5/22/2016
-	public static double maxWeightInitial;// TODO: 5/22/2016
-	public static double startHealthInitial;// TODO: 5/22/2016
-	public static double resistanceInitial;// TODO: 5/22/2016
+	public static int maxPassengersInitial  = 5;
+	public static double maxWeightInitial= 50;
+	public static double startHealthInitial = FighterPlaneSmall.startHealthInitial;
+	public static double resistanceInitial = FighterPlaneSmall.resistanceInitial;
 
 	public ShuttleSmall(LocationPlanet locationPlanet, int numToolsConstructor) {
 		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial, locationPlanet),maxPassengersInitial,maxWeightInitial),numToolsConstructor);
@@ -23,7 +24,7 @@ public class ShuttleSmall extends Shuttle
 
 	@Override
 	public double getSpeed() {
-		return 0;// TODO: 5/22/2016
+		return 20000;
 	}
 
 	@Override

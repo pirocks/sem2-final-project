@@ -2,6 +2,7 @@ package engine.buildings.housing;
 
 import engine.cities.CityBlock;
 import engine.tools.AttackableConstants;
+import engine.universe.Resource;
 import engine.universe.ResourceDemand;
 
 public class RulersHouse extends Housing
@@ -21,7 +22,7 @@ public class RulersHouse extends Housing
 
 	@Override
 	public ResourceDemand getResourceCost() {
-		return null; // TODO: 4/9/2016
+		return new ResourceDemand(new Resource.Type[] {},healthInitial,resistanceInitial,maximumOccupancyInitial);
 	}
 
 	//doesn't do much, but don't deprecate

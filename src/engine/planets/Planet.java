@@ -22,8 +22,7 @@ public class Planet extends Attackable implements Serializable
 	public static double resitanceInitial;
 	public static double startHeathInitial;
     private ArrayList<Country> countries = new ArrayList<>();
-    private ArrayList<Continent> continents = new ArrayList<>();
-    boolean inhabitedq = false;
+	boolean inhabitedq = false;
     private SolarSystem parentSolarSystem;
     private double solarSystemRadius;//distance in engine.universe units from center of solar sstem
     private double planetRadius;//radiusFromSolarSystem of spher planet

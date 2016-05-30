@@ -9,6 +9,7 @@ import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.tools.weapons.Attackable;
 import engine.universe.MoneySource;
+import engine.universe.Resource;
 import engine.universe.ResourceDemand;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -31,7 +32,7 @@ public class TownHall extends Workplace
 
 	@Override
 	public ResourceDemand getResourceCost() {
-		return null;// TODO: 4/9/2016
+		return new ResourceDemand(new Resource.Type[] {},healthInitial,resistanceInitial,maxWorkersInitial);
 	}
 
 	@Override

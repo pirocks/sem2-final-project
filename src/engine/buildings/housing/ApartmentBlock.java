@@ -4,6 +4,7 @@ package engine.buildings.housing;
 
 import engine.cities.CityBlock;
 import engine.tools.AttackableConstants;
+import engine.universe.Resource;
 import engine.universe.ResourceDemand;
 
 public class ApartmentBlock extends Housing
@@ -23,7 +24,7 @@ public class ApartmentBlock extends Housing
 
 	@Override
 	public ResourceDemand getResourceCost() {
-		return null;// TODO: 4/9/2016
+		return new ResourceDemand(new Resource.Type[] {},healthInitial,resistanceInitial,maximumOccupancyInitial);
 	}
 
 }

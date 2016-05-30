@@ -9,11 +9,11 @@ import engine.universe.ResourceDemand;
  *
  */
 public class TankArtillery extends Artillery {
-	public static double startHealthInitial;// TODO: 5/28/2016
-	public static double resistanceInitial;// TODO: 5/28/2016
-	public static double accuracyInitial;// TODO: 5/28/2016
-	public static double damageInitial;// TODO: 5/28/2016
-	public static double rangeInitial;// TODO: 5/28/2016
+	public static double startHealthInitial = ArtilleryMedium.startHealthInitial/3;
+	public static double resistanceInitial = ArtilleryMedium.resistanceInitial/3;
+	public static double accuracyInitial = ArtilleryMedium.accuracyInitial;
+	public static double damageInitial = ArtilleryMedium.damageInitial;
+	public static double rangeInitial = ArtilleryMedium.rangeInitial/1.3;
 
 	public TankArtillery(int numToolsConstructor) {
 		super(new GunInitialConstants(

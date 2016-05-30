@@ -18,6 +18,10 @@ public class ResourceDemand implements Serializable
 		// TODO: 5/30/2016
 	}
 
+	public ResourceDemand(Resource.Type[] types, double healthInitial, double resistanceInitial, int maximumOccupancyInitial) {
+		// TODO: 5/30/2016
+	}
+
 	public Resource getResource() {
 		return resource;
 	}

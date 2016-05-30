@@ -11,11 +11,11 @@ import javafx.scene.image.Image;
  */
 public class AntiAirCraftGun extends Mounted {
 
-	public static double startHealthInitial;// TODO: 5/22/2016
-	public static double resistanceInitial;// TODO: 5/22/2016
-	public static double accuracyInitial;// TODO: 5/22/2016
-	public static double damageInitial;// TODO: 5/22/2016
-	public static double rangeInitial;// TODO: 5/22/2016
+	public static double startHealthInitial = MachineGunLarge.startHealthInitial;
+	public static double resistanceInitial = MachineGunLarge.resistanceInitial;
+	public static double accuracyInitial = 0.9;
+	public static double damageInitial = MachineGunMedium.damageInitial;
+	public static double rangeInitial = MachineGunLarge.rangeInitial*2;
 
 	public AntiAirCraftGun(int numToolsConstructor) {
 		super(new GunInitialConstants(startHealthInitial,resistanceInitial,accuracyInitial,rangeInitial,damageInitial),numToolsConstructor);

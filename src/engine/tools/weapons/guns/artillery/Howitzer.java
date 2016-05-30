@@ -21,7 +21,7 @@ public class Howitzer extends Artillery{
 
 	@Override
 	public Image getImage() {
-		return null;// TODO: 5/28/2016
+		return new Image(getClass().getResourceAsStream("howitzer.jpg"));
 	}
 
 	@Override

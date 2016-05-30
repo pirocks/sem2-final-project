@@ -17,7 +17,7 @@ public class MachineGunSmall extends MachineGun {
 	public static double rangeInitial = 1.5;
 
 	public MachineGunSmall(int numToolsConstructor) {
-		super(new GunInitialConstants(startHealthInitial,resistanceInitial,accuracyInitial,rangeInitial,damageInitial), numToolsConstructor);
+		super(new GunInitialConstants(startHealthInitial, resistanceInitial, accuracyInitial, rangeInitial, damageInitial), numToolsConstructor);
 	}
 
 	@Override
@@ -27,7 +27,7 @@ public class MachineGunSmall extends MachineGun {
 
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
-		return new ResourceDemand(new Resource.Type[] {Resource.Type.Iron},startHealthInitial,resistanceInitial,damageInitial,rangeInitial,accuracyInitial);
+		return new ResourceDemand(new Resource.Type[]{Resource.Type.Iron}, startHealthInitial, resistanceInitial, damageInitial, rangeInitial, accuracyInitial);
 	}
 
 	@Override
@@ -35,8 +35,4 @@ public class MachineGunSmall extends MachineGun {
 		return 1.5;
 	}
 
-	@Override
-	public double getWeight() {
-		return 0;// TODO: 4/8/2016
-	}
 }

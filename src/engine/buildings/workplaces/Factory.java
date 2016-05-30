@@ -24,6 +24,7 @@ import engine.tools.weapons.guns.mounted.MachineGunLarge;
 import engine.tools.weapons.guns.mounted.MachineGunMedium;
 import engine.tools.weapons.guns.mounted.MachineGunSmall;
 import engine.universe.MoneySource;
+import engine.universe.Resource;
 import engine.universe.ResourceDemand;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
@@ -56,7 +57,7 @@ public class Factory extends Workplace implements ToolBuilder<Tool>
 	}
 	@Override
 	public ResourceDemand getResourceCost() {
-		return null;// TODO: 4/9/2016
+		return new ResourceDemand(new Resource.Type[] {},healthInitial,resistanceInitial,maxWorkersInitial);
 	}
 	@Override
 	public Tool setToolUnderConstruction(ToolUnderConstruction<Tool> in) {

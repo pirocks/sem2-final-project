@@ -32,7 +32,7 @@ public class Warehouse extends Workplace
 
 	@Override
 	public ResourceDemand getResourceCost() {
-		return null;// TODO: 4/9/2016
+		return new ResourceDemand(new Resource.Type[] {},healthInitial,resistanceInitial,maxWorkersInitial);
 	}
 
 	public void addInStock(Resource resource) {

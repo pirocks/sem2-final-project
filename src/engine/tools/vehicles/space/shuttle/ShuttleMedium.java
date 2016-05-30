@@ -10,10 +10,10 @@ import engine.universe.ResourceDemand;
  */
 public class ShuttleMedium extends Shuttle
 {
-	public static int maxPassengersInitial;// TODO: 5/22/2016
-	public static double maxWeightInitial;// TODO: 5/22/2016
-	public static double startHealthInitial;// TODO: 5/22/2016
-	public static double resistanceInitial;// TODO: 5/22/2016
+	public static int maxPassengersInitial = ShuttleSmall.maxPassengersInitial*2;
+	public static double maxWeightInitial = ShuttleSmall.maxWeightInitial*2;
+	public static double startHealthInitial = ShuttleSmall.startHealthInitial*2;
+	public static double resistanceInitial = ShuttleSmall.resistanceInitial*2;
 
 	public ShuttleMedium(LocationPlanet locationPlanet, int numToolsConstructor) {
 		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,
@@ -22,7 +22,7 @@ public class ShuttleMedium extends Shuttle
 
 	@Override
 	public double getSpeed() {
-		return 0; // TODO: 5/22/2016
+		return 30000;
 	}
 
 	@Override
