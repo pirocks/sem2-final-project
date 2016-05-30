@@ -3,6 +3,7 @@ package engine.people;
 import engine.cities.Container;
 import engine.people.cityworkers.PeopleInitialConstants;
 import engine.planets.LocationPlanet;
+import engine.tools.vehicles.Liver;
 import engine.tools.vehicles.Vehicle;
 import engine.tools.weapons.Attackable;
 import engine.universe.Country;
@@ -13,7 +14,7 @@ import engine.universe.UniversalConstants;
 //remember that
 //how to do attacks???
 
-public class Soldier extends AbstractPerson implements Container,Cloneable
+public class Soldier extends AbstractPerson implements Container,Liver
 {
 	public static int populationInitial = 5000;
 	public static double foodUsePerPersonInitial =
@@ -40,6 +41,7 @@ public class Soldier extends AbstractPerson implements Container,Cloneable
 	public Soldier(Country parentCountry,LocationPlanet location) {
 	    //todo what about location here
 	    super(new PeopleInitialConstants(populationInitial, foodUsePerPersonInitial, crimeRiskInitial, crimeImpactInitial, salaryInitial, parentCountry,location));
+		registerLiver();
 	}
 
 	// TODO: 4/10/2016 implement do life and figure out hjow the soldsier do skill worrks/asking for new orders?

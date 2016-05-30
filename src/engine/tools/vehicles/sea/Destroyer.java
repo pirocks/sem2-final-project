@@ -32,7 +32,7 @@ public class Destroyer extends SeaCraft {
 
 	@Override
 	public Image getImage() {
-		return new Image(getClass().getResourceAsStream("desroyer.jpg"));
+		return new Image(getClass().getResourceAsStream("destroyer.jpg"));
 	}
 
 	@Override

@@ -20,7 +20,7 @@ public class HandGun extends Carried{
 
 	@Override
 	public Image getImage() {
-		return null;// TODO: 5/28/2016
+		return new Image(getClass().getResourceAsStream("handgun.png"));
 	}
 
 	@Override

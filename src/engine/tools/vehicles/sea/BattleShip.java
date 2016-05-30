@@ -32,7 +32,7 @@ public class BattleShip extends SeaCraft {
 
 	@Override
 	public Image getImage() {
-		return new Image(getClass().getResourceAsStream("destroyer.jpg"));
+		return new Image(getClass().getResourceAsStream("battleship.jpg"));
 	}
 
 	@Override

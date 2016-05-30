@@ -30,7 +30,7 @@ public abstract class Vehicle extends Tool implements Liver,Container
 	private double maxWeight;
 	protected Vehicle(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
 		super(vehicleInitialConstants.attackableConstants, numToolsConstructor);
-		registerLiver();// TODO: 5/22/2016 go through and check these
+		registerLiver();
 		maxPassengers = vehicleInitialConstants.maxPassengers;
 		maxWeight = vehicleInitialConstants.maxWeight;
 		passengers = new HashSet<>();

@@ -21,7 +21,7 @@ public class MachineGunSmall extends MachineGun {
 
 	@Override
 	public Image getImage() {
-		return null;// TODO: 5/28/2016
+		return new Image(getClass().getResourceAsStream("machinegun.jpg"));
 	}
 
 	@Override
