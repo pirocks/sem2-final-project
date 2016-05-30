@@ -1,6 +1,7 @@
 package engine.tools.weapons.guns.mounted;
 
 import engine.tools.weapons.guns.GunInitialConstants;
+import engine.universe.Resource;
 import engine.universe.ResourceDemand;
 
 /**
@@ -26,7 +27,7 @@ public class MachineGunLarge extends MachineGun {
 
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
-		return null;// TODO: 5/22/2016
+		return new ResourceDemand(new Resource.Type[] {Resource.Type.Iron},startHealthInitial,resistanceInitial,damageInitial,rangeInitial,accuracyInitial);
 	}
 
 	@Override

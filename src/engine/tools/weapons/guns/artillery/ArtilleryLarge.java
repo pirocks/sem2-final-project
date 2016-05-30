@@ -1,9 +1,8 @@
 package engine.tools.weapons.guns.artillery;
 
 import engine.tools.weapons.guns.GunInitialConstants;
+import engine.universe.Resource;
 import engine.universe.ResourceDemand;
-
-import static engine.universe.Resource.Type.Iron;
 
 /**
  * Created by bob on 4/3/2016.
@@ -28,7 +27,7 @@ public class ArtilleryLarge extends Artillery{
 
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
-		return new ResourceDemand(Iron,startHealthInitial,resistanceInitial,damageInitial,rangeInitial,accuracyInitial);// TODO: 5/22/2016
+		return new ResourceDemand(new Resource.Type[] {Resource.Type.Iron},startHealthInitial,resistanceInitial,damageInitial,rangeInitial,accuracyInitial);
 	}
 
 	@Override
