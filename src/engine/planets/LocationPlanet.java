@@ -183,8 +183,8 @@ public class LocationPlanet implements Serializable,Container
 	}
 	@Override
 	public void remove(Attackable attackable) {
-		if(attackable instanceof Planet)
-			planet =null;
+		if(attackable instanceof Planet && planet == attackable)
+			planet = null;
 		else
 			throw new IllegalStateException();
 	}

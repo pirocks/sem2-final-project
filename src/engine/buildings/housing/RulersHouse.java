@@ -6,10 +6,9 @@ import engine.universe.ResourceDemand;
 
 public class RulersHouse extends Housing
 {
-	public static double healthInitial;
-	public static double resistanceInitial;
+	public static double healthInitial;// TODO: 5/30/2016
+	public static double resistanceInitial;// TODO: 5/30/2016
 	public static int maximumOccupancyInitial = 10;
-	public static double costInitial;
 
 	public RulersHouse(CityBlock parentBlock) {
 		super(new AttackableConstants(parentBlock.getLocation(),healthInitial,resistanceInitial), parentBlock);

@@ -86,7 +86,7 @@ public class Soldier extends AbstractPerson implements Container,Cloneable
 		else
 			throw new IllegalStateException();
 	}
-	public void remove(Vehicle vehicle) {
+	private void remove(Vehicle vehicle) {
 		if(this.vehicle == vehicle) {
 			die();
 			vehicle = null;

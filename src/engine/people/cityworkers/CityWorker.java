@@ -13,9 +13,9 @@ import engine.tools.weapons.Attackable;
 
 import static engine.people.cityworkers.CityWorker.WhereAmI.*;
 
-public abstract class CityWorker extends AbstractPerson implements Container, Cloneable//don't foret to get the workplace
+public abstract class CityWorker extends AbstractPerson implements Container//don't foret to get the workplace
 {
-	public static double travelTimeConstant;// TODO: 5/27/2016
+	public static double travelTimeConstant = 1.0/20.0;// TODO: 5/27/2016
 	public static double TimeAtWork = 0.4;
 	public static double TimeAtHome = 0.5;
 
@@ -76,7 +76,9 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 
 	}
 	public void goHome() {
-		double distance = home.getLocation().get(0).distanceBetween(currentBuilding.getLocation().get(0));
+		double distance = 0;
+		if(home != null)
+			distance = home.getLocation().get(0).distanceBetween(currentBuilding.getLocation().get(0));
 		whereAmI = WhereAmI.GoingToHome;
 		timeRemainingAtLocation = (long)(distance*travelTimeConstant);
 	}
@@ -200,9 +202,9 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 		checkHealth();
 		deregisterContainer(currentBuilding);
 		registerContainer(currentBuilding);
+
+
 		//todo how does this class respond when workplace is null
-		if(time < 1)
-            return;
 		if(timeRemainingAtLocation >= time)
         {
         	if(whereAmI == WhereAmI.AtWork) {
@@ -234,7 +236,8 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
             case AtWork:
             	doSkill(timeRemainingAtLocation);
                 time -= timeRemainingAtLocation;
-                doLife(time);
+                goHome();
+	            doLife(time);
                 break;
         }
 
@@ -247,11 +250,11 @@ public abstract class CityWorker extends AbstractPerson implements Container, Cl
 		if(!amIDead)
 			Container.kill(this);
 	}
-	public void remove(City city) {
+	private void remove(City city) {
 		if(currentCity == city)
 			die();
 	}
-	public void remove(Building building) {
+	private void remove(Building building) {
 		if(currentBuilding == building) {
 			die();
 		}

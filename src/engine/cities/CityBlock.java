@@ -82,15 +82,15 @@ public class CityBlock extends Attackable implements Serializable, Container
 	public Grid getParentGrid() {
 		return parentGrid;
 	}
-	public void remove(City city) {
+	private void remove(City city) {
 		if(parentCity == city) {
 			parentCity = null;
-			die();
+			if(!amIDead)
+				die();
 		}
 	}
-	public void remove(Building building) {
-		if(this.building == building)
-		{
+	private void remove(Building building) {
+		if(this.building == building) {
 			this.building = null;
 		}
 	}

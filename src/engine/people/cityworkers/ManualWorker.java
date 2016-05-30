@@ -11,7 +11,7 @@ import engine.universe.UniversalConstants;
  * Created by bob on 5/26/2016.
  *
  */
-public class ManualWorker extends CityWorker implements Cloneable
+public class ManualWorker extends CityWorker
 {
 	public static int populationInitial = 1000;
 	public static double foodUsePerPersonInitial = UniversalConstants.normalFoodUsePerPerson;

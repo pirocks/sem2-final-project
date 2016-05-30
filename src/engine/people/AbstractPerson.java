@@ -77,7 +77,7 @@ public abstract class AbstractPerson extends Attackable implements Liver, Serial
 		dieSpecific();
 	}
 	protected void paySalary(double time) {
-		moneySource.pay(moneySource, salary * time);
+		moneySource.pay(moneySource, salary * time);// TODO: 5/30/2016 wtf
 	}
 	protected abstract void dieSpecific();
 	@Override

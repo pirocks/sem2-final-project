@@ -39,8 +39,7 @@ public abstract class Discovery implements Serializable //todo maybe make interf
 	{
 		workingOn.add(researchArea);
 	}
-	public void deregisterResearchArea(ResearchArea researchArea)
-	{
+	public void deregisterResearchArea(ResearchArea researchArea) {
 		workingOn.remove(researchArea);
 	}
 

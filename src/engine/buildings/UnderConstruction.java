@@ -22,7 +22,7 @@ public class UnderConstruction<Type extends Building> extends Workplace implemen
 	private Type type;
 	private ResourceDemand resourceDemand;
 	public UnderConstruction(LocationPlanet locationPlanet,Type building,City city) {
-		super(new AttackableConstants(0,0,locationPlanet),
+		super(new AttackableConstants(1,1,locationPlanet),
 				new CityBlock(city,locationPlanet.getBlockx(),locationPlanet.getBlocky()),maxWorkersInitial,city.getMoneySource());//thats one massive super constructor
 		this.city = city;
 		type = building;
@@ -45,7 +45,7 @@ public class UnderConstruction<Type extends Building> extends Workplace implemen
 	}
 	public void weDoneHandler() {
 		city.setBuilding(type);
-		// TODO: 5/29/2016
+		// TODO: 5/30/2016
 	}
 	@Override
 	protected String getName() {
@@ -68,7 +68,8 @@ public class UnderConstruction<Type extends Building> extends Workplace implemen
 	}
 	@Override
 	public void addSpecific(VBox in) {
-
+		in.getChildren().add(new Text("Building Under Construction"));
+		// TODO: 5/30/2016
 	}
 	@Override
 	public CityWorker createCorrectType() {

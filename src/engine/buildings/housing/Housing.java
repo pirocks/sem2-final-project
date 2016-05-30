@@ -68,13 +68,13 @@ public abstract class Housing extends Building implements Container
 	public int getFreeSpace() {
 		return maximumOccupancy - getPopulation();
 	}
-	public void remove(AbstractPerson person) {
-//		assert(residents.contains(person));
+	private void remove(AbstractPerson person) {
 		residents.remove(person);
+		deregisterContainer(person);
 	}
 	@Override
 	public void remove(Attackable attackable) {
-		super.remove(attackable);// TODO: 5/24/2016 go through and check for these
+		super.remove(attackable);
 		if(attackable instanceof AbstractPerson)
 			remove((AbstractPerson)attackable);
 	}

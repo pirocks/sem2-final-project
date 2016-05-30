@@ -47,7 +47,7 @@ public class Country extends MoneySource implements Serializable, Container
 	    people = new ArrayList<>();
 	    countriesDiscoveries = new CountriesDiscoveries(this);
     }
-    public void remove(City city) {
+    private void remove(City city) {
         if(city == capitalCity)
         {
 	        capitalCity = null;
@@ -56,7 +56,7 @@ public class Country extends MoneySource implements Serializable, Container
 	        //TODO: if ruler dies
         }
     }
-    public void remove(AbstractPerson person) {
+    private void remove(AbstractPerson person) {
         if(people.remove(person))
 	        remove(person);
     }

@@ -6,6 +6,7 @@ import engine.people.cityworkers.CityWorker;
 import engine.people.cityworkers.Doctor;
 import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
+import engine.tools.weapons.Attackable;
 import engine.universe.MoneySource;
 import engine.universe.ResourceDemand;
 import javafx.scene.layout.VBox;
@@ -87,4 +88,23 @@ public class Hospital extends Workplace
 		return null;// TODO: 4/9/2016
 	}
 
+	@Override
+	public void die() {
+		super.die();//go through and check for these
+		for (CityWorker cityWorker : sickPeople) {
+			cityWorker.die();
+		}
+
+	}
+	private void remove(AbstractPerson abstractPerson) {
+		if(sickPeople.remove(abstractPerson)) {
+			remove(abstractPerson);
+		}
+	}
+	@Override
+	public void remove(Attackable attackable) {
+		super.remove(attackable);
+		if(attackable instanceof AbstractPerson)
+			remove((AbstractPerson)attackable);
+	}
 }

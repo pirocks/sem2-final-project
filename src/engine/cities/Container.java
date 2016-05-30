@@ -1,5 +1,6 @@
 package engine.cities;
 
+import engine.tools.vehicles.Liver;
 import engine.tools.weapons.Attackable;
 
 import java.util.ArrayList;
@@ -54,6 +55,8 @@ public interface Container
 			container.remove(target);
 		}
 		cityContainers.get(target).removeAll(workingCopy);
+		if(target instanceof Liver)
+			Liver.livers.remove(target);
 		kill(target);
 
 	}

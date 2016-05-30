@@ -40,7 +40,7 @@ public abstract class Building extends Attackable implements Serializable,Contai
     {
         return parentBlock;
     }
-	public void remove(City city) {
+	private void remove(City city) {
 		die();
 		parentBlock.remove(city);// oldTODO: 4/9/2016 check that this desn't cause infinte recursion//it doesn't
 	}
@@ -55,6 +55,7 @@ public abstract class Building extends Attackable implements Serializable,Contai
 
 	@Override
 	public void remove(Attackable attackable) {
+		deregisterContainer(attackable);
 		if(attackable instanceof City)
 			remove((City)attackable);
 	}

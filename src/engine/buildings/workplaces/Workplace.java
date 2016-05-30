@@ -60,10 +60,10 @@ public abstract class Workplace extends Building implements Container
 		assert(workers.contains(person));
 		workers.remove(person);
 	}
-	public void remove(AbstractPerson abstractPerson) {
+	private void remove(AbstractPerson abstractPerson) {
 		workers.remove(abstractPerson);
 	}
-	public void remove(MoneySource moneySource) {
+	private void remove(MoneySource moneySource) {
 		if(owner == moneySource)
 		{
 			owner = null;
@@ -96,8 +96,18 @@ public abstract class Workplace extends Building implements Container
 		return owner;
 	}
 	public abstract CityWorker createCorrectType();
-
 	public MoneySource getMoneySource() {
 		return moneySource;
+	}
+
+	@Override
+	public void die() {
+		super.die();
+		for (CityWorker worker : workers) {
+			if(worker.getCurrentBuilding() == this)
+				if(!worker.amIDead)
+					worker.die();
+		}
+
 	}
 }

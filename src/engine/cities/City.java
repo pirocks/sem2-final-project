@@ -47,7 +47,7 @@ public class City extends Attackable implements Serializable ,Container
 	private Set<CityWorker> residents;
 	private Country parentCountry;//make sutre to change when cuity is captured.
 	public String name; // TODO: 5/10/2016 go through and make all the names final or private and extract
-	// interface
+	// interface//how about no
 	public static String[] names = {
 			"London", "San Francisco", "Beverly Hills","Los Altos", "Cambridge","San Jose","Edinburgh","Paris","Rome","Berlin","Moscow","Stalingrad","I'm out of clever Names","New London","Edinburgh","Boston","Lima","Leningrad","Portland",
 			"Seattle","Hong Kong","Taipei","Lhasa","Sukhumi","Pristina","Hell, Michigan","Taumata whakatangi hangakoauau"
@@ -343,7 +343,7 @@ public class City extends Attackable implements Serializable ,Container
 		assert(residents.contains(person));
 		residents.remove(person);
 	}
-	//all people that are homeless are also jobless
+	//all people that are homeless are also jobless???
 	public ArrayList<CityWorker> getHomeless(){
 		ArrayList<CityWorker> out = new ArrayList<>();
 		for(CityWorker worker:residents)
@@ -396,12 +396,12 @@ public class City extends Attackable implements Serializable ,Container
 		}
 		return out;
 	}
-	public void remove(Building building) {
+	private void remove(Building building) {
 		for(CityBlock cityBlock:cityBlocks)
 			cityBlock.remove(building);
 		hospitals.remove(building);
 	}
-	public void remove(AbstractPerson person) {
+	private void remove(AbstractPerson person) {
 		residents.remove(person);
 	}
 	////how about no if damage is greater than a certain number pass to city otherwise go to random cityblock

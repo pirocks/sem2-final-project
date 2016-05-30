@@ -27,8 +27,8 @@ public interface Liver {
 	static void doLifeAll(long time) {
 		Set<Liver> workingCopy = new HashSet<>(livers);
 		for (Liver liver : workingCopy) {
-			if(liver instanceof CityBuilder)
-				System.out.println(liver.toString() + ((CityBuilder)liver).getLocation().get(0).getBlocky());
+//			if(liver instanceof CityBuilder)
+//				System.out.println(liver.toString() + ((CityBuilder)liver).getLocation().get(0).getBlocky());
 			try {
 				liver.sanityCheck();
 			} catch(Exception e){

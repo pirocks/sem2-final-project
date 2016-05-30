@@ -17,13 +17,14 @@ import ui.requests.Request;
 import ui.requests.VehicleInWaterRequest;
 
 import java.util.ArrayList;
+import java.util.Set;
 
 public abstract class Vehicle extends Tool implements Liver,Container
 {
-	private ArrayList<AbstractPerson> passengers;
-	private ArrayList<Resource> cargo;
-	private ArrayList<Weapon> weapons;
-	private ArrayList<Vehicle> vehicles;
+	private Set<AbstractPerson> passengers;
+	private Set<Resource> cargo;
+	private Set<Weapon> weapons;
+	private Set<Vehicle> vehicles;
 	private int maxPassengers;
 	private double maxWeight;
 	protected Vehicle(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
@@ -146,20 +147,20 @@ public abstract class Vehicle extends Tool implements Liver,Container
 		return out;
 	}
 	public void die() {
-		Container.kill(passengers);
-		Container.kill(weapons);
-		Container.kill(vehicles);
+		Container.kill(new ArrayList<Attackable>(passengers));
+		Container.kill(new ArrayList<Attackable>(weapons));
+		Container.kill(new ArrayList<Attackable>(vehicles));
 	}
-	public void remove(AbstractPerson person) {
+	private void remove(AbstractPerson person) {
 		passengers.remove(person);
 	}
-	public void remove(Vehicle vehicle) {
+	private void remove(Vehicle vehicle) {
 		vehicles.remove(vehicle);
 	}
-	public void remove(Weapon weapon) {
+	private void remove(Weapon weapon) {
 		weapons.remove(weapon);
 	}
-	public void remove(MoneySource in) {
+	private void remove(MoneySource in) {
 		for (AbstractPerson passenger : passengers) {
 			if(passenger.moneySource == in)
 				passenger.moneySource = null;
@@ -200,7 +201,6 @@ public abstract class Vehicle extends Tool implements Liver,Container
 	}
 	@Override
 	public void doLife(double time) {
-		System.out.println("called");
 		if(destination != null) {
 			assert (getLocation().size() == 1);
 			Grid initialGrid = getLocation().get(0).getGrid();

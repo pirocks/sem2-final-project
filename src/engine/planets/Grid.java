@@ -129,13 +129,13 @@ public class Grid implements Serializable,Container
     public Planet getParentPlanet() {
         return parentPlanet;
     }
-	public void remove(City city) {
+	private void remove(City city) {
 		if(citys.size() == 0)
 			return;//performance optimization
 		if(citys.remove(city))
 			remove(city);
 	}
-	public void remove(Planet planet) {
+	private void remove(Planet planet) {
 		if(parentPlanet == planet)
 		{
 			parentPlanet = null;

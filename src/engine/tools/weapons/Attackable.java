@@ -31,7 +31,6 @@ public abstract class Attackable
 			this.location = a.locationPlanet;
 		}
 	}
-
 	public Attackable(Attackable a) {
 		location = new ArrayList<>();
 		health = a.getHealth();
