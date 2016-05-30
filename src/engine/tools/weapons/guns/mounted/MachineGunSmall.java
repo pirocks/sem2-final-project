@@ -32,7 +32,7 @@ public class MachineGunSmall extends MachineGun {
 
 	@Override
 	public double getConstructionManDays() {
-		return 0;
+		return 1.5;
 	}
 
 	@Override

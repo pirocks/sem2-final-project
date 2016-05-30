@@ -31,6 +31,6 @@ public class ArtillerySmall extends Artillery{
 
 	@Override
 	public double getConstructionManDays() {
-		return 1 * getNumTools();
+		return 15;
 	}
 }
