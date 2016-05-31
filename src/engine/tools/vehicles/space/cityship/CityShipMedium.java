@@ -10,10 +10,10 @@ import engine.universe.ResourceDemand;
  */
 public class CityShipMedium extends CityShip
 {
-	public static int maxPassengersInitial;// TODO: 5/22/2016
-	public static double maxWeightInitial;// TODO: 5/22/2016
-	public static double startHealthInitial;// TODO: 5/22/2016
-	public static double resistanceInitial;// TODO: 5/22/2016
+	public static int maxPassengersInitial = (int) (CityShipSmall.maxPassengersInitial*1.5);
+	public static double maxWeightInitial = CityShipSmall.maxWeightInitial*1.5;
+	public static double startHealthInitial = CityShipSmall.startHealthInitial*1.5;
+	public static double resistanceInitial = CityShipSmall.resistanceInitial*1.5;
 
 	protected CityShipMedium(LocationPlanet locationPlanet, int numToolsConstructor) {
 		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial, locationPlanet),maxPassengersInitial,maxWeightInitial),numToolsConstructor);

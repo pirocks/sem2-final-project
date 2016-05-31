@@ -26,16 +26,19 @@ public class ResourceDemand implements Serializable
 		return resource;
 	}
 
-	public ResourceDemand(Resource.Type[] types,double startHealth,double resistance,double maxWeight,double maxPassengers)
-	{
+	public ResourceDemand(Resource.Type[] types,double startHealth,double resistance,double maxWeight,double maxPassengers) {
 		// TODO: 5/22/2016
 	}
 
 	public boolean fullFilledQ()
 	{
-		for (Double quantity : resource.getValues().values()) {
-			if(quantity != 0)
-				return false;
+		try {
+			for (Double quantity : resource.getValues().values()) {
+				if (quantity != 0)
+					return false;
+			}
+		}catch (NullPointerException ignored){
+			return false;
 		}
 		return true;
 

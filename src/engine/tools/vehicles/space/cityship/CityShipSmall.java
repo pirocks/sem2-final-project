@@ -3,6 +3,7 @@ package engine.tools.vehicles.space.cityship;
 import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
+import engine.tools.vehicles.space.asteroidminer.AsteroidMinerSmall;
 import engine.universe.ResourceDemand;
 
 /**
@@ -10,10 +11,10 @@ import engine.universe.ResourceDemand;
  */
 public class CityShipSmall extends CityShip
 {
-	public static int maxPassengersInitial;
-	public static double maxWeightInitial;
-	public static double startHealthInitial;
-	public static double resistanceInitial;
+	public static int maxPassengersInitial = AsteroidMinerSmall.maxPassengersInitial*2;
+	public static double maxWeightInitial = AsteroidMinerSmall.maxWeightInitial*2;
+	public static double startHealthInitial = AsteroidMinerSmall.startHealthInitial/2;
+	public static double resistanceInitial = AsteroidMinerSmall.resistanceInitial/2;
 
 
 	protected CityShipSmall(LocationPlanet locationPlanet, int numToolsConstructor) {

@@ -3,17 +3,17 @@ package engine.tools.vehicles.space.asteroidminer;
 import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
+import engine.tools.vehicles.space.Freighter.FreighterSmall;
 import engine.universe.ResourceDemand;
 
 /**
  * Created by bob on 4/7/2016.
  */
-public class AsteroidMinerSmall extends AsteroidMiner
-{
-	public static int maxPassengersInitial;// TODO: 5/22/2016
-	public static double maxWeightInitial;// TODO: 5/22/2016
-	public static double startHealthInitial;// TODO: 5/22/2016
-	public static double resistanceInitial;// TODO: 5/22/2016
+public class AsteroidMinerSmall extends AsteroidMiner {
+	public static int maxPassengersInitial = FreighterSmall.maxPassengersInitial/2;
+	public static double maxWeightInitial = FreighterSmall.maxWeightInitial/2;
+	public static double startHealthInitial = FreighterSmall.startHealthInitial/1.5;
+	public static double resistanceInitial = FreighterSmall.resistanceInitial/1.2;
 
 
 	protected AsteroidMinerSmall(LocationPlanet locationPlanet, int numToolsConstructor) {

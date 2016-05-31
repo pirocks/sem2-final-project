@@ -11,10 +11,10 @@ import engine.universe.ResourceDemand;
  */
 public class AsteroidMinerLarge extends AsteroidMiner
 {
-	public static double startHealthInitial;// TODO: 5/22/2016
-	public static double resistanceInitial;// TODO: 5/22/2016
-	public static int maxPassengersInitial;// TODO: 5/22/2016
-	public static double maxWeightInitial;// TODO: 5/22/2016
+	public static int maxPassengersInitial = AsteroidMinerSmall.maxPassengersInitial*2;
+	public static double maxWeightInitial = AsteroidMinerSmall.maxWeightInitial*2;
+	public static double startHealthInitial = AsteroidMinerSmall.startHealthInitial*2;
+	public static double resistanceInitial = AsteroidMinerSmall.resistanceInitial*2;
 
 	protected AsteroidMinerLarge(LocationPlanet locationPlanet, int numToolsConstructor) {
 		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,

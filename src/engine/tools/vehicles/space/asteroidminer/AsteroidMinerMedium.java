@@ -10,10 +10,10 @@ import engine.universe.ResourceDemand;
  */
 public class AsteroidMinerMedium extends AsteroidMiner
 {
-	public static int maxPassengersInitial;// TODO: 5/22/2016
-	public static double maxWeightInitial;// TODO: 5/22/2016
-	public static double startHealthInitial;// TODO: 5/22/2016
-	public static double resistanceInitial;// TODO: 5/22/2016
+	public static int maxPassengersInitial = (int) (AsteroidMinerSmall.maxPassengersInitial*1.5);
+	public static double maxWeightInitial = AsteroidMinerSmall.maxWeightInitial*1.5;
+	public static double startHealthInitial = AsteroidMinerSmall.startHealthInitial*1.5;
+	public static double resistanceInitial = AsteroidMinerSmall.resistanceInitial*1.5;
 
 
 	protected AsteroidMinerMedium(LocationPlanet locationPlanet, int numToolsConstructor) {
