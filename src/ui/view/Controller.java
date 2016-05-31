@@ -7,11 +7,9 @@ import engine.buildings.housing.RulersHouse;
 import engine.buildings.housing.WorkersHouseBlock;
 import engine.buildings.workplaces.*;
 import engine.cities.City;
-import engine.planets.Grid;
 import engine.planets.LocationPlanet;
 import engine.planets.Planet;
 import engine.planets.TerrainType;
-import engine.tools.vehicles.Vehicle;
 import engine.universe.Country;
 import engine.universe.SolarSystem;
 import engine.universe.Universe;
@@ -23,12 +21,12 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Line;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import ui.view.city.NewBuildingPane;
-import ui.view.planet.PlanetGroup;
 import ui.view.solarsystem.SolarSystemJPanel;
 
 import java.net.URL;
@@ -50,8 +48,6 @@ public class Controller implements Initializable{
 	BorderPane solarSystemBorderPane;
 	@FXML
 	PlanetBorderPane planetBorderPane;
-	double planetViewScrollX = 0;
-	double planetViewScrollY = 0;
 	@FXML
 	BorderPane cityBorderPane;
 	@FXML
@@ -71,12 +67,7 @@ public class Controller implements Initializable{
 	private SolarSystem solarSystem;
 	private Planet planet;
 	private City city;
-	private Vehicle currentlySelectedVehicle = null;
 
-	public final static int pixelsPerGridPlanetViewX = 100;
-	public final static int pixelsPerGridPlanetViewY = 75;
-	private int mousePositionX = 0;
-	private int mousePositionY = 0;
 
 	/**
 	 * Called to initialize a controller after its root element has been
@@ -118,6 +109,7 @@ public class Controller implements Initializable{
 			out =  true;
 		}
 		planetAccordion.initVars(planet,playersCountry,this);
+		planetBorderPane.initVars(planet,playersCountry,this);
 		solarSystemAccordion.initVars(solarSystem,this);
 		universeAccordion.initVars(universe,playersCountry,this);
 		return out;
@@ -151,90 +143,11 @@ public class Controller implements Initializable{
 		initPlanetAccordion();
 		initPlanetView();
 	}
-	private void initPlanetAccordion() {
+	void initPlanetAccordion() {
 		planetAccordion.init();
 	}
-	private void initPlanetView() {
-		try {
-			planetViewScrollY = ((ScrollPane)planetBorderPane.getCenter()).getVvalue();
-			planetViewScrollX = ((ScrollPane)planetBorderPane.getCenter()).getHvalue();
-		}catch(Exception ignored) {}
-		StackPane stackPane = new StackPane();
-		GridPane gridPane = new GridPane();
-		gridPane.setHgap(0);
-		gridPane.setVgap(0);
-		for(int y = 0; y < planet.getGrids().length;y++)
-			for (int x = 0; x < planet.getGrids()[y].length; x++) {
-				Grid grid = planet.getGrids()[y][x];
-				Pane completeGridImage =  PlanetGroup.getPlanetGroup(grid,playersCountry,this);
-				gridPane.add(completeGridImage, x, y);
-			}
-		stackPane.getChildren().add(gridPane);
-		stackPane.getChildren().add(new Pane(vehicleLine){{
-			setHeight(gridPane.getHeight());
-			setWidth(gridPane.getWidth());
-			setPickOnBounds(false);
-		}});
-		stackPane.setOnMouseMoved(new EventHandler<MouseEvent>() {
-			@Override
-			public void handle(MouseEvent event) {
-				mousePositionX = (int) event.getX();
-				mousePositionY = (int) event.getY();
-				if(currentlySelectedVehicle != null) {
-					double x = 100*mousePositionX/pixelsPerGridPlanetViewX;
-					double y = 100*mousePositionY/pixelsPerGridPlanetViewY;
-					LocationPlanet locationPlanet = new LocationPlanet(planet,x,y);
-					currentlySelectedVehicle.setDestination(locationPlanet);
-					updateVehicleLine(currentlySelectedVehicle);
-					System.out.println("x:" + mousePositionX + "y:" + mousePositionY + "gridx:" + locationPlanet
-							.getGridx() + "gridy:" + locationPlanet.getGridy());
-				}
-			}
-		});
-		planetBorderPane.setCenter(new ScrollPane(stackPane){{
-			setVvalue(planetViewScrollY);
-			setHvalue(planetViewScrollX);
-		}});
-	}
-	private Line vehicleLine = new Line(0,0,0,0){{
-		setFill(Color.BLUE);
-		setStrokeWidth(10);
-		setOnMouseClicked(new EventHandler<MouseEvent>() {
-			@Override
-			public void handle(MouseEvent event) {
-				currentlySelectedVehicle = null;
-				vehicleLine.setStartX(0);
-				vehicleLine.setStartY(0);
-				vehicleLine.setEndY(0);
-				vehicleLine.setEndX(0);
-			}
-		});
-	}};
-	private void updateVehicleLine(Vehicle selectedVehicle) {
-		System.out.println("updating");
-		double startX = selectedVehicle.getLocation().get(0).getLocNumX();
-		double startY = selectedVehicle.getLocation().get(0).getLocNumY();
-		double endX = selectedVehicle.getDestination().getLocNumX();
-		double endY = selectedVehicle.getDestination().getLocNumY();
-		startX /= 100;
-		startY /= 100;
-		endX /= 100;
-		endY /= 100;
-		startX *= pixelsPerGridPlanetViewX;
-		startY *= pixelsPerGridPlanetViewY;
-		endX *= pixelsPerGridPlanetViewX;
-		endY *=  pixelsPerGridPlanetViewY;
-		vehicleLine.setEndY(endY);
-		vehicleLine.setEndX(endX);
-		vehicleLine.setStartY(startY);
-		vehicleLine.setStartX(startX);
-//		System.out.print("endX:" + endX +  "endY:" + endY);
-//		vehicleLine.setTranslateX(startX);
-//		vehicleLine.setTranslateY(startY);
-//		vehicleLine.setLayoutX(endX);
-//		vehicleLine.setLayoutY(endY);
-//		vehicleLine.setStartX(startX);
-//		vehicleLine.setStartY(startY);
+	void initPlanetView() {
+		planetBorderPane.init();
 	}
 	public static Image getImage(TerrainType type){
 		switch(type){
@@ -267,12 +180,6 @@ public class Controller implements Initializable{
 			TitledPane titledPane = new TitledPane(b.name,pane);
 			cityAccordion.getPanes().add(titledPane);
 		}
-	}
-	public void selectVehicle(Vehicle vehicle) {
-		System.out.println("click recieved");
-		currentlySelectedVehicle = vehicle;
-		initPlanetAccordion();
-		initPlanetView();
 	}
 	private static class Point {
 		int x,y;

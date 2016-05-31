@@ -4,14 +4,10 @@
     <option name="ANALYSIS_IN_BACKGROUND" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="beggining of controller refactor">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/CityAccordion.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/PlanetAccordion.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/PlanetBorderPane.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/SolarSystemAccordion.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ui/view/UniverseAccordion.java" />
+    <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="continueing of controller refactor">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/Controller.java" afterPath="$PROJECT_DIR$/src/ui/view/Controller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/PlanetBorderPane.java" afterPath="$PROJECT_DIR$/src/ui/view/PlanetBorderPane.java" />
     </list>
     <ignored path="testing.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -977,8 +973,8 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ui/view/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="55" column="19" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="19" />
+            <state relative-caret-position="122">
+              <caret line="185" column="31" selection-start-line="185" selection-start-column="31" selection-end-line="185" selection-end-column="31" />
               <folding>
                 <element signature="docComment;method#initialize#0;class#Controller#0" expanded="false" />
                 <element signature="method#initialize#0;class#Controller#0" expanded="false" />
@@ -987,34 +983,20 @@
                 <element signature="method#initSolarSystemView#0;class#Controller#0" expanded="false" />
                 <element signature="method#focusPlanetInAccordion#0;class#Controller#0" expanded="false" />
                 <element signature="method#initPlanetTab#0;class#Controller#0" expanded="false" />
-                <element signature="method#initPlanetView#0;class#Controller#0" expanded="false" />
-                <element signature="class#5480:5601" expanded="false" />
-                <element signature="initializer##0;class#5480:5601" expanded="false" />
-                <element signature="class#5636:6320" expanded="false" />
-                <element signature="method#handle#0;class#5636:6320" expanded="false" />
-                <element signature="class#6356:6450" expanded="false" />
-                <element signature="initializer##0;class#6356:6450" expanded="false" />
-                <element signature="class#6488:6824" expanded="false" />
-                <element signature="initializer##0;class#6488:6824" expanded="false" />
-                <element signature="class#6573:6818" expanded="false" />
-                <element signature="method#handle#0;class#6573:6818" expanded="false" />
-                <element signature="method#updateVehicleLine#0;class#Controller#0" expanded="false" />
-                <element signature="e#7520#7575#0" expanded="false" />
                 <element signature="method#getImage#0;class#Controller#0" expanded="false" />
                 <element signature="method#initCityTab#0;class#Controller#0" expanded="false" />
                 <element signature="method#initCityAccordion#0;class#Controller#0" expanded="false" />
-                <element signature="method#selectVehicle#0;class#Controller#0" expanded="false" />
                 <element signature="class#Point#0;class#Controller#0" expanded="false" />
                 <element signature="method#Point#0;class#Point#0;class#Controller#0" expanded="false" />
                 <element signature="method#equals#0;class#Point#0;class#Controller#0" expanded="false" />
                 <element signature="method#isValid#0;class#Point#0;class#Controller#0" expanded="false" />
                 <element signature="method#initCityView#0;class#Controller#0" expanded="false" />
-                <element signature="class#9764:9894" expanded="false" />
+                <element signature="class#6221:6351" expanded="false" />
                 <element signature="method#initCityAnchorPane#0;class#Controller#0" expanded="false" />
                 <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
                 <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
-                <element signature="class#11451:12007" expanded="false" />
-                <element signature="method#handle#0;class#11451:12007" expanded="false" />
+                <element signature="class#7908:8464" expanded="false" />
+                <element signature="method#handle#0;class#7908:8464" expanded="false" />
                 <element signature="method#contains#0;class#Controller#0" expanded="false" />
                 <element signature="method#getImage#1;class#Controller#0" expanded="false" />
                 <element signature="method#switchTo#0;class#Controller#0" expanded="false" />
@@ -1036,9 +1018,13 @@
       <file leaf-file-name="PlanetBorderPane.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ui/view/PlanetBorderPane.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="901">
+              <caret line="127" column="30" selection-start-line="127" selection-start-column="30" selection-end-line="127" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="class#3121:3215" expanded="false" />
+                <element signature="initializer##0;class#3121:3215" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1062,10 +1048,8 @@
         <entry file="file://$PROJECT_DIR$/src/ui/view/SolarSystemAccordion.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="308">
-              <caret line="28" column="84" selection-start-line="28" selection-start-column="84" selection-end-line="28" selection-end-column="84" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="27" column="84" selection-start-line="27" selection-start-column="84" selection-end-line="27" selection-end-column="84" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -2338,13 +2322,6 @@
       <option name="presentableId" value="Default" />
       <updated>1460006225713</updated>
     </task>
-    <task id="LOCAL-00089" summary="it compiles">
-      <created>1463961126105</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1463961126105</updated>
-    </task>
     <task id="LOCAL-00090" summary="sync">
       <created>1463976899493</created>
       <option name="number" value="00090" />
@@ -2681,7 +2658,14 @@
       <option name="project" value="LOCAL" />
       <updated>1464727547051</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="continueing of controller refactor">
+      <created>1464735326416</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1464735326416</updated>
+    </task>
+    <option name="localTasksCounter" value="139" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -2741,7 +2725,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="misc edits" />
     <MESSAGE value="people construction cntext" />
     <MESSAGE value="misc edits/bug fixes" />
     <MESSAGE value="started adding  sanity checks" />
@@ -2766,7 +2749,8 @@
     <MESSAGE value="more todos+constants" />
     <MESSAGE value="more todos and constants space" />
     <MESSAGE value="beggining of controller refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="beggining of controller refactor" />
+    <MESSAGE value="continueing of controller refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="continueing of controller refactor" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -4347,10 +4331,8 @@
     <entry file="file://$PROJECT_DIR$/src/ui/view/SolarSystemAccordion.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
-          <caret line="28" column="84" selection-start-line="28" selection-start-column="84" selection-end-line="28" selection-end-column="84" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="27" column="84" selection-start-line="27" selection-start-column="84" selection-end-line="27" selection-end-column="84" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -4379,8 +4361,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/view/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="55" column="19" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="19" />
+        <state relative-caret-position="122">
+          <caret line="185" column="31" selection-start-line="185" selection-start-column="31" selection-end-line="185" selection-end-column="31" />
           <folding>
             <element signature="docComment;method#initialize#0;class#Controller#0" expanded="false" />
             <element signature="method#initialize#0;class#Controller#0" expanded="false" />
@@ -4389,34 +4371,20 @@
             <element signature="method#initSolarSystemView#0;class#Controller#0" expanded="false" />
             <element signature="method#focusPlanetInAccordion#0;class#Controller#0" expanded="false" />
             <element signature="method#initPlanetTab#0;class#Controller#0" expanded="false" />
-            <element signature="method#initPlanetView#0;class#Controller#0" expanded="false" />
-            <element signature="class#5480:5601" expanded="false" />
-            <element signature="initializer##0;class#5480:5601" expanded="false" />
-            <element signature="class#5636:6320" expanded="false" />
-            <element signature="method#handle#0;class#5636:6320" expanded="false" />
-            <element signature="class#6356:6450" expanded="false" />
-            <element signature="initializer##0;class#6356:6450" expanded="false" />
-            <element signature="class#6488:6824" expanded="false" />
-            <element signature="initializer##0;class#6488:6824" expanded="false" />
-            <element signature="class#6573:6818" expanded="false" />
-            <element signature="method#handle#0;class#6573:6818" expanded="false" />
-            <element signature="method#updateVehicleLine#0;class#Controller#0" expanded="false" />
-            <element signature="e#7520#7575#0" expanded="false" />
             <element signature="method#getImage#0;class#Controller#0" expanded="false" />
             <element signature="method#initCityTab#0;class#Controller#0" expanded="false" />
             <element signature="method#initCityAccordion#0;class#Controller#0" expanded="false" />
-            <element signature="method#selectVehicle#0;class#Controller#0" expanded="false" />
             <element signature="class#Point#0;class#Controller#0" expanded="false" />
             <element signature="method#Point#0;class#Point#0;class#Controller#0" expanded="false" />
             <element signature="method#equals#0;class#Point#0;class#Controller#0" expanded="false" />
             <element signature="method#isValid#0;class#Point#0;class#Controller#0" expanded="false" />
             <element signature="method#initCityView#0;class#Controller#0" expanded="false" />
-            <element signature="class#9764:9894" expanded="false" />
+            <element signature="class#6221:6351" expanded="false" />
             <element signature="method#initCityAnchorPane#0;class#Controller#0" expanded="false" />
             <element signature="method#addEmptyWrapper#0;class#Controller#0" expanded="false" />
             <element signature="method#addEmpty#0;class#Controller#0" expanded="false" />
-            <element signature="class#11451:12007" expanded="false" />
-            <element signature="method#handle#0;class#11451:12007" expanded="false" />
+            <element signature="class#7908:8464" expanded="false" />
+            <element signature="method#handle#0;class#7908:8464" expanded="false" />
             <element signature="method#contains#0;class#Controller#0" expanded="false" />
             <element signature="method#getImage#1;class#Controller#0" expanded="false" />
             <element signature="method#switchTo#0;class#Controller#0" expanded="false" />
@@ -4436,9 +4404,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/view/PlanetBorderPane.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="901">
+          <caret line="127" column="30" selection-start-line="127" selection-start-column="30" selection-end-line="127" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#3121:3215" expanded="false" />
+            <element signature="initializer##0;class#3121:3215" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
