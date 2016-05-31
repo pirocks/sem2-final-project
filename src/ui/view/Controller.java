@@ -14,23 +14,17 @@ import engine.universe.Country;
 import engine.universe.SolarSystem;
 import engine.universe.Universe;
 import javafx.embed.swing.SwingNode;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import ui.view.city.NewBuildingPane;
 import ui.view.solarsystem.SolarSystemJPanel;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 /*
@@ -49,7 +43,7 @@ public class Controller implements Initializable{
 	@FXML
 	PlanetBorderPane planetBorderPane;
 	@FXML
-	BorderPane cityBorderPane;
+	CityBorderPane cityBorderPane;
 	@FXML
 	UniverseAccordion universeAccordion;
 	@FXML
@@ -61,7 +55,6 @@ public class Controller implements Initializable{
 	@FXML
 	AnchorPane citySpecificPane;
 
-	private ScrollPane cityScrollPane;
 	private Universe universe;
 	private Country playersCountry;
 	private SolarSystem solarSystem;
@@ -181,61 +174,8 @@ public class Controller implements Initializable{
 			cityAccordion.getPanes().add(titledPane);
 		}
 	}
-	private static class Point {
-		int x,y;
-
-		public Point(int x, int y) {
-			this.x = x;
-			this.y = y;
-		}
-
-		@Override
-		public boolean equals(Object obj) {
-			if(obj instanceof Point)
-				if(((Point) obj).x == x && ((Point) obj).y == y)
-					return true;
-			return false;
-		}
-
-		@Override
-		public String toString() {
-			return "x" + x + "y" + y  + "\n";
-		}
-
-		public boolean isValid() {
-			if(x < 101 && x > -1)
-				if(y < 101 && y > -1)
-					return true;
-			return false;
-		}
-	}
 	public void initCityView() {
-		GridPane gridPane = new GridPane();
-		gridPane.setHgap(0);
-		gridPane.setVgap(0);
-		ArrayList<Point> points =  new ArrayList<>();
-
-		for (Building b : city.getBuilding()) {
-			int x = b.getParentBlock().x;
-			int y = b.getParentBlock().y;
-
-			ImageView buildingImageView = new ImageView();
-			buildingImageView.setImage(getImage(b));
-			buildingImageView.setPreserveRatio(true);
-			buildingImageView.setFitHeight(200);
-			buildingImageView.setFitWidth(200);
-			buildingImageView.setOnMouseClicked(new EventHandler<MouseEvent>() {
-				@Override
-				public void handle(MouseEvent event) {
-					focusBuildingInAccordion(b);
-				}
-			});
-			points.add(new Point(x, y));
-			gridPane.add(buildingImageView,x,y);
-		}
-		addEmptyWrapper(points,gridPane);//add new building locations
-		cityScrollPane = new ScrollPane(gridPane);
-		cityBorderPane.setCenter(cityScrollPane);
+		cityBorderPane.init();
 	}
 	private void initCityAnchorPane(){
 		VBox content = new VBox();
@@ -250,51 +190,7 @@ public class Controller implements Initializable{
 		content.getChildren().add(new Text("Money Available:" + city.getMoneySource().getWealth()));
 		citySpecificPane.getChildren().add(new ScrollPane(content));
 	}
-	private void addEmptyWrapper(ArrayList<Point> points, GridPane gridPane) {
-		for(Point p:points)
-			addEmpty(points,p,gridPane,2);
-	}
-	private void addEmpty(ArrayList<Point> points,Point p,GridPane gridPane,int depth) {
-		Controller controller = this;
-		if(!contains(points,p)) {
-			if(p.isValid())
-				gridPane.add(new ImageView(images.emptyImage){{setPreserveRatio(true);setFitHeight(200);setFitWidth(200);
-					setOnMouseClicked(new EventHandler<MouseEvent>() {
-						@Override
-						public void handle(MouseEvent event) {
-							int i = cityAccordion.getPanes().size() - 1;
-							NewBuildingPane newBuildingPane;
-							if(cityAccordion.getPanes().get(i) instanceof NewBuildingPane)
-							{
-								cityAccordion.getPanes().remove(i);
-							}
-							newBuildingPane = new NewBuildingPane(controller,city, p.x, p.y);
-							cityAccordion.getPanes().add(newBuildingPane);
-							cityScrollPane.setVvalue(cityScrollPane.getVmax());
-							newBuildingPane.setExpanded(true);
-						}
-					});}}, p
-						.x, p.y);
-		}
-		if(depth == 0)
-			return;
-		addEmpty(points, new Point(p.x + 1, p.y),gridPane,depth - 1);
-		addEmpty(points, new Point(p.x + 1, p.y + 1),gridPane,depth - 1);
-		addEmpty(points, new Point(p.x + 1, p.y - 1),gridPane,depth - 1);
-		addEmpty(points, new Point(p.x, p.y + 1), gridPane, depth - 1);
-		addEmpty(points, new Point(p.x, p.y - 1), gridPane, depth - 1);
-		addEmpty(points, new Point(p.x - 1, p.y + 1),gridPane,depth - 1);
-		addEmpty(points, new Point(p.x - 1, p.y), gridPane, depth - 1);
-		addEmpty(points, new Point(p.x, p.y),gridPane,depth - 1);
-
-	}
-	private boolean contains(ArrayList<Point> points,Point point) {
-		for(Point p:points)
-			if(point.x == p.x && point.y == p.y)
-				return true;
-		return false;
-	}
-	private Image getImage(Building building) {
+	public Image getImage(Building building) {
 		if(building instanceof Housing)
 		{
 			if(building instanceof ApartmentBlock)
@@ -359,7 +255,7 @@ public class Controller implements Initializable{
 			}
 		}
 	}
-	private void focusBuildingInAccordion(Building b) {
+	public void focusBuildingInAccordion(Building b) {
 		int i = city.getBuilding().indexOf(b);
 		cityAccordion.getPanes().get(i).setExpanded(true);
 	}
