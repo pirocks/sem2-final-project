@@ -86,17 +86,19 @@ public class Factory extends Workplace implements ToolBuilder<Tool>
 			public void handle(MouseEvent event) {
 				TextInputDialog dialog = new TextInputDialog("10");
 				dialog.setTitle("Select Quantity");
-				dialog.setHeaderText("Enter some text, or use default value.");
+				dialog.setHeaderText("Enter the number of "+tool.getClass().getSimpleName() + "s to build");
 				Optional<String> result = dialog.showAndWait();
-				String entered = "10";
+				String entered = "100";
 				if (result.isPresent()) {
 					entered = result.get();
 				}
 				int numTools = 1;
 				try{
 					numTools = Integer.parseInt(entered);
+					if(numTools <= 0)
+						throw new NumberFormatException();
 				}catch (NumberFormatException e){
-					Alert alert = new Alert(Alert.AlertType.WARNING,"not a valid integer. Please enter a valid integer value.");
+					Alert alert = new Alert(Alert.AlertType.WARNING,"not a valid integer. Please enter a valid integer value., greater than 0");
 					alert.showAndWait();
 					return;
 				}
@@ -106,11 +108,15 @@ public class Factory extends Workplace implements ToolBuilder<Tool>
 		};
 		Image image = tool.getImage();
 		if(image != null)
-			buttons.add(new Button(tool.getClass().getName(), new ImageView(image)){{
+			buttons.add(new Button(tool.getClass().getSimpleName(), new ImageView(image){{
+				setPreserveRatio(true);
+				setFitHeight(100);
+				setFitWidth(100);
+			}}){{
 				setOnMouseClicked(handler);
 			}});
 		else
-			buttons.add(new Button(tool.getClass().getName()){{
+			buttons.add(new Button(tool.getClass().getSimpleName()){{
 				setOnMouseClicked(handler);
 			}});
 	}

@@ -48,7 +48,7 @@ public class LocationPlanet implements Serializable,Container
 		gridy = c.getGrid().getY();
 		planet = c.getGrid().getParentPlanet();
 		blockx = c.getCapitalBuilding().getParentBlock().getXInGrid();// TODO: 4/9/2016 see below
-		blocky = c.getCapitalBuilding().getParentBlock().getYInGrid();// TODO: 4/9/2016 make sure that this gets the town hal not capital city and tht get y in grid gets cityblock
+		blocky = c.getCapitalBuilding().getParentBlock().getYInGrid();// TODO: 4/9/2016 make sure that this gets the town hal not capital city and tht getImage y in grid gets cityblock
 		if(planet == null)
 			throw new IllegalArgumentException();
 		registerContainer(planet);

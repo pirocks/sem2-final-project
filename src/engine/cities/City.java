@@ -253,7 +253,7 @@ public class City extends Attackable implements Serializable ,Container
 			w = getWorkPlaces().get(0);
 		} catch (IndexOutOfBoundsException e) {
 			//this shouldn't happen
-			//but if it does get rid of people
+			//but if it does getImage rid of people
 			System.out.println("city:" + name);
 			System.out.println("population:" + c.population);
 			System.out.println(getBuilding());

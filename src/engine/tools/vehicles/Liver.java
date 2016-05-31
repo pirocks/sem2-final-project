@@ -27,11 +27,11 @@ public interface Liver {
 	static void register(Liver liver){
 		livers.add(liver);
 	}
-	static void doLifeAll(long time) {
+	static void doLifeAll(double time) {
 		Set<Liver> workingCopy = new HashSet<>(livers);
 		for (Liver liver : workingCopy) {
 //			if(liver instanceof CityBuilder)
-//				System.out.println(liver.toString() + ((CityBuilder)liver).getLocation().get(0).getBlocky());
+//				System.out.println(liver.toString() + ((CityBuilder)liver).getLocation().getImage(0).getBlocky());
 			try {
 				liver.sanityCheck();
 			} catch(Exception e){
@@ -42,13 +42,14 @@ public interface Liver {
 			liver.doLife(time);
 		}
 		//update display // TODO: 5/26/2016
-
+//		Controller.controller.liverUpdate();
 	}
 	static void doGame(){
-		Timeline timeline = new Timeline(new KeyFrame(new Duration(100), new EventHandler<ActionEvent>() {
+		Timeline timeline = new Timeline(new KeyFrame(new Duration(1000), new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				doLifeAll(1);
+				System.out.print("do");
+				doLifeAll(0.00015);
 			}
 		}));
 		timeline.setCycleCount(Timeline.INDEFINITE);

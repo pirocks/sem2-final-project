@@ -16,9 +16,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import ui.view.Controller;
-
-import static ui.view.Controller.cityImage;
-
 /**
  * Created by bob on 5/23/2016.
  */
@@ -51,7 +48,7 @@ public class PlanetGroup extends Pane
 					controller.switchTo(c);
 				}
 			});
-			cityImageView.setImage(cityImage);
+			cityImageView.setImage(Controller.images.cityImage);
 			cityImageView.setPreserveRatio(true);
 			cityImageView.setFitWidth(Controller.pixelsPerGridPlanetViewX/3);
 			cityImageView.setFitHeight(Controller.pixelsPerGridPlanetViewY/3);

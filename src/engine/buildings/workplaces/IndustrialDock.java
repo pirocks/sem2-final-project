@@ -83,9 +83,9 @@ public class IndustrialDock extends Workplace implements ToolBuilder<SeaCraft>
 			public void handle(MouseEvent event) {
 				TextInputDialog dialog = new TextInputDialog("10");
 				dialog.setTitle("Select Quantity");
-				dialog.setHeaderText("Enter some text, or use default value.");
+				dialog.setHeaderText("Enter the number of "+ tool.getClass().getSimpleName() + "s to build");
 				Optional<String> result = dialog.showAndWait();
-				String entered = "10";
+				String entered = "100";
 				if (result.isPresent()) {
 					entered = result.get();
 				}

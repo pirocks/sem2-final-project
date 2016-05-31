@@ -13,7 +13,7 @@ import engine.tools.weapons.Attackable;
 
 import static engine.people.cityworkers.CityWorker.WhereAmI.*;
 
-public abstract class CityWorker extends AbstractPerson implements Container//don't foret to get the workplace
+public abstract class CityWorker extends AbstractPerson implements Container//don't foret to getImage the workplace
 {
 	public static double travelTimeConstant = 1.0/20.0;// TODO: 5/27/2016
 	public static double TimeAtWork = 0.4;
@@ -145,8 +145,12 @@ public abstract class CityWorker extends AbstractPerson implements Container//do
 				currentBuilding = workplace;
 				goToWork();
 			}
-			else
-				throw new IllegalStateException();
+			else {
+				if(population < 10)
+					die();
+				else
+						throw new IllegalStateException();
+			}
 			return false;
 		}
 		if(timeRemainingAtLocation < 0)

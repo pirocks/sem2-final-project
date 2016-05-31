@@ -3,6 +3,7 @@ package engine.buildings.workplaces;
 import engine.tools.Tool;
 import engine.tools.ToolUnderConstruction;
 import engine.universe.ResourceDemand;
+import javafx.scene.Node;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
@@ -34,17 +35,23 @@ public interface ToolBuilder <Type extends Tool>
 	}
 	default void addSpecificToolBuilder(VBox in){
 		if(getToolUnderConstruction() != null) {
-			in.getChildren().add(new Text("Type of" + getToolUnderConstruction().getClass().getTypeName() + "under " +
+			in.getChildren().add(0,new Text("Type of" + getToolUnderConstruction().getClass().getTypeName() + "under " +
 					"construction: "));
 			if(getToolUnderConstruction().getResourcesRequired().getResource() != null)
-			in.getChildren().add(new Text("Resources required:" + getToolUnderConstruction().getResourcesRequired()
+			in.getChildren().add(1,new Text("Resources required:" + getToolUnderConstruction().getResourcesRequired()
 					.getResource().toTable()));// TODO: 5/30/2016remove if later
-			in.getChildren().add(new Text("Time Remaining:" + getToolUnderConstruction().getTimeRequired()));
+			in.getChildren().add(2,new Text("Time Remaining:" + getToolUnderConstruction().getTimeRequired()));
 		}
 		else {
-			in.getChildren().add(new Text("Nothing under construction"));
+			in.getChildren().add(0,new Text("Nothing under construction"));
 		}
 		addBuildOptions(in);
+		if(getToolUnderConstruction() != null) {
+			for (Node node : in.getChildren()) {
+				node.setDisable(true);
+			}
+
+		}
 	}
 	void addBuildOptions(VBox in);
 	default void makeProgress(double time){

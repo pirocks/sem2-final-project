@@ -43,6 +43,7 @@ import java.util.ResourceBundle;
  * Created by bob on 5/14/2016.
  */
 public class Controller implements Initializable{
+	public static Controller controller;
 	//despite the vast number of vars having this all in one class seems like the best way. having multiple
 	// controller classes gets very messy with controller class references all over the place
 	@FXML
@@ -91,6 +92,7 @@ public class Controller implements Initializable{
 	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		controller = this;
 		boolean capitalCityAvailable = initVars();
 		initUniverseTab();
 		initSolarSystemTab();
@@ -296,28 +298,20 @@ public class Controller implements Initializable{
 //		vehicleLine.setStartX(startX);
 //		vehicleLine.setStartY(startY);
 	}
-	private static Image mountainImage = new Image(Controller.class.getResourceAsStream("mountainImage.jpg"));
-	private static Image hillImage = new Image(Controller.class.getResourceAsStream("hillImage.jpg"));
-	private static Image seaImage =  new Image(Controller.class.getResourceAsStream("seaImage.jpg"));
-	private static Image landImage = new Image(Controller.class.getResourceAsStream("landImage.jpg"));
-	private static Image wastelandImage =  new Image(Controller.class.getResourceAsStream("wastelandImage.jpg"));
-	private static Image coastImage = new Image(Controller.class.getResourceAsStream("coastImage.jpg"));
-	public static Image cityImage = new Image(Controller.class.getResourceAsStream("cityImage.jpg"));
-	private static Image constructionSite = new Image(Controller.class.getResourceAsStream("constructionImage.jpg"));
-	public static Image getImage(TerrainType terrainType) {
-		switch (terrainType) {
+	public static Image getImage(TerrainType type){
+		switch(type){
 			case Land:
-				return landImage;
+				return images.landImage;
 			case Sea:
-				return seaImage;
+				return images.seaImage;
 			case Coast:
-				return coastImage;
+				return images.coastImage;
 			case Mountains:
-				return mountainImage;
+				return images.mountainImage;
 			case Hills:
-				return hillImage;
+				return images.hillImage;
 			case Wasteland:
-				return wastelandImage;
+				return images.wastelandImage;
 		}
 		throw  new IllegalStateException();
 	}
@@ -371,7 +365,6 @@ public class Controller implements Initializable{
 		}
 	}
 	public void initCityView() {
-		System.out.println(""+System.nanoTime());
 		GridPane gridPane = new GridPane();
 		gridPane.setHgap(0);
 		gridPane.setVgap(0);
@@ -420,7 +413,7 @@ public class Controller implements Initializable{
 		Controller controller = this;
 		if(!contains(points,p)) {
 			if(p.isValid())
-				gridPane.add(new ImageView(emptyImage){{setPreserveRatio(true);setFitHeight(200);setFitWidth(200);
+				gridPane.add(new ImageView(images.emptyImage){{setPreserveRatio(true);setFitHeight(200);setFitWidth(200);
 					setOnMouseClicked(new EventHandler<MouseEvent>() {
 						@Override
 						public void handle(MouseEvent event) {
@@ -456,46 +449,34 @@ public class Controller implements Initializable{
 				return true;
 		return false;
 	}
-	private Image apartmentBlockImage = new Image(Controller.class.getResourceAsStream("apartmentBlockImage.jpg"));
-	private Image houseBlockImage = new Image(Controller.class.getResourceAsStream("houseBlockImage.jpg"));
-	private Image rulersHouseImage = new Image(Controller.class.getResourceAsStream("rulersHouseImage.jpg"));
-	private Image dockYardImage = new Image(Controller.class.getResourceAsStream("dockYardImage.jpg"));
-	private Image factoryImage = new Image(Controller.class.getResourceAsStream("factoryImage.jpg"));
-	private Image hospitalImage = new Image(Controller.class.getResourceAsStream("hospitalImage.jpg"));
-	private Image industrialDockImage = new Image(Controller.class.getResourceAsStream("industrialDockImage.jpg"));
-	private Image researchAreaImage = new Image(Controller.class.getResourceAsStream("researchAreaImage.jpg"));
-	private Image schoolImage = new Image(Controller.class.getResourceAsStream("schoolImage.jpg"));
-	private Image townHallImage = new Image(Controller.class.getResourceAsStream("townHallImage.jpg"));
-	private Image warehouseImage = new Image(Controller.class.getResourceAsStream("wareHouseImage.png"));
-	private Image emptyImage = new Image(Controller.class.getResourceAsStream("emptyImage.jpg"));
 	private Image getImage(Building building) {
 		if(building instanceof Housing)
 		{
 			if(building instanceof ApartmentBlock)
-				return apartmentBlockImage;
+				return images.apartmentBlockImage;
 			if(building instanceof RulersHouse)
-				return rulersHouseImage;
+				return images.rulersHouseImage;
 			if(building instanceof WorkersHouseBlock)
-				return houseBlockImage;
+				return images.houseBlockImage;
 		}
 		else if(building instanceof Workplace)
 		{
 			if(building instanceof DockYard)
-				return dockYardImage;
+				return images.dockYardImage;
 			if(building instanceof Factory)
-				return factoryImage;
+				return images.factoryImage;
 			if(building instanceof Hospital)
-				return hospitalImage;
+				return images.hospitalImage;
 			if(building instanceof IndustrialDock)
-				return industrialDockImage;
+				return images.industrialDockImage;
 			if(building instanceof  ResearchArea)
-				return researchAreaImage;
+				return images.researchAreaImage;
 			if(building instanceof School)
-				return schoolImage;
+				return images.schoolImage;
 			if(building instanceof TownHall)
-				return townHallImage;
+				return images.townHallImage;
 			if(building instanceof Warehouse)
-				return warehouseImage;
+				return images.warehouseImage;
 		}
 		return null;
 	}
@@ -568,5 +549,29 @@ public class Controller implements Initializable{
 		catch(IndexOutOfBoundsException e) {
 			return null;
 		}
+	}
+
+	public static class images {
+		public static Image wastelandImage =  new Image(Controller.class.getResourceAsStream("wastelandImage.jpg"));
+		public static Image coastImage = new Image(Controller.class.getResourceAsStream("coastImage.jpg"));
+		public static Image cityImage = new Image(Controller.class.getResourceAsStream("cityImage.jpg"));
+		public static Image landImage = new Image(Controller.class.getResourceAsStream("landImage.jpg"));
+		public static Image constructionSite = new Image(Controller.class.getResourceAsStream("constructionImage.jpg"));
+		public static Image apartmentBlockImage = new Image(Controller.class.getResourceAsStream("apartmentBlockImage" +
+				".jpg"));
+		public static Image houseBlockImage = new Image(Controller.class.getResourceAsStream("houseBlockImage.jpg"));
+		public static Image rulersHouseImage = new Image(Controller.class.getResourceAsStream("rulersHouseImage.jpg"));
+		public static Image dockYardImage = new Image(Controller.class.getResourceAsStream("dockYardImage.jpg"));
+		public static Image factoryImage = new Image(Controller.class.getResourceAsStream("factoryImage.jpg"));
+		public static Image hospitalImage = new Image(Controller.class.getResourceAsStream("hospitalImage.jpg"));
+		public static Image industrialDockImage = new Image(Controller.class.getResourceAsStream("industrialDockImage.jpg"));
+		public static Image researchAreaImage = new Image(Controller.class.getResourceAsStream("researchAreaImage.jpg"));
+		public static Image schoolImage = new Image(Controller.class.getResourceAsStream("schoolImage.jpg"));
+		public static Image townHallImage = new Image(Controller.class.getResourceAsStream("townHallImage.jpg"));
+		public static Image warehouseImage = new Image(Controller.class.getResourceAsStream("wareHouseImage.png"));
+		public static Image emptyImage = new Image(Controller.class.getResourceAsStream("emptyImage.jpg"));
+		public static Image mountainImage = new Image(Controller.class.getResourceAsStream("mountainImage.jpg"));
+		public static Image hillImage = new Image(Controller.class.getResourceAsStream("hillImage.jpg"));
+		public static Image seaImage =  new Image(Controller.class.getResourceAsStream("seaImage.jpg"));
 	}
 }
