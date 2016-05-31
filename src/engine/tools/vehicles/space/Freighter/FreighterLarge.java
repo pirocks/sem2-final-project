@@ -3,6 +3,7 @@ package engine.tools.vehicles.space.Freighter;
 import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
+import engine.tools.vehicles.space.planetdestroyer.PlanetDestroyerLarge;
 import engine.universe.ResourceDemand;
 
 /**
@@ -10,10 +11,10 @@ import engine.universe.ResourceDemand;
  */
 public class FreighterLarge extends Freighter
 {
-	public static int maxPassengersInitial;// TODO: 5/22/2016
-	public static double maxWeightInitial;// TODO: 5/22/2016
-	public static double startHealthInitial;// TODO: 5/22/2016
-	public static double resistanceInitial;// TODO: 5/22/2016
+	public static int maxPassengersInitial = PlanetDestroyerLarge.maxPassengersInitial/300;
+	public static double maxWeightInitial = PlanetDestroyerLarge.maxWeightInitial/100;
+	public static double startHealthInitial = PlanetDestroyerLarge.startHealthInitial/500;
+	public static double resistanceInitial = PlanetDestroyerLarge.resistanceInitial/500;
 
 
 	protected FreighterLarge(LocationPlanet locationPlanet, int numToolsConstructor) {
@@ -23,7 +24,7 @@ public class FreighterLarge extends Freighter
 
 	@Override
 	public double getSpeed() {
-		return 0;// TODO: 5/22/2016
+		return Double.MAX_VALUE/400/100;
 	}
 
 	@Override
@@ -33,6 +34,6 @@ public class FreighterLarge extends Freighter
 
 	@Override
 	public double getConstructionManDays() {
-		return 0;// TODO: 5/22/2016
+		return maxPassengersInitial*10*300/500;
 	}
 }

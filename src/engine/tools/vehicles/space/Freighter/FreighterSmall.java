@@ -10,10 +10,10 @@ import engine.universe.ResourceDemand;
  */
 public class FreighterSmall extends Freighter
 {
-	public static int maxPassengersInitial;// TODO: 5/22/2016
-	public static double maxWeightInitial;// TODO: 5/22/2016
-	public static double startHealthInitial;// TODO: 5/22/2016
-	public static double resistanceInitial;// TODO: 5/22/2016
+	public static int maxPassengersInitial = FreighterLarge.maxPassengersInitial/30;
+	public static double maxWeightInitial = FreighterLarge.maxWeightInitial/30;
+	public static double startHealthInitial = FreighterLarge.startHealthInitial/30;
+	public static double resistanceInitial = FreighterLarge.resistanceInitial/30;
 
 	protected FreighterSmall(LocationPlanet locationPlanet, int numToolsConstructor) {
 		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial, locationPlanet),maxPassengersInitial,maxWeightInitial),numToolsConstructor);
@@ -22,7 +22,7 @@ public class FreighterSmall extends Freighter
 
 	@Override
 	public double getSpeed() {
-		return 0;// TODO: 5/22/2016
+		return Double.MAX_VALUE/400/100/30;
 	}
 
 	@Override
@@ -32,6 +32,6 @@ public class FreighterSmall extends Freighter
 
 	@Override
 	public double getConstructionManDays() {
-		return 0;// TODO: 5/22/2016
+		return maxPassengersInitial*10*300/500;
 	}
 }

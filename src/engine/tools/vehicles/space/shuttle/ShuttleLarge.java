@@ -10,10 +10,10 @@ import engine.universe.ResourceDemand;
  *
  */
 public class ShuttleLarge extends Shuttle {
-	public static int maxPassengersInitial;
-	public static double maxWeightInitial;
-	public static double startHealthInitial;
-	public static double resistanceInitial;
+	public static int maxPassengersInitial = ShuttleSmall.maxPassengersInitial/10;
+	public static double maxWeightInitial = ShuttleSmall.maxWeightInitial/10;
+	public static double startHealthInitial = ShuttleSmall.startHealthInitial/10;
+	public static double resistanceInitial = ShuttleSmall.resistanceInitial/10;
 
 
 	protected ShuttleLarge(LocationPlanet locationPlanet,int numToolsConstructor) {
@@ -23,7 +23,7 @@ public class ShuttleLarge extends Shuttle {
 
 	@Override
 	public double getSpeed() {
-		return 0;// TODO: 5/22/2016
+		return 30000;
 	}
 
 	@Override
