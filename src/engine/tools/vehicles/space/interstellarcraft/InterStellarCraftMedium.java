@@ -3,6 +3,7 @@ package engine.tools.vehicles.space.interstellarcraft;
 import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
+import engine.tools.vehicles.space.planetdestroyer.PlanetDestroyerLarge;
 import engine.universe.ResourceDemand;
 
 /**
@@ -11,10 +12,10 @@ import engine.universe.ResourceDemand;
  */
 public class InterStellarCraftMedium extends InterStellarCraft
 {
-	public static int maxPassengersInitial;
-	public static double maxWeightInitial;
-	public static double startHealthInitial;
-	public static double resistanceInitial;
+	public static int maxPassengersInitial = PlanetDestroyerLarge.maxPassengersInitial/90;
+	public static double maxWeightInitial = PlanetDestroyerLarge.maxWeightInitial/90;
+	public static double startHealthInitial = PlanetDestroyerLarge.startHealthInitial/90;
+	public static double resistanceInitial = PlanetDestroyerLarge.resistanceInitial/90;
 
 	protected InterStellarCraftMedium(LocationPlanet locationPlanet, int numToolsConstructor) {
 		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,
@@ -23,7 +24,7 @@ public class InterStellarCraftMedium extends InterStellarCraft
 
 	@Override
 	public double getSpeed() {
-		return 0;// TODO: 5/22/2016
+		return Double.MAX_VALUE/90/100;
 	}
 
 	@Override
@@ -33,6 +34,6 @@ public class InterStellarCraftMedium extends InterStellarCraft
 
 	@Override
 	public double getConstructionManDays() {
-		return 0;// TODO: 5/22/2016
+		return maxPassengersInitial*10;
 	}
 }

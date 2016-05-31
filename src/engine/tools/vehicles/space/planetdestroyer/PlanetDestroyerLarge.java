@@ -11,10 +11,11 @@ import engine.universe.ResourceDemand;
  *
  */
 public class PlanetDestroyerLarge extends PlanetDestroyer {
-	public static int maxPassengersInitial;// TODO: 5/22/2016
-	public static double maxWeightInitial;// TODO: 5/22/2016
-	public static double startHealthInitial;// TODO: 5/22/2016
-	public static double resistanceInitial;// TODO: 5/22/2016
+	public static int maxPassengersInitial = 1000000;
+	public static double maxWeightInitial = 10^8;
+	public static double startHealthInitial = 10^13
+			;
+	public static double resistanceInitial = 10^11;
 
 	protected PlanetDestroyerLarge(LocationPlanet locationPlanet, int numToolsConstructor) {
 		super(new VehicleInitialConstants(new AttackableConstants(startHealthInitial,resistanceInitial,
@@ -23,7 +24,7 @@ public class PlanetDestroyerLarge extends PlanetDestroyer {
 
 	@Override
 	public double getSpeed() {
-		return 0;// TODO: 5/22/2016
+		return Double.MAX_VALUE/100;
 	}
 
 	@Override
@@ -33,6 +34,6 @@ public class PlanetDestroyerLarge extends PlanetDestroyer {
 
 	@Override
 	public double getConstructionManDays() {
-		return 0;// TODO: 5/22/2016
+		return maxPassengersInitial*10;
 	}
 }

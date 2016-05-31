@@ -9,10 +9,10 @@ import engine.universe.ResourceDemand;
  * Created by bob on 4/7/2016.
  */
 public class PlanetDestroyerMedium extends PlanetDestroyer {
-	public static int maxPassengersInitial;// TODO: 5/22/2016
-	public static double maxWeightInitial;// TODO: 5/22/2016
-	public static double startHealthInitial;// TODO: 5/22/2016
-	public static double resistanceInitial;// TODO: 5/22/2016
+	public static int maxPassengersInitial = PlanetDestroyerLarge.maxPassengersInitial/3;
+	public static double maxWeightInitial = PlanetDestroyerLarge.maxWeightInitial/3;
+	public static double startHealthInitial = PlanetDestroyerLarge.startHealthInitial/3;
+	public static double resistanceInitial = PlanetDestroyerLarge.resistanceInitial/3;
 
 
 	protected PlanetDestroyerMedium(LocationPlanet locationPlanet, int numToolsConstructor) {
@@ -22,7 +22,7 @@ public class PlanetDestroyerMedium extends PlanetDestroyer {
 
 	@Override
 	public double getSpeed() {
-		return 0;// TODO: 5/22/2016
+		return Double.MAX_VALUE/300;
 	}
 
 	@Override
@@ -32,6 +32,6 @@ public class PlanetDestroyerMedium extends PlanetDestroyer {
 
 	@Override
 	public double getConstructionManDays() {
-		return 0;// TODO: 5/22/2016
+		return maxPassengersInitial*10;
 	}
 }
