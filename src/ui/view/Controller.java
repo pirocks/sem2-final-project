@@ -41,6 +41,7 @@ public class Controller implements Initializable{
 	@FXML
 	BorderPane solarSystemBorderPane;
 	@FXML
+	public
 	PlanetBorderPane planetBorderPane;
 	@FXML
 	CityBorderPane cityBorderPane;
@@ -166,13 +167,7 @@ public class Controller implements Initializable{
 		initCityAnchorPane();
 	}
 	private void initCityAccordion() {
-		cityAccordion.getPanes().clear();
-		for(Building b:city.getBuilding())
-		{
-			VBox pane = b.getPane();
-			TitledPane titledPane = new TitledPane(b.name,pane);
-			cityAccordion.getPanes().add(titledPane);
-		}
+		cityAccordion.init();
 	}
 	public void initCityView() {
 		cityBorderPane.init();

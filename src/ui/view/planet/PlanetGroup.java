@@ -16,6 +16,8 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import ui.view.Controller;
+import ui.view.PlanetBorderPane;
+
 /**
  * Created by bob on 5/23/2016.
  */
@@ -50,8 +52,8 @@ public class PlanetGroup extends Pane
 			});
 			cityImageView.setImage(Controller.images.cityImage);
 			cityImageView.setPreserveRatio(true);
-			cityImageView.setFitWidth(Controller.pixelsPerGridPlanetViewX/3);
-			cityImageView.setFitHeight(Controller.pixelsPerGridPlanetViewY/3);
+			cityImageView.setFitWidth(PlanetBorderPane.pixelsPerGridPlanetViewX/3);
+			cityImageView.setFitHeight(PlanetBorderPane.pixelsPerGridPlanetViewY/3);
 			usableItems.add(cityImageView, usableItemsX, usableItemsY);
 			usableItemsX++;
 			usableItemsY++;
@@ -74,7 +76,7 @@ public class PlanetGroup extends Pane
 					@Override
 					public void handle(MouseEvent event) {
 						System.out.println("clicked");
-						controller.selectVehicle(vehicle);
+						controller.planetBorderPane.selectVehicle(vehicle);
 					}
 				});
 				usableItems.add(background,usableItemsX,usableItemsY);
@@ -89,7 +91,7 @@ public class PlanetGroup extends Pane
 					setOnMouseClicked(new EventHandler<MouseEvent>() {
 						@Override
 						public void handle(MouseEvent event) {
-							controller.selectVehicle(vehicle);
+							controller.planetBorderPane.selectVehicle(vehicle);
 						}
 					});
 				}},usableItemsX,usableItemsX);
@@ -103,21 +105,21 @@ public class PlanetGroup extends Pane
 		ImageView terrainImageView = new ImageView();
 		terrainImageView.setImage(Controller.getImage(grid.getTerrainType()));
 		terrainImageView.setPreserveRatio(true);
-		terrainImageView.setFitHeight((19./20.)*Controller.pixelsPerGridPlanetViewY);
-		terrainImageView.setFitWidth((19./20.)*Controller.pixelsPerGridPlanetViewX);
+		terrainImageView.setFitHeight((19./20.)*PlanetBorderPane.pixelsPerGridPlanetViewY);
+		terrainImageView.setFitWidth((19./20.)*PlanetBorderPane.pixelsPerGridPlanetViewX);
 		out.getChildren().add(terrainImageView);
 	}
 	public static void backGroundColor(Grid grid, Country playersCountry, Pane out) {
 		if(grid.getParentCountry() == playersCountry) {
 			ImageView redBorder = new ImageView(red);
-			redBorder.setFitHeight(Controller.pixelsPerGridPlanetViewY);
-			redBorder.setFitWidth(Controller.pixelsPerGridPlanetViewX);
+			redBorder.setFitHeight(PlanetBorderPane.pixelsPerGridPlanetViewY);
+			redBorder.setFitWidth(PlanetBorderPane.pixelsPerGridPlanetViewX);
 			out.getChildren().add(0,redBorder);
 		}
 		else{
 			ImageView blueBorder = new ImageView(blue);
-			blueBorder.setFitHeight(Controller.pixelsPerGridPlanetViewY);
-			blueBorder.setFitWidth(Controller.pixelsPerGridPlanetViewX);
+			blueBorder.setFitHeight(PlanetBorderPane.pixelsPerGridPlanetViewY);
+			blueBorder.setFitWidth(PlanetBorderPane.pixelsPerGridPlanetViewX);
 			out.getChildren().add(0,blueBorder);
 		}
 	}
