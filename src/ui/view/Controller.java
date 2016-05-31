@@ -11,7 +11,6 @@ import engine.planets.Grid;
 import engine.planets.LocationPlanet;
 import engine.planets.Planet;
 import engine.planets.TerrainType;
-import engine.tools.vehicles.CityBuilder;
 import engine.tools.vehicles.Vehicle;
 import engine.universe.Country;
 import engine.universe.SolarSystem;
@@ -28,11 +27,8 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
-import ui.view.city.CityButton;
 import ui.view.city.NewBuildingPane;
-import ui.view.planet.PlanetButton;
 import ui.view.planet.PlanetGroup;
-import ui.view.solarsystem.SolarSystemButton;
 import ui.view.solarsystem.SolarSystemJPanel;
 
 import java.net.URL;
@@ -53,19 +49,19 @@ public class Controller implements Initializable{
 	@FXML
 	BorderPane solarSystemBorderPane;
 	@FXML
-	BorderPane planetBorderPane;
+	PlanetBorderPane planetBorderPane;
 	double planetViewScrollX = 0;
 	double planetViewScrollY = 0;
 	@FXML
 	BorderPane cityBorderPane;
 	@FXML
-	Accordion universeAccordion;
+	UniverseAccordion universeAccordion;
 	@FXML
-	Accordion solarSystemAccordion;
+	SolarSystemAccordion solarSystemAccordion;
 	@FXML
-	Accordion planetAccordion;
+	PlanetAccordion planetAccordion;
 	@FXML
-	Accordion cityAccordion;
+	CityAccordion cityAccordion;
 	@FXML
 	AnchorPane citySpecificPane;
 
@@ -106,6 +102,7 @@ public class Controller implements Initializable{
 		}
 	}
 	private boolean initVars(){
+		boolean out = false;
 		playersCountry = Universe.playersCountry;
 		city = Universe.playersCountry.getCapitalCity();
 		universe = Main.getUniverse();
@@ -113,23 +110,20 @@ public class Controller implements Initializable{
 			LocationPlanet locationPlanet = playersCountry.initialBuilder.getLocation().get(0);
 			planet = locationPlanet.getPlanet();
 			solarSystem = planet.getParentSolarSystem();
-			return false;
+			out = false;
 		}
 		else {
 			planet = city.getParentGrid().getParentPlanet();
 			solarSystem = planet.getParentSolarSystem();
-			return true;
+			out =  true;
 		}
+		planetAccordion.initVars(planet,playersCountry,this);
+		solarSystemAccordion.initVars(solarSystem,this);
+		universeAccordion.initVars(universe,playersCountry,this);
+		return out;
 	}
 	private void initUniverseTab(){
-		universeAccordion.getPanes().clear();
-		for(SolarSystem solarSystem:universe.getSolarSystems())
-		{
-			VBox pane = new VBox();
-			pane.getChildren().add(new Text(solarSystem.name));
-			pane.getChildren().add(new SolarSystemButton(solarSystem,solarSystem.name,playersCountry, this));
-			universeAccordion.getPanes().add(new TitledPane(solarSystem.name,pane));
-		}
+		universeAccordion.init();
 	}
 	private void initSolarSystemTab(){
 		getSolarSystemTab().setText("Solar System:" + solarSystem.name);
@@ -137,14 +131,7 @@ public class Controller implements Initializable{
 		initSolarSystemView();
 	}
 	private void initSolarSystemAccordion() {
-		solarSystemAccordion.getPanes().clear();
-		for(Planet planet:solarSystem.getPlanets())
-		{
-			VBox pane = new VBox();
-			pane.getChildren().add(new Text(planet.name));
-			pane.getChildren().add(new PlanetButton(planet,"Go To Planet",this));
-			solarSystemAccordion.getPanes().add(new TitledPane(planet.name,pane));
-		}
+		solarSystemAccordion.init();
 	}
 	private void initSolarSystemView(){
 		SwingNode node = new SwingNode();
@@ -165,56 +152,7 @@ public class Controller implements Initializable{
 		initPlanetView();
 	}
 	private void initPlanetAccordion() {
-		planetAccordion.getPanes().clear();
-		planetAccordionAddCitys();
-		planetAccordionAddVehicles();
-	}
-	private void planetAccordionAddCitys() {
-		for(City c: planet.getAllCities())
-		{
-			VBox pane = new VBox();
-			TitledPane titledPane;
-			if(c.getParentCountry() == playersCountry)
-			{
-				pane.getChildren().add(new Text(c.toString()));
-				Button button = new CityButton(c,"Go To City",this);
-				pane.getChildren().add(button);
-				titledPane = new TitledPane(c.name, pane);
-				planetAccordion.getPanes().add(0,titledPane);
-			}
-			else
-			{
-				pane.getChildren().add(new Text(c.toString()));
-				pane.getChildren().add(new Text("YOU DO NOT CONTROL THIS CITY"));
-				Button button = new CityButton(c,"Go To City",this);
-				pane.getChildren().add(button);
-				titledPane = new TitledPane(c.name, pane);
-				planetAccordion.getPanes().add(titledPane);
-			}
-		}
-	}
-	private void planetAccordionAddVehicles() {
-		for(Vehicle v: planet.getAllVehicles()) {
-			VBox pane = new VBox();
-			pane.getChildren().add(new Text("Vehicle:" + v.getClass().getSimpleName()));
-			if(v instanceof CityBuilder) {
-				Button button = new Button("Build City"){{
-					setOnMouseClicked(new EventHandler<MouseEvent>() {
-						@Override
-						public void handle(MouseEvent event) {
-							((CityBuilder)v).buildCity();
-						}
-					});
-				}};
-				pane.getChildren().add(button);
-			}
-			pane.getChildren().add(new Text("Going Towards:"));
-			if(v.getDestination() != null)
-				pane.getChildren().add(new Text(v.getDestination().toString()));
-			else
-				pane.getChildren().add(new Text("None"));
-			planetAccordion.getPanes().add(new TitledPane(v.getClass().getName(),pane));
-		}
+		planetAccordion.init();
 	}
 	private void initPlanetView() {
 		try {
