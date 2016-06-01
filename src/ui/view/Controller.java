@@ -41,21 +41,26 @@ public class Controller implements Initializable{
 	@FXML
 	BorderPane solarSystemBorderPane;
 	@FXML
-	public
-	PlanetBorderPane planetBorderPane;
+	BorderPane planetBorderPane;
 	@FXML
-	CityBorderPane cityBorderPane;
+	BorderPane cityBorderPane;
 	@FXML
-	UniverseAccordion universeAccordion;
+	Accordion universeAccordion;
 	@FXML
-	SolarSystemAccordion solarSystemAccordion;
+	Accordion solarSystemAccordion;
 	@FXML
-	PlanetAccordion planetAccordion;
+	Accordion planetAccordion;
 	@FXML
-	CityAccordion cityAccordion;
+	Accordion cityAccordion;
 	@FXML
 	AnchorPane citySpecificPane;
 
+	public CityAccordion cityAccordionManager = new CityAccordion();
+	CityBorderPane cityBorderPaneManager = new CityBorderPane();
+	PlanetAccordion planetAccordionManager = new PlanetAccordion();
+	public PlanetBorderPane planetBorderPaneManager=  new PlanetBorderPane();
+	SolarSystemAccordion solarSystemAccordionManager = new SolarSystemAccordion();
+	UniverseAccordion universeAccordionManager = new UniverseAccordion();
 	private Universe universe;
 	private Country playersCountry;
 	private SolarSystem solarSystem;
@@ -102,14 +107,29 @@ public class Controller implements Initializable{
 			solarSystem = planet.getParentSolarSystem();
 			out =  true;
 		}
-		planetAccordion.initVars(planet,playersCountry,this);
-		planetBorderPane.initVars(planet,playersCountry,this);
-		solarSystemAccordion.initVars(solarSystem,this);
-		universeAccordion.initVars(universe,playersCountry,this);
+		initCityVars();
+		initPlanetVars();
+		initUniverseVars();
 		return out;
 	}
+
+	private void initUniverseVars() {
+		solarSystemAccordionManager.initVars(solarSystem,this,solarSystemAccordion);
+		universeAccordionManager.initVars(universe,playersCountry,this,universeAccordion);
+	}
+
+	private void initPlanetVars() {
+		planetAccordionManager.initVars(planet,playersCountry,this,planetAccordion);
+		planetBorderPaneManager.initVars(planet,playersCountry,this,planetBorderPane);
+	}
+
+	private void initCityVars() {
+		cityAccordionManager.initVars(city,cityAccordion);
+		cityBorderPaneManager.initVars(city,this,cityBorderPane);
+	}
+
 	private void initUniverseTab(){
-		universeAccordion.init();
+		universeAccordionManager.init();
 	}
 	private void initSolarSystemTab(){
 		getSolarSystemTab().setText("Solar System:" + solarSystem.name);
@@ -117,7 +137,7 @@ public class Controller implements Initializable{
 		initSolarSystemView();
 	}
 	private void initSolarSystemAccordion() {
-		solarSystemAccordion.init();
+		solarSystemAccordionManager.init();
 	}
 	private void initSolarSystemView(){
 		SwingNode node = new SwingNode();
@@ -138,10 +158,10 @@ public class Controller implements Initializable{
 		initPlanetView();
 	}
 	void initPlanetAccordion() {
-		planetAccordion.init();
+		planetAccordionManager.init();
 	}
 	void initPlanetView() {
-		planetBorderPane.init();
+		planetBorderPaneManager.init();
 	}
 	public static Image getImage(TerrainType type){
 		switch(type){
@@ -167,10 +187,10 @@ public class Controller implements Initializable{
 		initCityAnchorPane();
 	}
 	private void initCityAccordion() {
-		cityAccordion.init();
+		cityAccordionManager.init();
 	}
 	public void initCityView() {
-		cityBorderPane.init();
+		cityBorderPaneManager.init();
 	}
 	private void initCityAnchorPane(){
 		VBox content = new VBox();
@@ -234,11 +254,16 @@ public class Controller implements Initializable{
 		initPlanetTab();
 	}
 	public void switchTo(City c) {
+		if(c == null)
+			throw new IllegalArgumentException();
 		solarSystem = c.getGrid().getParentPlanet().getParentSolarSystem();
 		planet = c.getGrid().getParentPlanet();
 		city = c;
+		initVars();
 		initSolarSystemTab();
 		initPlanetTab();
+		city = c;
+		initCityVars();
 		initCityTab();
 		tabPane.getSelectionModel().select(getCityTab());
 	}

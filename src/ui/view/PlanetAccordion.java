@@ -17,20 +17,22 @@ import ui.view.city.CityButton;
 /**
  * Created by bob on 5/31/2016.
  */
-public class PlanetAccordion extends Accordion
+public class PlanetAccordion
 {
 	private Planet planet;
 	private Country playersCountry;
 	private Controller controller;
+	private Accordion accordion;
 
-	public void initVars(Planet planet, Country playersCountry,Controller  controller) {
+	public void initVars(Planet planet, Country playersCountry,Controller  controller,Accordion  accordion) {
 		this.planet = planet;
 		this.playersCountry = playersCountry;
 		this.controller = controller;
+		this.accordion = accordion;
 	}
 
 	public void init(){
-		super.getPanes().clear();
+		accordion.getPanes().clear();
 		addCitys();
 		addVehicles();
 	}
@@ -55,7 +57,7 @@ public class PlanetAccordion extends Accordion
 				pane.getChildren().add(new Text(v.getDestination().toString()));
 			else
 				pane.getChildren().add(new Text("None"));
-			super.getPanes().add(new TitledPane(v.getClass().getName(),pane));
+			accordion.getPanes().add(new TitledPane(v.getClass().getName(),pane));
 		}
 	}
 
@@ -70,7 +72,7 @@ public class PlanetAccordion extends Accordion
 				Button button = new CityButton(c,"Go To City",controller);
 				pane.getChildren().add(button);
 				titledPane = new TitledPane(c.name, pane);
-				super.getPanes().add(0,titledPane);
+				accordion.getPanes().add(0,titledPane);
 			}
 			else
 			{
@@ -79,7 +81,7 @@ public class PlanetAccordion extends Accordion
 				Button button = new CityButton(c,"Go To City",controller);
 				pane.getChildren().add(button);
 				titledPane = new TitledPane(c.name, pane);
-				super.getPanes().add(titledPane);
+				accordion.getPanes().add(titledPane);
 			}
 		}
 	}

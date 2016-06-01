@@ -30,24 +30,20 @@ import java.util.Set;
  *
  */
 
-public class City extends Attackable implements Serializable ,Container
+public class City extends Attackable implements Serializable,Container
 {
 	public MoneySource moneySource;// if I don't have time this will just be the country money source//working
 	// assumption as of 5/19/2016
-	public static double resistanceInitial;
-	public static double healthInitial;
-	//remember to add stuff to the unique id if I add more member vars
-	//read the above comment
-//    private MoneySource moneySourceForBuildings;
+	public static double resistanceInitial;// TODO: 5/31/2016
+	public static double healthInitial;// TODO: 5/31/2016
 	private boolean isCapital;
 	private int x,y;//center of city in grid//will be townHall location
 	private Grid parentGrid;//can be used to find location//engine.cities limited to one grid
 	private Set<CityBlock> cityBlocks;
 	private ArrayList<Hospital> hospitals;
 	private Set<CityWorker> residents;
-	private Country parentCountry;//make sutre to change when cuity is captured.
-	public String name; // TODO: 5/10/2016 go through and make all the names final or private and extract
-	// interface//how about no
+	private Country parentCountry;
+	public String name;
 	public static String[] names = {
 			"London", "San Francisco", "Beverly Hills","Los Altos", "Cambridge","San Jose","Edinburgh","Paris","Rome","Berlin","Moscow","Stalingrad","I'm out of clever Names","New London","Edinburgh","Boston","Lima","Leningrad","Portland",
 			"Seattle","Hong Kong","Taipei","Lhasa","Sukhumi","Pristina","Hell, Michigan","Taumata whakatangi hangakoauau"

@@ -76,7 +76,7 @@ public class PlanetGroup extends Pane
 					@Override
 					public void handle(MouseEvent event) {
 						System.out.println("clicked");
-						controller.planetBorderPane.selectVehicle(vehicle);
+						controller.planetBorderPaneManager.selectVehicle(vehicle);
 					}
 				});
 				usableItems.add(background,usableItemsX,usableItemsY);
@@ -91,7 +91,7 @@ public class PlanetGroup extends Pane
 					setOnMouseClicked(new EventHandler<MouseEvent>() {
 						@Override
 						public void handle(MouseEvent event) {
-							controller.planetBorderPane.selectVehicle(vehicle);
+							controller.planetBorderPaneManager.selectVehicle(vehicle);
 						}
 					});
 				}},usableItemsX,usableItemsX);

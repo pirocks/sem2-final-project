@@ -19,7 +19,7 @@ import ui.view.planet.PlanetGroup;
 /**
  * Created by bob on 5/31/2016.
  */
-public class PlanetBorderPane extends BorderPane
+public class PlanetBorderPane
 {
 	double planetViewScrollX = 0;
 	double planetViewScrollY = 0;
@@ -28,6 +28,7 @@ public class PlanetBorderPane extends BorderPane
 	private Planet planet;
 	private Country playersCountry;
 	private Controller controller;
+	private BorderPane borderPane;
 	private Vehicle currentlySelectedVehicle = null;
 	private int mousePositionX = 0;
 	private int mousePositionY = 0;
@@ -47,16 +48,17 @@ public class PlanetBorderPane extends BorderPane
 		});
 	}};
 
-	public void initVars(Planet planet, Country playersCountry,Controller controller){
+	public void initVars(Planet planet, Country playersCountry,Controller controller,BorderPane borderPane){
 
 		this.planet = planet;
 		this.playersCountry = playersCountry;
 		this.controller = controller;
+		this.borderPane = borderPane;
 	}
 	public void init(){
 		try {
-			planetViewScrollY = ((ScrollPane)super.getCenter()).getVvalue();
-			planetViewScrollX = ((ScrollPane)super.getCenter()).getHvalue();
+			planetViewScrollY = ((ScrollPane)borderPane.getCenter()).getVvalue();
+			planetViewScrollX = ((ScrollPane)borderPane.getCenter()).getHvalue();
 		}catch(Exception ignored) {}
 		StackPane stackPane = new StackPane();
 		GridPane gridPane = new GridPane();
@@ -90,7 +92,7 @@ public class PlanetBorderPane extends BorderPane
 				}
 			}
 		});
-		super.setCenter(new ScrollPane(stackPane){{
+		borderPane.setCenter(new ScrollPane(stackPane){{
 			setVvalue(planetViewScrollY);
 			setHvalue(planetViewScrollX);
 		}});

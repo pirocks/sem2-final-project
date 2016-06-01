@@ -14,25 +14,27 @@ import ui.view.solarsystem.SolarSystemButton;
 /**
  * Created by bob on 5/31/2016.
  */
-public class UniverseAccordion extends Accordion {
+public class UniverseAccordion {
 	private Universe universe;
 	private Country playersCountry;
 	private Controller controller;
+	private Accordion universeAccordion;
 
 	public void init(){
-		super.getPanes().clear();
+		universeAccordion.getPanes().clear();
 		for(SolarSystem solarSystem:universe.getSolarSystems())
 		{
 			VBox pane = new VBox();
 			pane.getChildren().add(new Text(solarSystem.name));
 			pane.getChildren().add(new SolarSystemButton(solarSystem,solarSystem.name,playersCountry, controller));
-			super.getPanes().add(new TitledPane(solarSystem.name,pane));
+			universeAccordion.getPanes().add(new TitledPane(solarSystem.name,pane));
 		}
 	}
-	public void initVars(Universe universe, Country playersCountry,Controller controller){
+	public void initVars(Universe universe, Country playersCountry, Controller controller, Accordion universeAccordion){
 
 		this.universe = universe;
 		this.playersCountry = playersCountry;
 		this.controller = controller;
+		this.universeAccordion = universeAccordion;
 	}
 }

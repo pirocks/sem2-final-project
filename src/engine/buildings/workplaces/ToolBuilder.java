@@ -35,15 +35,15 @@ public interface ToolBuilder <Type extends Tool>
 	}
 	default void addSpecificToolBuilder(VBox in){
 		if(getToolUnderConstruction() != null) {
-			in.getChildren().add(0,new Text("Type of" + getToolUnderConstruction().getClass().getTypeName() + "under " +
+			in.getChildren().add(new Text("" + getToolUnderConstruction().getClass().getSimpleName() + "under " +
 					"construction: "));
 			if(getToolUnderConstruction().getResourcesRequired().getResource() != null)
-			in.getChildren().add(1,new Text("Resources required:" + getToolUnderConstruction().getResourcesRequired()
+			in.getChildren().add(new Text("Resources required:" + getToolUnderConstruction().getResourcesRequired()
 					.getResource().toTable()));// TODO: 5/30/2016remove if later
-			in.getChildren().add(2,new Text("Time Remaining:" + getToolUnderConstruction().getTimeRequired()));
+			in.getChildren().add(new Text("Time Remaining:" + getToolUnderConstruction().getTimeRequired()));
 		}
 		else {
-			in.getChildren().add(0,new Text("Nothing under construction"));
+			in.getChildren().add(new Text("Nothing under construction"));
 		}
 		addBuildOptions(in);
 		if(getToolUnderConstruction() != null) {

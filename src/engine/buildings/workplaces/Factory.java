@@ -35,6 +35,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import ui.view.Controller;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -46,6 +47,7 @@ public class Factory extends Workplace implements ToolBuilder<Tool>
 	//only builds weapons/ vehicles roadgoing or otherwise
 	public static int maxWorkersInitial = 2001;//just in cas I have off by one
 	public ToolUnderConstruction<Tool> inProduction;
+	public Factory factorySelfReference = this;
 	public Factory(CityBlock parentBlock, MoneySource owner) {
 		super(new AttackableConstants(parentBlock.getLocation(),healthInitial,resistanceInitial), parentBlock, maxWorkersInitial, owner);
 		if(parentBlock.getParentGrid().getParentPlanet() == null)
@@ -104,6 +106,7 @@ public class Factory extends Workplace implements ToolBuilder<Tool>
 				}
 				tool.setNumTools(numTools);
 				setToolUnderConstruction(new ToolUnderConstruction<>(tool));
+				Controller.controller.cityAccordionManager.redraw(factorySelfReference);
 			}
 		};
 		Image image = tool.getImage();

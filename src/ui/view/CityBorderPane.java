@@ -15,17 +15,19 @@ import java.util.ArrayList;
 /**
  * Created by bob on 5/31/2016.
  */
-public class CityBorderPane extends BorderPane {
+public class CityBorderPane{
 
 	private City city;
 	private Controller controller;
+	private BorderPane borderPane;
 	private ScrollPane cityScrollPane;
 
 
-	public void initVars(City city, Controller controller){
+	public void initVars(City city, Controller controller, BorderPane borderPane){
 
 		this.city = city;
 		this.controller = controller;
+		this.borderPane = borderPane;
 	}
 
 	public void init(){
@@ -54,7 +56,7 @@ public class CityBorderPane extends BorderPane {
 		}
 		addEmptyWrapper(points,gridPane);//add new building locations
 		cityScrollPane = new ScrollPane(gridPane);
-		super.setCenter(cityScrollPane);
+		borderPane.setCenter(cityScrollPane);
 	}
 	private static class Point {
 		int x,y;
