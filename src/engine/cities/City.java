@@ -269,7 +269,7 @@ public class City extends Attackable implements Serializable,Container
 	public void buildBuilding(UnderConstruction building) {
 		CityBlock block = building.getParentBlock();
 		cityBlocks.add(block);
-		block.setBuilding(building.getBuilding());
+		block.setBuilding(building);
 
 	}
 	public ArrayList<Housing> getHousing() {

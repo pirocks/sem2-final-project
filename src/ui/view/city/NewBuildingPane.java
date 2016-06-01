@@ -39,6 +39,9 @@ public class NewBuildingPane extends TitledPane implements Container{
 		addTownHall(controller, city, content, locationPlanet, block);
 		addWarehouse(controller, city, content, locationPlanet, block);
 		super.setContent(content);
+		Controller.controller.initCityView();
+		controller.cityAccordionManager.init();
+		Controller.controller.cityAccordionManager.init();
 	}
 
 	public boolean addWarehouse(final Controller controller, final City city, VBox content, final LocationPlanet locationPlanet, final CityBlock block) {
@@ -49,6 +52,7 @@ public class NewBuildingPane extends TitledPane implements Container{
 					city.buildBuilding(new UnderConstruction<Warehouse>(locationPlanet,new Warehouse(block,city.getMoneySource()),
 							city));
 					controller.initCityView();
+					controller.cityAccordionManager.init();
 				}
 			});
 		}});
@@ -61,6 +65,7 @@ public class NewBuildingPane extends TitledPane implements Container{
 					city.buildBuilding(new UnderConstruction<TownHall>(locationPlanet,new TownHall(block,city.getMoneySource()),
 							city));
 					controller.initCityView();
+					controller.cityAccordionManager.init();
 				}
 			});
 		}});
@@ -74,6 +79,7 @@ public class NewBuildingPane extends TitledPane implements Container{
 							.getMoneySource()),
 							city));
 					controller.initCityView();
+					controller.cityAccordionManager.init();
 				}
 			});
 		}});
@@ -87,6 +93,7 @@ public class NewBuildingPane extends TitledPane implements Container{
 							.getMoneySource()),
 							city));
 					controller.initCityView();
+					controller.cityAccordionManager.init();
 				}
 			});
 		}});
@@ -98,6 +105,7 @@ public class NewBuildingPane extends TitledPane implements Container{
 				public void handle(MouseEvent event) {
 					city.buildBuilding(new UnderConstruction<IndustrialDock>(locationPlanet,new IndustrialDock(block,city.getMoneySource()),city));
 					controller.initCityView();
+					controller.cityAccordionManager.init();
 				}
 			});
 		}});
@@ -109,6 +117,7 @@ public class NewBuildingPane extends TitledPane implements Container{
 				public void handle(MouseEvent event) {
 					city.buildBuilding(new UnderConstruction<RulersHouse>(locationPlanet,new RulersHouse(block),city));
 					controller.initCityView();
+					controller.cityAccordionManager.init();
 
 				}
 			});
@@ -121,6 +130,7 @@ public class NewBuildingPane extends TitledPane implements Container{
 				public void handle(MouseEvent event) {
 					city.buildBuilding(new UnderConstruction<Factory>(locationPlanet,new Factory(block,city.getMoneySource()),city));
 					controller.initCityView();
+					controller.cityAccordionManager.init();
 				}
 			});
 		}});
@@ -132,6 +142,7 @@ public class NewBuildingPane extends TitledPane implements Container{
 				public void handle(MouseEvent event) {
 					city.buildBuilding(new UnderConstruction<DockYard>(locationPlanet,new DockYard(block,city.getMoneySource()),city));
 					controller.initCityView();
+					controller.cityAccordionManager.init();
 				}
 			});
 		}});
@@ -143,6 +154,7 @@ public class NewBuildingPane extends TitledPane implements Container{
 				public void handle(MouseEvent event) {
 					city.buildBuilding(new UnderConstruction<WorkersHouseBlock>(locationPlanet,new WorkersHouseBlock(block),city));
 					controller.initCityView();
+					controller.cityAccordionManager.init();
 				}
 			});
 		}});
@@ -154,6 +166,7 @@ public class NewBuildingPane extends TitledPane implements Container{
 				public void handle(MouseEvent event) {
 					city.buildBuilding(new UnderConstruction<RulersHouse>(locationPlanet,new RulersHouse(block),city));
 					controller.initCityView();
+					controller.cityAccordionManager.init();
 				}
 			});
 		}});
@@ -165,6 +178,7 @@ public class NewBuildingPane extends TitledPane implements Container{
 				public void handle(MouseEvent event) {
 					city.buildBuilding(new UnderConstruction<ApartmentBlock>(locationPlanet,new ApartmentBlock(block),city));
 					controller.initCityView();
+					controller.cityAccordionManager.init();
 				}
 			});
 		}});

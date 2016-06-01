@@ -9,10 +9,13 @@ import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.universe.Resource;
 import engine.universe.ResourceDemand;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 import java.io.Serializable;
+import java.util.Optional;
 
 public class UnderConstruction<Type extends Building> extends Workplace implements Serializable
 {
@@ -45,7 +48,22 @@ public class UnderConstruction<Type extends Building> extends Workplace implemen
 	}
 	public void weDoneHandler() {
 		city.setBuilding(type);
-		// TODO: 5/30/2016
+		Alert alert = new Alert(Alert.AlertType.INFORMATION);
+		alert.setTitle("A " +  type.getClass().getSimpleName() + " has been finished");
+		alert.getButtonTypes().add(new ButtonType("Ok"));
+		alert.getButtonTypes().add(new ButtonType("Take me to The City"));
+		Optional<ButtonType> buttonType = alert.showAndWait();
+		String result =  "Ok";
+		if(buttonType.isPresent()){
+			result = buttonType.get().getText();
+		}
+		if(result.equals("Ok")){
+			// TODO: 5/31/2016 set building
+		}else{
+			// TODO: 5/31/2016 set building
+			// TODO: 5/31/2016 go to building
+		}
+
 	}
 	@Override
 	protected String getName() {
@@ -60,16 +78,11 @@ public class UnderConstruction<Type extends Building> extends Workplace implemen
 		return cityWorker instanceof ManualWorker;
 	}
 	@Override
-	public VBox getPane() {
-		VBox out = new VBox();
-		out.getChildren().add(new Text("unconstructed"));
-		out.getChildren().add(new Text(type.getName()));
-		return out;
-	}
-	@Override
 	public void addSpecific(VBox in) {
-		in.getChildren().add(new Text("Building Under Construction"));
-		// TODO: 5/30/2016
+		in.getChildren().add(new Text(type.getName() + "Under Construction"));
+		in.getChildren().add(new Text("Man hours remaining:" + timeRemaining));
+		in.getChildren().add(new Text("Resources still required" + resourceDemand.toString()));
+		// TODO: 5/31/2016 add resources button
 	}
 	@Override
 	public CityWorker createCorrectType() {

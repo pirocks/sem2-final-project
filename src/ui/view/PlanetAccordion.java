@@ -85,6 +85,7 @@ public class PlanetAccordion
 		addDetails(researchers,in,"researchers",v);
 		addDetails(teachers,in,"teachers",v);
 		addDetails(rulers,in,"rulers",v);
+		// TODO: 5/31/2016 what about boarding?
 
 	}
 
