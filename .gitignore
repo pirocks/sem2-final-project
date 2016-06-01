@@ -7,3 +7,5 @@ autom4te.cache/*
 src/html/*
 src/latex/*
 src/rtf/*
+out/
+src/ui/requests/vehicleinwaterrequest.fxml

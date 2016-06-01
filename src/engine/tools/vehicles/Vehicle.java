@@ -13,7 +13,6 @@ import engine.tools.weapons.Attackable;
 import engine.tools.weapons.Weapon;
 import engine.universe.MoneySource;
 import engine.universe.Resource;
-import ui.requests.VehicleInWaterRequest;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -169,13 +168,20 @@ public abstract class Vehicle extends Tool implements Liver,Container
 				passenger.moneySource = null;
 		}
 	}
-	public void setDestination(LocationPlanet locationPlanet) {
-		destination = locationPlanet;
+	public void setDestination(LocationPlanet destination) {
+		path = new ArrayList<>();
+		path = determinePath(this.getLocation().get(0),destination,this instanceof SeaCraft || this instanceof Aircraft || this instanceof SpaceCraft,!(this instanceof SeaCraft));
+	}
+	private ArrayList<LocationPlanet> determinePath(LocationPlanet start, LocationPlanet destination,boolean  waterOkQ,boolean landOkQ) {
+		return null;// TODO: 5/31/2016
 	}
 	public LocationPlanet getDestination() {
-		return destination;
+		try{
+			return path.get(path.size() - 1);
+		}catch (IndexOutOfBoundsException e){
+			return null;
+		}
 	}
-	private LocationPlanet destination = null;
 	@Override
 	public boolean sanityCheck() {
 		if(passengers == null)
@@ -203,18 +209,20 @@ public abstract class Vehicle extends Tool implements Liver,Container
 		}
 		return true;
 	}
+	private ArrayList<LocationPlanet> path = new ArrayList<>();
+
 	@Override
 	public void doLife(double time) {
-		if(destination != null) {
+		if(path != null & path.size() != 0) {
 			assert (getLocation().size() == 1);
 			Grid initialGrid = getLocation().get(0).getGrid();
 			try {
+
 				for (LocationPlanet locationPlanet : getLocation()) {
-						locationPlanet.goTowards(destination, (getSpeed() * time) / (12 * 60 * 60), false,this instanceof SeaCraft || this instanceof Aircraft || this instanceof SpaceCraft,this instanceof SpaceCraft);
+						locationPlanet.goTowards(path.get(0), (getSpeed() * time) / (12 * 60 * 60), false,this instanceof SeaCraft || this instanceof Aircraft || this instanceof SpaceCraft,this instanceof SpaceCraft);
 				}
 			} catch (LocationPlanet.InTheOceanException e) {
-				VehicleInWaterRequest request = new VehicleInWaterRequest(this);
-				request.askUser();
+				throw new IllegalStateException();
 			}
 
 			Grid finalGrid = getLocation().get(0).getGrid();
@@ -248,5 +256,18 @@ public abstract class Vehicle extends Tool implements Liver,Container
 			remove((AbstractPerson)attackable);
 		}
 
+	}
+
+	public Set<AbstractPerson> getPassengers() {
+		return passengers;
+	}
+	public Set<Resource> getCargo() {
+		return cargo;
+	}
+	public Set<Vehicle> getVehicles() {
+		return vehicles;
+	}
+	public Set<Weapon> getWeapons() {
+		return weapons;
 	}
 }

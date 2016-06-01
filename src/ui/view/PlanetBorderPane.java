@@ -21,6 +21,10 @@ import ui.view.planet.PlanetGroup;
  */
 public class PlanetBorderPane
 {
+	public enum Highlight {
+		Disabled,OnPath,OffPath
+	}
+
 	double planetViewScrollX = 0;
 	double planetViewScrollY = 0;
 	public final static int pixelsPerGridPlanetViewX = 100;
@@ -32,6 +36,8 @@ public class PlanetBorderPane
 	private Vehicle currentlySelectedVehicle = null;
 	private int mousePositionX = 0;
 	private int mousePositionY = 0;
+	private Highlight[][] highlights;
+
 
 	private Line vehicleLine = new Line(0,0,0,0){{
 		setFill(Color.BLUE);
@@ -49,7 +55,6 @@ public class PlanetBorderPane
 	}};
 
 	public void initVars(Planet planet, Country playersCountry,Controller controller,BorderPane borderPane){
-
 		this.planet = planet;
 		this.playersCountry = playersCountry;
 		this.controller = controller;
@@ -115,13 +120,6 @@ public class PlanetBorderPane
 		vehicleLine.setEndX(endX);
 		vehicleLine.setStartY(startY);
 		vehicleLine.setStartX(startX);
-//		System.out.print("endX:" + endX +  "endY:" + endY);
-//		vehicleLine.setTranslateX(startX);
-//		vehicleLine.setTranslateY(startY);
-//		vehicleLine.setLayoutX(endX);
-//		vehicleLine.setLayoutY(endY);
-//		vehicleLine.setStartX(startX);
-//		vehicleLine.setStartY(startY);
 	}
 	public void selectVehicle(Vehicle vehicle) {
 		System.out.println("click recieved");
@@ -129,5 +127,7 @@ public class PlanetBorderPane
 		controller.initPlanetAccordion();
 		controller.initPlanetView();
 	}
+
+
 
 }
