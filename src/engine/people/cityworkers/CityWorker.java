@@ -149,7 +149,7 @@ public abstract class CityWorker extends AbstractPerson implements Container//do
 				if(population < 10)
 					die();
 				else
-						throw new IllegalStateException();
+					throw new IllegalStateException();
 			}
 			return false;
 		}
@@ -197,7 +197,11 @@ public abstract class CityWorker extends AbstractPerson implements Container//do
 	public void doLife(double time) {
 		if(time < 0)
 			throw new IllegalArgumentException();
-		sanityCheck();
+		try {
+			sanityCheck();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		checkHealth();
 		deregisterContainer(currentBuilding);
 		registerContainer(currentBuilding);

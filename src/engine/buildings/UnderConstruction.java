@@ -13,6 +13,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import ui.view.Controller;
 
 import java.io.Serializable;
 import java.util.Optional;
@@ -47,7 +48,6 @@ public class UnderConstruction<Type extends Building> extends Workplace implemen
 		areWeDoneYet();
 	}
 	public void weDoneHandler() {
-		city.setBuilding(type);
 		Alert alert = new Alert(Alert.AlertType.INFORMATION);
 		alert.setTitle("A " +  type.getClass().getSimpleName() + " has been finished");
 		alert.getButtonTypes().add(new ButtonType("Ok"));
@@ -58,13 +58,17 @@ public class UnderConstruction<Type extends Building> extends Workplace implemen
 			result = buttonType.get().getText();
 		}
 		if(result.equals("Ok")){
-			// TODO: 5/31/2016 set building
-		}else{
-			// TODO: 5/31/2016 set building
-			// TODO: 5/31/2016 go to building
-		}
+			city.setBuilding(type);
 
+		}else{
+			city.setBuilding(type);
+			goToBuilding();
+		}
 	}
+	private void goToBuilding(){
+		Controller.controller.switchTo(this.getParentBlock());
+	}
+
 	@Override
 	protected String getName() {
 		return "Construction Site";

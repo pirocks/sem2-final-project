@@ -35,13 +35,11 @@ public class PlanetAccordion
 		this.controller = controller;
 		this.accordion = accordion;
 	}
-
-	public void init(){
+	public void init() {
 		accordion.getPanes().clear();
 		addCitys();
 		addVehicles();
 	}
-
 	private void addVehicles() {
 		for(Vehicle v: planet.getAllVehicles()) {
 			VBox pane = new VBox();
@@ -66,7 +64,6 @@ public class PlanetAccordion
 			addVehicleContents(v,pane);
 		}
 	}
-
 	private void addVehicleContents(Vehicle v, VBox in) {
 		//I think that this is the best way to do things despite appearances
 		//well I could do something with a hashmap, but that  seems more liable to break and harder to maintain
@@ -88,11 +85,9 @@ public class PlanetAccordion
 		// TODO: 5/31/2016 what about boarding?
 
 	}
-
 	private void disembark(int num,ArrayList<? extends AbstractPerson> persons,Vehicle vehicle){
 		// TODO: 5/31/2016
 	}
-
 	private void addDetails(ArrayList<? extends AbstractPerson> persons,VBox in,String name,Vehicle vehicle){
 		int numPeople = 0;
 		for (AbstractPerson person : persons) {
@@ -140,7 +135,6 @@ public class PlanetAccordion
 			getChildren().add(button);
 		}});
 	}
-
 	private void addPeople(Vehicle v, ArrayList<Soldier> soldiers, ArrayList<Bureaucrat> bureaucrats, ArrayList<Doctor> doctors, ArrayList<ManualWorker> manualWorkers, ArrayList<Researcher> researchers, ArrayList<Teacher> teachers, ArrayList<Ruler> rulers) {
 		for (AbstractPerson abstractPerson : v.getPassengers()) {
 			if(abstractPerson instanceof CityWorker){
@@ -172,7 +166,6 @@ public class PlanetAccordion
 				throw new IllegalStateException();
 		}
 	}
-
 	private void addCitys() {
 		for(City c: planet.getAllCities())
 		{
@@ -197,5 +190,7 @@ public class PlanetAccordion
 			}
 		}
 	}
+	public void liverUpdate() {
 
+	}
 }

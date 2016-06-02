@@ -48,11 +48,18 @@ public class CountriesDiscoveries
 		discoveries.add(largeSolarSails);
 	}
 
-	public ArrayList<Discovery> getDiscoveredDiscoveries()
-	{
+	public ArrayList<Discovery> getDiscoveredDiscoveries() {
 		ArrayList<Discovery> out = new ArrayList<>();
 		for (Discovery discovery : discoveries) {
 			if(discovery.discoveredQ())
+				out.add(discovery);
+		}
+		return out;
+	}
+	public ArrayList<Discovery> getUnDiscovered(){
+		ArrayList<Discovery> out = new ArrayList<>();
+		for (Discovery discovery : discoveries) {
+			if(!discovery.discoveredQ())
 				out.add(discovery);
 		}
 		return out;

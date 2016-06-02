@@ -28,6 +28,11 @@ public class Country extends MoneySource implements Serializable, Container
 	private ArrayList<Country> allies;
 	private ArrayList<Country> atWarWith;
 	private ArrayList<AbstractPerson> people;
+
+	public CountriesDiscoveries getCountriesDiscoveries() {
+		return countriesDiscoveries;
+	}
+
 	private CountriesDiscoveries countriesDiscoveries;
 	private City capitalCity;
 	public CityBuilder initialBuilder;
@@ -48,12 +53,8 @@ public class Country extends MoneySource implements Serializable, Container
 	    countriesDiscoveries = new CountriesDiscoveries(this);
     }
     private void remove(City city) {
-        if(city == capitalCity)
-        {
+        if(city == capitalCity) {
 	        capitalCity = null;
-	        assert(false);
-	        //TODO: new capital city
-	        //TODO: if ruler dies
         }
     }
     private void remove(AbstractPerson person) {

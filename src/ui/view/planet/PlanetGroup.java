@@ -50,7 +50,7 @@ public class PlanetGroup extends Pane
 					controller.switchTo(c);
 				}
 			});
-			cityImageView.setImage(Controller.images.cityImage);
+			cityImageView.setImage(Controller.images.cityImage.getImage());
 			cityImageView.setPreserveRatio(true);
 			cityImageView.setFitWidth(PlanetBorderPane.pixelsPerGridPlanetViewX/3);
 			cityImageView.setFitHeight(PlanetBorderPane.pixelsPerGridPlanetViewY/3);
@@ -102,8 +102,7 @@ public class PlanetGroup extends Pane
 
 	}
 	public static void terrain(Grid grid, Pane out) {
-		ImageView terrainImageView = new ImageView();
-		terrainImageView.setImage(Controller.getImage(grid.getTerrainType()));
+		ImageView terrainImageView = (Controller.getImage(grid.getTerrainType()));
 		terrainImageView.setPreserveRatio(true);
 		terrainImageView.setFitHeight((19./20.)*PlanetBorderPane.pixelsPerGridPlanetViewY);
 		terrainImageView.setFitWidth((19./20.)*PlanetBorderPane.pixelsPerGridPlanetViewX);

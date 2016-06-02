@@ -41,7 +41,7 @@ public class CityBorderPane{
 			int y = b.getParentBlock().y;
 
 			ImageView buildingImageView = new ImageView();
-			buildingImageView.setImage(controller.getImage(b));
+			buildingImageView.setImage(controller.getImage(b).getImage());
 			buildingImageView.setPreserveRatio(true);
 			buildingImageView.setFitHeight(200);
 			buildingImageView.setFitWidth(200);
@@ -93,7 +93,10 @@ public class CityBorderPane{
 	private void addEmpty(ArrayList<Point> points,Point p,GridPane gridPane,int depth) {
 		if(!contains(points,p)) {
 			if(p.isValid())
-				gridPane.add(new ImageView(Controller.images.emptyImage){{setPreserveRatio(true);setFitHeight(200);setFitWidth(200);
+				gridPane.add(new ImageView(Controller.images.emptyImage.getImage()){{
+					setPreserveRatio(true);
+					setFitHeight(200);
+					setFitWidth(200);
 					setOnMouseClicked(new EventHandler<MouseEvent>() {
 						@Override
 						public void handle(MouseEvent event) {
@@ -107,8 +110,7 @@ public class CityBorderPane{
 							cityScrollPane.setVvalue(cityScrollPane.getVmax());
 							newBuildingPane.setExpanded(true);
 						}
-					});}}, p
-						.x, p.y);
+					});}}, p.x, p.y);
 		}
 		if(depth == 0)
 			return;

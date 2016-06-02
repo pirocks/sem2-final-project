@@ -7,6 +7,7 @@ import engine.buildings.housing.RulersHouse;
 import engine.buildings.housing.WorkersHouseBlock;
 import engine.buildings.workplaces.*;
 import engine.cities.City;
+import engine.cities.CityBlock;
 import engine.planets.LocationPlanet;
 import engine.planets.Planet;
 import engine.planets.TerrainType;
@@ -18,6 +19,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
@@ -112,22 +114,18 @@ public class Controller implements Initializable{
 		initUniverseVars();
 		return out;
 	}
-
 	private void initUniverseVars() {
 		solarSystemAccordionManager.initVars(solarSystem,this,solarSystemAccordion);
 		universeAccordionManager.initVars(universe,playersCountry,this,universeAccordion);
 	}
-
 	private void initPlanetVars() {
 		planetAccordionManager.initVars(planet,playersCountry,this,planetAccordion);
 		planetBorderPaneManager.initVars(planet,playersCountry,this,planetBorderPane);
 	}
-
 	private void initCityVars() {
 		cityAccordionManager.initVars(city,cityAccordion);
 		cityBorderPaneManager.initVars(city,this,cityBorderPane);
 	}
-
 	private void initUniverseTab(){
 		universeAccordionManager.init();
 	}
@@ -163,7 +161,7 @@ public class Controller implements Initializable{
 	void initPlanetView() {
 		planetBorderPaneManager.init();
 	}
-	public static Image getImage(TerrainType type){
+	public static ImageView getImage(TerrainType type){
 		switch(type){
 			case Land:
 				return images.landImage;
@@ -205,7 +203,7 @@ public class Controller implements Initializable{
 		content.getChildren().add(new Text("Money Available:" + city.getMoneySource().getWealth()));
 		citySpecificPane.getChildren().add(new ScrollPane(content));
 	}
-	public Image getImage(Building building) {
+	public ImageView getImage(Building building) {
 		if(building instanceof Housing)
 		{
 			if(building instanceof ApartmentBlock)
@@ -311,28 +309,59 @@ public class Controller implements Initializable{
 			return null;
 		}
 	}
+	public void liverUpdate() {
+		cityAccordionManager.liverUpdate();
+	}
+	public void switchTo(CityBlock block) {
+		switchTo(block.getParentCity());
+		focusBuildingInAccordion(block.getBuilding());
+	}
+
+	public void updateResearchAreas() {
+		cityAccordionManager.updateResearchAreas();
+	}
 
 	public static class images {
-		public static Image wastelandImage =  new Image(Controller.class.getResourceAsStream("wastelandImage.jpg"));
-		public static Image coastImage = new Image(Controller.class.getResourceAsStream("coastImage.jpg"));
-		public static Image cityImage = new Image(Controller.class.getResourceAsStream("cityImage.jpg"));
-		public static Image landImage = new Image(Controller.class.getResourceAsStream("landImage.jpg"));
-		public static Image constructionSite = new Image(Controller.class.getResourceAsStream("constructionImage.jpg"));
-		public static Image apartmentBlockImage = new Image(Controller.class.getResourceAsStream("apartmentBlockImage" +
-				".jpg"));
-		public static Image houseBlockImage = new Image(Controller.class.getResourceAsStream("houseBlockImage.jpg"));
-		public static Image rulersHouseImage = new Image(Controller.class.getResourceAsStream("rulersHouseImage.jpg"));
-		public static Image dockYardImage = new Image(Controller.class.getResourceAsStream("dockYardImage.jpg"));
-		public static Image factoryImage = new Image(Controller.class.getResourceAsStream("factoryImage.jpg"));
-		public static Image hospitalImage = new Image(Controller.class.getResourceAsStream("hospitalImage.jpg"));
-		public static Image industrialDockImage = new Image(Controller.class.getResourceAsStream("industrialDockImage.jpg"));
-		public static Image researchAreaImage = new Image(Controller.class.getResourceAsStream("researchAreaImage.jpg"));
-		public static Image schoolImage = new Image(Controller.class.getResourceAsStream("schoolImage.jpg"));
-		public static Image townHallImage = new Image(Controller.class.getResourceAsStream("townHallImage.jpg"));
-		public static Image warehouseImage = new Image(Controller.class.getResourceAsStream("wareHouseImage.png"));
-		public static Image emptyImage = new Image(Controller.class.getResourceAsStream("emptyImage.jpg"));
-		public static Image mountainImage = new Image(Controller.class.getResourceAsStream("mountainImage.jpg"));
-		public static Image hillImage = new Image(Controller.class.getResourceAsStream("hillImage.jpg"));
-		public static Image seaImage =  new Image(Controller.class.getResourceAsStream("seaImage.jpg"));
+		public static ImageView wastelandImage =  new ImageView(){{setImage(new Image(Controller.class.getResourceAsStream("wastelandImage" +
+				".jpg")));setPreserveRatio(true);setFitHeight(200);setFitHeight(200);}};
+		public static ImageView coastImage = new ImageView(){{setImage(new Image(Controller.class.getResourceAsStream("coastImage.jpg")));setPreserveRatio(true);setFitHeight(200);setFitHeight(200);}};
+		public static ImageView cityImage = new ImageView(){{setImage(new Image(Controller.class.getResourceAsStream("cityImage.jpg")));setPreserveRatio(true);setFitHeight(200);setFitHeight(200);}};
+		public static ImageView landImage = new ImageView(){{setImage(new Image(Controller.class.getResourceAsStream("landImage.jpg")));setPreserveRatio(true);setFitHeight(200);setFitHeight(200);}};
+		public static ImageView constructionSite = new ImageView(){{setImage(new Image(Controller.class.getResourceAsStream
+				("constructionImage" +
+				".jpg")));setPreserveRatio(true);setFitHeight(200);setFitHeight(200);}};
+		public static ImageView apartmentBlockImage = new ImageView(){{setImage(new Image(Controller.class
+				.getResourceAsStream
+				("apartmentBlockImage" +
+				".jpg")));setPreserveRatio(true);setFitHeight(200);setFitHeight(200);}};
+		public static ImageView houseBlockImage = new ImageView(){{setImage(new Image(Controller.class.getResourceAsStream
+				("houseBlockImage" +
+				".jpg")));setPreserveRatio(true);setFitHeight(200);setFitHeight(200);}};
+		public static ImageView rulersHouseImage = new ImageView(){{setImage(new Image(Controller.class.getResourceAsStream
+				("rulersHouseImage" +
+				".jpg")));setPreserveRatio(true);setFitHeight(200);setFitHeight(200);}};
+		public static ImageView dockYardImage = new ImageView(){{setImage(new Image(Controller.class.getResourceAsStream("dockYardImage" +
+				".jpg")));setPreserveRatio(true);setFitHeight(200);setFitHeight(200);}};
+		public static ImageView factoryImage = new ImageView(){{setImage(new Image(Controller.class.getResourceAsStream("factoryImage.jpg")
+		));setFitHeight(200);setFitHeight(200);}};
+		public static ImageView hospitalImage = new ImageView(){{setImage(new Image(Controller.class.getResourceAsStream("hospitalImage" +
+				".jpg")));setPreserveRatio(true);setFitHeight(200);setFitHeight(200);}};
+		public static ImageView industrialDockImage = new ImageView(){{setImage(new Image(Controller.class.getResourceAsStream("industrialDockImage.jpg")));setPreserveRatio(true);setFitHeight(200);setFitHeight(200);}};
+		public static ImageView researchAreaImage = new ImageView(){{setImage(new Image(Controller.class
+				.getResourceAsStream
+				("researchAreaImage" +
+				".jpg")));setPreserveRatio(true);setFitHeight(200);setFitHeight(200);}};
+		public static ImageView schoolImage = new ImageView(){{setImage(new Image(Controller.class.getResourceAsStream("schoolImage.jpg")));setPreserveRatio(true);setFitHeight(200);setFitHeight(200);}};
+		public static ImageView townHallImage = new ImageView(){{setImage(new Image(Controller.class.getResourceAsStream("townHallImage" +
+				".jpg")));setPreserveRatio(true);setFitHeight(200);setFitHeight(200);}};
+		public static ImageView warehouseImage = new ImageView(){{setImage(new Image(Controller.class.getResourceAsStream("wareHouseImage" +
+				                                                                                          ".png")));setPreserveRatio(true);setFitHeight(200);setFitHeight(200);}};
+		public static ImageView emptyImage = new ImageView(){{setImage(new Image(Controller.class.getResourceAsStream("emptyImage.jpg")));setPreserveRatio(true);setFitHeight(200);setFitHeight(200);}};
+		public static ImageView mountainImage = new ImageView(){{setImage(new Image(Controller.class.getResourceAsStream("mountainImage" +
+				".jpg")));setPreserveRatio(true);setFitHeight(200);setFitHeight(200);}};
+		public static ImageView hillImage = new ImageView(){{setImage(new Image(Controller.class.getResourceAsStream("hillImage.jpg")));setPreserveRatio(true);setFitHeight(200);setFitHeight(200);}};
+		public static ImageView seaImage =  new ImageView(){{setImage(new Image(Controller.class.getResourceAsStream
+				("seaImage" +
+				".jpg")));setPreserveRatio(true);setFitHeight(200);setFitHeight(200);}};
 	}
 }

@@ -19,7 +19,8 @@ public class ToolUnderConstruction <Type extends Tool> implements Serializable
 			throw new IllegalArgumentException();
 		this.object = object;
 		resourceDemand = object.requiredResourcesForConstruction();
-		timeRequired = object.getConstructionManDays();
+		resourceDemand.mult(object.numTools);
+		timeRequired = object.getConstructionManDays() * object.numTools;
 	}
 	public boolean pay(Resource resource) {
 		resource.pay(resourceDemand);

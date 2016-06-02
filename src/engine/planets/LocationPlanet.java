@@ -53,8 +53,7 @@ public class LocationPlanet implements Serializable,Container
 			throw new IllegalArgumentException();
 		registerContainer(planet);
 	}
-	public LocationPlanet(Building b)
-	{
+	public LocationPlanet(Building b) {
 		this(b.getParentBlock());
 		if(b.getParentBlock().getParentGrid().getParentPlanet() == null)
 			throw new IllegalArgumentException();
@@ -190,14 +189,12 @@ public class LocationPlanet implements Serializable,Container
 		else
 			throw new IllegalStateException();
 	}
-
 	public void setPlanet(Planet planet) {
 		if(this.planet != null)
 			deregisterContainer(this.planet);
 		this.planet = planet;
 		registerContainer(planet);
 	}
-
 	public class InTheOceanException extends Exception {
 		private Grid grid;
 		/**

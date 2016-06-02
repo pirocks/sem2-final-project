@@ -18,6 +18,13 @@ public class Resource implements Serializable,Weighable
 		return getWeight();
 	}
 
+	public void mult(int num) {
+		for (Type type : values.keySet()) {
+			values.put(type,values.get(type)*num);
+		}
+
+	}
+
 	public enum Type
     {
         Iron,Oil,Uranium,Helium,Food,Water,Wood,Silicon

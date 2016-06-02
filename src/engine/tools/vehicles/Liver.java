@@ -6,6 +6,7 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.util.Duration;
+import ui.view.Controller;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -42,14 +43,14 @@ public interface Liver {
 			liver.doLife(time);
 		}
 		//update display // TODO: 5/26/2016
-//		Controller.controller.liverUpdate();
+		Controller.controller.liverUpdate();
 	}
 	static void doGame(){
-		Timeline timeline = new Timeline(new KeyFrame(new Duration(1000), new EventHandler<ActionEvent>() {
+		Timeline timeline = new Timeline(new KeyFrame(new Duration(10), new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				System.out.print("do");
-				doLifeAll(0.00015);
+//				System.out.print("do");
+				doLifeAll(0.015);
 			}
 		}));
 		timeline.setCycleCount(Timeline.INDEFINITE);

@@ -5,6 +5,7 @@ import engine.people.AbstractPerson;
 import engine.planets.Grid;
 import engine.planets.LocationPlanet;
 import engine.planets.Planet;
+import engine.planets.TerrainType;
 import engine.tools.Tool;
 import engine.tools.vehicles.air.Aircraft;
 import engine.tools.vehicles.sea.SeaCraft;
@@ -170,11 +171,53 @@ public abstract class Vehicle extends Tool implements Liver,Container
 	}
 	public void setDestination(LocationPlanet destination) {
 		path = new ArrayList<>();
-		path = determinePath(this.getLocation().get(0),destination,this instanceof SeaCraft || this instanceof Aircraft || this instanceof SpaceCraft,!(this instanceof SeaCraft));
+//		path = determinePathWrapper(this.getLocation().get(0),destination,this instanceof SeaCraft || this instanceof Aircraft || this instanceof SpaceCraft,!(this instanceof SeaCraft));
 	}
-	private ArrayList<LocationPlanet> determinePath(LocationPlanet start, LocationPlanet destination,boolean  waterOkQ,boolean landOkQ) {
-		return null;// TODO: 5/31/2016
+
+//	private ArrayList<LocationPlanet> determinePathWrapper(LocationPlanet start, LocationPlanet destination, boolean  waterOkQ, boolean landOkQ) {
+//		ArrayList<LocationPlanet> pathList = determinePath(new LocationPlanet(start),destination,waterOkQ,landOkQ);
+//	}
+//	private ArrayList<ArrayList<LocationPlanet>> createPaths(LocationPlanet start, LocationPlanet destination, boolean  waterOkQ, boolean landOkQ) {
+//		ArrayList<ArrayList<LocationPlanet>> possiblePaths = new ArrayList<>();
+//		if(validQ(new LocationPlanet(start){{moveGrid(start.getGridx() + 1,start.getGridy());}},waterOkQ,landOkQ))
+//			possiblePaths.addAll(determinePath(new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy());}},destination,waterOkQ,landOkQ));
+//		if(validQ(new LocationPlanet(start){{moveGrid(start.getGridx() + 1,start.getGridy() + 1);}},waterOkQ,landOkQ))
+//			possiblePaths.addAll(determinePath(new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy());}},destination,waterOkQ,landOkQ));
+//		if(validQ(new LocationPlanet(start){{moveGrid(start.getGridx() + 1,start.getGridy() - 1);}},waterOkQ,landOkQ))
+//			possiblePaths.addAll(determinePath(new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy());}},destination,waterOkQ,landOkQ));
+//		if(validQ(new LocationPlanet(start){{moveGrid(start.getGridx() - 1,start.getGridy());}},waterOkQ,landOkQ))
+//			possiblePaths.addAll(determinePath(new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy());}},destination,waterOkQ,landOkQ));
+//		if(validQ(new LocationPlanet(start){{moveGrid(start.getGridx() - 1,start.getGridy() + 1);}},waterOkQ,landOkQ))
+//			possiblePaths.addAll(determinePath(new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy());}},destination,waterOkQ,landOkQ));
+//		if(validQ(new LocationPlanet(start){{moveGrid(start.getGridx() - 1,start.getGridy() - 1);}},waterOkQ,landOkQ))
+//			possiblePaths.addAll(determinePath(new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy());}},destination,waterOkQ,landOkQ));
+//		if(validQ(new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy());}},waterOkQ,landOkQ))
+//			possiblePaths.addAll(determinePath(new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy());}},destination,waterOkQ,landOkQ));
+//		if(validQ(new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy() + 1);}},waterOkQ,landOkQ))
+//			possiblePaths.addAll(determinePath(new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy());}},destination,waterOkQ,landOkQ));
+//		if(validQ(new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy() - 1);}},waterOkQ,landOkQ))
+//			possiblePaths.addAll(determinePath(new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy());}},destination,waterOkQ,landOkQ));
+//
+//		for (ArrayList<LocationPlanet> possiblePath : possiblePaths) {
+//
+//		}
+//
+//
+//	}
+	
+	private boolean validQ(LocationPlanet locationPlanet, boolean waterOkQ,boolean landOkQ) {
+		if(locationPlanet.getGrid().getTerrainType() == TerrainType.Sea){
+			if(waterOkQ){
+				return true;
+			}
+		}else{
+			if(landOkQ){
+				return true;
+			}
+		}
+		return false;
 	}
+
 	public LocationPlanet getDestination() {
 		try{
 			return path.get(path.size() - 1);
@@ -210,7 +253,6 @@ public abstract class Vehicle extends Tool implements Liver,Container
 		return true;
 	}
 	private ArrayList<LocationPlanet> path = new ArrayList<>();
-
 	@Override
 	public void doLife(double time) {
 		if(path != null & path.size() != 0) {
@@ -257,7 +299,6 @@ public abstract class Vehicle extends Tool implements Liver,Container
 		}
 
 	}
-
 	public Set<AbstractPerson> getPassengers() {
 		return passengers;
 	}
