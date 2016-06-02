@@ -37,9 +37,9 @@ public interface ToolBuilder <Type extends Tool>
 		if(getToolUnderConstruction() != null) {
 			in.getChildren().add(new Text("" + getToolUnderConstruction().getClass().getSimpleName() + "under " +
 					"construction: "));
-			if(getToolUnderConstruction().getResourcesRequired().getResource() != null)
-			in.getChildren().add(new Text("Resources required:" + getToolUnderConstruction().getResourcesRequired()
-					.getResource().toTable()));// TODO: 5/30/2016remove if later
+			in.getChildren().add(new Text("Resources required:"));
+			in.getChildren().add(new Text(getToolUnderConstruction().getResourcesRequired()
+					.getResource().toString()));
 			in.getChildren().add(new Text("Time Remaining:" + getToolUnderConstruction().getTimeRequired()));
 		}
 		else {

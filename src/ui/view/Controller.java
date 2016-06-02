@@ -194,10 +194,8 @@ public class Controller implements Initializable{
 		content.getChildren().add(new Text("City Name:" + city.name));
 		content.getChildren().add(new Text("Unemployment:" + city.getJobLessCount()));
 		content.getChildren().add(new Button("Assign unemployed to Job"));// TODO: 5/19/2016
-		content.getChildren().add(new Button("Automatically assign unemployed to Job"));// TODO: 5/19/2016
 		content.getChildren().add(new Text("Homeless:" + city.getHomeLessCount()));
 		content.getChildren().add(new Button("Assign homeless to housing")); // TODO: 5/19/2016
-		content.getChildren().add(new Button("Automatically assign homeless to housing"));// TODO: 5/19/2016
 		content.getChildren().add(new Text("Money Available:" + city.getMoneySource().getWealth()));
 		citySpecificPane.getChildren().add(new ScrollPane(content));
 	}

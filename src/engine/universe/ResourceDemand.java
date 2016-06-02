@@ -15,11 +15,20 @@ public class ResourceDemand implements Serializable
 		resource = new Resource(Resource.Type.Food);//doesn't matter as long as its zero
 	}
 	public ResourceDemand(Resource.Type[] types, double startHealthInitial, double resistanceInitial, double damageInitial, double rangeInitial, double accuracyInitial) {
-		//weapons
+		double siliconQuantity = Math.sqrt(rangeInitial + accuracyInitial);
+		double ironQuantity = startHealthInitial + resistanceInitial;
+		double oilQuantity = damageInitial;
+		double woodQuantity = 0;
+		if(new ArrayList<Resource.Type>(Arrays.asList(types)).contains(Resource.Type.Wood))
+			woodQuantity = 10;
+		resource = new Resource(new Resource.Type[]{Resource.Type.Wood,Resource.Type.Iron,Resource.Type.Silicon,Resource.Type.Oil},new Double[]{woodQuantity,ironQuantity,siliconQuantity,oilQuantity});
 
 	}
 	public ResourceDemand(Resource.Type[] types, double healthInitial, double resistanceInitial, int maximumOccupancyInitial) {
 		//buildings
+		double woodQuantity = Math.sqrt(healthInitial)*10 + resistanceInitial;
+		double ironQuantity = maximumOccupancyInitial*10;
+		resource = new Resource(new Resource.Type[]{Resource.Type.Wood,Resource.Type.Iron},new Double[]{woodQuantity,ironQuantity});
 
 
 	}
