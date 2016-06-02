@@ -2,6 +2,7 @@ package engine.tools.vehicles;
 
 import engine.cities.City;
 import engine.planets.LocationPlanet;
+import engine.tools.vehicles.land.LandVehicle;
 import engine.universe.Country;
 import engine.universe.Resource;
 import engine.universe.ResourceDemand;
@@ -12,7 +13,7 @@ import static engine.universe.Resource.Type.*;
 /**
  * Created by bob on 5/23/2016.
  */
-public class CityBuilder extends Vehicle {
+public class CityBuilder extends LandVehicle {
 	private final Country parentCountry;
 	public CityBuilder(LocationPlanet locationPlanet, Country parentCountry) {
 		super(new VehicleInitialConstants(locationPlanet,1,1,1000,100000), 1);

@@ -4,8 +4,10 @@
     <option name="ANALYSIS_IN_BACKGROUND" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="now we good">
+    <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="path">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/planets/LocationPlanet.java" afterPath="$PROJECT_DIR$/src/engine/planets/LocationPlanet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/CityBuilder.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/CityBuilder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/Vehicle.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/Vehicle.java" />
     </list>
     <ignored path="testing.iws" />
@@ -191,16 +193,23 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
               <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
-              <folding />
+              <folding>
+                <element signature="e#1010#1011#0" expanded="false" />
+                <element signature="e#1043#1044#0" expanded="false" />
+                <element signature="e#1115#1116#0" expanded="false" />
+                <element signature="e#1151#1152#0" expanded="false" />
+                <element signature="e#1205#1206#0" expanded="false" />
+                <element signature="e#1238#1239#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Vehicle.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Vehicle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/Vehicle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="174" column="5" selection-start-line="174" selection-start-column="5" selection-end-line="174" selection-end-column="5" />
+            <state relative-caret-position="207">
+              <caret line="326" column="26" selection-start-line="326" selection-start-column="26" selection-end-line="326" selection-end-column="26" />
               <folding>
                 <element signature="method#Vehicle#0;class#Vehicle#0" expanded="false" />
                 <element signature="method#loadObject#0;class#Vehicle#0" expanded="false" />
@@ -211,18 +220,82 @@
                 <element signature="method#getTotalWeightLoad#0;class#Vehicle#0" expanded="false" />
                 <element signature="method#die#0;class#Vehicle#0" expanded="false" />
                 <element signature="method#remove#3;class#Vehicle#0" expanded="false" />
-                <element signature="method#setDestination#0;class#Vehicle#0" expanded="false" />
                 <element signature="method#Path#1;class#Path#0;class#Vehicle#0" expanded="false" />
-                <element signature="e#5393#5394#0" expanded="true" />
-                <element signature="e#5463#5464#0" expanded="true" />
+                <element signature="e#5635#5636#0" expanded="true" />
+                <element signature="e#5705#5706#0" expanded="true" />
                 <element signature="method#getLength#0;class#Path#0;class#Vehicle#0" expanded="false" />
-                <element signature="method#getPathsGoingFrom#0;class#Path#0;class#Vehicle#0" expanded="false" />
-                <element signature="method#validQ#0;class#Path#0;class#Vehicle#0" expanded="false" />
-                <element signature="method#getAllPathToDestination#0;class#Path#0;class#Vehicle#0" expanded="false" />
-                <element signature="method#getDestination#0;class#Vehicle#0" expanded="false" />
+                <element signature="e#9068#9069#0" expanded="true" />
+                <element signature="e#9131#9132#0" expanded="true" />
+                <element signature="e#10161#10162#0" expanded="true" />
+                <element signature="e#10186#10187#0" expanded="true" />
                 <element signature="method#sanityCheck#0;class#Vehicle#0" expanded="false" />
-                <element signature="method#doLife#0;class#Vehicle#0" expanded="false" />
                 <element signature="method#remove#4;class#Vehicle#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LocationPlanet.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/engine/planets/LocationPlanet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="134">
+              <caret line="234" column="51" selection-start-line="234" selection-start-column="51" selection-end-line="234" selection-end-column="51" />
+              <folding>
+                <element signature="method#LocationPlanet#0;class#LocationPlanet#0" expanded="false" />
+                <element signature="method#LocationPlanet#1;class#LocationPlanet#0" expanded="false" />
+                <element signature="method#LocationPlanet#2;class#LocationPlanet#0" expanded="false" />
+                <element signature="method#LocationPlanet#3;class#LocationPlanet#0" expanded="false" />
+                <element signature="method#LocationPlanet#4;class#LocationPlanet#0" expanded="false" />
+                <element signature="method#LocationPlanet#5;class#LocationPlanet#0" expanded="false" />
+                <element signature="method#arrivePlanet#0;class#LocationPlanet#0" expanded="false" />
+                <element signature="method#distanceBetween#0;class#LocationPlanet#0" expanded="false" />
+                <element signature="method#go#0;class#LocationPlanet#0" expanded="false" />
+                <element signature="method#goTowards#0;class#LocationPlanet#0" expanded="false" />
+                <element signature="e#4558#4559#0" expanded="true" />
+                <element signature="e#4577#4578#0" expanded="true" />
+                <element signature="method#mediumLocation#0;class#LocationPlanet#0" expanded="false" />
+                <element signature="e#5377#5378#0" expanded="true" />
+                <element signature="e#5422#5423#0" expanded="true" />
+                <element signature="method#equals#0;class#LocationPlanet#0" expanded="false" />
+                <element signature="method#remove#0;class#LocationPlanet#0" expanded="false" />
+                <element signature="method#setPlanet#0;class#LocationPlanet#0" expanded="false" />
+                <element signature="class#InTheOceanException#0;class#LocationPlanet#0" expanded="false" />
+                <element signature="method#moveBlock#0;class#LocationPlanet#0" expanded="false" />
+                <element signature="method#moveGrid#0;class#LocationPlanet#0" expanded="false" />
+                <element signature="method#leavePlanet#0;class#LocationPlanet#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Attackable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/engine/tools/weapons/Attackable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="122">
+              <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+              <folding>
+                <element signature="method#Attackable#0;class#Attackable#0" expanded="false" />
+                <element signature="method#Attackable#2;class#Attackable#0" expanded="false" />
+                <element signature="method#receiveDamage#0;class#Attackable#0" expanded="false" />
+                <element signature="method#inRange#0;class#Attackable#0" expanded="false" />
+                <element signature="method#increaseHealth#0;class#Attackable#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlanetBorderPane.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ui/view/PlanetBorderPane.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="93" column="34" selection-start-line="93" selection-start-column="34" selection-end-line="93" selection-end-column="34" />
+              <folding>
+                <element signature="initializer##0;class#1152:1488" expanded="false" />
+                <element signature="method#initVars#0;class#PlanetBorderPane#0" expanded="false" />
+                <element signature="class#3293:3387" expanded="false" />
+                <element signature="initializer##0;class#3293:3387" expanded="false" />
+                <element signature="method#updateVehicleLine#0;class#PlanetBorderPane#0" expanded="false" />
+                <element signature="method#selectVehicle#0;class#PlanetBorderPane#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -233,7 +306,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -265,7 +340,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/engine/tools/vehicles/sea/TransporterSmall.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/vehicles/sea/TransporterLarge.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/vehicles/sea/NuclearSubmarine.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/vehicles/sea/NuclearAircraftCarrier.java" />
@@ -362,7 +436,6 @@
         <option value="$PROJECT_DIR$/src/ui/view/Highlight.java" />
         <option value="$PROJECT_DIR$/src/ui/view/PlanetBorderPane.java" />
         <option value="$PROJECT_DIR$/src/ui/view/city/NewBuildingPane.java" />
-        <option value="$PROJECT_DIR$/src/engine/planets/LocationPlanet.java" />
         <option value="$PROJECT_DIR$/src/ui/view/PlanetAccordion.java" />
         <option value="$PROJECT_DIR$/src/ui/view/CityBorderPane.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/ToolUnderConstruction.java" />
@@ -385,7 +458,9 @@
         <option value="$PROJECT_DIR$/src/engine/buildings/workplaces/IndustrialDock.java" />
         <option value="$PROJECT_DIR$/src/engine/buildings/workplaces/ToolBuilder.java" />
         <option value="$PROJECT_DIR$/src/engine/universe/Resource.java" />
+        <option value="$PROJECT_DIR$/src/engine/tools/vehicles/CityBuilder.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/vehicles/Vehicle.java" />
+        <option value="$PROJECT_DIR$/src/engine/planets/LocationPlanet.java" />
       </list>
     </option>
   </component>
@@ -556,104 +631,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="vehicles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="engine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vehicles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="space" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="engine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vehicles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="space" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cityship" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="engine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vehicles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="space" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asteroidminer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1023,13 +1000,6 @@
       <option name="presentableId" value="Default" />
       <updated>1460006225713</updated>
     </task>
-    <task id="LOCAL-00103" summary="deleted a bunch">
-      <created>1464117702765</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1464117702765</updated>
-    </task>
     <task id="LOCAL-00104" summary="doooneeee">
       <created>1464132074966</created>
       <option name="number" value="00104" />
@@ -1366,7 +1336,14 @@
       <option name="project" value="LOCAL" />
       <updated>1464845122603</updated>
     </task>
-    <option name="localTasksCounter" value="152" />
+    <task id="LOCAL-00152" summary="path">
+      <created>1464907541702</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1464907541702</updated>
+    </task>
+    <option name="localTasksCounter" value="153" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1400,7 +1377,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.225" sideWeight="0.5053929" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39663094" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39663094" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924962" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1457,7 +1434,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="before refactor" />
     <MESSAGE value="refactored workplace" />
     <MESSAGE value="bug fixes" />
     <MESSAGE value="remove bug fixes" />
@@ -1482,7 +1458,8 @@
     <MESSAGE value="resource  stuff" />
     <MESSAGE value="lets stop now" />
     <MESSAGE value="now we good" />
-    <option name="LAST_COMMIT_MESSAGE" value="now we good" />
+    <MESSAGE value="path" />
+    <option name="LAST_COMMIT_MESSAGE" value="path" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1504,22 +1481,20 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="295" />
+      <option name="time" value="300" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="((CityBuilder) Universe.playersCountry.initialBuilder).destination" language="JAVA" custom="engine.universe.Universe,engine.tools.vehicles.CityBuilder" />
+        <watch expression="((CityBuilder) Universe.playersCountry.initialBuilder).path" language="JAVA" custom="engine.universe.UniversalConstants,engine.universe.Universe,engine.tools.vehicles.CityBuilder" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/engine/science/Economics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="92" selection-start-line="15" selection-start-column="92" selection-end-line="15" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/tools/weapons/guns/GunInitialConstants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -1818,68 +1793,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/CityBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#907#908#0" expanded="false" />
-            <element signature="e#926#927#0" expanded="false" />
-            <element signature="e#966#967#0" expanded="false" />
-            <element signature="e#985#986#0" expanded="false" />
-            <element signature="e#1024#1025#0" expanded="false" />
-            <element signature="e#1040#1041#0" expanded="false" />
-            <element signature="e#1078#1079#0" expanded="false" />
-            <element signature="e#1114#1115#0" expanded="false" />
-            <element signature="e#1185#1186#0" expanded="false" />
-            <element signature="e#1203#1204#0" expanded="false" />
-            <element signature="e#1256#1257#0" expanded="false" />
-            <element signature="e#1271#1272#0" expanded="false" />
-            <element signature="e#1308#1309#0" expanded="false" />
-            <element signature="e#1335#1336#0" expanded="false" />
-            <element signature="e#1362#1363#0" expanded="false" />
-            <element signature="e#1395#1396#0" expanded="false" />
-            <element signature="e#1438#1439#0" expanded="false" />
-            <element signature="e#1457#1458#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/tools/weapons/space/EmpWeapon.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/tools/weapons/Attackable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#Attackable#0;class#Attackable#0" expanded="false" />
-            <element signature="method#Attackable#2;class#Attackable#0" expanded="false" />
-            <element signature="method#receiveDamage#0;class#Attackable#0" expanded="false" />
-            <element signature="method#inRange#0;class#Attackable#0" expanded="false" />
-            <element signature="e#1643#1644#0" expanded="false" />
-            <element signature="e#1668#1669#0" expanded="false" />
-            <element signature="e#1698#1699#0" expanded="false" />
-            <element signature="e#1722#1723#0" expanded="false" />
-            <element signature="method#increaseHealth#0;class#Attackable#0" expanded="false" />
-            <element signature="e#1866#1867#0" expanded="false" />
-            <element signature="e#1888#1889#0" expanded="false" />
-            <element signature="method#getLocation#0;class#Attackable#0" expanded="false" />
-            <element signature="e#2022#2023#0" expanded="false" />
-            <element signature="e#2042#2043#0" expanded="false" />
-            <element signature="e#2149#2150#0" expanded="false" />
-            <element signature="e#2188#2189#0" expanded="false" />
-            <element signature="e#2253#2254#0" expanded="false" />
-            <element signature="e#2284#2285#0" expanded="false" />
-            <element signature="e#2318#2319#0" expanded="false" />
-            <element signature="e#2342#2343#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2098,22 +2015,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/view/Highlight.java" />
-    <entry file="file://$PROJECT_DIR$/src/ui/view/PlanetBorderPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="123" column="34" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="34" />
-          <folding>
-            <element signature="initializer##0;class#1152:1488" expanded="false" />
-            <element signature="method#initVars#0;class#PlanetBorderPane#0" expanded="false" />
-            <element signature="method#init#0;class#PlanetBorderPane#0" expanded="false" />
-            <element signature="class#3293:3387" expanded="false" />
-            <element signature="initializer##0;class#3293:3387" expanded="false" />
-            <element signature="method#updateVehicleLine#0;class#PlanetBorderPane#0" expanded="false" />
-            <element signature="method#selectVehicle#0;class#PlanetBorderPane#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/air/Aircraft.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -2198,51 +2099,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/planets/LocationPlanet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#LocationPlanet#0;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#LocationPlanet#1;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#LocationPlanet#2;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#LocationPlanet#3;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#LocationPlanet#4;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#LocationPlanet#5;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#LocationPlanet#6;class#LocationPlanet#0" expanded="false" />
-            <element signature="e#2551#2552#0" expanded="false" />
-            <element signature="e#2588#2589#0" expanded="false" />
-            <element signature="e#2617#2618#0" expanded="false" />
-            <element signature="e#2654#2655#0" expanded="false" />
-            <element signature="method#arrivePlanet#0;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#distanceBetween#0;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#go#0;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#goTowards#0;class#LocationPlanet#0" expanded="false" />
-            <element signature="e#4513#4514#0" expanded="false" />
-            <element signature="e#4532#4533#0" expanded="false" />
-            <element signature="e#4558#4559#0" expanded="false" />
-            <element signature="e#4577#4578#0" expanded="false" />
-            <element signature="e#4604#4605#0" expanded="false" />
-            <element signature="e#4624#4625#0" expanded="false" />
-            <element signature="e#4651#4652#0" expanded="false" />
-            <element signature="e#4671#4672#0" expanded="false" />
-            <element signature="method#mediumLocation#0;class#LocationPlanet#0" expanded="false" />
-            <element signature="e#5377#5378#0" expanded="false" />
-            <element signature="e#5422#5423#0" expanded="false" />
-            <element signature="method#equals#0;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#remove#0;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#setPlanet#0;class#LocationPlanet#0" expanded="false" />
-            <element signature="class#InTheOceanException#0;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#moveBlock#0;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#moveGrid#0;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#leavePlanet#0;class#LocationPlanet#0" expanded="false" />
-            <element signature="e#6883#6884#0" expanded="false" />
-            <element signature="e#6922#6923#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/requests/Request.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -2324,13 +2180,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
           <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_92/jre/lib/rt.jar!/sun/misc/Unsafe.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="354" column="23" selection-start-line="354" selection-start-column="23" selection-end-line="354" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -2561,7 +2410,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
-          <folding />
+          <folding>
+            <element signature="e#1010#1011#0" expanded="false" />
+            <element signature="e#1043#1044#0" expanded="false" />
+            <element signature="e#1115#1116#0" expanded="false" />
+            <element signature="e#1151#1152#0" expanded="false" />
+            <element signature="e#1205#1206#0" expanded="false" />
+            <element signature="e#1238#1239#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2588,14 +2444,61 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/PlanetBorderPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="93" column="34" selection-start-line="93" selection-start-column="34" selection-end-line="93" selection-end-column="34" />
+          <folding>
+            <element signature="initializer##0;class#1152:1488" expanded="false" />
+            <element signature="method#initVars#0;class#PlanetBorderPane#0" expanded="false" />
+            <element signature="class#3293:3387" expanded="false" />
+            <element signature="initializer##0;class#3293:3387" expanded="false" />
+            <element signature="method#updateVehicleLine#0;class#PlanetBorderPane#0" expanded="false" />
+            <element signature="method#selectVehicle#0;class#PlanetBorderPane#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/CityBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/tools/weapons/Attackable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding>
+            <element signature="method#Attackable#0;class#Attackable#0" expanded="false" />
+            <element signature="method#Attackable#2;class#Attackable#0" expanded="false" />
+            <element signature="method#receiveDamage#0;class#Attackable#0" expanded="false" />
+            <element signature="method#inRange#0;class#Attackable#0" expanded="false" />
+            <element signature="method#increaseHealth#0;class#Attackable#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_92/src.zip!/java/lang/ClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="102" column="77" selection-start-line="102" selection-start-column="77" selection-end-line="102" selection-end-column="77" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/Vehicle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="174" column="5" selection-start-line="174" selection-start-column="5" selection-end-line="174" selection-end-column="5" />
+        <state relative-caret-position="207">
+          <caret line="326" column="26" selection-start-line="326" selection-start-column="26" selection-end-line="326" selection-end-column="26" />
           <folding>
             <element signature="method#Vehicle#0;class#Vehicle#0" expanded="false" />
             <element signature="method#loadObject#0;class#Vehicle#0" expanded="false" />
@@ -2606,18 +2509,55 @@
             <element signature="method#getTotalWeightLoad#0;class#Vehicle#0" expanded="false" />
             <element signature="method#die#0;class#Vehicle#0" expanded="false" />
             <element signature="method#remove#3;class#Vehicle#0" expanded="false" />
-            <element signature="method#setDestination#0;class#Vehicle#0" expanded="false" />
             <element signature="method#Path#1;class#Path#0;class#Vehicle#0" expanded="false" />
-            <element signature="e#5393#5394#0" expanded="true" />
-            <element signature="e#5463#5464#0" expanded="true" />
+            <element signature="e#5635#5636#0" expanded="true" />
+            <element signature="e#5705#5706#0" expanded="true" />
             <element signature="method#getLength#0;class#Path#0;class#Vehicle#0" expanded="false" />
-            <element signature="method#getPathsGoingFrom#0;class#Path#0;class#Vehicle#0" expanded="false" />
-            <element signature="method#validQ#0;class#Path#0;class#Vehicle#0" expanded="false" />
-            <element signature="method#getAllPathToDestination#0;class#Path#0;class#Vehicle#0" expanded="false" />
-            <element signature="method#getDestination#0;class#Vehicle#0" expanded="false" />
+            <element signature="e#9068#9069#0" expanded="true" />
+            <element signature="e#9131#9132#0" expanded="true" />
+            <element signature="e#10161#10162#0" expanded="true" />
+            <element signature="e#10186#10187#0" expanded="true" />
             <element signature="method#sanityCheck#0;class#Vehicle#0" expanded="false" />
-            <element signature="method#doLife#0;class#Vehicle#0" expanded="false" />
             <element signature="method#remove#4;class#Vehicle#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_92/jre/lib/rt.jar!/sun/misc/Unsafe.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="354" column="23" selection-start-line="354" selection-start-column="23" selection-end-line="354" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/planets/LocationPlanet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="234" column="51" selection-start-line="234" selection-start-column="51" selection-end-line="234" selection-end-column="51" />
+          <folding>
+            <element signature="method#LocationPlanet#0;class#LocationPlanet#0" expanded="false" />
+            <element signature="method#LocationPlanet#1;class#LocationPlanet#0" expanded="false" />
+            <element signature="method#LocationPlanet#2;class#LocationPlanet#0" expanded="false" />
+            <element signature="method#LocationPlanet#3;class#LocationPlanet#0" expanded="false" />
+            <element signature="method#LocationPlanet#4;class#LocationPlanet#0" expanded="false" />
+            <element signature="method#LocationPlanet#5;class#LocationPlanet#0" expanded="false" />
+            <element signature="method#arrivePlanet#0;class#LocationPlanet#0" expanded="false" />
+            <element signature="method#distanceBetween#0;class#LocationPlanet#0" expanded="false" />
+            <element signature="method#go#0;class#LocationPlanet#0" expanded="false" />
+            <element signature="method#goTowards#0;class#LocationPlanet#0" expanded="false" />
+            <element signature="e#4558#4559#0" expanded="true" />
+            <element signature="e#4577#4578#0" expanded="true" />
+            <element signature="method#mediumLocation#0;class#LocationPlanet#0" expanded="false" />
+            <element signature="e#5377#5378#0" expanded="true" />
+            <element signature="e#5422#5423#0" expanded="true" />
+            <element signature="method#equals#0;class#LocationPlanet#0" expanded="false" />
+            <element signature="method#remove#0;class#LocationPlanet#0" expanded="false" />
+            <element signature="method#setPlanet#0;class#LocationPlanet#0" expanded="false" />
+            <element signature="class#InTheOceanException#0;class#LocationPlanet#0" expanded="false" />
+            <element signature="method#moveBlock#0;class#LocationPlanet#0" expanded="false" />
+            <element signature="method#moveGrid#0;class#LocationPlanet#0" expanded="false" />
+            <element signature="method#leavePlanet#0;class#LocationPlanet#0" expanded="false" />
           </folding>
         </state>
       </provider>

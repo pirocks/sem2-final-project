@@ -229,4 +229,9 @@ public class LocationPlanet implements Serializable,Container
 	{
 		arrivePlanet(b.getParentBlock());
 	}
+
+	@Override
+	public String toString() {
+		return "gridx" + gridx + "gridy" + gridy + "blockx:" + blockx + "blocky" + blocky;
+	}
 }
