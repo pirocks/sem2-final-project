@@ -452,4 +452,13 @@ public class City extends Attackable implements Serializable,Container
 		}
 		return total/(residents.size() - 1);
 	}
+	public ArrayList<Warehouse> getWarehouses(){
+		ArrayList<Warehouse> out = new ArrayList<>();
+		for (Building building : getBuilding()) {
+			if(building instanceof Warehouse){
+				out.add((Warehouse) building);
+			}
+		}
+		return out;
+	}
 }

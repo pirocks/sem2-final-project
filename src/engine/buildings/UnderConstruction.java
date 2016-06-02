@@ -18,7 +18,7 @@ import ui.view.Controller;
 import java.io.Serializable;
 import java.util.Optional;
 
-public class UnderConstruction<Type extends Building> extends Workplace implements Serializable
+public class UnderConstruction<Type extends Building> extends Workplace implements Serializable,ResourceUser
 {
 	public static int maxWorkersInitial = 2000;
 	private double timeRemaining = 10000;

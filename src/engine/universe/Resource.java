@@ -13,6 +13,10 @@ import java.util.Map;
 
 public class Resource implements Serializable,Weighable
 {
+	public Resource() {
+		this(new ArrayList<>(),new ArrayList<Double>());
+	}
+
 	@Override
 	public double getWeightActual() {
 		return getWeight();
@@ -25,28 +29,34 @@ public class Resource implements Serializable,Weighable
 
 	}
 
+	public void unsafeAdd(Resource r) {
+		for (Type type : r.getValues().keySet()) {
+			values.put(type,values.get(type) + r.getValues().get(type));
+		}
+	}
+
 	public enum Type
     {
         Iron,Oil,Uranium,Helium,Food,Water,Wood,Silicon
     }
 
 	private Map<Type,Double> values;
-	public static double IronValue;// TODO: 5/22/2016
-	public static double OilValue;// TODO: 5/22/2016
-	public static double UraniumValue;// TODO: 5/22/2016
-	public static double HeliumValue;// TODO: 5/22/2016
-	public static double FoodValue;// TODO: 5/22/2016
-	public static double WoodValue;// TODO: 5/22/2016
-	public static double WaterValue;// TODO: 5/22/2016
-	public static double SiliconValue;// TODO: 5/22/2016
-	public static double IronWeight;// TODO: 5/22/2016
-	public static double OilWeight;// TODO: 5/22/2016
-	public static double UraniumWeight;// TODO: 5/22/2016
-	public static double HeliumWeight;// TODO: 5/22/2016
-	public static double FoodWeight;// TODO: 5/22/2016
-	public static double WaterWeight;// TODO: 5/22/2016
-	public static double WoodWeight;// TODO: 5/22/2016
-	public static double SiliconWeight;// TODO: 5/22/2016
+	@Deprecated public static double IronValue;
+	@Deprecated public static double OilValue;
+	@Deprecated public static double UraniumValue;
+	@Deprecated public static double HeliumValue;
+	@Deprecated public static double FoodValue;
+	@Deprecated public static double WoodValue;
+	@Deprecated public static double WaterValue;
+	@Deprecated public static double SiliconValue;
+	public static double IronWeight = 3;
+	public static double OilWeight = 2;
+	public static double UraniumWeight = 5;
+	public static double HeliumWeight = 0.1;
+	public static double FoodWeight = 1;
+	public static double WaterWeight = 2;
+	public static double WoodWeight = 1.2;
+	public static double SiliconWeight = 2;
 	public static double getTypeValue(Type type) {
     	switch(type)
     	{
