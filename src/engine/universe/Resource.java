@@ -171,9 +171,9 @@ public class Resource implements Serializable,Weighable
 	private void sanityCheck()
 	{
 		for (Double quantity : values.values()) {
-			assert (quantity > 0    );
+			assert (quantity > 0);
 			if(quantity < 0)
-				throw  new IllegalStateException();
+				throw  new IllegalStateException();// TODO: 6/1/2016 bug here
 		}
 
 	}

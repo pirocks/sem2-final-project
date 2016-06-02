@@ -100,4 +100,9 @@ public class UnderConstruction<Type extends Building> extends Workplace implemen
 	public City getCity() {
 		return getParentCity();
 	}
+
+	@Override
+	public ResourceDemand getResourceDemand() {
+		return resourceDemand;
+	}
 }

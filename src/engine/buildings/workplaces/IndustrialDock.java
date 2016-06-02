@@ -1,5 +1,6 @@
 package engine.buildings.workplaces;
 
+import engine.cities.City;
 import engine.cities.CityBlock;
 import engine.people.cityworkers.CityWorker;
 import engine.people.cityworkers.ManualWorker;
@@ -110,5 +111,10 @@ public class IndustrialDock extends Workplace implements ToolBuilder<SeaCraft>
 			buttons.add(new Button(tool.getClass().getName()){{
 				setOnMouseClicked(handler);
 			}});
+	}
+
+	@Override
+	public City getCity() {
+		return getParentCity();
 	}
 }

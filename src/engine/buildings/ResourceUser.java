@@ -48,6 +48,7 @@ public interface ResourceUser {
 					for (Warehouse warehouse : city.getWarehouses()) {
 						toPay.pay(warehouse.inStock);
 					}
+					getResourceDemand().pay(interpretContent(alert, IronField, OilField, UraniumField, HeliumField, FoodField, WaterField, WoodField, SiliconField).getResource());
 
 				}
 

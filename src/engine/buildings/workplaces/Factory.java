@@ -1,5 +1,6 @@
 package engine.buildings.workplaces;
 
+import engine.cities.City;
 import engine.cities.CityBlock;
 import engine.people.cityworkers.CityWorker;
 import engine.people.cityworkers.ManualWorker;
@@ -183,4 +184,10 @@ public class Factory extends Workplace implements ToolBuilder<Tool>
 	public CityWorker createCorrectType() {
 		return new ManualWorker(getParentCity(),new LocationPlanet(this));
 	}
+
+	@Override
+	public City getCity() {
+		return getParentCity();
+	}
+
 }
