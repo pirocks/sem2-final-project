@@ -86,7 +86,7 @@ public class UnderConstruction<Type extends Building> extends Workplace implemen
 		in.getChildren().add(new Text(type.getName() + "Under Construction"));
 		in.getChildren().add(new Text("Man hours remaining:" + timeRemaining));
 		in.getChildren().add(new Text("Resources still required" + resourceDemand.toString()));
-		// TODO: 5/31/2016 add resources button
+		addAddResourcesButton(in);
 	}
 	@Override
 	public CityWorker createCorrectType() {
@@ -94,5 +94,10 @@ public class UnderConstruction<Type extends Building> extends Workplace implemen
 	}
 	public Type getBuilding() {
 		return type;
+	}
+
+	@Override
+	public City getCity() {
+		return getParentCity();
 	}
 }

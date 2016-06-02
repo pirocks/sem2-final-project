@@ -1,6 +1,7 @@
 package ui.view;
 
 import engine.buildings.Building;
+import engine.buildings.UnderConstruction;
 import engine.buildings.housing.ApartmentBlock;
 import engine.buildings.housing.Housing;
 import engine.buildings.housing.RulersHouse;
@@ -227,6 +228,9 @@ public class Controller implements Initializable{
 				return images.townHallImage;
 			if(building instanceof Warehouse)
 				return images.warehouseImage;
+			if(building instanceof UnderConstruction){
+				return images.constructionSite;
+			}
 		}
 		return null;
 	}

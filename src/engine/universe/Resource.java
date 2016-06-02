@@ -41,14 +41,14 @@ public class Resource implements Serializable,Weighable
     }
 
 	private Map<Type,Double> values;
-	@Deprecated public static double IronValue;
-	@Deprecated public static double OilValue;
-	@Deprecated public static double UraniumValue;
-	@Deprecated public static double HeliumValue;
-	@Deprecated public static double FoodValue;
-	@Deprecated public static double WoodValue;
-	@Deprecated public static double WaterValue;
-	@Deprecated public static double SiliconValue;
+	@Deprecated static double IronValue;
+	@Deprecated static double OilValue;
+	@Deprecated static double UraniumValue;
+	@Deprecated static double HeliumValue;
+	@Deprecated static double FoodValue;
+	@Deprecated static double WoodValue;
+	@Deprecated static double WaterValue;
+	@Deprecated static double SiliconValue;
 	public static double IronWeight = 3;
 	public static double OilWeight = 2;
 	public static double UraniumWeight = 5;
