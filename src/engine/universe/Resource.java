@@ -170,11 +170,13 @@ public class Resource implements Serializable,Weighable
 	}
 	private void sanityCheck()
 	{
-		for (Double quantity : values.values()) {
-			assert (quantity > 0);
-			if(quantity < 0)
-				throw  new IllegalStateException();// TODO: 6/1/2016 bug here
+		for (Type type : values.keySet()) {
+			if(values.get(type) < 0){
+				values.put(type, 0.0);
+				System.out.print("fix me");
+			}
 		}
+
 
 	}
 	public Map<Type, Double> getValues() {
