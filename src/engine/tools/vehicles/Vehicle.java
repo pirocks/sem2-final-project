@@ -15,7 +15,6 @@ import engine.tools.weapons.Weapon;
 import engine.universe.MoneySource;
 import engine.universe.Resource;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
@@ -175,45 +174,19 @@ public abstract class Vehicle extends Tool implements Liver,Container
 //		path = determinePathWrapper(this.getLocation().get(0),destination,this instanceof SeaCraft || this instanceof Aircraft || this instanceof SpaceCraft,!(this instanceof SeaCraft));
 	}
 
-//	private ArrayList<LocationPlanet> determinePathWrapper(LocationPlanet start, LocationPlanet destination, boolean  waterOkQ, boolean landOkQ) {
-//		ArrayList<LocationPlanet> pathList = determinePath(new LocationPlanet(start),destination,waterOkQ,landOkQ);
-//	}
-//	private ArrayList<ArrayList<LocationPlanet>> createPaths(LocationPlanet start, LocationPlanet destination, boolean  waterOkQ, boolean landOkQ) {
-//		ArrayList<ArrayList<LocationPlanet>> possiblePaths = new ArrayList<>();
-//		if(validQ(new LocationPlanet(start){{moveGrid(start.getGridx() + 1,start.getGridy());}},waterOkQ,landOkQ))
-//			possiblePaths.addAll(determinePath(new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy());}},destination,waterOkQ,landOkQ));
-//		if(validQ(new LocationPlanet(start){{moveGrid(start.getGridx() + 1,start.getGridy() + 1);}},waterOkQ,landOkQ))
-//			possiblePaths.addAll(determinePath(new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy());}},destination,waterOkQ,landOkQ));
-//		if(validQ(new LocationPlanet(start){{moveGrid(start.getGridx() + 1,start.getGridy() - 1);}},waterOkQ,landOkQ))
-//			possiblePaths.addAll(determinePath(new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy());}},destination,waterOkQ,landOkQ));
-//		if(validQ(new LocationPlanet(start){{moveGrid(start.getGridx() - 1,start.getGridy());}},waterOkQ,landOkQ))
-//			possiblePaths.addAll(determinePath(new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy());}},destination,waterOkQ,landOkQ));
-//		if(validQ(new LocationPlanet(start){{moveGrid(start.getGridx() - 1,start.getGridy() + 1);}},waterOkQ,landOkQ))
-//			possiblePaths.addAll(determinePath(new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy());}},destination,waterOkQ,landOkQ));
-//		if(validQ(new LocationPlanet(start){{moveGrid(start.getGridx() - 1,start.getGridy() - 1);}},waterOkQ,landOkQ))
-//			possiblePaths.addAll(determinePath(new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy());}},destination,waterOkQ,landOkQ));
-//		if(validQ(new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy());}},waterOkQ,landOkQ))
-//			possiblePaths.addAll(determinePath(new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy());}},destination,waterOkQ,landOkQ));
-//		if(validQ(new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy() + 1);}},waterOkQ,landOkQ))
-//			possiblePaths.addAll(determinePath(new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy());}},destination,waterOkQ,landOkQ));
-//		if(validQ(new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy() - 1);}},waterOkQ,landOkQ))
-//			possiblePaths.addAll(determinePath(new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy());}},destination,waterOkQ,landOkQ));
-//
-//		for (ArrayList<LocationPlanet> possiblePath : possiblePaths) {
-//
-//		}
-//
-//
-//	}
-
 	public class Path{
 		ArrayList<LocationPlanet> locationPlanets;
-
 		public Path(ArrayList<LocationPlanet> locationPlanets) {
 			this.locationPlanets = locationPlanets;
 		}
 		public Path(Path path,LocationPlanet locationPlanet){
-			// TODO: 6/1/2016
+			locationPlanets = new ArrayList<>();
+			locationPlanets.addAll(path.locationPlanets);
+			locationPlanets.add(locationPlanet);
+		}
+
+		public Path(LocationPlanet locationPlanet) {
+			this(new ArrayList<LocationPlanet>(){{add(locationPlanet);}});
 		}
 
 		public double getLength(){
@@ -226,23 +199,82 @@ public abstract class Vehicle extends Tool implements Liver,Container
 			return out;
 		}
 		public ArrayList<Path> getPathsGoingFrom(boolean waterOkQ,boolean landOkQ){
-			LocationPlanet start = locationPlanets.get(locationPlanets.size() - 1);
+			LocationPlanet start = getLast();
 			ArrayList<Path> possiblePaths = new ArrayList<>();
 			if(validQ(this,new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy());}},waterOkQ,landOkQ))
 				possiblePaths.add(new Path(this,new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy());}}));
+			if(validQ(this,new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy() + 1);}},waterOkQ,
+					landOkQ))
+				possiblePaths.add(new Path(this,new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy() + 1);}}));
+			if(validQ(this,new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy() - 1);}},waterOkQ,
+					landOkQ))
+				possiblePaths.add(new Path(this,new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy() - 1);}}));
+			if(validQ(this,new LocationPlanet(start){{moveGrid(start.getGridx() + 1,start.getGridy());}},waterOkQ,
+					landOkQ))
+				possiblePaths.add(new Path(this,new LocationPlanet(start){{moveGrid(start.getGridx() + 1,start.getGridy());}}));
+			if(validQ(this,new LocationPlanet(start){{moveGrid(start.getGridx() + 1,start.getGridy() + 1);}},waterOkQ,
+					landOkQ))
+				possiblePaths.add(new Path(this,new LocationPlanet(start){{moveGrid(start.getGridx() + 1,start.getGridy() +  1);}}));
+			if(validQ(this,new LocationPlanet(start){{moveGrid(start.getGridx() + 1,start.getGridy() - 1);}},waterOkQ,
+					landOkQ))
+				possiblePaths.add(new Path(this,new LocationPlanet(start){{moveGrid(start.getGridx() + 1,start.getGridy() - 1);}}));
+			if(validQ(this,new LocationPlanet(start){{moveGrid(start.getGridx() - 1,start.getGridy());}},waterOkQ,
+					landOkQ))
+				possiblePaths.add(new Path(this,new LocationPlanet(start){{moveGrid(start.getGridx() - 1,start.getGridy());}}));
+			if(validQ(this,new LocationPlanet(start){{moveGrid(start.getGridx() - 1,start.getGridy() + 1);}},waterOkQ,
+					landOkQ))
+				possiblePaths.add(new Path(this,new LocationPlanet(start){{moveGrid(start.getGridx() - 1,start.getGridy() + 1);}}));
+			if(validQ(this,new LocationPlanet(start){{moveGrid(start.getGridx() - 1,start.getGridy() - 1);}},waterOkQ,
+					landOkQ))
+				possiblePaths.add(new Path(this,new LocationPlanet(start){{moveGrid(start.getGridx() - 1,start.getGridy() - 1);}}));
 			return possiblePaths;
 		}
 		private boolean validQ(Path previous,LocationPlanet locationPlanet, boolean waterOkQ,boolean landOkQ) {
+			if(locationPlanet.equals(previous.getLast()))
+				return false;
 			if(locationPlanet.getGrid().getTerrainType() == TerrainType.Sea){
 				if(waterOkQ){
 					return true;
 				}
-			}else{// TODO: 6/1/2016
+			}else{
 				if(landOkQ){
 					return true;
 				}
 			}
 			return false;
+		}
+		public LocationPlanet getLast() {
+			return locationPlanets.get(locationPlanets.size() - 1);
+		}
+		public ArrayList<Path> getAllPathToDestination(Path begin, LocationPlanet end, int depth, boolean waterOkQ, boolean landOkQ){
+			if(depth == 0){
+				if(end == begin.getLast())
+					return new ArrayList<Path>(){{add(begin);}};
+				else
+					return new ArrayList<>();
+			}
+			ArrayList<Path> paths = new ArrayList<>();
+			for (Path path : getPathsGoingFrom(waterOkQ, landOkQ)) {
+				paths.addAll(getAllPathToDestination(path,end,depth - 1,waterOkQ,landOkQ));
+			}
+			return paths;
+		}
+		public Path getAllPathToDestination(LocationPlanet begin,LocationPlanet end,boolean waterOkQ,boolean landOkQ){
+			for(int i = 1; i < 20;i++){
+				ArrayList<Path> paths = getAllPathToDestination(new Path(new LocationPlanet(begin)), end, i, waterOkQ,
+						landOkQ);
+				Path min = null;
+				for (Path path : paths) {
+					if(min.getLength() > path.getLength()){
+						min = path;
+					}
+				}
+				final Path pathCopy = min;
+				if(pathCopy  == null)
+					continue;
+				return pathCopy;
+			}
+			throw new IllegalStateException();
 		}
 	}
 
