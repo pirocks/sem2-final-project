@@ -15,6 +15,7 @@ import engine.tools.weapons.Weapon;
 import engine.universe.MoneySource;
 import engine.universe.Resource;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
@@ -204,19 +205,47 @@ public abstract class Vehicle extends Tool implements Liver,Container
 //
 //
 //	}
-	
-	private boolean validQ(LocationPlanet locationPlanet, boolean waterOkQ,boolean landOkQ) {
-		if(locationPlanet.getGrid().getTerrainType() == TerrainType.Sea){
-			if(waterOkQ){
-				return true;
-			}
-		}else{
-			if(landOkQ){
-				return true;
-			}
+
+	public class Path{
+		ArrayList<LocationPlanet> locationPlanets;
+
+		public Path(ArrayList<LocationPlanet> locationPlanets) {
+			this.locationPlanets = locationPlanets;
 		}
-		return false;
+		public Path(Path path,LocationPlanet locationPlanet){
+			// TODO: 6/1/2016
+		}
+
+		public double getLength(){
+			double out = 0;
+			LocationPlanet prev = locationPlanets.get(0);
+			for (LocationPlanet locationPlanet : locationPlanets) {
+				out += locationPlanet.distanceBetween(prev);
+				prev = locationPlanet;
+			}
+			return out;
+		}
+		public ArrayList<Path> getPathsGoingFrom(boolean waterOkQ,boolean landOkQ){
+			LocationPlanet start = locationPlanets.get(locationPlanets.size() - 1);
+			ArrayList<Path> possiblePaths = new ArrayList<>();
+			if(validQ(this,new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy());}},waterOkQ,landOkQ))
+				possiblePaths.add(new Path(this,new LocationPlanet(start){{moveGrid(start.getGridx(),start.getGridy());}}));
+			return possiblePaths;
+		}
+		private boolean validQ(Path previous,LocationPlanet locationPlanet, boolean waterOkQ,boolean landOkQ) {
+			if(locationPlanet.getGrid().getTerrainType() == TerrainType.Sea){
+				if(waterOkQ){
+					return true;
+				}
+			}else{// TODO: 6/1/2016
+				if(landOkQ){
+					return true;
+				}
+			}
+			return false;
+		}
 	}
+
 
 	public LocationPlanet getDestination() {
 		try{
@@ -311,4 +340,5 @@ public abstract class Vehicle extends Tool implements Liver,Container
 	public Set<Weapon> getWeapons() {
 		return weapons;
 	}
+	//color adjust is what I should se with javafx
 }
