@@ -10,6 +10,7 @@ import engine.people.AbstractPerson;
 import engine.planets.Planet;
 import engine.tools.vehicles.Liver;
 import engine.tools.weapons.Attackable;
+import javafx.application.Platform;
 
 import static engine.people.cityworkers.CityWorker.WhereAmI.*;
 
@@ -146,8 +147,14 @@ public abstract class CityWorker extends AbstractPerson implements Container//do
 				goToWork();
 			}
 			else {
-				if(population < 10)
-					die();
+				if(population < 10) {
+					Platform.runLater(new Runnable() {
+						@Override
+						public void run() {
+							die();
+						}
+					});
+				}
 				else
 					throw new IllegalStateException();
 			}

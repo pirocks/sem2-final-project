@@ -9,6 +9,7 @@ import engine.tools.AttackableConstants;
 import engine.universe.MoneySource;
 import engine.universe.Resource;
 import engine.universe.ResourceDemand;
+import engine.universe.Universe;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
@@ -94,25 +95,27 @@ public class ResearchArea extends Workplace
 	}
 
 	public void nullityHandler(){
-		if(discovery == null && !haveIAsked && !askedThisCycle){
-			askedThisCycle = true;
-			haveIAsked = true;
-			Platform.runLater(new Runnable() {
-				@Override
-				public void run() {
-					Alert alert = new Alert(Alert.AlertType.INFORMATION);
-					alert.setTitle("A research are does not have anything to research.");
-					alert.getButtonTypes().add(new ButtonType("Ignore"));
-					alert.getButtonTypes().add(new ButtonType("Take me to the research center"));
-					Optional<ButtonType> buttonType = alert.showAndWait();
-					if(buttonType.isPresent()){
-						if(buttonType.get().getText().equals("Ignore")){
-						}else{
-							Controller.controller.switchTo(self.getParentBlock());
+		if(Universe.playersCountry  == getParentCity().getParentCountry()) {
+			if (discovery == null && !haveIAsked && !askedThisCycle) {
+				askedThisCycle = true;
+				haveIAsked = true;
+				Platform.runLater(new Runnable() {
+					@Override
+					public void run() {
+						Alert alert = new Alert(Alert.AlertType.INFORMATION);
+						alert.setTitle("A research are does not have anything to research.");
+						alert.getButtonTypes().add(new ButtonType("Ignore"));
+						alert.getButtonTypes().add(new ButtonType("Take me to the research center"));
+						Optional<ButtonType> buttonType = alert.showAndWait();
+						if (buttonType.isPresent()) {
+							if (buttonType.get().getText().equals("Ignore")) {
+							} else {
+								Controller.controller.switchTo(self.getParentBlock());
+							}
 						}
 					}
-				}
-			});
+				});
+			}
 		}
 	}
 }

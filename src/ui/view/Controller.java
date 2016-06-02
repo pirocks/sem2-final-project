@@ -34,8 +34,6 @@ import java.util.ResourceBundle;
  */
 public class Controller implements Initializable{
 	public static Controller controller;
-	//despite the vast number of vars having this all in one class seems like the best way. having multiple
-	// controller classes gets very messy with controller class references all over the place
 	@FXML
 	TabPane tabPane;
 	@FXML
@@ -155,26 +153,26 @@ public class Controller implements Initializable{
 		initPlanetAccordion();
 		initPlanetView();
 	}
-	void initPlanetAccordion() {
+	public void initPlanetAccordion() {
 		planetAccordionManager.init();
 	}
-	void initPlanetView() {
+	public void initPlanetView() {
 		planetBorderPaneManager.init();
 	}
-	public static ImageView getImage(TerrainType type){
+	public static Image getImage(TerrainType type){
 		switch(type){
 			case Land:
-				return images.landImage;
+				return images.landImage.getImage();
 			case Sea:
-				return images.seaImage;
+				return images.seaImage.getImage();
 			case Coast:
-				return images.coastImage;
+				return images.coastImage.getImage();
 			case Mountains:
-				return images.mountainImage;
+				return images.mountainImage.getImage();
 			case Hills:
-				return images.hillImage;
+				return images.hillImage.getImage();
 			case Wasteland:
-				return images.wastelandImage;
+				return images.wastelandImage.getImage();
 		}
 		throw  new IllegalStateException();
 	}
@@ -240,6 +238,7 @@ public class Controller implements Initializable{
 	}
 	public void switchTo(SolarSystem s) {
 		solarSystem = s;
+		initUniverseVars();
 		initSolarSystemTab();
 		tabPane.getSelectionModel().select(getSolarSystemTab());
 
@@ -247,6 +246,7 @@ public class Controller implements Initializable{
 	public void switchTo(Planet p) {
 		solarSystem = p.getParentSolarSystem();
 		planet = p;
+		initPlanetVars();
 		initSolarSystemTab();
 		tabPane.getSelectionModel().select(getPlanetTab());
 		initPlanetTab();
@@ -316,11 +316,9 @@ public class Controller implements Initializable{
 		switchTo(block.getParentCity());
 		focusBuildingInAccordion(block.getBuilding());
 	}
-
 	public void updateResearchAreas() {
 		cityAccordionManager.updateResearchAreas();
 	}
-
 	public static class images {
 		public static ImageView wastelandImage =  new ImageView(){{setImage(new Image(Controller.class.getResourceAsStream("wastelandImage" +
 				".jpg")));setPreserveRatio(true);setFitHeight(200);setFitHeight(200);}};
