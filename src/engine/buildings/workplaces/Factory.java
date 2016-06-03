@@ -39,6 +39,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import ui.requests.VehicleInWaterRequest;
 import ui.view.Controller;
 
 import java.util.ArrayList;
@@ -212,7 +213,7 @@ public class Factory extends Workplace implements ToolBuilder<Tool>, Liver
 				});
 			}
 			if(finishedTool instanceof Vehicle){
-
+				new VehicleInWaterRequest((Vehicle)finishedTool);
 			}
 		}
 	}

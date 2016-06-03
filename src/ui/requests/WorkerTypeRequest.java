@@ -43,7 +43,6 @@ public class WorkerTypeRequest extends Request
 				teacher.setStudent(new ManualWorker(city,locationPlanet));
 			if(buttonType.get().getText().equals("Build 100 Researchers"))
 				teacher.setStudent(new Researcher(city,locationPlanet));
-
 		}
 	}
 }

@@ -24,7 +24,7 @@ public class CityBuilder extends LandVehicle {
 resource = new Resource(new Resource.Type[]{
 					Wood, Iron, Oil //// 5/23/2016 add more as necessary
 			},new Double[]{
-					100.0,100.0,100.0
+					1000000.0,1000000.0,1000000.0
 			});
 	}
 	@Override

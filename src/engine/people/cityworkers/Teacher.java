@@ -4,6 +4,7 @@ import engine.cities.City;
 import engine.people.AbstractPerson;
 import engine.planets.LocationPlanet;
 import engine.universe.UniversalConstants;
+import engine.universe.Universe;
 import ui.requests.StudentCompletedAlert;
 
 public class Teacher<Type extends AbstractPerson> extends CityWorker implements Cloneable
@@ -45,6 +46,9 @@ public class Teacher<Type extends AbstractPerson> extends CityWorker implements 
 
     public void doSkill(double time) {
 	    if(student != null) {
+		    if(getWorkBuilding().getParentCity().getParentCountry() == Universe.playersCountry){
+			    System.out.println("vcyhyj");
+		    }
 		    progress += population * time / (AbstractPerson.timeToTrain * student.getPopulation());
 		    if (progress > 1.0) {
 			    studentCompletedHandler(student);
@@ -54,6 +58,7 @@ public class Teacher<Type extends AbstractPerson> extends CityWorker implements 
     }
 
 	private void studentCompletedHandler(Type student) {
+		progress = 0;
 		StudentCompletedAlert studentCompletedAlert = new StudentCompletedAlert<Type>(getWorkBuilding().getParentCity(),student, this, location.get(0));
 	}
 

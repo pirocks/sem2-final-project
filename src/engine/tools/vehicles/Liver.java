@@ -45,7 +45,7 @@ public interface Liver {
 		Controller.controller.liverUpdate();
 	}
 	static void doGame(){
-		Timeline timeline = new Timeline(new KeyFrame(new Duration(100), new EventHandler<ActionEvent>() {
+		Timeline timeline = new Timeline(new KeyFrame(new Duration(25), new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
 //				System.out.print("do");
