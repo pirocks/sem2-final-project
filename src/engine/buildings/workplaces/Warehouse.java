@@ -40,7 +40,7 @@ public class Warehouse extends Workplace
 		inStock.add(resource);
 	}
 	@Override
-	protected boolean isSuitableType(CityWorker cityWorker) {
+	public boolean isSuitableType(CityWorker cityWorker) {
 		return cityWorker instanceof ManualWorker;
 	}
 	@Override

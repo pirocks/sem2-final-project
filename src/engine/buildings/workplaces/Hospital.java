@@ -46,7 +46,7 @@ public class Hospital extends Workplace
         return sickPeople.remove(p);
     }
 	@Override
-	protected boolean isSuitableType(CityWorker cityWorker) {
+	public boolean isSuitableType(CityWorker cityWorker) {
 		return cityWorker instanceof Doctor;
 	}
 	public void leavePerson(AbstractPerson person) {

@@ -42,11 +42,10 @@ public interface Liver {
 			}
 			liver.doLife(time);
 		}
-		//update display // TODO: 5/26/2016
 		Controller.controller.liverUpdate();
 	}
 	static void doGame(){
-		Timeline timeline = new Timeline(new KeyFrame(new Duration(10), new EventHandler<ActionEvent>() {
+		Timeline timeline = new Timeline(new KeyFrame(new Duration(100), new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
 //				System.out.print("do");

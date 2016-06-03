@@ -59,7 +59,7 @@ public class ResearchArea extends Workplace
 	}
 
 	@Override
-	protected boolean isSuitableType(CityWorker cityWorker) {
+	public boolean isSuitableType(CityWorker cityWorker) {
 		return cityWorker instanceof Researcher;
 	}
 

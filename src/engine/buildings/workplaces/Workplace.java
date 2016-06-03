@@ -35,7 +35,7 @@ public abstract class Workplace extends Building implements Container
 				return true;
 		return false;
 	}
-	protected abstract boolean isSuitableType(CityWorker cityWorker);
+	public abstract boolean isSuitableType(CityWorker cityWorker);
 	public boolean canAddWorker(CityWorker worker) {
 		return worker.getPopulation() + workerCount() <= maxWorkers;
 	}

@@ -173,7 +173,7 @@ public class Factory extends Workplace implements ToolBuilder<Tool>
 		addButton(buttons,new TankArtillery(-1));
 	}
 	@Override
-	protected boolean isSuitableType(CityWorker cityWorker) {
+	public boolean isSuitableType(CityWorker cityWorker) {
 		return cityWorker instanceof ManualWorker;
 	}
 	@Override

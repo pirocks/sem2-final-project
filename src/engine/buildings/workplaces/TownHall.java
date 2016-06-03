@@ -19,7 +19,7 @@ public class TownHall extends Workplace
 	public static double healthInitial = 10000;
 	public static double resistanceInitial = 1500;
 	private City parentCity;//money for city
-	public static int maxWorkersInitial = 10;
+	public static int maxWorkersInitial = 101;
 	public TownHall( CityBlock parentBlock, MoneySource owner) {
 		super(new AttackableConstants(parentBlock.getLocation(),healthInitial,resistanceInitial), parentBlock, maxWorkersInitial, owner);
 		parentCity = parentBlock.getParentCity();
@@ -36,7 +36,7 @@ public class TownHall extends Workplace
 	}
 
 	@Override
-	protected boolean isSuitableType(CityWorker cityWorker) {
+	public boolean isSuitableType(CityWorker cityWorker) {
 		return cityWorker instanceof Ruler || cityWorker instanceof Bureaucrat;
 	}
 

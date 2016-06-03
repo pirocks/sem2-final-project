@@ -119,7 +119,7 @@ public class DockYard extends Workplace implements ToolBuilder<SeaCraft> {
 		return seaCraftUnderConstruction.getFinishedTool();
 	}
 	@Override
-	protected boolean isSuitableType(CityWorker cityWorker) {
+	public boolean isSuitableType(CityWorker cityWorker) {
 		return cityWorker instanceof ManualWorker;
 	}
 	@Override

@@ -8,8 +8,7 @@ import engine.buildings.housing.RulersHouse;
 import engine.buildings.housing.WorkersHouseBlock;
 import engine.buildings.workplaces.*;
 import engine.people.AbstractPerson;
-import engine.people.cityworkers.CityWorker;
-import engine.people.cityworkers.CityWorkersConstructionContext;
+import engine.people.cityworkers.*;
 import engine.planets.Grid;
 import engine.planets.LocationPlanet;
 import engine.planets.TerrainType;
@@ -241,7 +240,8 @@ public class City extends Attackable implements Serializable,Container
 		residents = new HashSet<>();
 		parentCountry = Universe.playersCountry;
 		CityBlock cityBlockTownHall = new CityBlock(this,49,49);
-		setBuilding(new TownHall(cityBlockTownHall,moneySource));
+		TownHall townHall = new TownHall(cityBlockTownHall, moneySource);
+		setBuilding(townHall);
 		CityBlock cityBlockWarehouse = new CityBlock(this,49,48);
 		Warehouse warehouse = new Warehouse(cityBlockWarehouse, moneySource);
 		try {
@@ -251,11 +251,67 @@ public class City extends Attackable implements Serializable,Container
 		}
 		setBuilding(warehouse);
 		CityBlock apartmentBlock = new CityBlock(this,48,49);
-		setBuilding(new ApartmentBlock(apartmentBlock));
+		ApartmentBlock apartments = new ApartmentBlock(apartmentBlock);
+		setBuilding(apartments);
 		CityBlock schoolBlock =  new CityBlock(this,48,48);
-		setBuilding(new School(schoolBlock,moneySource));
+		School school = new School(schoolBlock, moneySource);
+		setBuilding(school);
 		CityBlock factoryBlock = new CityBlock(this,47,48);
-		setBuilding(new Factory(factoryBlock,moneySource));
+		Factory factory = new Factory(factoryBlock, moneySource);
+		setBuilding(factory);
+		CityBlock hospitalBlock = new CityBlock(this,47,47);
+		Hospital hospital = new Hospital(hospitalBlock,moneySource);
+		setBuilding(hospital);
+		LocationPlanet loc = getLocation().get(0);
+		ManualWorker factoryWorker = new ManualWorker(this, loc);
+		ManualWorker wareHouseWorker = new ManualWorker(this, loc);
+		Teacher teacher = new Teacher(this, loc);
+		Bureaucrat bureaucrat = new Bureaucrat(this, loc);
+		Doctor doctor = new Doctor(this,loc);
+		hospitals.add(hospital);
+		residents.add(factoryWorker);
+		residents.add(teacher);
+		residents.add(bureaucrat);
+		residents.add(wareHouseWorker);
+		residents.add(doctor);
+		try {
+			school.addWorker(teacher);
+		} catch (ToManyWorkersException e) {
+			e.printStackTrace();
+		} catch (InCorrectWorkerTypeException e) {
+			e.printStackTrace();
+		}
+		try {
+			factory.addWorker(factoryWorker);
+		} catch (ToManyWorkersException e) {
+			e.printStackTrace();
+		} catch (InCorrectWorkerTypeException e) {
+			e.printStackTrace();
+		}
+		try {
+			townHall.addWorker(bureaucrat);
+		} catch (ToManyWorkersException e) {
+			e.printStackTrace();
+		} catch (InCorrectWorkerTypeException e) {
+			e.printStackTrace();
+		}
+		try {
+			warehouse.addWorker(wareHouseWorker);
+		} catch (ToManyWorkersException e) {
+			e.printStackTrace();
+		} catch (InCorrectWorkerTypeException e) {
+			e.printStackTrace();
+		}
+		try {
+			hospital.addWorker(doctor);
+		} catch (ToManyWorkersException e) {
+			e.printStackTrace();
+		} catch (InCorrectWorkerTypeException e) {
+			e.printStackTrace();
+		}
+		for(CityWorker worker:residents){
+			worker.setHome(apartments);
+		}
 		name = null;
 		setName();
 		getParentGrid().addCity(this);
@@ -481,5 +537,17 @@ public class City extends Attackable implements Serializable,Container
 			}
 		}
 		return out;
+	}
+
+	public Workplace findSuitableEmployment(CityWorker cityWorker) {
+		for (Building building : getBuilding()) {
+			if(building instanceof Workplace){
+				if(((Workplace)building).isSuitableType(cityWorker)){
+					return (Workplace) building;
+				}
+			}
+		}
+		return null;
+
 	}
 }

@@ -42,7 +42,7 @@ public class IndustrialDock extends Workplace implements ToolBuilder<SeaCraft>
 		return new ResourceDemand(new Resource.Type[] {},healthInitial,resistanceInitial,maxWorkersInitial);
 	}
 	@Override
-	protected boolean isSuitableType(CityWorker cityWorker) {
+	public boolean isSuitableType(CityWorker cityWorker) {
 		return cityWorker instanceof ManualWorker;
 	}
 	@Override

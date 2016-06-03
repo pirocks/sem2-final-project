@@ -154,6 +154,7 @@ public abstract class Vehicle extends Tool implements Liver,Container
 		Container.kill(new ArrayList<Attackable>(passengers));
 		Container.kill(new ArrayList<Attackable>(weapons));
 		Container.kill(new ArrayList<Attackable>(vehicles));
+		getGrid().vehicleLeaves(this);
 	}
 	private void remove(AbstractPerson person) {
 		passengers.remove(person);

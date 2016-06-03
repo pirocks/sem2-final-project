@@ -78,7 +78,7 @@ public class UnderConstruction<Type extends Building> extends Workplace implemen
 		return new ResourceDemand();
 	}
 	@Override
-	protected boolean isSuitableType(CityWorker cityWorker) {
+	public boolean isSuitableType(CityWorker cityWorker) {
 		return cityWorker instanceof ManualWorker;
 	}
 	@Override
