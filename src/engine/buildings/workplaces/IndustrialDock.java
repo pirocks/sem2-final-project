@@ -104,11 +104,11 @@ public class IndustrialDock extends Workplace implements ToolBuilder<SeaCraft>
 		};
 		Image image = tool.getImage();
 		if(image != null)
-			buttons.add(new Button(tool.getClass().getName(), new ImageView(image)){{
+			buttons.add(new Button(tool.getClass().getSimpleName(), new ImageView(image)){{
 				setOnMouseClicked(handler);
 			}});
 		else
-			buttons.add(new Button(tool.getClass().getName()){{
+			buttons.add(new Button(tool.getClass().getSimpleName()){{
 				setOnMouseClicked(handler);
 			}});
 	}

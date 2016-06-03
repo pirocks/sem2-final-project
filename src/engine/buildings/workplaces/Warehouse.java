@@ -20,7 +20,7 @@ public class Warehouse extends Workplace
 	//resource or tool
 	public static int maxWorkersInitial = 1000;
 	public Resource inStock;
-	private double maxWeight = 1000;
+	private double maxWeight = 10000;
 
 	public Warehouse(CityBlock parentBlock, MoneySource owner) {
 		super(new AttackableConstants(healthInitial,resistanceInitial,parentBlock.getLocation()),parentBlock, maxWorkersInitial, owner);
@@ -53,6 +53,6 @@ public class Warehouse extends Workplace
 		return new ManualWorker(getParentCity(),new LocationPlanet(this));
 	}
 	public void updateMaxWeight(){
-		maxWeight = 1000 + workerCount()*100;
+		maxWeight = 10000 + workerCount()*100;
 	}
 }

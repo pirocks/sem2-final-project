@@ -7,10 +7,11 @@
     <list default="true" id="9165efbd-3d01-45a7-90d2-f59f7f5b1eb0" name="Default" comment="vehicle stuff">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/Factory.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/Factory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/people/cityworkers/Teacher.java" afterPath="$PROJECT_DIR$/src/engine/people/cityworkers/Teacher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/IndustrialDock.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/IndustrialDock.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/buildings/workplaces/Warehouse.java" afterPath="$PROJECT_DIR$/src/engine/buildings/workplaces/Warehouse.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/CityBuilder.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/CityBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/tools/vehicles/Liver.java" afterPath="$PROJECT_DIR$/src/engine/tools/vehicles/Liver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/requests/WorkerTypeRequest.java" afterPath="$PROJECT_DIR$/src/ui/requests/WorkerTypeRequest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/engine/universe/Universe.java" afterPath="$PROJECT_DIR$/src/engine/universe/Universe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/view/PlanetAccordion.java" afterPath="$PROJECT_DIR$/src/ui/view/PlanetAccordion.java" />
     </list>
     <ignored path="testing.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,21 +45,40 @@
       <file leaf-file-name="Factory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/Factory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="201" column="34" selection-start-line="201" selection-start-column="34" selection-end-line="201" selection-end-column="34" />
+            <state relative-caret-position="261">
+              <caret line="151" column="73" selection-start-line="151" selection-start-column="73" selection-end-line="151" selection-end-column="73" />
               <folding>
                 <element signature="method#getResourceCost#0;class#Factory#0" expanded="false" />
                 <element signature="method#setToolUnderConstruction#0;class#Factory#0" expanded="false" />
+                <element signature="e#3044#3045#0" expanded="true" />
+                <element signature="e#3070#3071#0" expanded="true" />
                 <element signature="method#addBuildOptions#0;class#Factory#0" expanded="false" />
                 <element signature="method#addButton#0;class#Factory#0" expanded="false" />
                 <element signature="method#addSpaceButtons#0;class#Factory#0" expanded="false" />
                 <element signature="method#addRoadGoingButtons#0;class#Factory#0" expanded="false" />
-                <element signature="method#addLandButtons#0;class#Factory#0" expanded="false" />
                 <element signature="method#addAirButtons#0;class#Factory#0" expanded="false" />
                 <element signature="method#addGunsButtons#0;class#Factory#0" expanded="false" />
                 <element signature="method#addMountedButtons#0;class#Factory#0" expanded="false" />
                 <element signature="method#addCarriedButtons#0;class#Factory#0" expanded="false" />
                 <element signature="method#addArtilleryButtons#0;class#Factory#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlanetAccordion.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ui/view/PlanetAccordion.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="143">
+              <caret line="62" column="80" selection-start-line="62" selection-start-column="80" selection-end-line="62" selection-end-column="80" />
+              <folding>
+                <element signature="method#initVars#0;class#PlanetAccordion#0" expanded="false" />
+                <element signature="method#init#0;class#PlanetAccordion#0" expanded="false" />
+                <element signature="class#1333:1533" expanded="false" />
+                <element signature="initializer##0;class#1333:1533" expanded="false" />
+                <element signature="class#1383:1524" expanded="false" />
+                <element signature="method#addPeople#0;class#PlanetAccordion#0" expanded="false" />
+                <element signature="method#addCitys#0;class#PlanetAccordion#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -89,7 +109,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
               <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1044#1045#0" expanded="false" />
+                <element signature="e#1077#1078#0" expanded="false" />
+                <element signature="e#1377#1378#0" expanded="false" />
+                <element signature="e#1410#1411#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -130,12 +156,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CityBuilder.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CityBuilder.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/CityBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+            <state relative-caret-position="102">
+              <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
               <folding>
+                <element signature="method#CityBuilder#0;class#CityBuilder#0" expanded="false" />
                 <element signature="method#die#0;class#CityBuilder#0" expanded="false" />
               </folding>
             </state>
@@ -145,15 +172,9 @@
       <file leaf-file-name="Universe.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/engine/universe/Universe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="60" column="48" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#2444#2445#0" expanded="false" />
-                <element signature="e#2470#2471#0" expanded="false" />
-                <element signature="e#2515#2516#0" expanded="false" />
-                <element signature="e#2538#2539#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="534">
+              <caret line="60" column="64" selection-start-line="60" selection-start-column="64" selection-end-line="60" selection-end-column="64" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -161,8 +182,8 @@
       <file leaf-file-name="IndustrialDock.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/IndustrialDock.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="44" column="10" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
+            <state relative-caret-position="901">
+              <caret line="103" column="10" selection-start-line="103" selection-start-column="10" selection-end-line="103" selection-end-column="10" />
               <folding>
                 <element signature="method#IndustrialDock#0;class#IndustrialDock#0" expanded="false" />
                 <element signature="method#setToolUnderConstruction#0;class#IndustrialDock#0" expanded="false" />
@@ -178,14 +199,7 @@
             <state relative-caret-position="272">
               <caret line="32" column="102" selection-start-line="32" selection-start-column="102" selection-end-line="32" selection-end-column="102" />
               <folding>
-                <element signature="imports" expanded="false" />
                 <element signature="method#getPlanetGroup#0;class#PlanetGroup#0" expanded="false" />
-                <element signature="e#1491#1492#0" expanded="false" />
-                <element signature="e#1538#1539#0" expanded="false" />
-                <element signature="e#1670#1671#0" expanded="false" />
-                <element signature="e#1705#1706#0" expanded="false" />
-                <element signature="e#3233#3234#0" expanded="false" />
-                <element signature="e#3307#3308#0" expanded="false" />
                 <element signature="method#terrain#0;class#PlanetGroup#0" expanded="false" />
                 <element signature="method#backGroundColor#0;class#PlanetGroup#0" expanded="false" />
               </folding>
@@ -199,13 +213,26 @@
             <state relative-caret-position="1156">
               <caret line="108" column="50" selection-start-line="108" selection-start-column="50" selection-end-line="108" selection-end-column="50" />
               <folding>
+                <element signature="imports" expanded="false" />
                 <element signature="method#DockYard#0;class#DockYard#0" expanded="false" />
+                <element signature="e#1495#1496#0" expanded="false" />
+                <element signature="e#1519#1520#0" expanded="false" />
+                <element signature="e#1821#1822#0" expanded="false" />
+                <element signature="e#1860#1861#0" expanded="false" />
                 <element signature="method#addBuildOptions#0;class#DockYard#0" expanded="false" />
                 <element signature="method#addTransporterMediumButton#0;class#DockYard#0" expanded="false" />
                 <element signature="method#addTransporterSmallButton#0;class#DockYard#0" expanded="false" />
                 <element signature="method#addSubmarineButton#0;class#DockYard#0" expanded="false" />
                 <element signature="method#addDestroyerButton#0;class#DockYard#0" expanded="false" />
                 <element signature="method#setToolUnderConstruction#0;class#DockYard#0" expanded="false" />
+                <element signature="e#4428#4429#0" expanded="false" />
+                <element signature="e#4476#4477#0" expanded="false" />
+                <element signature="e#4523#4524#0" expanded="false" />
+                <element signature="e#4556#4557#0" expanded="false" />
+                <element signature="e#4608#4609#0" expanded="false" />
+                <element signature="e#4680#4681#0" expanded="false" />
+                <element signature="e#4717#4718#0" expanded="false" />
+                <element signature="e#4746#4747#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -214,17 +241,17 @@
       <file leaf-file-name="LocationPlanet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/engine/planets/LocationPlanet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="66" column="26" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
+            <state relative-caret-position="173">
+              <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
               <folding>
                 <element signature="method#LocationPlanet#0;class#LocationPlanet#0" expanded="false" />
                 <element signature="method#LocationPlanet#1;class#LocationPlanet#0" expanded="false" />
                 <element signature="method#LocationPlanet#2;class#LocationPlanet#0" expanded="false" />
-                <element signature="method#LocationPlanet#4;class#LocationPlanet#0" expanded="false" />
                 <element signature="method#arrivePlanet#0;class#LocationPlanet#0" expanded="false" />
                 <element signature="method#distanceBetween#0;class#LocationPlanet#0" expanded="false" />
                 <element signature="method#go#0;class#LocationPlanet#0" expanded="false" />
                 <element signature="method#mediumLocation#0;class#LocationPlanet#0" expanded="false" />
+                <element signature="e#5272#5273#0" expanded="true" />
                 <element signature="method#equals#0;class#LocationPlanet#0" expanded="false" />
                 <element signature="method#remove#0;class#LocationPlanet#0" expanded="false" />
                 <element signature="method#setPlanet#0;class#LocationPlanet#0" expanded="false" />
@@ -242,7 +269,27 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
               <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1036#1037#0" expanded="false" />
+                <element signature="e#1069#1070#0" expanded="false" />
+                <element signature="e#1106#1107#0" expanded="false" />
+                <element signature="e#1137#1138#0" expanded="false" />
+                <element signature="e#1443#1444#0" expanded="false" />
+                <element signature="e#1476#1477#0" expanded="false" />
+                <element signature="e#1507#1508#0" expanded="false" />
+                <element signature="e#1531#1532#0" expanded="false" />
+                <element signature="e#1562#1563#0" expanded="false" />
+                <element signature="e#1586#1587#0" expanded="false" />
+                <element signature="e#1807#1808#0" expanded="false" />
+                <element signature="e#1822#1823#0" expanded="false" />
+                <element signature="e#1843#1844#0" expanded="false" />
+                <element signature="e#1858#1859#0" expanded="false" />
+                <element signature="e#1889#1890#0" expanded="false" />
+                <element signature="e#1913#1914#0" expanded="false" />
+                <element signature="e#2213#2214#0" expanded="false" />
+                <element signature="e#2267#2268#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -253,6 +300,15 @@
             <state relative-caret-position="629">
               <caret line="61" column="10" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
               <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1359#1360#0" expanded="false" />
+                <element signature="e#1387#1388#0" expanded="false" />
+                <element signature="e#1584#1585#0" expanded="false" />
+                <element signature="e#1607#1608#0" expanded="false" />
+                <element signature="e#1819#1820#0" expanded="false" />
+                <element signature="e#1865#1866#0" expanded="false" />
+                <element signature="e#2873#2874#0" expanded="false" />
+                <element signature="e#2943#2944#0" expanded="false" />
                 <element signature="method#nullityHandler#0;class#ResearchArea#0" expanded="false" />
               </folding>
             </state>
@@ -479,7 +535,25 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1836">
               <caret line="142" column="43" selection-start-line="142" selection-start-column="43" selection-end-line="142" selection-end-column="43" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#3987#3988#0" expanded="false" />
+                <element signature="e#4025#4026#0" expanded="false" />
+                <element signature="e#4229#4230#0" expanded="false" />
+                <element signature="e#4270#4271#0" expanded="false" />
+                <element signature="e#4817#4818#0" expanded="false" />
+                <element signature="e#4853#4854#0" expanded="false" />
+                <element signature="e#4885#4886#0" expanded="false" />
+                <element signature="e#4922#4923#0" expanded="false" />
+                <element signature="e#5555#5556#0" expanded="false" />
+                <element signature="e#5589#5590#0" expanded="false" />
+                <element signature="e#5619#5620#0" expanded="false" />
+                <element signature="e#5654#5655#0" expanded="false" />
+                <element signature="e#9452#9453#0" expanded="false" />
+                <element signature="e#9493#9494#0" expanded="false" />
+                <element signature="e#9658#9659#0" expanded="false" />
+                <element signature="e#9707#9708#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -505,7 +579,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2958">
               <caret line="184" column="18" selection-start-line="184" selection-start-column="18" selection-end-line="184" selection-end-column="18" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#4400#4401#0" expanded="false" />
+                <element signature="e#4461#4462#0" expanded="false" />
+                <element signature="e#5427#5428#0" expanded="false" />
+                <element signature="e#5463#5464#0" expanded="false" />
+                <element signature="e#5493#5494#0" expanded="false" />
+                <element signature="e#5525#5526#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -513,8 +595,8 @@
       <file leaf-file-name="Warehouse.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/Warehouse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
+            <state relative-caret-position="262">
+              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
               <folding>
                 <element signature="method#getResourceCost#0;class#Warehouse#0" expanded="false" />
                 <element signature="method#addSpecific#0;class#Warehouse#0" expanded="false" />
@@ -528,7 +610,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
               <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1021#1022#0" expanded="false" />
+                <element signature="e#1045#1046#0" expanded="false" />
+                <element signature="e#1619#1620#0" expanded="false" />
+                <element signature="e#1684#1685#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -538,12 +626,20 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="527">
               <caret line="50" column="37" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1048#1049#0" expanded="false" />
+                <element signature="e#1070#1071#0" expanded="false" />
+                <element signature="e#1299#1300#0" expanded="false" />
+                <element signature="e#1342#1343#0" expanded="false" />
+                <element signature="e#2207#2208#0" expanded="false" />
+                <element signature="e#2276#2277#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Liver.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Liver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/Liver.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="191">
@@ -665,11 +761,9 @@
         <option value="$PROJECT_DIR$/src/engine/universe/SolarSystem.java" />
         <option value="$PROJECT_DIR$/src/engine/universe/SolarSystemConstructionContext.java" />
         <option value="$PROJECT_DIR$/src/engine/universe/Star.java" />
-        <option value="$PROJECT_DIR$/src/engine/universe/Universe.java" />
         <option value="$PROJECT_DIR$/src/ui/view/city/NewBuildingPane.java" />
         <option value="$PROJECT_DIR$/src/ui/view/CityBorderPane.java" />
         <option value="$PROJECT_DIR$/src/ui/view/Controller.java" />
-        <option value="$PROJECT_DIR$/src/ui/view/PlanetAccordion.java" />
         <option value="$PROJECT_DIR$/src/ui/welcomescreen/Controller.java" />
         <option value="$PROJECT_DIR$/src/engine/science/CountriesDiscoveries.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/weapons/space/EmpWeapon.java" />
@@ -685,8 +779,6 @@
         <option value="$PROJECT_DIR$/src/ui/requests/StudentCompletedAlert.java" />
         <option value="$PROJECT_DIR$/src/engine/buildings/workplaces/Hospital.java" />
         <option value="$PROJECT_DIR$/src/engine/buildings/UnderConstruction.java" />
-        <option value="$PROJECT_DIR$/src/engine/buildings/workplaces/IndustrialDock.java" />
-        <option value="$PROJECT_DIR$/src/engine/buildings/workplaces/Warehouse.java" />
         <option value="$PROJECT_DIR$/src/engine/buildings/workplaces/TownHall.java" />
         <option value="$PROJECT_DIR$/src/engine/buildings/workplaces/School.java" />
         <option value="$PROJECT_DIR$/src/engine/buildings/workplaces/ResearchArea.java" />
@@ -696,11 +788,15 @@
         <option value="$PROJECT_DIR$/src/engine/tools/vehicles/Vehicle.java" />
         <option value="$PROJECT_DIR$/src/engine/cities/City.java" />
         <option value="$PROJECT_DIR$/src/engine/people/cityworkers/Teacher.java" />
-        <option value="$PROJECT_DIR$/src/engine/tools/vehicles/CityBuilder.java" />
-        <option value="$PROJECT_DIR$/src/engine/buildings/workplaces/Factory.java" />
         <option value="$PROJECT_DIR$/src/ui/requests/WorkerTypeRequest.java" />
         <option value="$PROJECT_DIR$/src/ui/requests/VehicleCompleted.java" />
         <option value="$PROJECT_DIR$/src/engine/tools/vehicles/Liver.java" />
+        <option value="$PROJECT_DIR$/src/engine/buildings/workplaces/Warehouse.java" />
+        <option value="$PROJECT_DIR$/src/ui/view/PlanetAccordion.java" />
+        <option value="$PROJECT_DIR$/src/engine/buildings/workplaces/IndustrialDock.java" />
+        <option value="$PROJECT_DIR$/src/engine/buildings/workplaces/Factory.java" />
+        <option value="$PROJECT_DIR$/src/engine/universe/Universe.java" />
+        <option value="$PROJECT_DIR$/src/engine/tools/vehicles/CityBuilder.java" />
       </list>
     </option>
   </component>
@@ -1464,13 +1560,6 @@
       <option name="presentableId" value="Default" />
       <updated>1460006225713</updated>
     </task>
-    <task id="LOCAL-00115" summary="constructor changes + buttons">
-      <created>1464454484824</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1464454484824</updated>
-    </task>
     <task id="LOCAL-00116" summary="bunch of edits">
       <created>1464499612109</created>
       <option name="number" value="00116" />
@@ -1807,7 +1896,14 @@
       <option name="project" value="LOCAL" />
       <updated>1464933823485</updated>
     </task>
-    <option name="localTasksCounter" value="164" />
+    <task id="LOCAL-00164" summary="vehicle stuff">
+      <created>1464963480785</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1464963480786</updated>
+    </task>
+    <option name="localTasksCounter" value="165" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -1837,6 +1933,7 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19561933" sideWeight="0.4946071" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32618684" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3047473" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24848942" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1851,7 +1948,6 @@
       <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924962" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41194487" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3047473" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1935,11 +2031,17 @@
           <properties />
           <option name="timeStamp" value="270" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/engine/buildings/workplaces/Factory.java</url>
+          <line>151</line>
+          <properties />
+          <option name="timeStamp" value="321" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="320" />
+      <option name="time" value="322" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -2377,23 +2479,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/view/PlanetAccordion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="128" column="38" selection-start-line="128" selection-start-column="38" selection-end-line="128" selection-end-column="38" />
-          <folding>
-            <element signature="method#initVars#0;class#PlanetAccordion#0" expanded="false" />
-            <element signature="method#init#0;class#PlanetAccordion#0" expanded="false" />
-            <element signature="method#addVehicles#0;class#PlanetAccordion#0" expanded="false" />
-            <element signature="class#1333:1533" expanded="false" />
-            <element signature="initializer##0;class#1333:1533" expanded="false" />
-            <element signature="class#1383:1524" expanded="false" />
-            <element signature="method#addPeople#0;class#PlanetAccordion#0" expanded="false" />
-            <element signature="method#addCitys#0;class#PlanetAccordion#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/science/CountriesDiscoveries.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
@@ -2562,7 +2647,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1036#1037#0" expanded="false" />
+            <element signature="e#1069#1070#0" expanded="false" />
+            <element signature="e#1106#1107#0" expanded="false" />
+            <element signature="e#1137#1138#0" expanded="false" />
+            <element signature="e#1443#1444#0" expanded="false" />
+            <element signature="e#1476#1477#0" expanded="false" />
+            <element signature="e#1507#1508#0" expanded="false" />
+            <element signature="e#1531#1532#0" expanded="false" />
+            <element signature="e#1562#1563#0" expanded="false" />
+            <element signature="e#1586#1587#0" expanded="false" />
+            <element signature="e#1807#1808#0" expanded="false" />
+            <element signature="e#1822#1823#0" expanded="false" />
+            <element signature="e#1843#1844#0" expanded="false" />
+            <element signature="e#1858#1859#0" expanded="false" />
+            <element signature="e#1889#1890#0" expanded="false" />
+            <element signature="e#1913#1914#0" expanded="false" />
+            <element signature="e#2213#2214#0" expanded="false" />
+            <element signature="e#2267#2268#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2571,40 +2676,9 @@
         <state relative-caret-position="272">
           <caret line="32" column="102" selection-start-line="32" selection-start-column="102" selection-end-line="32" selection-end-column="102" />
           <folding>
-            <element signature="imports" expanded="false" />
             <element signature="method#getPlanetGroup#0;class#PlanetGroup#0" expanded="false" />
-            <element signature="e#1491#1492#0" expanded="false" />
-            <element signature="e#1538#1539#0" expanded="false" />
-            <element signature="e#1670#1671#0" expanded="false" />
-            <element signature="e#1705#1706#0" expanded="false" />
-            <element signature="e#3233#3234#0" expanded="false" />
-            <element signature="e#3307#3308#0" expanded="false" />
             <element signature="method#terrain#0;class#PlanetGroup#0" expanded="false" />
             <element signature="method#backGroundColor#0;class#PlanetGroup#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/planets/LocationPlanet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="66" column="26" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
-          <folding>
-            <element signature="method#LocationPlanet#0;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#LocationPlanet#1;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#LocationPlanet#2;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#LocationPlanet#4;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#arrivePlanet#0;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#distanceBetween#0;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#go#0;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#mediumLocation#0;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#equals#0;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#remove#0;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#setPlanet#0;class#LocationPlanet#0" expanded="false" />
-            <element signature="class#InTheOceanException#0;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#moveBlock#0;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#moveGrid#0;class#LocationPlanet#0" expanded="false" />
-            <element signature="method#leavePlanet#0;class#LocationPlanet#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2613,17 +2687,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
           <caret line="744" column="0" selection-start-line="744" selection-start-column="0" selection-end-line="744" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/Warehouse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
-          <folding>
-            <element signature="method#getResourceCost#0;class#Warehouse#0" expanded="false" />
-            <element signature="method#addSpecific#0;class#Warehouse#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2631,7 +2695,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1021#1022#0" expanded="false" />
+            <element signature="e#1045#1046#0" expanded="false" />
+            <element signature="e#1619#1620#0" expanded="false" />
+            <element signature="e#1684#1685#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2640,6 +2710,15 @@
         <state relative-caret-position="629">
           <caret line="61" column="10" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
           <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1359#1360#0" expanded="false" />
+            <element signature="e#1387#1388#0" expanded="false" />
+            <element signature="e#1584#1585#0" expanded="false" />
+            <element signature="e#1607#1608#0" expanded="false" />
+            <element signature="e#1819#1820#0" expanded="false" />
+            <element signature="e#1865#1866#0" expanded="false" />
+            <element signature="e#2873#2874#0" expanded="false" />
+            <element signature="e#2943#2944#0" expanded="false" />
             <element signature="method#nullityHandler#0;class#ResearchArea#0" expanded="false" />
           </folding>
         </state>
@@ -2650,13 +2729,26 @@
         <state relative-caret-position="1156">
           <caret line="108" column="50" selection-start-line="108" selection-start-column="50" selection-end-line="108" selection-end-column="50" />
           <folding>
+            <element signature="imports" expanded="false" />
             <element signature="method#DockYard#0;class#DockYard#0" expanded="false" />
+            <element signature="e#1495#1496#0" expanded="false" />
+            <element signature="e#1519#1520#0" expanded="false" />
+            <element signature="e#1821#1822#0" expanded="false" />
+            <element signature="e#1860#1861#0" expanded="false" />
             <element signature="method#addBuildOptions#0;class#DockYard#0" expanded="false" />
             <element signature="method#addTransporterMediumButton#0;class#DockYard#0" expanded="false" />
             <element signature="method#addTransporterSmallButton#0;class#DockYard#0" expanded="false" />
             <element signature="method#addSubmarineButton#0;class#DockYard#0" expanded="false" />
             <element signature="method#addDestroyerButton#0;class#DockYard#0" expanded="false" />
             <element signature="method#setToolUnderConstruction#0;class#DockYard#0" expanded="false" />
+            <element signature="e#4428#4429#0" expanded="false" />
+            <element signature="e#4476#4477#0" expanded="false" />
+            <element signature="e#4523#4524#0" expanded="false" />
+            <element signature="e#4556#4557#0" expanded="false" />
+            <element signature="e#4608#4609#0" expanded="false" />
+            <element signature="e#4680#4681#0" expanded="false" />
+            <element signature="e#4717#4718#0" expanded="false" />
+            <element signature="e#4746#4747#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2668,23 +2760,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/IndustrialDock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="44" column="10" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
-          <folding>
-            <element signature="method#IndustrialDock#0;class#IndustrialDock#0" expanded="false" />
-            <element signature="method#setToolUnderConstruction#0;class#IndustrialDock#0" expanded="false" />
-            <element signature="method#addBuildOptions#0;class#IndustrialDock#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/School.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="50" column="37" selection-start-line="50" selection-start-column="37" selection-end-line="50" selection-end-column="37" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1048#1049#0" expanded="false" />
+            <element signature="e#1070#1071#0" expanded="false" />
+            <element signature="e#1299#1300#0" expanded="false" />
+            <element signature="e#1342#1343#0" expanded="false" />
+            <element signature="e#2207#2208#0" expanded="false" />
+            <element signature="e#2276#2277#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2692,20 +2780,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2958">
           <caret line="184" column="18" selection-start-line="184" selection-start-column="18" selection-end-line="184" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/universe/Universe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="60" column="48" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#2444#2445#0" expanded="false" />
-            <element signature="e#2470#2471#0" expanded="false" />
-            <element signature="e#2515#2516#0" expanded="false" />
-            <element signature="e#2538#2539#0" expanded="false" />
+            <element signature="e#4400#4401#0" expanded="false" />
+            <element signature="e#4461#4462#0" expanded="false" />
+            <element signature="e#5427#5428#0" expanded="false" />
+            <element signature="e#5463#5464#0" expanded="false" />
+            <element signature="e#5493#5494#0" expanded="false" />
+            <element signature="e#5525#5526#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2771,7 +2853,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1044#1045#0" expanded="false" />
+            <element signature="e#1077#1078#0" expanded="false" />
+            <element signature="e#1377#1378#0" expanded="false" />
+            <element signature="e#1410#1411#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2809,7 +2897,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1836">
           <caret line="142" column="43" selection-start-line="142" selection-start-column="43" selection-end-line="142" selection-end-column="43" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#3987#3988#0" expanded="false" />
+            <element signature="e#4025#4026#0" expanded="false" />
+            <element signature="e#4229#4230#0" expanded="false" />
+            <element signature="e#4270#4271#0" expanded="false" />
+            <element signature="e#4817#4818#0" expanded="false" />
+            <element signature="e#4853#4854#0" expanded="false" />
+            <element signature="e#4885#4886#0" expanded="false" />
+            <element signature="e#4922#4923#0" expanded="false" />
+            <element signature="e#5555#5556#0" expanded="false" />
+            <element signature="e#5589#5590#0" expanded="false" />
+            <element signature="e#5619#5620#0" expanded="false" />
+            <element signature="e#5654#5655#0" expanded="false" />
+            <element signature="e#9452#9453#0" expanded="false" />
+            <element signature="e#9493#9494#0" expanded="false" />
+            <element signature="e#9658#9659#0" expanded="false" />
+            <element signature="e#9707#9708#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2992,16 +3098,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/CityBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
-          <folding>
-            <element signature="method#die#0;class#CityBuilder#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ui/requests/VehicleInWaterRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -3026,18 +3122,90 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/Liver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="47" column="69" selection-start-line="47" selection-start-column="69" selection-end-line="47" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/Warehouse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+          <folding>
+            <element signature="method#getResourceCost#0;class#Warehouse#0" expanded="false" />
+            <element signature="method#addSpecific#0;class#Warehouse#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/view/PlanetAccordion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="62" column="80" selection-start-line="62" selection-start-column="80" selection-end-line="62" selection-end-column="80" />
+          <folding>
+            <element signature="method#initVars#0;class#PlanetAccordion#0" expanded="false" />
+            <element signature="method#init#0;class#PlanetAccordion#0" expanded="false" />
+            <element signature="class#1333:1533" expanded="false" />
+            <element signature="initializer##0;class#1333:1533" expanded="false" />
+            <element signature="class#1383:1524" expanded="false" />
+            <element signature="method#addPeople#0;class#PlanetAccordion#0" expanded="false" />
+            <element signature="method#addCitys#0;class#PlanetAccordion#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/IndustrialDock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="103" column="10" selection-start-line="103" selection-start-column="10" selection-end-line="103" selection-end-column="10" />
+          <folding>
+            <element signature="method#IndustrialDock#0;class#IndustrialDock#0" expanded="false" />
+            <element signature="method#setToolUnderConstruction#0;class#IndustrialDock#0" expanded="false" />
+            <element signature="method#addBuildOptions#0;class#IndustrialDock#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/planets/LocationPlanet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+          <folding>
+            <element signature="method#LocationPlanet#0;class#LocationPlanet#0" expanded="false" />
+            <element signature="method#LocationPlanet#1;class#LocationPlanet#0" expanded="false" />
+            <element signature="method#LocationPlanet#2;class#LocationPlanet#0" expanded="false" />
+            <element signature="method#arrivePlanet#0;class#LocationPlanet#0" expanded="false" />
+            <element signature="method#distanceBetween#0;class#LocationPlanet#0" expanded="false" />
+            <element signature="method#go#0;class#LocationPlanet#0" expanded="false" />
+            <element signature="method#mediumLocation#0;class#LocationPlanet#0" expanded="false" />
+            <element signature="e#5272#5273#0" expanded="true" />
+            <element signature="method#equals#0;class#LocationPlanet#0" expanded="false" />
+            <element signature="method#remove#0;class#LocationPlanet#0" expanded="false" />
+            <element signature="method#setPlanet#0;class#LocationPlanet#0" expanded="false" />
+            <element signature="class#InTheOceanException#0;class#LocationPlanet#0" expanded="false" />
+            <element signature="method#moveBlock#0;class#LocationPlanet#0" expanded="false" />
+            <element signature="method#moveGrid#0;class#LocationPlanet#0" expanded="false" />
+            <element signature="method#leavePlanet#0;class#LocationPlanet#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/buildings/workplaces/Factory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="201" column="34" selection-start-line="201" selection-start-column="34" selection-end-line="201" selection-end-column="34" />
+        <state relative-caret-position="261">
+          <caret line="151" column="73" selection-start-line="151" selection-start-column="73" selection-end-line="151" selection-end-column="73" />
           <folding>
             <element signature="method#getResourceCost#0;class#Factory#0" expanded="false" />
             <element signature="method#setToolUnderConstruction#0;class#Factory#0" expanded="false" />
+            <element signature="e#3044#3045#0" expanded="true" />
+            <element signature="e#3070#3071#0" expanded="true" />
             <element signature="method#addBuildOptions#0;class#Factory#0" expanded="false" />
             <element signature="method#addButton#0;class#Factory#0" expanded="false" />
             <element signature="method#addSpaceButtons#0;class#Factory#0" expanded="false" />
             <element signature="method#addRoadGoingButtons#0;class#Factory#0" expanded="false" />
-            <element signature="method#addLandButtons#0;class#Factory#0" expanded="false" />
             <element signature="method#addAirButtons#0;class#Factory#0" expanded="false" />
             <element signature="method#addGunsButtons#0;class#Factory#0" expanded="false" />
             <element signature="method#addMountedButtons#0;class#Factory#0" expanded="false" />
@@ -3047,11 +3215,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/Liver.java">
+    <entry file="file://$PROJECT_DIR$/src/engine/universe/Universe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="47" column="69" selection-start-line="47" selection-start-column="69" selection-end-line="47" selection-end-column="69" />
+        <state relative-caret-position="534">
+          <caret line="60" column="64" selection-start-line="60" selection-start-column="64" selection-end-line="60" selection-end-column="64" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/tools/vehicles/CityBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+          <folding>
+            <element signature="method#CityBuilder#0;class#CityBuilder#0" expanded="false" />
+            <element signature="method#die#0;class#CityBuilder#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

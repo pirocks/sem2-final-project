@@ -60,7 +60,7 @@ public class PlanetAccordion
 				pane.getChildren().add(new Text(v.getDestination().toString()));
 			else
 				pane.getChildren().add(new Text("None"));
-			accordion.getPanes().add(new TitledPane(v.getClass().getName(),pane));
+			accordion.getPanes().add(new TitledPane(v.getClass().getSimpleName(),pane));
 			addVehicleContents(v,pane);
 		}
 	}

@@ -8,6 +8,7 @@ import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.tools.Tool;
 import engine.tools.ToolUnderConstruction;
+import engine.tools.vehicles.CityBuilder;
 import engine.tools.vehicles.Liver;
 import engine.tools.vehicles.Vehicle;
 import engine.tools.vehicles.air.*;
@@ -29,6 +30,7 @@ import engine.tools.weapons.guns.mounted.MachineGunSmall;
 import engine.universe.MoneySource;
 import engine.universe.Resource;
 import engine.universe.ResourceDemand;
+import engine.universe.Universe;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
@@ -147,6 +149,8 @@ public class Factory extends Workplace implements ToolBuilder<Tool>, Liver
 		addButton(buttons,new AutomatedArmouredVehicle(new LocationPlanet(this),-1));
 		addButton(buttons,new AutomatedTank(new LocationPlanet(this),-1));
 		addButton(buttons,new Tank(new LocationPlanet(this),-1));
+		addButton(buttons,new CityBuilder(getParentCity().getParentGrid(),new LocationPlanet(this), Universe
+				.playersCountry));
 	}
 	private void addAirButtons(ArrayList<Node> buttons) {
 		addButton(buttons,new CargoPlaneLarge(new LocationPlanet(this),-1));
