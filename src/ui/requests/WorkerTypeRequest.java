@@ -1,9 +1,11 @@
 package ui.requests;
 
 import engine.buildings.workplaces.School;
+import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.DialogPane;
+import javafx.scene.input.MouseEvent;
 
 /**
  * Created by user on 4/13/2016.
@@ -20,13 +22,15 @@ public class WorkerTypeRequest extends Request
 		dialog.setTitle("Select the type of worker you want to build");
 		DialogPane pane = new DialogPane();
 		pane.getChildren().add(new Button("Build 250 teachers"){{
-
+			setOnMouseClicked(new EventHandler<MouseEvent>() {
+				@Override
+				public void handle(MouseEvent event) {
+					// TODO: 6/2/2016
+				}
+			});
 		}});
+		// TODO: 6/2/2016
 		dialog.setDialogPane(pane);
 		dialog.showAndWait();
 	}
-
-
-		// TODO: 4/13/2016  implment this
-		//todo also think about wether this will be imediately callled or request will be run through afterward, I think tht imediately called is a better Idea,, so call in constructor.
 }

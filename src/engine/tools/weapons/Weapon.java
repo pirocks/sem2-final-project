@@ -14,8 +14,6 @@ public abstract class Weapon extends Tool
 	{
 		super(attackableConstants, numToolsConstructor);
 		this.damage = damage;
-//		if(this instanceof )//maybe use this
-		//todo do nothing
 		this.range = range;
 	}
 	public boolean weaponQ()

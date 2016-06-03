@@ -18,7 +18,7 @@ public class SolarSystemConstructionContext {
 	public double minRadius;
 	public double x,y,z;//location
 	public Star star;
-	// TODO: 5/9/2016 change this to an arraylist
+	// : 5/9/2016 change this to an arraylist
 	public PlanetConstructionContext context1;
 	public PlanetConstructionContext context2;
     public PlanetConstructionContext context3;
@@ -58,7 +58,7 @@ public class SolarSystemConstructionContext {
 		int numHazards = u.numHazardsPerPlanet;
 		double IronAbundance = utils.getRandomDouble(0.25,0.75);
 		double OilAbundance = utils.getRandomDouble(0.25,0.75);
-		// TODO: 5/9/2016 fix magic nums
+		// : 5/9/2016 fix magic nums
 		double WaterAbundance = utils.getRandomDouble(0.1,0.9);
 		double FoodAbundance = utils.getRandomDouble(0.8,0.97);
 		double HeliumAbundance = utils.getRandomDouble(0.01,0.2);

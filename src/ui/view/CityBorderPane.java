@@ -100,7 +100,7 @@ public class CityBorderPane{
 					setOnMouseClicked(new EventHandler<MouseEvent>() {
 						@Override
 						public void handle(MouseEvent event) {
-							int i = controller.cityAccordion.getPanes().size() - 1;// TODO: 5/31/2016 make into get last pane
+							int i = controller.cityAccordion.getPanes().size() - 1;
 							NewBuildingPane newBuildingPane;
 							if(controller.cityAccordion.getPanes().get(i) instanceof NewBuildingPane) {
 								controller.cityAccordion.getPanes().remove(i);

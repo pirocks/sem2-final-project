@@ -15,13 +15,13 @@ import java.util.concurrent.ThreadLocalRandom;
 /**
  * Created by bob on 3/5/2016.
  * Created by bob on 3/5/2016.
- * todo serializable won't work on container classes need to fix
+ * serializable won't work on container classes need to fix
  */
  
 
 public class Universe implements Serializable
 {
-	public transient static Universe universe;// TODO: 5/8/2016 make this non tranient//  figure out how this will load
+	public transient static Universe universe;
 	public static Country playersCountry;
 	private ArrayList<SolarSystem> solarSystems;
 	private ArrayList<Country> countries;

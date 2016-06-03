@@ -10,9 +10,8 @@ import java.io.Serializable;
 public class Star implements Serializable
 {
     private double x,y,z;
-    private SolarSystem parentSolarSystem;// TODO: 5/11/2016 go through and make stuff like this final
+    private SolarSystem parentSolarSystem;//  5/11/2016 go through and make stuff like this final
     private double radius;
-	// TODO: 5/9/2016 fix magic numbers/ determine constants
 	public static final double maxRadius = 100000;
 	public static final double minRadius = 100;
     private double energyEmitted;
@@ -25,7 +24,7 @@ public class Star implements Serializable
 		this.parentSolarSystem = parentSolarSystem;
 		radius = utils.getRandomDouble(minRadius,maxRadius);
 		energyEmitted = utils.getRandomDouble(minEnergy,maxRnergy);
-		mass = starDensity*radius*radius*Math.PI;// TODO: 5/9/2016 make this a  3d star
+		mass = ((starDensity * 4.0) / 3.0) * radius * radius * radius * Math.PI;
 	}
 
 	public SolarSystem getParentSolarSystem() {

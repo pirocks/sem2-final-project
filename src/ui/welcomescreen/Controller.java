@@ -83,7 +83,7 @@ public class Controller implements Initializable {
 		getPeoplePerCity();
 		int numHazards = 0;
 		numHazards = getNumHazards(numHazards);
-		double industryProb = 0.9;// TODO: 5/20/2016
+		double industryProb = 0.75;
 		boolean generateOtherCountries = disableEnemy.selectedProperty().getValue();
 		boolean onlyGenerateOnePlayersCountry = generateOneStartingCity.selectedProperty().getValue();
 		UniverseConstructionContext universeConstructionContext = new UniverseConstructionContext(

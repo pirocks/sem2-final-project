@@ -44,7 +44,7 @@ public class SolarSystem implements Container, Serializable
 	    {
 			radii.add(i,utils.getRandomDouble(s.minRadius,s.maxRadius));
 		    PlanetConstructionContext c = new PlanetConstructionContext(s);
-		    Planet planet = new Planet(c,this);// TODO: 4/11/2016 planet construction cntext
+		    Planet planet = new Planet(c,this);
 		    planets.add(planet);
 	    }
 	    registerContainer(planets);

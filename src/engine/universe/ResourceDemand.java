@@ -64,8 +64,6 @@ public class ResourceDemand implements Serializable
 
 	}
 	public double getWeight() {
-		if(resource == null)
-			return 0;// TODO: 5/30/2016 remove later
 		return resource.getWeight();
 	}
 	public void pay(Resource resource) {

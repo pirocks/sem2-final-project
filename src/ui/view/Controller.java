@@ -16,11 +16,13 @@ import engine.universe.Country;
 import engine.universe.SolarSystem;
 import engine.universe.Universe;
 import javafx.embed.swing.SwingNode;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
@@ -194,9 +196,23 @@ public class Controller implements Initializable{
 		content.getChildren().add(new Text("City Stats:"));
 		content.getChildren().add(new Text("City Name:" + city.name));
 		content.getChildren().add(new Text("Unemployment:" + city.getJobLessCount()));
-		content.getChildren().add(new Button("Assign unemployed to Job"));// TODO: 5/19/2016
+		content.getChildren().add(new Button("Assign unemployed to Job"){{
+			setOnMouseClicked(new EventHandler<MouseEvent>() {
+				@Override
+				public void handle(MouseEvent event) {
+					// TODO: 5/19/2016
+				}
+			});
+		}});
 		content.getChildren().add(new Text("Homeless:" + city.getHomeLessCount()));
-		content.getChildren().add(new Button("Assign homeless to housing")); // TODO: 5/19/2016
+		content.getChildren().add(new Button("Assign homeless to housing"){{
+			setOnMouseClicked(new EventHandler<MouseEvent>() {
+				@Override
+				public void handle(MouseEvent event) {
+					// TODO: 5/19/2016
+				}
+			});
+		}});
 		content.getChildren().add(new Text("Money Available:" + city.getMoneySource().getWealth()));
 		citySpecificPane.getChildren().add(new ScrollPane(content));
 	}

@@ -23,7 +23,7 @@ public abstract class Attackable
 	public Attackable(AttackableConstants a) {
 		if(a == null) {
 			health = Integer.MAX_VALUE;
-			resistance = Integer.MAX_VALUE;// TODO: 5/10/2016 better eway f habdling cityblock behavior?
+			resistance = Integer.MAX_VALUE;// 5/10/2016 better eway f habdling cityblock behavior?
 		}
 		else {
 			this.health = a.health;

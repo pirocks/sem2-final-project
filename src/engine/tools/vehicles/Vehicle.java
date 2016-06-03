@@ -41,11 +41,11 @@ public abstract class Vehicle extends Tool implements Liver,Container
 		registerContainer(vehicles);
 		for (LocationPlanet locationPlanet : vehicleInitialConstants.attackableConstants.locationPlanet) {
 			Planet p = locationPlanet.getPlanet();
-			if(p != null) {
-				Grid grid = p.getGrids()[locationPlanet.getGridy()][locationPlanet.getGridx()];
-				grid.vehicleArrives(this);
-			}//hacky
-			// TODO: 5/30/2016 fix this
+			if(p == null) {
+				throw new IllegalStateException();
+			}
+			Grid grid = p.getGrids()[locationPlanet.getGridy()][locationPlanet.getGridx()];
+			grid.vehicleArrives(this);
 		}
 	}
 	public abstract boolean inSpaceQ();

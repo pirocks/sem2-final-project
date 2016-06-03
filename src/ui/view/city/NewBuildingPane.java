@@ -186,6 +186,6 @@ public class NewBuildingPane extends TitledPane implements Container{
 
 	@Override
 	public void remove(Attackable attackable) {
-		// TODO: 5/30/2016
+		//do nothing
 	}
 }

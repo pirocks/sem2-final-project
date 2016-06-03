@@ -126,7 +126,7 @@ public class PlanetAccordion
 					}catch (NumberFormatException e){
 						Alert alert = new Alert(Alert.AlertType.WARNING,"not a valid integer. Please enter a valid integer value, greater than 0 and less than " + numPeople + 1 + ".");
 						alert.showAndWait();
-						handle(event);// TODO: 5/31/2016 go through and add this
+						handle(event);
 						return;
 					}
 					disembark(numPeople,persons,vehicle);
