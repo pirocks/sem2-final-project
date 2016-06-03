@@ -7,6 +7,8 @@ import engine.universe.Country;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.IllegalFormatCodePointException;
+
 /**
  * Created by bob on 3/5/2016.
  * 
@@ -139,7 +141,7 @@ public class Grid implements Serializable,Container
 		if(parentPlanet == planet)
 		{
 			parentPlanet = null;
-			assert(false);
+			throw new IllegalFormatCodePointException(1);
 		}
 	}
 	@Override
@@ -173,7 +175,17 @@ public class Grid implements Serializable,Container
 			remove((City)attackable);
 		else if(attackable instanceof Planet)
 			remove((Planet) attackable);
+		else if(attackable instanceof Vehicle)
+			remove((Vehicle)attackable);
 		else
 			throw new IllegalStateException();
+	}
+	private void remove(Vehicle vehicle){
+		vehicles.remove(vehicle);
+	}
+
+	public void addCity(City city) {
+		registerContainer(city);
+		citys.add(city);
 	}
 }

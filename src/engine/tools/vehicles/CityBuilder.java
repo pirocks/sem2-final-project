@@ -15,19 +15,16 @@ import static engine.universe.Resource.Type.*;
  */
 public class CityBuilder extends LandVehicle {
 	private final Country parentCountry;
+	private Resource resource;
+
 	public CityBuilder(LocationPlanet locationPlanet, Country parentCountry) {
 		super(new VehicleInitialConstants(locationPlanet,1,1,1000,100000), 1);
 		this.parentCountry = parentCountry;
-		try {
-			super.loadObject(new Resource(new Resource.Type[]{
-					Wood, Iron, Oil //// 5/23/2016 add more as necesary
+resource = new Resource(new Resource.Type[]{
+					Wood, Iron, Oil //// 5/23/2016 add more as necessary
 			},new Double[]{
 					100.0,100.0,100.0
-			}));
-		} catch (ToHeavyException e) {
-			e.printStackTrace();
-			throw new IllegalStateException(e);
-		}
+			});
 	}
 	@Override
 	public boolean inSpaceQ() {
@@ -62,5 +59,9 @@ public class CityBuilder extends LandVehicle {
 	@Override
 	public boolean sanityCheck() {
 		return false;
+	}
+
+	public Resource getResource() {
+		return resource;
 	}
 }

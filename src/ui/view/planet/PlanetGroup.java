@@ -88,6 +88,9 @@ public class PlanetGroup extends Pane
 			}
 			else{
 				usableItems.add(new ImageView(vehicleImage){{
+					setPreserveRatio(true);
+					setFitHeight(50);
+					setFitWidth(50);
 					setOnMouseClicked(new EventHandler<MouseEvent>() {
 						@Override
 						public void handle(MouseEvent event) {

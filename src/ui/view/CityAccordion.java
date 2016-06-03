@@ -3,6 +3,7 @@ package ui.view;
 import engine.buildings.Building;
 import engine.buildings.workplaces.ToolBuilder;
 import engine.cities.City;
+import engine.universe.Universe;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
@@ -52,6 +53,12 @@ public class CityAccordion {
 			accordion.getPanes().add(titledPane);
 		}
 		accordion.setExpandedPane(accordion.getPanes().get(inFocus));
+		if(city.getParentCountry() != Universe.playersCountry) {
+			for (TitledPane titledPane : accordion.getPanes()) {
+				titledPane.setDisable(true);
+			}
+
+		}
 	}
 	public void redraw(ToolBuilder toolBuilder){
 		factoryPanes.get(toolBuilder).setContent(((Building)toolBuilder).getPane());

@@ -31,7 +31,6 @@ public class Planet extends Attackable implements Serializable
     public static String[] names = {"Earth","Mars","Venus","Mercury","Jupiter","Pluto","Saturn","Neptune","Uranus"};
 	private static int nameCount = 0;
 	public String name;
-	private Vehicle[] allVehicles;
 
 	private void setName() {
 		try {

@@ -51,6 +51,7 @@ public class Country extends MoneySource implements Serializable, Container
 	    grids = new ArrayList<>();
 	    people = new ArrayList<>();
 	    countriesDiscoveries = new CountriesDiscoveries(this);
+	    governmentType = GovernmentType.Democracy;
     }
     private void remove(City city) {
         if(city == capitalCity) {

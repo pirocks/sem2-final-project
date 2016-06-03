@@ -4,6 +4,7 @@ import engine.cities.Container;
 import engine.people.cityworkers.PeopleInitialConstants;
 import engine.planets.LocationPlanet;
 import engine.tools.vehicles.Liver;
+import engine.tools.vehicles.Path;
 import engine.tools.vehicles.Vehicle;
 import engine.tools.weapons.Attackable;
 import engine.tools.weapons.Weapon;
@@ -28,6 +29,7 @@ public class Soldier extends AbstractPerson implements Container,Liver
 	public static double salaryInitial =
 			UniversalConstants.normalPersonSalary;
 	private static long timeToHealOnePerson = 3600*24;
+	public static double speed = 10;
 
 	public void setVehicle(Vehicle vehicle) {
 		deregisterContainer(this.vehicle);
@@ -51,22 +53,30 @@ public class Soldier extends AbstractPerson implements Container,Liver
 		registerLiver();
 	}
 
-	// TODO: 4/10/2016 implement do life and figure out hjow the soldsier do skill worrks/asking for new orders?
+	private LocationPlanet Destination;
+	private Path path;
 	@Override
 	public void doLife(double time) {
 		switch(currentTask)
 		{
 			case March:
-				//how are estinations represented??
-				//location objects??
+				if(getLocation().size() == 0)
+					return;
+				if(!getLocation().get(0).equals(path.getFirst())){
+					try {
+						getLocation().get(0).goTowards(path.getFirst(),speed,false,false,false);
+					} catch (LocationPlanet.InTheOceanException e) {
+						e.printStackTrace();
+						throw new IllegalStateException();
+					}
+				}else{
+					path.removeFirst();
+					doLife(time);
+				}
 				break;
 			case Drive:
 				assert(vehicle != null);
-				//??vehicle.drive(time);/////?????
-				break;
-			case Guard:
-				//moneysources could move very fast??
-				//how does this work
+				//assume vehicle has its orders
 				break;
 			case Heal:
                 super.increaseHealth(healRate*time);

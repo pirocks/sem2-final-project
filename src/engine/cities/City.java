@@ -15,10 +15,13 @@ import engine.planets.LocationPlanet;
 import engine.planets.TerrainType;
 import engine.tools.AttackableConstants;
 import engine.tools.vehicles.CityBuilder;
+import engine.tools.vehicles.Weighable;
 import engine.tools.weapons.Attackable;
 import engine.universe.Country;
 import engine.universe.MoneySource;
+import engine.universe.Universe;
 import org.jetbrains.annotations.NotNull;
+import ui.view.Controller;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -231,15 +234,34 @@ public class City extends Attackable implements Serializable,Container
 	public City(CityBuilder cityBuilder){
 		super(new AttackableConstants(healthInitial,resistanceInitial,cityBuilder.getLocation()));
 		moneySource = cityBuilder.getParentCountry();
+		parentGrid = cityBuilder.getGrid();
+		cityBlocks = new HashSet<>();
+		moneySource =  new MoneySource(Double.MAX_VALUE);
+		hospitals = new ArrayList<>();
+		residents = new HashSet<>();
+		parentCountry = Universe.playersCountry;
 		CityBlock cityBlockTownHall = new CityBlock(this,49,49);
 		setBuilding(new TownHall(cityBlockTownHall,moneySource));
-		LocationPlanet warehouseLocation = new LocationPlanet(parentGrid,49,48);
 		CityBlock cityBlockWarehouse = new CityBlock(this,49,48);
-		setBuilding(new Warehouse(cityBlockWarehouse,moneySource));
-		LocationPlanet apartmentLocation = new LocationPlanet(parentGrid,49,47);
-		CityBlock apartmentBlock = new CityBlock(this,x,y);
+		Warehouse warehouse = new Warehouse(cityBlockWarehouse, moneySource);
+		try {
+			warehouse.addInStock(cityBuilder.getResource());
+		} catch (Weighable.ToHeavyException e) {
+			e.printStackTrace();
+		}
+		setBuilding(warehouse);
+		CityBlock apartmentBlock = new CityBlock(this,48,49);
+		setBuilding(new ApartmentBlock(apartmentBlock));
+		CityBlock schoolBlock =  new CityBlock(this,48,48);
+		setBuilding(new School(schoolBlock,moneySource));
+		CityBlock factoryBlock = new CityBlock(this,47,48);
+		setBuilding(new Factory(factoryBlock,moneySource));
 		name = null;
 		setName();
+		getParentGrid().addCity(this);
+		cityBuilder.die();
+		Controller.controller.planetBorderPaneManager.init();
+		Controller.controller.initPlanetAccordion();
 	}
 	private void notEnoughHousingHandler(CityConstructionContext c) {
 		if(getMaximumHousingCapacity() > c.population)
