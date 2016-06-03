@@ -4,6 +4,7 @@ import engine.cities.City;
 import engine.people.AbstractPerson;
 import engine.planets.LocationPlanet;
 import engine.universe.UniversalConstants;
+import ui.requests.StudentCompletedAlert;
 
 public class Teacher<Type extends AbstractPerson> extends CityWorker implements Cloneable
 {
@@ -52,7 +53,7 @@ public class Teacher<Type extends AbstractPerson> extends CityWorker implements 
     }
 
 	private void studentCompletedHandler(Type student) {
-		// TODO: 5/29/2016
+		StudentCompletedAlert studentCompletedAlert = new StudentCompletedAlert<Type>(getWorkBuilding().getParentCity(),this, this, location.get(0));
 	}
 
 	@Override

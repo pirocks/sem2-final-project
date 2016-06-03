@@ -33,15 +33,15 @@ public class WorkerTypeRequest extends Request
 		dialog.getButtonTypes().add(new ButtonType("Build 100 Researchers"));
 		Optional<ButtonType> buttonType = dialog.showAndWait();
 		if(buttonType.isPresent()){
-			if(buttonType.get().equals("Build 250 teachers"))
+			if(buttonType.get().getText().equals("Build 250 teachers"))
 				teacher.setStudent(new Teacher<AbstractPerson>(city,locationPlanet));
-			if(buttonType.get().equals("Build 100 Bureaucrats"))
+			if(buttonType.get().getText().equals("Build 100 Bureaucrats"))
 				teacher.setStudent(new Bureaucrat(city,locationPlanet));
-			if(buttonType.get().equals("Build 100 Doctors"))
+			if(buttonType.get().getText().equals("Build 100 Doctors"))
 				teacher.setStudent(new Doctor(city,locationPlanet));
-			if(buttonType.get().equals("Build 100 ManualWorkers"))
+			if(buttonType.get().getText().equals("Build 100 ManualWorkers"))
 				teacher.setStudent(new ManualWorker(city,locationPlanet));
-			if(buttonType.get().equals("Build 100 Researchers"))
+			if(buttonType.get().getText().equals("Build 100 Researchers"))
 				teacher.setStudent(new Researcher(city,locationPlanet));
 
 		}
