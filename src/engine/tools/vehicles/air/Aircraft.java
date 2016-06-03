@@ -6,10 +6,10 @@ import engine.tools.vehicles.VehicleInitialConstants;
 
 public abstract class Aircraft extends Vehicle
 {
-
+    public static double startHealthAdd = 0;
 
     protected Aircraft(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
-        super(vehicleInitialConstants, numToolsConstructor);
+        super(vehicleInitialConstants.addHealth(startHealthAdd), numToolsConstructor);
     }
 
     @Override

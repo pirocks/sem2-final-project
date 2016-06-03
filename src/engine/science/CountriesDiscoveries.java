@@ -30,7 +30,6 @@ public class CountriesDiscoveries
 		LethalTasers lethalTasers =  new LethalTasers(new ArrayList<Discovery>(){{add(tasers);add(superConductors);}});
 		SolarSails solarSails =  new SolarSails(new ArrayList<Discovery>(){{add(spaceShuttle);}});
 		Origami origami = new Origami(noPreq);
-		LargeSolarSails largeSolarSails = new LargeSolarSails(new ArrayList<Discovery>(){{add(origami);add(spaceShuttle);add(solarSails);}});
 		discoveries.add(economics);
 		discoveries.add(graphene);
 		discoveries.add(humanGenomeSequencing);
@@ -45,7 +44,6 @@ public class CountriesDiscoveries
 		discoveries.add(spaceLivingTwo);
 		discoveries.add(solarSails);
 		discoveries.add(origami);
-		discoveries.add(largeSolarSails);
 	}
 
 	public ArrayList<Discovery> getDiscoveredDiscoveries() {

@@ -23,7 +23,7 @@ public class Bureaucrat extends CityWorker implements Cloneable
 	}
     @Override
     public void doSkill(double time) {
-        // TODO: 4/9/2016  make sure this ties into ui/ai
+        // 4/9/2016  make sure this ties into ui/ai//yeah funny
         //really this has nothing to do , in fact the args don't allow for any sort of management.
 		//so just charge the salarygiver for time
 	    paySalary(time);

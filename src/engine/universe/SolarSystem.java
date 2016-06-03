@@ -76,7 +76,7 @@ public class SolarSystem implements Container, Serializable
     }
 
 
-    public void remove(Planet planet) {
+    private void remove(Planet planet) {
         planets.remove(planet);
     }
 

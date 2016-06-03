@@ -39,4 +39,12 @@ public class AttackableConstants {
 	public Grid getGrid() {
 		return  locationPlanet.get(0).getGrid();
 	}
+
+	public void addHealth(double startHealthAdd) {
+		health += startHealthAdd;
+	}
+
+	public void startHealthMult(double startHealthMult) {
+		health *= startHealthMult;
+	}
 }

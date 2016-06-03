@@ -9,7 +9,10 @@ import engine.tools.vehicles.space.SpaceCraft;
 public abstract class Shuttle extends SpaceCraft
 {
 
+	public static double maxPassengersMult = 1;
+	public static double maxWeightMult = 1;
+
 	protected Shuttle(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
-		super(vehicleInitialConstants, numToolsConstructor);
+		super(vehicleInitialConstants.maxPassengersMult(maxPassengersMult).maxWeightMult(maxWeightMult), numToolsConstructor);
 	}
 }

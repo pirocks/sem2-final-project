@@ -34,8 +34,8 @@ public class City extends Attackable implements Serializable,Container
 {
 	public MoneySource moneySource;// if I don't have time this will just be the country money source//working
 	// assumption as of 5/19/2016
-	public static double resistanceInitial;// TODO: 5/31/2016
-	public static double healthInitial;// TODO: 5/31/2016
+	public static double resistanceInitial = 75000*2;
+	public static double healthInitial = 75000*100;
 	private boolean isCapital;
 	private int x,y;//center of city in grid//will be townHall location
 	private Grid parentGrid;//can be used to find location//engine.cities limited to one grid
@@ -413,7 +413,6 @@ public class City extends Attackable implements Serializable,Container
 		}
 		for (Hospital hospital : hospitals) {
 			hospital.die();
-//todo make sure all has this
 		}
 	}
 	public Grid getParentGrid() {

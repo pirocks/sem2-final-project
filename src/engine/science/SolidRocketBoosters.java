@@ -1,5 +1,7 @@
 package engine.science;
 
+import engine.tools.vehicles.space.shuttle.ShuttleSmall;
+
 import java.util.ArrayList;
 
 /**
@@ -14,6 +16,6 @@ public class SolidRocketBoosters extends Discovery {
 
 	@Override
 	public void postDiscovery() {
-		// TODO: 5/19/2016
+		ShuttleSmall.startHealthMult *= 1.2;
 	}
 }

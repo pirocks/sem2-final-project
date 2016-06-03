@@ -17,13 +17,8 @@ public class MoneySource implements Serializable
     {
         wealth += amount;
     }
-    public void recieve(Resource r)
-    {
-        //TODO:implement me//figure ut wahat this is
-    }
     public void pay(MoneySource target,double amount)
     {
-        assert(canPay(amount));
         target.recieve(amount);
         wealth -= amount;
     }
@@ -37,7 +32,7 @@ public class MoneySource implements Serializable
     }
     public void outOfMoneyHandler(double amount)//possibly abstract
     {
-        
+        //whatever
     }
 
 }

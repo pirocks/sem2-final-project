@@ -6,9 +6,11 @@ import engine.planets.LocationPlanet;
 import engine.tools.vehicles.Liver;
 import engine.tools.vehicles.Vehicle;
 import engine.tools.weapons.Attackable;
+import engine.tools.weapons.Weapon;
 import engine.universe.Country;
-import engine.universe.MoneySource;
 import engine.universe.UniversalConstants;
+
+import java.util.ArrayList;
 
 //this is not one soldier unit. It isd a unit of soldiers
 //remember that
@@ -26,6 +28,13 @@ public class Soldier extends AbstractPerson implements Container,Liver
 	public static double salaryInitial =
 			UniversalConstants.normalPersonSalary;
 	private static long timeToHealOnePerson = 3600*24;
+
+	public void setVehicle(Vehicle vehicle) {
+		deregisterContainer(this.vehicle);
+		this.vehicle = vehicle;
+		registerContainer(vehicle);
+	}
+
 	public enum TypeOfTask {
         March,Drive,Guard,Heal//what about attack??
 	}
@@ -34,12 +43,10 @@ public class Soldier extends AbstractPerson implements Container,Liver
 	private TypeOfTask currentTask;
 	public static double healRate;
 	public static double walkingSpeed;
-	private Vehicle vehicle;// TODO: 5/24/2016 register this with the container
-	// TODO: 5/24/2016 soldiers need weapons
-	private MoneySource toGuard;
+	private Vehicle vehicle;
+	private ArrayList<Weapon> weapons = new ArrayList<>();// TODO: 5/24/2016 soldiers need weapons and register
 	private double xDestination,yDestination;
 	public Soldier(Country parentCountry,LocationPlanet location) {
-	    //todo what about location here
 	    super(new PeopleInitialConstants(populationInitial, foodUsePerPersonInitial, crimeRiskInitial, crimeImpactInitial, salaryInitial, parentCountry,location));
 		registerLiver();
 	}
@@ -62,10 +69,9 @@ public class Soldier extends AbstractPerson implements Container,Liver
 				//how does this work
 				break;
 			case Heal:
-				// TODO: 5/5/2016 update to use attackable constants
-//                attackableConstants.health += healRate*time;
-//                if(attackableConstants.health > 1.0)
-//                    attackableConstants.health = 1.0;
+                super.increaseHealth(healRate*time);
+                if(super.getHealth() > 1.0)
+                    super.setHealth(1);
 				break;
 		}
 		paySalary(time);
@@ -80,7 +86,7 @@ public class Soldier extends AbstractPerson implements Container,Liver
     protected void dieSpecific()
     {
 		return;
-    }//TODO:implement this
+    }
 	@Override
 	public void remove(Attackable attackable) {
 		if(attackable instanceof Vehicle)

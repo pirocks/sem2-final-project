@@ -1,5 +1,10 @@
 package engine.science;
 
+import engine.tools.vehicles.air.Aircraft;
+import engine.tools.vehicles.land.AutomatedArmouredVehicle;
+import engine.tools.vehicles.roadgoing.AllPurpose;
+import engine.tools.vehicles.space.SpaceCraft;
+
 import java.util.ArrayList;
 
 /**
@@ -13,6 +18,9 @@ public class Graphene extends Discovery {
 
 	@Override
 	public void postDiscovery() {
-		// TODO: 5/19/2016
+		Aircraft.startHealthAdd += 100;
+		AllPurpose.startHealthInitial += 100;
+		AutomatedArmouredVehicle.startHealthInitial += 100;
+		SpaceCraft.startHealthMult = 1.1;
 	}
 }

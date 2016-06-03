@@ -22,4 +22,24 @@ public class VehicleInitialConstants {
 				maxPassengers,
 				maxWeight);
 	}
+
+	public VehicleInitialConstants addHealth(double startHealthAdd) {
+		attackableConstants.addHealth(startHealthAdd);
+		return this;
+	}
+
+	public VehicleInitialConstants startHealthMult(double startHealthMult) {
+		attackableConstants.startHealthMult(startHealthMult);
+		return this;
+	}
+
+	public VehicleInitialConstants maxPassengersMult(double maxPassengersMult) {
+		maxPassengersMult *= maxPassengersMult;
+		return this;
+	}
+
+	public VehicleInitialConstants maxWeightMult(double maxWeightMult) {
+		maxWeight *= maxWeightMult;
+		return this;
+	}
 }

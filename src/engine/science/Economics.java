@@ -1,5 +1,7 @@
 package engine.science;
 
+import engine.people.cityworkers.Bureaucrat;
+
 import java.util.ArrayList;
 
 /**
@@ -13,6 +15,8 @@ public class Economics extends Discovery {
 
 	@Override
 	public void postDiscovery() {
-		// TODO: 5/30/2016 these need to be done after ther constants have been figured out.
+		Bureaucrat.crimeRiskInitial /=  2;
+		Bureaucrat.crimeImpactInitial /= 2;
+		Bureaucrat.foodUsePerPersonInitial /= 2;
 	}
 }

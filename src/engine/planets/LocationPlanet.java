@@ -47,8 +47,8 @@ public class LocationPlanet implements Serializable,Container
 		gridx = c.getGrid().getX();
 		gridy = c.getGrid().getY();
 		planet = c.getGrid().getParentPlanet();
-		blockx = c.getCapitalBuilding().getParentBlock().getXInGrid();// TODO: 4/9/2016 see below
-		blocky = c.getCapitalBuilding().getParentBlock().getYInGrid();// TODO: 4/9/2016 make sure that this gets the town hal not capital city and tht getImage y in grid gets cityblock
+		blockx = c.getCapitalBuilding().getParentBlock().getXInGrid();
+		blocky = c.getCapitalBuilding().getParentBlock().getYInGrid();
 		if(planet == null)
 			throw new IllegalArgumentException();
 		registerContainer(planet);
@@ -70,7 +70,7 @@ public class LocationPlanet implements Serializable,Container
 	}
 	public LocationPlanet(LocationPlanet locationPlanet){
 		planet = locationPlanet.getPlanet();
-//		if(planet == null)// TODO: 5/29/2016 fix this bug
+//		if(planet == null)//  5/29/2016 fix this bug
 //			throw new IllegalArgumentException();
 		gridx = locationPlanet.getGridx();
 		gridy = locationPlanet.getGridy();
@@ -108,7 +108,7 @@ public class LocationPlanet implements Serializable,Container
 		blocky = loc.getBlocky();
 		return this;
 	}
-	//force arrival is hacky. todo fix later by changing ints to doubles in internal representation
+	//force arrival is hacky.  fix later by changing ints to doubles in internal representation
 	//there are some places that you cannot go. need to check for that.
 	public LocationPlanet goTowards(LocationPlanet loc,double d,boolean forceArrival,boolean canGoInWater,boolean
 			canGoInSpace) throws InTheOceanException {

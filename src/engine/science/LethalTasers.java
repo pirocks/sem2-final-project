@@ -1,5 +1,7 @@
 package engine.science;
 
+import engine.tools.weapons.guns.Gun;
+
 import java.util.ArrayList;
 
 /**
@@ -12,6 +14,6 @@ public class LethalTasers extends Discovery {
 
 	@Override
 	public void postDiscovery() {
-		// TODO: 5/19/2016
+		Gun.damageMult = 1.2;
 	}
 }

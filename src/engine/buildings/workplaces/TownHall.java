@@ -51,7 +51,7 @@ public class TownHall extends Workplace
 		return new Bureaucrat(parentCity,new LocationPlanet(this));
 	}
 
-	private void remove(City city) {// TODO: 5/30/2016 make these all private
+	private void remove(City city) {
 		if(parentCity == city)
 			parentCity = null;
 		if(!amIDead)

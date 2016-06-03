@@ -16,16 +16,16 @@ import static engine.people.cityworkers.CityWorker.WhereAmI.*;
 
 public abstract class CityWorker extends AbstractPerson implements Container//don't foret to getImage the workplace
 {
-	public static double travelTimeConstant = 1.0/20.0;// TODO: 5/27/2016
+	public static double travelTimeConstant = 1.0/20.0;
 	public static double TimeAtWork = 0.4;
 	public static double TimeAtHome = 0.5;
 
 	protected WhereAmI whereAmI;
-	private Building currentBuilding;// TODO: 5/29/2016 check registration for these
-	private Housing home = null;// TODO: 5/29/2016 check registration for these
-	private City currentCity;// TODO: 5/29/2016 check registration for these //should be renamed to parent city
+	private Building currentBuilding;
+	private Housing home = null;
+	private City currentCity; //should be renamed to parent city
 	protected double timeRemainingAtLocation;
-	private Hospital hospital;// TODO: 5/29/2016 check registration for these  //is null if not going to hospital
+	private Hospital hospital;  //is null if not going to hospital
 	private Workplace workplace;
 	public CityWorker(PeopleInitialConstants peopleInitialConstants,City city) {
 		super(peopleInitialConstants);
@@ -78,15 +78,19 @@ public abstract class CityWorker extends AbstractPerson implements Container//do
 	}
 	public void goHome() {
 		double distance = 0;
-		if(home != null)
+		if(home != null) {
+			registerContainer(currentBuilding);
 			distance = home.getLocation().get(0).distanceBetween(currentBuilding.getLocation().get(0));
+		}
 		whereAmI = WhereAmI.GoingToHome;
 		timeRemainingAtLocation = (long)(distance*travelTimeConstant);
 	}
 	private void goToWork() {
 		double distance = 0;
-		if(currentBuilding != null)
+		if(currentBuilding != null) {
+			registerContainer(currentBuilding);
 			distance = getWorkBuilding().getLocation().get(0).distanceBetween(currentBuilding.getLocation().get(0));
+		}
 		whereAmI = WhereAmI.GoingToWork;
 		timeRemainingAtLocation = (long)(distance*travelTimeConstant);
 	}
@@ -94,6 +98,7 @@ public abstract class CityWorker extends AbstractPerson implements Container//do
 		whereAmI = WhereAmI.AtHome;
 		deregisterContainer(currentBuilding);
 		currentBuilding = home;
+		registerContainer(currentBuilding);
 		timeRemainingAtLocation = TimeAtHome;
 		if(home != null)
 			home.registerContainer(this);
@@ -102,10 +107,12 @@ public abstract class CityWorker extends AbstractPerson implements Container//do
 		whereAmI = WhereAmI.AtWork;
 		deregisterContainer(currentBuilding);
 		currentBuilding = getWorkBuilding();
+		registerContainer(currentBuilding);
 		timeRemainingAtLocation = TimeAtWork;
 		currentBuilding.registerContainer(this);
 	}
 	public void leaveHospital() {
+		deregisterContainer(hospital);
 		hospital = null;
 		goHome();
 	}

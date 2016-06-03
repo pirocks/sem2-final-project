@@ -1,5 +1,8 @@
 package engine.science;
 
+import engine.tools.vehicles.roadgoing.AllPurpose;
+import engine.tools.vehicles.roadgoing.Train;
+
 import java.util.ArrayList;
 
 /**
@@ -12,6 +15,8 @@ public class HyperLoop extends Discovery{
 
 	@Override
 	public void postDiscovery() {
-		// TODO: 5/19/2016
+		AllPurpose.maxPassengersInitial += 10;
+		Train.maxPassengersInitial  += 10;
+		Train.maxWeightInitial *=  1.1;
 	}
 }

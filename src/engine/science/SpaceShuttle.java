@@ -1,5 +1,7 @@
 package engine.science;
 
+import engine.tools.vehicles.space.shuttle.Shuttle;
+
 import java.util.ArrayList;
 
 /**
@@ -13,6 +15,8 @@ public class SpaceShuttle extends Discovery {
 
 	@Override
 	public void postDiscovery() {
-		// TODO: 5/19/2016
+		Shuttle.maxPassengersMult *= 2;
+		Shuttle.startHealthMult *= 2;
+		Shuttle.maxWeightMult *= 2;
 	}
 }

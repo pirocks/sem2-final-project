@@ -5,7 +5,7 @@ import engine.buildings.workplaces.ResearchArea;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public abstract class Discovery implements Serializable //todo maybe make interface??
+public abstract class Discovery implements Serializable
 {
 	private double percentComplete = 0.0; //0 to 1
 	private ArrayList<Discovery> required;

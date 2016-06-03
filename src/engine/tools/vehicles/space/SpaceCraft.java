@@ -8,8 +8,10 @@ public abstract class SpaceCraft extends Vehicle
 {
 
 
+	public static double startHealthMult = 1;
+
 	protected SpaceCraft(VehicleInitialConstants vehicleInitialConstants, int numToolsConstructor) {
-		super(vehicleInitialConstants, numToolsConstructor);
+		super(vehicleInitialConstants.startHealthMult(startHealthMult), numToolsConstructor);
 	}
 
 	@Override

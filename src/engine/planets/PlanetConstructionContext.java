@@ -70,7 +70,7 @@ public class PlanetConstructionContext {
 		    throw new IllegalArgumentException();
 //	    if(p.star == null)
 //		    throw new IllegalArgumentException();
-	    this.radiusFromSolarSystem = p.radiusFromSolarSystem + utils.getRandomDouble(100000,1000000);// TODO: 5/9/2016 make sure these nums are reasonable//they are because I said so.
+	    this.radiusFromSolarSystem = p.radiusFromSolarSystem + utils.getRandomDouble(100000,1000000);// 5/9/2016 make sure these nums are reasonable//they are because I said so.
 	    this.star = p.star;
 	    this.countries = p.countries;
 	    this.gridNum = p.gridNum;

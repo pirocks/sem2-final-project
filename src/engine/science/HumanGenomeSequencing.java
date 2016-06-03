@@ -1,5 +1,7 @@
 package engine.science;
 
+import engine.people.AbstractPerson;
+
 import java.util.ArrayList;
 
 /**
@@ -14,6 +16,7 @@ public class HumanGenomeSequencing extends Discovery {
 
 	@Override
 	public void postDiscovery() {
-		// TODO: 5/19/2016
+		AbstractPerson.healthInitial += 0.2;
+		AbstractPerson.resistanceInitial += 0.1;
 	}
 }

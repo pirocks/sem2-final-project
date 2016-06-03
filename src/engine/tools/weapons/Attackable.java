@@ -91,4 +91,7 @@ public abstract class Attackable
 		return resistance;
 	}
 
+	public void setHealth(double health) {
+		this.health = health;
+	}
 }

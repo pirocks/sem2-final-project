@@ -17,7 +17,7 @@ public class GridConstructionContext
 	double hazardAbundance;
 //	ArrayList<NaturalHazard> hazards; handalleed by grid becuase parent grid needed in constructor
 	ArrayList<NaturalResource> naturalResources;
-	private ArrayList<TerrainType> surroundingTerrains;// TODO: 4/11/2016 shoul  have an intial method which determines all terrain types before actually constructing grids would als fix above issue with hazards and resources by predefining which resources hazards and terrains to have
+	private ArrayList<TerrainType> surroundingTerrains;// 4/11/2016 shoul  have an intial method which determines all terrain types before actually constructing grids would als fix above issue with hazards and resources by predefining which resources hazards and terrains to have
 	double citiesPerGrid;
 	Country country;
 	public double industryProb;
@@ -90,7 +90,6 @@ public class GridConstructionContext
 	}
 	public TerrainType getSuitableTerrainType()
 	{
-		// TODO: 5/10/2016
 		int LandCount = 0;
 		int SeaCount = 0;
 		int CoastCount = 0;
@@ -149,7 +148,6 @@ public class GridConstructionContext
 		else if(WastelandCount  > LandCount)
 			return Wasteland;
 		int rand = (int) (Math.random()*(surroundingTerrains.size() + 1));
-		// TODO: 5/10/2016 the below can be done better
 		switch(rand)
 		{
 			case 0:

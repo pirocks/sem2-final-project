@@ -12,6 +12,6 @@ public class Origami extends Discovery{
 
 	@Override
 	public void postDiscovery() {
-		// TODO: 5/19/2016
+		// doesn't do anything
 	}
 }

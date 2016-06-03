@@ -62,7 +62,7 @@ public class Planet extends Attackable implements Serializable
 	    int expectedCountrySize = planetSize/numCounties;
 	    //so now lets cut up the world into countries
 	    Country[][] countries = new Country[c.gridNum][c.gridNum];
-	    // TODO: 5/11/2016 improve this,  paint fil recursive style method?
+	    // 5/11/2016 improve this,  paint fil recursive style method?
 	    int countryGridCount = 0;
 	    int countryIndex = 0;
 	    for(int y = 0; y < futureGrids.length;y++)

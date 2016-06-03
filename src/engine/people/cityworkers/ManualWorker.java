@@ -40,7 +40,7 @@ public class ManualWorker extends CityWorker
 			workplace.makeProgress(time*getPopulation());
 		}
 		else if(getWorkBuilding() instanceof Warehouse){
-			// TODO: 5/29/2016
+			((Warehouse)getWorkBuilding()).updateMaxWeight();
 		}
 		else
 			throw new IllegalStateException();
