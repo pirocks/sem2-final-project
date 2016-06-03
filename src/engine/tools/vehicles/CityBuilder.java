@@ -20,7 +20,7 @@ public class CityBuilder extends LandVehicle {
 		this.parentCountry = parentCountry;
 		try {
 			super.loadObject(new Resource(new Resource.Type[]{
-					Wood, Iron, Oil //// TODO: 5/23/2016 add more as necesary
+					Wood, Iron, Oil //// 5/23/2016 add more as necesary
 			},new Double[]{
 					100.0,100.0,100.0
 			}));
@@ -43,7 +43,7 @@ public class CityBuilder extends LandVehicle {
 	}
 	@Override
 	public Image getImage() {
-		return null;// TODO: 5/23/2016
+		return new Image(getClass().getResourceAsStream("CityBuilderConstructionSite.jpg"));
 	}
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {

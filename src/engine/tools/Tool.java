@@ -9,15 +9,12 @@ import java.io.Serializable;
 
 public abstract class Tool extends Attackable implements Serializable,Weighable
 {
-	// TODO: 5/25/2016 DO NOT OVERRIDE EQUALS AND HASHCODE FOR ANY TOOL SPECIFICALLY VEHICLE.
+	// 5/25/2016 DO NOT OVERRIDE EQUALS AND HASHCODE FOR ANY TOOL SPECIFICALLY VEHICLE.
 	protected int numTools;
 
 	protected Tool(AttackableConstants attackableConstants, int numToolsConstructor) {
 		super(attackableConstants);
 		this.numTools = numToolsConstructor;
-		//TODO think of some code to put here
-		//what about construction costs
-		//constructor from a another class
 	}
 	public abstract boolean vehicleQ();
 	public abstract boolean weaponQ();
@@ -33,8 +30,6 @@ public abstract class Tool extends Attackable implements Serializable,Weighable
 	}
 	@Override
 	public double getWeight() {
-		if(requiredResourcesForConstruction() == null)
-			return 0;//// TODO: 5/30/2016 remove later
 		return requiredResourcesForConstruction().getWeight();
 	}
 	//  this really shouldn't be used once the vehicle is out in the real world

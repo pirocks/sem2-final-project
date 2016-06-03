@@ -3,7 +3,10 @@ package engine.tools.vehicles.space.Freighter;
 import engine.planets.LocationPlanet;
 import engine.tools.AttackableConstants;
 import engine.tools.vehicles.VehicleInitialConstants;
+import engine.universe.Resource;
 import engine.universe.ResourceDemand;
+
+import static engine.universe.Resource.Type.*;
 
 /**
  * Created by bob on 4/7/2016.
@@ -27,7 +30,7 @@ public class FreighterSmall extends Freighter
 
 	@Override
 	public ResourceDemand requiredResourcesForConstruction() {
-		return null;// TODO: 5/22/2016
+		return new ResourceDemand(new Resource.Type[]{Resource.Type.Iron,Oil,Silicon,Uranium,Water},startHealthInitial,resistanceInitial,maxWeightInitial,maxPassengersInitial);
 	}
 
 	@Override

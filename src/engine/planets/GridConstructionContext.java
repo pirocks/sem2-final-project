@@ -37,7 +37,7 @@ public class GridConstructionContext
 		naturalResources = new ArrayList<>();
 		double ironProb = Math.random();
 		if(ironProb < planetConstructionContext.IronAbundance)
-			naturalResources.add(new NaturalResource(Resource.Type.Iron,100,0,100));// TODO: 5/10/2016 magic constants and this number probly needs to be bigger
+			naturalResources.add(new NaturalResource(Resource.Type.Iron,100,0,100));// TODO: this number probly needs to be bigger
 		double OilProb = Math.random();
 		if(OilProb < planetConstructionContext.OilAbundance)
 			naturalResources.add(new NaturalResource(Resource.Type.Oil,100,0,100));

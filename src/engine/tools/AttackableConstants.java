@@ -16,8 +16,8 @@ public class AttackableConstants {
 
 
 	public AttackableConstants(double healthInitial, double resistanceInitial, LocationPlanet locationPlanet) {
-//		if(healthInitial <= 0)// TODO: 5/30/2016 reenable later
-//			throw new IllegalArgumentException();
+		if(healthInitial <= 0)
+			throw new IllegalArgumentException();
 		this.health= healthInitial;
 		this.resistance = resistanceInitial;
 		this.locationPlanet = new ArrayList<>(1);
@@ -25,8 +25,8 @@ public class AttackableConstants {
 	}
 
 	public AttackableConstants(double healthInitial, double resistanceInitial, ArrayList<LocationPlanet> location) {
-//		if(healthInitial <= 0)// TODO: 5/30/2016 reenable later
-//			throw new IllegalArgumentException();
+		if(healthInitial <= 0)
+			throw new IllegalArgumentException();
 		this.health= healthInitial;
 		this.resistance = resistanceInitial;
 		this.locationPlanet = location;

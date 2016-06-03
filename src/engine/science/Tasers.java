@@ -12,6 +12,6 @@ public class Tasers extends Discovery {
 
 	@Override
 	public void postDiscovery() {
-		// TODO: 5/19/2016
+
 	}
 }

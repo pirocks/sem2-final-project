@@ -31,8 +31,6 @@ public class ToolUnderConstruction <Type extends Tool> implements Serializable
 		return areWeDoneYet();
 	}
 	public boolean areWeDoneYet() {
-		if(resourceDemand == null)
-			return false;// TODO: 5/30/2016 remve later
 		return timeRequired < 0 && resourceDemand.fullFilledQ();
 	}
 	public Type getFinishedTool() {

@@ -14,6 +14,6 @@ public class SuperConductors extends Discovery {
 
 	@Override
 	public void postDiscovery() {
-		// TODO: 5/19/2016
+
 	}
 }

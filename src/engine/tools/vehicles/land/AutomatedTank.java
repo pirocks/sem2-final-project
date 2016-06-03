@@ -31,7 +31,7 @@ public class AutomatedTank extends LandVehicle {
 
 	@Override
 	public Image getImage() {
-		return null;// TODO: 5/23/2016
+		return null;
 	}
 
 	@Override
