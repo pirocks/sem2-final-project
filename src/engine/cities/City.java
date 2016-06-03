@@ -16,6 +16,7 @@ import engine.tools.AttackableConstants;
 import engine.tools.vehicles.CityBuilder;
 import engine.tools.vehicles.Weighable;
 import engine.tools.weapons.Attackable;
+import engine.tools.weapons.Weapon;
 import engine.universe.Country;
 import engine.universe.MoneySource;
 import engine.universe.Universe;
@@ -36,6 +37,7 @@ public class City extends Attackable implements Serializable,Container
 {
 	public MoneySource moneySource;// if I don't have time this will just be the country money source//working
 	// assumption as of 5/19/2016
+	private ArrayList<Weapon> waiting = new ArrayList<>();
 	public static double resistanceInitial = 75000*2;
 	public static double healthInitial = 75000*100;
 	private boolean isCapital;
@@ -538,7 +540,6 @@ public class City extends Attackable implements Serializable,Container
 		}
 		return out;
 	}
-
 	public Workplace findSuitableEmployment(CityWorker cityWorker) {
 		for (Building building : getBuilding()) {
 			if(building instanceof Workplace){
@@ -549,5 +550,10 @@ public class City extends Attackable implements Serializable,Container
 		}
 		return null;
 
+	}
+
+	public void addToSupply(Weapon finishedTool) {
+		waiting.add(finishedTool);
+		registerContainer(finishedTool);
 	}
 }

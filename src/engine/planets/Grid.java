@@ -188,4 +188,8 @@ public class Grid implements Serializable,Container
 		registerContainer(city);
 		citys.add(city);
 	}
+
+	public void setTerrainType(TerrainType terrainType) {
+		this.terrainType = terrainType;
+	}
 }

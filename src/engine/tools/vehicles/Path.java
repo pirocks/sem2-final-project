@@ -174,4 +174,14 @@ public class Path {
 	public void removeFirst() {
 		locationPlanets.remove(0);
 	}
+
+	@Override
+	public String toString() {
+		try {
+			return locationPlanets.toString();
+		} catch (NullPointerException e) {
+
+		}
+		return "";
+	}
 }

@@ -9,6 +9,7 @@ import engine.tools.AttackableConstants;
 import engine.tools.Tool;
 import engine.tools.ToolUnderConstruction;
 import engine.tools.vehicles.Liver;
+import engine.tools.vehicles.Vehicle;
 import engine.tools.vehicles.air.*;
 import engine.tools.vehicles.land.ArmouredVehicle;
 import engine.tools.vehicles.land.AutomatedArmouredVehicle;
@@ -17,6 +18,7 @@ import engine.tools.vehicles.land.Tank;
 import engine.tools.vehicles.roadgoing.*;
 import engine.tools.vehicles.space.shuttle.ShuttleMedium;
 import engine.tools.vehicles.space.shuttle.ShuttleSmall;
+import engine.tools.weapons.Weapon;
 import engine.tools.weapons.guns.artillery.*;
 import engine.tools.weapons.guns.carried.HandGun;
 import engine.tools.weapons.guns.carried.SniperRifle;
@@ -41,7 +43,8 @@ import ui.view.Controller;
 import java.util.ArrayList;
 import java.util.Optional;
 
-public class Factory extends Workplace implements ToolBuilder<Tool>
+public class Factory extends Workplace implements ToolBuilder<Tool>, Liver
+
 {
 	public static double healthInitial = 10000;
 	public static double resistanceInitial = 2000;
@@ -53,6 +56,7 @@ public class Factory extends Workplace implements ToolBuilder<Tool>
 		super(new AttackableConstants(parentBlock.getLocation(),healthInitial,resistanceInitial), parentBlock, maxWorkersInitial, owner);
 		if(parentBlock.getParentGrid().getParentPlanet() == null)
 			throw new IllegalArgumentException();
+		registerLiver();
 	}
 	@Override
 	protected String getName() {
@@ -184,10 +188,26 @@ public class Factory extends Workplace implements ToolBuilder<Tool>
 	public CityWorker createCorrectType() {
 		return new ManualWorker(getParentCity(),new LocationPlanet(this));
 	}
-
 	@Override
 	public City getCity() {
 		return getParentCity();
 	}
 
+	@Override
+	public void doLife(double time) {
+		if(getToolUnderConstruction().areWeDoneYet()){
+			Tool finishedTool = getToolUnderConstruction().getFinishedTool();
+			if(finishedTool instanceof Weapon){
+				getParentCity().addToSupply(((Weapon)finishedTool));
+			}
+			if(finishedTool instanceof Vehicle){
+
+			}
+		}
+	}
+
+	@Override
+	public boolean sanityCheck() {
+		return true;
+	}
 }

@@ -172,9 +172,10 @@ public abstract class Vehicle extends Tool implements Liver,Container
 		}
 	}
 	public void setDestination(LocationPlanet destination) {
-		path = new Path(this.getLocation().get(0),destination,this instanceof Aircraft || this instanceof SeaCraft|| this instanceof SpaceCraft,!(this instanceof Aircraft));
-		System.out.println(destination.toString());
-		System.out.println(getLocation().get(0).toString());
+//		path = new Path(this.getLocation().get(0),destination,this instanceof Aircraft || this instanceof SeaCraft|| this instanceof SpaceCraft,!(this instanceof Aircraft));
+//		System.out.println(destination.toString());
+//		System.out.println(getLocation().get(0).toString());
+		System.out.println(path.toString());
 		this.destination = destination;
 	}
 
@@ -212,16 +213,24 @@ public abstract class Vehicle extends Tool implements Liver,Container
 	}
 	@Override
 	public void doLife(double time) {
-		if(path != null && path.locationPlanets != null && path.locationPlanets.size() != 0) {
-			assert (getLocation().size() == 1);
+		if(destination != null){
+//		if(path != null && path.locationPlanets != null && path.locationPlanets.size() != 0) {
+//			assert (getLocation().size() == 1);
 			Grid initialGrid = getLocation().get(0).getGrid();
-			try {
+//			try {
+//
+//				for (LocationPlanet locationPlanet : getLocation()) {
+//						locationPlanet.goTowards(path.locationPlanets.get(0), (getSpeed() * time) / (12 * 60 * 60), false,this instanceof SeaCraft || this instanceof Aircraft || this instanceof SpaceCraft,this instanceof SpaceCraft);
+//				}
+//			} catch (LocationPlanet.InTheOceanException e) {
+//				throw new IllegalStateException();
+//			}
+			for (LocationPlanet locationPlanet : getLocation()) {
+				try {
+					locationPlanet.goTowards(destination,(getSpeed() * time) / (12 * 60 * 60), false,this instanceof SeaCraft || this instanceof Aircraft || this instanceof SpaceCraft,this instanceof SpaceCraft);
+				} catch (LocationPlanet.InTheOceanException e) {
 
-				for (LocationPlanet locationPlanet : getLocation()) {
-						locationPlanet.goTowards(path.locationPlanets.get(0), (getSpeed() * time) / (12 * 60 * 60), false,this instanceof SeaCraft || this instanceof Aircraft || this instanceof SpaceCraft,this instanceof SpaceCraft);
 				}
-			} catch (LocationPlanet.InTheOceanException e) {
-				throw new IllegalStateException();
 			}
 
 			Grid finalGrid = getLocation().get(0).getGrid();
