@@ -214,10 +214,10 @@ public class City extends Attackable implements Serializable,Container
 				building = new WorkersHouseBlock(cityBlock); //workers house block
 
 		} else if (cityConstructionContext.type == CityConstructionContext.Type.Scientific) {
-			//add as much huosing as necesary
-			//favor adding in uter areas
+			//add as much housing as necessary
+			//favor adding in outer areas
 			//favor housing
-			double housingProb = 0.8;// TODO: 5/10/2016 magic constants
+			double housingProb = 0.8;
 			//workers houseing is the rest.
 			double rand = Math.random();
 			if (rand < housingProb)
@@ -229,7 +229,7 @@ public class City extends Attackable implements Serializable,Container
 		return building;
 	}
 	public City(CityBuilder cityBuilder){
-		super(new AttackableConstants(healthInitial,resistanceInitial,cityBuilder.getLocation()));// TODO: 5/26/2016 add all building locations
+		super(new AttackableConstants(healthInitial,resistanceInitial,cityBuilder.getLocation()));
 		moneySource = cityBuilder.getParentCountry();
 		CityBlock cityBlockTownHall = new CityBlock(this,49,49);
 		setBuilding(new TownHall(cityBlockTownHall,moneySource));

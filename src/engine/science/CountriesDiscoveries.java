@@ -23,12 +23,10 @@ public class CountriesDiscoveries
 		SpaceShuttle spaceShuttle = new SpaceShuttle(new ArrayList<Discovery>(){{add(solidRocketBoosters);}});
 		SuperConductors superConductors = new SuperConductors(new ArrayList<Discovery>(){{add(graphene);}});
 		SpaceLivingOne spaceLivingOne = new SpaceLivingOne(new ArrayList<Discovery>(){{add(spaceShuttle);}});
-		SpaceStation spaceStation = new SpaceStation(new ArrayList<Discovery>(){{add(spaceLivingOne);}});
 		HyperLoop hyperLoop = new HyperLoop(noPreq);
-		SpaceLivingTwo spaceLivingTwo = new SpaceLivingTwo(new ArrayList<Discovery>(){{add(spaceStation);}});
+		SpaceLivingTwo spaceLivingTwo = new SpaceLivingTwo(new ArrayList<Discovery>(){{}});
 		Tasers  tasers = new Tasers(noPreq);
 		LethalTasers lethalTasers =  new LethalTasers(new ArrayList<Discovery>(){{add(tasers);add(superConductors);}});
-		SolarSails solarSails =  new SolarSails(new ArrayList<Discovery>(){{add(spaceShuttle);}});
 		Origami origami = new Origami(noPreq);
 		discoveries.add(economics);
 		discoveries.add(graphene);
@@ -37,12 +35,10 @@ public class CountriesDiscoveries
 		discoveries.add(solidRocketBoosters);
 		discoveries.add(spaceShuttle);
 		discoveries.add(superConductors);
-		discoveries.add(spaceStation);
 		discoveries.add(tasers);
 		discoveries.add(hyperLoop);
 		discoveries.add(lethalTasers);
 		discoveries.add(spaceLivingTwo);
-		discoveries.add(solarSails);
 		discoveries.add(origami);
 	}
 

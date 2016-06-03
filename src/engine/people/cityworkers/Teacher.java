@@ -21,7 +21,11 @@ public class Teacher<Type extends AbstractPerson> extends CityWorker implements 
         return student;
     }
 
-    private Type student;
+	public void setStudent(Type student) {
+		this.student = student;
+	}
+
+	private Type student;
 
     public static int populationInitial = 250;
     public static double foodUsePerPersonInitial = UniversalConstants.normalFoodUsePerPerson;
@@ -55,5 +59,6 @@ public class Teacher<Type extends AbstractPerson> extends CityWorker implements 
     protected CityWorker splitInternal() {
         return new Teacher<>(this);
     }
+
 
 }

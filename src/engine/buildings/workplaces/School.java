@@ -57,7 +57,7 @@ public class School extends Workplace
 						setOnMouseClicked(new EventHandler<MouseEvent>() {
 							@Override
 							public void handle(MouseEvent event) {
-								new WorkerTypeRequest(selfReference);
+								new WorkerTypeRequest((Teacher) cityWorker, getParentCity(), getLocation().get(0));
 							}
 						});
 					}});

@@ -7,7 +7,7 @@ import engine.universe.UniversalConstants;
 /*
     one ruler per country
 */
-public class Ruler extends CityWorker implements Cloneable //TODO:clean this up
+public class Ruler extends CityWorker
 {
 	public static int populationInitial = 1;
 	public static double foodUsePerPersonInitial = UniversalConstants.normalFoodUsePerPerson;

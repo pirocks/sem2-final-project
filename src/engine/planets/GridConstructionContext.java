@@ -37,24 +37,23 @@ public class GridConstructionContext
 		naturalResources = new ArrayList<>();
 		double ironProb = Math.random();
 		if(ironProb < planetConstructionContext.IronAbundance)
-			naturalResources.add(new NaturalResource(Resource.Type.Iron,100,0,100));// TODO: this number probly needs to be bigger
+			naturalResources.add(new NaturalResource(Resource.Type.Iron,10000,0,10000));
 		double OilProb = Math.random();
 		if(OilProb < planetConstructionContext.OilAbundance)
-			naturalResources.add(new NaturalResource(Resource.Type.Oil,100,0,100));
+			naturalResources.add(new NaturalResource(Resource.Type.Oil,10000,0,10000));
 		double UraniumProb = Math.random();
 		if(UraniumProb < planetConstructionContext.UraniumAbundance)
-			naturalResources.add(new NaturalResource(Resource.Type.Uranium,100,0,100));
+			naturalResources.add(new NaturalResource(Resource.Type.Uranium,1000,0,1000));
 		double HeliumProb = Math.random();
 		if(HeliumProb < planetConstructionContext.HeliumAbundance)
-			naturalResources.add(new NaturalResource(Resource.Type.Helium,100,0,100));
+			naturalResources.add(new NaturalResource(Resource.Type.Helium,1000,0,1000));
 		double FoodProb = Math.random();
 		if(FoodProb < planetConstructionContext.FoodAbundance)
-			naturalResources.add(new NaturalResource(Resource.Type.Food,100,0,100));
+			naturalResources.add(new NaturalResource(Resource.Type.Food,10000,1000,10000));
 		double WaterProb = Math.random();
 		if(WaterProb < planetConstructionContext.WaterAbundance)
-			naturalResources.add(new NaturalResource(Resource.Type.Water,100,0,100));
+			naturalResources.add(new NaturalResource(Resource.Type.Water,10000,1000,10000));
 		surroundingTerrains = new ArrayList<>();
-//		surroundingTerrains.add(grids[y - 0][x - 0].getTerrainType());
 		try
 		{
 			surroundingTerrains.add(grids[y - 0][x - 1].getTerrainType());

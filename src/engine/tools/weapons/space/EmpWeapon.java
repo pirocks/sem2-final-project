@@ -14,6 +14,7 @@ public class EmpWeapon extends SpaceWeapon {
 	public static double resistanceInitial;// TODO: 5/22/2016
 	public static double damageInitial;// TODO: 5/22/2016
 	public static double rangeInitial;// TODO: 5/22/2016
+	public static double accuracyInitial;// TODO: 6/2/2016
 
 	public EmpWeapon(LocationPlanet location, int numToolsConstructor) {
 		super(new AttackableConstants(startHealthInitial,resistanceInitial,location), damageInitial,rangeInitial,

@@ -154,16 +154,22 @@ public abstract class CityWorker extends AbstractPerson implements Container//do
 				goToWork();
 			}
 			else {
-				if(population < 10) {
-					Platform.runLater(new Runnable() {
+//				if(population < 10) {
+//					Platform.runLater(new Runnable() {
+//						@Override
+//						public void run() {
+//							die();
+//						}
+//					});
+//				}
+//				else
+//					throw new IllegalStateException();
+				Platform.runLater(new Runnable() {
 						@Override
 						public void run() {
 							die();
 						}
 					});
-				}
-				else
-					throw new IllegalStateException();
 			}
 			return false;
 		}
@@ -219,8 +225,6 @@ public abstract class CityWorker extends AbstractPerson implements Container//do
 		checkHealth();
 		deregisterContainer(currentBuilding);
 		registerContainer(currentBuilding);
-
-
 		//todo how does this class respond when workplace is null
 		if(timeRemainingAtLocation >= time)
         {
