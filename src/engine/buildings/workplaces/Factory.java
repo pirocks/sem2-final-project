@@ -29,6 +29,7 @@ import engine.tools.weapons.guns.mounted.MachineGunSmall;
 import engine.universe.MoneySource;
 import engine.universe.Resource;
 import engine.universe.ResourceDemand;
+import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
@@ -195,10 +196,20 @@ public class Factory extends Workplace implements ToolBuilder<Tool>, Liver
 
 	@Override
 	public void doLife(double time) {
+		if(getToolUnderConstruction() != null)
 		if(getToolUnderConstruction().areWeDoneYet()){
 			Tool finishedTool = getToolUnderConstruction().getFinishedTool();
 			if(finishedTool instanceof Weapon){
 				getParentCity().addToSupply(((Weapon)finishedTool));
+				Alert alert = new Alert(Alert.AlertType.INFORMATION,"A factory in " + getParentCity().name +
+						"completed building the weapon" + finishedTool.getClass().getSimpleName());
+				alert.setContentText("The  weapon was added to the city's stockpile");
+				Platform.runLater(new Runnable() {
+					@Override
+					public void run() {
+						alert.showAndWait();
+					}
+				});
 			}
 			if(finishedTool instanceof Vehicle){
 

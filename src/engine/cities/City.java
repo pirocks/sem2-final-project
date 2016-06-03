@@ -36,6 +36,11 @@ import java.util.Set;
 public class City extends Attackable implements Serializable,Container
 {
 	public MoneySource moneySource;// if I don't have time this will just be the country money source//working
+
+	public ArrayList<Weapon> getWaiting() {
+		return waiting;
+	}
+
 	// assumption as of 5/19/2016
 	private ArrayList<Weapon> waiting = new ArrayList<>();
 	public static double resistanceInitial = 75000*2;
