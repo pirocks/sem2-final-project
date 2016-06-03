@@ -5,6 +5,7 @@ import engine.buildings.workplaces.ToolBuilder;
 import engine.buildings.workplaces.Warehouse;
 import engine.cities.City;
 import engine.planets.LocationPlanet;
+import engine.universe.Resource;
 import engine.universe.UniversalConstants;
 
 /**
@@ -41,6 +42,11 @@ public class ManualWorker extends CityWorker
 		}
 		else if(getWorkBuilding() instanceof Warehouse){
 			((Warehouse)getWorkBuilding()).updateMaxWeight();
+			try {
+				((Warehouse)getWorkBuilding()).addInStock(new Resource(new Resource.Type[]{Resource.Type.Iron,Resource.Type.Oil,Resource.Type.Uranium,Resource.Type.Helium,Resource.Type.Food,Resource.Type.Water,Resource.Type.Wood,Resource.Type.Silicon},new Double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0}));
+			} catch (ToHeavyException e) {
+				e.printStackTrace();
+			}
 		}
 		else
 			throw new IllegalStateException();

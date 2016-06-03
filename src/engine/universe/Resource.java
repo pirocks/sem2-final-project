@@ -37,7 +37,7 @@ public class Resource implements Serializable,Weighable
 
 	public enum Type
     {
-        Iron,Oil,Uranium,Helium,Food,Water,Wood,Silicon
+	        Iron,Oil,Uranium,Helium,Food,Water,Wood,Silicon
     }
 
 	private Map<Type,Double> values;

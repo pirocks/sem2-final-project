@@ -75,4 +75,9 @@ public class ResourceDemand implements Serializable
 	public Resource getResource() {
 		return resource;
 	}
+
+	@Override
+	public String toString() {
+		return resource.toString();
+	}
 }
